@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Virtual Textbook of Organic Chemistry</title>
+<meta name="description" content="A comprehensive, interactive virtual textbook of organic chemistry with molecular models, animations, spectroscopy tools and practice problems.">
+<meta name="author" content="The Edvibe Team">
+<meta name="theme-color" content="#004439">
+<link rel="icon" href="virttxtjml/Styles/edvibe/logo.png">
+<style>
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("virttxtjml/Styles/fonts/inter-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url("virttxtjml/Styles/fonts/inter-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url("virttxtjml/Styles/fonts/inter-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:600;font-display:swap;src:url("virttxtjml/Styles/fonts/space-grotesk-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:700;font-display:swap;src:url("virttxtjml/Styles/fonts/space-grotesk-latin-700-normal.woff2") format("woff2")}
+:root{
+  --yellow:#fd961e;--yellow-dark:#e0860f;--green:#00b894;--deep:#004439;--deep-2:#003329;
+  --ink:#141516;--body:#45474f;--muted:#5b6472;--bg:#f4f7fb;--surface:#fff;--surface-2:#eef3f9;
+  --border:#e2e8f0;--link:#0b5ed7;--link-hover:#094298;--yellow-soft:#fef6e3;--green-soft:#e6fbf5;
+  --radius:16px;--radius-sm:10px;
+  --shadow-sm:0 1px 2px rgba(16,24,40,.05),0 4px 12px rgba(16,24,40,.05);
+  --shadow:0 1px 2px rgba(16,24,40,.04),0 12px 32px rgba(16,24,40,.07);
+  --shadow-lg:0 24px 60px rgba(16,24,40,.14);
+  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-head:"Space Grotesk","Inter",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);color:var(--body);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-head);color:var(--ink);line-height:1.15;margin:0 0 .5rem}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline;color:var(--link-hover)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 1.25rem}
+header.site{background:linear-gradient(135deg,var(--deep) 0%,var(--deep-2) 100%);color:#eaf6f2;position:sticky;top:0;z-index:20;box-shadow:var(--shadow-sm)}
+header.site .wrap{display:flex;align-items:center;gap:.85rem;min-height:60px}
+header.site img{width:38px;height:38px;border-radius:9px;background:#fff;padding:3px}
+header.site b{font-family:var(--font-head);font-size:1.02rem;color:#fff;letter-spacing:.2px}
+header.site nav{margin-left:auto;display:flex;gap:1.1rem;flex-wrap:wrap}
+header.site nav a{color:#cdeae1;font-weight:600;font-size:.92rem}
+header.site nav a:hover{color:#fff;text-decoration:none}
+.hero{padding:clamp(2.5rem,6vw,4.5rem) 0 2rem}
+.hero .wrap{display:grid;gap:2.2rem;align-items:center}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.15fr .85fr}}
+.eyebrow{display:inline-block;font-family:var(--font-head);font-weight:600;font-size:.8rem;letter-spacing:.09em;text-transform:uppercase;color:var(--yellow-dark);background:var(--yellow-soft);border:1px solid #f6dfb4;padding:.32rem .8rem;border-radius:999px;margin-bottom:1rem}
+.hero h1{font-size:clamp(2.1rem,5vw,3.3rem);font-weight:700;letter-spacing:-.02em}
+.hero p.lead{font-size:clamp(1.02rem,1.6vw,1.2rem);color:var(--muted);max-width:44ch;margin:.4rem 0 1.6rem}
+.cta{display:flex;gap:.7rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-head);font-weight:600;font-size:1rem;padding:.78rem 1.35rem;border-radius:var(--radius-sm);border:1.5px solid transparent;cursor:pointer;transition:transform .12s,box-shadow .12s,background-color .12s}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn-primary{background:var(--yellow);color:#3a2405;box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:var(--yellow-dark);color:#3a2405}
+.btn-ghost{background:transparent;color:var(--deep);border-color:#bcd8d1}
+.btn-ghost:hover{background:#fff;color:var(--deep)}
+.hero-media{display:flex;justify-content:center}
+.hero-media img{max-width:100%;width:420px;filter:drop-shadow(var(--shadow-lg))}
+section{padding:2.6rem 0}
+.section-head{text-align:center;max-width:640px;margin:0 auto 2rem}
+.section-head h2{font-size:clamp(1.5rem,3vw,2rem)}
+.section-head p{color:var(--muted);margin:.3rem 0 0}
+.cards{display:grid;gap:1.25rem}
+@media(min-width:720px){.cards{grid-template-columns:1fr 1fr}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem 1.5rem;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform .14s,box-shadow .14s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.card .tag{font-family:var(--font-head);font-weight:600;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:.5rem}
+.card h3{font-size:1.3rem}
+.card p{margin:.2rem 0 1rem;color:var(--muted)}
+.card ul{margin:0 0 1.2rem;padding-left:1.1rem;color:var(--body)}
+.card li{margin:.2rem 0}
+.card .go{margin-top:auto;font-family:var(--font-head);font-weight:600}
+.topics{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fill,minmax(215px,1fr))}
+.topic{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.95rem 1.05rem;box-shadow:var(--shadow-sm);transition:transform .12s,border-color .12s}
+.topic:hover{transform:translateY(-2px);border-color:var(--green);text-decoration:none}
+.topic b{display:block;font-family:var(--font-head);color:var(--deep);font-size:1rem}
+.topic span{font-size:.85rem;color:var(--muted)}
+.band{background:var(--green-soft);border-top:1px solid #cdeee6;border-bottom:1px solid #cdeee6}
+.features{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.feature{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.2rem 1.25rem;box-shadow:var(--shadow-sm)}
+.feature h4{font-size:1.02rem;margin-bottom:.25rem}
+.feature p{margin:0;font-size:.92rem;color:var(--muted)}
+footer{background:linear-gradient(135deg,var(--deep) 0%,var(--deep-2) 100%);color:#cdeae1;padding:2.2rem 0;margin-top:1rem}
+footer a{color:#fff}
+footer .cols{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer h4{color:#fff;font-size:.95rem;margin-bottom:.4rem}
+footer p{margin:.25rem 0;font-size:.88rem;color:#a9cfc6}
+footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:1.4rem;padding-top:1rem;font-size:.82rem;color:#9cc3ba}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="virttxtjml/Styles/edvibe/logo.png" alt="Edvibe logo">
+    <b>Virtual Textbook of Organic Chemistry</b>
+    <nav>
+      <a href="virttxtjml/index.htm">Textbook</a>
+      <a href="OrgPage/tables.htm">Data Tables</a>
+      <a href="virttxtjml/Questions/problems.htm">Problems</a>
+      <a href="https://github.com/edvibeke/organic-chemistry-textbook">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Free &middot; Interactive &middot; Open</span>
+      <h1>All-in-One Organic Chemistry</h1>
+      <p class="lead">A comprehensive, interactive virtual textbook with molecular models, animated mechanisms, spectroscopy tools and hundreds of self-checking practice problems.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="virttxtjml/index.htm">Browse the Textbook &rarr;</a>
+        <a class="btn btn-ghost" href="virttxtjml/Questions/problems.htm">Practice Problems</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="virttxtjml/Styles/edvibe/hero-banner.png" alt="Molecular model illustration">
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Start Exploring</h2>
+      <p>Jump straight into the most popular sections.</p>
+    </div>
+    <div class="topics">
+      <a class="topic" href="virttxtjml/intro2.htm#start"><b>Structure &amp; Bonding</b><span>Electrons, valence, charge</span></a>
+      <a class="topic" href="virttxtjml/sterisom.htm#start"><b>Stereochemistry</b><span>Chirality &amp; conformation</span></a>
+      <a class="topic" href="virttxtjml/alhalrx1.htm#hal1"><b>Alkyl Halides</b><span>S<sub>N</sub>1/S<sub>N</sub>2, E1/E2</span></a>
+      <a class="topic" href="virttxtjml/benzrx1.htm#benz1"><b>Aromatic Chemistry</b><span>Electrophilic substitution</span></a>
+      <a class="topic" href="virttxtjml/Spectrpy/spectro.htm#intro"><b>Spectroscopy</b><span>MS, UV-Vis, IR, NMR</span></a>
+      <a class="topic" href="virttxtjml/biomol.htm"><b>Biomolecules</b><span>Carbs, lipids, proteins, DNA</span></a>
+      <a class="topic" href="virttxtjml/htmlJ/jsmol/jsmol.htm"><b>Molecular Viewer</b><span>Rotate 3-D models</span></a>
+      <a class="topic" href="virttxtjml/textindx.htm"><b>Full Contents</b><span>Textbook-style index</span></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Two Resources in One Place</h2>
+      <p>Everything you need to study, reference and practice organic chemistry.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">The Textbook</span>
+        <h3>Interactive Virtual Textbook</h3>
+        <p>Full course coverage from bonding and nomenclature through mechanisms, spectroscopy and modern synthesis.</p>
+        <ul>
+          <li>Chapter-by-chapter lessons</li>
+          <li>3-D molecular models (JSmol)</li>
+          <li>Animated reaction mechanisms</li>
+          <li>Self-checking practice problems</li>
+        </ul>
+        <a class="go" href="virttxtjml/index.htm">Open the textbook &rarr;</a>
+      </div>
+      <div class="card">
+        <span class="tag">Reference</span>
+        <h3>Organic Chemistry Data Tables</h3>
+        <p>Quick-reference constants and data, ideal for problem sets, exams and lab work.</p>
+        <ul>
+          <li>Acidity &amp; basicity constants</li>
+          <li>Bond energies &amp; solvent properties</li>
+          <li>NMR &amp; mass-spec data</li>
+          <li>Amino acids &amp; periodic table</li>
+        </ul>
+        <a class="go" href="OrgPage/tables.htm">Open data tables &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Why Students Like It</h2>
+    </div>
+    <div class="features">
+      <div class="feature"><h4>Completely Free</h4><p>No login, no paywall, no tracking. Learn at your own pace.</p></div>
+      <div class="feature"><h4>Interactive</h4><p>Rotate molecules, step through mechanisms and check your answers instantly.</p></div>
+      <div class="feature"><h4>Runs Anywhere</h4><p>Plain HTML, CSS and JavaScript — works on any device with a browser.</p></div>
+      <div class="feature"><h4>Durable &amp; Open</h4><p>No frameworks to install and no dependencies to break. Freely licensed.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>The Virtual Textbook of Organic Chemistry</h4>
+        <p>Originally by William Reusch (Michigan State University).</p>
+        <p>Maintained and modernized by The Edvibe Team.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <p><a href="virttxtjml/index.htm">Textbook Home</a></p>
+        <p><a href="virttxtjml/textindx.htm">Table of Contents</a></p>
+        <p><a href="OrgPage/tables.htm">Data Tables</a></p>
+        <p><a href="virttxtjml/Questions/problems.htm">Practice Problems</a></p>
+      </div>
+      <div>
+        <h4>More</h4>
+        <p><a href="https://github.com/edvibeke/organic-chemistry-textbook">Source on GitHub</a></p>
+        <p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">License: CC BY-NC-SA 4.0</a></p>
+        <p><a href="mailto:contact@edvibe.co.ke">contact@edvibe.co.ke</a></p>
+      </div>
+    </div>
+    <p class="fine">&copy; The Edvibe Team. Licensed under Creative Commons BY-NC-SA 4.0. Provided to the IOCD to assist in capacity building in chemical education.</p>
+  </div>
+</footer>
+
+</body>
+</html>
