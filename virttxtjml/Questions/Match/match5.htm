@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var j=0;
+var k=0;
+var l=0;
+var m=0;
+var n=0;
+var Txt="";
+var txt="";
+var anscnt=0;
+
+                         //Answer variables
+ var answ1="Both isomers will be optically active. ";
+ var answ2="All selections are correct except for the first and the last. ";
+  var noansw="You must try to answer this questions three times before viewing the answer.";
+     
+
+	function process(form) {
+	if (j!=0){
+	 j=0
+}
+		if (form.q1[0].checked) {
+		j=1
+}
+		if (form.q1[1].checked) {
+		j=2
+}
+}
+
+function setanscnt() {
+	if (anscnt!=0){
+		anscnt=0;
+}
+}
+
+function check(input)  {
+	if (k!=0){
+		k=0;
+}
+	if (m!=0){
+		m=0;
+}
+	if (l!=0){
+		l=0;
+}
+	if (n!=0){
+		n=0;
+}
+anscnt=anscnt+1;
+	if (input.a1.checked){
+		k=k+1
+		m=m+1
+}
+  if (input.a2.checked){
+ 	k=k+2
+		m=m+1
+}
+ if (input.a3.checked){
+		k=k+4
+		m=m+1
+}
+  if (input.a4.checked){
+ 	k=k+8
+		m=m+1
+}
+	   if (input.a5.checked){
+		k=k+16
+		m=m+1;
+}
+ 	if (input.a6.checked){
+ 	k=k+32
+		m=m+1
+}
+ 	if (input.a7.checked){
+ 	k=k+64
+		m=m+1
+}
+ 	if (input.a8.checked){
+ 	k=k+128
+		m=m+1
+}
+	if (input.b1.checked){
+		l=l+1
+		n=n+1
+}
+  if (input.b2.checked){
+ 	l=l+2
+		n=n+1
+}
+ if (input.b3.checked){
+		l=l+4
+		n=n+1
+}
+  if (input.b4.checked){
+ 	l=l+8
+		n=n+1
+}
+	   if (input.b5.checked){
+		l=l+16
+		n=n+1;
+}
+ 	if (input.b6.checked){
+ 	l=l+32
+		n=n+1
+}
+ 	if (input.b7.checked){
+ 	l=l+64
+		n=n+1
+}
+ 	if (input.b8.checked){
+ 	l=l+128
+		n=n+1
+}
+}
+
+function processAnsw(input) { 
+if  ((j == 1 && k==16)||(j==2 && l==126)) { 
+var Txt="Correct Answer! ";
+}else{
+if ((j == 2 && n<=3)) {
+var Txt="You need to select more statements";
+}else{ 
+if (((j == 2)) && ((l==30)||(l==58)||(l==114)||(l==60)||(l==116)||(l==120)||(l==54)||(l==102)||(l==86)||(l==108)||(l==100)||(l==106)||(l==78)||(l==92)||(l==46))) {
+var Txt="Your four selections are correct. Other statements are also correct.";
+}else{ 
+if (((j == 2)) && ((l==62)||(l==124)||(l==122)||(l==118)||(l==110)||(l==94))) {
+var Txt="You have identified five correct statements. One more remains.";
+}else{ 
+if ((j==1)&&(k==0) || (j==2)&&(l==0)) {
+var Txt="You have not made any selections!";
+}else{
+var Txt="Wrong! Try again.";
+}
+}
+}
+}
+}
+if  ((j == 1  && m>=2)||(j==2 && n>=7)) { 
+var Txt=Txt + "\rYou have made too many selections. ";
+}
+	 document.form.result1.value = Txt;
+}
+function giveansw(show) {
+ if ((j==1)&&(anscnt>=3))  {
+ var txt=answ1
+ 	}else{
+ if ((j==2)&&(anscnt>=3))  {
+ var txt=answ2
+ 	}else{
+ var txt=noansw
+ }
+}
+ show.result1.value=txt
+ }
+
+
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Stereochemical Terminology</TITLE>
+<body>
+<FORM NAME="form">
+
+<div class="ctr"><H2>Stereochemistry Terminology</H2></div>
+<p>When describing the relationship of isomeric compounds the verbs <b>must</b> and <b>might</b> carry very different meaning. The first is a constraining necessity and the second a possibility. This distinction is an important feature of this question, in that one word or the other is used in each statement.</p>
+
+<p><span class="fc-maroon fs-4">Which of the following statements are true for <b><span class="fs-4">two pure isomeric compounds</span></b>, both of which are <b><span class="fs-4">chiral</span></b>?<br>
+First select problem <b><span class="fs-4">1.</span></b> or <b><span class="fs-4">2.</span></b>, and then check the boxes beneath all the statements you believe to be true.</span><br /> (note, not all the statements are the same)</p>  
+<B><span class="fc-blue fs-4">1. <INPUT TYPE=RADIO NAME="q1" VALUE="prob" checked>  must</b> statements.</span>
+<div class="ctr"><TABLE CELLPADDING=6 BORDER=1>
+<TR VALIGN=TOP>
+<TH>they <span class="fc-blue">must</span> be meso isomers<br>
+<INPUT TYPE=CHECKBOX NAME="a1" VALUE="answ"></TH>
+<TH>they <span class="fc-blue">must</span> be tautomers<br>
+<INPUT TYPE=CHECKBOX NAME="a2" VALUE="answ"></TH>
+<TH>they <span class="fc-blue">must</span> be enantiomers<br>
+<INPUT TYPE=CHECKBOX NAME="a3" VALUE="answ"></TH>
+<TH>they <span class="fc-blue">must</span> be diastereomers<br>
+<INPUT TYPE=CHECKBOX NAME="a4" VALUE="answ"></TH></TR>
+<TR><TH nowrap>they <span class="fc-blue">must</span> both be optically active<br>
+<INPUT TYPE=CHECKBOX NAME="a5" VALUE="answ"></TH>
+<TH nowrap>they <span class="fc-blue">must</span> be constitutional isomers<br>
+<INPUT TYPE=CHECKBOX NAME="a6" VALUE="answ"></TH>
+<TH nowrap>they <span class="fc-blue">must</span> have different nmr spectra<br>
+<INPUT TYPE=CHECKBOX NAME="a7" VALUE="answ"></TH>
+<TH nowrap>none of these statements are true<br>
+<INPUT TYPE=CHECKBOX NAME="a8" VALUE="answ"></TH></TR>
+</TABLE></div>
+<hr>
+<B><span class="fc-blue fs-4">2. <INPUT TYPE=RADIO NAME="q1" VALUE="prob">  might</b> statements.</span>
+<div class="ctr"><TABLE CELLPADDING=6 BORDER=1>
+<TR VALIGN=TOP>
+<TH>they <span class="fc-blue">might</span> be meso isomers<br>
+<INPUT TYPE=CHECKBOX NAME="b1" VALUE="answ"></TH>
+<TH>they <span class="fc-blue">might</span> be tautomers<br>
+<INPUT TYPE=CHECKBOX NAME="b2" VALUE="answ"></TH>
+<TH>they <span class="fc-blue">might</span> be enantiomers<br>
+<INPUT TYPE=CHECKBOX NAME="b3" VALUE="answ"></TH>
+<TH>they <span class="fc-blue">might</span> be diastereomers<br>
+<INPUT TYPE=CHECKBOX NAME="b4" VALUE="answ"></TH></TR>
+<TR><TH nowrap>they <span class="fc-blue">might</span> be stereoisomers<br>
+<INPUT TYPE=CHECKBOX NAME="b5" VALUE="answ"></TH>
+<TH nowrap>they <span class="fc-blue">might</span> be constitutional isomers<br>
+<INPUT TYPE=CHECKBOX NAME="b6" VALUE="answ"></TH>
+<TH nowrap>they <span class="fc-blue">might</span> have different nmr spectra<br>
+<INPUT TYPE=CHECKBOX NAME="b7" VALUE="answ"></TH>
+<TH nowrap>none of these statements are true<br>
+<INPUT TYPE=CHECKBOX NAME="b8" VALUE="answ"></TH></TR>
+</TABLE></div>
+
+<div class="ctr"><table cellpadding=5><tr><td align=right>
+ <INPUT TYPE="button" VALUE="Check Answers" onClick="process(form);check(form);processAnsw(this.form);"><br><br>
+  <INPUT TYPE="RESET" VALUE="Reset" onClick="setanscnt()"></td>
+<td><TEXTAREA WRAP NAME="result1" ROWS="3" COLS="44">
+</TEXTAREA></td><td>
+<INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form)"></td></tr></table></div>
+</FORM><HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

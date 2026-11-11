@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+
+<script id="qa-imgfallback">(function(){if(window.__qaImgFallback)return;window.__qaImgFallback=1;var BOX="display:inline-block;min-width:80px;min-height:24px;padding:6px 10px;margin:2px;border:1px dashed #b9c0c8;border-radius:6px;color:#7a828c;font:italic 13px/1.35 system-ui,Segoe UI,Arial,sans-serif;background:#f6f8fa;vertical-align:middle;text-align:center;";function ph(img){var p=img.__qaPh;if(!p){p=document.createElement("span");p.setAttribute("role","img");p.setAttribute("aria-label","Figure unavailable");p.style.cssText=BOX;p.textContent="Figure unavailable";img.__qaPh=p;if(img.parentNode)img.parentNode.insertBefore(p,img.nextSibling);}p.style.display="";img.style.display="none";img.setAttribute("data-qa-broken","1");}function ok(img){if(img.__qaPh)img.__qaPh.style.display="none";if(img.getAttribute("data-qa-broken")){img.style.display="";img.removeAttribute("data-qa-broken");}}function hook(img){if(img.__qaHooked)return;img.__qaHooked=1;img.addEventListener("error",function(){ph(this);},true);img.addEventListener("load",function(){ok(this);},true);if(img.complete&&img.naturalWidth===0&&img.getAttribute("src"))ph(img);}function scan(){var a=document.getElementsByTagName("img");for(var i=0;i<a.length;i++)hook(a[i]);}if(document.readyState!=="loading")scan();else document.addEventListener("DOMContentLoaded",scan);window.addEventListener("load",scan);})();</script><link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+
+<body>
+<script type="text/javascript" src="wz_dragdrop.js"></script>
+<div class="ctr"><h3>Curved Arrows Placement</h3></div>
+<p>Drag one or more curved arrows to the formula, and place them so that their action effects an E2 elimination Reaction.  <br />A correct placement will be noted in the box below.</p>
+<table cellpadding=3 border width=380><caption>Select a Curved Arrow</caption><tr><th width=20%><img id="arrow1" name="image1" src="arrow1.gif" width="64" height="43"></th>
+<th width=20%><img id="arrow2" name="image2" src="arrow2.gif" width="40" height="54"></th>
+<th width=20%><img id="arrow3" name="image3" src="arrow3.gif" width="64" height="41"></th>
+<th width=20%><img id="arrow4" name="image4" src="arrow4.gif" width="64" height="38"></th>
+<th width=20%><img id="arrow5" name="image5" src="arrow5.gif" width="32" height="26"></th></tr></table>
+<p> <br /> </p>
+<div id="formula" style="position:absolute; top:214px; left: 60px"> <img id="target" name="bromide" src="Images/reaction.gif" /> </div> <div id="product" style="position:absolute; top:214px; left: 206px"> <img id="target" name="prd" src="transparentpixel.gif" width="230" height="128"/></div>
+<img id="target1" style="position:absolute; top: 220px; left: 160px" name="droptarget1" width="40" height="40" src="transparentpixel.gif" ></div>
+<img id="target2" style="position:absolute; top: 285px; left: 134px" name="droptarget2" width="30" height="35" src="transparentpixel.gif"></div>
+<img id="target3" style="position:absolute; top: 257px; left: 130px" name="droptarget3" width="28" height="26" src="transparentpixel.gif"></div>
+
+<br>
+<br>
+<form name="myForm">
+<div id="response" style="position:relative; top:120px; left: 30px"><table cellpadding=5><tr><td align=right>
+ <INPUT TYPE="button" VALUE="Check Answers" onClick="checkans()"><br><br>
+  <INPUT TYPE="RESET" VALUE="Reset" onClick=""></td>
+<td><TEXTAREA WRAP NAME="result" ROWS="5" COLS="60">
+</TEXTAREA></td> <td> <INPUT TYPE="button" VALUE="Show Mechanism" onClick="showans();change()"> </td> </tr></table></div>
+
+<script type="text/javascript">
+<!--
+
+SET_DHTML("arrow1", "arrow2", "arrow3", "arrow4", "arrow5", "target1", "target2", "target3", "formula");
+dd.elements.target1.setDraggable(false);  
+dd.elements.target2.setDraggable(false);  
+dd.elements.target3.setDraggable(false);  
+dd.elements.formula.setDraggable(false);  
+
+
+var Txt="";
+var i =0;
+function my_DropFunc() {
+var dropTarget = dd.obj.getEltBelow();
+var arrow = dd.obj;
+var target = dropTarget.name
+
+ if(((dropTarget != null)) &&  ((arrow.name == "arrow1") && (dropTarget.name == "target1") || (arrow.name == "arrow3") && (dropTarget.name == "target2") || (arrow.name == "arrow5") && (dropTarget.name == "target3"))) 
+i = i+1;
+ if ((arrow.name != "arrow1") && (dropTarget.name == "target1") || (arrow.name != "arrow3") && (dropTarget.name == "target2") || (arrow.name != "arrow5") && (dropTarget.name == "target3") || (arrow.name != "arrow*") && (dropTarget.name == "formula")) {
+alert (" Try Again \n This arrow must be moved or removed.");
+Txt= "" ;
+}
+	if (i==1) {
+Txt= "                 Curved Arrow Placement\r  You have correctly placed one curved arrow";
+}
+	if (i==2) {
+Txt=  "                 Curved Arrow Placement\r  You have correctly placed one curved arrow.\r  You have correctly placed a second curved arrow";
+}
+	if (i==3) {
+Txt= "                 Curved Arrow Placement\r  You have correctly placed one curved arrow.\r  You have correctly placed a second curved arrow\r  Congratulations! All curved arrows are correctly placed. \r  The arrows have been adjusted for accuracy.";
+dd.elements.arrow3.moveTo(120,277);
+dd.elements.arrow5.moveTo(124,255);
+dd.elements.arrow1.moveTo(160,221);
+}
+document.myForm.result.value = Txt;
+}
+
+
+function showans() {
+if (i>=2) {
+dd.elements.arrow3.moveTo(120,277);
+dd.elements.arrow5.moveTo(124,255);
+dd.elements.arrow1.moveTo(160,221);
+var Txt=" This is the mechanism of \r an E2 elimination reaction ";
+}else{
+var Txt=" You must locate at least two curved arrows correctly before viewing the mechanism";
+}
+document.myForm.result.value = Txt;
+}
+var img1=new Image();										// variables for image switch
+var img2=new Image();
+		img1.src="transparentpixel.gif";
+		img2.src="Images/product.gif";
+function change() {
+if (i>=2) {
+document.images.prd.src=img2.src;
+}
+}
+
+
+//-->
+</script>
+
+</form>
+</body>
+</html>

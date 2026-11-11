@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en"> 
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+if (navigator.userAgent.indexOf("Macintosh") != -1) {
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center  {font-size: 11pt} br {font-size: 11pt} br {line-height: 1.3}  H2 {font-size: 18pt}  sub {font-size: 10pt}sup {font-size: 10pt}form {font-size: 10pt} --></STYLE>")
+}
+else
+{
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H2 {font-size: 16pt}  sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+}
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+
+function jmehelp() { window.open('../MOLEDITOR/jme_help.html','JME','width=800,height=800,scrollbars=yes');
+}
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+document.form.smiles.value = smiles; 
+}
+
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+document.form.smiles.value = smiles; 
+}
+
+function processMolecule1(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "CC[C@@](C)(Cl)Br") {    
+var Txt="Correct!";
+	}else{
+if (smiles == "CC[C@](C)(Cl)Br") {
+var Txt="You have drawn the mirror image of the designated structure.";
+	}else{
+if (smiles == "CCC(C)(Cl)Br") {
+var Txt="You have failed to designate the configuration at the chiral center, or you have used the wedge tool incorrectly.";
+	}else{
+var Txt="Wrong! Try again.";
+}
+}
+}
+	input.result.value = Txt ;
+
+}
+
+function processMolecule2(input) {  
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if ((smiles == "C[C@@H](O)[C@H](C)O") || (smiles == "C[C@H](O)[C@@H](C)O")) {
+var Txt="Correct!";
+	}else{
+if ((smiles == "C[C@H](O)[C@H](C)O") || (smiles == "C[C@@H](O)[C@@H](C)O")) {
+var Txt="You have not drawn the meso-diastereomer.";
+	}else{
+if (smiles == "CC(O)C(C)O") {
+var Txt="You have failed to designate the configuration at the chiral center, or you have used the wedge tool incorrectly.";
+	}else{
+var Txt="Wrong! Try again.";    
+}
+}
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule3(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if ((smiles == "C[C@@H]1CC[C@@H](C[Mg]Br)CC1") || (smiles == "C[C@H]1CC[C@H](C[Mg]Br)CC1")) {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule4(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if ((smiles == "C/C=C(Cl)\\CCO") || (smiles == "[H]/C(C)=C(Cl)/CCO")) {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule5(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "NC(=O)[C@H]1CC=CCC1") {
+var Txt="Correct!";
+	}else{
+if (smiles == "NC(=O)[C@@H]1CC=CCC1") {
+var Txt="You have drawn the mirror image of the designated structure.";
+	}else{
+if (smiles == "NC(=O)C1CC=CCC1") {
+var Txt="You have failed to designate the configuration at the chiral center, or you have used the wedge tool incorrectly.";
+	}else{
+var Txt="Wrong! Try again.\rRemember, the hydrogen should not be drawn.";
+}
+}
+}
+	input.result.value = Txt ;
+}
+
+
+function showSmiles(input) { 
+ smiles = document.form.smiles.value;
+	input.result.value = smiles ;
+}
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body>
+
+<form method="post" name="form">
+<div class="ctr"><H2>Drawing Stereoisomeric Structural Formulas</H2></div>
+<IMG SRC=../Images/stereoex.gif ALIGN=right HSPACE=9>
+<P>This new version of the <B>Molecular Editor</B> allows the user to draw specific stereoisomers. Problems created earlier, do not recognize stereoisomers such as cis- & trans-2-butene, and the wedge bond tool in the menu is absent.<br>
+Both chiral and achiral stereoisomers are handled by the Editor. The isomers (E/Z) of appropriately substituted double bonds are automatically recognized. Isomerism due to chiral centers is specified by the <B>wedge/hatched bond</B> tool. Repeated clicking on a bond alternates its orientation. Two of the bonds to a chiral center must lie in the plane of the drawing and must connect heavy atoms (not hydrogen). The remaining two bonds will then be drawn as wedge and hatched lines.  The (S)-2-bromo-2-chlorobutane example on the right shows a number of applications of this notation. In general, it is best to draw a carbon chain or ring in the reference plane and place substituents above or below that plane, as in the first drawing next to the Fischer formula. Do not try to draw Fischer projection formulas, the Editor will not recognize them. Do not draw hydrogen substituents at chiral centers, they are assigned an up or down orientation by default, as shown in the meso-2,3-butanediol example. </P>
+<P>Using the <b>Drawing Window</b>, practice drawing the structures shown on the right below. When you have finished drawing a structure, check it by pressing the <b>Check Molecule #</b> button.</P>
+<P> </P>
+<HR>
+<P><TABLE cellspacing=4><TR><TH ROWSPAN=11>
+ <applet code="JME.class" name="JME" archive="JME.jar" width=360, height=360> <param name= "options"  value="autoez">
+You have to enable Java and JavaScript on your machine !
+</applet><FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"> 
+<BR>
+Evaluation Window<BR>
+<TEXTAREA WRAP NAME="result" ROWS="4" COLS="40"></TEXTAREA><BR>
+<INPUT TYPE="RESET" VALUE="Clear"> &nbsp; &nbsp; &nbsp; <input type="button" value="Help" onClick="jmehelp();">
+</TH>
+<TD><B><span class="fc-blue">Example 1. </B></span></TD> <TD> (S)-2-bromo-2-chlorobutane (see above) </TD> <TD> <input type="hidden" value="" name="smiles"><input type="button" value="Check Molecule 1" onClick="submitSmiles();  processMolecule1(this.form);"></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+<TR ALIGN=center><TD><B><span class="fc-blue">Example 2. </B></span></TD> 
+<TD> meso-2,3-butanediol (see above) </TD> <TD> <input type="hidden" value="" name="smiles2"><input type="button" value="Check Molecule 2" onClick="submitSmiles();  processMolecule2(this.form);"></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+<TR ALIGN=center><TD><B><span class="fc-blue">Example 3. </B></span></TD> 
+<TD> <IMG SRC=../Images/4mec6grg.gif> </TD> <TD> <input type="hidden" value="" name="smiles3"><input type="button" value="Check Molecule 3" onClick="submitSmiles();  processMolecule3(this.form);"></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+<TR ALIGN=center><TD><B><span class="fc-blue">Example 4. </B></span></TD>
+<TD> <IMG SRC=../Images/c4clenol.gif> </TD> 
+<TD><input type="hidden" value="" name="smiles4"><input type="button" value="Check Molecule 4" onClick="submitSmiles();  processMolecule4(this.form);"></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+<TR ALIGN=center><TD><B><span class="fc-blue">Example 5. </B></span></TD>
+<TD> <IMG SRC=../Images/c6enamid.gif></TD> 
+<TD><input type="hidden" value="" name="smiles5"><input type="button" value="Check Molecule 5" onClick="submitSmiles();  processMolecule5(this.form);"></TD></TR>
+</TABLE><BR>
+
+
+</FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> <TABLE WIDTH=640><TR><TD>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl </TD>
+<TD> </TD><TD><IMG SRC="novartis.gif" ALT="Novartis logo"></TD></TR></TABLE>
+</BODY>
+</HTML>

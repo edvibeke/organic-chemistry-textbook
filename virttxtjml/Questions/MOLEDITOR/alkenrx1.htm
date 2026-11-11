@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var smiles = "";
+var jme = "0 0";
+var jmeans="0 0";
+var Txt="";
+var text = "";
+var anscnt=0;
+var noansw="You must try to answer this question three times before viewing the answer.";
+var sma="";
+var sma2="";
+var sma3="";
+var sma4="";
+var i="";
+var j="";
+var zz="";
+var smimg="";
+var rgimg="";
+var t= Math.floor(Math.random()*11);
+var s = Math.floor(Math.random()*10);
+
+	if (i!=0){
+	 i=0
+}
+	if (j!=0){
+	 j=0
+}
+
+ 		if (t==0){		
+smimg="<IMG SRC='../Images/cy6ene.gif'>";
+		i=1
+	}
+ 		if (t==1){
+smimg="<IMG SRC='../Images/t3hexene.gif'>";
+		i=2
+	}
+ 		if (t==2){
+smimg="<IMG SRC='../Images/vinylcy6.gif'>";
+		i=3
+	}
+ 		if (t==3){
+smimg="<IMG SRC='../Images/ethency6.gif'>";
+		i=4
+	}	
+ 		if (t==4){
+smimg="<IMG SRC='../Images/mecy6ene.gif'>";
+		i=5
+	}
+ 		if (t==5){
+smimg="<IMG SRC='../Images/menecy6.gif'>";
+		i=6
+	}					
+ 		if (t==6){		
+smimg="<IMG SRC='../Images/2phprene.gif'>";
+		i=7
+	}
+ 		if (t==7){
+smimg="<IMG SRC='../Images/c3hexene.gif'>";
+		i=8
+	}
+ 		if (t==8){
+smimg="<IMG SRC='../Images/menecy5.gif'>";
+		i=9
+	}
+ 		if (t==9){
+smimg="<IMG SRC='../Images/meallcl.gif'>";
+		i=10
+	}	
+ 		if (t==10){
+smimg="<IMG SRC='../Images/phcy6ene.gif'>";
+		i=11
+	}
+ 		if (s==0){
+rgimg="HCl in CH<SUB>2</SUB>Cl<SUB>2</SUB>"
+		j=1
+	}
+ 		if (s==1){
+rgimg="Br<SUB>2</SUB> in CH<SUB>2</SUB>Cl<SUB>2</SUB>"
+		j=2
+	}
+ 		if (s==2){
+rgimg="(i) Hg(OAc)<SUB>2</SUB> in H<SUB>2</SUB>O<BR>(ii) NaBH<SUB>4</SUB>"
+		j=3
+}
+ 		if (s==3){
+rgimg="KMnO<SUB>4</SUB> (aq.) pH=12"
+		j=4
+	}
+ 		if (s==4){
+rgimg="H<SUB>2</SUB><BR> (Pd or Pt catalyst)"
+		j=5
+}
+ 		if (s==5){
+rgimg="HOBr"
+		j=6
+	}
+ 		if (s==6){
+rgimg="(i) BH<SUB>3</SUB> in ether<BR>(ii) H<SUB>2</SUB>O<SUB>2</SUB> in NaOH soln."
+		j=7
+}
+		if (s==7){
+rgimg="HBr in benzene<BR>peroxides"
+		j=8
+	}
+ 		if (s==8){
+rgimg="C<SUB>6</SUB>H<SUB>5</SUB>CO<SUB>3</SUB>H<BR>in CH<SUB>2</SUB>Cl<SUB>2</SUB>"
+		j=9
+	}
+ 		if (s==9){
+rgimg="(i) OsO<SUB>4</SUB> in ether<BR>(ii) NaHSO<SUB>3</SUB> soln."
+		j=10
+	}
+
+document.write('<FORM>');
+document.write(' <CENTER><H3>Reactions of Alkenes</H3></CENTER>');
+document.write('<P><TABLE><TR valign=top><TD colspan=5>');
+document.write('<b><FONT COLOR="blue">Consider the possibility of the following reaction:</FONT></b></TD>');
+document.write('<TD WIDTH=100> &nbsp;</TD><TD> <table bgcolor="blue" border><tr><th><INPUT TYPE="button" VALUE="New Problem"; onClick="window.location.reload(true)"></th></tr></table></P>');
+document.write('</TD></TR>');
+document.write('<TR>');
+document.write('<TD nowrap>'+smimg+'</TD>');
+document.write('<TD>+</TD>');
+document.write('<TD nowrap>'+rgimg+'</TD>');
+document.write('<TD><IMG SRC="../Images/arrow1.gif"></TD>');
+document.write('<TD> <IMG SRC="../Images/question.gif"></TD>');
+document.write('</TR></TABLE></P>');
+document.write('</FORM>');
+
+function processJme() {
+  document.JME.readMolecule(document.form.jme_output.value);
+}
+function submitSmiles() {
+   var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+}
+
+function chkvar() { 
+document.JME.readMolecule(jme);
+}
+function shwans() { 
+if (anscnt>=3 ) {
+  document.JME.readMolecule(jmeans);
+text=text+"\rThe correct answer is displayed in the drawing window.";
+Txt="";
+	 document.form.result.value = Txt+"\r"+text ;
+}else{
+text=noansw;
+Txt="";
+	 document.form.result.value = Txt+"\r"+text ;
+}
+}
+function processAnsw(input) { 
+	anscnt=anscnt+1;
+	if (text!=""){
+	 text="";
+} 
+smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (text!="") {
+text="";
+}
+		if (i==1 && j==1) {
+sma="ClC1CCCCC1"; 
+jmeans="7 7 C 9.50 -7.31 C 9.50 -5.91 C 8.29 -5.21 C 7.08 -5.91 C 7.08 -7.31 C 8.29 -8.01 Cl 10.71 -5.21 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1";
+}
+		if (i==1 && j==2) {
+sma="Br[C@@H]1CCCC[C@H]1Br";
+sma2="Br[C@H]1CCCC[C@@H]1Br";
+jmeans="8 8 C 9.50 -7.31 C 9.50 -5.91 C 8.29 -5.21 C 7.08 -5.91 C 7.08 -7.31 C 8.29 -8.01 Br 10.71 -5.21 Br 10.71 -8.01 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 -1 1 8 -2";
+}
+		if (i==1 && j==3) {
+sma="OC1CCCCC1";
+jmeans="7 7 O 10.71 -5.21 C 7.08 -5.91 C 7.08 -7.31 C 8.29 -5.21 C 8.29 -8.01 C 9.50 -5.91 C 9.50 -7.31 1 6 1 2 3 1 2 4 1 3 5 1 4 6 1 5 7 1 6 7 1";  
+}
+		if (i==1 && j==4) {
+sma="O[C@@H]1CCCC[C@@H]1O";
+sma2="O[C@H]1CCCC[C@H]1O";
+jmeans="8 8 O 10.71 -5.21 O 10.71 -8.01 C 7.08 -5.91 C 7.08 -7.31 C 8.29 -5.21 C 8.29 -8.01 C 9.50 -5.91 C 9.50 -7.31 7 1 -1 8 2 -1 3 4 1 3 5 1 4 6 1 5 7 1 6 8 1 7 8 1";
+}
+		if (i==1 && j==5) {
+sma="C1CCCCC1";
+jmeans="6 6 C 7.24 -5.96 C 7.24 -7.36 C 8.46 -5.26 C 8.46 -8.06 C 9.67 -5.96 C 9.67 -7.36 1 2 1 1 3 1 2 4 1 3 5 1 4 6 1 5 6 1";
+}
+		if (i==1 && j==6) {
+sma="O[C@@H]1CCCC[C@H]1Br";
+sma2="O[C@H]1CCCC[C@@H]1Br";
+jmeans="8 8 C 7.24 -5.96 C 7.24 -7.36 C 8.46 -5.26 C 8.46 -8.06 C 9.67 -5.96 C 9.67 -7.36 Br 10.88 -5.26 O 10.88 -8.06 1 2 1 1 3 1 2 4 1 3 5 1 4 6 1 5 6 1 5 7 -1 6 8 -2";
+}
+		if (i==1 && j==7) {
+sma="OC1CCCCC1";
+jmeans="7 7 O 10.71 -5.21 C 7.08 -5.91 C 7.08 -7.31 C 8.29 -5.21 C 8.29 -8.01 C 9.50 -5.91 C 9.50 -7.31 1 6 1 2 3 1 2 4 1 3 5 1 4 6 1 5 7 1 6 7 1"; 
+}
+		if (i==1 && j==8) {
+sma="BrC1CCCCC1";
+jmeans="7 7 C 7.24 -5.96 C 7.24 -7.36 C 8.46 -5.26 C 8.46 -8.06 C 9.67 -5.96 C 9.67 -7.36 Br 10.88 -5.26 1 2 1 1 3 1 2 4 1 3 5 1 4 6 1 5 6 1 5 7 -1";
+}
+		if (i==1 && j==9) {
+sma="C2CC[C@H]1O[C@H]1C2";    
+sma2="C2CC[C@@H]1O[C@@H]1C2";  
+jmeans="7 8 C 7.24 -5.96 C 7.24 -7.36 C 8.46 -5.26 C 8.46 -8.06 C 9.67 -5.96 C 9.67 -7.36 O 10.88 -6.66 1 2 1 1 3 1 2 4 1 3 5 1 4 6 1 5 6 1 5 7 -1 6 7 -1"; 
+}
+		if (i==1 && j==10) {
+sma="O[C@@H]1CCCC[C@@H]1O";    
+sma2="O[C@H]1CCCC[C@H]1O"; 
+jmeans="8 8 O 10.71 -5.21 O 10.71 -8.01 C 7.08 -5.91 C 7.08 -7.31 C 8.29 -5.21 C 8.29 -8.01 C 9.50 -5.91 C 9.50 -7.31 7 1 -1 8 2 -1 3 4 1 3 5 1 4 6 1 5 7 1 6 8 1 7 8 1";      
+}
+
+		if (i==2 && j==1) {
+sma="CCCC(Cl)CC";
+jmeans="7 6 C 5.10 -6.61 C 6.31 -5.91 C 7.52 -6.61 C 8.73 -5.91 C 9.95 -6.61 C 11.16 -5.91 Cl 8.73 -4.51 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 4 7 1";     
+}
+		if (i==2 && j==2) {
+sma="CC[C@H](Br)[C@H](Br)CC";
+sma2="CC[C@@H](Br)[C@@H](Br)CC";
+jmeans="8 7 C 5.10 -6.61 C 6.31 -5.91 C 7.52 -6.61 C 8.73 -5.91 C 9.95 -6.61 C 11.16 -5.91 Br 8.73 -4.51 Br 7.52 -8.01 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 4 7 -1 3 8 -2";  
+}
+		if (i==2 && j==3) {
+sma="CCCC(O)CC";
+jmeans="7 6 C 5.10 -6.61 C 6.31 -5.91 C 7.52 -6.61 C 8.73 -5.91 C 9.95 -6.61 C 11.16 -5.91 O 8.73 -4.51 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 4 7 1";  
+}
+		if (i==2 && j==4) {
+sma="CC[C@H](O)[C@@H](O)CC";
+sma2="CC[C@@H](O)[C@H](O)CC";   
+jmeans="8 7 C 5.10 -6.61 C 6.31 -5.91 C 7.52 -6.61 C 8.73 -5.91 C 9.95 -6.61 C 11.16 -5.91 O 8.73 -4.51 O 7.52 -8.01 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 4 7 -1 3 8 -1";  
+}
+		if (i==2 && j==5) {
+sma="CCCCCC";
+jmeans="6 5 C 6.39 -7.12 C 7.60 -6.42 C 8.81 -7.12 C 10.02 -6.42 C 11.24 -7.12 C 12.45 -6.42 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1";  
+}
+		if (i==2 && j==6) {
+sma="CC[C@H](O)[C@H](Br)CC";
+sma2="CC[C@@H](O)[C@@H](Br)CC"; 
+jmeans="8 7 C 6.39 -7.12 C 7.60 -6.42 C 8.81 -7.12 C 10.02 -6.42 C 11.24 -7.12 C 12.45 -6.42 Br 8.81 -8.52 O 10.01 -5.02 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 3 7 -2 4 8 -1";    
+}
+		if (i==2 && j==7) {
+sma="CCCC(O)CC";
+jmeans="7 6 C 6.44 -7.12 C 7.66 -6.42 C 8.87 -7.12 C 10.08 -6.42 C 11.30 -7.12 C 12.51 -6.42 O 10.07 -5.02 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 4 7 1";  
+}
+		if (i==2 && j==8) {
+sma="CCCC(Br)CC";
+jmeans="7 6 C 6.44 -7.12 C 7.66 -6.42 C 8.87 -7.12 C 10.08 -6.42 C 11.30 -7.12 C 12.51 -6.42 Br 10.07 -5.02 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 4 7 1";  
+}
+		if (i==2 && j==9) {
+sma="CC[C@H]1O[C@@H]1CC";   
+sma2="CC[C@@H]1O[C@H]1CC";  
+jmeans="7 7 C 6.52 -5.64 C 7.91 -5.64 C 8.61 -6.85 C 10.01 -6.85 O 9.31 -8.06 C 10.72 -5.64 C 12.12 -5.63 1 2 1 3 2 -1 3 4 1 4 5 1 3 5 1 4 6 -2 6 7 1";  
+}
+		if (i==2 && j==10) {
+sma="CC[C@H](O)[C@@H](O)CC";
+sma2="CC[C@@H](O)[C@H](O)CC";   
+jmeans="8 7 C 5.10 -6.61 C 6.31 -5.91 C 7.52 -6.61 C 8.73 -5.91 C 9.95 -6.61 C 11.16 -5.91 O 8.73 -4.51 O 7.52 -8.01 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 4 7 -1 3 8 -1";  
+}
+
+		if (i==3 && j==1) {
+sma="CC(Cl)C1CCCCC1";  
+jmeans="9 9 C 9.00 -7.98 C 9.00 -6.58 C 7.78 -5.88 C 6.57 -6.58 C 6.57 -7.98 C 7.78 -8.68 C 10.21 -5.88 C 11.42 -6.58 Cl 10.21 -4.48 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 7 9 1";    
+}
+		if (i==3 && j==2) {
+sma="BrCC(Br)C1CCCCC1";
+jmeans="10 10 C 9.00 -7.98 C 9.00 -6.58 C 7.78 -5.88 C 6.57 -6.58 C 6.57 -7.98 C 7.78 -8.68 C 10.21 -5.88 C 11.42 -6.58 Br 10.21 -4.48 Br 11.42 -7.98 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 7 9 1 8 10 1";   
+}
+		if (i==3 && j==3) {
+sma="CC(O)C1CCCCC1";
+jmeans="9 9 C 9.00 -7.98 C 9.00 -6.58 C 7.78 -5.88 C 6.57 -6.58 C 6.57 -7.98 C 7.78 -8.68 C 10.21 -5.88 C 11.42 -6.58 O 10.21 -4.48 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 7 9 1";   
+}
+		if (i==3 && j==4) {
+sma="OCC(O)C1CCCCC1";
+jmeans="10 10 C 9.00 -7.98 C 9.00 -6.58 C 7.78 -5.88 C 6.57 -6.58 C 6.57 -7.98 C 7.78 -8.68 C 10.21 -5.88 C 11.42 -6.58 O 10.21 -4.48 O 12.63 -5.88 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 7 9 1 8 10 1";   
+}
+		if (i==3 && j==5) {
+sma="CCC1CCCCC1";
+jmeans="8 8 C 9.00 -7.98 C 9.00 -6.58 C 7.78 -5.88 C 6.57 -6.58 C 6.57 -7.98 C 7.78 -8.68 C 10.21 -5.88 C 11.42 -6.58 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1";   
+}
+		if (i==3 && j==6) {
+sma="OC(CBr)C1CCCCC1";
+jmeans="10 10 C 9.00 -7.98 C 9.00 -6.58 C 7.78 -5.88 C 6.57 -6.58 C 6.57 -7.98 C 7.78 -8.68 C 10.21 -5.88 C 11.42 -6.58 O 10.21 -4.48 Br 11.42 -7.98 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 7 9 1 8 10 1";   
+}
+		if (i==3 && j==7) {
+sma="OCCC1CCCCC1";
+jmeans="9 9 C 9.00 -7.98 C 9.00 -6.58 C 7.78 -5.88 C 6.57 -6.58 C 6.57 -7.98 C 7.78 -8.68 C 10.21 -5.88 C 11.42 -6.58 O 12.63 -5.88 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 8 9 1";   
+}
+		if (i==3 && j==8) {
+sma="BrCCC1CCCCC1";
+jmeans="9 9 C 9.00 -7.98 C 9.00 -6.58 C 7.78 -5.88 C 6.57 -6.58 C 6.57 -7.98 C 7.78 -8.68 C 10.21 -5.88 C 11.42 -6.58 Br 12.63 -5.88 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 8 9 1";   
+}
+		if (i==3 && j==9) {
+sma="C2CCC(C1CO1)CC2";
+jmeans="9 10 C 9.00 -7.98 C 9.00 -6.58 C 7.78 -5.88 C 6.57 -6.58 C 6.57 -7.98 C 7.78 -8.68 C 10.21 -5.88 C 11.42 -6.58 O 11.42 -5.18 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 7 9 1 8 9 1";   
+}
+		if (i==3 && j==10) {
+sma="OCC(O)C1CCCCC1";
+jmeans="10 10 C 9.00 -7.98 C 9.00 -6.58 C 7.78 -5.88 C 6.57 -6.58 C 6.57 -7.98 C 7.78 -8.68 C 10.21 -5.88 C 11.42 -6.58 O 10.21 -4.48 O 12.63 -5.88 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 7 9 1 8 10 1";   
+}
+
+		if (i==4 && j==1) {
+sma="CCC1(Cl)CCCCC1";  
+jmeans="9 9 C 9.00 -7.98 C 9.00 -6.58 C 7.78 -5.88 C 6.57 -6.58 C 6.57 -7.98 C 7.78 -8.68 C 10.21 -5.88 C 11.42 -6.58 Cl 9.01 -5.18 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 2 9 1"; 
+}
+		if (i==4 && j==2) {
+sma="CC(Br)C1(Br)CCCCC1";
+jmeans="10 10 C 9.00 -7.98 C 9.00 -6.58 C 7.78 -5.88 C 6.57 -6.58 C 6.57 -7.98 C 7.78 -8.68 C 10.21 -5.88 Br 11.42 -6.58 Br 9.01 -5.18 C 10.21 -4.48 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 2 9 1 7 10 1";   
+}
+		if (i==4 && j==3) {
+sma="CCC1(O)CCCCC1";
+jmeans="9 9 C 9.05 -7.98 C 9.05 -6.58 C 7.84 -5.88 C 6.63 -6.58 C 6.63 -7.98 C 7.84 -8.68 C 10.26 -5.88 C 11.48 -6.58 O 9.06 -5.18 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 2 9 1"; 
+}
+		if (i==4 && j==4) {
+sma="CC(O)C1(O)CCCCC1";
+jmeans="10 10 C 9.05 -7.98 C 9.05 -6.58 C 7.84 -5.88 C 6.63 -6.58 C 6.63 -7.98 C 7.84 -8.68 C 10.26 -5.88 C 11.48 -6.58 O 9.06 -5.18 O 10.26 -4.48 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 2 9 1 7 10 1"; 
+}
+		if (i==4 && j==5) {
+sma="CCC1CCCCC1";
+jmeans="8 8 C 9.39 -8.15 C 9.39 -6.75 C 8.18 -6.05 C 6.97 -6.75 C 6.97 -8.15 C 8.18 -8.85 C 10.60 -6.05 C 11.82 -6.75 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1"; 
+}
+		if (i==4 && j==6) {
+sma="CC(Br)C1(O)CCCCC1";
+jmeans="10 10 C 9.39 -8.15 C 9.39 -6.75 C 8.18 -6.05 C 6.97 -6.75 C 6.97 -8.15 C 8.18 -8.85 C 10.60 -6.05 Br 11.82 -6.75 O 9.39 -5.35 C 10.59 -4.65 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 2 9 1 7 10 1"; 
+}
+		if (i==4 && j==7) {
+sma="CC(O)C1CCCCC1";
+jmeans="9 9 C 9.28 -7.98 C 9.28 -6.58 C 8.07 -5.88 C 6.86 -6.58 C 6.86 -7.98 C 8.07 -8.68 C 10.49 -5.88 O 11.71 -6.58 C 10.48 -4.48 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 7 9 1"; 
+}
+		if (i==4 && j==8) {
+sma="CC(Br)C1CCCCC1";
+jmeans="9 9 C 9.28 -7.98 C 9.28 -6.58 C 8.07 -5.88 C 6.86 -6.58 C 6.86 -7.98 C 8.07 -8.68 C 10.49 -5.88 Br 11.71 -6.58 C 10.48 -4.48 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 7 9 1"; 
+}
+		if (i==4 && j==9) {
+sma="CC1OC12CCCCC2";  
+jmeans="9 10 C 9.28 -7.98 C 9.28 -6.58 C 8.07 -5.88 C 6.86 -6.58 C 6.86 -7.98 C 8.07 -8.68 C 10.49 -5.88 C 10.48 -4.48 O 10.49 -7.28 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 7 9 1 2 9 1"; 
+}
+		if (i==4 && j==10) {
+sma="CC(O)C1(O)CCCCC1";
+jmeans="10 10 C 9.05 -7.98 C 9.05 -6.58 C 7.84 -5.88 C 6.63 -6.58 C 6.63 -7.98 C 7.84 -8.68 C 10.26 -5.88 C 11.48 -6.58 O 9.06 -5.18 O 10.26 -4.48 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 2 9 1 7 10 1"; 
+}
+
+		if (i==5 && j==1) {
+sma="CC1(Cl)CCCCC1"; 
+jmeans="8 8 C 9.39 -7.81 C 9.39 -6.41 C 8.17 -5.71 C 6.96 -6.41 C 6.96 -7.81 C 8.17 -8.51 Cl 9.40 -5.01 C 10.72 -5.97 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 2 8 1"; 
+}
+		if (i==5 && j==2) {
+sma="C[C@@]1(Br)CCCC[C@H]1Br";
+sma2="C[C@]1(Br)CCCC[C@@H]1Br";   
+jmeans="9 9 C 9.39 -7.81 C 9.39 -6.41 C 8.17 -5.71 C 6.96 -6.41 C 6.96 -7.81 C 8.17 -8.51 Br 9.40 -5.01 C 10.72 -5.97 Br 10.60 -8.51 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 -1 2 8 1 1 9 -2"; 
+}
+		if (i==5 && j==3) {
+sma="CC1(O)CCCCC1";
+jmeans="8 8 C 9.39 -7.81 C 9.39 -6.41 C 8.17 -5.71 C 6.96 -6.41 C 6.96 -7.81 C 8.17 -8.51 C 10.60 -5.71 O 9.39 -5.01 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 2 8 1"; 
+}
+		if (i==5 && j==4) {
+sma="C[C@@]1(O)CCCC[C@@H]1O";
+sma2="C[C@]1(O)CCCC[C@H]1O";   
+jmeans="9 9 C 9.39 -7.81 C 9.39 -6.41 C 8.17 -5.71 C 6.96 -6.41 C 6.96 -7.81 C 8.17 -8.51 C 10.60 -5.71 O 9.39 -5.01 O 10.60 -8.51 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 2 8 -1 1 9 -1";   
+}
+		if (i==5 && j==5) {
+sma="CC1CCCCC1";
+jmeans="7 7 C 9.39 -7.81 C 9.39 -6.41 C 8.17 -5.71 C 6.96 -6.41 C 6.96 -7.81 C 8.17 -8.51 C 10.60 -5.71 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1"; 
+}
+		if (i==5 && j==6) {
+sma="C[C@]1(O)CCCC[C@@H]1Br";
+sma2="C[C@@]1(O)CCCC[C@H]1Br"; 
+jmeans="9 9 C 9.39 -7.81 C 9.39 -6.41 C 8.17 -5.71 C 6.96 -6.41 C 6.96 -7.81 C 8.17 -8.51 C 10.60 -5.71 O 9.39 -5.01 Br 10.60 -8.51 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 2 8 -2 1 9 -1";     
+}
+		if (i==5 && j==7) {
+sma="C[C@@H]1CCCC[C@H]1O";  
+sma2="C[C@H]1CCCC[C@@H]1O";  
+jmeans="8 8 C 9.39 -7.81 C 9.39 -6.41 C 8.17 -5.71 C 6.96 -6.41 C 6.96 -7.81 C 8.17 -8.51 C 10.60 -5.71 O 10.60 -8.51 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 -2 1 8 -1";   
+}
+		if (i==5 && j==8) {
+sma="CC1CCCCC1Br"; 
+jmeans="8 8 C 9.39 -7.81 C 9.39 -6.41 C 8.17 -5.71 C 6.96 -6.41 C 6.96 -7.81 C 8.17 -8.51 C 10.60 -5.71 Br 10.60 -8.51 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 1 8 1";   
+}
+		if (i==5 && j==9) {
+sma="C[C@@]12CCCC[C@@H]1O2";
+sma2="C[C@]12CCCC[C@H]1O2"; 
+jmeans="8 9 C 9.39 -7.81 C 9.39 -6.41 C 8.17 -5.71 C 6.96 -6.41 C 6.96 -7.81 C 8.17 -8.51 O 10.60 -7.11 C 10.07 -5.18 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 -1 1 7 -1 2 8 1";   
+}
+		if (i==5 && j==10) {
+sma="C[C@@]1(O)CCCC[C@@H]1O";
+sma2="C[C@]1(O)CCCC[C@H]1O";
+jmeans="9 9 C 9.39 -7.81 C 9.39 -6.41 C 8.17 -5.71 C 6.96 -6.41 C 6.96 -7.81 C 8.17 -8.51 C 10.60 -5.71 O 9.39 -5.01 O 10.60 -8.51 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 2 8 -1 1 9 -1";       
+}
+
+
+		if (i==6 && j==1) {
+sma="CC1(Cl)CCCCC1";
+jmeans="8 8 C 9.39 -7.81 C 9.39 -6.41 C 8.17 -5.71 C 6.96 -6.41 C 6.96 -7.81 C 8.17 -8.51 Cl 9.40 -5.01 C 10.72 -5.97 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 2 8 1"; 
+}
+		if (i==6 && j==2) {
+sma="BrCC1(Br)CCCCC1";
+jmeans="9 9 C 10.00 -7.47 C 10.00 -6.07 C 8.78 -5.37 C 7.57 -6.07 C 7.57 -7.47 C 8.78 -8.17 C 11.21 -5.37 Br 12.42 -6.07 Br 10.00 -4.67 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1 2 9 1"; 
+}
+		if (i==6 && j==3) {
+sma="CC1(O)CCCCC1";
+jmeans="8 8 C 10.00 -7.47 C 10.00 -6.07 C 8.78 -5.37 C 7.57 -6.07 C 7.57 -7.47 C 8.78 -8.17 C 11.21 -5.37 O 10.00 -4.67 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 2 8 1"; 
+}
+		if (i==6 && j==4) {
+sma="OCC1(O)CCCCC1";
+jmeans="9 9 C 10.00 -7.47 C 10.00 -6.07 C 8.78 -5.37 C 7.57 -6.07 C 7.57 -7.47 C 8.78 -8.17 C 11.21 -5.37 O 10.00 -4.67 O 12.42 -6.07 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 2 8 1 7 9 1"; 
+}
+		if (i==6 && j==5) {
+sma="CC1CCCCC1";
+jmeans="7 7 C 9.39 -7.81 C 9.39 -6.41 C 8.17 -5.71 C 6.96 -6.41 C 6.96 -7.81 C 8.17 -8.51 C 10.60 -5.71 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1"; 
+}
+		if (i==6 && j==6) {
+sma="OC1(CBr)CCCCC1";
+jmeans="9 9 C 10.00 -7.47 C 10.00 -6.07 C 8.78 -5.37 C 7.57 -6.07 C 7.57 -7.47 C 8.78 -8.17 C 11.21 -5.37 O 10.00 -4.67 Br 12.42 -6.07 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 2 8 1 7 9 1"; 
+}
+		if (i==6 && j==7) {
+sma="OCC1CCCCC1";
+jmeans="8 8 C 10.00 -7.47 C 10.00 -6.07 C 8.78 -5.37 C 7.57 -6.07 C 7.57 -7.47 C 8.78 -8.17 C 11.21 -5.37 O 12.42 -6.07 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1"; 
+}
+		if (i==6 && j==8) {
+sma="BrCC1CCCCC1";
+jmeans="8 8 C 10.00 -7.47 C 10.00 -6.07 C 8.78 -5.37 C 7.57 -6.07 C 7.57 -7.47 C 8.78 -8.17 C 11.21 -5.37 Br 12.42 -6.07 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 1"; 
+}
+		if (i==6 && j==9) {
+sma="C1CCC2(CC1)CO2";
+jmeans="8 9 C 10.00 -7.47 C 10.00 -6.07 C 8.78 -5.37 C 7.57 -6.07 C 7.57 -7.47 C 8.78 -8.17 C 11.40 -6.04 O 10.67 -4.84 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 2 8 1 7 8 1"; 
+}
+		if (i==6 && j==10) {
+sma="OCC1(O)CCCCC1";
+jmeans="9 9 C 10.00 -7.47 C 10.00 -6.07 C 8.78 -5.37 C 7.57 -6.07 C 7.57 -7.47 C 8.78 -8.17 C 11.21 -5.37 O 10.00 -4.67 O 12.42 -6.07 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 2 8 1 7 9 1"; 
+}
+
+		if (i==7 && j==1) {
+sma="CC(C)(Cl)c1ccccc1"; 
+jmeans="10 10 C 9.39 -8.15 C 9.39 -6.75 C 8.18 -6.05 C 6.97 -6.75 C 6.97 -8.15 C 8.18 -8.85 C 10.60 -6.05 C 11.82 -6.75 C 10.60 -4.65 Cl 11.81 -5.35 1 2 1 2 3 2 3 4 1 4 5 2 5 6 1 6 1 2 2 7 1 7 8 1 7 9 1 7 10 1"; 
+}
+		if (i==7 && j==2) {
+sma="CC(Br)(CBr)c1ccccc1";
+jmeans="11 11 C 9.39 -8.15 C 9.39 -6.75 C 8.18 -6.05 C 6.97 -6.75 C 6.97 -8.15 C 8.18 -8.85 C 10.60 -6.05 C 11.82 -6.75 C 10.60 -4.65 Br 11.81 -5.35 Br 11.83 -8.15 1 2 1 2 3 2 3 4 1 4 5 2 5 6 1 6 1 2 2 7 1 7 8 1 7 9 1 7 10 1 8 11 1"; 
+}
+		if (i==7 && j==3) {
+sma="CC(C)(O)c1ccccc1";
+jmeans="10 10 C 9.39 -8.15 C 9.39 -6.75 C 8.18 -6.05 C 6.97 -6.75 C 6.97 -8.15 C 8.18 -8.85 C 10.60 -6.05 C 11.82 -6.75 C 10.60 -4.65 O 11.81 -5.35 1 2 1 2 3 2 3 4 1 4 5 2 5 6 1 6 1 2 2 7 1 7 8 1 7 9 1 7 10 1"; 
+}
+		if (i==7 && j==4) {
+sma="CC(O)(CO)c1ccccc1";
+jmeans="11 11 C 9.39 -8.15 C 9.39 -6.75 C 8.18 -6.05 C 6.97 -6.75 C 6.97 -8.15 C 8.18 -8.85 C 10.60 -6.05 C 11.82 -6.75 C 10.60 -4.65 O 11.81 -5.35 O 11.83 -8.15 1 2 1 2 3 2 3 4 1 4 5 2 5 6 1 6 1 2 2 7 1 7 8 1 7 9 1 7 10 1 8 11 1"; 
+}
+		if (i==7 && j==5) {
+sma="CC(C)c1ccccc1"; 
+jmeans="9 9 C 8.94 -7.81 C 8.94 -6.41 C 7.73 -5.71 C 6.52 -6.41 C 6.52 -7.81 C 7.73 -8.51 C 10.15 -5.71 C 11.37 -6.41 C 10.15 -4.31 1 2 1 2 3 2 3 4 1 4 5 2 5 6 1 6 1 2 2 7 1 7 8 1 7 9 1"; 
+}
+		if (i==7 && j==6) {
+sma="CC(O)(CBr)c1ccccc1";
+jmeans="11 11 C 9.39 -8.15 C 9.39 -6.75 C 8.18 -6.05 C 6.97 -6.75 C 6.97 -8.15 C 8.18 -8.85 C 10.60 -6.05 C 11.82 -6.75 C 10.60 -4.65 O 11.81 -5.35 Br 11.83 -8.15 1 2 1 2 3 2 3 4 1 4 5 2 5 6 1 6 1 2 2 7 1 7 8 1 7 9 1 7 10 1 8 11 1"; 
+}
+		if (i==7 && j==7) {
+sma="CC(CO)c1ccccc1";
+jmeans="10 10 C 9.39 -8.15 C 9.39 -6.75 C 8.18 -6.05 C 6.97 -6.75 C 6.97 -8.15 C 8.18 -8.85 C 10.60 -6.05 C 11.82 -6.75 C 10.60 -4.65 O 11.83 -8.15 1 2 1 2 3 2 3 4 1 4 5 2 5 6 1 6 1 2 2 7 1 7 8 1 7 9 1 8 10 1"; 
+}
+		if (i==7 && j==8) {
+sma="CC(CBr)c1ccccc1";
+jmeans="10 10 C 9.39 -8.15 C 9.39 -6.75 C 8.18 -6.05 C 6.97 -6.75 C 6.97 -8.15 C 8.18 -8.85 C 10.60 -6.05 C 11.82 -6.75 C 10.60 -4.65 Br 11.83 -8.15 1 2 1 2 3 2 3 4 1 4 5 2 5 6 1 6 1 2 2 7 1 7 8 1 7 9 1 8 10 1"; 
+}
+		if (i==7 && j==9) {
+sma="CC2(c1ccccc1)CO2";
+jmeans="10 11 C 9.39 -8.20 C 9.39 -6.80 C 8.18 -6.10 C 6.97 -6.80 C 6.97 -8.20 C 8.18 -8.90 C 10.60 -6.10 C 11.82 -6.80 C 10.60 -4.70 O 11.81 -5.40 1 2 1 2 3 2 3 4 1 4 5 2 5 6 1 6 1 2 2 7 1 7 8 1 7 9 1 7 10 1 8 10 1"; 
+}
+		if (i==7 && j==10) {
+sma="CC(O)(CO)c1ccccc1";
+jmeans="11 11 C 9.39 -8.15 C 9.39 -6.75 C 8.18 -6.05 C 6.97 -6.75 C 6.97 -8.15 C 8.18 -8.85 C 10.60 -6.05 C 11.82 -6.75 C 10.60 -4.65 O 11.81 -5.35 O 11.83 -8.15 1 2 1 2 3 2 3 4 1 4 5 2 5 6 1 6 1 2 2 7 1 7 8 1 7 9 1 7 10 1 8 11 1"; 
+}
+
+
+		if (i==8 && j==1) {
+sma="CCCC(Cl)CC"; 
+jmeans="7 6 C 5.10 -6.61 C 6.31 -5.91 C 7.52 -6.61 C 8.73 -5.91 C 9.95 -6.61 C 11.16 -5.91 Cl 8.73 -4.51 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 4 7 1";     
+}
+		if (i==8 && j==2) {
+sma="CC[C@H](Br)[C@@H](Br)CC";
+sma2="CC[C@@H](Br)[C@H](Br)CC";    
+jmeans="8 7 C 6.00 -5.79 C 7.40 -5.79 C 8.10 -7.00 C 9.50 -7.00 Br 10.20 -8.21 C 10.20 -5.79 C 11.60 -5.79 Br 7.40 -8.21 1 2 1 2 3 1 3 4 1 4 5 -2 4 6 1 6 7 1 3 8 -1";  
+}
+		if (i==8 && j==3) {
+jmeans="7 6 C 5.10 -6.61 C 6.31 -5.91 C 7.52 -6.61 C 8.73 -5.91 C 9.95 -6.61 C 11.16 -5.91 O 8.73 -4.51 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 4 7 1";  
+sma="CCCC(O)CC";
+}
+		if (i==8 && j==4) {
+sma="CC[C@H](O)[C@H](O)CC";
+sma2="CC[C@@H](O)[C@@H](O)CC";    
+jmeans="8 7 C 6.00 -5.79 C 7.40 -5.79 C 8.10 -7.00 C 9.50 -7.00 O 10.20 -8.21 C 10.20 -5.79 C 11.60 -5.79 O 7.40 -8.21 1 2 1 2 3 1 3 4 1 4 5 -1 4 6 1 6 7 1 3 8 -1";
+}
+		if (i==8 && j==5) {
+sma="CCCCCC";
+jmeans="6 5 C 6.39 -7.12 C 7.60 -6.42 C 8.81 -7.12 C 10.02 -6.42 C 11.24 -7.12 C 12.45 -6.42 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1";  
+}
+		if (i==8 && j==6) {
+sma="CC[C@H](O)[C@@H](Br)CC";  
+sma2="CC[C@@H](O)[C@H](Br)CC";   
+jmeans="8 7 C 6.00 -5.79 C 7.40 -5.79 C 8.10 -7.00 C 9.50 -7.00 O 10.20 -8.21 C 10.20 -5.79 C 11.60 -5.79 Br 7.40 -8.21 1 2 1 2 3 1 3 4 1 4 5 -2 4 6 1 6 7 1 3 8 -1";   
+}
+		if (i==8 && j==7) {   // check answer
+sma="CCCC(O)CC";  
+jmeans="7 6 C 6.44 -7.12 C 7.66 -6.42 C 8.87 -7.12 C 10.08 -6.42 C 11.30 -7.12 C 12.51 -6.42 O 10.07 -5.02 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 4 7 1";  
+}
+		if (i==8 && j==8) {
+sma="CCCC(Br)CC";
+jmeans="7 6 C 6.44 -7.12 C 7.66 -6.42 C 8.87 -7.12 C 10.08 -6.42 C 11.30 -7.12 C 12.51 -6.42 Br 10.07 -5.02 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 4 7 1";  
+}
+		if (i==8 && j==9) {
+sma="CC[C@H]1O[C@H]1CC";   
+sma2="CC[C@@H]1O[C@@H]1CC"; 
+jmeans="7 7 C 6.00 -5.79 C 7.40 -5.79 C 8.10 -7.00 C 9.50 -7.00 C 10.20 -5.79 C 11.60 -5.79 O 8.80 -8.21 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 4 7 -1 3 7 -1";  
+}
+		if (i==8 && j==10) {
+sma="CC[C@H](O)[C@H](O)CC";
+sma2="CC[C@@H](O)[C@@H](O)CC";   
+jmeans="8 7 C 6.00 -5.79 C 7.40 -5.79 C 8.10 -7.00 C 9.50 -7.00 O 10.20 -8.21 C 10.20 -5.79 C 11.60 -5.79 O 7.40 -8.21 1 2 1 2 3 1 3 4 1 4 5 -1 4 6 1 6 7 1 3 8 -1"; 
+}
+
+		if (i==9 && j==1) {
+sma="CC1(Cl)CCCC1";
+jmeans="7 7 C 8.90 -7.40 C 9.72 -6.27 C 8.90 -5.14 C 7.57 -5.57 C 7.57 -6.97 C 10.77 -5.34 Cl 10.61 -7.36 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 2 6 1 2 7 1";  
+}
+		if (i==9 && j==2) {
+sma="BrCC1(Br)CCCC1";  
+jmeans="8 8 C 8.96 -7.35 C 9.78 -6.21 C 8.96 -5.08 C 7.62 -5.51 C 7.62 -6.91 Br 10.66 -7.30 C 11.03 -5.59 Br 11.03 -4.19 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 2 6 1 2 7 1 7 8 1";  
+}
+		if (i==9 && j==3) {
+sma="CC1(O)CCCC1";
+jmeans="7 7 C 8.96 -7.35 C 9.78 -6.21 C 8.96 -5.08 C 7.62 -5.51 C 7.62 -6.91 O 10.66 -7.30 C 11.03 -5.59 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 2 6 1 2 7 1";  
+}
+		if (i==9 && j==4) {
+sma="OCC1(O)CCCC1";
+jmeans="8 8 C 8.96 -7.35 C 9.78 -6.21 C 8.96 -5.08 C 7.62 -5.51 C 7.62 -6.91 O 10.66 -7.30 C 11.03 -5.59 O 11.03 -4.19 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 2 6 1 2 7 1 7 8 1";  
+}
+		if (i==9 && j==5) {
+sma="CC1CCCC1";
+jmeans="6 6 C 8.90 -7.40 C 9.72 -6.27 C 8.90 -5.14 C 7.57 -5.57 C 7.57 -6.97 C 11.12 -6.27 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 2 6 1";  
+}
+		if (i==9 && j==6) {
+sma="OC1(CBr)CCCC1";
+jmeans="8 8 C 8.96 -7.35 C 9.78 -6.21 C 8.96 -5.08 C 7.62 -5.51 C 7.62 -6.91 O 10.66 -7.30 C 11.03 -5.59 Br 11.03 -4.19 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 2 6 1 2 7 1 7 8 1";  
+}
+		if (i==9 && j==7) {
+sma="OCC1CCCC1";
+jmeans="7 7 C 8.84 -7.68 C 9.67 -6.55 C 8.84 -5.42 C 7.51 -5.85 C 7.51 -7.25 C 11.07 -6.55 O 11.77 -7.76 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 2 6 1 6 7 1";  
+}
+		if (i==9 && j==8) {
+sma="BrCC1CCCC1";
+jmeans="7 7 C 8.84 -7.68 C 9.67 -6.55 C 8.84 -5.42 C 7.51 -5.85 C 7.51 -7.25 C 11.07 -6.55 Br 11.77 -7.76 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 2 6 1 6 7 1";  
+}
+		if (i==9 && j==9) {
+sma="C1CCC2(C1)CO2";  
+jmeans="7 8 C 8.73 -7.68 C 9.55 -6.55 C 8.73 -5.42 C 7.40 -5.85 C 7.40 -7.25 C 10.73 -5.80 O 10.80 -7.19 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 2 6 1 6 7 1 2 7 1";    
+}
+		if (i==9 && j==10) {
+sma="OCC1(O)CCCC1";
+jmeans="8 8 C 8.96 -7.35 C 9.78 -6.21 C 8.96 -5.08 C 7.62 -5.51 C 7.62 -6.91 O 10.66 -7.30 C 11.03 -5.59 O 11.03 -4.19 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 2 6 1 2 7 1 7 8 1";  
+}
+
+		if (i==10 && j==1) {
+sma="CC(C)(Cl)CCl";
+jmeans="6 5 C 8.94 -6.77 C 10.34 -6.77 Cl 11.04 -7.99 C 8.24 -5.56 C 8.24 -7.99 Cl 7.54 -6.77 1 2 1 2 3 1 1 4 1 1 5 1 1 6 1"; 
+}
+		if (i==10 && j==2) {
+sma="CC(Br)(CCl)CBr";
+jmeans="7 6 C 8.94 -6.77 C 10.34 -6.77 Cl 11.04 -7.99 C 8.24 -5.56 C 8.24 -7.99 Br 7.54 -6.77 Br 8.94 -4.35 1 2 1 2 3 1 1 4 1 1 5 1 1 6 1 4 7 1"; 
+}
+		if (i==10 && j==3) {
+sma="CC(C)(O)CCl";
+jmeans="6 5 C 8.94 -6.77 C 10.34 -6.77 Cl 11.04 -7.99 C 8.24 -5.56 C 8.24 -7.99 O 7.54 -6.77 1 2 1 2 3 1 1 4 1 1 5 1 1 6 1"; 
+}
+		if (i==10 && j==4) {
+sma="CC(O)(CO)CCl";
+jmeans="7 6 C 8.94 -6.77 C 10.34 -6.77 Cl 11.04 -7.99 C 8.24 -5.56 C 8.24 -7.99 O 7.54 -6.77 O 8.94 -4.35 1 2 1 2 3 1 1 4 1 1 5 1 1 6 1 4 7 1"; 
+}
+		if (i==10 && j==5) {
+sma="CC(C)CCl";
+jmeans="5 4 C 8.77 -6.77 C 10.17 -6.77 Cl 10.87 -7.99 C 8.07 -5.56 C 8.07 -7.99 1 2 1 2 3 1 1 4 1 1 5 1"; 
+}
+		if (i==10 && j==6) {
+sma="CC(O)(CCl)CBr";
+jmeans="7 6 C 9.42 -6.70 C 10.82 -6.70 Cl 11.52 -7.92 C 8.72 -5.49 C 8.73 -7.91 O 8.02 -6.70 Br 9.42 -4.28 1 2 1 2 3 1 1 4 1 1 5 1 1 6 1 4 7 1"; 
+}
+		if (i==10 && j==7) {
+sma="CC(CO)CCl";
+jmeans="6 5 C 9.42 -6.70 C 10.82 -6.70 Cl 11.52 -7.92 C 8.72 -5.49 C 8.73 -7.91 O 9.42 -4.28 1 2 1 2 3 1 1 4 1 1 5 1 4 6 1"; 
+}
+		if (i==10 && j==8) {
+sma="CC(CCl)CBr";
+jmeans="56 5 C 9.42 -6.70 C 10.82 -6.70 Cl 11.52 -7.92 C 8.72 -5.49 C 8.73 -7.91 Br 9.42 -4.28 1 2 1 2 3 1 1 4 1 1 5 1 4 6 1"; 
+}
+		if (i==10 && j==9) {
+sma="CC1(CCl)CO1";
+jmeans="6 6 C 9.42 -6.70 C 10.82 -6.70 Cl 11.52 -7.92 O 8.72 -5.49 C 8.02 -6.70 C 9.38 -8.10 1 2 1 2 3 1 1 4 1 1 5 1 4 5 1 1 6 1"; 
+}
+		if (i==10 && j==10) {
+sma="CC(O)(CO)CCl";
+jmeans="7 6 C 8.94 -6.77 C 10.34 -6.77 Cl 11.04 -7.99 C 8.24 -5.56 C 8.24 -7.99 O 7.54 -6.77 O 8.94 -4.35 1 2 1 2 3 1 1 4 1 1 5 1 1 6 1 4 7 1"; 
+}
+
+		if (i==11 && j==1) {
+sma="ClC2(c1ccccc1)CCCCC2";  
+jmeans="13 14 C 9.28 -8.65 C 9.28 -7.25 C 8.06 -6.55 C 6.85 -7.25 C 6.85 -8.65 C 8.06 -9.35 C 10.49 -6.55 C 11.70 -7.25 C 12.91 -6.55 C 12.91 -5.15 C 11.70 -4.45 C 10.49 -5.15 Cl 9.28 -5.85 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 8 9 1 9 10 2 10 11 1 11 12 2 7 12 1 7 8 2 2 13 1"; 
+}
+		if (i==11 && j==2) {
+sma="Br[C@@H]1CCCC[C@]1(Br)c2ccccc2";  
+sma2="Br[C@H]1CCCC[C@@]1(Br)c2ccccc2"; 
+jmeans="14 15 C 9.28 -8.65 C 9.28 -7.25 C 8.06 -6.55 C 6.85 -7.25 C 6.85 -8.65 C 8.06 -9.35 C 10.49 -6.55 C 11.70 -7.25 C 12.91 -6.55 C 12.91 -5.15 C 11.70 -4.45 C 10.49 -5.15 Br 9.28 -5.85 Br 10.49 -9.35 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 8 9 1 9 10 2 10 11 1 11 12 2 7 12 1 7 8 2 2 13 -2 1 14 -1"; 
+}
+		if (i==11 && j==3) {
+sma="OC2(c1ccccc1)CCCCC2";
+jmeans="13 14 C 9.28 -8.65 C 9.28 -7.25 C 8.06 -6.55 C 6.85 -7.25 C 6.85 -8.65 C 8.06 -9.35 C 10.49 -6.55 C 11.70 -7.25 C 12.91 -6.55 C 12.91 -5.15 C 11.70 -4.45 C 10.49 -5.15 O 9.28 -5.85 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 8 9 1 9 10 2 10 11 1 11 12 2 7 12 1 7 8 2 2 13 1"; 
+}
+		if (i==11 && j==4) {
+sma="O[C@H]1CCCC[C@]1(O)c2ccccc2";  
+sma2="O[C@@H]1CCCC[C@@]1(O)c2ccccc2"; 
+jmeans="14 15 C 9.28 -8.65 C 9.28 -7.25 C 8.06 -6.55 C 6.85 -7.25 C 6.85 -8.65 C 8.06 -9.35 C 10.49 -6.55 C 11.70 -7.25 C 12.91 -6.55 C 12.91 -5.15 C 11.70 -4.45 C 10.49 -5.15 O 9.28 -5.85 O 10.49 -9.35 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 8 9 1 9 10 2 10 11 1 11 12 2 7 12 1 7 8 2 2 13 -1 1 14 -1"; 
+}
+		if (i==11 && j==5) {
+sma="c2ccc(C1CCCCC1)cc2";
+jmeans="12 13 C 8.72 -7.87 C 8.72 -6.47 C 7.50 -5.77 C 6.29 -6.47 C 6.29 -7.87 C 7.50 -8.57 C 9.93 -5.77 C 11.14 -6.47 C 12.35 -5.77 C 12.35 -4.37 C 11.14 -3.67 C 9.93 -4.37 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 8 9 1 9 10 2 10 11 1 11 12 2 7 12 1 7 8 2"; 
+}
+		if (i==11 && j==6) {
+sma="O[C@]2(c1ccccc1)CCCC[C@H]2Br";
+sma2="O[C@@]2(c1ccccc1)CCCC[C@@H]2Br"; 
+jmeans="14 15 C 9.28 -8.65 C 9.28 -7.25 C 8.06 -6.55 C 6.85 -7.25 C 6.85 -8.65 C 8.06 -9.35 C 10.49 -6.55 C 11.70 -7.25 C 12.91 -6.55 C 12.91 -5.15 C 11.70 -4.45 C 10.49 -5.15 O 9.28 -5.85 Br 10.49 -9.35 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 8 9 1 9 10 2 10 11 1 11 12 2 7 12 1 7 8 2 2 13 -2 1 14 -1"; 
+}
+		if (i==11 && j==7) {
+sma="O[C@H]1CCCC[C@@H]1c2ccccc2";
+sma2="O[C@@H]1CCCC[C@H]1c2ccccc2"; 
+jmeans="13 14 C 9.28 -8.54 C 9.28 -7.14 C 8.06 -6.44 C 6.85 -7.14 C 6.85 -8.54 C 8.06 -9.24 C 10.49 -6.44 C 11.70 -7.14 C 12.91 -6.44 C 12.91 -5.04 C 11.70 -4.34 C 10.49 -5.04 O 10.49 -9.24 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 -2 8 9 1 9 10 2 10 11 1 11 12 2 7 12 1 7 8 2 1 13 -1"; 
+}
+		if (i==11 && j==8) {    // check answer
+sma="BrC1CCCCC1c2ccccc2";   
+jmeans="13 14 Br 10.49 -9.24 C 12.91 -5.04 C 11.70 -4.34 C 12.91 -6.44 C 10.49 -5.04 C 11.70 -7.14 C 6.85 -8.54 C 6.85 -7.14 C 8.06 -9.24 C 8.06 -6.44 C 10.49 -6.44 C 9.28 -8.54 C 9.28 -7.14 1 12 1 2 3 1 2 4 2 3 5 2 4 6 1 5 11 1 6 11 2 7 8 1 7 9 1 8 10 1 9 12 1 10 13 1 11 13 1 12 13 1"; 
+ }
+		if (i==11 && j==9) {
+sma="c3ccc([C@@]12CCCC[C@@H]1O2)cc3";
+sma2="c3ccc([C@]12CCCC[C@H]1O2)cc3"; 
+jmeans="13 15 C 12.80 -5.04 C 12.80 -6.44 C 11.59 -4.34 C 11.59 -7.14 C 10.38 -5.04 C 6.74 -8.54 C 6.74 -7.14 C 7.95 -9.24 C 7.95 -6.44 C 10.38 -6.44 C 9.16 -8.54 C 9.16 -7.14 O 10.38 -7.84 1 2 2 1 3 1 2 4 1 3 5 2 4 10 2 5 10 1 6 7 1 6 8 1 7 9 1 8 11 1 9 12 1 10 12 1 11 12 1 12 13 -1 11 13 -1"; 
+}
+		if (i==11 && j==10) {
+sma="O[C@H]1CCCC[C@]1(O)c2ccccc2";  
+sma2="O[C@@H]1CCCC[C@@]1(O)c2ccccc2"; 
+jmeans="14 15 C 9.28 -8.65 C 9.28 -7.25 C 8.06 -6.55 C 6.85 -7.25 C 6.85 -8.65 C 8.06 -9.35 C 10.49 -6.55 C 11.70 -7.25 C 12.91 -6.55 C 12.91 -5.15 C 11.70 -4.45 C 10.49 -5.15 O 9.28 -5.85 O 10.49 -9.35 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 8 9 1 9 10 2 10 11 1 11 12 2 7 12 1 7 8 2 2 13 -1 1 14 -1"; 
+}
+
+		if ((i==1 && j==2)||(i==1 && j==4)||(i==1 && j==6)||(i==1 && j==10)||(i==2 && j==2)||(i==2 && j==4)||(i==2 && j==6)||(i==2 && j==10)||(i==5 && j==2)||(i==5 && j==4)||(i==5 && j==6)||(i==5 && j==7)||(i==5 && j==10)||(i==8 && j==2)||(i==8 && j==4)||(i==8 && j==6)||(i==8 && j==10)||(i==11 && j==2)||(i==11 && j==4)||(i==11 && j==6)||(i==11 && j==7)||(i==11 && j==10)) {
+text="This reagent adds in a stereospecific manner, so a single diastereomeric product is expected."
+}else{
+text=text
+}
+if (((smiles.indexOf("@",0)>=0)) && ((i==3)||(i==4)||(i==6)||(i==7)||(i==9)||(i==10))) {
+text="Do not use the wedge tool to show configuration, since the product is not a favored diastereomer among two or more."
+}
+if ((((smiles.indexOf("@",0)>=0))) && (((i==2)&&(j==7))||((i==2)&&(j==8))||((i==2)&&(j==3))||((i==2)&&(j==1))||((i==8)&&(j==1))||((i==8)&&(j==7))||((i==8)&&(j==3))||((i==8)&&(j==8))||((i==5)&&(j==1))||((i==5)&&(j==3))||((i==11)&&(j==1))||((i==11)&&(j==3)))) {
+text="Do not use the wedge tool to show configuration, since the product has no diastereomers."
+}
+		if ((i==5 && j==8)||(i==11 && j==8)) {
+text="Radicals invert rapidly and lose configurational integrity. Consequently, mixtures of diastereomers are formed."
+}else{
+text=text
+}
+		if (((i==2 && j==9)||(i==8 && j==9))&&((smiles.indexOf("@",0)<=0))){
+text="If a ring is present it should be drawn as a plane, with substituents attached by wedge or dashed bonds."
+}else{
+text=text
+}
+		if (((i==1 && j==9)||(i==5 && j==9)||(i==11 && j==9))&&((smiles.indexOf("@",0)<=0))){
+text="New bonds to the six-membered ring must be drawn as wedges or dashes."
+}else{
+text=text
+}
+
+
+if ((smiles==sma) || (smiles==sma2) || (smiles==sma3) || (smiles==sma4)) {
+var Txt="Correct Answer! \r";
+anscnt=3;
+	}else{
+var Txt="Wrong Answer! Try again. \r";
+}
+	 document.form.result.value = Txt + text;
+}
+// End of hide script comment. -->
+</SCRIPT>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<TITLE>Alkene Reactions</TITLE>
+<body>
+<P><TABLE WIDTH=940 CELLPADDING=6 ><TR valign=top>
+<TD><P>If you believe a reaction will take place, draw the structural formula for the chief organic product using the drawing window on the right. <span class="fc-maroon">If no reaction is expected, draw the starting alkene structure.</span> <BR>
+Check your answer by clicking the <B>Check Answer</B> button under the drawing window. A response will appear in the text box below.</P>
+<p><span class="fc-blue">A new problem will be displayed by clicking the <b>New Problem</b> button at the top of the page.</span></P></TD>
+<TH rowspan=2>
+<applet code="JME.class" name="JME" archive="JME.jar" width=354 height=346>
+<param name= "options"  value="multipart">
+You have to enable Java and JavaScript on your machine !
+</applet>
+<FORM METHOD="POST" NAME="form" ONSUBMIT="return false;">
+<input type="hidden" value="" name="smiles">
+<P> &nbsp; <INPUT TYPE="RESET" VALUE="Clear" onClick="document.JME.reset()"> &nbsp; &nbsp; &nbsp; <input type="button" value="Check Answer" onClick="submitSmiles(); processAnsw(this.form);">&nbsp; &nbsp; &nbsp; <INPUT TYPE='button' VALUE='Show Answer' onClick='shwans();'></P></TH></TR>
+<TR valign=top><TD>
+<P>The starting materials in all cases are <B>achiral</B> so any chiral products will be racemic. Do not try to draw a specific enantiomeric configuration. <BR>
+In some cases a specific diastereomeric product is formed, and this configuration should be designated by using the <B>wedge/hatched bond</B> tool on the left of the upper toolbar. Repeated clicking on a bond alternates its orientation. Two of the bonds to a chiral center must lie in the plane of the drawing and must connect heavy atoms (not hydrogen). The remaining two bonds may then be drawn as wedge or hatched lines. Do not draw hydrogen substituents at chiral centers, they are assigned an up or down orientation by default. In general, it is best to draw a carbon chain or ring in the reference plane and place substituents above or below that plane.<BR>
+In very few cases a mixture of diastereomeric products is formed. Do not try to draw configurations for these products, simply draw the constitutionally favored product without using wedge bonds.<br>
+ &nbsp; &nbsp; &nbsp; <TEXTAREA WRAP NAME="result" ROWS="5" COLS="64"></TEXTAREA><br>
+<span class="fc-maroon">To practice using the Molecular Editor <A 
+HREF="../MOLEDITOR/newprct.htm" 
+>Click Here</A></span></div>
+</P>
+</TD></TR></TABLE></P>
+<HR>
+<P><span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.
+<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl </span></P>
+</form>
+</BODY>
+</HTML>
+

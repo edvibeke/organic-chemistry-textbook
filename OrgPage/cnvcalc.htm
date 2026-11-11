@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+   
+<HTML>
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Styles/modern.css">
+
+<META NAME="author" content="The Edvibe Team">
+
+<Title>Energy Converter</Title>
+
+
+<script language=javascript> <!--Hide
+
+var txtf="";
+var txtw="";
+var txtn="";
+
+var f = 0;
+var w = 0;
+var n = 0;
+
+	function process(form){
+
+		if (form.frq[0].checked){
+f=1
+txtf=" MHz";
+}
+		if (form.frq[1].checked){
+f=1.0e-06
+txtf=" Hz";
+}
+		if (form.frq[2].checked){
+f=2.9979e+04
+txtf=" cm-1";
+}
+		if (form.frq[3].checked){
+f=1.59155e-07
+txtf=" rad/sec";
+}
+		if (form.wave[0].checked){
+w=1
+txtw=" m";
+}
+		if (form.wave[1].checked){
+w=1.0e-09
+txtw=" nm";
+}
+		if (form.wave[2].checked){
+w=1.0e-06
+txtw=" micron";
+}
+		if (form.wave[3].checked){
+w=1.0e-10
+txtw=" Angstrom";
+}
+		if (form.enrg[0].checked){
+n=1
+txtn=" eV";
+}
+		if (form.enrg[1].checked){
+n=96.4853
+txtn=" kJ/mole";
+}
+		if (form.enrg[2].checked){
+n=23.0605
+txtn=" kcal/mole";
+}
+		if (form.enrg[3].checked){
+n=0.0367498
+txtn=" hartree";
+}
+}
+
+function calc(input) {
+
+var txta="";
+var txtb="";
+var txtc="";
+
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+function fix(s){
+return s.replace(/[ ,\;]/g,"")  
+}
+
+if ((input.a.value != "" && input.b.value != "" && input.c.value != "")||(input.a.value != "" && input.b.value != "" && input.c.value == "")||(input.a.value != "" && input.b.value == "" && input.c.value != "")||(input.a.value == "" && input.b.value != "" && input.c.value != "")) {
+txta = "one entry only";
+input.a.value = txta;
+input.b.value = " ";
+input.c.value = " ";
+}
+
+if (input.a.value == "" && input.b.value == "" && input.c.value == "") {
+txta = "enter a number";
+txtb = "in one of these";
+txtc = "data locations";
+input.a.value = txta;
+input.b.value = txtb;
+input.c.value = txtc;
+}
+
+var aa=(input.a.value);
+var bb=(input.b.value);
+var cc=(input.c.value);
+
+if (input.a.value != "" && input.b.value == ""&& input.c.value == "") {
+var txtb = parseFloat((2.9979245e+08)/(aa*w*f))*10e-07;
+var txtbx= txtb.toExponential(4);
+txtbs=txtbx.toString()+" ";
+if ((txtbs.indexOf("e+2 ",1)>0 )||(txtbs.indexOf("e+1 ",1)>0 )||(txtbs.indexOf("e+0 ",1)>0 )||(txtbs.indexOf("e-1 ",1)>0 )||(txtbs.indexOf("e-2 ",1)>0 )) {
+txtbs=parseFloat(txtbs).toFixed(4)
+input.b.value =txtbs + txtw;
+}else{
+input.b.value = txtbx + txtw;
+}
+var txtc = parseFloat((aa*4.135669124e-09)*f*n);
+var txtcx= txtc.toExponential(4);
+txtcs=txtcx.toString()+" ";
+if ((txtcs.indexOf("e+2 ",1)>0 )||(txtcs.indexOf("e+1 ",1)>0 )||(txtcs.indexOf("e+0 ",1)>0 )||(txtcs.indexOf("e-1 ",1)>0 )||(txtcs.indexOf("e-2 ",1)>0 )) {
+txtcs=parseFloat(txtcs).toFixed(4)
+input.c.value =txtcs + txtn;
+}else{
+input.c.value = txtcx + txtn;
+}
+input.a.value=input.a.value + txtf;
+}
+
+
+if (input.a.value == "" && input.b.value != ""&& input.c.value == "") {
+var txta = parseFloat((2.9979245e+08)/(bb*f*w))*1.0e-06;
+var txtax= txta.toExponential(4);
+txtas=txtax.toString()+" ";
+if ((txtas.indexOf("e+2 ",1)>0 )||(txtas.indexOf("e+1 ",1)>0 )||(txtas.indexOf("e+0 ",1)>0 )||(txtas.indexOf("e-1 ",1)>0 )||(txtas.indexOf("e-2 ",1)>0 )) {
+txtas=parseFloat(txtas).toFixed(4)
+input.a.value =txtas + txtf;
+}else{
+input.a.value = txtax + txtf;
+}
+var txtc = parseFloat(((2.9979245e+08)/(bb*w))*4.135669124e-15*n);
+var txtcx= txtc.toExponential(4);
+txtcs=txtcx.toString()+" ";
+if ((txtcs.indexOf("e+2 ",1)>0 )||(txtcs.indexOf("e+1 ",1)>0 )||(txtcs.indexOf("e+0 ",1)>0 )||(txtcs.indexOf("e-1 ",1)>0 )||(txtcs.indexOf("e-2 ",1)>0 )) {
+txtcs=parseFloat(txtcs).toFixed(4)
+input.c.value =txtcs + txtn;
+}else{
+input.c.value = txtcx + txtn;
+}
+input.b.value=input.b.value + txtw;
+}
+
+if (input.a.value == "" && input.b.value == ""&& input.c.value != "") {
+var txta = parseFloat(((cc)*2.417988e+08)/(n*f));
+var txtax= txta.toExponential(4);
+txtas=txtax.toString()+" ";
+if ((txtas.indexOf("e+2 ",1)>0 )||(txtas.indexOf("e+1 ",1)>0 )||(txtas.indexOf("e+0 ",1)>0 )||(txtas.indexOf("e-1 ",1)>0 )||(txtas.indexOf("e-2 ",1)>0 )) {
+txtas=parseFloat(txtas).toFixed(4)
+input.a.value =txtas + txtf;
+}else{
+input.a.value = txtax + txtf;
+}
+var txtb = parseFloat((1.239842)/(cc*w)*n*1.0e-06);
+var txtbx= txtb.toExponential(4);
+txtbs=txtbx.toString()+" ";
+if ((txtbs.indexOf("e+2 ",1)>0 )||(txtbs.indexOf("e+1 ",1)>0 )||(txtbs.indexOf("e+0 ",1)>0 )||(txtbs.indexOf("e-1 ",1)>0 )||(txtbs.indexOf("e-2 ",1)>0 )) {
+txtbs=parseFloat(txtbs).toFixed(4)
+input.b.value =txtbs + txtw;
+}else{
+input.b.value = txtbx + txtw;
+}
+input.c.value=input.c.value + txtn;
+}
+}
+
+
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+	input.c.value="";
+}
+
+// -->
+</SCRIPT>
+
+<link rel="stylesheet" href="Styles/edvibe.css">
+<script src="Styles/edvibe.js" defer></script>
+</head>
+
+<body>
+<form>
+<p>To use the following calculator, first select the units for each entry. Then enter a number value in one of the display boxes, and press the <b>Calculate</b> button, The corresponding conversions will appear in exponential form in the remaining boxes. The exponential notation: e+08 for 10<sup>8</sup> and e-11 for 10<sup>-11</sup>, may be used for the initial input, but is not necessary. Note that commas will be eliminated, so when representing a decimal point they must be replaced by "<b>.</b>". 
+</p>
+<p><table cellpadding=9 align="center"><tr><td>
+<TABLE BORDER=9 BGCOLOR="#ffebcf" width=600><TR><TD>
+<TABLE CELLSPACING=4 CELLPADDING=3><TR ALIGN=center><TH COLSPAN=3 nowrap><H3>Frequency - Wavelength - Energy Converter</H3></TH></TR>
+<TR><TD><table cellpadding=3 border><tr><td nowrap><b>Frequency</b><br /><INPUT NAME="frq" TYPE="radio"  checked> MHz <br><INPUT NAME="frq" TYPE="radio"> Hz <br /><INPUT NAME="frq" TYPE="radio"> cm<sup>-1</sup><br /><INPUT NAME="frq" TYPE="radio"> rad sec<sup>-1</sup></td>
+<td nowrap><b>Wavelength</b><br><INPUT NAME="wave" TYPE="radio"  checked> meter<br /><INPUT NAME="wave" TYPE="radio"> nm <br /><INPUT NAME="wave" TYPE="radio"> micron</sup> <br /><INPUT NAME="wave" TYPE="radio">&#197;</sup></td>
+<td nowrap><b>Energy</b><br><INPUT NAME="enrg" TYPE="radio"  checked>eV<br /><INPUT NAME="enrg" TYPE="radio">kJ/mole <br /><INPUT NAME="enrg" TYPE="radio"> kcal/mole</sup><br /><INPUT NAME="enrg" TYPE="radio">hartrees</sup></td></tr></table>
+</TD>
+<TD nowrap> &nbsp; <INPUT TYPE="text" NAME="a"  SIZE="18"> <B>Frequency<BR><BR> &nbsp; <INPUT TYPE="text" NAME="b"  size="18"> Wavelength<BR><BR> &nbsp; <INPUT TYPE="text" NAME="c"  size="18"> Energy</B></TD></tr>
+<TR><TH><INPUT TYPE="button"  VALUE=" Calculate " onClick=" process(this.form);calc(this.form)"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <INPUT TYPE="button"  VALUE="Clear Input" onClick="clrtxt(this.form)"></TH><td> &nbsp; </td></TR></TABLE>
+</TD></TABLE></td></tr></table></p>
+<p><table align=center>
+<tr><th><span class="fs-4"> c = &#957; + &#955; </span></th><td> &nbsp; </td><th><span class="fs-4"> &#916;E = h &#8226; &#957; </span></th></tr>
+<tr><td colspan=3> &#957;  = frequency &nbsp;  &nbsp;  &#955; = wavelegth &nbsp;  &nbsp; c = speed of light </td></tr>
+</table> 
+<p> <br /> </p>
+</form>
+</body>
+</html>
+

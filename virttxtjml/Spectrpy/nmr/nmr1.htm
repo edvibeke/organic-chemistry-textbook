@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+
+<Title>NMR Spectroscopy</Title>
+
+
+
+
+<script language=javascript> <!--Hide
+
+var xx='<table align=center cellpadding=6 border BGCOLOR="#fafafa" width=98%><tr ><td><p>We would expect the nmr spectrum of two spin-coupled protons, A & B, to display a pair of doublets.  However, if the ratio of &#916;&#957; to J (both in Hz) decreases to less than 10 a significant distortion of this expected pattern will take place, as shown in the following diagram. By <FONT COLOR="brown">repeated clicking on the diagram</FONT> four examples of this behavior will be presented, starting with a compound in which &#916;&#957;/J = 7.9 and followed by cases having smaller ratios. The fourth example, 2-methyl-2-phenyl-1,3-propanediol is especially interesting.  Here, the two  identical methylene groups have a pair of <A HREF="../../suppmnt1.htm#nom1" target=new>diastereotopic</a> protons (H<sub>a</sub> & H<sub>b</sub>). Because these hydrogens have similar but different chemical shifts, the expected doublet pair experiences a second order distortion.<br /></p><center><A HREF="javascript:chngA()"><IMG SRC="Images/2norder1.gif" name="split"  BORDER=0></A></center> <p> Second order splitting distortions are not limited to single proton pairs. The following spectrum of 2-dimethylaminoethyl acetate shows what appears to be a well behaved pair of triplets coming from adjacent methylene groups. Such cases are often deceptively simple, and become very complex when &#916;&#957;/J is less than 10. <FONT COLOR="brown">Clicking on the diagram</FONT> will display a simple example.</p><center><A HREF="javascript:chngB()"><IMG SRC="Images/2ndordr1.gif" name="ordr"  BORDER=0></A></center><p>  </p> <center><INPUT TYPE="button" VALUE=" Close "  onClick="javascript:chngtxt(xy);window.location=&#39;#nmr4b&#39;"></center></td></tr></table>';
+
+var xy='<TABLE WIDTH=65% CELLPADDING=6 BORDER ALIGN=center><TR BGCOLOR="eeffdd"><TH><p> For additional examples of <b>Second Order</b> splitting patterns <A HREF="javascript:chngtxt(xx)">Click Here</A>.</p></TH></TR></TABLE>';
+
+function chngtxt(txt)   {
+document.getElementById('para1').innerHTML=txt;
+}
+
+var i=1;
+function chg1() {
+i=i+1
+document.images.enrg.src="Images/enrgdia"+i+".gif"
+if (i>=2) {
+i=0
+}
+}
+
+function chg2() {
+document.images.sweep.src="Images/sweep.gif";
+}
+
+function chg3() {
+document.images.sweep.src="Images/h-dispr2.gif";
+}
+
+var j=1;
+function chg4() {
+j=j+1
+document.images.shift.src="Images/nmrtotl"+j+".gif"
+if (j>=4) {
+j=0
+}
+}
+
+function disp1(spec) {
+document.images.examp1.src=spec+".gif"
+}
+function disp2(spec) {
+document.images.examp2.src=spec+".gif"
+}
+
+function chg5() {
+document.images.anisot.src="Images/anistrpy.gif";
+}
+
+function chg6() {
+document.images.dicle.src="Images/11cleth2.gif";
+}
+
+var m=1;
+function chg8() {
+m=m+1
+document.images.pascal.src="Images/pascltri"+m+".gif";
+if (m==2) {
+m=0
+}
+}
+
+
+function chg7() {
+document.images.prob.src="Images/nmrspc"+k+"2.gif";
+}
+
+var k=1;
+function chng7() {
+k=k+1
+document.images.prob.src="Images/nmrspc"+k+"1.gif";
+if (k==8) {
+k=0
+}
+}
+
+var l=1;
+function chngA() {
+l=l+1
+document.images.split.src="Images/2norder"+l+".gif";
+if (l>=5) {
+l=0
+}
+}
+
+var m=1;
+function chngB() {
+m=m+1
+document.images.ordr.src="Images/2ndordr"+m+".gif";
+if (m>=2) {
+m=0
+}
+}
+
+//STOP HIDING-->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<FORM>
+<A NAME="nmr1"></A>
+<div class="ctr"><H2><span class="fc-maroon">Nuclear Magnetic Resonance  Spectroscopy</span></H2></div>
+<p><b><span class="fc-maroon fs-5">&nbsp; &nbsp; &nbsp;   1. Background</span></b><br />
+Over the past fifty years nuclear magnetic resonance spectroscopy, commonly referred to as nmr, has become the preeminent technique for determining the structure of organic compounds. Of all the spectroscopic methods, it is the only one for which a complete analysis and interpretation of the entire spectrum is normally expected. Although larger amounts of sample are needed than for mass spectroscopy, nmr is non-destructive, and with modern instruments good data may be obtained from samples weighing less than a milligram.  <B>To be successful in using nmr as an analytical tool, it is necessary to understand the physical principles on which the methods are based</B>.</P>
+<P>The nuclei of many elemental isotopes have a characteristic spin (<B>I</B>). Some nuclei have integral spins (e.g. I = 1, 2, 3 ....), some have fractional spins (e.g. I = 1/2, 3/2, 5/2 ....), and a few have no spin, I = 0 (e.g. <SUP>12</SUP>C, <SUP>16</SUP>O, <SUP>32</SUP>S, ....). Isotopes of particular interest and use to organic chemists are <SUP>1</SUP>H, <SUP>13</SUP>C, <SUP>19</SUP>F and <SUP>31</SUP>P, all of which have I = 1/2. Since the analysis of this spin state is fairly straightforward, our discussion of nmr will be limited to  these and other I = 1/2 nuclei. </P>
+
+<p><TABLE WIDTH=60% CELLPADDING=6 BORDER ALIGN=center><TR BGCOLOR="eeffdd"><TH>
+For a table of nuclear spin characteristics <A HREF="nmr2.htm#nmr11">Click Here</A>.<BR>
+</TH></TR></TABLE></p>
+
+<A NAME="nmr1b"></A>
+<p><B><span class="fc-navy">The following features lead to the nmr phenomenon:</span></B></p>
+<p><div class="ctr"><TABLE CELLPADDING=6 WIDTH=760><TR><TD WIDTH=400><p>
+<B>1.</B> A spinning charge generates a magnetic field, as shown by the animation on the right.<BR>
+The resulting spin-magnet has a magnetic moment (<B>&#956;</B>) proportional to the spin.</p></TD>
+
+<TD VALIGN=top><IMG SRC="Images/nucspin1.gif" ></TD></TR>
+<TR><TD><p><B>2.</B> In the presence of an external magnetic field (<B>B<SUB>0</SUB></B>), two spin states exist, <B>+1/2</B> and <B>-1/2</B>.<BR>
+The magnetic moment of the lower energy +1/2 state is aligned with the external field, but that of the higher energy -1/2 spin state is opposed to the external field. Note that the arrow representing the external field points North.</p></TD>
+<TD VALIGN=top><IMG SRC="Images/nucspin2.gif"></TD></TR>
+<TR><TD COLSPAN=2><p><B>3.</B> The difference in energy between the two spin states is dependent on the external magnetic field strength, and is always very small. The following diagram illustrates that the two spin states have the same energy when the external field is zero, but diverge as the field increases. At a field equal to B<SUB>x</SUB> a formula for the energy difference is given (remember I = 1/2 and &#956; is the magnetic moment of the nucleus in the field).</p></TD></TR>
+
+<TR valign=top><TH COLSPAN=2><A HREF=" javascript:chg1();"><IMG SRC="Images/enrgdia1.gif" name="enrg" BORDER=0></A></TH></TR>
+<TR><TD COLSPAN=2><p>Strong magnetic fields are necessary for nmr spectroscopy. The international unit for magnetic flux is the tesla (<B>T</B>). The earth's magnetic field is not constant, but is approximately 10<SUP>-4</SUP> T at ground level. Modern nmr spectrometers use powerful magnets having fields of 1 to 20 T. Even with these high fields, the energy difference between the two spin states is less than 0.1 cal/mole. To put this in perspective, recall that infrared transitions involve 1 to 10 kcal/mole and electronic transitions are nearly 100 time greater.<BR>
+For nmr purposes, this small energy difference (&#916;E) is usually given as a frequency in units of MHz (10<SUP>6</SUP> Hz), ranging from 20 to 900 Mz, depending on the magnetic field strength and the specific nucleus being studied. Irradiation of a sample with radio frequency (rf) energy corresponding exactly to the spin state separation of a specific set of nuclei will cause excitation of those nuclei in the  +1/2 state to the higher -1/2 spin state. Note that this electromagnetic radiation falls in the <A HREF="../UV-Vis/spectrum.htm#uv2">radio and television broadcast spectrum</A>. Nmr spectroscopy is therefore the energetically mildest probe used to examine the structure of molecules. <BR>The nucleus of a hydrogen atom (the proton) has a magnetic moment &#956; = 2.7927, and has been studied more than any other nucleus. <span class="fc-brown">The previous diagram may be changed to display energy differences for the proton spin states (as frequencies) by mouse clicking anywhere within it</span>. </p></TD></TR>
+
+<TR><TD COLSPAN=2><p><B>4.</B> For spin 1/2 nuclei the energy difference between the two spin states at a given magnetic field strength will be proportional to their magnetic moments. For the four common nuclei noted above, the magnetic moments are: <SUP>1</SUP>H &#956; = 2.7927,  <SUP>19</SUP>F &#956; = 2.6273,   <SUP>31</SUP>P &#956; = 1.1305 & <SUP>13</SUP>C &#956; = 0.7022. These moments are in nuclear magnetons, which are 5.05078&#8226;10<sup>-27</sup> JT<sup>-1</sup>. The following diagram gives the approximate frequencies that correspond to the spin state energy separations for each of these nuclei in an external magnetic field of 2.35 T. The formula in the colored box shows the direct correlation of frequency (energy difference) with magnetic moment (h = Planck's constant = 6.626069&#8226;10<sup>-34</sup> Js).</p></TD></TR>
+
+<TR valign=top><TH COLSPAN=2><IMG SRC="Images/nucfreq1.gif"></TH></TR>
+</TABLE>
+</div></p><BR><BR>
+
+<A NAME="nmr2"></A>
+<p><b><span class="fc-maroon fs-5">&nbsp; &nbsp; &nbsp;   2. Proton NMR Spectroscopy</span></b><br />
+This important and well-established application of nuclear magnetic resonance will serve to illustrate some of the novel aspects of this method. To begin with, the nmr spectrometer must be tuned to a specific nucleus, in this case the proton. The actual procedure for obtaining the spectrum varies, but the simplest is referred to as the <B>continuous wave</B> (CW) method. A typical CW-spectrometer is shown in the following diagram. A solution of the sample in a uniform 5 mm glass tube is oriented between the poles of a powerful magnet, and is spun to average any magnetic field variations, as well as tube imperfections. Radio frequency radiation of appropriate energy is broadcast into the sample from an antenna coil (colored red). A receiver coil surrounds the sample tube, and emission of absorbed rf energy is monitored by dedicated electronic devices and a computer. An nmr spectrum is acquired by varying or sweeping the magnetic field over a small range while observing the rf signal from the sample. An equally effective technique is to vary the frequency of the rf radiation while holding the external field constant.</P>
+<p><TABLE WIDTH=90% CELLPADDING=6 BORDER ALIGN=center><TR BGCOLOR="eeffdd"><TH><p>
+For a description of the pulse Fourier transform technique, preferred by most spectroscopists over the older CW method, <A HREF="nmr2.htm#pulse">Click Here</A>.</p>
+
+</TH></TR></TABLE></p>
+<P ALIGN=center><IMG SRC="Images/spctrmtr.gif"></P>
+<P>As an example, consider a sample of water in a 2.3487 T external magnetic field, irradiated by 100 MHz radiation. If the magnetic field is smoothly increased to 2.3488 T, the hydrogen nuclei of the water molecules will at some point absorb rf energy and a resonance signal will appear. An animation showing this may be activated by clicking the <b>Show Field Sweep</b> button. The field sweep will be repeated three times, and the resulting resonance trace is colored red. For visibility, the water proton signal displayed in the animation is much broader than it would be in an actual experiment.</P> <br>
+<P ALIGN=center><IMG SRC="Images/sweep1.gif" name="sweep"></P>
+<div class="ctr"><p><INPUT TYPE="button"  NAME="answr" VALUE=" Show Field Sweep " onClick="chg2(this.form)"> &nbsp; &nbsp; <INPUT TYPE="button"  NAME="answr" VALUE="Show Different Protons" onClick="chg3(this.form)"></p></div>
+
+<A NAME="nmr2b"></A>
+<P>Since protons all have the same magnetic moment, we might expect all hydrogen atoms to give resonance signals at the same field / frequency values. Fortunately for chemistry applications, this is not true. By clicking the <b>Show Different Protons</b> button under the diagram, a number of representative proton signals will be displayed over the same magnetic field range. It is not possible, of course, to examine isolated protons in the spectrometer described above; but from independent measurement and calculation it has been determined that a naked proton would resonate at a lower field strength than the nuclei of covalently bonded hydrogens. With the exception of water, chloroform  and sulfuric acid, which are examined as liquids, all the other compounds are measured as gases.</p>
+
+<p><IMG SRC="Images/shield1.gif" ALIGN=right HSPACE=7 VSPACE=7></p>
+<p><B>Why should the proton nuclei in different compounds behave differently in the nmr experiment ?</B> <BR>The answer to this question lies with the electron(s) surrounding the proton in covalent compounds and ions. Since electrons are charged particles, they move in response to the external magnetic field (B<SUB>o</SUB>) so as to generate a secondary field that opposes the much stronger applied field. This secondary field <B>shields</B> the nucleus from the applied field, so B<SUB>o</SUB> must be increased in order to achieve resonance (absorption of rf energy). As illustrated in the drawing on the right, B<SUB>o</SUB> must be increased to compensate for the induced shielding field. In the upper diagram, those compounds that give resonance signals at the higher field side of the diagram (CH<SUB>4</SUB>, HCl, HBr and HI) have proton nuclei that are more shielded than those on the lower field (left) side of the diagram.  
+
+<BR>The magnetic field range displayed in the above diagram is very small compared with the actual field strength (only about 0.0042%). It is customary to refer to small increments such as this in units of <B>parts per million</B> (ppm). The difference between 2.3487 T and 2.3488 T is therefore about 42 ppm. Instead of designating a range of nmr signals in terms of magnetic field differences (as above), it is more common to use a frequency scale, even though the spectrometer may operate by sweeping the magnetic field.  Using this terminology, we would find that at 2.34 T the proton signals shown above extend over a 4,200 Hz range (for a 100 MHz rf frequency, 42 ppm is 4,200 Hz). Most organic compounds exhibit proton resonances that fall within a 12 ppm range (the shaded area), and it is therefore necessary to use very sensitive and precise spectrometers to resolve structurally distinct sets of hydrogen atoms within this narrow range. <span class="fc-green">In this respect it might be noted that the detection of a part-per-million difference is equivalent to detecting a 1 millimeter difference in distances of 1 kilometer</span>.
+</P><BR>
+
+<A NAME="nmr3"></A>
+<dir><H4><span class="fc-maroon">Chemical Shift</span></H4></dir>
+<P>Unlike infrared and uv-visible spectroscopy, where absorption peaks are uniquely located by a frequency or wavelength, the location of different nmr resonance signals is dependent on both the external magnetic field strength and the rf frequency. Since no two magnets will have exactly the same field, resonance frequencies will vary accordingly and an alternative method for characterizing and specifying the location of nmr signals is needed. This problem is illustrated by the eleven different compounds shown in the following diagram. Although the eleven resonance signals are distinct and well separated, an unambiguous numerical locator cannot be directly assigned to each.</P>
+<P ALIGN=center><A HREF=" javascript:chg4();"><IMG SRC="Images/nmrtotl1.gif"  name="shift" BORDER=0></A></P>
+<P>One method of solving this problem is to report the location of an nmr signal in a spectrum relative to a reference signal from a standard compound added to the sample. Such a reference standard should be chemically unreactive, and easily removed from the sample after the measurement.  Also, it should give a single sharp nmr signal that does not interfere with the resonances normally observed for organic compounds. <B>Tetramethylsilane</B>, (CH<SUB>3</SUB>)<SUB>4</SUB>Si, usually referred to as <B>TMS</B>, meets all these characteristics, and has become the reference compound of choice for proton and carbon nmr.<BR>
+
+Since the separation (or dispersion) of nmr signals is magnetic field dependent, one additional step must be taken in order to provide an unambiguous location unit. <span class="fc-brown">This is illustrated for the acetone, methylene chloride and benzene signals by clicking on the previous diagram</span>. To correct these frequency differences for their field dependence, we divide them by the spectrometer frequency (100 or 500 MHz in the example), <span class="fc-brown">as shown in a new display by again clicking on the diagram</span>. The resulting number would be very small, since we are dividing Hz by MHz, so it is multiplied by a million, as shown by the formula in the blue shaded box. Note that &#957;<SUB>ref</SUB> is the resonant frequency of the reference signal and &#957;<SUB>samp</SUB> is the frequency of the sample signal. This operation gives a locator number called the <B>Chemical Shift</B>, having units of parts-per-million (ppm), and designated by the symbol <B>&#948;</B> &nbsp;
+ <span class="fc-brown">Chemical shifts for all the compounds in the original display will be presented by a third click on the diagram</span>.</P>
+
+<P>The compounds referred to above share two common characteristics:</p><dir>
+<p><B>&#149; </B> The hydrogen atoms in a given molecule are all <A HREF="../../suppmnt1.htm#nom1">structurally equivalent</A>, averaged for fast conformational equilibria.  <BR> 
+<B>&#149; </B> The compounds are all liquids, save for neopentane which boils at 9 &deg;C and is a liquid in an ice bath.</p></dir>
+<P>The first feature assures that each compound gives a single sharp resonance signal. The second allows the pure (neat) substance to be poured into a sample tube and examined in a nmr spectrometer. In order to take the nmr spectra of a solid, it is usually necessary to dissolve it in a suitable solvent. Early studies used carbon tetrachloride for this purpose, since it has no hydrogen that could introduce an interfering signal.  Unfortunately, CCl<SUB>4</SUB>  is a poor solvent for many polar compounds and is also toxic. Deuterium labeled compounds, such as deuterium oxide (D<SUB>2</SUB>O), chloroform-d (DCCl<SUB>3</SUB>), benzene-d<SUB>6</SUB> (C<SUB>6</SUB>D<SUB>6</SUB>), acetone-d<SUB>6</SUB> (CD<SUB>3</SUB>COCD<SUB>3</SUB>) and DMSO-d<SUB>6</SUB> (CD<SUB>3</SUB>SOCD<SUB>3</SUB>) are now widely used as nmr solvents. Since the deuterium isotope of hydrogen has a different magnetic moment and spin, it is invisible in a spectrometer tuned to protons.</P>
+
+<p><TABLE WIDTH=60% CELLPADDING=6 BORDER ALIGN=center><TR BGCOLOR="eeffdd"><TH><p>
+For the properties of some common nmr solvents <A HREF="nmr2.htm#nmrsol">Click Here</A>.</p>
+</TH></TR></TABLE></p><BR>
+
+<A NAME="nmr3b"></A>
+<P>From the previous discussion and examples we may deduce that one factor contributing to chemical shift differences in proton resonance is the <A HREF="../../intro2.htm#strc3b"><B>inductive effect</B></A>. If the electron density about a proton nucleus is relatively high, the induced field due to electron motions will be stronger than if the electron density is relatively low. The shielding effect in such high electron density cases will therefore be larger, and a higher external field (B<SUB>o</SUB>) will be needed for the rf energy to excite the nuclear spin. Since silicon is less electronegative than carbon, the electron density about the methyl hydrogens in tetramethylsilane is expected to be greater than the electron density about the methyl hydrogens in neopentane (2,2-dimethylpropane), and the characteristic resonance signal from the silane derivative does indeed lie at a higher magnetic field. Such nuclei are said to be <B>shielded</B>. Elements that are more electronegative than carbon should exert an opposite effect (reduce the electron density); and, as the data in the following tables show, methyl groups bonded to such elements display lower field signals (they are <B>deshielded</B>). The deshielding effect of electron withdrawing groups is roughly  proportional to their electronegativity, as shown by the left table. Furthermore, if more than one such group is present, the deshielding is additive (table on the right), and proton resonance is shifted even further downfield.
+
+</P>
+<p><TABLE CELLPADDING=9 ALIGN=center><TR VALIGN=top>
+<TH nowrap><H4>Proton Chemical Shifts of Methyl Derivatives</H4>
+<TABLE CELLPADDING=3 WIDTH=360 BORDER>
+<TR BGCOLOR="ddeeff"><TH nowrap><p>Compound</p></TH>
+<TH nowrap><p>(C<span class="fc-red">H</span><SUB>3</SUB>)<SUB>4</SUB>C</p></TH> 
+<TH nowrap><p>(C<span class="fc-red">H</span><SUB>3</SUB>)<SUB>3</SUB>N</p></TH> 
+
+<TH nowrap><p>(C<span class="fc-red">H</span><SUB>3</SUB>)<SUB>2</SUB>O</p></TH> 
+<TH nowrap><p>C<span class="fc-red">H</span><SUB>3</SUB>F</p></TH></TR>
+<TR ALIGN=center><TH><p>&#948;</p></TH><TD>0.9</TD><TD>2.1</TD><TD>3.2</TD><TD>4.1</TD></TR>
+
+<TR BGCOLOR="ddeeff"><TH><p>Compound</p></TH><TH><p>(C<span class="fc-red">H</span><SUB>3</SUB>)<SUB>4</SUB>Si</p></TH> 
+<TH><p>(C<span class="fc-red">H</span><SUB>3</SUB>)<SUB>3</SUB>P</p></TH> 
+<TH><p>(C<span class="fc-red">H</span><SUB>3</SUB>)<SUB>2</SUB>S</p></TH> 
+
+<TH><p>C<span class="fc-red">H</span><SUB>3</SUB>Cl</p></TH></TR>
+<TR  ALIGN=center><TH><p>&#948;</p></TH><TD>0.0</TD><TD>0.9</TD><TD>2.1</TD><TD>3.0</TD></TR>
+</TABLE></TH>
+<TH width=30> </TH>
+
+<TH nowrap><H4>Proton Chemical Shifts (ppm)</H4>
+ <TABLE BORDER>
+
+<TR ALIGN=CENTER  BGCOLOR="ddeeff"><TH WIDTH=80 BGCOLOR="FFCC99" nowrap><p>Cpd. / Sub.</p></TH>
+<TH WIDTH=50><p>X=Cl</p></TH>
+<TH WIDTH=50><p>X=Br</p></TH>
+<TH WIDTH=50><p>X=I</p></TH>
+<TH WIDTH=50><p>X=OR</p></TH>
+<TH WIDTH=50><p>X=SR</p></TH></TR>
+<TR ALIGN=CENTER><TD  BGCOLOR="ddeeff"><p><B>C<span class="fc-red">H</span><SUB>3</SUB>X</B></p></TD>
+
+<TD>3.0</TD>
+<TD>2.7</TD>
+<TD>2.1</TD>
+<TD>3.1</TD>
+<TD>2.1</TD></TR>
+<TR ALIGN=CENTER><TD  BGCOLOR="ddeeff"><p>
+<B>C<span class="fc-red">H</span><SUB>2</SUB>X<SUB>2</SUB></B></p></TD>
+
+<TD>5.3</TD>
+<TD>5.0</TD>
+<TD>3.9</TD>
+<TD>4.4</TD>
+<TD>3.7</TD></TR>
+
+<TR ALIGN=CENTER><TD  BGCOLOR="ddeeff"><p><B>C<span class="fc-red">H</span>X<SUB>3</SUB></B></p></TD>
+<TD>7.3</TD>
+
+<TD>6.8</TD>
+<TD>4.9</TD>
+<TD>5.0</TD>
+<TD>&nbsp;</TD></TR>
+</TABLE></TH>
+</TR></TABLE></p>
+
+<A NAME="nmr3bb"></A>
+<P>The general distribution of proton chemical shifts associated with different functional groups is summarized in the following chart. Bear in mind that these ranges are approximate, and may not encompass all compounds of a given class. Note also that the ranges specified for OH and NH protons (colored orange) are wider than those for most CH protons. This is due to hydrogen bonding variations at different sample concentrations.</P>  
+</P>
+<div class="ctr"><p><TABLE><TR><TH COLSPAN=3><H3>Proton Chemical Shift Ranges*</H3></TH></TR>
+<TR><TH><p><span class="fc-purple">Low Field<BR>Region</span></p></TH><TD><P ALIGN=center><IMG SRC="Images/hnmr1.gif" ></TD>
+
+<TH><p><span class="fc-purple">High Field<BR>Region</span></p></TH></TR>
+<TR><TD> </TD><TD><p> &nbsp; <B>*</B> For samples in CDCl<SUB>3</SUB> solution.  The &#948; scale is relative to TMS at &#948; = 0.</p>
+
+</TD><TD> </TD></TR></TABLE></p></div>
+<P><span class="fc-green">To make use of a calculator that predicts aliphatic proton chemical shifts <A HREF=" http://www.colby.edu/chemistry/NMR/H1pred.html">Click Here</A>. This application was developed at Colby College.</span></P>
+
+<A NAME="nmr3c"></A><BR>
+<dir><H4><span class="fc-maroon">Signal Strength</span></H4></dir>
+<P>The magnitude or intensity of nmr resonance signals is displayed along the vertical axis of a spectrum, and is proportional to the molar concentration of the sample. Thus, a small or dilute sample will give a weak signal, and doubling or tripling the sample concentration increases the signal strength proportionally. If we take the nmr spectrum of equal molar amounts of benzene and cyclohexane in carbon tetrachloride solution, the resonance signal from cyclohexane will be twice as intense as that from benzene because cyclohexane has twice as many hydrogens per molecule. This is an important relationship when samples incorporating two or more different sets of hydrogen atoms are examined, since it allows the ratio of hydrogen atoms in each distinct set to be determined. To this end it is necessary to measure the relative strength as well as the chemical shift of the resonance signals that comprise an nmr spectrum. Two common methods of displaying the integrated intensities associated with a spectrum are illustrated by the following examples. In the three spectra in the top row, a horizontal integrator trace (light green) rises as it crosses each signal by a distance proportional to the signal strength. Alternatively, an arbitrary number, selected by the instrument's computer to reflect the signal strength, is printed below each resonance peak, as shown in the three spectra in the lower row. From the relative intensities shown here, together with the previously noted chemical shift correlations, the reader should be able to assign the signals in these spectra to the set of hydrogens that generates each. <span class="fc-brown">If you click on one of the spectrum signals (colored red) or on hydrogen atom(s) in the structural formulas the spectrum will be enlarged and the relationship will be colored blue</span>.<BR>
+<B>Hint:</B> When evaluating relative signal strengths, it is useful to set the smallest integration to unity and convert the other values proportionally.</P>
+
+	
+<BR CLEAR=ALL>
+<P><map name="nmr1">
+<AREA SHAPE="rect" COORDS="42,3,50,11" href="javascript:disp1('Images/nmrex12');">
+<AREA SHAPE="rect" COORDS="73,3,82,11" href="javascript:disp1('Images/nmrex12');">
+<AREA SHAPE="rect" COORDS="41,59,51,68" href="javascript:disp1('Images/nmrex12');">
+<AREA SHAPE="rect" COORDS="71,59,81,68" href="javascript:disp1('Images/nmrex12');">
+<AREA SHAPE="rect" COORDS="8,29,22,39" href="javascript:disp1('Images/nmrex13');">
+<AREA SHAPE="rect" COORDS="99,29,112,39" href="javascript:disp1('Images/nmrex13');">
+<AREA SHAPE="rect" COORDS="72,79,76,153" href="javascript:disp1('Images/nmrex12');">
+<AREA SHAPE="rect" COORDS="184,19,188,153" href="javascript:disp1('Images/nmrex13');">
+
+<AREA SHAPE="rect" COORDS="320,32,333,44" href="javascript:disp1('Images/nmrex14');">
+<AREA SHAPE="rect" COORDS="349,15,360,24" href="javascript:disp1('Images/nmrex15');">
+<AREA SHAPE="rect" COORDS="349,52,360,62" href="javascript:disp1('Images/nmrex15');">
+<AREA SHAPE="rect" COORDS="422,109,426,153" href="javascript:disp1('Images/nmrex14');">
+<AREA SHAPE="rect" COORDS="470,22,474,153" href="javascript:disp1('Images/nmrex15');">
+
+<AREA SHAPE="rect" COORDS="558,23,569,32" href="javascript:disp1('Images/nmrex17');">
+<AREA SHAPE="rect" COORDS="622,38,631,47" href="javascript:disp1('Images/nmrex16');">
+<AREA SHAPE="rect" COORDS="694,44,698,153" href="javascript:disp1('Images/nmrex16');">
+<AREA SHAPE="rect" COORDS="731,42,735,153" href="javascript:disp1('Images/nmrex17');">
+<AREA SHAPE="rect" COORDS="744,152,795,171" href="javascript:disp1('Images/nmrex11');">
+</map></p>
+<P ALIGN=center><IMG SRC="Images/nmrex11.gif" name="examp1" USEMAP="#nmr1" BORDER=0></P></div>
+
+<P><map name="nmr2">
+<AREA SHAPE="rect" COORDS="70,41,78,50" href="javascript:disp2('Images/nmrex22');">
+<AREA SHAPE="rect" COORDS="30,6,39,15" href="javascript:disp2('Images/nmrex23');">
+<AREA SHAPE="rect" COORDS="12,24,22,34" href="javascript:disp2('Images/nmrex23');">
+<AREA SHAPE="rect" COORDS="30,43,38,52" href="javascript:disp2('Images/nmrex23');">
+<AREA SHAPE="rect" COORDS="40,137,44,150" href="javascript:disp2('Images/nmrex22');">
+<AREA SHAPE="rect" COORDS="212,33,215,149" href="javascript:disp2('Images/nmrex23');">
+
+<AREA SHAPE="rect" COORDS="282,27,290,36" href="javascript:disp2('Images/nmrex24');">
+<AREA SHAPE="rect" COORDS="368,27,377,35" href="javascript:disp2('Images/nmrex25');">
+<AREA SHAPE="rect" COORDS="341,8,353,18" href="javascript:disp2('Images/nmrex26');">
+<AREA SHAPE="rect" COORDS="341,46,353,54" href="javascript:disp2('Images/nmrex26');">
+<AREA SHAPE="rect" COORDS="449,138,450,149" href="javascript:disp2('Images/nmrex24');">
+<AREA SHAPE="rect" COORDS="451,140,453,149" href="javascript:disp2('Images/nmrex25');">
+<AREA SHAPE="rect" COORDS="469,84,471,149" href="javascript:disp2('Images/nmrex26');">
+
+
+<AREA SHAPE="rect" COORDS="567,18,576,28" href="javascript:disp2('Images/nmrex27');">
+<AREA SHAPE="rect" COORDS="600,47,611,55" href="javascript:disp2('Images/nmrex28');">
+<AREA SHAPE="rect" COORDS="639,37,649,47" href="javascript:disp2('Images/nmrex29');">
+<AREA SHAPE="rect" COORDS="550,37,560,46" href="javascript:disp2('Images/nmrex30');">
+<AREA SHAPE="rect" COORDS="567,56,578,65" href="javascript:disp2('Images/nmrex30');">
+<AREA SHAPE="rect" COORDS="684,132,688,149" href="javascript:disp2('Images/nmrex27');">
+<AREA SHAPE="rect" COORDS="712,113,716,149" href="javascript:disp2('Images/nmrex28');">
+<AREA SHAPE="rect" COORDS="721,96,725,149" href="javascript:disp2('Images/nmrex29');">
+
+<AREA SHAPE="rect" COORDS="744,46,748,149" href="javascript:disp2('Images/nmrex30');">
+<AREA SHAPE="rect" COORDS="744,152,795,171" href="javascript:disp2('Images/nmrex21');">
+</map></p>
+<P ALIGN=center><IMG SRC="Images/nmrex21.gif" name="examp2" USEMAP="#nmr2" BORDER=0></P></div>
+
+<A NAME="nmr3d"></A><BR>
+
+<dir><H4><span class="fc-maroon">Hydroxyl Proton Exchange and the Influence of Hydrogen Bonding</span></H4></dir>
+<P>The last two compounds in the lower row are alcohols. The OH proton signal is seen at 2.37  &#948; in 2-methyl-3-butyne-2-ol, and at 3.87  &#948; in 4-hydroxy-4-methyl-2-pentanone, illustrating the wide range over which this chemical shift may be found. A six-membered ring intramolecular hydrogen bond in the latter compound is in part responsible for its low field shift, and will be shown by clicking on the hydroxyl proton. We can take advantage of <A HREF="../../alcohol1.htm#alcrx1">rapid OH exchange</A> with the deuterium of heavy water to assign hydroxyl proton resonance signals . As shown in the following equation, this removes the hydroxyl proton from the sample and its resonance signal in the nmr spectrum disappears. Experimentally, one simply adds a drop of heavy water to a chloroform-d solution of the compound and runs the spectrum again. The result of this exchange is displayed below. </P>
+
+<div class="ctr"><p><TABLE CELLPADDING=6>
+<TR ALIGN=center><TD>R-O-<span class="fc-blue">H</span> &nbsp; + &nbsp; <span class="fc-magenta">D</span><SUB>2</SUB>O  &nbsp; <IMG SRC="../../Images/arroweq3.gif"> &nbsp; R-O-<span class="fc-magenta">D</span> &nbsp; + &nbsp; <span class="fc-magenta">D</span>-O-<span class="fc-blue">H</span></TD></TR>
+
+<TR><TD><IMG SRC="Images/deutalc1.gif"></TD></TR>
+</TABLE> </p></div> 
+<P><B>Hydrogen bonding shifts the resonance signal of a proton to lower field ( higher frequency ).</B> Numerous experimental observations support this statement, and a few of these will be described here.</P>
+<p><TABLE ALIGN=right WIDTH=95%>
+<TR><TD><p><B>i) &nbsp; </B>The chemical shift of the hydroxyl hydrogen of an alcohol varies with concentration. Very dilute solutions of 2-methyl-2-propanol, (CH<SUB>3</SUB>)<SUB>3</SUB>COH, in carbon tetrachloride solution display a hydroxyl resonance signal having a relatively high-field chemical shift (< 1.0 &#948; ). In concentrated solution this signal shifts to a lower field, usually near 2.5 &#948;. </p></TD></TR>
+
+<TR><TD><p><B>ii) &nbsp; </B>The more acidic hydroxyl group of phenol generates a lower-field resonance signal, which shows a similar concentration dependence to that of alcohols.  OH resonance signals for different percent concentrations of phenol in chloroform-d are shown in the following diagram (C-H signals are not shown).</p> </TD></TR>
+<TR valign=top><TH><IMG SRC="Images/phenol.gif"></P></TH></TR>
+<TR><TD><p><B>iii) &nbsp; </B>Because of their favored <A HREF="../../crbacid1.htm#crbacd4a">hydrogen-bonded dimeric association</A>, the hydroxyl proton of carboxylic acids displays a resonance signal significantly down-field of other functions. For a typical acid it appears from 10.0 to 13.0 &#948; and is often broader than other signals. The spectra shown below for chloroacetic acid (left) and 3,5-dimethylbenzoic acid (right) are examples.</p></TD></TR>
+<TR><TD><TABLE><TR><TD ALIGN=left><IMG SRC="Images/clacetac.gif"></TD><TD ALIGN=right><IMG SRC="Images/2mebzacd.gif" ALIGN=right></TD></TR></TABLE></TD></TR>
+<TR><TD><p><B>iv) &nbsp; </B>Intramolecular hydrogen bonds, especially those defining a six-membered ring, generally display a very low-field proton resonance. The case of 4-hydroxypent-3-ene-2-one (the enol tautomer of 2,4-pentanedione) not only illustrates this characteristic, but also provides an instructive example of the sensitivity of the nmr experiment to dynamic change. In the nmr spectrum of the pure liquid, sharp signals from both the keto and enol tautomers are seen, their mole ratio being 4 <B>:</B> 21 (keto tautomer signals are colored purple). Chemical shift assignments for these signals are shown in the shaded box above the spectrum. The chemical shift of the hydrogen-bonded hydroxyl proton is &#948; 14.5, exceptionally downfield. We conclude, therefore, that the rate at which these tautomers interconvert is slow compared with the inherent time scale of nmr spectroscopy.</p></TD></TR>
+
+<TR valign=top><TH><IMG SRC="Images/acac2.gif"></P></TH></TR>
+<TR><TD><p>Two structurally equivalent structures may be drawn for the enol tautomer (in magenta brackets). If these enols were slow to interconvert, we would expect to see two methyl resonance signals associated with each, one from the allylic methyl and one from the methyl ketone. Since only one strong methyl signal is observed, we must conclude that the interconversion of the enols is very fast-so fast that the nmr experiment detects only a single time-averaged methyl group (50% &#945;-keto and 50% allyl).</p>
+</TD></TR></TABLE> </p><BR clear=all><BR>
+<P> Although hydroxyl protons have been the focus of this discussion, it should be noted that corresponding N-H groups in amines and amides also exhibit hydrogen bonding nmr shifts, although to a lesser degree. Furthermore, OH and NH groups can undergo rapid proton exchange with each other; so if two or more such groups are present in a molecule, the nmr spectrum will show a single signal at an average chemical shift. For example, 2-hydroxy-2-methylpropanoic acid, (CH<SUB>3</SUB>)<SUB>2</SUB>C(OH)CO<SUB>2</SUB>H, displays a strong methyl signal at &#948; 1.5 and a 1/3 weaker and broader OH signal at &#948; 7.3 ppm. Note that the average of the expected carboxylic acid signal (ca. 12 ) and the alcohol signal (ca. 2 ) is 7. Rapid exchange of these hydrogens with heavy water, as noted above, would cause the low field signal to disappear.</P>
+
+<p><TABLE WIDTH=65% CELLPADDING=6 BORDER ALIGN=center><TR BGCOLOR="eeffdd"><TH><p>
+For additional information about the influence of hydrogen bonding <A HREF="nmr2.htm#nmr15">Click Here</A>.</p>
+</TH></TR></TABLE></p>
+
+<A NAME="nmr3e"></A><BR>
+<dir><H4><span class="fc-maroon">&#960;-Electron Functions</span></H4></dir>
+<P>An examination of the proton chemical shift chart (<A HREF="#nmr3bb">above</A>) makes it clear that the inductive effect of substituents cannot account for all the differences in proton signals. In particular the low field resonance of hydrogens bonded to double bond or aromatic ring carbons is puzzling, as is the very low field signal from aldehyde hydrogens. The hydrogen atom of a terminal alkyne, in contrast, appears at a relatively higher field. All these anomalous cases seem to involve hydrogens bonded to pi-electron systems, and an explanation may be found in the way these pi-electrons interact with the applied magnetic field.<BR>
+Pi-electrons are more polarizable than are sigma-bond electrons, as addition reactions of electrophilic reagents to alkenes testify. Therefore, we should not be surprised to find that field induced pi-electron movement produces strong secondary fields that perturb nearby nuclei. The pi-electrons associated with a benzene ring provide a striking example of this phenomenon, as shown below. The electron cloud above and below the plane of the ring circulates in reaction to the external field so as to generate an opposing field at the center of the ring and a supporting field at the edge of the ring. This kind of spatial variation is called <B>anisotropy</B>, and it is common to nonspherical distributions of electrons, as are found in all the functions mentioned above. Regions in which the induced field supports or adds to the external field are said to be <B>deshielded</B>, because a slightly weaker external field will bring about resonance for nuclei in such areas. However, regions in which the induced field opposes the external field are termed <B>shielded</B> because an increase in the applied field is needed for resonance. Shielded regions are designated by a <B>plus sign</B>, and deshielded regions by a <B>negative sign</B>. <BR><span class="fc-brown">The anisotropy of some important unsaturated functions will be displayed by clicking on the benzene diagram below</span>. Note that the anisotropy about the triple bond nicely accounts for the relatively high field chemical shift of ethynyl hydrogens. The shielding & deshielding regions about the carbonyl group have been described in two ways, which alternate in the display.</P>
+
+<P ALIGN=center><A HREF=" javascript:chg5();"><IMG SRC="Images/benzene.gif" name="anisot"  BORDER=0></A></P>
+
+<TABLE WIDTH=96% CELLPADDING=6 BORDER ALIGN=center><TR BGCOLOR="eeffdd"><TH nowrap><p>
+For additional examples of chemical shift variation near strongly anisotropic groups <A HREF="nmr2.htm#nmr13">Click Here</A>.</p>
+</TH></TR></TABLE>
+<p>Sigma bonding electrons also have a less pronounced, but observable, anisotropic influence on nearby nuclei. This is seen in the small deshielding shift that occurs in the series C<span class="fc-red">H</span><sub>3</sub>&#8211;R, 
+R&#8211;C<span class="fc-red">H</span><sub>2</sub>&#8211;R, R<sub>3</sub>C<span class="fc-red">H</span>; as well as the deshielding of equatorial versus axial protons on a fixed cyclohexane ring.</p><br />
+
+<A NAME="nmr3f"></A>
+<dir><H4><span class="fc-maroon">Solvent Effects</span></H4></dir>
+<p>Chloroform-d (CDCl<sub>3</sub>) is the most common solvent for nmr measurements, thanks to its good solubilizing character and relative unreactive nature ( except for 1&#186; and 2&#186;-amines). As noted earlier, other deuterium labeled compounds, such as deuterium oxide (D<sub>2</sub>O), benzene-d6 (C<sub>6</sub>D<sub>6</sub>), acetone-d6 (CD<sub>3</sub>COCD<sub>3</sub>) and DMSO-d6 (CD<sub>3</sub>SOCD<sub>3</sub>) are also available for use as nmr solvents. Because some of these solvents have &#960;-electron functions and/or may serve as hydrogen bonding partners, the chemical shifts of different groups of protons may change depending on the solvent being used. The following table gives a few examples, obtained with dilute solutions at 300 MHz.</p>
+
+<table align="center" border width=680>
+<caption><b><span class="fs-4">Some Typical <sup>1</sup>H Chemical Shifts (&#948; values) in Selected Solvents </span></b></caption>
+<tr bgcolor="bbddff"><td bgcolor="ffffff"><table width=100%><tr bgcolor="bbddff"><th ><span class="fs-4">Solvent</span></th></tr><tr bgcolor="ffeecc"><th ><span class="fs-4">Compound</span></th></tr></table></td>
+<th width=80>CDCl<sub>3</sub></th><th width=80>C<sub>6</sub>D<sub>6</sub></th><th width=90>CD<sub>3</sub>COCD<sub>3</sub></th><th width=90>CD<sub>3</sub>SOCD<sub>3</sub></th><th width=90>CD<sub>3</sub>C&#8801;N</th><th width=80>D<sub>2</sub>O</th></td>
+
+<tr align=center valign=bottom><th bgcolor =" ffeecc">(CH<sub>3</sub>)<sub>3</sub>C&#8211;O&#8211;CH<sub>3</sub><br> <span class="fc-teal">
+C&#8211;CH<sub>3</sub><br>O&#8211;CH<sub>3</sub></span></th>
+
+<td>1.19<sub>&nbsp;</sub><br>3.22</td><td>1.07<sub>&nbsp;</sub><br>3.04</td><td>1.13<sub>&nbsp;</sub><br>3.13</td><td><sub>&nbsp;</sub>1.11<br>3.03</td><td>1.14<sub>&nbsp;</sub><br>3.13</td><td>1.21<sub>&nbsp;</sub><br>3.22</td></tr>
+<tr align=center valign=bottom><th bgcolor =" ffeecc">(CH<sub>3</sub>)<sub>3</sub>C&#8211;O&#8211;H<br> <span class="fc-teal">
+
+C&#8211;CH<sub>3</sub><br>O&#8211;H</span></th>
+<td>1.26<sub>&nbsp;</sub><br>1.65</td><td>1.05<sub>&nbsp;</sub><br>1.55</td><td>1.18<sub>&nbsp;</sub><br>3.10</td><td>1.11<sub>&nbsp;</sub><br>4.19</td><td>1.16<sub>&nbsp;</sub><br>2.18</td><td>---<br>---</td></tr>
+
+<tr align=center valign=bottom><th bgcolor =" ffeecc">C<sub>6</sub>H<sub>5</sub>CH<sub>3</sub><br>
+<span class="fc-teal">CH<sub>3</sub><br>C<sub>6</sub>H<sub>5</sub></span></th>
+<td>2.36<sub>&nbsp;</sub><br>7.15-7.20</td><td>2.11<sub>&nbsp;</sub><br>7.00-7.10</td><td>2.32<sub>&nbsp;</sub><br>7.10-7.20</td><td>2.30<sub>&nbsp;</sub><br>7.10-7.15</td><td>2.33<sub>&nbsp;</sub><br>7.15-7.30</td><td>---<br>---</td></tr>
+
+<tr align=center ><th bgcolor =" ffeecc" height=36>(CH<sub>3</sub>)<sub>2</sub>C=O
+</th><td>2.17</td><td>1.55</td><td>2.09</td><td>2.09</td><td>2.08</td><td>2.22</td></tr>
+</table>
+<p>For most of the above resonance signals and solvents the changes are minor, being on the order of &#177;0.1 ppm. However, two cases result in more extreme changes and these have provided useful applications in structure determination. First, spectra taken in benzene-d<sub>6</sub> generally show small upfield shifts of most C&#8211;H signals, but in the case of acetone this shift is about five times larger than normal. Further study has shown that carbonyl groups form weak &#960;&#8211;&#960; collision complexes with  benzene rings, that persist long enough to exert a significant shielding influence on nearby groups. In the case of substituted cyclohexanones, axial &#945;-methyl groups are shifted upfield by 0.2 to 0.3 ppm; whereas equatorial methyls are slightly deshielded (shift downfield by about 0.05 ppm). These changes are all relative to the corresponding chloroform spectra.<br>
+The second noteworthy change is seen in the spectrum of tert-butanol in DMSO, where the hydroxyl proton is shifted 2.5 ppm down-field  from where it is found in dilute chloroform solution. This is due to strong hydrogen bonding of the alcohol O&#8211;H to the sulfoxide oxygen, which not only de-shields the hydroxyl proton, but secures it from very rapid exchange reactions that prevent the display of spin-spin splitting. Similar but weaker hydrogen bonds are formed to the carbonyl oxygen of acetone and the nitrogen of acetonitrile. A useful application of this phenomenon is described <A HREF="nmr2.htm#nmr15">elsewhere in this text</A>.</p><br />
+
+<A NAME="nmr4"></A><BR>
+<dir><H4><span class="fc-maroon">Spin-Spin Interactions</span></H4></dir>
+<P>The nmr spectrum of 1,1-dichloroethane (below right) is more complicated than we might have expected from the previous examples. Unlike its 1,2-dichloro-isomer (below left), which displays a single resonance signal from the four structurally equivalent hydrogens, the two signals from the different hydrogens are split into close groupings of two or more resonances. This is a common feature in the spectra of compounds having different sets of hydrogen atoms bonded to adjacent carbon atoms. The signal splitting in proton spectra is usually small, ranging from fractions of a Hz to as much as 18 Hz, and is designated as <B>J</B> (referred to as the coupling constant). In the 1,1-dichloroethane example all the coupling constants are 6.0 Hz, <span class="fc-brown">as illustrated by clicking on the spectrum</span>.</P>
+<p><div class="ctr"><TABLE><TR><TD><IMG SRC="Images/12cleth.gif"></TD><TD WIDTH=60> </TD><TD><A HREF=" javascript:chg6();"><IMG SRC="Images/11cleth1.gif"  name="dicle" BORDER=0></A></TD></TR>
+<TR><TH><p>1,2-dichloroethane</p></TH><TH> </TH><TH><p>1,1-dichloroethane</p></TH></TR></TABLE></div></p>
+
+<A NAME="nmr4b"></A><BR>
+<P>The splitting patterns found in various spectra are easily recognized, provided the chemical shifts of the different sets of hydrogen that generate the signals differ by two or more ppm. The patterns are symmetrically distributed on both sides of the proton chemical shift, and the central lines are always stronger than the outer lines. The most commonly observed patterns have been given descriptive names, such as <B>doublet</B> (two equal intensity signals), <B>triplet</B> (three signals with an intensity ratio of 1:2:1) and <B>quartet</B> (a set of four signals with intensities of 1:3:3:1). Four such patterns are displayed in the following illustration. The line separation is always constant within a given multiplet, and is called the <B>coupling constant (J)</B>. The magnitude of J, usually given in units of Hz, is magnetic field independent. </P>
+<P ALIGN=center><IMG SRC="Images/patterns.gif"></P>
+<A NAME="nmr4bb"></A><BR>
+<P>The splitting patterns shown above display the ideal or "<B>First-Order</B>" arrangement of lines. This is usually observed if the spin-coupled nuclei have very different chemical shifts (i.e. &#916;&#957; is large compared to J). If the coupled nuclei have similar chemical shifts, the splitting patterns are distorted (second order behavior). In fact, signal splitting disappears if the chemical shifts are the same. Two examples that exhibit minor 2nd order distortion are shown below (both are taken at a frequency of 90 MHz). The ethyl acetate spectrum on the left displays the typical quartet and triplet of a substituted ethyl group. The spectrum of 1,3-dichloropropane on the right demonstrates that equivalent sets of hydrogens may combine their influence on a second, symmetrically located set. <BR>
+
+Even though the chemical shift difference between the A and B protons in the 1,3-dichloroethane spectrum is fairly large (140 Hz) compared with the coupling constant (6.2 Hz), some distortion of the splitting patterns is evident. The line intensities closest to the chemical shift of the coupled partner are enhanced. Thus the B set triplet lines closest to A are increased, and the A quintet lines nearest B are likewise stronger. A smaller distortion of this kind is visible for the A and C couplings in the ethyl acetate spectrum.</P> 
+
+<div class="ctr"><p><TABLE><TR><TD><IMG SRC="Images/etoac1.gif"></TD><TD WIDTH=25> </TD><TD><IMG SRC="Images/13clprop.gif"></TD></TR></TABLE></p></div>
+
+<p id="para1"><TABLE WIDTH=65% CELLPADDING=6 BORDER ALIGN=center><TR BGCOLOR="eeffdd"><TH><p>
+For additional examples of <b>Second Order</b> splitting patterns <A HREF="javascript:chngtxt(xx)">Click Here</A>.</p>
+</TH></TR></TABLE></p
+<A NAME="nmr4c"></A><BR>
+<P><B>What causes this signal splitting, and what useful information can be obtained from it ?</B> <BR>
+
+If an atom under examination is perturbed or influenced by a nearby nuclear spin (or set of spins), the observed nucleus responds to such influences, and its response is manifested in its resonance signal. This spin-coupling is transmitted through the connecting bonds, and it functions in both directions. Thus, when the perturbing nucleus becomes the observed nucleus, it also exhibits signal splitting with the same J. For spin-coupling to be observed, the sets of interacting nuclei must be bonded in relatively close proximity (e.g. vicinal and geminal locations), or be oriented in certain optimal and rigid configurations. Some spectroscopists place a number before the symbol J to designate the number of bonds linking the coupled nuclei (colored orange below). Using this terminology, a vicinal coupling constant is <SUP>3</SUP>J and a geminal constant is <SUP>2</SUP>J.</P>
+
+<P ALIGN=center><IMG SRC="Images/gemvic.gif"></P>
+<BR>
+<P><B>The following general rules summarize important requirements and characteristics for spin 1/2 nuclei :</B></P><dir>
+<p><B>1)</B> &nbsp; Nuclei having the same chemical shift (called <B>isochronous</B>) do not exhibit spin-splitting. They may actually be spin-coupled, but the splitting cannot be observed directly.<BR>
+
+<B>2)</B> &nbsp; Nuclei separated by three or fewer bonds (e.g. vicinal
+and geminal nuclei ) will usually be spin-coupled and will show mutual spin-splitting of the resonance signals (same J's), provided they have different chemical shifts. Longer-range coupling may be observed in molecules having rigid configurations of atoms.<BR>
+<B>3)</B> &nbsp; The magnitude of the observed spin-splitting depends on many factors and is given by the coupling constant <B>J</B> (units of Hz). J is the same for both partners in a spin-splitting interaction and is independent of the external magnetic field strength.<BR>
+<B>4)</B> &nbsp; The splitting pattern of a given nucleus (or set of
+equivalent nuclei) can be predicted by the <B>n+1 rule</B>, where n is the number of neighboring spin-coupled nuclei with the same (or very similar) Js. If there are 2 neighboring, spin-coupled, nuclei the observed signal is a triplet ( 2+1=3 ); if there are three spin-coupled neighbors the signal is a quartet ( 3+1=4 ). In all cases the central line(s) of the splitting pattern are stronger than those on the
+periphery. The intensity ratio of these lines is given by the numbers in Pascal's triangle. Thus a doublet has 1:1 or equal intensities, a triplet has an intensity ratio of 1:2:1, a quartet 1:3:3:1 etc. To see how the numbers in Pascal's triangle are related to the Fibonacci series <span class="fc-brown">click on the diagram</span>.</p></dir>
+
+<p><TABLE WIDTH=100%>
+<TR valign=top><TH><IMG SRC="Images/splitting.gif"></TH>
+<TH><A HREF=" javascript:chg8();"><IMG SRC="Images/pascltri1.gif" name="pascal"  BORDER=0></A></TH></TR>
+<TR><TD colspan=2><p>If a given nucleus is spin-coupled to two or more sets of neighboring nuclei by different J values, the n+1 rule does not predict the entire splitting pattern. Instead, the splitting due to one J set is added to that expected from the other J sets. Bear in mind that there may be fortuitous coincidence of some lines if a smaller J is a factor of a larger J.</p></TD></TR>
+<TR valign=top><TH colspan=2><IMG SRC="Images/splitting2.gif"></TH></TR>
+</TABLE></p>
+<BR CLEAR=all><P><BR></P>
+
+<A NAME="nmr4d"></A>
+<P><TABLE ALIGN="center"><caption><H4>Magnitude of Some Typical Coupling Constants</H4></caption>
+<TR valign=top><TH><IMG SRC="Images/jconstnt.gif"><</TH></TR></TABLE></P>
+<P>Spin 1/2 nuclei include <SUP>1</SUP>H, <SUP>13</SUP>C, <SUP>19</SUP>F & <SUP>31</SUP>P.  The spin-coupling interactions described above may occur between similar or dissimilar nuclei. If, for example, a <SUP>19</SUP>F is spin-coupled to a <SUP>1</SUP>H, both nuclei will appear as doublets having the same J constant. <SUP>&nbsp;</SUP> Spin coupling with nuclei having spin other than 1/2 is more complex and will not be discussed here.</P> 
+
+<P><span class="fc-green">To make use of a calculator that predicts first order splitting patterns <A HREF=" http://www.colby.edu/chemistry/NMR/jmmset.html">Click Here</A>. This application was developed at Colby College.</span></P>
+<p><TABLE WIDTH=65% CELLPADDING=6 BORDER ALIGN=center><TR BGCOLOR="eeffdd"><TH><p>
+For additional information about spin-spin coupling <A HREF="nmr2.htm#nmr16">Click Here</A>.</p>
+</TH></TR></TABLE></p>
+
+<A NAME="nmr5"></A><BR>
+<div class="ctr"><H3><span class="fc-maroon">Some Examples</span></H3></div>
+<P>Test your ability to interpret <SUP>1</SUP>H nmr spectra by analyzing the seven examples presented below. The seven spectra may be examined in turn by clicking the "<U>Toggle Spectra</U>" button. Try to associate each spectrum with a plausible structural formula. <BR>Although the first four cases are relatively simple, keep in mind that the integration values provide ratios, not absolute numbers. In two cases additional information from infrared spectroscopy is provided. When you have made an assignment you may check your answer by clicking on the spectrum itself. In the sixth example, a similar constitutional isomer cannot be ruled out by the data given. </P>
+
+<P ALIGN=center><A HREF=" javascript:chg7();"><IMG SRC="Images/nmrspc11.gif" name="prob" BORDER=0></A></P>
+<div class="ctr"><p><INPUT TYPE="button"  NAME="answr1" VALUE="Toggle Spectra" onClick="chng7(this.form)"></p></div>
+
+<p><TABLE WIDTH=65% CELLPADDING=6 BORDER ALIGN=center><TR BGCOLOR="#ffebcf"><TH><p>
+For a challenging problem having many spin couplings <A HREF="nmr2.htm#nmr18">Click Here</A>.</p>
+</TH></TR></TABLE></p><br />
+
+<A NAME="cnmr1"></A>
+<p><b><span class="fc-maroon fs-5">&nbsp; &nbsp; &nbsp;   3. Carbon NMR Spectroscopy</span></b><br />
+The power and usefulness of <SUP>1</SUP>H nmr spectroscopy as a tool for structural analysis should be evident from the past discussion. Unfortunately, when significant portions of a molecule lack C-H bonds, no information is forthcoming. Examples include polychlorinated compounds such as chlordane, polycarbonyl compounds such as croconic acid, and compounds incorporating triple bonds (structures below, orange colored carbons).</P>
+<P ALIGN=center><IMG SRC="Images/c-struc1.gif"></P>
+<P>Even when numerous C-H groups are present, an unambiguous interpretation of a proton nmr spectrum may not be possible. The following diagram depicts three pairs of isomers (A & B) which display similar proton nmr spectra. Although a careful determination of chemical shifts should permit the first pair of compounds (blue box) to be distinguished, the second and third cases (red & green boxes) might be difficult to identify by proton nmr alone.</P>
+<P ALIGN=center><IMG SRC="Images/c-struc2.gif"></P>
+<P>These difficulties would be largely resolved if the carbon atoms of a molecule could be probed by nmr in the same fashion as the hydrogen atoms. Since the major isotope of carbon (<SUP>12</SUP>C) has no spin, this option seems unrealistic. Fortunately, 1.1% of elemental carbon is the <SUP>13</SUP>C isotope, which has a spin I = 1/2, so in principle it should be possible to conduct a carbon nmr experiment. <span class="fc-green">It is worth noting here, that if much higher abundances of <SUP>13</SUP>C  were naturally present in all carbon compounds, proton nmr would become much more complicated due to large one-bond coupling of <SUP>13</SUP>C  and <SUP>1</SUP>H.</span></P> 
+
+
+<p><TABLE align=center cellpadding=9 bgcolor="#ffebcf" border><TR><TD nowrap><p><B>Many obstacles needed to be overcome before carbon nmr emerged as a routine tool :</B><BR>
+ &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  <B>i)</B> &nbsp; As noted, the abundance of <SUP>13</SUP>C in a sample is very low (1.1%), so higher sample concentrations are needed.<br>
+ &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  <B>ii)</B> &nbsp; The <SUP>13</SUP>C nucleus is over fifty times less sensitive than a proton in the nmr experiment, adding to the previous difficulty.<br>
+
+ &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  <B>iii)</B> &nbsp; Hydrogen atoms bonded to a <SUP>13</SUP>C atom split its nmr signal by 130 to 270 Hz, further complicating the nmr spectrum.</p></TD></TR></TABLE></p>
+<P>The most important operational technique that has led to successful and routine <SUP>13</SUP>C nmr spectroscopy is the use of high-field <A HREF="nmr2.htm#pulse">pulse technology</A> coupled with broad-band <A HREF="nmr2.htm#decoupl">heteronuclear decoupling</A> of all protons. The results of repeated pulse sequences are accumulated to provide improved signal strength. Also, for reasons that go beyond the present treatment, the decoupling irradiation enhances the sensitivity of carbon nuclei bonded to hydrogen. <BR>
+
+When acquired in this manner, the carbon nmr spectrum of a compound displays a single sharp signal for each structurally distinct carbon atom in a molecule (remember, the proton couplings have been removed). The spectrum of camphor, shown on the left below, is typical.  Furthermore, a comparison with the <SUP>1</SUP>H nmr spectrum on the right illustrates some of the advantageous characteristics of carbon nmr. The dispersion of <SUP>13</SUP>C chemical shifts is nearly twenty times greater than that for protons, and this together with the lack of signal splitting makes it more likely that every structurally distinct carbon atom will produce a separate signal. The only clearly identifiable signals in the proton spectrum are those from the methyl groups. The remaining protons have resonance signals between 1.0 and 2.8 ppm from TMS, and they overlap badly thanks to spin-spin splitting.</P>
+
+<p><TABLE CELLPADDING=7><TR><TH><IMG SRC="Images/ccamphor.gif"></TH><TH><IMG SRC="Images/hcamphor.gif"></TH></TR></TABLE></p>
+
+<A NAME="cnmr2"></A>
+<P>Unlike proton nmr spectroscopy, <B>the relative strength of carbon nmr signals are not normally proportional to the number of atoms generating each one</B>. Because of this, the number of discrete signals and their chemical shifts are the most important pieces of evidence delivered by a carbon spectrum. The general distribution of carbon chemical shifts associated with different functional groups is summarized in the following chart. Bear in mind that these ranges are approximate, and may not encompass all compounds of a given class. Note also that the over 200 ppm range of chemical shifts shown here is much greater than that observed for <A HREF="#nmr3bb">proton chemical shifts</A>. </P>  
+<div class="ctr"><p><TABLE><TR><TH COLSPAN=3><H3><SUP>13</SUP>C Chemical Shift Ranges<SUP>*</SUP></H3></TH></TR>
+
+<TR><TH><span class="fc-purple">Low Field<BR>Region</span></TH><TD><P ALIGN=center><IMG SRC="Images/cnmr1.gif" ></TD>
+<TH><span class="fc-purple">High Field<BR>Region</span></TH></TR>
+<TR><TD> </TD><TD><SUP>*</SUP> For samples in CDCl<SUB>3</SUB> solution.  The &#948; scale is relative to TMS at &#948;=0.
+</TD><TD> </TD></TR></TABLE></p></div>
+
+<P>The isomeric pairs previously cited as giving very similar proton nmr spectra are now seen to be distinguished by carbon nmr. In the example on the left below (blue box), cyclohexane and 2,3-dimethyl-2-butene both give a single sharp resonance signal in the proton nmr spectrum (the former at &#948; 1.43 ppm and the latter at 1.64 ppm). However, in its carbon nmr spectrum cyclohexane displays a single signal at &#948; 27.1 ppm, generated by the equivalent ring carbon atoms (colored blue); whereas the isomeric alkene shows two signals, one at &#948; 20.4 ppm from the methyl carbons (colored brown), and the other at 123.5 ppm (typical of the green colored sp<SUP>2</SUP> hybrid carbon atoms).</P>
+<P ALIGN=center><IMG SRC="Images/c-struc3.gif"></P>
+<P>The C<SUB>8</SUB>H<SUB>10</SUB> isomers in the center (red) box have pairs of <A HREF="../../suppmnt1.htm#nom1">homotopic</A> carbons and hydrogens, so symmetry should simplify their nmr spectra. The fulvene (isomer A) has five structurally different groups of carbon atoms (colored brown, magenta, orange, blue and green respectively) and should display five <SUP>13</SUP>C nmr signals (one near 20 ppm and the other four greater than 100 ppm). Although ortho-xylene (isomer B) will have a proton nmr very similar to isomer A, it should only display four <SUP>13</SUP>C nmr signals, originating from the four different groups of carbon atoms (colored brown, blue, orange and green). The methyl carbon signal will appear at high field (near 20 ppm), and the aromatic ring carbons will all give signals having &#948; > 100 ppm. Finally, the last isomeric pair, quinones A & B in the green box,  are easily distinguished by carbon nmr. Isomer A displays only four carbon nmr signals (&#948; 15.4, 133.4, 145.8 & 187.9 ppm); whereas, isomer B displays five signals (&#948; 15.9, 133.3, 145.8, 187.5 & 188.1 ppm), the additional signal coming from the non-identity of the two carbonyl carbon atoms (one colored orange and the other magenta).</P>
+
+<P> <BR> </P>
+<p><TABLE WIDTH=70% CELLPADDING=6 BORDER ALIGN=center><TR BGCOLOR="eeffdd"><TH><p>
+Variations of the <SUP>13</SUP>C nmr procedure described here can provide additional structural information.<BR><A HREF="nmr2.htm#cnmr2">Click Here</A> for an example.</p>
+</TH></TR></TABLE></p>
+
+</FORM>
+<HR>
+</FORM>
+
+<FORM NAME="info">
+<A  NAME="nmrprb">
+<BR><P><TABLE WIDTH="100%" CELLPADDING="2"><TR><TH BGCOLOR="green" ALIGN=center><b><span class="fc-white">Practice Problems</span></TD></b></TR></TABLE></P>
+<p>The following problems focus on concepts and facts associated with nmr spectroscopy. The first two questions ask you to identify structurally equivalent groups of hydrogen and carbon atoms. The third question concerns both <SUP>1</SUP>H  & <SUP>13</SUP>C nmr, and the fourth examines spin-splitting in proton nmr. The fifth & sixth questions require interpretation of a proton nmr spectrum. Questions 7, 8 & 9 present an assortment of unknowns for which a variety of spectroscopic data is given. Question 10 combines chemical and spectroscopic evidence for an unknown compound.
+</p><div class="ctr">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+			function jump()  {
+var loc=document.info.jumpMenu.options[document.info.jumpMenu.selectedIndex]
+.text;	
+  if  (loc == "Question I"){
+location="../../Questions/General/eqvgrp1.htm";
+}else   if  (loc == "Question 2"){
+location="../../Questions/General/eqvgrp2.htm";
+}else   if  (loc == "Question 3"){
+   location="../../Questions/Spectroscopy/nmr1/nmr1.htm";
+}else   if  (loc == "Question 4"){
+   location="../../Questions/Spectroscopy/nmrsplit.htm";
+}else   if  (loc == "Question 5"){
+   location="../../Questions/Spectroscopy/nmr2/nmrprb1a.htm";
+}else   if  (loc == "Question 6"){
+   location="../../Questions/Spectroscopy/nmr2/nmrprb1c.htm";
+}else   if  (loc == "Question 7"){
+   location="../../Questions/Spectroscopy/spectra2.htm";
+}else   if  (loc == "Question 8"){
+   location="../../Questions/Spectroscopy/spectra10.htm";
+}else   if  (loc == "Question 9"){
+   location="../../Questions/Spectroscopy/spectra11.htm";
+}else   if  (loc == "Question 10"){
+   location="../../Questions/Spectroscopy/molform2.htm";
+
+}
+}
+
+//STOP HIDING-->
+</SCRIPT>
+<INPUT TYPE="hidden" VALUE="choice">
+<SELECT NAME="jumpMenu" onChange="jump()">
+<OPTION SELECTED>Choose a Problem
+<OPTION>Question I
+<OPTION>Question 2
+<OPTION>Question 3
+<OPTION>Question 4
+<OPTION>Question 5
+<OPTION>Question 6
+<OPTION>Question 7
+<OPTION>Question 8
+<OPTION>Question 9
+<OPTION>Question 10
+ </SELECT>
+<P><TABLE BGCOLOR="ffebcf" CELLPADDING=7 BORDER=4><TR><TH><A HREF="../../Spectrpy/spectro.htm#contnt"><p>Return to Table of Contents</p></A></TH.></TR></TABLE></P></div>
+<p>This page is the property of The Edvibe Team. &nbsp; 
+Comments, questions and errors should
+be sent to <A HREF="mailto:contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<br />
+These pages are provided to the IOCD to assist in capacity building in chemical education.  05/05/2013</p>
+<P ALIGN=center><IMG SRC="../../Images/pixel.gif" HEIGHT= 200></P>
+
+</FORM>
+
+</BODY>
+</html>
+

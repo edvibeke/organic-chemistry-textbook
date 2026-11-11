@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var img1=new Image();										// variables for image switch
+var img2=new Image();
+		img1.src="../Images/terpene1.gif";
+		img2.src="../Images/terpene2.gif";
+var anscnt=0																										// other variables
+var answ="(1) E & G;\r"
+ + "(2) B (& E)\rSince E is not dividable into isopentane units, it cannot be joined head-to-tail.\r"
+
+var noansw="You must try to answer this question three times before viewing the answers."
+var j=0;
+var s=0;
+var t=0;
+var u=0;
+var v=0;
+var w=0;
+var x=0;
+var y=0;
+var z=0;
+// answer checking function
+function chkchg(input) {
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+var a1=input.a.value.toUpperCase().indexOf("E",0);	   // Set desired variables
+var a2=input.a.value.toUpperCase().indexOf("G",0);
+var b1=input.b.value.toUpperCase().indexOf("B",0);
+var b2=input.b.value.toUpperCase().indexOf("E",0);	
+anscnt=anscnt+1;
+	if (j!=0){
+	 j=0
+}
+	if (s!=0){
+	s=0
+}
+	if (t!=0){
+	 t=0
+}
+	if (u!=0){
+	u=0
+}
+	if (v!=0){
+	 v=0
+}
+	if (w!=0){
+	w=0
+}
+	if (x!=0){
+	 x=0
+}
+	if (y!=0){
+	y=0
+}
+	if (z!=0){
+	 z=0
+}
+
+
+
+if ( input.a.value == "") { 
+		j=j+1
+}
+if ( input.b.value == "") { 
+		j=j+1
+}
+
+	if (a1>=0)  { 
+		s=s+1
+}
+	if (a2>=0)  { 
+		s=s+1
+}
+	if (b1>=0)  { 
+		t=t+1
+}
+	if (b2>=0)  { 
+		t=t+1
+}
+
+var al=(input.a.value.length);
+var bl=(input.b.value.length);
+var tot=al+bl;
+var k=(s+t);
+var rsp="";
+var rsp2="";
+
+if (al>s) {
+var rsp=rsp + "(1),"								
+}
+if (bl>t) {
+var rsp=rsp + "(2),"
+}
+
+if (s<2) {   
+var rsp2=rsp2 + "(1),"								 
+}
+if (t<2) {
+var rsp2=rsp2 + "(2),"
+}
+
+if (rsp=="") {
+rsp="none";
+}
+if (rsp2=="") {
+rsp2="none";
+}
+
+
+if (j==2) {
+	var txt="You have not provided answers to any questions."; 
+anscnt=0
+}else{
+if   (k==4  && tot==4) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+anscnt=3
+}else{
+var txt="Your correct answers total: " + k +" \rQuestions you have answered incompletely are:" + rsp2+ " \rQuestions for which you have given incorrect answers are:" + rsp;
+
+}
+}
+input.result.value = txt;
+}
+// functions for showing answer, changing image & clearing text
+function giveansw(show) {
+if (anscnt>=3)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+
+function change() {
+if (anscnt>=3)  {
+document.images[0].src=img2.src;
+}
+}
+
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+	input.result.value=" ";
+}
+	//STOP HIDING-->
+</SCRIPT>
+<script id="qa-imgfallback">(function(){if(window.__qaImgFallback)return;window.__qaImgFallback=1;var BOX="display:inline-block;min-width:80px;min-height:24px;padding:6px 10px;margin:2px;border:1px dashed #b9c0c8;border-radius:6px;color:#7a828c;font:italic 13px/1.35 system-ui,Segoe UI,Arial,sans-serif;background:#f6f8fa;vertical-align:middle;text-align:center;";function ph(img){var p=img.__qaPh;if(!p){p=document.createElement("span");p.setAttribute("role","img");p.setAttribute("aria-label","Figure unavailable");p.style.cssText=BOX;p.textContent="Figure unavailable";img.__qaPh=p;if(img.parentNode)img.parentNode.insertBefore(p,img.nextSibling);}p.style.display="";img.style.display="none";img.setAttribute("data-qa-broken","1");}function ok(img){if(img.__qaPh)img.__qaPh.style.display="none";if(img.getAttribute("data-qa-broken")){img.style.display="";img.removeAttribute("data-qa-broken");}}function hook(img){if(img.__qaHooked)return;img.__qaHooked=1;img.addEventListener("error",function(){ph(this);},true);img.addEventListener("load",function(){ok(this);},true);if(img.complete&&img.naturalWidth===0&&img.getAttribute("src"))ph(img);}function scan(){var a=document.getElementsByTagName("img");for(var i=0;i<a.length;i++)hook(a[i]);}if(document.readyState!=="loading")scan();else document.addEventListener("DOMContentLoaded",scan);window.addEventListener("load",scan);})();</script><link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Terpene Structure</TITLE>
+<body>
+<A NAME="start"></A>
+<div class="ctr"><H3>Terpene Structure</H3></div>
+<p>The two questions <span class="fc-blue"><B>1</B></span> & <span class="fc-blue"><B>2</B></span> at the lower right refer to the group of terpenes shown on the left. Some of these natural products are readily disconnected into isopentane building blocks. Some cannot, because of alkyl shifts in the late stages of their biosynthesis. The acyclic terpenes may be divided into head-to-tail linked isoprenoids, and those that are not joined in that manner. Enter appropriate letters from <span class="fc-blue"><B>A</B></span> through <span class="fc-blue"><B>I</B></span> in each answer box. If no structure fits the description enter the letter <span class="fc-blue"><B>X</B></span>.  </p>
+ <FORM NAME="responses"> 
+<div class="ctr">
+<TABLE CELLPADDING=7><TR VALIGN=bottom>
+<TD><img src="../Images/terpene1.gif"></TD><TD> </TD>
+<TD><span class="fc-blue"><B>1. </B></span> &nbsp; Which cannot be dissected into isopentane segments? ..  <INPUT TYPE="text" NAME="a"  SIZE="6"><BR><BR> 
+<span class="fc-blue"><B>2. </B></span> &nbsp;  Which acyclic terpenes are not linked head-to-tail? &nbsp; ... &nbsp; <INPUT TYPE="text" NAME="b"  SIZE="6"><BR></TD></TR> 
+</TABLE></div>
+<hr>
+<table align="center"><tr><td> <INPUT TYPE="button"  VALUE=" Check Answer" onClick=" chkchg(this.form)"><br><br><INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clrtxt(this.form)"> </td>
+<td> &nbsp; <TEXTAREA  WRAP NAME="result"  ROWS="5"  COLS="52"> 
+</TEXTAREA> &nbsp; </td>
+<td> <br> <INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="change(this.form);giveansw (this.form) "></td></tr></table>
+ </FORM> <HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

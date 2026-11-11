@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+		 // Counting variables
+ var i=0
+ var j=0
+ var Txt1="Your total correct answers number:";
+ var Txt2="Your incorrect or missing answers number:";
+ var Txt4="";
+  var anscnt=0
+
+                         //Answer variables
+ var answ="(1) Identical: C&E; B&D\r    Conf.Isomers: A&B [or A&D] \r"
+ +"    Const.Isomers: A&C [or A&E; B&C; B&E; C&D; D&E]               "
+ + " -------------------------------------------------------\r"
+ +"(2) Identical: A&C; B&F\r    Config.Isomers: A&D [or C&D; A&E; C&E] \r"
+ +"    Conf.Isomers: D&E \r    Const.Isomers: A&B; A&F; C&B; C&F; D&B; D&F; E&B; E&F"
+
+  var noansw="You must try to answer these questions three times before viewing the answers."
+
+                         // Basic function code for problem 1
+ 
+ function strbx(input) {
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+
+
+var aa=input.a.value.toUpperCase().indexOf("A",0);	
+
+var ab=input.a.value.toUpperCase().indexOf("B",0);	
+
+var ac=input.a.value.toUpperCase().indexOf("C",0);
+
+var ad=input.a.value.toUpperCase().indexOf("D",0);
+
+var ae=input.a.value.toUpperCase().indexOf("E",0);
+
+var af=input.a.value.toUpperCase().indexOf("F",0);
+
+var ba=input.b.value.toUpperCase().indexOf("A",0);
+
+var bb=input.b.value.toUpperCase().indexOf("B",0);
+
+var bc=input.b.value.toUpperCase().indexOf("C",0);
+
+var bd=input.b.value.toUpperCase().indexOf("D",0);
+
+var be=input.b.value.toUpperCase().indexOf("E",0);
+
+ var bf=input.b.value.toUpperCase().indexOf("F",0);
+
+var ca=input.c.value.toUpperCase().indexOf("A",0);	
+
+var cb=input.c.value.toUpperCase().indexOf("B",0);	
+
+var cc=input.c.value.toUpperCase().indexOf("C",0);
+
+var cd=input.c.value.toUpperCase().indexOf("D",0);
+
+var ce=input.c.value.toUpperCase().indexOf("E",0);
+
+var cf=input.c.value.toUpperCase().indexOf("F",0);
+
+var da=input.d.value.toUpperCase().indexOf("A",0);
+
+var db=input.d.value.toUpperCase().indexOf("B",0);
+
+var dc=input.d.value.toUpperCase().indexOf("C",0);
+
+var dd=input.d.value.toUpperCase().indexOf("D",0);
+
+var de=input.d.value.toUpperCase().indexOf("E",0);
+
+ var df=input.d.value.toUpperCase().indexOf("F",0);
+var al=(input.a.value.length);
+var bl=(input.b.value.length);
+var cl=(input.c.value.length);
+var dl=(input.d.value.length);
+ anscnt=anscnt+1;
+
+if ((input.a.value=='') && (input.b.value=='') && (input.c.value=='') && (input.d.value=='') ) {
+ input.result.value = "You have not provided any answers.";
+anscnt=0
+		 }else{
+	if (i!=0){
+ 	 i=0
+ }
+ 	if (j!=0){
+ 	j=0
+ }
+
+  //  Change < & > to fit desired answers
+	if ((aa<=0 && ab<=0 && ac>=0 && ad<=0 && ae>=0 && af<=0) || (aa<=0 && ab>=0 && ac<=0 && ad>=0 && ae<=0 && af<=0)) {
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+}
+	if ((ba<=0 && bb<=0 && bc>=0 && bd<=0 && be>=0 && bf<=0) || (ba<=0 && bb>=0 && bc<=0 && bd>=0 && be<=0 && bf<=0)) {
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+ }
+	if ((ca>=0 && cb>=0 && cc<=0 && cd<=0 && ce<=0 && cf<=0) || (ca>=0 && cb<=0 && cc<=0 && cd>=0 && ce<=0 && cf<=0)) {
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+ }
+	if ((da>=0 && db<=0 && dc>=0 && dd<=0 && de<=0 && df<=0) || (da>=0 && db<=0 && dc<=0 && dd<=0 && de>=0 && df<=0)  ||
+	(da<=0 && db>=0 && dc>=0 && dd<=0 && de<=0 && df<=0) || (da<=0 && db>=0 && dc<=0 && dd<=0 && de>=0 && df<=0)  ||
+	(da<=0 && db<=0 && dc>=0 && dd>=0 && de<=0 && df<=0) || (da<=0 && db<=0 && dc<=0 && dd>=0 && de>=0 && df<=0) ) {
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+ }
+if ((al>2) || (bl>2) || (cl>2) || (dl>2)) {
+alert ("You have entered more than two letters in one of the answer boxes")
+}
+
+                          	    //Reporting code 
+  if (i==4)  {
+var Txt4 ="Congratulations!\rYou have answered all parts of Problem 1 correctly."
+input.result.value =Txt4;
+anscnt>=3
+}else{
+ var t=i + j
+ 	input.result.value =Txt1 +  i +"\r" + Txt2 + j;
+ }
+ }
+ }
+
+ 
+ function giveansw(show) {
+ if (anscnt>=3)  {
+ var txt=answ
+ 	}else{
+ var txt=noansw
+ 
+ }
+ show.result.value=txt
+ }
+ 
+ function clrbx(input) {   // Clear all text windows.
+ 	input.a.value="";	
+ 	input.b.value="";
+ 	input.c.value="";
+ 	input.d.value="";
+ 	input.result.value=" ";
+ }
+                        // Basic function code for problem 2 
+ function strbo(input) {
+input.e.value=fix(input.e.value)
+input.f.value=fix(input.f.value)
+input.g.value=fix(input.g.value)
+input.h.value=fix(input.h.value)
+input.i.value=fix(input.i.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+
+
+var ea=input.e.value.toUpperCase().indexOf("A",0);	
+
+var eb=input.e.value.toUpperCase().indexOf("B",0);	
+
+var ec=input.e.value.toUpperCase().indexOf("C",0);
+
+var ed=input.e.value.toUpperCase().indexOf("D",0);
+
+var ee=input.e.value.toUpperCase().indexOf("E",0);
+
+var ef=input.e.value.toUpperCase().indexOf("F",0);
+
+var fa=input.f.value.toUpperCase().indexOf("A",0);
+
+var fb=input.f.value.toUpperCase().indexOf("B",0);
+
+var fc=input.f.value.toUpperCase().indexOf("C",0);
+
+var fd=input.f.value.toUpperCase().indexOf("D",0);
+
+var fe=input.f.value.toUpperCase().indexOf("E",0);
+
+ var ff=input.f.value.toUpperCase().indexOf("F",0);
+
+var ga=input.g.value.toUpperCase().indexOf("A",0);	
+
+var gb=input.g.value.toUpperCase().indexOf("B",0);	
+
+var gc=input.g.value.toUpperCase().indexOf("C",0);
+
+var gd=input.g.value.toUpperCase().indexOf("D",0);
+
+var ge=input.g.value.toUpperCase().indexOf("E",0);
+
+var gf=input.g.value.toUpperCase().indexOf("F",0);
+
+var ha=input.h.value.toUpperCase().indexOf("A",0);
+
+var hb=input.h.value.toUpperCase().indexOf("B",0);
+
+var hc=input.h.value.toUpperCase().indexOf("C",0);
+
+var hd=input.h.value.toUpperCase().indexOf("D",0);
+
+var he=input.h.value.toUpperCase().indexOf("E",0);
+
+ var hf=input.h.value.toUpperCase().indexOf("F",0);
+
+var ia=input.i.value.toUpperCase().indexOf("A",0);	
+
+var ib=input.i.value.toUpperCase().indexOf("B",0);	
+
+var ic=input.i.value.toUpperCase().indexOf("C",0);
+
+var id=input.i.value.toUpperCase().indexOf("D",0);
+
+var ie=input.i.value.toUpperCase().indexOf("E",0);
+
+var iz=input.i.value.toUpperCase().indexOf("F",0);
+var el=(input.e.value.length);
+var fl=(input.f.value.length);
+var gl=(input.g.value.length);
+var hl=(input.h.value.length);
+var il=(input.i.value.length);
+ anscnt=anscnt+1;
+ if ( (input.e.value=='') && (input.f.value=='') && (input.g.value=='')
+&& (input.h.value=='') && (input.i.value=='') ) {
+ input.result.value = "You have not provided any answers.";
+anscnt=0
+ }else{
+ 	if (i!=0){
+ 	 i=0
+ }
+ 	if (j!=0){
+ 	j=0
+ }
+if ((el>2) || (fl>2) || (gl>2) || (hl>2) || (il>2)) {
+alert ("You have entered more than two letters in one of the answer boxes")
+}
+
+  //  Change < & > to fit desired answers
+	if ((ea>=0 && eb<=0 && ec>=0 && ed<=0 && ee<=0 && ef<=0) || (ea<=0 && eb>=0 && ec<=0 && ed<=0 && ee<=0 && ef>=0)) {
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+}
+	if ((fa>=0 && fb<=0 && fc>=0 && fd<=0 && fe<=0 && ff<=0) || (fa<=0 && fb>=0 && fc<=0 && fd<=0 && fe<=0 && ff>=0)) {
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+ }
+	if ((ga>=0 && gb<=0 && gc<=0 && gd>=0 && ge<=0 && gf<=0) || (ga<=0 && gb<=0 && gc>=0 && gd>=0 && ge<=0 && gf<=0) || 
+	(ga>=0 && gb<=0 && gc<=0 && gd<=0 && ge>=0 && gf<=0) || (ga<=0 && gb<=0 && gc>=0 && gd<=0 && ge>=0 && gf<=0)) {
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+ }
+	if (ha<=0 && hb<=0 && hc<=0 && hd>=0 && he>=0 && hf<=0) {
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+ }
+	if ((ia>=0 && ib>=0 && ic<=0 && id<=0 && ie<=0 && iz<=0) || (ia>=0 && ib<=0 && ic<=0 && id<=0 && ie<=0 && iz>=0)  ||
+	(ia<=0 && ib>=0 && ic>=0 && id<=0 && ie<=0 && iz<=0) || (ia<=0 && ib<=0 && ic>=0 && id<=0 && ie<=0 && iz>=0)  ||
+	(ia<=0 && ib>=0 && ic<=0 && id>=0 && ie<=0 && iz<=0) || (ia<=0 && ib<=0 && ic<=0 && id>=0 && ie<=0 && iz>=0)  ||
+	(ia<=0 && ib>=0 && ic<=0 && id<=0 && ie>=0 && iz<=0) || (ia<=0 && ib<=0 && ic<=0 && id<=0 && ie>=0 && iz>=0)) {
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+ }
+
+                            	  //Reporting code  
+  if (i==5)  {
+var Txt4 ="Congratulations!\rYou have answered all parts of Problem 2 correctly."
+input.result.value =Txt4;
+anscnt>=3
+}else{
+ var t=i + j
+ 	input.result.value =Txt1 +  i +"\r"+Txt2 + j ;
+ }
+ }
+ }
+
+ function giveansw(show) {
+ if (anscnt>=3)  {
+ var txt=answ
+ 	}else{
+ var txt=noansw
+ 
+ }
+ show.result.value=txt
+ }
+ 
+ function clrbo(input) {   // Clear all text windows.
+ 	input.e.value="";	
+ 	input.f.value="";
+ 	input.g.value="";
+ 	input.h.value="";
+ 	input.i.value="";
+  	input.result.value=" ";
+ }
+
+
+
+// End of hide script comment. -->
+
+</SCRIPT>
+ <link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Matching Formulas</TITLE>
+ <body>
+ <div class="ctr"><H3>Distinguishing Different Formulas</H3></div>
+ <P><B>Problem 1.</B><BR>
+ <span class="fc-blue">Examine the following formulas and select those pairs that satisfy the following conditions:</span><BR>Be sure to enter two letters (and only two) in each answer box, unless you select F. In the second and third parts more than one answer is possible.<BR></P>
+ <FORM NAME="match1">
+ <TABLE BORDER=1 CELLPADDING=5>
+ <TR VALIGN=TOP>
+ <TD WIDTH=16%><span class="fc-blue"><B>A</B></span><BR><div class="ctr"><IMG SRC="../Images/mec5cnf1.gif"></div></TD>
+ <TD WIDTH=16%><span class="fc-blue"><B>B</B></span><BR><div class="ctr"><IMG SRC="../Images/mec5cnf2.gif"></div></TD>
+ <TD WIDTH=16%><span class="fc-blue"><B>C</B></span><BR><div class="ctr"><IMG SRC="../Images/me2c4cf1.gif"></div></TD>
+ <TD WIDTH=16%><span class="fc-blue"><B>D</B></span><BR><div class="ctr"><IMG SRC="../Images/mec5cnf3.gif"></div></TD>
+ <TD WIDTH=16%><span class="fc-blue"><B>E</B></span><BR><div class="ctr"><IMG SRC="../Images/me2c4cf2.gif"></div></TD>
+ <TD WIDTH=16%><span class="fc-blue"><B>F</B></span><BR><div class="ctr">No formulas meet the <BR>designated condition.</div></TD>
+ </TR></TABLE></P>
+ <span class="fc-blue"><B>Which are identical in all respects?</B></span> ... <INPUT TYPE="text" NAME="a" SIZE="4">&nbsp;<INPUT TYPE="text" NAME="b" SIZE="4"><BR>
+ <span class="fc-blue"><B>Which are conformational isomers?</B></span> .. <INPUT TYPE="text" NAME="c" SIZE="4"><BR>
+ <span class="fc-blue"><B>Which are constitutional isomers?</B></span> .... <INPUT TYPE="text" NAME="d" SIZE="4"><BR>
+ <P><INPUT TYPE="button" VALUE=" Check Problem 1 " onClick="strbx(this.form)">&nbsp;
+ <INPUT TYPE="button"  VALUE=" Clear " onClick="clrbx(this.form)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <INPUT TYPE="button" VALUE="Examine Structures" onClick="window.location = 'comp1.htm'"> 
+ &nbsp; &nbsp; <INPUT TYPE=BUTTON VALUE="Alkane Conformations" onClick="window.location='../../sterisom.htm#isom5'"></P>
+ <HR>
+ <TEXTAREA WRAP NAME="result" ROWS="8" COLS="60">
+ </TEXTAREA>
+ <INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)">
+ 
+ <HR>
+ <P><B>Problem 2.</B><BR>
+ <span class="fc-blue">Examine the following formulas and select those pairs that satisfy the following conditions:</span><BR>Be sure to enter two letters (and only two) in each answer box. In the second and fourth parts more than one answer is possible.<BR></P>
+ 
+ <TABLE BORDER=1 CELLPADDING=5>
+ <TR VALIGN=TOP>
+ <TD WIDTH=16%><span class="fc-blue"><B>A</B></span><BR><div class="ctr"><IMG SRC="../Images/c14dbch1.gif"></div></TD>
+ <TD WIDTH=16%><span class="fc-blue"><B>B</B></span><BR><div class="ctr"><IMG SRC="../Images/c13dbch1.gif"></div></TD>
+ <TD WIDTH=16%><span class="fc-blue"><B>C</B></span><BR><div class="ctr"><IMG SRC="../Images/c14dbch2.gif"></div></TD>
+ <TD WIDTH=16%><span class="fc-blue"><B>D</B></span><BR><div class="ctr"><IMG SRC="../Images/t14dbch1.gif"></div></TD>
+ <TD WIDTH=16%><span class="fc-blue"><B>E</B></span><BR><div class="ctr"><IMG SRC="../Images/t14dbch2.gif"></div></TD>
+ <TD WIDTH=16%><span class="fc-blue"><B>F</B></span><BR><div class="ctr"><IMG SRC="../Images/c13dbch2.gif"></div></TD>
+ </TR></TABLE></P>
+ <span class="fc-blue"><B>Which are identical in all respects?</B></span> .... <INPUT TYPE="text" NAME="e" SIZE="4">&nbsp;<INPUT TYPE="text" NAME="f" SIZE="4"><BR>
+ <span class="fc-blue"><B>Which are configurational isomers?</B></span> ... <INPUT TYPE="text" NAME="g" SIZE="4"><BR>
+ <span class="fc-blue"><B>Which are conformational isomers?</B></span> ... <INPUT TYPE="text" NAME="h" SIZE="4"><BR>
+ <span class="fc-blue"><B>Which are constitutional isomers? </B></span> ..... <INPUT TYPE="text" NAME="i" SIZE="4"><BR>
+ <P><INPUT TYPE="button" VALUE=" Check Problem 2" onClick="strbo(this.form)">&nbsp;
+ <INPUT TYPE="button"  VALUE=" Clear " onClick="clrbo(this.form)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <INPUT TYPE="button" VALUE="Examine Structures" onClick="window.location = 'comp2.htm'">
+ &nbsp; &nbsp; <INPUT TYPE=BUTTON VALUE="Cyclohexane Conformations" onClick="window.location='../../sterism2.htm#isom8'"> </P>
+
+ </FORM>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+ </BODY>
+ </HTML>

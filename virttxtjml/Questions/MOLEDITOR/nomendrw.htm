@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var Txt="";
+var txt="";
+var smiles = "";
+var nam="";
+var i="";
+var k="";
+var j="";
+var jme = "0 0";
+var txtdir="Write the IUPAC name for this compound in the text entry box.";
+var struct="CC";
+var ret="";
+var search = document.location.search;
+
+	function process(form) {
+var search = document.location.search;
+
+		if (form.q1[0].checked) {
+jme = "8 7 C 7.45 -2.32 C 8.66 -4.42 C 5.02 -2.32 C 3.81 -4.42 C 6.23 -5.82 C 7.45 -3.72 C 5.02 -3.72 C 6.23 -4.42 1 6 1 2 6 1 3 7 1 4 7 1 5 8 1 6 8 1 7 8 1";
+txt = "       Problem 1\r" +txtdir;
+nam = "2,3,4-TRIMETHYLPENTANE" ;
+k="write";
+j="1";
+}
+		if (form.q1[1].checked) {
+jme = "0 0";
+txt = "       Problem 1\rDraw the structure of 2,3,4-TRIMETHYLPENTANE" ;
+k="draw";
+j="1";
+struct = unescape((search + "find=CC(C)C(C)C(C)C").split("find=")[1].split("&")[0]);
+}
+		if (form.q1[2].checked) {
+jme = "9 8 C 6.61 -5.54 C 8.01 -5.54 C 8.70 -6.75 C 10.10 -6.75 C 10.80 -7.97 Br 12.20 -7.97 C 8.01 -7.97 C 6.61 -7.97 H 10.80 -5.53 1 2 1 2 3 1 3 4 2 4 5 1 5 6 1 3 7 1 7 8 1 4 9 1";
+txt = "       Problem 2\r" +txtdir;
+nam = "1-BROMO-3-ETHYL-2-PENTENE";
+k="write";
+j="2";
+}
+		if (form.q1[3].checked) {
+jme = "0 0";
+txt = "      Problem 2\rDraw the structure of   1-bromo-3-ethyl-2-pentene" ;
+k="draw";
+j="2";
+struct = unescape((search + "find=CCC(=CCBr)CC").split("find=")[1].split("&")[0]);
+}
+		if (form.q1[4].checked) {
+jme = "11 11 O 11.73 -6.25 C 8.23 -5.04 C 6.83 -5.04 C 2.63 -5.04 C 3.33 -6.25 C 3.33 -3.83 C 4.73 -6.25 C 4.73 -3.83 C 10.33 -6.25 C 9.63 -5.04 C 5.43 -5.04 1 9 1 2 3 3 2 10 1 3 11 1 4 5 1 4 6 2 5 7 2 6 8 1 7 11 1 8 11 2 9 10 1";
+txt = "       Problem 3\r" +txtdir;
+nam = "4-PHENYL-3-BUTYN-1-OL";
+k="write";
+j="3";
+}
+		if (form.q1[5].checked) {
+jme = "0 0";
+txt = "     Problem 3\rDraw the structure of   4-phenyl-3-butyn-1-ol" ;
+k="draw";
+struct = unescape((search + "find=OCCC#Cc1ccccc1").split("find=")[1].split("&")[0]);
+j="3";
+}
+		if (form.q1[6].checked) {
+jme = "15 15 C 8.44 -5.96 C 8.44 -4.56 C 7.22 -3.86 C 6.01 -4.56 C 6.01 -5.96 C 7.22 -6.66 C 7.22 -2.46 O 8.44 -1.76 O 6.01 -1.76 N+ 4.80 -6.66 N+ 9.65 -6.66 O 9.65 -8.06 O 3.59 -5.96 O- 4.80 -8.06 O- 10.86 -5.96 1 2 1 2 3 2 3 4 1 4 5 2 5 6 1 6 1 2 3 7 1 7 8 2 7 9 1 5 10 1 1 11 1 11 12 2 10 13 2 10 14 1 11 15 1";
+txt = "       Problem 4\r" +txtdir;
+nam = "3,5-DINITROBENZOIC ACID";
+k="write";
+j="4";
+}
+		if (form.q1[7].checked) {
+jme = "0 0";
+txt = "     Problem 4\rDraw the structure of   3,5-dinitrobenzoic acid" ;
+k="draw";
+j="4";
+struct = unescape((search + "find=O=C(O)c1cc(N(=O)=O)cc(N(=O)=O)c1").split("find=")[1].split("&")[0]);
+}
+		if (form.q1[8].checked) {
+jme = "8 8 C 6.53 -6.19 C 6.53 -4.79 C 5.32 -4.09 C 4.11 -4.79 C 4.11 -6.19 C 5.32 -6.89 Cl 2.90 -6.89 O 7.74 -4.09 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 5 7 -1 2 8 -1";
+txt = "       Problem 5\r" +txtdir;
+nam = "CIS-4-CHLOROCYCLOHEXANOL";
+k="write";
+j="5";
+}
+		if (form.q1[9].checked) {
+jme = "0 0";
+txt = "       Problem 5\rDraw the structure of   cis-4-chlorocyclohexanol" ;
+k="draw";
+struct = unescape((search + "find=O[C@@H]1CC[C@H](Cl)CC1").split("find=")[1].split("&")[0]);
+j="5";
+}
+		if (form.q1[10].checked) {
+jme = "13 14 C 11.85 -7.53 C 11.85 -6.13 C 10.64 -5.43 C 9.43 -6.13 C 9.43 -7.53 C 10.64 -8.23 C 8.22 -5.43 C 7.00 -6.13 C 7.00 -7.53 C 8.22 -8.23 N 13.06 -5.43 C 14.28 -6.13 C 13.06 -4.03 1 2 1 2 3 2 3 4 1 4 5 2 5 6 1 6 1 2 7 8 2 8 9 1 9 10 2 5 10 1 4 7 1 2 11 1 11 12 1 11 13 1";
+txt = "       Problem 6\r" +txtdir;
+nam = "N,N-DIMETHYL-2-NAPHTHYLAMINE" ;
+k="write";
+j="6";
+}
+		if (form.q1[11].checked) {
+jme = "0 0";
+txt = "       Problem 6\rDraw the structure of   N,N-dimethyl-2-naphthylamine" ;
+k="draw";
+struct = unescape((search + "find=CN(C)c2ccc1ccccc1c2").split("find=")[1].split("&")[0]);
+j="6";
+}
+		if (form.q1[12].checked) {
+jme = "7 7 C 8.09 -5.74 C 8.09 -4.34 C 6.69 -4.34 C 6.69 -5.74 Cl 5.29 -5.78 Cl 6.69 -7.14 O 9.08 -3.35 1 2 1 2 3 1 3 4 1 4 1 1 4 5 1 4 6 1 2 7 2";
+txt = "       Problem 7\r" +txtdir;
+nam = "3,3-DICHLOROCYCLOBUTANONE" ;
+k="write";
+j="7";
+}
+		if (form.q1[13].checked) {
+jme = "0 0";
+txt = "       Problem 7\rDraw the structure of   3,3-dichlorocyclobutanone" ;
+k="draw";
+struct = unescape((search + "find=O=C1CC(Cl)(Cl)C1").split("find=")[1].split("&")[0]);
+j="7";
+}
+		if (form.q1[14].checked) {
+k="write";
+jme = "8 7 C 6.60 -5.54 C 8.00 -5.54 C 8.70 -6.75 C 10.10 -6.75 C 10.80 -7.96 O 12.21 -7.96 C 8.70 -4.33 H 10.09 -9.16 1 2 2 2 3 1 3 4 1 4 5 1 5 6 2 2 7 1 5 8 1";
+txt = "       Problem 8\r" +txtdir;
+nam = "4-METHYL-4-PENTENAL";
+j="8";
+}
+		if (form.q1[15].checked) {
+jme = "0 0";
+txt = "      Problem 8\rDraw the structure of   4-methyl-4-pentenal" ;
+k="draw";
+struct = unescape((search + "find=C=C(C)CCC=O").split("find=")[1].split("&")[0]);
+j="8";
+}
+		if (form.q1[16].checked) {
+k="write";
+jme = "8 8 C 7.36 -6.00 C 7.80 -4.67 C 6.66 -3.85 C 5.53 -4.67 C 5.96 -6.00 O 8.23 -3.34 C 4.56 -6.00 C 6.00 -7.40 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 2 6 -1 5 7 1 5 8 1";
+txt = "       Problem 9\r" +txtdir;
+nam = "(R)-3,3-DIMETHYLCYCLOPENTANOL";
+j="9";
+}
+		if (form.q1[17].checked) {
+jme = "0 0";
+txt = "     Problem 9\rDraw the structure of   (R)-3,3-dimethylcyclopentanol" ;
+k="draw";
+struct = unescape((search + "find=CC1(C)CC[C@@H](O)C1").split("find=")[1].split("&")[0]);
+j="9";
+}
+		if (form.q1[18].checked) {
+k="write";
+jme = "15 15 C 7.88 -6.52 C 7.88 -5.12 C 6.66 -4.42 C 5.45 -5.12 C 5.45 -6.52 C 6.66 -7.22 C 5.67 -3.43 C 7.65 -3.43 C 9.23 -6.16 C 8.33 -7.85 C 4.05 -6.50 C 5.25 -7.91 O 4.24 -4.42 O 9.09 -4.42 O 6.66 -8.62 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 3 8 1 1 9 1 1 10 1 5 11 1 5 12 1 4 13 2 2 14 2 6 15 2";
+txt = "       Problem 10\r" +txtdir;
+nam = "2,2,4,4,6,6-HEXAMETHYL-1,3,5-CYCLOHEXANETRIONE";
+j="10";
+}
+		if (form.q1[19].checked) {
+jme = "0 0";
+txt = "     Problem 10\rDraw the structure of\r 2,2,4,4,6,6-hexamethyl-1,3,5-cyclohexanetrione" ;
+k="draw";
+struct = unescape((search + "find=CC1(C)C(=O)C(C)(C)C(=O)C(C)(C)C1=O").split("find=")[1].split("&")[0]);
+j="10";
+}
+		if (form.q1[20].checked) {
+jme = "11 11 C 9.66 -5.65 C 10.53 -4.56 C 10.22 -3.19 C 8.96 -2.59 C 7.70 -3.19 C 7.39 -4.56 C 8.26 -5.65 O 11.32 -2.32 C 6.08 -4.07 C 7.08 -5.92 Cl 5.85 -2.68 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 7 1 7 1 2 3 8 2 6 9 -1 6 10 -2 9 11 1";
+txt = "       Problem 11\r" +txtdir;
+nam = "(S)-5-CHLOROMETHYL-5-METHYL-3-CYCLOHEPTEN-1-ONE" ;
+k="write";
+j="11";
+}
+		if (form.q1[21].checked) {
+jme = "0 0";
+txt = "       Problem 11\rDraw the structure of\r   (S)-5-chloromethyl-5-methyl-3-cyclohepten-1-one" ;
+k="draw";
+struct = unescape((search + "find=C[C@@]1(CCl)C=CCC(=O)CC1").split("find=")[1].split("&")[0]);
+j="11";
+}
+		if (form.q1[22].checked) {
+jme = "11 10 C 3.64 -4.54 C 5.04 -4.54 C 5.74 -5.75 C 7.14 -5.75 C 7.84 -6.96 C 9.24 -6.96 O 5.74 -3.32 O 5.04 -6.96 O 7.84 -4.54 O 2.94 -3.32 O 2.94 -5.75 1 2 1 2 3 1 3 4 1 4 5 1 5 6 2 2 7 -1 3 8 -1 4 9 -1 1 10 2 1 11 1";
+txt = "       Problem 12\r" +txtdir;
+nam = "(2S,3R,4S)-2,3,4-TRIHYDROXY-5-HEXENOIC ACID" ;
+k="write";
+j="12";
+}
+		if (form.q1[23].checked) {
+jme = "0 0";
+txt = "       Problem 12\rDraw the structure of\r  (2S,3R,4S)-2,3,4-trihydroxy-5-hexenoic acid" ;
+k="draw";
+struct = unescape((search + "find=C=C[C@H](O)[C@@H](O)[C@H](O)C(=O)O").split("find=")[1].split("&")[0]);
+j="12";
+}
+ document.JME.readMolecule(jme);
+document.form.result1.value= Txt + txt;
+}
+
+function submitSmiles(input) {
+   var smiles = document.JME.smiles();
+   document.form.smiles.value = smiles; 
+     var name = input.aa.value.toUpperCase();
+
+        var ret = document.getElementById("jmolSmiles1").find(struct, smiles, false, false);
+
+
+
+  if ((k=="draw") && (smiles == "")) {  alert("Nothing to process! \rDraw a structural formula."); return;
+	}else{
+  if (ret < 0){
+    alert(document.getElementById("jmolSmiles1").getLastError())
+    }else{ 
+    if ((k== "draw") && (ret == 1)){
+	var Txt="  Problem "+j+"\rCorrect Answer! ";
+	}else{
+
+if ((j=="5") &&( k=="draw") && (smiles=="OC1CCC(Cl)CC1")) {
+var Txt="  Problem "+j+"\rYou have not indicated the configuration of the product\rUse the wedge bond tool in your drawing.";
+	}else{
+if ((j=="9") &&( k=="draw") && (smiles=="CC1(C)CCC(O)C1" || smiles=="CC1(C)CC[C@H](O)C1")) {
+var Txt="  Problem "+j+"\rEither you have not indicated the configuration of the product,\r or you have drawn its mirror image.";
+	}else{
+if ((j=="11") &&( k=="draw") && (smiles=="CC1(CCl)C=CCC(=O)CC1" || smiles=="C[C@]1(CCl)C=CCC(=O)CC1")) {
+var Txt="  Problem "+j+"\rEither you have not indicated the configuration of the product,\r or you have drawn its mirror image.";
+	}else{
+if ((j=="12") &&( k=="draw") && (smiles=="C=CC(O)C(O)C(O)C(=O)O")) {
+var Txt="  Problem "+j+"\rYou have not indicated the configuration of the product\rUse the wedge bond tool in your drawing.";
+	}else{
+if ((j=="12") &&( k=="draw") && (smiles=="C=C[C@@H](O)[C@H](O)[C@@H](O)C(=O)O")) {
+var Txt="  Problem "+j+"\rYou have drawn the enantiomer of this compound.";
+	}else{
+
+if  ((k=="write") && (input.aa.value.toUpperCase()=="")) { 
+alert("Nothing to process! \rWrite a name in the answer box."); return;
+	}else{
+if  ((k=="write") && (input.aa.value.toUpperCase()==nam)) { 
+var Txt="  Problem "+j+"\rCorrect Name! ";
+	}else{
+if ((j=="5") &&( k=="write") && (input.aa.value.toUpperCase()=="4-CHLOROCYCLOHEXANOL")) {
+var Txt="  Problem "+j+"\rYou have not indicated the configuration of the product.";
+	}else{
+if ((j=="5") &&( k=="write") && (input.aa.value.toUpperCase()=="CIS-4-CHLORO-1-CYCLOHEXANOL" || input.aa.value.toUpperCase()=="CIS-4-CHLOROCYCLOHEXANE-1-OL")) {
+var Txt="  Problem "+j+"\rYou do not need to assign a number to the hydroxyl location.";
+}else{
+if ((j=="6") &&( k=="write") && (input.aa.value.toUpperCase()=="2-DIMETHYLAMINONAPHTHALENE")) {
+var Txt="  Problem "+j+"\rCorrect Name! ";
+	}else{
+if ((j=="6") &&( k=="write") && (input.aa.value.toUpperCase()=="N,N-DIMETHYL-2-NAPHTHALENAMINE")) {
+var Txt="  Problem "+j+"\rCorrect Name! ";
+	}else{
+if ((j=="11") &&( k=="write") && (input.aa.value.toUpperCase()=="5-CHLOROMETHYL-5-METHYL-3-CYCLOHEPTENONE" || input.aa.value.toUpperCase()=="(S)-5-CHLOROMETHYL-5-METHYL-3-CYCLOHEPTENONE")) {
+var Txt="  Problem "+j+"\rYou should designate the location of the carbonyl group.";
+}else{
+var Txt="  Problem "+j+"\rWrong! Try again. ";
+} }
+} }
+} }
+} }
+}
+}
+}
+}
+}
+}
+}
+
+
+
+
+	 document.form.result1.value = Txt;
+}
+// End of hide script comment. -->
+</script>
+<TITLE> Nomenclature Problems</TITLE>
+
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body>
+
+<div class="ctr"><H2>Nomenclature</H2></div>
+<P>For each of the following problems, select the type of question. If you select <B>Write Name</B> a structure will appear in the drawing window when the <B>Show Problem</B> button is pressed. You should then write the IUPAC name for this compound in the text window just below the drawing window. Be careful to include all the necessary parentheses and commas in your name. <BR>
+If you select <B>Draw Structure</B> a name will appear in the larger <B>Information Window</B> on the bottom left when the <B>Show Problem</B> button is pressed. You should then draw a formula corresponding to this name in the drawing window. Configurations should be designated by using the wedge drawing tool.<BR>
+When you are finished, check your answer by pressing the  <b>Check Answer</b> button. A response will appear in the <B>Information Window</B>. The answer to a given problem will be displayed by showing its alternate form.<BR>
+<div class="ctr"><span class="fc-maroon">To practice using this drawing program <A 
+HREF="newprct.htm" 
+>Click Here</A></span></div></P>
+<TABLE WIDTH=90% CELLPADDING=4 BORDER><TR><TH ROWSPAN=12>
+<FORM  METHOD="SUBMIT" NAME="form" onsubmit="return checkForm()">
+<applet code="JME.class" name="JME" archive="JME.jar" width=365 height=346>
+<param name= "options"  value="autoez">
+You have to enable Java and JavaScript on your machine !
+</applet>
+<div class="ctr"><span class="fc-blue">Enter the Compound Name Here</span><BR><INPUT TYPE="text" NAME="aa"  SIZE="66"><BR>
+<P><input type="button" value="Show Problem" onClick="process(form);"> &nbsp; &nbsp; &nbsp; <INPUT TYPE="RESET" VALUE="Clear" onClick="document.JME.reset()"> &nbsp; &nbsp; &nbsp; <input type="button" value="Check Answer" onClick="submitSmiles(this.form);"></P>
+<P><span class="fc-blue">Information Window</span><BR><TEXTAREA WRAP NAME="result1" ROWS="3" COLS="64"></TEXTAREA><BR>
+</div></P></TH>
+<TH NOWRAP><B><span class="fc-blue fs-4"> Problem 1</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 2</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 3</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 4</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 5</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 6</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 7</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 8</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 9</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 10</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 11</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 12</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+</TABLE>
+<object name='jmolSmiles1' id='jmolSmiles1' classid='java:JmolSmilesApplet' type='application/x-java-applet' width='10' height='10' > 
+<param name='name' value='jmolSmilesApplet' /> 
+<param name='archive' value='JmolSmilesApplet.jar' /> 
+<param name='mayscript' value='true' /> 
+<param name='codebase' value='.' /> 
+</object>
+
+<BR>
+
+</form>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.
+<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>
+

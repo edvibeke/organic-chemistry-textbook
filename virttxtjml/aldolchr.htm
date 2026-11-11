@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+
+<HEAD>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Styles/modern.css">
+<TITLE>Molecular Model of Aldol Transition State</TITLE>
+
+<link rel="stylesheet" href="Styles/edvibe.css">
+<script src="Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<form name="test" method="post" action="nothing" ()" >
+
+<p><div class="ctr"><span class="fc-navy fs-4">A Chair-Like Transition State for the Aldol Reaction</span></div>
+The aldol reaction shown here often proceeds with good to excellent diastereospecificity. A chair-like transition state, one enantiomer of which is modeled below, is proposed</p>
+<p align=center><IMG SRC="Images/aldolrx.gif"></p>
+In this model, carbon atoms are dark gray, hydrogen is cyan, oxygen is red and the metal species  M is green.  Ligands on the metal are yellow, the E and Z substituents on the enolate are light gray, and other alkyl substituents R are colored tan. The newly forming bonds are colored violet. The oxygen bonds to the metal are an important factor in organizing and stabilizing the transition state. When the metal is lithium, the ligands are often solvent molecules and the bonds to oxygen are long and relatively weak. When the metal is boron, the ligands are alkyl groups and the bonds to oxygen are shorter and stronger. The bonding distance in angstroms for the two carbon-oxygen bonds and the nascent carbon-carbon bond will be shown by clicking the second button under the model.<br />
+Clicking the third button will display the product from this transition state. The same bond distances may be viewed again to see the change that has occured.</p>
+
+<div class="ctr">
+<TABLE  CELLSPACING=1><TR valign=top><TD height=364>
+<script type="text/javascript">Jmol.getApplet("jmol1",{"width": 360, "height": 360, "color": "#FFFFFF", "use": "HTML5", "j2sPath": "htmlJ/jsmol/j2s", "addSelectionOptions": false, "script": "wireframe 32; spacefill 70;  color atoms cpk; select hydrogen; color atoms cyan;  select atomno=6;  color atoms limegreen; label M; color label black; set labeloffset 0 0; spacefill 90; select (atomno=3, atomno=6); wireframe 16; color bonds violet; connect hbond; select (atomno=1, atomno=2);  wireframe 16; color bonds violet; connect hbond; select (atomno=8, atomno=11);  color atoms tan; spacefill 90; label R; color label black; set labeloffset 0 0; select atomno=8; label R'; select atomno=9; color atoms lightgrey; label E; color label black; set labeloffset 0 0; spacefill 100; select atomno=10; color atoms lightgrey; label Z; color label black; set labeloffset 0 0; spacefill 100; select (atomno=12, atomno=13); color atoms yellow; label L; color label black; set labeloffset 0 0; spacefill 120; select all;  background white;  set picking on; set echo top center;\ncolor echo blue;\nfont echo 18 serif;\necho Aldol Chair Transition State;\nset echo bottom center;\ncolor echo maroon;\nfont echo 18 serif;\necho Forming Bonds are Dashed;", "load": "rasfiles/chair.pdb"});</script></TD></TR>
+<TR><TD align=left><br />
+<button type="button" class="jctl" data-target="jmol1" data-script="set showHydrogens off; label off" data-altscript="set showHydrogens on">X</button> <span class="fs-4"><sup> &nbsp; Show Ring Atoms Only (on/off)</sup>
+<br />
+<button type="button" class="jctl" data-target="jmol1" data-script="select all; wireframe 12; set picking DISTANCE; set monitor on; set measurements angstroms; monitor 1 2;  monitor 2 3; monitor 4 5; color monitor teal; select all" data-altscript="select all; wireframe 32; set measurement off">X</button> <span class="fs-4"><sup> &nbsp; Show Key Distances (on/off)</sup>
+<br />
+
+<button type="button" class="jctl" data-target="jmol1" data-script="zap; load rasfiles/aldprd3.pdb; wireframe 32; spacefill 70;  color atoms cpk; select hydrogen; color atoms cyan;  select atomno=6;  color atoms limegreen; label M; color label black; set labeloffset 0 0; spacefill 90;  select (atomno=8, atomno=11);  color atoms tan; spacefill 90; label R; color label black; set labeloffset 0 0; select atomno=8; label R'; select atomno=9; color atoms lightgrey; label E; color label black; set labeloffset 0 0; spacefill 100; select atomno=10; color atoms lightgrey; label Z; color label black; set labeloffset 0 0; spacefill 100; select (atomno=12, atomno=13); color atoms yellow; label L; color label black; set labeloffset 0 0; spacefill 120; select (atomno=4, atomno=5); connect Double; select (atomno=5, atomno=6); connect hbond ; color hbond violet; hbond 0.04; select all; rotate x 60; rotate z 50; rotate y 180; background white; set picking on; set echo top center;
+color echo blue;
+font echo 18 serif;
+echo Product from Chair Transition State;
+set echo bottom center;
+color echo maroon;
+font echo 18 serif;
+echo M may be a Metal or Hydrogen;">X</button><sup> &nbsp; Show Product Molecule</sup>
+
+</span>
+
+
+</TD></TR>
+</TABLE>
+
+<P><INPUT TYPE="button" VALUE="ReLoad" onClick="window.location.reload(true)"></P> 
+</FORM>
+</BODY>
+</HTML>
+
+

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var i=0
+var anscnt=0
+var answ="(1) SN2, iodide anion is an excellent nucleophile and a very weak base.\r(2) SN2, elimination is not possible, benzyl halides are very reactive.\r"
+ +  "(3) E2, methoxide anion is a strong base.\r(4) SN1, this is a tertiary halide, and water is a good ionizing solvent.\r(5) SN2, cyanide anion is a good nucleophile and a weak base.\r"
+ +  "(6) No Reaction, elimination is not possible and substitution is severely hindered.\r"
+ +  "(7) SN2, this is a primary halide. (some rearrangement may occur)\r"
+var noansw="You must try to answer this question twice before viewing the answers."
+var txt="";
+
+		function process(form){
+	anscnt=anscnt+1;
+	if (i!=0){
+		 i=0
+}
+		if (form.q1[3].checked){
+		i=i+1
+}else {
+		i=i
+}
+		if (form.q2[3].checked){
+		i=i+1
+}else {
+		i=i	
+	}		
+		if (form.q3[4].checked){
+		i=i+1
+}else {
+		i=i	
+}
+		if (form.q4[0].checked){
+		i=i+1
+}else {
+		i=i
+	
+}
+		if (form.q5[3].checked){
+		i=i+1
+}else {
+		i=i
+	
+}		
+		if (form.q6[2].checked){
+		i=i+1
+}else {
+		i=i
+	
+}
+		if (form.q7[3].checked){
+		i=i+1
+}else {
+		i=i
+
+}
+
+
+if (i==7){
+var txt ="Congratulations!";
+anscnt=3;
+}else{
+var txt="";
+}
+if (i==0){
+anscnt=0;
+}
+	var diff=7-i
+	var Text=txt + "\rYou answered " +i +" questions correctly.\r"
++"You failed to respond to or incorrectly answered " +diff +" questions."
+
+form.resultarea.value=Text;	
+}
+
+function giveansw(show) {
+if (anscnt>=2)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.resultarea.value=txt;
+}
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Mechanisms</TITLE>
+<body>
+<div class="ctr"><H3>Identifying a Mechanism</H3></div>
+<P>Select whether the following combinations of reactants will react by 
+<span class="fc-blue">substitution</span> (S<SUB>N</SUB>1 or S<SUB>N</SUB>2 mechanism), <span class="fc-blue">elimination</span> (E1 or E2 mechanism) or will <span class="fc-red">not react</span> under the conditions given.</span></P>
+<FORM>
+<p><TABLE cellpadding=6><TR><TH colspan=2>Reactants</TH><TH colspan=2>Choices</TH></TR>
+<TR VALIGN=top><TH height=55><br />1.</TH><TD rowspan=7> <IMG SRC="../Images/mchprb1.gif"> </TD>
+<TD nowrap><INPUT TYPE=RADIO NAME="q1" VALUE="sn1"> S<SUB>N</SUB>1 <BR> 
+<INPUT TYPE=RADIO NAME="q1" VALUE="e1"> E1<BR>
+<INPUT TYPE=RADIO NAME="q1" VALUE="x"> No Reaction</TD>
+<TD nowrap><INPUT TYPE=RADIO NAME="q1" VALUE="sn2"> S<SUB>N</SUB>2 <BR>
+<INPUT TYPE=RADIO NAME="q1" VALUE="e2"> E2<BR></TD>
+<td rowspan=8> &nbsp; </td>
+<TH rowspan=8 VALIGN=middle> <INPUT TYPE=BUTTON VALUE="Check Answers" onClick= "process(form)"><BR><BR>
+<TEXTAREA WRAP NAME="resultarea" ROWS="12" COLS="56"></TEXTAREA><BR><BR>
+<INPUT TYPE="reset" VALUE="Reset/Clear"> <BR> <BR>
+ <INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)">
+<BR><BR><INPUT TYPE="button" VALUE="Reaction Review" onClick="window.location = '../../alhalrx3.htm#hal9'">      
+</TH></TR>
+<TR VALIGN=top><TH height=55><br />2.</TH>
+<TD><INPUT TYPE=RADIO NAME="q2" VALUE="sn1"> S<SUB>N</SUB>1 <BR>
+<INPUT TYPE=RADIO NAME="q2" VALUE="e1"> E1<BR>
+<INPUT TYPE=RADIO NAME="q2" VALUE="x"> No Reaction</TD>
+<TD><INPUT TYPE=RADIO NAME="q2" VALUE="sn2"> S<SUB>N</SUB>2 <BR>
+<INPUT TYPE=RADIO NAME="q2" VALUE="e2"> E2<BR></TD></TR>
+<TR VALIGN=top><TH height=70><br />3.</TH>
+<TD><INPUT TYPE=RADIO NAME="q3" VALUE="sn1"> S<SUB>N</SUB>1 <BR> 
+<INPUT TYPE=RADIO NAME="q3" VALUE="e1"> E1<BR>
+<INPUT TYPE=RADIO NAME="q3" VALUE="x"> No Reaction</TD>
+<TD><INPUT TYPE=RADIO NAME="q3" VALUE="sn2"> S<SUB>N</SUB>2 <BR>
+<INPUT TYPE=RADIO NAME="q3" VALUE="e2"> E2<BR></TD></TR>
+<TR VALIGN=top><TH height=86><br />4.</TH>
+<TD><INPUT TYPE=RADIO NAME="q4" VALUE="sn1"> S<SUB>N</SUB>1 <BR> 
+<INPUT TYPE=RADIO NAME="q4" VALUE="e1"> E1<BR>
+<INPUT TYPE=RADIO NAME="q4" VALUE="x"> No Reaction</TD>
+<TD><INPUT TYPE=RADIO NAME="q4" VALUE="sn2"> S<SUB>N</SUB>2 <BR>
+<INPUT TYPE=RADIO NAME="q4" VALUE="e2"> E2<BR></TD></TR>
+<TR VALIGN=top><TH height=80><br />5.</TH>
+<TD><INPUT TYPE=RADIO NAME="q5" VALUE="sn1"> S<SUB>N</SUB>1 <BR> 
+<INPUT TYPE=RADIO NAME="q5" VALUE="e1"> E1<BR>
+<INPUT TYPE=RADIO NAME="q5" VALUE="x"> No Reaction</TD>
+<TD><INPUT TYPE=RADIO NAME="q5" VALUE="sn2"> S<SUB>N</SUB>2 <BR>
+<INPUT TYPE=RADIO NAME="q5" VALUE="e2"> E2<BR></TD></TR>
+<TR VALIGN=top><TH height=90><br /><br />6.</TH>
+<TD><br /><INPUT TYPE=RADIO NAME="q6" VALUE="sn1"> S<SUB>N</SUB>1 <BR> 
+<INPUT TYPE=RADIO NAME="q6" VALUE="e1"> E1<BR>
+<INPUT TYPE=RADIO NAME="q6" VALUE="x"> No Reaction</TD>
+<TD><br /><INPUT TYPE=RADIO NAME="q6" VALUE="sn2"> S<SUB>N</SUB>2 <BR>
+<INPUT TYPE=RADIO NAME="q6" VALUE="e2"> E2<BR></TD></TR>
+<TR VALIGN=top><TH height=100><br /><br />7.</TH>
+<TD><br /><INPUT TYPE=RADIO NAME="q7" VALUE="sn1"> S<SUB>N</SUB>1 <BR> 
+<INPUT TYPE=RADIO NAME="q7" VALUE="e1"> E1<BR>
+<INPUT TYPE=RADIO NAME="q7" VALUE="x"> No Reaction</TD>
+<TD><br /><INPUT TYPE=RADIO NAME="q7" VALUE="sn2"> S<SUB>N</SUB>2 <BR>
+<INPUT TYPE=RADIO NAME="q7" VALUE="e2"> E2<BR></TD></TR>
+</TABLE>
+
+<HR>
+
+</FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-3">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY>
+</HTML>

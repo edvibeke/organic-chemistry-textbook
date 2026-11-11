@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+		 // Counting variables
+ var i=0
+ var j=0
+ var k=0
+ var l=0
+
+ var Txt1="Your total correct answers number:";
+ var Txt2="";
+ var Txt3="The expected number of correct answers is:";
+  var anscnt=0
+                         //Answer variables
+ var answ="(1) C,D,E,F,H   (2) B,F   (3) A,G,I,J \rNote that C might give some elimination under condition 2, but substitution is more likely. J is unreactive because of geometric constraints imposed by the bridged bicyclic structure.  "
+
+  var noansw="You must try to answer these questions three times before viewing the answers."
+
+                         // Basic function code for problem 1
+ function strbx(input) {
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+var aa=input.a.value.toUpperCase().indexOf("C",0);	
+var ab=input.a.value.toUpperCase().indexOf("D",0);	
+var ac=input.a.value.toUpperCase().indexOf("E",0);
+var ad=input.a.value.toUpperCase().indexOf("F",0);
+var ae=input.a.value.toUpperCase().indexOf("H",0);
+var ba=input.b.value.toUpperCase().indexOf("B",0);
+var bb=input.b.value.toUpperCase().indexOf("F",0);
+var ca=input.c.value.toUpperCase().indexOf("A",0);	
+var cb=input.c.value.toUpperCase().indexOf("G",0);	
+var cc=input.c.value.toUpperCase().indexOf("I",0);
+var cd=input.c.value.toUpperCase().indexOf("J",0);
+
+
+ anscnt=anscnt+1;
+
+ if ( (input.a.value=='')||(input.b.value=='')||(input.c.value=='')) {
+ input.result.value = "Please enter your choices in each box.";
+		 }else{
+	if (Txt2!=""){
+ 	 Txt2=""
+ }
+	if (i!=0){
+ 	 i=0
+ }
+ 	if (j!=0){
+ 	j=0
+ }
+ 	if (k!=0){
+ 	k=0
+ }
+ 	if (l!=0){
+ 	l=0
+ }
+
+	if (aa>=0) {
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+}
+	if (ab>=0) {
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+}
+	if (ac>=0) {
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+}
+	if (ad>=0) {
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+}
+	if (ae>=0) {
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+}
+	if (ba>=0) {
+ 		i=i+1
+ 		} else {
+ 		k=k+1
+ }
+	if (bb>=0) {
+ 		i=i+1
+ 		} else {
+    k=k+1
+ }
+	if (ca>=0) {
+ 		i=i+1
+ 		} else {
+ 		l=l+1
+ } 
+	if (cb>=0) {
+ 		i=i+1
+ 		} else {
+ 		l=l+1
+ }                      
+	if (cc>=0) {
+ 		i=i+1
+ 		} else {
+ 		l=l+1
+ }                      
+	if (cd>=0) {
+ 		i=i+1
+ 		} else {
+ 		l=l+1
+ }
+                                             	    //Reporting code 
+var al=(input.a.value.length);
+var bl=(input.b.value.length);
+var cl=(input.c.value.length);
+if (i==11 && al==5 && bl==2  && cl==4) { 
+input.result.value ="Congratulations! \r You have answered all questions correctly."
+anscnt=anscnt+3
+ 		} else {
+if (j>=1 || al!=5) { 
+Txt2=Txt2+" You have missing or incorrect answers to Problem 1 \r"
+}
+if (k>=1 || bl!=2) { 
+Txt2=Txt2+" You have missing or incorrect answers to Problem 2 \r"
+}
+if (l>=1 || cl!=4) { 
+Txt2=Txt2+" You have missing or incorrect answers to Problem 3 \r"
+}
+ 	input.result.value = Txt1 +  i + "\r" + Txt2  + Txt3  +  11 ;
+ }
+ }
+ }
+ function giveansw(show) {
+ if (anscnt>=3)  {
+ var txt=answ
+ 	}else{
+ var txt=noansw
+ 
+ }
+ show.result.value=txt
+ }
+ 
+ function clrbx(input) {   // Clear all text windows.
+ 	input.a.value="";	
+ 	input.b.value="";
+ 	input.c.value="";
+
+ 	input.result.value=" ";
+ }
+
+// End of hide script comment. -->
+
+</SCRIPT>
+ <link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Alkyl Halide Reactions</TITLE>
+ <body>
+<div class="ctr"><H3>Reactions of Organic Halogen Derivatives</H3></div>
+<P>Examine the ten structural formulas shown at the bottom of this page, and select those that satisfy each of the following conditions. Enter one or more letters (A through J) in each answer box, reflecting your choice for each. </P>
+ <FORM>
+<p> <span class="fc-blue"><B>1. </B> Which compounds give an S<SUB>N</SUB>2 substitution reaction on treatment with alcoholic NaSH?</span>&nbsp; ... &nbsp;<INPUT TYPE="text" NAME="a" SIZE="10"><BR>
+ <span class="fc-blue"><B>2. </B>Which compounds give an E2 elimination reaction on treatment with alcoholic KOH? </span>&nbsp; ....... &nbsp;<INPUT TYPE="text" NAME="b" SIZE="10"><BR>
+ <span class="fc-blue"><B>3. </B>Which compounds do not react under either of the previous reaction conditions? </span>&nbsp; ................ &nbsp;<INPUT TYPE="text" NAME="c" SIZE="10"></p>
+ <HR><div class="ctr">
+ <P><INPUT TYPE="button" VALUE="Check Answers" onClick="strbx(this.form)"> &nbsp; &nbsp; 
+ <INPUT TYPE="button"  VALUE=" Clear " onClick="clrbx(this.form)"> &nbsp; &nbsp;  <INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)">  &nbsp; &nbsp; <INPUT TYPE="button" VALUE="Help" onClick="window.location = '../../alhalrx3.htm#hal9'">
+</P>
+ <TEXTAREA WRAP NAME="result" ROWS="6" COLS="62"></TEXTAREA>
+
+ </FORM>
+<HR>
+<TABLE CELLPADDING=5 BORDER=1 WIDTH=80%>
+<TR VALIGN=TOP>
+<TD><span class="fc-blue"><B>A</B></span><BR><div class="ctr"><IMG SRC="../Images/brombenz.gif"></div></TD>
+<TD><span class="fc-blue"><B>B</B></span><BR><div class="ctr"><IMG SRC="../Images/tbucl.gif"></div></TD>
+<TD><span class="fc-blue"><B>C</B></span><BR><div class="ctr"><IMG SRC="../Images/cy6ch2br.gif"></div></TD>
+<TD><span class="fc-blue"><B>D</B></span><BR><div class="ctr">CH<SUB>3</SUB>-I</div></TD>
+<TD><span class="fc-blue"><B>E</B></span><BR><div class="ctr"><IMG SRC="../Images/benzbrom.gif"></div></TD></TR>
+<TR><TD><span class="fc-blue"><B>F</B></span><BR><div class="ctr"><IMG SRC="../Images/cy6cl.gif"></div></TD>
+<TD><span class="fc-blue"><B>G</B></span><BR><div class="ctr"><IMG SRC="../Images/neopntcl.gif"></div></TD>
+<TD><span class="fc-blue"><B>H</B></span><BR><div class="ctr"><IMG SRC="../Images/meallcl.gif"></div></TD>
+<TD><span class="fc-blue"><B>I</B></span><BR><div class="ctr"><IMG SRC="../Images/4mecy5br.gif"></div></TD>
+<TD><span class="fc-blue"><B>J</B></span><BR><div class="ctr"><IMG SRC="../Images/norbrncl.gif"></div></TD>
+</TR>
+</TABLE></div>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+
+</BODY>
+</HTML>

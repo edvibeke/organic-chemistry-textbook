@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<TITLE>Diels Alder Reactions</TITLE>
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+
+var Txt="";
+var txt="";
+var smiles = "";
+var j="";
+var i="";
+var anscnt=0;
+var sma="";
+var jme = "0 0";
+var jmeprb="0 0";
+var jmeans="0 0";
+var jmequa="0 0";
+var noansw="You must try to answer this question three times before viewing the answer.";
+
+	function process(form) {
+if (anscnt!=0) {
+anscnt=0;
+}
+	if (j!=0){
+	 j=0
+}
+	if (i!=0){
+	 i=0
+}
+	if (jme!="0 0"){
+	jme="0 0";
+}
+	if (jmeprb!="0 0"){
+	jmeprb="0 0";
+}
+	if (jmeans!="0 0"){
+	jmeana="0 0";
+}
+	if (jmequa!="0 0"){
+	jmeaqua="0 0";
+}
+
+ 
+var budien="4 3 C 0.73 -5.21 C 2.13 -5.21 C 2.83 -6.42 C 4.23 -6.42 1 2 2 2 3 1 3 4 2";
+var me2budien="6 5 C 6.50 -5.60 C 7.90 -5.60 C 8.60 -6.81 C 10.00 -6.81 C 8.60 -4.39 C 7.90 -8.02 1 2 2 2 3 1 3 4 2 2 5 1 3 6 1";
+var cy5dien="5 5 C 10.33 -7.29 C 11.11 -6.13 C 10.25 -5.03 C 8.94 -5.51 C 8.98 -6.90 1 2 1 2 3 1 3 4 2 4 5 1 5 1 2";
+var cy6dien="6 6 C 11.12 -7.03 C 11.12 -5.63 C 9.91 -4.93 C 8.70 -5.63 C 8.70 -7.03 C 9.91 -7.73 1 2 1 2 3 1 3 4 2 4 5 1 5 6 2 6 1 1";
+var cy6dich2="8 8 C 11.12 -7.03 C 11.12 -5.63 C 9.91 -4.93 C 8.70 -5.63 C 8.70 -7.03 C 9.91 -7.73 C 12.34 -4.93 C 12.34 -7.73 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 2 1 8 2";
+var cy5dich2="7 7 C 9.70 -6.69 C 9.70 -5.29 C 8.37 -4.86 C 7.55 -5.99 C 8.37 -7.12 C 10.83 -4.47 C 10.83 -7.51 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 2 6 2 1 7 2";
+var vyc6en="8 8 C 9.50 -7.20 C 9.50 -5.80 C 8.29 -5.10 C 7.08 -5.80 C 7.08 -7.20 C 8.29 -7.90 C 10.71 -5.10 C 11.93 -5.80 1 2 1 2 3 2 3 4 1 4 5 1 5 6 1 6 1 1 2 7 1 7 8 2";
+
+var acnit="4 3 C 8.79 -6.66 C 10.19 -6.66 C 10.89 -5.45 N 11.59 -4.24 1 2 2 2 3 1 3 4 3";
+var ch2mal="10 9 C 8.51 -5.32 C 8.51 -6.72 C 9.72 -4.62 C 7.30 -4.62 O 7.30 -3.22 O 6.09 -5.32 O 10.94 -5.32 O 9.72 -3.22 C 4.87 -4.62 C 12.15 -4.62 1 2 2 1 3 1 1 4 1 4 5 2 4 6 1 3 7 1 3 8 2 6 9 1 7 10 1";
+var malanh="7 7 C 4.96 -7.29 O 5.78 -6.16 C 4.96 -5.03 C 3.63 -5.46 C 3.63 -6.86 O 5.39 -3.69 O 5.39 -8.62 1 2 1 2 3 1 3 4 1 4 5 2 5 1 1 3 6 2 1 7 2";
+var etynediestr="10 9 C 9.74 -5.38 C 9.74 -6.78 C 9.74 -3.98 C 9.74 -8.18 O 8.53 -8.88 O 10.96 -8.88 O 10.96 -3.28 O 8.53 -3.28 C 12.17 -8.18 C 7.32 -3.98 1 2 3 1 3 1 2 4 1 4 5 2 4 6 1 3 7 2 3 8 1 6 9 1 8 10 1";
+var fumrate="12 11 C 8.56 -5.44 C 8.56 -6.84 C 9.78 -4.74 C 7.35 -7.54 O 9.78 -3.34 O 10.99 -5.44 O 7.35 -8.94 O 6.14 -6.84 C 10.99 -2.64 C 6.14 -9.64 H 7.35 -4.74 H 9.78 -7.54 1 2 2 1 3 1 2 4 1 3 5 1 3 6 2 4 7 1 4 8 2 5 9 1 7 10 1 1 11 1 2 12 1";
+var crotate="9 8 C 8.18 -6.78 C 8.18 -8.18 C 9.39 -6.08 C 6.97 -8.88 O 9.39 -4.68 O 10.60 -6.78 C 11.82 -6.08 H 6.96 -6.08 H 9.39 -8.88 1 2 2 1 3 1 2 4 1 3 5 2 3 6 1 6 7 1 1 8 1 2 9 1";
+var quinon="8 8 C 10.84 -7.08 C 10.84 -5.68 C 9.63 -4.98 C 8.42 -5.68 C 8.42 -7.08 C 9.63 -7.78 O 9.63 -3.58 O 9.63 -9.18 1 2 2 2 3 1 3 4 1 4 5 2 5 6 1 6 1 1 3 7 2 6 8 2";
+var acrlate="6 5 C 8.79 -6.38 C 8.79 -7.78 C 10.00 -5.68 O 10.00 -4.28 O 11.22 -6.38 C 12.43 -5.68 1 2 2 1 3 1 3 4 2 3 5 1 5 6 1";
+var buynitr="5 4 C 13.16 -7.95 C 13.16 -6.55 C 13.16 -9.35 C 13.16 -5.15 N 13.16 -3.75 1 2 3 1 3 1 2 4 1 4 5 3";
+var cl4ethen="6 5 C 8.40 -5.26 C 8.40 -6.66 Cl 9.61 -4.56 Cl 7.19 -4.56 Cl 7.19 -7.36 Cl 9.61 -7.36 1 2 2 1 3 1 1 4 1 2 5 1 2 6 1";
+
+var plus="|1 0 + 8.12 -5.82|";
+var quest="|1 0 ? 8.57 -6.05|";
+var arrow="|>> 5 4 C:1 13.51 -6.40 O:2|";
+
+var budien_malanh="11 12 C 8.38 -7.03 C 8.38 -5.63 C 7.17 -4.93 C 5.96 -5.63 C 5.96 -7.03 C 7.17 -7.73 C 9.71 -7.46 O 10.53 -6.33 C 9.71 -5.20 O 10.14 -3.86 O 10.14 -8.79 1 2 1 2 3 1 3 4 1 4 5 2 5 6 1 6 1 1 7 8 1 8 9 1 2 9 -1 1 7 -1 9 10 2 7 11 2";
+var cy5dien_etynediestr="15 16 C 9.11 -7.25 C 9.11 -5.85 C 7.90 -5.15 C 6.68 -5.85 C 6.68 -7.25 C 7.90 -7.95 C 10.32 -5.15 O 11.53 -5.85 O 10.32 -3.75 C 10.32 -7.95 O 10.32 -9.35 O 11.53 -7.25 C 12.75 -5.15 C 11.53 -10.05 C 7.52 -6.50 1 2 2 2 3 1 3 4 1 4 5 2 5 6 1 6 1 1 2 7 1 7 8 1 7 9 2 1 10 1 10 11 1 10 12 2 8 13 1 11 14 1 3 15 1 15 6 1";
+var vyc6en_etynediestr="18 19 C 6.03 -5.07 C 6.03 -3.67 C 4.82 -2.97 C 3.60 -3.67 C 3.60 -5.07 C 4.82 -5.77 C 4.82 -7.17 C 6.03 -7.87 C 7.24 -7.17 C 7.24 -5.77 C 8.45 -5.07 O 8.45 -3.67 C 8.45 -7.87 O 8.45 -9.27 O 9.67 -7.17 C 9.67 -9.97 O 9.67 -5.77 C 10.88 -5.07 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 7 8 1 8 9 1 9 10 2 1 10 1 6 7 2 10 11 1 11 12 2 9 13 1 13 14 1 13 15 2 14 16 1 11 17 1 17 18 1";
+var cy6dien_ch2mal="16 17 C 7.65 -7.81 C 7.65 -6.41 C 6.44 -5.71 C 5.23 -6.41 C 5.23 -7.81 C 6.44 -8.51 C 7.66 -5.01 O 8.88 -4.32 O 6.46 -4.30 C 8.86 -7.11 O 8.86 -8.51 O 10.08 -6.41 C 5.83 -6.97 C 7.04 -7.25 C 8.90 -2.92 C 10.08 -9.21 1 2 1 2 3 1 3 4 1 4 5 2 5 6 1 6 1 1 2 7 1 7 8 1 7 9 2 2 10 1 10 11 1 10 12 2 3 13 1 6 14 1 13 14 1 8 15 1 11 16 1";
+var me2budien_fumrate="16 16 C 7.76 -6.08 C 7.76 -4.68 C 6.55 -3.98 C 5.34 -4.68 C 5.34 -6.08 C 6.55 -6.78 C 4.13 -3.98 C 4.13 -6.78 C 8.98 -3.98 C 8.98 -6.78 O 10.19 -4.68 C 11.40 -3.98 O 8.98 -2.58 O 8.98 -8.18 O 10.19 -6.08 C 10.19 -8.88 1 2 1 2 3 1 3 4 1 4 5 2 5 6 1 6 1 1 4 7 1 5 8 1 2 9 -1 1 10 -2 9 11 1 11 12 1 9 13 2 10 14 1 10 15 2 14 16 1";
+var cy6dich2_crotate="15 16 C 9.67 -7.14 C 9.67 -5.74 C 8.46 -5.04 C 7.24 -5.74 C 7.24 -7.14 C 8.46 -7.84 C 10.88 -5.04 C 10.88 -7.84 O 12.09 -5.74 C 13.31 -5.04 O 10.88 -3.64 C 6.03 -5.04 C 4.82 -5.74 C 4.82 -7.14 C 6.03 -7.84 1 2 1 2 3 1 3 4 1 4 5 2 5 6 1 6 1 1 2 7 -1 1 8 -2 7 9 1 9 10 1 7 11 2 12 13 1 13 14 1 14 15 1 5 15 1 4 12 1";
+var cy5dien_ch2mal="15 16 C 9.38 -8.54 C 9.38 -7.13 C 8.16 -6.42 C 6.95 -7.13 C 6.95 -8.54 C 8.16 -9.24 C 9.39 -5.72 O 10.62 -5.02 O 8.18 -5.00 C 10.60 -7.83 O 10.60 -9.24 O 11.83 -7.13 C 10.64 -3.61 C 11.83 -9.95 C 7.67 -7.73 1 2 1 2 3 1 3 4 1 4 5 2 5 6 1 6 1 1 2 7 1 7 8 1 7 9 2 2 10 1 10 11 1 10 12 2 8 13 1 11 14 1 3 15 1 15 6 1";
+var cy6dien_malanh="13 15 C 9.00 -6.92 C 9.00 -5.52 C 7.78 -4.82 C 6.57 -5.52 C 6.57 -6.92 C 7.78 -7.62 C 10.33 -7.35 O 11.15 -6.22 C 10.33 -5.08 O 10.76 -3.75 O 10.76 -8.68 C 7.11 -6.04 C 8.41 -6.36 1 2 1 2 3 1 3 4 1 4 5 2 5 6 1 6 1 1 7 8 1 8 9 1 2 9 -2 1 7 -2 9 10 2 7 11 2 3 12 -1 6 13 -1 12 13 1";
+var cy5dien_crotate="12 13 C 8.80 -8.15 C 8.80 -6.77 C 7.59 -6.07 C 6.39 -6.77 C 6.39 -8.15 C 7.59 -8.85 C 7.12 -7.37 C 10.00 -6.07 C 10.00 -8.85 O 11.20 -6.77 O 10.00 -4.68 C 12.40 -6.07 1 2 1 2 3 1 3 4 1 4 5 2 5 6 1 6 1 1 3 7 -1 6 7 -1 2 8 -2 1 9 -1 8 10 1 8 11 2 10 12 1";
+var vyc6en_malanh="15 17 C 8.21 -5.40 C 8.21 -4.00 C 7.00 -3.30 C 5.78 -4.00 C 5.78 -5.40 C 7.00 -6.10 C 7.00 -7.50 C 8.21 -8.20 C 9.42 -7.50 C 9.42 -6.10 C 10.75 -7.93 O 11.57 -6.80 C 10.75 -5.67 O 11.18 -4.34 O 11.18 -9.27 1 2 -2 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 7 8 1 8 9 1 9 10 1 1 10 1 6 7 2 11 12 1 12 13 1 10 13 -2 9 11 -2 13 14 2 11 15 2";
+
+
+
+
+
+		if (form.pr1[0].checked){
+	i="1";
+jmequa="4 3 C 2.74 -4.31 C 1.53 -5.01 C 1.53 -6.41 C 2.74 -7.11 1 2 2 2 3 1 3 4 2"+plus+malanh+arrow+budien_malanh;
+}
+		if (form.pr1[1].checked){
+	i="2";
+jmequa=cy5dien+plus+ch2mal+arrow+cy5dien_ch2mal;
+}
+		if (form.pr1[2].checked){
+	i="3";
+jmequa=cy6dich2+plus+crotate+arrow+cy6dich2_crotate;
+}
+		if (form.pr1[3].checked){
+	i="4";
+jmequa="8 8 C 8.04 -6.19 C 8.04 -4.79 C 6.83 -4.09 C 5.62 -4.79 C 5.62 -6.19 C 6.83 -6.89 C 6.83 -8.29 C 8.04 -8.99 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 2 6 7 1 7 8 2"+plus+etynediestr+arrow+vyc6en_etynediestr;
+}
+		if (form.pr1[4].checked){
+	i="5";
+jmequa=me2budien+plus+fumrate+arrow+me2budien_fumrate;
+}
+		if (form.pr1[5].checked){
+	i="6";
+jmequa=cy6dien+plus+malanh+arrow+cy6dien_malanh;
+}
+		if (form.pr1[6].checked){
+	i="7";
+jmequa=cy5dien+plus+crotate+arrow+cy5dien_crotate;
+}
+		if (form.pr1[7].checked){
+	i="8";
+jmequa="8 8 C 8.04 -6.19 C 8.04 -4.79 C 6.83 -4.09 C 5.62 -4.79 C 5.62 -6.19 C 6.83 -6.89 C 6.83 -8.29 C 8.04 -8.99 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 2 6 7 1 7 8 2"+plus+malanh+arrow+vyc6en_malanh;
+}
+
+
+		if (form.un1[0].checked) {
+		j=1
+txt="Draw the structural formula for a diene that will react with the dienophile on the left of the arrow to give the adduct shown on the right.";
+}
+		if (form.un1[1].checked) {
+		j=2
+txt="Draw the structural formula for a dienophile that will react with the diene on the left of the arrow to give the adduct shown on the right.";
+
+	}
+		if (form.un1[2].checked) {
+		j=3
+txt="Draw the structural formula for adduct expected from the reaction of the diene and dienophiles drawn to the left of the arrow."
+
+}
+
+		if (i==1 &&  j==1) {
+sma="C=CC=C";
+jmeprb=quest+plus+malanh+arrow+budien_malanh;
+jmeans=budien;
+}
+		if (i==1 &&  j==2) {
+sma="O=c1ccc(=O)o1";
+jmeprb=budien+plus+quest+arrow+budien_malanh;
+jmeans = malanh;
+}
+		if (i==1 &&  j==3) {
+sma="O=C1OC(=O)[C@H]2CC=CC[C@@H]12";
+jmeprb=budien+plus+malanh+arrow+quest;
+jmeans = budien_malanh;
+}
+
+		if (i==2 &&  j==1) {
+sma="C1=CCC=C1";
+jmeprb=quest+plus+ch2mal+arrow+cy5dien_ch2mal;
+jmeans = cy5dien;
+}
+		if (i==2 &&  j==2) {
+sma="C=C(C(=O)OC)C(=O)OC";
+jmeprb=cy5dien+plus+quest+arrow+cy5dien_ch2mal;
+jmeans = ch2mal;
+}
+		if (i==2 &&  j==3) {
+sma="COC(=O)C1(C(=O)OC)CC2C=CC1C2";
+jmeprb=cy5dien+plus+ch2mal+arrow+quest;
+jmeans = cy5dien_ch2mal;
+}
+
+		if (i==3 &&  j==1) {
+sma="C=C1CCCCC1=C";
+jmeprb=quest+plus+crotate+arrow+cy6dich2_crotate;
+jmeans=cy6dich2;
+}
+		if (i==3 &&  j==2) {
+sma="[H]/C(C)=C([H])\\C(=O)OC";
+jmeprb=cy6dich2+plus+quest+arrow+cy6dich2_crotate;
+jmeans = crotate;
+}
+		if (i==3 &&  j==3) {
+sma="COC(=O)[C@@H]2CC1=C(CCCC1)C[C@H]2C";
+jmeprb=cy6dich2+plus+crotate+arrow+quest;
+jmeans = cy6dich2_crotate;
+}
+
+		if (i==4 &&  j==1) {
+sma="C=CC1=CCCCC1";
+jmeprb=quest+plus+etynediestr+arrow+vyc6en_etynediestr;
+jmeans = vyc6en;
+}
+		if (i==4 &&  j==2) {
+sma="COC(=O)C#CC(=O)OC";
+jmeprb=vyc6en+plus+quest+arrow+vyc6en_etynediestr;
+jmeans =etynediestr;
+}
+		if (i==4 &&  j==3) {
+sma="COC(=O)C2=C(C(=O)OC)C1CCCCC1=CC2";
+jmeprb=vyc6en+plus+etynediestr+arrow+quest;
+jmeans = vyc6en_etynediestr;
+}
+		if (i==5 &&  j==1) {
+sma="C=C(C)C(=C)C";
+jmeprb=quest+plus+fumrate+arrow+me2budien_fumrate;
+jmeans = me2budien;
+}
+		if (i==5 &&  j==2) {
+sma="[H]/C(=C([H])\\C(=O)OC)C(=O)OC" ;  
+jmeprb=me2budien+plus+quest+arrow+me2budien_fumrate;
+jmeans = fumrate;
+}
+		if (i==5 &&  j==3) {
+sma="COC(=O)[C@@H]1CC(C)=C(C)C[C@H]1C(=O)OC";
+jmeprb=me2budien+plus+fumrate+arrow+quest;
+jmeans = me2budien_fumrate;
+}
+
+		if (i==6 &&  j==1) {
+sma="C1=CCCC=C1";
+jmeprb=quest+plus+malanh+arrow+cy6dien_malanh;
+jmeans = cy6dien;
+}
+		if (i==6 &&  j==2) {
+sma="O=c1ccc(=O)o1";
+jmeprb=cy6dien+plus+quest+arrow+cy6dien_malanh;
+jmeans = malanh;
+}
+		if (i==6 &&  j==3) {
+sma="O=C2OC(=O)[C@@H]3[C@H]1C=C[C@H](CC1)[C@H]23";  
+ jmeprb=cy6dien+plus+malanh+arrow+quest;
+jmeans = cy6dien_malanh;
+}
+
+		if (i==7 &&  j==1) {
+sma="C1=CCC=C1";
+jmeprb=quest+plus+crotate+arrow+cy5dien_crotate;
+jmeans = cy5dien;
+}
+		if (i==7 &&  j==2) {
+sma="[H]/C(C)=C([H])\\C(=O)OC";
+jmeprb=cy5dien+plus+quest+arrow+cy5dien_crotate;
+jmeans = crotate;
+}
+		if (i==7 &&  j==3) {
+sma="COC(=O)[C@@H]1[C@@H](C)[C@H]2C=C[C@@H]1C2";  
+jmeprb=cy5dien+plus+crotate+arrow+quest;  
+jmeans = cy5dien_crotate;
+}
+
+		if (i==8 &&  j==1) {
+sma="C=CC1=CCCCC1";
+jmeprb=quest+plus+malanh+arrow+vyc6en_malanh;
+jmeans = vyc6en;
+}
+		if (i==8 &&  j==2) {
+sma="O=c1ccc(=O)o1";
+jmeprb=vyc6en+plus+quest+arrow+vyc6en_malanh;
+jmeans = malanh;
+}
+		if (i==8 &&  j==3) {  
+sma="O=C1OC(=O)[C@@H]3[C@H]1CC=C2CCCC[C@@H]23";
+jmeprb=vyc6en+plus+malanh+arrow+quest;
+jmeans = vyc6en_malanh;
+}
+}
+function processJme() {
+  document.JME.readMolecule(document.form.jme_output.value);
+ document.JME.readMolecule(document.form.jmeprb_output.value);
+ }
+function chkvar() { 
+document.JME.readMolecule(jme);
+}
+function clrwind() { 
+	jme="0 0";
+document.JME.readMolecule(jme);
+}
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+  document.form.smiles.value = smiles; 
+txt=""; 
+anscnt=anscnt+1;
+  if (smiles == "") {
+alert("Nothing to process!\rYou must draw a structural formula"); return;
+}
+if  (smiles == sma) { 
+var Txt="Correct Structure! " ;
+	anscnt=3;
+}else{
+Txt="Wrong Answer! Try again. ";
+}
+if ((i=="1")&&(j=="3")&&(smiles=="O=C1OC(=O)C2CC=CCC12")) {
+txt="You must show the configuration of the ring fusion. "; 
+}
+if ((i=="1")&&(j=="3")&&(smiles=="O=C1OC(=O)[C@@H]2CC=CC[C@H]12")) {
+Txt="Correct Answer! \r";
+	anscnt=3;
+}
+if (((i=="2"))&&((j=="3"))&&((smiles=="COC(=O)C1(C(=O)OC)C[C@H]2C=C[C@@H]1C2")||(smiles=="COC(=O)C1(C(=O)OC)C[C@@H]2C=C[C@H]1C2"))) {
+Txt="Correct Answer! \r";
+	anscnt=3;
+}
+if ((i=="3")&&(j=="2")&&(smiles=="C/C=C/C(=O)OC")) {
+Txt="Correct Answer! \r";  
+	anscnt=3;
+}
+if ((i=="5")&&(j=="2")&&(smiles=="COC(=O)/C=C/C(=O)OC")) { 
+Txt="Correct Answer! \r";  
+	anscnt=3;
+}
+
+if ((i=="7")&&(j=="2")&&(smiles=="C/C=C/C(=O)OC")) {
+Txt="Correct Answer! \r";  
+	anscnt=3;
+}
+
+if ((i=="3")&&(j=="3")&&(smiles=="COC(=O)[C@H]2CC1=C(CCCC1)C[C@@H]2C")) {
+Txt="Correct Answer! \r";
+	anscnt=3;
+}
+if ((i=="3")&&(j=="3")&&(smiles=="COC(=O)C2CC1=C(CCCC1)CC2C")) {
+txt="You must show the configuration of the ring substituents. "; 
+}
+
+if ((i=="5")&&(j=="3")&&(smiles=="COC(=O)[C@H]1CC(C)=C(C)C[C@@H]1C(=O)OC")) {
+Txt="Correct Answer! \r";
+	anscnt=3;
+}
+if ((i=="5")&&(j=="3")&&(smiles=="COC(=O)C1CC(C)=C(C)CC1C(=O)OC")) {
+txt="You must show the configuration of the ring substituents. "; 
+}
+if (((i=="6"))&&((j=="3"))&&((smiles=="O=C2OC(=O)[C@H]3[C@@H]1C=C[C@@H](CC1)[C@@H]23")||(smiles=="O=C2OC(=O)[C@@H]3[C@@H]1C=C[C@@H](CC1)[C@H]23")||(smiles=="O=C2OC(=O)[C@H]3[C@H]1C=C[C@H](CC1)[C@@H]23"))) {  
+Txt="Correct Answer! \r";
+	anscnt=3;
+}
+if (((i=="6"))&&((j=="3"))&&((smiles=="O=C2OC(=O)C3C1C=CC(CC1)C23")||(smiles=="O=C2OC(=O)[C@@H]3C1C=CC(CC1)[C@H]23")||(smiles=="O=C2OC(=O)[C@H]3C1C=CC(CC1)[C@@H]23")||(smiles=="O=C2OC(=O)C3[C@H]1C=C[C@H](CC1)C23")||(smiles=="O=C2OC(=O)C3[C@@H]1C=C[C@@H](CC1)C23"))) {
+txt="You must show the relative configuration of the ring fusion and the two carbon bridge."; 
+}
+if ((i=="7")&&(j=="3")&&(smiles=="COC(=O)[C@H]1[C@H](C)[C@@H]2C=C[C@H]1C2")) {
+Txt="Correct Answer! \r"; 
+	anscnt=3;
+}
+if (((i=="7"))&&((j=="3"))&&((smiles=="COC(=O)C1C(C)C2C=CC1C2")||(smiles=="COC(=O)[C@@H]1[C@@H](C)C2C=CC1C2")||(smiles=="COC(=O)[C@H]1[C@H](C)C2C=CC1C2")||(smiles=="COC(=O)C1C(C)[C@H]2C=C[C@@H]1C2")||(smiles=="COC(=O)[C@H]1[C@H](C)[C@H]2C=C[C@@H]1C2"))) {
+txt="You must show the relative configuration of the ring substituents and the one carbon bridge."; 
+}
+if ((i=="8")&&(j=="3")&&(smiles=="O=C1OC(=O)[C@H]3[C@@H]1CC=C2CCCC[C@H]23")) {
+Txt="Correct Answer! \r";    
+	anscnt=3;
+}
+if (((i=="8"))&&((j=="3"))&&((smiles=="O=C1OC(=O)C3C1CC=C2CCCCC23")||(smiles=="O=C1OC(=O)[C@H]3[C@@H]1CC=C2CCCCC23")||(smiles=="O=C1OC(=O)[C@@H]3[C@H]1CC=C2CCCCC23"))) {
+txt="You must show the relative configuration of three carbons, the ring fusion and the new chiral center in the six-membered ring.\rThis is an example of the endo rule."; 
+}
+if ((i==6)||(i==7)||(i==8)) {
+txt=txt + "\rThis is an example of the endo rule.";
+}
+	 document.form.result1.value = Txt+"\r"+txt ;
+}
+
+
+function getJmeFile() {
+  var jme = document.JME.jmeFile();
+  document.form.jme_output.value = jme;
+}
+function chkans() { 
+if (anscnt>=3 ) {
+  document.JME.readMolecule(jmeans);
+txt="The correct answer is displayed above";
+if ((i==6)||(i==7)||(i==8)) {
+txt=txt+"\rThis is an example of the endo rule.";
+}
+Txt="";
+	 document.form.result1.value = Txt+"\r"+txt ;
+}else{
+txt=noansw;
+	 document.form.result1.value = Txt+"\r"+txt ;
+}
+}
+function shequa() { 
+if (anscnt>=3 ) {
+  document.JME.readMolecule(jmequa);
+txt="The complete equation is displayed above";
+Txt="";
+if ((i==6)||(i==7)||(i==8)) {
+txt=txt+"\rThis is an example of the endo rule.";
+}
+
+	 document.form.result1.value = Txt+"\r"+txt ;
+}else{
+txt=noansw;
+	 document.form.result1.value = Txt+"\r"+txt ;
+}
+}
+function processJmeans() {
+  document.JME.readMolecule(document.form.jmeans_output.value);
+}
+function showprb() {
+  document.JME.readMolecule(jmeprb);
+Txt="";
+	 document.form.result1.value = Txt+"\r"+txt ;
+}
+
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body>
+<div class="ctr"><H3>Diels-Alder Cycloaddition Reactions</H3></div>
+<P>The Diels-Alder reaction requires <b>diene</b> and <b>dienophile</b> reactants which combine to form a product called the <b>adduct</b>. This problem tests your understanding of this important reaction.<br>
+Create a problem by selecting a problem number and a format from the lists on the right below. When the <B>Show Problem</B> button is pressed  a reaction in which one of the components is missing will be displayed in the drawing window. Specific commentary may be presented in the information window beneath. Using the drawing window, draw a structural formula for the missing compound.  Use the <b>Erase Window</b> button to remove the drawings in the window. <br>Once you have drawn your answer, press the <b>Check Answer</b> button to have it evaluated. Press the <b>Reset</b> button before trying a new problem.</P>
+<TABLE  CELLPADDING=3><TR><TH> 
+<applet code="JME.class" name="JME" archive="JME.jar" width="500" height="340">
+<param name= "options"  value="autoez">
+You have to enable Java and JavaScript on your machine !
+</applet>
+<FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"><p>
+To practice using this drawing program <A 
+HREF="../MOLEDITOR/practice.htm">Click Here</A>.<br>
+</p>
+</TH>   <TH> &nbsp; </TH>
+<TH><table cellpadding=4 width=300  border><tr bgcolor="dedede"> <th colspan=8><H3><span class="fc-maroon"> Problem</span></H3></th></tr>
+<tr><th nowrap><B><span class="fc-blue"> 1</span></B> 
+<br><INPUT TYPE=RADIO NAME="pr1" VALUE="select" checked>
+<input type="hidden" value="" name="smiles"></th>
+<th nowrap><B><span class="fc-blue"> 2</span></B> <br><INPUT TYPE=RADIO NAME="pr1" VALUE="select"><input type="hidden" value="" name="smiles"></th>
+<th nowrap><B><span class="fc-blue"> 3</span></B> <br><INPUT TYPE=RADIO NAME="pr1" VALUE="select"><input type="hidden" value="" name="smiles"></th>
+<th nowrap><B><span class="fc-blue">4</span></B> <br><INPUT TYPE=RADIO NAME="pr1" VALUE="select"><input type="hidden" value="" name="smiles"></th>
+<th nowrap><B><span class="fc-blue"> 5</span></B> <br><INPUT TYPE=RADIO NAME="pr1" VALUE="select"><input type="hidden" value="" name="smiles"> </th>
+<th nowrap><B><span class="fc-blue"> 6</span></B> <br><INPUT TYPE=RADIO NAME="pr1" VALUE="select"><input type="hidden" value="" name="smiles"></th>
+<th nowrap><B><span class="fc-blue"> 7</span></B> <br><INPUT TYPE=RADIO NAME="pr1" VALUE="select"><input type="hidden" value="" name="smiles"></th>
+<th nowrap><B><span class="fc-blue"> 8</span></B> <br><INPUT TYPE=RADIO NAME="pr1" VALUE="select"><input type="hidden" value="" name="smiles"></th></tr>
+<tr> <th colspan=8 height=33> </th></tr>
+<tr bgcolor="dedede"> <th colspan=8><H3><span class="fc-maroon"> Format</span></H3></th></tr>
+<tr><th colspan=8 nowrap><B><span class="fc-blue"> Determine the Diene Structure</span></B> 
+<br><INPUT TYPE=RADIO NAME="un1" VALUE="select" checked>
+<input type="hidden" value="" name="smiles"></th></tr>
+<tr><th colspan=8 nowrap><B><span class="fc-blue">Determine the Dienophile Structure</span></B> 
+<br><INPUT TYPE=RADIO NAME="un1" VALUE="select">
+<input type="hidden" value="" name="smiles"></th></tr>
+<tr><th colspan=8 nowrap><B><span class="fc-blue">Determine the Adduct Structure</span></B> 
+<br><INPUT TYPE=RADIO NAME="un1" VALUE="select">
+<input type="hidden" value="" name="smiles"></th></tr></table>
+</TH></TR></TABLE>
+<TABLE><TR><TH><P> <TEXTAREA WRAP NAME='result1' ROWS='6' COLS='64'></TEXTAREA> <br><span class="fc-blue">Information Window</span></P> </TH><TH>   </TH><TH nowrap> <p>&nbsp; <input type='button' value='Show Problem' onClick='process(form);chkvar();showprb();'> &nbsp; &nbsp; &nbsp;   <INPUT TYPE='button' VALUE='Erase Window' onClick='clrwind();'>&nbsp; &nbsp; &nbsp; <input type='button' value='Check Answer' onClick='submitSmiles();'> </p>
+<p> <INPUT TYPE='button' VALUE='Show Answer' onClick='chkans();'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type='button' value='Show Equation' onClick='shequa();'> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <INPUT TYPE='RESET' VALUE='Reset' onClick='document.JME.reset();'></p>
+<p><b>
+To review the Diels-Alder reaction  <A HREF="../../addene2.htm#dien3" Target="_top"> Click Here</A>.</b></p>
+</TH></TR></TABLE>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.
+<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+
+</form>
+</BODY>
+</HTML>

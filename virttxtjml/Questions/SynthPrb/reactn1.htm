@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+var anscnt=0;
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+document.form.smiles.value = smiles; 
+}
+function processMolecule1(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "CCC1CCCCC1=O") {
+var Txt="Correct!";
+anscnt=anscnt+1;
+	}else{
+var Txt="Wrong! Try again.";
+anscnt=anscnt+1;
+}
+	input.result.value = Txt ;
+  // in actual application remove line above and add something like this
+  // document.form.submit();
+}
+
+function processMolecule2(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (smiles == "O=C(O)CCCC(=O)c1ccccc1") {
+var Txt="Correct!";
+anscnt=anscnt+1;
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule3(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "CCOC(=O)C(C(=O)CC(C)C)C(C)C") {
+var Txt="Correct!";
+anscnt=anscnt+1;
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule4(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "CCC(CO)c1ccccc1") {
+var Txt="Correct!";
+anscnt=anscnt+1;
+	}else{
+var Txt="Wrong! Try again.";
+anscnt=anscnt+1;
+}
+	input.result.value = Txt ;
+}
+
+function answr(show) {
+if (anscnt>=3) {
+window.open('answ2.htm#prba','help','toolbar=no,menubar=no,status=no,scrollbars=yes,width=460,height=440')
+var Txt="See answer window.";
+}else{
+var Txt="You must try to answer this question three times before the answers will be shown.";
+anscnt=anscnt;
+}
+	show.result.value = Txt ;
+}
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<TITLE>Multistep Synthesis</TITLE>
+<META NAME="DC.SUBJECT" CONTENT="Practice questions for organic
+chemistry students>
+<body>
+<A NAME="start"></A>
+<form method="post" name="form">
+<div class="ctr"><H3>Multistep Transformations</H3></div>
+<p><span class="fc-blue">Draw the <b>major product</b> from each of the reaction sequences shown below. </span><BR>
+To draw a formula use the Drawing Window on the left. When you are finished, check your answer by pressing the <b>Check Molecule #</b> button. A help screen is available for the drawing window.</p>
+
+<table><tr><th valign="top" rowspan=4 width=400><applet code="JME.class" name="JME" archive="JME.jar" width=360, height=360>
+You have to enable Java and JavaScript on your machine !
+</applet><FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"> &nbsp; 
+<hr><br /><TEXTAREA  WRAP NAME="result"  ROWS="3"  COLS="40"></TEXTAREA><br /><br /><INPUT TYPE="RESET" VALUE="Clear"> &nbsp; &nbsp; &nbsp; 
+ <INPUT TYPE="button"  VALUE=" View Answers " onClick=
+"answr(this.form)"> </th>
+
+<td width=100 height=130><B>1.</B><BR><div class="ctr"><IMG SRC="../Images/cy6ene.gif" ></A></div></TD>
+<TD width=270><B>1)</B> <span class="fs-3 ff-times">perbenzoic acid (C<SUB>6</SUB>H<SUB>5</SUB>CO<SUB>3</SUB>H)<BR>
+<B>2)</B> ethyllithium (C<SUB>2</SUB>H<SUB>5</SUB>Li)<BR>
+<IMG SRC="../Images/arrow.gif" WIDTH=200><BR>
+<B>3)</B> PCC (C<SUB>5</SUB>H<SUB>5</SUB>N<SUP>.</SUP>CrO<SUB>3</SUB><SUP>.</SUP>HCl)</span>
+</td>
+<TD width=80><BR><IMG SRC="../Images/question.gif"></TD>
+<input type="hidden" value="" name="smiles"> &nbsp; </td><td><input type="button"
+value="Check Molecule 1" onClick="submitSmiles(); processMolecule1(this.form);"> </td></tr>
+
+<tr><td height=130><B>2.</B> <div class="ctr"><IMG SRC="../Images/cyc5one.gif"></A></TD>
+<TD><B>1)</B> <span class="fs-3 ff-times"> C<SUB>6</SUB>H<SUB>5</SUB>MgBr in ether<BR>
+<B>2)</B> phosphoric acid (H<SUB>3</SUB>PO<SUB>4</SUB>) & heat<BR>
+<IMG SRC="../Images/arrow.gif" WIDTH=200><BR>
+<B>3)</B> ozonolysis (O<SUB>3</SUB>, then H<SUB>2</SUB>O<SUB>2</SUB>)</span></td>
+<TD><BR><IMG SRC="../Images/question.gif"></TD>
+<input type="hidden" value="" name="smiles2"> &nbsp; </td><td><input type="button"
+value="Check Molecule 2" onClick="submitSmiles(); processMolecule2(this.form);"> </td></tr>
+
+<tr><td height=130><B>3.</B><div class="ctr"><IMG SRC="../Images/iso5ol.gif"></A></div></TD>
+<TD><B>1)</B> <span class="fs-3 ff-times">Jones' reag. (CrO<SUB>3</SUB> in aq. H<SUB>2</SUB>SO<SUB>4</SUB>)<BR>
+<B>2)</B> ethanol & acid catalyst & heat<BR>
+<IMG SRC="../Images/arrow.gif" WIDTH=200><BR>
+<B>3)</B> NaOC<SUB>2</SUB>H<SUB>5</SUB> & heat; then H<SUB>3</SUB>O<SUP>(+)</SUP></span></td>
+<TD><BR><IMG SRC="../Images/question.gif"></TD>
+<input type="hidden" value="" name="smiles3"> &nbsp; </td><td><input type="button"
+value="Check Molecule 3" onClick="submitSmiles(); processMolecule3(this.form);"> </td></tr>
+
+<tr><td><B>4. </B><div class="ctr"><IMG SRC="../Images/benzene.gif"></A></TD>
+<TD nowrap><B>1)</B> <span class="fs-3 ff-times">  C<SUB>2</SUB>H<SUB>5</SUB>COCl + AlCl<SUB>3</SUB> & heat<BR>
+<B>2)</B> (C<SUB>6</SUB>H<SUB>5</SUB>)<SUB>3</SUB>P=CH<SUB>2</SUB> in ether<BR>
+<IMG SRC="../Images/arrow.gif" WIDTH=200><BR>
+<B>3)</B> B<SUB>2</SUB>H<SUB>6</SUB> in ether; then H<SUB>2</SUB>O<SUB>2</SUB> & NaOH</span></td>
+<TD><BR><IMG SRC="../Images/question.gif"></TD>
+<input type="hidden" value="" name="smiles4"> &nbsp; </td><td><input type="button"
+value="Check Molecule 4" onClick="submitSmiles(); processMolecule4(this.form);"></TD></TR></TABLE>
+</form>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<BR>
+Java Molecular Editor v99.03 by: <A HREF=MAILTO:"peter.ertl@cp.novartis.com">peter.ertl@cp.novartis.com</A></span>
+</BODY>
+</HTML>
+
+
+

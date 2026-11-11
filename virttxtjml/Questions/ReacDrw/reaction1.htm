@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en"> 
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+ function jmehelp() { window.open('../MOLEDITOR/jme_help.html','JME','width=800,height=800,scrollbars=yes');
+}
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+document.form.smiles.value = smiles; 
+}
+    
+
+function processReact1(input) {
+  smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if ((smiles == "CC1=CCCCC1>>C[C@@H]1CCCC[C@H]1O") || (smiles == "CC1=CCCCC1>>C[C@H]1CCCC[C@@H]1O")) {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again."
+}
+	input.result.value = Txt ;
+}
+
+function processReact2(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if ((smiles == "CC1=CCCC1>>C[C@]1(O)CCC[C@@H]1Br") || (smiles == "CC1=CCCC1>>C[C@@]1(O)CCC[C@H]1Br")) {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";  
+}
+	input.result.value = Txt ;
+}
+
+function processReact3(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if ((smiles == "CC/C=C/CC>>CC[C@@H](Br)[C@@H](Br)CC") || (smiles == "CC/C=C/CC>>CC[C@H](Br)[C@H](Br)CC") || (smiles == "[H]//C(CC)=C([H])\CC>>CC[C@@H](Br)[C@@H](Br)CC") || (smiles == "[H]//C(CC)=C([H])\CC>>CC[C@H](Br)[C@H](Br)CC")) {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again." ; 
+}
+	input.result.value = Txt ;
+}
+
+function processReact4(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if ((smiles == "C/C=C(C)/CC>>CC[C@](C)(O)[C@H](C)O") || (smiles == "C/C=C(C)/CC>>CC[C@@](C)(O)[C@@H](C)O") || (smiles == "[H]//C(C)=C(C)\CC>>CC[C@@](C)(O)[C@@H](C)O") || (smiles == "[H]//C(C)=C(C)\CC>>CC[C@](C)(O)[C@H](C)O")) {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+
+function processReact5(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if ((smiles == "C1=CCCCCC1>>Br[C@@H]1CCCCC[C@H]1Br") || (smiles == "C1=CCCCCC1>>Br[C@H]1CCCCC[C@@H]1Br")) {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+
+function processReact6(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if ((smiles == "C/C=C(C)\CC>>CC[C@H](C)[C@H](C)O") || (smiles == "C/C=C(C)\CC>>CC[C@@H](C)[C@@H](C)O")) {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again." ;
+}
+	input.result.value = Txt ;
+}
+
+function processReact7(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if ((smiles == "CC/C=C(C)/CC>>CC[C@H](Br)[C@](C)(O)CC") || (smiles == "CC/C=C(C)/CC>>CC[C@@H](Br)[C@@](C)(O)CC")) {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+
+function processReact8(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if ((smiles == "CC/C=C\CC>>CC[C@@H](O)[C@@H](O)CC") || (smiles == "CC/C=C\CC>>CC[C@H](O)[C@H](O)CC")) {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+
+
+
+function showSmiles(input) { 
+ smiles = document.form.smiles.value;
+	input.result.value = smiles ;
+}
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body>
+
+<form method="post" name="form">
+<div class="ctr"><H2>Regio and Stereospecific Reactions</H2></div>
+<P>For each of the following reactions draw the starting material on the left of the arrow and, after clicking the <B>New</B> button, draw the product on the right. When you have finished drawing a reaction, check your answer by pressing the <b>Check Reaction #</b> button. Use the wedge drawing tool to indicate the configuration of stereogenic centers.  Do not draw hydrogen atoms.</p>
+<TABLE cellspacing=3 width=940 ><TR><TH ROWSPAN=8>
+ <applet code="JME.class" name="JME" archive="JME.jar" width=440, height=360> <param name= "options"  value="autoez; hydrogen; reaction">
+You have to enable Java and JavaScript on your machine !
+</applet><FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"> 
+<BR /><br />
+
+Evaluation Window<BR>
+<TEXTAREA WRAP NAME="result" ROWS="4" COLS="40"></TEXTAREA><BR>
+<INPUT TYPE="RESET" VALUE="Clear"> &nbsp; &nbsp; &nbsp; <input type="button" value="Help" onClick="jmehelp();">
+</TH>
+<TD nowrap><B><span class="fc-blue">Reaction 1. </B></span></TD> <TD>&nbsp; <b>(i)</b> &nbsp; 1-Methylcyclohexene + Diborane <br /> &nbsp; <b>(ii)</b> &nbsp; H<sub>2</sub>O<sub>2</sub> + NaOH </TD<TD> <input type="hidden" value="" name="smiles"> <input type="button" value="Check Reaction 1" onClick="submitSmiles(); processReact1(this.form);"></TD> </tr>
+<tr><TD nowrap><B><span class="fc-blue">Reaction 2. </B></span></TD> <TD>  &nbsp; 1-Methylcyclopentene + HOBr</TD> <TD> <input type="hidden" value="" name="smiles"><input type="button" value="Check Reaction 2" onClick="submitSmiles(); processReact2(this.form);"></TD></TR>
+<TR><TD nowrap><B><span class="fc-blue">Reaction 3. </B></span></TD> <TD> &nbsp; (E)-3-hexene + Br<sub>2</sub> </TD<TD> <input type="hidden" value="" name="smiles"><input type="button" value="Check Reaction 3" onClick="submitSmiles(); processReact3(this.form);"></TD> </TR>
+<TR ><TD nowrap><B><span class="fc-blue">Reaction 4. </B></span></TD> 
+<TD> &nbsp; (E)-3-methyl-2-pentene + KMnO<sub>4</sub> </TD> <TD> <input type="hidden" value="" name="smiles2"><input type="button" value="Check Reaction 4" onClick="submitSmiles(); processReact4(this.form);"></TD></TR>
+<TR ><TD nowrap><B><span class="fc-blue">Reaction 5. </B></span></TD> 
+<TD> &nbsp; Cycloheptene + Br<sub>2</sub> </TD> <TD> <input type="hidden" value="" name="smiles2"><input type="button" value="Check Reaction 5" onClick="submitSmiles(); processReact5(this.form);"></TD></TR>
+<TR ><TD nowrap><B><span class="fc-blue">Reaction 6. </B></span></TD> 
+<TD> &nbsp; <b>(i)</b> &nbsp; (Z)-3-methyl-2-pentene + Diborane <br /> &nbsp; <b>(ii)</b> &nbsp; H<sub>2</sub>O<sub>2</sub> + NaOH</TD> <TD> <input type="hidden" value="" name="smiles2"><input type="button" value="Check Reaction 6" onClick="submitSmiles(); processReact6(this.form);"></TD></TR>
+<TR ><TD nowrap><B><span class="fc-blue">Reaction 7. </B></span></TD> 
+<TD> &nbsp;  (E)-3-methyl-3-hexene + HOBr </TD> <TD> <input type="hidden" value="" name="smiles2"><input type="button" value="Check Reaction 7" onClick="submitSmiles(); processReact7(this.form);"></TD></TR>
+<TR ><TD nowrap><B><span class="fc-blue">Reaction 8. </B></span></TD> 
+<TD> &nbsp; (Z)-3-hexene + KMnO<sub>4</sub> </TD> <TD> <input type="hidden" value="" name="smiles2"><input type="button" value="Check Reaction 8" onClick="submitSmiles(); processReact8(this.form);"></TD></TR>
+</TABLE><BR>
+
+</FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> <TABLE WIDTH=640><TR><TD>
+Java Molecular Editor v99.11 by: <A HREF=MAILTO:"peter.ertl@pharma.novartis.com || peter.ertl@altavista.net"> peter.ertl@pharma.novartis.com</A></span></TD>
+<TD> </TD><TD><IMG SRC="../MOLEDITOR/novartis.gif" ALT="Novartis logo"></TD></TR></TABLE>
+</BODY>
+</HTML>

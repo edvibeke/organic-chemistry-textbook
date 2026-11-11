@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  td {font-size: 11pt} td {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+var j=0;
+var k=0;
+var m=0;
+var Txt="";
+var txt="";
+var anscnt=0;
+	function process(form) {
+	if (j!=0){
+	 j=0
+}
+		if (form.q1[0].checked) {
+		j=1
+}
+		if (form.q1[1].checked) {
+		j=2
+}
+		if (form.q1[2].checked) {
+		j=3
+}
+		if (form.q1[3].checked) {
+		j=4
+}
+		if (form.q1[4].checked) {
+		j=5
+}
+		if (form.q1[5].checked) {
+		j=6
+}
+}
+
+function setanscnt() {
+	if (anscnt!=0){
+		anscnt=0;
+}
+}
+
+function check(input)  {
+	if (k!=0){
+		k=0;
+}
+	if (m!=0){
+		m=0;
+}
+anscnt=anscnt+1;
+	if (input.a1.checked){
+		k=k+1
+		m=m+1
+}
+  if (input.a2.checked){
+ 	k=k+2
+		m=m+1
+}
+ if (input.a3.checked){
+		k=k+4
+		m=m+1
+}
+  if (input.a4.checked){
+ 	k=k+8
+		m=m+1
+}
+	   if (input.a5.checked){
+		k=k+16
+		m=m+1;
+}
+ 	if (input.a6.checked){
+ 	k=k+32
+		m=m+1
+}
+ 	if (input.a7.checked){
+ 	k=k+64
+		m=m+1
+}
+ 	if (input.a8.checked){
+ 	k=k+128
+		m=m+1
+}
+ 	if (input.a9.checked){
+ 	k=k+256
+		m=m+1
+}
+ 	if (input.a10.checked){
+ 	k=k+512
+		m=m+1
+}
+}
+
+function processAnsw(input) { 
+if  ((j == 1 && k==268)||(j==2 && k==16)||(j==3 && k==2)||(j==4 && k==32)||(j==5 && k==512)||(j==6 && k==129)) { 
+var Txt="Correct Answer! ";
+}else{
+if ((j == 1 && k==8)||(j==1 && k==12)||(j == 1 && k==4)||(j == 1 && k==256)||(j == 1 && k==260)||(j == 1 && k==264)||(j==6 && k==1)||(j == 6 && k==128)) {
+var Txt="Your selections are correct, but not complete.";
+}else{ 
+if (k==0) {
+var Txt="You have not made any selections!";
+}else{
+var Txt="Wrong! Try again.";
+}
+}
+}
+if  ((j == 1  && m>=4)||(j==2 && m>=2)||(j==3 && m>=2)||(j==4 &&  m>=2)||(j==5 && m>=2)||(j==6 && m>=3)) { 
+var Txt=Txt + "\rYou have made too many selections. ";
+}
+	 document.form.result1.value = Txt;
+}
+
+
+ function giveansw() {
+var answ="";
+ if ((anscnt>=3) && (j==1)) {
+answ="C8H15Cl2, C8H17Br3, C7H5N2Cl2 \rUnstable, due either to an odd # of odd-valency atoms,\r or too many substituents for the carbons to accomodate.";
+}else{
+ if ((anscnt>=3) && (j==2)) {
+answ= "C4H10O2";
+}else{
+ if ((anscnt>=3) && (j==3)) {
+answ= "C6H9O2Cl3"; 
+}else{
+ if ((anscnt>=3) && (j==4)) {
+answ= "C9H11OCl";  
+}else{
+ if ((anscnt>=3) && (j==5)) {
+answ= "None";  
+}else{
+ if ((anscnt>=3) && (j==6)) {
+answ= "C11H20O4, C5H9NO";
+}else{
+answ="You must try to answer this questions three times before viewing the answer."
+}
+}
+}
+}
+}
+} 
+  document.form.result1.value=answ
+}
+
+// End of hide script comment. -->
+</SCRIPT>
+ <link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Analyzing Formulas</TITLE>
+ <body>
+ <div class="ctr"><H3>Analyzing Molecular Formulas</H3></div>
+<P>A molecular formula can provide important information about the constitution of a compound. These questions test your ability to obtain this information.<br>
+<span class="fc-blue"><B>Choose one of the six problems listed below by clicking on its radio button.</B></span></P>
+ <FORM  NAME="form">
+<p> <dir><INPUT TYPE=RADIO NAME="q1" VALUE="prob" checked> &nbsp; <span class="fc-blue"><B> Which formulas are improbable for a stable compound?</B></span><BR>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; <span class="fc-blue"><B>Which formulas might represent a non-cyclic saturated compound?</B></span><BR>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; <span class="fc-blue"><B> Which formulas might represent a compound having a double bond, but not a triple bond? </B></span><BR>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; <span class="fc-blue"><B> Which formulas might represent a compound having a benzene ring?</B></span><BR>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; <span class="fc-blue"><B> Which formulas might represent a compound having three rings and two double bonds?</B></span><BR>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; <span class="fc-blue"><B> Which formulas might represent a non-cyclic compound having a triple bond as the only unsaturation? </B></span></dir></p>
+<P>
+Once the problem is selected check all the following molecular formulas that meet the stated conditions (simply click the box beneath the formula).</P>
+<p> <TABLE BORDER=1 CELLPADDING=9>
+ <TR VALIGN=TOP>
+ <TD><div class="ctr">C<SUB>11</SUB>H<SUB>20</SUB>O<SUB>4</SUB><br>
+ <INPUT TYPE=CHECKBOX NAME="a1" VALUE="answ"></div></TD>
+ <TD><div class="ctr">C<SUB>6</SUB>H<SUB>9</SUB>O<SUB>2</SUB>Cl<SUB>3</SUB><br>
+ <INPUT TYPE=CHECKBOX NAME="a2" VALUE="answ"></div></TD>
+ <TD><div class="ctr">C<SUB>8</SUB>H<SUB>15</SUB>Cl<SUB>2</SUB><br>
+ <INPUT TYPE=CHECKBOX NAME="a3" VALUE="answ"></div></TD>
+<TD><div class="ctr">C<SUB>8</SUB>H<SUB>17</SUB>Br<SUB>3</SUB><br>
+ <INPUT TYPE=CHECKBOX NAME="a4" VALUE="answ"></div></TD>
+<TD><div class="ctr">C<SUB>4</SUB>H<SUB>10</SUB>O<SUB>2</SUB><br>
+ <INPUT TYPE=CHECKBOX NAME="a5" VALUE="answ"></div></TD>
+<TD><div class="ctr">C<SUB>9</SUB>H<SUB>11</SUB>OCl<br>
+ <INPUT TYPE=CHECKBOX NAME="a6" VALUE="answ"></div></TD>
+<TD><div class="ctr">C<SUB>6</SUB>H<SUB>7</SUB>O<SUB>3</SUB>Br<br>
+ <INPUT TYPE=CHECKBOX NAME="a7" VALUE="answ"></div></TD>
+<TD><div class="ctr">C<SUB>5</SUB>H<SUB>9</SUB>NO<br>
+ <INPUT TYPE=CHECKBOX NAME="a8" VALUE="answ"></div></TD>
+ <TD><div class="ctr">C<SUB>7</SUB>H<SUB>5</SUB>N<SUB>2</SUB>Cl<SUB>2</SUB><br>
+ <INPUT TYPE=CHECKBOX NAME="a9" VALUE="answ"></div></TD>
+ <TD nowrap><div class="ctr"> None Fit <br>
+ <INPUT TYPE=CHECKBOX NAME="a10" VALUE="answ"></div></TD>
+ </TR></TABLE></P>
+ <HR>
+ <P><INPUT TYPE="button" VALUE="Check Answers" onClick="process(form);check(form);processAnsw(this.form);">&nbsp;
+ <INPUT TYPE="RESET" VALUE="Reset" onClick="setanscnt()">
+ <TEXTAREA WRAP NAME="result1" ROWS="3" COLS="56">
+ </TEXTAREA>
+ <INPUT TYPE="button"  NAME="answr" VALUE="View Answer" onClick="giveansw (this.form)">
+</FORM><HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+ </BODY>
+ </HTML>

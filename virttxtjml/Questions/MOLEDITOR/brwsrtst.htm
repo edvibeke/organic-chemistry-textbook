@@ -1,0 +1,93 @@
+<!doctype html>
+
+<html lang="en">
+<HEAD>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="../../htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="../../htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<TITLE>Browser Test</TITLE>
+
+<script language="JavaScript">
+<!--HIDE
+
+var Txt="Draw cis-1,3-dichlorocyclohexane in the drawing window.";
+var smiles = "";
+var anscnt=0;
+var sma="Cl[C@@H]1CCC[C@H](Cl)C1";
+var sma2="Cl[C@H]1CCC[C@@H](Cl)C1";
+
+var jme = "0 0";
+
+function getSmiles() {
+  var smiles = document.JME.smiles();
+
+
+ if (smiles == "") {alert("Nothing to process!\rYou must draw a structural formula"); return;
+Txt="";
+}
+if ((smiles==sma)||(smiles==sma2)){
+var Txt="Correct Answer! \r";
+}else{
+if (smiles=="ClC1CCCC(Cl)C1"){
+var Txt="The constitutional structure is correct, but you should show configuration by drawing wedge bonds. \rTry again ";
+}else{
+var Txt="Wrong Answer! Try again. \r";
+
+}
+}
+	document.form.result1.value = Txt ;
+}
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body onLoad="document.form.result1.value = Txt "
+
+<div class="ctr"><b><span class="fs-5">Browser Test Page</span></b></div>
+<P>The following four displays may not function well on all browsers and platforms. Since the Virtual Text makes intermittent use of them, it is recommended that you check their performance on your computer before proceeding. You should draw the formula of <i>cis</i>-1,3-dichlorocyclohexane in the Editor to determine if it is functioning properly.<br />Distances and angles in Jmol models are easily determined. To measure a distance, double-click on two atoms. To measure a bond angle, do a double-click, single-click, double-click on three atoms. To measure a torsion angle, do a double-click, single-click, single-click, double-click on four atoms. Distances are given in nanometers. A pop-up menu of commands may be accessed by clicking the right button on a PC or a control-click on a Mac while the cursor is inside the display frame.</P>
+<FORM METHOD="POST" NAME="form" ONSUBMIT="return false;">
+<p><TABLE  CELLPADDING=3 valign="top">
+<TR valign="top"><TD  align="right" width=20><b><span class="fc-blue fs-4">1.</span></b></TD>
+<TD width=380 height=400><div class="ctr"><b><span class="fs-4">Jmol Display</span></b></div>
+<table><tr><th colspan=2>
+<script type="text/javascript">Jmol.getApplet("jmol1",{"width": 320, "height": 320, "color": "#FFFFFF", "use": "HTML5", "j2sPath": "../../htmlJ/jsmol/j2s", "addSelectionOptions": false, "script": "color atoms cpk; select hydrogen;  color atoms cyan; select carbon;  color atoms [140,140,140]; select all; wireframe 40; spacefill 90;  background white ", "load": "c13dcc6a.pdb"});</script></th></tr>
+
+
+<tr><td width="40"></td><td><button type="button" class="jctl" data-target="jmol1" data-script=" spacefill 70%">X</button> <span class="fs-4"><sup>&nbsp;Show Spacefill Model</sup><br>
+<button type="button" class="jctl" data-target="jmol1" data-script="spacefill off; ">X</button> <sup>&nbsp;Show Stick Model</sup><br>
+<button type="button" class="jctl" data-target="jmol1" data-script="wireframe 40; spacefill 90; ">X</button> <sup>&nbsp;Show Ball&Stick Model</sup></span></span></td></tr>
+<tr><td colspan=2><span class="fc-blue">This <i>cis</i>-1,3-dichlorocyclohexane model may be moved about by click-dragging the cursor over the display. The display may be altered by the buttons under the model. </span></td></tr></table>
+</TD>
+<TD width=80 align="right"><b><span class="fc-blue fs-4">2.</span></b></TD>
+<TD width=380><div class="ctr"><b><span class="fs-4">Peter Ertl's Molecular Editor</span></b></div>
+<table><tr><th><applet code="JME.class" name="JME" archive="JME.jar" width=320, height=320>
+<param name= "options"  value="multipart">
+You have to enable Java and JavaScript on your machine !
+</applet></th></tr>
+<tr><th><input type='button' value='Check Answer' onClick='getSmiles();'> &nbsp;  &nbsp; <INPUT TYPE='RESET' VALUE='Reset' onClick='document.JME.reset();'> <br><br>
+<TEXTAREA WRAP NAME='result1' ROWS='3' COLS='44'></TEXTAREA> </th></tr>
+<tr><td><p>To practice using this drawing program <A 
+HREF="newprct.htm">Click Here</A>.</p></td></tr></table>
+</TD> </TR></TABLE>
+<TABLE><TR><TD><p><b><span class="fc-blue fs-4">3.</b></span>  &nbsp; New versions of HTML depict Greek letters and special characters in a different manner than earlier versions. The following lists are illustrative, and will test your browser's compatibility.<br>
+&nbsp; &nbsp; &nbsp; <span class="fc-maroon"><b>Greek letters:</b></span> &#945;, &nbsp; &#946;, &nbsp; &#947;, &nbsp; &#948;, &nbsp; &#949;, &nbsp; &#960;, &nbsp; &#963;, &nbsp; &#964;, &nbsp; &#968;, &nbsp; &emsp; &emsp; &emsp; &emsp; &nbsp; <span class="fc-maroon"><b>Special Characters:</b></span> &#8776;, &nbsp; &#8801;, &nbsp; &#8853;, &nbsp; &#8730;, &nbsp; &#8804;, &nbsp; &#8594;, &nbsp; &#8596;</p></TD></TR>
+<TR><TD colspan=4><p><b><span class="fc-blue fs-4">4.</span></b> &nbsp; New windows may be opened to display supplemental information. The following button initiates such an event. <INPUT TYPE="button"  NAME="wind" VALUE="Open Window" onClick=
+"window.open('../../mechism/dienemos.htm','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=560,height=710')">. <br> &nbsp; &nbsp; &nbsp; Popup suppression software will inactivate this feature.</p>
+</TD</TR></TABLE>
+<HR> 
+<span class="fs-2">Property of The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.
+<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl </span>
+
+</form>
+</BODY>
+</HTML>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../../Styles/modern.css">
+
+<Title>Infrared Spectroscopy</Title>
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var k=1;
+function change1() {
+k=k+1
+document.images[1].src="spectr"+k+".gif"
+if (k>=5) {
+k=0
+}
+}
+
+function answ(spec) {
+document.images[1].src=spec+".gif"
+}
+
+//STOP HIDING-->
+</SCRIPT>
+<link rel="stylesheet" href="../../../Styles/edvibe.css">
+<script src="../../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Infrared Spectrum Assignment</TITLE>
+<body>
+<FORM>
+
+<P>To illustrate the usefulness of infrared absorption spectra, examples for five C<SUB>4</SUB>H<SUB>8</SUB>O isomers are presented below their corresponding structural formulas. The five spectra may be examined in turn by clicking the "<U>Toggle Spectra</U>" button. Try to associate each spectrum ( <span class="fc-blue"><b>A</b> - <b>E</b></span> ) with one of the isomers in the row above it. When you have made assignments check your answers by clicking on the structure or name of each isomer.</P>
+<map name="spectrum">
+<AREA SHAPE="rect" COORDS="6,9,83,78" href="javascript:answ('cyc4ol');">
+<AREA SHAPE="rect" COORDS="130,12,201,78" href="javascript:answ('2butone');">
+<AREA SHAPE="rect" COORDS="247,20,348,78" href="javascript:answ('etvineth');">
+<AREA SHAPE="rect" COORDS="389,19,512,78" href="javascript:answ('meallyol');">
+<AREA SHAPE="rect" COORDS="558,3,670,78" href="javascript:answ('isobuald');">
+</map>
+<P ALIGN=center><IMG SRC="c4h8omer.gif" USEMAP="#spectrum" BORDER=0></P></div>
+<P ALIGN=center><IMG SRC="spectr1.gif"></P></div>
+<div class="ctr"><INPUT TYPE="button"  VALUE="Toggle Spectra" onClick="change1(this.form)"><BR><BR>
+<INPUT TYPE="button" VALUE="Help" onClick="window.location = '../../../Spectrpy/InfraRed/infrared.htm#ir2b'">
+</div>
+
+
+</FORM>
+</BODY>
+</HTML>
+

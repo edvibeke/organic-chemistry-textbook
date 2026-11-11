@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var i="";
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+var anscnt1=0;
+var anscnt2=0;
+var anscnt3=0;
+var noansw="You must try to answer this question three times before receiving a hint.";
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+document.form.smiles.value = smiles; 
+}
+function checkRx1(input) {
+	if (anscnt2!=0){
+		 anscnt2=0
+}
+anscnt1=anscnt1+1;
+i=1;
+ smiles = document.form.smiles.value;
+ if (input.a.value == "" && input.b.value=="") {
+var Txt="You have not provided any reagents.";
+ anscnt1=0;
+}else{
+if ((((smiles == "CCCO"))) && (((input.a.value.toUpperCase().indexOf("BORANE",0)>=0) || (input.a.value.toUpperCase().indexOf("B2H6",0)>=0)  || (input.a.value.toUpperCase().indexOf("BH3",0)>=0)) && ((input.b.value.toUpperCase().indexOf("PEROXIDE",0)>=0) || (input.b.value.toUpperCase().indexOf("H2O2",0)>=0)))) {
+var Txt="Correct Structure for A \rCorrect Reagents.";
+ anscnt1=4;
+	}else{
+if ((((smiles == "CCCO"))) && (((input.a.value.toUpperCase().indexOf("BORANE",0)>=0) || (input.a.value.toUpperCase().indexOf("B2H6",0)>=0)  || (input.a.value.toUpperCase().indexOf("BH3",0)>=0)) || ((input.b.value.toUpperCase().indexOf("PEROXIDE",0)>=0) || (input.b.value.toUpperCase().indexOf("H2O2",0)>=0)))) {
+var Txt="Correct Structure for A \rOne of your reagent selections is correct.\rThe other is wrong.";
+anscnt1=anscnt1+1;
+	}else{
+if ((((input.a.value.toUpperCase().indexOf("BORANE",0)>=0) || (input.a.value.toUpperCase().indexOf("B2H6",0)>=0)  || (input.a.value.toUpperCase().indexOf("BH3",0)>=0)) || ((input.b.value.toUpperCase().indexOf("PEROXIDE",0)>=0) || (input.b.value.toUpperCase().indexOf("H2O2",0)>=0)))) {
+var Txt="Wrong Structure!\rAt least one of your reagent selections is correct.";
+anscnt1=anscnt1+1;
+	}else{
+if (smiles == "CCCO") {
+var Txt="Correct Structure for A\rIncorrect Reagents.";
+anscnt1=anscnt1+1;
+	}else{
+var Txt="Wrong Structure and Reagents! Try again.";
+}
+}
+}
+}
+}
+	input.result.value = Txt ;
+}
+
+function checkRx2(input) {
+	if (anscnt1!=0){
+		 anscnt1=0
+}
+anscnt2=anscnt2+1;
+i=2;
+ smiles = document.form.smiles.value;
+ if (input.c.value == "" && input.d.value=="") {
+var Txt="You have not provided any reagents.";
+ anscnt2=0;
+}else{
+if ((((smiles == "CCC(O)C(C)C=O"))) && (((input.c.value.toUpperCase().indexOf("PCC",0)>=0) ||  (input.c.value.toUpperCase().indexOf("CHLOROCHROMATE",0)>=0) ||  (input.c.value.toUpperCase().indexOf("CLCRO3",0)>=0)) &&  ((input.d.value.toUpperCase().indexOf("NAOH",0)>=0) || (input.d.value.toUpperCase().indexOf("SODIUM HYDROXIDE",0)>=0) || (input.d.value.toUpperCase().indexOf("BASE",0)>=0))))  {
+var Txt="Correct Structure for B \rCorrect Reagents.";
+ anscnt2=4;
+	}else{
+if ((((smiles == "CCC(O)C(C)C=O"))) && (((input.c.value.toUpperCase().indexOf("PCC",0)>=0) ||  (input.c.value.toUpperCase().indexOf("PYRIDINIUM CHLOROCHROMATE",0)>=0)) ||  ((input.d.value.toUpperCase().indexOf("NAOH",0)>=0) || (input.d.value.toUpperCase().indexOf("BASE",0)>=0))))  {
+var Txt="Correct Structure for B \rOne of your reagent selections is correct.\rThe other is wrong.";
+anscnt2=anscnt2+1;
+}else{
+if ((((input.c.value.toUpperCase().indexOf("PCC",0)>=0) ||  (input.c.value.toUpperCase().indexOf("CHLOROCHROMATE",0)>=0) ||  (input.c.value.toUpperCase().indexOf("CLCRO3",0)>=0)) &&  ((input.d.value.toUpperCase().indexOf("NAOH",0)>=0) || (input.d.value.toUpperCase().indexOf("SODIUM HYDROXIDE",0)>=0) || (input.d.value.toUpperCase().indexOf("BASE",0)>=0))))  {
+var Txt="Wrong Structure!\rAt least one of your reagent selections is correct.";
+anscnt2=anscnt2+1;
+	}else{
+	if (smiles == "CCC(O)C(C)C=O") {
+var Txt="Correct Structure for B\rIncorrect Reagents.";
+anscnt2=anscnt2+1;
+	}else{
+var Txt="Wrong Structure and Reagents! Try again.";
+}
+}
+}
+}
+}
+	input.result.value = Txt ;
+}
+function checkRx3(input) {
+	if (anscnt1!=0){
+		 anscnt1=0
+}
+	if (anscnt2!=0){
+		 anscnt2=0
+}
+i=3;
+anscnt3=anscnt3+1;
+ if (input.e.value == "" && input.f.value=="") {
+var Txt="You have not provided any answers.";
+ anscnt3=0;
+}else{
+if (((input.e.value.toUpperCase().indexOf("NABH4",0)>=0) || (input.e.value.toUpperCase().indexOf("HYDRIDE",0)>=0) || (input.e.value.toUpperCase().indexOf("LIALH4",0)>=0))  && ((input.f.value.toUpperCase().indexOf("ACETIC ANHYDRIDE",0)>=0) ||  (input.f.value.toUpperCase().indexOf("(CH3CO)2O",0)>=0) ||  (input.f.value.toUpperCase().indexOf("AC2O",0)>=0))) {
+var Txt="Correct Reagents.";
+ anscnt=4;
+	}else{
+if  ((input.f.value.toUpperCase().indexOf("ACETYL CHLORIDE",0)>=0) ||  (input.f.value.toUpperCase().indexOf("CH3COCL",0)>=0)) {
+var Txt="Acetyl chloride in pyridine would accomplish the second step, but a better reagent should be chosen.";
+anscnt3=anscnt3+1;
+	}else{
+if  ((input.e.value.toUpperCase().indexOf("NABH4",0)>=0) || (input.e.value.toUpperCase().indexOf("HYDRIDE",0)>=0) || (input.e.value.toUpperCase().indexOf("LIALH4",0)>=0) ||  (input.f.value.toUpperCase().indexOf("ACETIC ANHYDRIDE",0)>=0) ||  (input.f.value.toUpperCase().indexOf("(CH3CO)2O",0)>=0)) {
+var Txt="One of your reagent selections is correct.\rThe other is wrong.";
+anscnt3=anscnt3+1;
+	}else{
+var Txt="Wrong Reagents! Try again.";
+}
+}
+}
+}
+	input.result.value = Txt ;
+}
+
+function answ0(show) {
+var Text="Intermediate A has the formula: C3H8O";
+show.result.value=Text
+}
+function answ1(show) {
+var Text="Intermediate B has the formula: C6H12O2";
+show.result.value=Text
+}
+function answ2(show) {
+if ((anscnt1>=3)||(anscnt2>=3)||(anscnt3>=3))  {
+var Text="The key step (Stage 2) is an Aldol Condensation.\rThe resulting beta-hydroxy aldehyde must then be reduced to a diol and esterified.";
+	}else{
+var Text=noansw
+}
+show.result.value=Text
+}
+
+function answr(show) { 
+var j=i-1;
+if ((anscnt1>=4)||(anscnt2>=4)||(anscnt3>=4))  {
+var Text="See drawing below.";
+document.images[j].src="Images/step"+i+"ans.gif"
+	}else{
+var Text="You must try three times before viewing the answer.";
+}
+show.result.value=Text;
+ anscnt=0;
+}
+
+// End of hide script comment. -->
+</SCRIPT>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Multistep Synthesis</TITLE>
+<body>
+<A NAME="start"></A>
+<form method="post" name="form">
+<TABLE WIDTH=940 CELLSPACING=15 ><TR><TH COLSPAN=2><H3>A Multistep Synthesis</H3></TH></TR>
+<TR><TD WIDTH=400 ALIGN=center  ROWSPAN=2>
+<applet code="JME.class" name="JME" archive="JME.jar" width=360, height=360>
+You have to enable Java and JavaScript on your machine !
+</applet><FORM METHOD="POST" NAME="form" ONSUBMIT="return false;">
+  </TD><TD VALIGN=top>
+<P>One of the most challenging aspects of learning organic chemistry is devising sequences of reactions that will lead from a designated starting compound to a desired product. This problem concerns the execution of a multistep synthesis.<BR>The synthesis shown below requires six steps, and as depicted proceeds in three stages through two stable intermediate compounds <span class="fc-red">A</span> & <span class="fc-red">B</span>.  You should draw a structural formula for <span class="fc-red">A</span> or <span class="fc-red">B</span> in the <b>Drawing Window</b> on the left. The reagents required for each step should be entered in the text boxes above and below the arrow for each stage. Subscripted numbers are not possible, so acetic acid is written CH3CO2H (no spaces). Alternatively you may enter names for the reagents (be careful to spell them correctly). Solvents or heat should not be entered. Once the reagents and the intermediate (<b>A or B</b>) structure for a given stage are entered, your answers may be checked by pressing the appropriate button (found under each stage). Stage 3 does not have an intermediate. </P></TD></TR>
+<TR><TD ALIGN=CENTER NOWRAP>
+<table><tr><td>
+<TEXTAREA  WRAP NAME="result"  ROWS="4"  COLS="56"> </TEXTAREA> </td>
+<td> <INPUT TYPE="RESET" VALUE="Clear"><BR><BR> <INPUT TYPE="button"  VALUE="View Answer" onClick="answr(this.form)"></td></tr></table>
+<span class="fc-blue">To see the molecular formula of an intermediate or for a hint press a button:</span> &nbsp; <INPUT TYPE="button" VALUE=" A " onClick="answ0 (this.form) "> &nbsp; <INPUT TYPE="button" VALUE=" B " onClick="answ1 (this.form) ">  &nbsp; <INPUT TYPE="button" VALUE="Hint" onClick="answ2 (this.form) ">
+</TD></TR></TABLE>
+<BR CLEAR all>
+<HR>
+<div class="ctr"> <TABLE WIDTH=850  CELLPADDING=5> 
+<TR><TD> </TD><TH><span class="fc-green">Stage One</span></TH> <TH><span class="fc-blue">Stage Two</span></TH><TH><span class="fc-red">Stage Three</span></TH><TD> </TD></TR>
+<TR><TD><span class="fs-4">CH<SUB>3</SUB>CH=CH<SUB>2</SUB></span></TD> 
+ <TD VALIGN=top NOWRAP BGCOLOR="eeffee"><span class="fc-blue">&nbsp;1) </span>&nbsp;<INPUT TYPE="text"  NAME="a" size=22><BR> &nbsp; <IMG SRC="../Images/arrow.gif"><input type="hidden" value="" name="smiles"><span class="fc-red fs-4"> &nbsp; A</span><BR> <span class="fc-blue">&nbsp;2) </span>&nbsp;<INPUT TYPE="text" NAME="b" SIZE="22"></TD> 
+<TD VALIGN=top NOWRAP BGCOLOR="eeeeff"><span class="fc-blue">&nbsp;1) </span>&nbsp;<INPUT TYPE="text" NAME="c" SIZE="22"><BR> &nbsp; <IMG SRC="../Images/arrow.gif"><input type="hidden" value="" name="smiles2"><span class="fc-red fs-4"> &nbsp; B</span><BR> <span class="fc-blue">&nbsp;2) </span>&nbsp;</span><INPUT TYPE="text" NAME="d" SIZE="22"></TD>
+<TD VALIGN=top NOWRAP BGCOLOR="ffeeee"><span class="fc-blue">&nbsp;1)</span>&nbsp;<INPUT TYPE="text" NAME="e" SIZE="22"><BR> &nbsp; <IMG SRC="../Images/arrow.gif">&nbsp;</span><BR><span class="fc-blue">&nbsp;2)</span><span class="fs-4">&nbsp;</span><INPUT TYPE="text" NAME="f" SIZE="22"></TD>
+<TD><IMG SRC="../Images/prodct1d.gif"></TD> </TR>
+<TR ALIGN=center><TD> </TD><TD><INPUT TYPE="button"  VALUE="Check Stage 1" onClick="submitSmiles(); checkRx1(this.form);"></TD> <TD><INPUT TYPE="button"  VALUE="Check Stage 2" onClick="submitSmiles(); checkRx2(this.form);"></TD><TD><INPUT TYPE="button"  VALUE="Check Stage 3" onClick="submitSmiles(); checkRx3(this.form);"></TD><TD> </TD></TR>
+</TABLE></div>
+
+</FORM>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>.<BR>
+Java Molecular Editor v99.03 by: <A HREF=MAILTO:"peter.ertl@cp.novartis.com">peter.ertl@cp.novartis.com</A></span>
+</BODY></HTML>

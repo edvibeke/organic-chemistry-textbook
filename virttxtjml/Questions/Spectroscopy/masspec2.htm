@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var anscnt=0																										// other variables
+var answ="Problem 1: carbon dioxide\r"
+ +  "Problem 2: ethyl iodide\r"
+ +  "Problem 3: 2-bromopropane or 1-bromopropane\r"
+
+var noansw="You must try to answer this question three times before viewing the answers."
+var k=0
+var j=0
+
+// answer checking function
+function chkchg(input) {
+anscnt=anscnt+1;
+var m1=input.ms1.value.toUpperCase().indexOf("CARBON DIOXIDE",0);
+var m2=input.ms1.value.toUpperCase().indexOf("CO2",0);
+var m3=input.ms2.value.toUpperCase().indexOf("ETHYL IODIDE",0);
+var m4=input.ms2.value.toUpperCase().indexOf("IODOETHANE",0);
+var m5=input.ms2.value.toUpperCase().indexOf("C2H5I",0);
+var m6=input.ms2.value.toUpperCase().indexOf("CH3CH2I",0);
+var m7=input.ms2b.value.toUpperCase().indexOf("ETHYL",0);
+var m8=input.ms2b.value.toUpperCase().indexOf("C2H5",0);
+var m9=input.ms2b.value.toUpperCase().indexOf("CH3CH2",0);
+var m10=input.ms2c.value.toUpperCase().indexOf("IODINE",0);
+var m11=input.ms2c.value.toUpperCase().indexOf("IODIDE",0);
+var m12=input.ms2c.value.toUpperCase().indexOf("I",0);
+var m13=input.ms3.value.toUpperCase().indexOf("1-BROMOPROPANE",0);
+var m14=input.ms3.value.toUpperCase().indexOf("2-BROMOPROPANE",0);
+var m15=input.ms3.value.toUpperCase().indexOf("PROPYL BROMIDE",0);
+var m16=input.ms3.value.toUpperCase().indexOf("ISOPROPYL BROMIDE",0);
+var m17=input.ms3b.value.toUpperCase().indexOf("BROMINE",0);
+var m18=input.ms3b.value.toUpperCase().indexOf("BROMIDE",0);
+var m19=input.ms3b.value.toUpperCase().indexOf("BR",0);
+var m20=input.ms3c.value.toUpperCase().indexOf("43",0);
+
+
+if ( (input.ms1.value=='')&&(input.ms2.value=='')&&(input.ms2b.value=='')&&(input.ms2c.value=='')
+&&(input.ms3.value=='')&&(input.ms3b.value=='')&&(input.ms3c.value=='')) {
+input.result.value="You have not provided any answers.";
+		} else {
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+	if (( m1>=0) || (m2>=0)) { 
+		k=k+1
+		} else {
+		j=j+1
+}
+
+	if (( m3>=0) || (m4>=0)  || (m5>=0)  || (m6>=0)) { 
+		k=k+1
+		} else {
+		j=j+1 
+}
+	
+	if (( m7>=0) || (m8>=0)  || (m9>=0)) { 
+		k=k+1
+		} else {
+		j=j+1  
+}
+
+	if (( m10>=0) || (m11>=0)  || (m12>=0)) { 
+		k=k+1
+		} else {
+		j=j+1  
+}
+
+	if (( m13>=0) || (m14>=0)  || (m15>=0)  || (m16>=0)) { 
+		k=k+1
+		} else {
+		j=j+1  
+}
+
+	if (( m17>=0) || (m18>=0)  || (m19>=0)) { 
+		k=k+1
+		} else {
+		j=j+1  
+}
+	if ( m20>=0) {
+		k=k+1
+		} else {
+		j=j+1  
+}
+
+	if ((input.ms3.value.toUpperCase().indexOf("PROPYLBROMID",0)>=0) || (input.ms2.value.toUpperCase().indexOf("ETHYLIODID",0)>=0)) {
+var Text="When writing a common name be sure to leave a space between the alkyl group name and that of the halogen."  
+		input.result.value = Text;	
+}else{
+ var tot=k+j
+var Text="Of " +tot +" possible responses: \r Your correct answers = "+ k +" \r Your incorrect or missing answers = "+ j  
+		input.result.value = Text;
+}
+}
+}
+// functions for showing answer, changing image & clearing text
+function giveansw(show) {
+if (anscnt>=3)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+
+function clrtxt(input) {
+	input.ms1.value="";	
+	input.ms2.value="";
+	input.ms2b.value="";
+	input.ms2c.value="";
+	input.ms3.value="";
+	input.ms3b.value="";
+	input.ms3c.value="";
+	input.result.value=" ";
+}
+	//STOP HIDING-->
+</SCRIPT>
+
+<TITLE>Mass Spectrometry Problem</TITLE>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<div class="ctr"><H3>Practice Questions for Mass Spectrometry</H3></div>
+<P><B><span class="fc-blue">Question 1:</span></B></p>
+<DIR><p>While running a new reaction, a chemist notices the
+evolution of a gas.  A sample of this gas gave a mass spectrum
+in which the molecular ion (m/z = 44) was the largest ion peak.
+ The only other significant peaks were observed at m/z = 28 &amp;
+m/z = 16.  <span class="fc-blue"><B>What is this gas?</B></span> </p> </DIR>
+<FORM><table><tr><td nowrap>
+<b>Enter a formula (without subscripting 
+numbers) or a name in the answer box.</b> &nbsp; <INPUT TYPE=TEXT NAME="ms1" SIZE=20> &nbsp; </td><td nowrap> <B> Hint:</B>  Consider the mass differences between these ions.</td></tr></table>
+
+<HR>
+
+<P><B><span class="fc-blue">Question 2:</span></B>
+<DIR><p>A liquid compound gave a mass spectrum showing a strong
+molecular ion at m/z = 156.  The only fragment ions are seen at
+m/z = 127 &amp; 29.   <br><span class="fc-blue"><B>Suggest a structure for this compound.</B></span></p></DIR>
+<table><tr><td nowrap>
+<b>Enter a formula (without subscripting 
+numbers) or a name in the answer box. </b> &nbsp; <INPUT TYPE=TEXT NAME="ms2" SIZE=20>  &nbsp;  </td><td nowrap> <B> Hint:</B>  Consider the mass differences between these ions.
+</td></tr></table>
+<P>If you don't know the entire structure but would like to propose a fragment to verify 
+that you are on the right track, fill in the fragment or fragments below:</p>
+<dir><p>Fragment ion mass 29: <INPUT TYPE=TEXT NAME="ms2b" SIZE=12><BR>
+Fragment ion mass 127: <INPUT TYPE=TEXT NAME="ms2c" SIZE=12></P></dir>
+
+<HR>
+
+<P><B><span class="fc-blue">Question 3:</span></B>
+<DIR><p>A liquid compound gave a mass spectrum in which the
+ molecular ion appears as a pair of equal intensity peaks at m/e
+= 122 &amp; m/z = 124.  Small fragment ion peaks are seen at m/z = 107
+&amp; 109 (equal intensity), and at m/z = 79, 80, 81, &amp; 82
+(all roughly the same size).  Large fragment ions are seen at
+m/z = 43 (base peak), 41 &amp; 39.   <br><span class="fc-blue"><B>Suggest a name for this 
+compound.</B></span></p></DIR>
+<p><table><tr valign="top"><td nowrap>
+<b>Enter a name in the answer box.</b> &nbsp; <INPUT TYPE=TEXT NAME="ms3" SIZE=20> &nbsp; </td><td nowrap> 
+<B>Hints:</B>  What element is indicated by equal intensity ions differing by 2 amu?<br>
+What mass remains if the isotopic mass of this element is subtracted
+from the molecular ion mass?</td></tr></table></p>
+<P>If you don't have a final answer but would like to verify 
+that you are on the right track, fill in the fragment or element below:</p>
+<dir><p>An element having equal intensity isotopic ions differing by 2 amu: 
+<INPUT TYPE=TEXT NAME="ms3b" SIZE=12><BR>
+Remaining mass after subtraction of that element's mass (enter a number): <INPUT TYPE=TEXT NAME="ms3c" SIZE=5></p></dir>
+<HR>
+<table cellpadding=3><tr valign="top"><td>
+<INPUT TYPE="button"  VALUE=" Check Answers" onClick=" chkchg(this.form)"><br><br><INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clrtxt(this.form)"> &nbsp; </td><td>
+<TEXTAREA  WRAP NAME="result"  ROWS="3"  COLS="45">  </TEXTAREA> &nbsp; </td><td>
+&nbsp;<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form) "></td></tr></table>
+ </FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+ <HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

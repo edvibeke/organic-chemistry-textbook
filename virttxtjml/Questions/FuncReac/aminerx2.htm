@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+var anscnt=0;
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+document.form.smiles.value = smiles; 
+}
+function processMolecule1(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (smiles == "CC(C)NC(C)c1ccccc1") {   
+var Txt="Correct!";
+anscnt=anscnt+1;
+	}else{
+var Txt="Wrong! Try again.";
+anscnt=anscnt+1;
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule2(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (smiles == "c2coc(CN1CCCCC1)c2") { 
+var Txt="Correct!";
+anscnt=anscnt+1;
+	}else{
+if (smiles == "O=C(c1ccco1)N2CCCCC2") {
+var Txt="You have drawn the structure of A.";
+	}else{
+var Txt="Wrong! Try again.";
+}
+}
+	input.result.value = Txt ;
+}
+function processMolecule3(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (smiles == "CC(C)CNc1ccccc1") {
+var Txt="Correct!";
+anscnt=anscnt+1;
+	}else{
+if (smiles == "CC(C)CN(c1ccccc1)S(=O)(=O)c2ccccc2") {
+var Txt="You have drawn the structure of B.";
+	}else{
+var Txt="Wrong! Try again.";
+}
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule4(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (smiles == "CC(=O)N2CCc1ccccc12") {
+var Txt="Correct!";
+anscnt=anscnt+1;
+	}else{
+if (smiles == "c2ccc1NCCc1c2") {
+var Txt="You have drawn the structure of C.";
+	}else{
+var Txt="Wrong! Try again.";
+anscnt=anscnt+1;
+}
+}
+	input.result.value = Txt ;
+}
+function answ0(show) {
+var Text="Intermediate A has the formula: C10H13NO2";
+show.result.value=Text
+}
+function answ1(show) {
+var Text="Intermediate B has the formula: C16H19NSO2";
+show.result.value=Text
+}
+function answ2(show) {
+var Text="Intermediate C has the formula: C8H9N";
+show.result.value=Text
+}
+function answr(show) {
+if (anscnt>=3) {
+window.open('answ.htm','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=460,height=380')
+var Txt="See answer window.";
+}else{
+var Txt="You must try to answer this question three times before the answers will be shown.";
+anscnt=anscnt;
+}
+	show.result.value = Txt ;
+}
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body>
+<TITLE>Amine Reactions</TITLE>
+<form method="post" name="form">
+<div class="ctr"><H3>Reactions of Amines</H3></div>
+<p>Each of the following problems shows a reaction or a multistep synthesis, the product from which is to be determined. To answer each part, draw a structural formula for this product in the Drawing Window on the left below. When you are finished, check your answer by pressing the <b>Check Product #</b> button. Problems <B>2, 3 & 4</B> have intermediates designated <B>A, B & C</B> respectively. Molecular formulas for these intermediates will be shown if the <b>Show A, B or C</b> buttons at the bottom are clicked.</p>
+<TABLE WIDTH=700  CELLSPACING=3 >
+<TR>
+<TD ALIGN=right ROWSPAN=4><IMG SRC="../Images/aminprb6.gif"></TD>
+<TD><IMG SRC="../Images/question.gif"></TD>
+<TH><input type="hidden" value="" name="smiles">
+<input type="button" value="Check Product 1" onClick="submitSmiles(); processMolecule1(this.form);">
+</TH></TR>
+<TR><TD><IMG SRC="../Images/question.gif"></TD>
+<TH><input type="hidden" value="" name="smiles2">
+<input type="button" value="Check Product 2" onClick="submitSmiles(); processMolecule2(this.form);">
+</TH></TR>
+<TR><TD><IMG SRC="../Images/question.gif"></TD>
+<TH><input type="hidden" value="" name="smiles3">
+<input type="button" value="Check Product 3" onClick="submitSmiles(); processMolecule3(this.form);">
+</TH></TR>
+<TR><TD><IMG SRC="../Images/question.gif"></TD>
+<TH><input type="hidden" value="" name="smiles4">
+<input type="button" value="Check Product 4" onClick="submitSmiles(); processMolecule4(this.form);">
+</TH></TR>
+
+<TR><TD ALIGN=CENTER COLSPAN=3><HR></TR>
+<TR><TH colspan=2><applet code="JME.class" name="JME" archive="JME.jar" width=360, height=360><param name= "options"  value="autoez">
+You have to enable Java and JavaScript on your machine !
+</applet><FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"> &nbsp; </th>
+<th>
+<INPUT TYPE="RESET" VALUE="Clear"> &nbsp; &nbsp; &nbsp; <INPUT TYPE="button"  VALUE=" View Answers " onClick="answr(this.form)"><br /><br />
+<TEXTAREA  WRAP NAME="result"  ROWS="4"  COLS="42"> 
+ </TEXTAREA><BR /><br /> 
+<INPUT TYPE="button" VALUE="Show A" onClick="answ0 (this.form) "> &nbsp; <INPUT TYPE="button" VALUE="Show B" onClick="answ1 (this.form) ">  &nbsp; <INPUT TYPE="button" VALUE="Show C" onClick="answ2 (this.form) ">  &nbsp; </TH></TR></TABLE>
+<BR CLEAR all>
+
+
+</form>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>

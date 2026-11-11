@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Hide script from old browsers
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+
+var anscnt=0																										// other variables
+var answ="Molecular Formula = C5H12\r"
++"Compound is 2,2-dimethylpropane."
+
+var noansw="You must try to answer this question three times before viewing the answers."
+var k=0
+var j=0
+
+// answer checking function
+function chkchg(input) {
+anscnt=anscnt+1;
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	 j=0
+}
+	if ( input.aa.value == "5") { 
+		k=k+1
+		} else {
+		k=k 
+}
+	if   ( input.bb.value == "12") {
+		k=k+1
+		} else {
+		k=k 
+}
+	if   ( input.cc.value.toUpperCase() =="2,2-DIMETHYLPROPANE") {
+		j=j+1
+		} else {
+		j=j
+}
+if   (k==2 && j==1) {
+	var Text="Congratulations!\r You have answered all questions correctly." ;
+anscnt=3
+}else{
+if   (k==2 && j==0) {
+var Text="Your molecular formula is correct.\rYour IUPAC name is incorrect or missing. "
+}else{
+if   (k!=2 && j==1) {
+var Text="Your molecular formula is incorrect or missing.\rYour IUPAC name is correct . "
+}else{
+if   (k!=2 && j==0) {
+var Text="You have not provided any correct answers." 
+}
+}
+}
+}
+
+		input.result.value = Text;
+
+
+
+}
+
+// functions for showing answer, changing image & clearing text
+
+function giveansw(show) {
+
+if (anscnt>=3)  {
+
+var txt=answ
+
+	}else{
+
+var txt=noansw
+
+}
+
+show.result.value=txt
+
+}
+
+
+
+function clrtxt(input) {
+
+	input.aa.value="";	
+
+	input.bb.value="";
+
+	input.cc.value="";
+
+	input.result.value=" ";
+
+}
+
+	//STOP HIDING-->
+
+</SCRIPT>
+
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+
+<TITLE>Alkane Reactions</TITLE>
+
+<body>
+<FORM NAME="responses"> 
+
+<div class="ctr"><H3>Identifying an Unknown Alkane</H3></div>
+<P>A saturated hydrocarbon burns in oxygen to give carbon dioxide and water. Approximately twice as much CO<sub>2</sub> as H<sub>2</sub>O (by weight) is produced by this combustion, the actual factor being 2.03. <BR>Light induced chlorination of the hydrocarbon by 2.0 equivalents of chlorine gives a mixture of mono-, di- and trichloro compounds, along with small amounts of higher chlorination products. Only one monochloro isomer is formed, but there are two dichloro isomers and three trichloro isomers produced in the reaction. Based on this information, you should be able to identify the hydrocarbon, and draw structural formulas for the chlorinated compounds.</P>
+<P><B>1.</B> What is the molecular formula of the hydrocarbon? &nbsp; &nbsp; &nbsp; <span class="fs-5">C<sub><INPUT TYPE="text" NAME="aa"  SIZE="2"></sub> H<sub><INPUT TYPE="text" NAME="bb"  SIZE="2"></sub></span><BR>
+Enter numbers for your formula in the designated answer boxes.<BR>
+<span class="fc-blue">Hint:</span> Consider the ratio of CO<sub>2</sub> and H<sub>2</sub>O produced in the combustion of methane relative to decane.</P>
+<P><B>2.</B> Write the IUPAC name for this hydrocarbon in the box on the right.<INPUT TYPE="text" NAME="cc"  SIZE="22"></sub><BR>
+Be careful to observe all the proper punctuation (e.g. dashes and commas) when writing the name.</P>
+
+<HR>
+
+<INPUT TYPE="button"  VALUE=" Check Answer" onClick=" chkchg(this.form)">&nbsp;&nbsp;<INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clrtxt(this.form)">&nbsp;
+<TEXTAREA  WRAP NAME="result"  ROWS="4"  COLS="52"> 
+  </TEXTAREA>
+&nbsp;<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form) ">
+ </FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+ <HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY>
+</HTML>

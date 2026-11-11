@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<HEAD>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Styles/modern.css">
+<TITLE>Substituted Cyclohexane Conformations</TITLE>
+
+
+<link rel="stylesheet" href="Styles/edvibe.css">
+<script src="Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<P>
+<form name="show" >
+
+<div class="ctr"><H3>Conformers of trans-1,3-dichlorocyclohexane</H3></div>
+<P>
+The configuration shown here is <I>(R,R)</I>.  The <I>(S,S)</I> enantiomer has mirror image structures. The two structures shown here are the result of chair-chair interconversions, and they also happen to be <U>identical</U> (<i>ie.</i> superimposable).  The spacefilling rendering shows how the axial (A) chlorine is crowded by the two axial hydrogens on the same side of the ring.  The equatorial (E) chlorine is much less crowded. <br>
+These models can be moved about by clicking on the structure and dragging the mouse.  Holding the shift key during this operation allows zooming.</P>
+<div class="ctr"><p><TABLE>
+
+
+<TR valign=top><TD height=270><script type="text/javascript">Jmol.getApplet("jmol1",{"width": 260, "height": 260, "color": "#FFFFFF", "use": "HTML5", "j2sPath": "htmlJ/jsmol/j2s", "addSelectionOptions": false, "script": "color atoms cpk; select hydrogen;  color atoms cyan; select carbon;  color atoms [140,140,140]; select all; wireframe 40; spacefill 90; select chlorine; spacefill 110; select atomno=12; label E; set fontsize 12; set labeloffset 0 0; color label black; select atomno=9; label A; set fontsize 12; set labeloffset 0 0; color label black; select all;  background white", "load": "rasfiles/t13dcc6a.pdb"});</script></TD> 
+<TD VALIGN=middle><IMG SRC="Images/arrows2.gif"> </TD>
+<TD><script type="text/javascript">Jmol.getApplet("jmol2",{"width": 260, "height": 260, "color": "#FFFFFF", "use": "HTML5", "j2sPath": "htmlJ/jsmol/j2s", "addSelectionOptions": false, "script": "select hydrogen;  color atoms cyan; select carbon;  color atoms [140,140,140]; select all; wireframe 40; spacefill 90; select chlorine; spacefill 110; select atomno=12; label E; set fontsize 12; set labeloffset 0 0; color label black; select atomno=9; label A; set fontsize 12; set labeloffset 0 0; color label black; select all;  background white", "load": "rasfiles/t13dcc6b.pdb"});</script>
+</TD></TR>
+<TR><TD><dir><button type="button" class="jctl" data-target="jmol1" data-script=" spacefill 70%">X</button> <span class="fs-4"><sup>&nbsp;Show Spacefill Model</sup><br>
+<button type="button" class="jctl" data-target="jmol1" data-script="spacefill off; ">X</button> <sup>&nbsp;Show Stick Model</sup><br>
+<button type="button" class="jctl" data-target="jmol1" data-script="spacefill off;  select chlorine; spacefill 70%">X</button> <sup>&nbsp;Show Chlorines</sup></span></dir></TD>
+<TD> </TD>
+<TD><dir><button type="button" class="jctl" data-target="jmol2" data-script=" spacefill 70%">X</button> <span class="fs-4"><sup>&nbsp;Show Spacefill Model</sup><br>
+<button type="button" class="jctl" data-target="jmol2" data-script="spacefill off; ">X</button> <sup>&nbsp;Show Stick Model</sup><br>
+<button type="button" class="jctl" data-target="jmol2" data-script="spacefill off;  select chlorine; spacefill 70%">X</button> <sup>&nbsp;Show Chlorines</sup></span></dir></TD></TR>
+</TABLE></p></div>
+<HR>
+<P><br></P>
+<br>
+
+</FORM>
+</BODY>
+</HTML>
+

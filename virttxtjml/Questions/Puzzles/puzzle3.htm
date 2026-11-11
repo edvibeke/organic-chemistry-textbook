@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var Text="";
+var rsp="";
+var ans1="The unknown compound is unchanged.";
+var ans2="The unknown compound is unchanged.";
+var ans3="The unknown compound is unchanged.";
+var ans4="The unknown compound is unchanged.";
+var ans5="A silver mirror is formed on the reaction vessel.";
+var ans6="The orange reagent solution changes color to green.";
+var ans7="A gas is evolved. Testing the gas with lime water shows it to be carbon dioxide."
+var ans8="The unknown compound is unchanged"
+var ans9="The unknown compound is unchanged."
+var ans10="The unknown compound is unchanged."
+var ans11="The unknown compound is unchanged."
+var ans12="The orange reagent solution changes color to green."
+
+var answ="A is isopropyl acetate.\rB is 2-hydroxytetrahydropyran.\rC is 2,2-dimethylpropanoic acid.\rD is 4-hydroxytetrahydropyran."
+var anscnt=0;
+var i=0;
+var noansw="You must try to answer this question twice before viewing the answers.";
+		function shwrslt(form) {
+		if (form.q1a[0].checked) {
+var Text=ans1
+	}
+		if (form.q1a[1].checked) {
+var Text=ans2
+	}
+		if (form.q1a[2].checked) {
+var Text=ans3
+	}
+		if (form.q1a[3].checked) {
+var Text=ans4
+	}
+		if (form.q1a[4].checked) {
+var Text=ans5
+	}
+		if (form.q1a[5].checked) {
+var Text=ans6
+	}
+		if (form.q1a[6].checked) {
+var Text=ans7
+	}	
+		if (form.q1a[7].checked) {
+var Text=ans8
+	}	
+		if (form.q1a[8].checked) {
+var Text=ans9
+	}	
+		if (form.q1a[9].checked) {
+var Text=ans10
+	}	
+		if (form.q1a[10].checked) {
+var Text=ans11
+	}	
+		if (form.q1a[11].checked) {
+var Text=ans12
+	}	
+form.result.value = Text;
+}
+
+		function process(input) {
+	anscnt=anscnt+1;
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+	if (i!=0){
+		 i=0
+}
+  if (rsp!="") {
+     rsp="";
+}
+if (input.a.value.toUpperCase().indexOf("D",0)>=0) { 
+i=i+1
+rsp=rsp + "D, "
+}
+if (input.b.value.toUpperCase().indexOf("B",0)>=0) { 
+i=i+1
+rsp=rsp + "B, "
+}
+if (input.c.value.toUpperCase().indexOf("A",0)>=0) { 
+i=i+1
+rsp=rsp + "A,"
+}
+if (input.d.value.toUpperCase().indexOf("C",0)>=0) { 
+i=i+1
+rsp=rsp + "C,"
+}
+if (rsp=="") {
+rsp="none of the unknowns.";
+}
+if (i>=4) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+anscnt=2
+}else{
+var txt="Some of your answers are missing or incorrect.\rYou have correctly identified " + rsp;
+i==0;
+}
+input.result.value = txt;
+}
+
+function giveansw(show) {
+if (anscnt>=2)  {
+var Text=answ;
+	}else{
+var Text=noansw;
+}
+show.result.value=Text; 
+}
+
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<TITLE>A Structural Puzzle</TITLE>
+<body>
+<FORM>
+<div class="ctr"><H3>Distinguishing Isomers</H3></div>
+<P><IMG SRC="../Images/puzzle3.gif" ALIGN="right" HSPACE=12>
+Four isomeric (C<SUB>5</SUB>H<SUB>10</SUB>O<SUB>2</SUB>) liquids are found in separate bottles with no labels. We shall refer to these unknowns as <B><span class="fc-blue">A, B, C</span></B>, </B> & <B><span class="fc-blue">D</span></B>. These compounds are known to have the structures shown on the right. Each of these compounds is partially or completely soluble in water, and is also soluble in ether and methylene chloride.<br>
+<span class="fc-blue">To discover which is which, three chemical tests may be applied to these unknowns:</span></p>
+<dir><p><B>1.</B> Treatment with 5% aqueous sodium bicarbonate (NaHCO<SUB>3</SUB> ).<br>
+<B>2. </B> Treatment with Tollens' reagent (AgNO<SUB>3</SUB> in NH<SUB>4</SUB>OH ) .<br>
+<B>3.</B> Treatment with Jones' reagent (CrO<SUB>3</SUB> in H<SUB>3</SUB>O<sup>(+)</sup> ).</P></dir>
+<BR CLEAR=all>
+<table><tr><td>
+<TABLE BORDER=1 CELLPADDING=3 ALIGN="left"></P>
+<TR ALIGN=center BGCOLOR="ccffcc"><TD><B>Isomer</B></TD>
+<TD nowrap><B>Treatment<BR>with NaHCO<SUB>3</SUB></B></TD>
+<TD nowrap><B>Treatment <BR>with Tollens' reagent</TD>
+<TD nowrap><B> Treatment <BR>with Jones' reagent</B></TD></TR>
+
+<TR ALIGN=center>
+<TH>A</TH>
+<TD><INPUT TYPE=RADIO NAME="q1a" checked></TD>
+<TD><INPUT TYPE=RADIO NAME="q1a"></TD>
+<TD><INPUT TYPE=RADIO NAME="q1a"></TD>
+</TR>
+
+<TR ALIGN=center>
+<TH>B</TH>
+<TD><INPUT TYPE=RADIO NAME="q1a"></TD>
+<TD><INPUT TYPE=RADIO NAME="q1a"></TD>
+<TD><INPUT TYPE=RADIO NAME="q1a"></TD>
+</TR>
+
+<TR ALIGN=center>
+<TH>C</TH>
+<TD><INPUT TYPE=RADIO NAME="q1a" VALUE="linear"></TD>
+<TD><INPUT TYPE=RADIO NAME="q1a" VALUE="bent"></TD>
+<TD><INPUT TYPE=RADIO NAME="q1a" VALUE="bent"></TD>
+</TR>
+
+<TR ALIGN=center>
+<TH>D</TH>
+<TD><INPUT TYPE=RADIO NAME="q1a" VALUE="linear"></TD>
+<TD><INPUT TYPE=RADIO NAME="q1a" VALUE="bent"></TD>
+<TD><INPUT TYPE=RADIO NAME="q1a" VALUE="bent"></TD>
+</TR>
+</TABLE></td>
+<td width=40> &nbsp;</td>
+<th><TEXTAREA WRAP NAME="result" ROWS="3" COLS="50"></TEXTAREA><BR><BR>
+<INPUT TYPE="button" VALUE=" See Results of Test " onClick= "shwrslt(this.form)">
+</th></tr></table>
+
+<P>Once you have conducted your tests, make structural assignments to <B>A, B, C & D</B> in the boxes following the compound names.</P>
+<div class="ctr"><TABLE WIDTH=500><TR><TD><span class="fc-blue">
+4-Hydroxytetrahydropyran .... &nbsp;<INPUT TYPE="text" NAME="a"  SIZE="2"><BR><BR>
+2-Hydroxytetrahydropyran .... &nbsp;<INPUT TYPE="text" NAME="b"  SIZE="2"><BR><BR>
+Isopropyl Acetate .................... &nbsp; <INPUT TYPE="text" NAME="c"  SIZE="2"><BR><BR>
+2,2-Dimethylpropanoic acid ... &nbsp;<INPUT TYPE="text" NAME="d" SIZE="2"><BR></span></TD> 
+<TD><INPUT TYPE="button" VALUE=" Check Answer " onClick= "process(this.form)"> <BR><BR>
+<INPUT TYPE="reset" VALUE=" Clear Answers"><BR><BR>
+<INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form)"></P></TD></TR></TABLE></div>
+
+</FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY>
+</HTML>
+

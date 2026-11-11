@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Hide script from old browsers
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var anscnt=0																									
+var rsp="";
+var v=0;
+var w=0;
+var x=0;
+var txt="";
+var k=0;
+var noansw="You must try to answer this question three times before viewing the answers.";
+
+		function process(form) {
+if (k!=0) {
+k=0
+}
+
+		if (form.q1[0].checked) {
+k=1
+answ="Compounds B, C, D, G, H & I are water miscible.\rCompounds A, E & J are immiscible with water.\rCompound F is partially soluble in water.";
+}
+
+		if (form.q1[1].checked) {
+k=2
+answ="Compounds B, C, F & H are water miscible.\rCompounds E, J & G are immiscible with water.\rCompounds A, D & I are partially soluble in water.";
+}
+
+		if (form.q1[2].checked) {
+k=3
+ answ="Compounds I, J & H are water miscible.\rCompounds B & F are immiscible with water.\rCompounds A, C, D, E & G are partially soluble in water.";
+}
+}
+
+
+
+function chck(input) { 
+
+anscnt=anscnt+1;
+
+	if (v!=0){
+
+		v=0
+
+}
+
+	if (w!=0){
+
+		w=0;
+
+}
+
+	if (x!=0){
+
+		 x=0;
+
+}
+
+input.a.value=fix(input.a.value)
+
+input.b.value=fix(input.b.value)
+
+input.c.value=fix(input.c.value)
+
+input.d.value=fix(input.d.value)
+
+input.e.value=fix(input.e.value)
+
+input.f.value=fix(input.f.value)
+
+input.g.value=fix(input.g.value)
+
+input.h.value=fix(input.h.value)
+
+input.i.value=fix(input.i.value)
+
+function fix(s){
+
+return s.replace(/[ ,\-\;\.\&]/g,"")
+
+}
+
+
+
+   // Set desired variables																					
+
+var a1=input.a.value.toUpperCase().indexOf("B",0);	
+
+var a2=input.a.value.toUpperCase().indexOf("C",0);
+
+var a3=input.a.value.toUpperCase().indexOf("D",0);
+
+var a4=input.a.value.toUpperCase().indexOf("G",0);
+
+var a5=input.a.value.toUpperCase().indexOf("H",0);
+
+var a6=input.a.value.toUpperCase().indexOf("I",0);
+
+var b1=input.b.value.toUpperCase().indexOf("A",0);
+
+var b2=input.b.value.toUpperCase().indexOf("E",0);
+
+var b3=input.b.value.toUpperCase().indexOf("J",0);
+
+var c1=input.c.value.toUpperCase().indexOf("F",0);
+
+var al=(input.a.value.length);
+
+var bl=(input.b.value.length);
+
+var cl=(input.c.value.length);
+
+var d1=input.d.value.toUpperCase().indexOf("B",0);
+
+var d2=input.d.value.toUpperCase().indexOf("C",0);
+
+var d3=input.d.value.toUpperCase().indexOf("F",0);
+
+var d4=input.d.value.toUpperCase().indexOf("H",0);
+
+var e1=input.e.value.toUpperCase().indexOf("E",0);
+
+var e2=input.e.value.toUpperCase().indexOf("J",0);
+
+var e3=input.e.value.toUpperCase().indexOf("G",0);
+
+var f1=input.f.value.toUpperCase().indexOf("A",0);
+
+var f2=input.f.value.toUpperCase().indexOf("D",0);
+
+var f3=input.f.value.toUpperCase().indexOf("I",0);
+
+var dl=(input.d.value.length);
+
+var el=(input.e.value.length);
+
+var fl=(input.f.value.length);
+
+var g1=input.g.value.toUpperCase().indexOf("I",0);
+
+var g2=input.g.value.toUpperCase().indexOf("J",0);
+
+var g3=input.g.value.toUpperCase().indexOf("H",0);
+
+var h1=input.h.value.toUpperCase().indexOf("B",0);
+
+var h2=input.h.value.toUpperCase().indexOf("F",0);
+
+var i1=input.i.value.toUpperCase().indexOf("A",0);
+
+var i2=input.i.value.toUpperCase().indexOf("C",0);
+
+var i3=input.i.value.toUpperCase().indexOf("D",0);
+
+var i4=input.i.value.toUpperCase().indexOf("E",0);
+
+var i5=input.i.value.toUpperCase().indexOf("G",0);
+
+var gl=(input.g.value.length);
+
+var hl=(input.h.value.length);
+
+var il=(input.i.value.length);
+
+
+
+var tot1=al+bl+cl;
+
+var tot2=dl+el+fl;
+
+var tot3=gl+hl+il;
+
+var rsp="";
+
+
+
+	if (a1>=0)  { 
+		v=v+1
+}
+	if (a2>=0)  { 
+		v=v+1
+}
+	if (a3>=0)  { 
+		v=v+1
+}
+	if (a4>=0)  { 
+		v=v+1
+}
+	if (a5>=0)  { 
+		v=v+1
+}
+	if (a6>=0)  { 
+		v=v+1
+}
+	if (b1>=0)  { 
+		v=v+1
+}
+	if (b2>=0)  { 
+		v=v+1
+}
+	if (b3>=0)  { 
+		v=v+1
+}
+	if (c1>=0)  { 
+		v=v+1
+}
+	if (d1>=0)  { 
+		w=w+1
+}
+	if (d2>=0)  { 
+		w=w+1
+}
+	if (d3>=0)  { 
+		w=w+1
+}
+	if (d4>=0)  { 
+		w=w+1
+}
+	if (e1>=0)  { 
+		w=w+1
+}
+	if (e2>=0)  { 
+		w=w+1
+}
+	if (e3>=0)  { 
+		w=w+1
+}
+	if (f1>=0)  { 
+		w=w+1
+}
+ if (f2>=0)  { 
+		w=w+1
+}
+	if (f3>=0)  { 
+		w=w+1
+}
+if (g1>=0)  { 
+		x=x+1
+}
+	if (g2>=0)  { 
+		x=x+1
+}
+	if (g3>=0)  { 
+		x=x+1
+}
+	if (h1>=0)  { 
+		x=x+1
+}
+	if (h2>=0)  { 
+		x=x+1
+}
+	if (i1>=0)  { 
+		x=x+1
+}
+	if (i2>=0)  { 
+		x=x+1
+}
+	if (i3>=0)  { 
+		x=x+1
+}
+	if (i4>=0)  { 
+		x=x+1
+}
+	if (i5>=0)  { 
+		x=x+1
+}
+var wr1=tot1-v;
+var wr2=tot2-w;
+var wr3=tot3-x;
+
+if ((k==1 && v==10  && tot1==10) || (k==2 && w==10 && tot2==10)  ||  (k==3 && x==10 && tot3==10)) {
+var txt="Congratulations!\rYou have answered question " + k+ " correctly." ;
+anscnt=3
+}else{
+ if (k==1) {
+var txt="You have given " +v+ " correct answers to question " + k+ ". \r"+wr1 +" of your answers is/are incorrect." ;
+}else{
+ if (k==2) {
+var txt="You have given " +w+ " correct answers to question " + k+ ". \r"+wr2 +" of your answers is/are incorrect." ;;
+}else{
+ if (k==3) {
+var txt="You have given " +x+ " correct answers to question " + k+ ". \r"+wr3 +" of your answers is/are incorrect." ; ;
+}
+}
+}
+}
+
+ input.result.value = txt;
+}
+// functions for showing answer, changing image & clearing text
+function giveansw(show) {
+if (anscnt>=3)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+
+
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.e.value="";
+	input.f.value="";
+	input.g.value="";
+	input.h.value="";
+	input.i.value="";
+	input.result.value=" ";
+}
+
+function chse1(input) {
+var ans=window.open('answr2.htm#sol'+k,'cbhelp','toolbar=no,menubar=no,status=no,scrollbars=no,width=800,height=380'); window.location='solublty.htm';
+}
+
+	//STOP HIDING-->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Water Solubility</TITLE>
+
+<body>
+
+<div class="ctr"><H3>Solubility of Organic Compounds in Water</H3></div>
+
+<P>Three groups of compounds, <B>I, II & III</B>, are designated below.  Structural formulas for these compounds will be displayed by clicking the appropriate button. In each group the compounds have roughly the same molecular weight. Some of the compounds in each group are completely miscible with (soluble in) water. Other compounds in each group are immiscible with (insoluble in) water. Using your knowledge of polar functional groups and hydrogen bonding of functional groups, try to assign a majority of the compounds to the appropriate category. Some compounds in each group are only partially soluble in water (4 to 15%). You will be given the number of these compounds, and asked to identify them. <BR>The questions posed below require you to enter appropriate letters in the answer box for each question. <span class="fc-red">Do not enter superfluous characters, since they will be counted as incorrect answers.</span></P>
+
+<HR>
+ <FORM NAME="responses">  
+<P><TABLE><TR><TD><TABLE CELLPADDING=5 border ALIGN=left HSPACE=12><TR><TH ROWSPAN=2><span class="fc-blue">I.</span><BR><INPUT TYPE=RADIO NAME="q1" VALUE="one" checked></TH><TD nowrap><B>A</B><BR> &nbsp; benzene</TD><TD  NOWRAP><B>B</B><BR> &nbsp; butanoic acid</TD><TD nowrap><B>C</B><BR> &nbsp; pyridine</TD><TD  NOWRAP><B>D</B><BR> &nbsp; 1,2-dimethoxyethane</TD><TD nowrap><B>E</B><BR> &nbsp; cyclohexane</TD></TR>
+
+<TR><TD  NOWRAP><B>F</B><BR> &nbsp; ethyl acetate</TD><TD nowrap><B>G</B><BR> &nbsp; piperidine</TD><TD nowrap><B>H</B><BR> &nbsp; dioxane</TD><TD nowrap><B>I</B><BR> &nbsp; &#947;-butyrolactone</TD><TD  NOWRAP><B>J</B><BR> &nbsp; methylene chloride</TD></TR></TABLE></TD><TD>&nbsp; </TD><TD NOWRAP>
+
+<B>(1)</B> Which compounds are completely water soluble? ..&nbsp;
+<INPUT TYPE="text" NAME="a"  SIZE="8"><BR>
+<B>(2)</B> Which compounds are insoluble in water?  .............. &nbsp;<INPUT TYPE="text" NAME="b"  SIZE="8"> <BR>
+<B>(3)</B> Which compound is partially soluble in water? ....... &nbsp;<INPUT TYPE="text" NAME="c" SIZE="8"></TD></TR></TABLE><HR>
+
+
+
+<P><TABLE><TR><TD><TABLE CELLPADDING=5 border ALIGN=left HSPACE=12><TR><TH ROWSPAN=2><span class="fc-blue">II.</span><BR><INPUT TYPE=RADIO NAME="q1" VALUE="one"></TH><TD nowrap><B>A</B><BR> &nbsp; 1-butanol</TD><TD  NOWRAP><B>B</B><BR> &nbsp; butyl amine</TD><TD nowrap><B>C</B><BR> &nbsp; tetrahydrofuran</TD><TD  NOWRAP><B>D</B><BR> &nbsp; diethyl ether</TD><TD nowrap><B>E</B><BR> &nbsp; pentane</TD></TR>
+
+<TR><TD  NOWRAP><B>F</B><BR> &nbsp; 1,3-propanediol</TD><TD nowrap><B>G</B><BR> &nbsp; furan</TD><TD  NOWRAP><B>H</B><BR> &nbsp; 2-methyl-2-propanol</TD><TD nowrap><B>I</B><BR> &nbsp; butanal</TD><TD  NOWRAP><B>J</B><BR> &nbsp; 1-chloropropane</TD></TR></TABLE></TD><TD>&nbsp; </TD><TD NOWRAP>
+
+<B>(1)</B> Which compounds are completely water soluble? ......&nbsp;<INPUT TYPE="text" NAME="d"  SIZE="8"><BR>
+
+<B>(2)</B> Which compounds are insoluble in water?  ................. &nbsp;<INPUT TYPE="text" NAME="e"  SIZE="8"> <BR>
+
+<B>(3)</B> Which three compounds are partially water soluble? ... <INPUT TYPE="text" NAME="f"
+
+SIZE="8"></TD></TR></TABLE><HR>
+
+<P><TABLE><TR><TD><TABLE CELLPADDING=5 border ALIGN=left HSPACE=12><TR><TH ROWSPAN=2><span class="fc-blue">III.</span><BR><INPUT TYPE=RADIO NAME="q1" VALUE="one"></TH><TD nowrap><B>A</B><BR> &nbsp; cyclohexanol</TD><TD nowrap><B>B</B><BR> &nbsp; toluene</TD><TD nowrap><B>C</B><BR> &nbsp; triethylamine</TD><TD  NOWRAP><B>D</B><BR> &nbsp; 3-methylbutanoic acid</TD><TD nowrap><B>E</B><BR> &nbsp; phenol</TD></TR>
+
+<TR><TD  NOWRAP><B>F</B><BR> &nbsp; 2,4-dimethylpentane</TD><TD nowrap><B>G</B><BR> &nbsp; aniline</TD><TD nowrap><B>H</B><BR> &nbsp; cyclohexylamine</TD><TD nowrap><B>I</B><BR> &nbsp; diethanolamine</TD><TD  NOWRAP><B>J</B><BR> &nbsp; diethylene glycol</TD></TR></TABLE></TD><TD>&nbsp; </TD><TD NOWRAP>
+
+<B>(1)</B> Which compounds are completely water soluble? .....&nbsp;<INPUT TYPE="text" NAME="g"  SIZE="8"><BR>
+
+<B>(2)</B> Which compounds are insoluble in water?  ............... &nbsp;<INPUT TYPE="text" NAME="h"  SIZE="8"> <BR>
+
+<B>(3)</B> Which five compounds are partially water soluble? .. &nbsp;<INPUT TYPE="text" NAME="i"
+
+SIZE="8"></TD></TR></TABLE>
+
+<HR>
+
+<TABLE ALIGN=center><TR><TD><INPUT TYPE="button"  VALUE=" Check Answer" onClick="process(this.form); chck(this.form);">&nbsp;&nbsp;
+
+<INPUT TYPE="button"  VALUE=" Clear Answers" onClick=" clrtxt(this.form)">&nbsp;&nbsp;
+
+<TEXTAREA  WRAP NAME="result"  ROWS="5"  COLS="56">
+
+</TEXTAREA></TD><TD> &nbsp; &nbsp; 
+
+<INPUT TYPE="button"  NAME="strct" VALUE="Structural Formulas" onClick="process(this.form); javascript:chse1();"><BR><BR> &nbsp;&nbsp;
+
+<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form) "><BR><BR> &nbsp;&nbsp;
+
+<INPUT TYPE="button"  NAME="answr" VALUE="Discussion" onClick="window.location='../../suppmnt1.htm#sol2'">
+
+</TD></TR></TABLE>
+
+ </FORM> <HR> 
+
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span><BR>
+
+</BODY>
+</HTML>
+

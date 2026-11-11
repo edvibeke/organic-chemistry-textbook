@@ -1,0 +1,155 @@
+<!doctype html>
+
+<html lang="en">
+<HEAD>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="../htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="../htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../Styles/modern.css">
+<TITLE>Molecular Models</TITLE>
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var xx='  &nbsp; &nbsp; <b>Be patient while the applet loads.</b><br />Once the model appears, hybridization features may be displayed by clicking the buttons beneath it. The model may be moved about with the mouse.';
+
+var xy='<applet name="jmol1" code="JmolApplet" archive="JmolApplet.jar" width="334" height="334" mayscript="true" ><param name="progressbar"   value="true" /><param name="progresscolor" value="white" />	<param name="boxmessage"    value="" /><param name="boxbgcolor"    value="white" /><param name="boxfgcolor"    value="white" /><param name="script" value="set frank off; spacefill 90; wireframe 40; select carbon; color atoms [150,150,150];  select hydrogen; color atoms cyan; connect (atomno=2) (atomno=3) DOUBLE; connect (atomno=4) (atomno=5) DOUBLE; connect (atomno=11) (atomno=12) TRIPLE; connect (atomno=6) (atomno=7) TRIPLE; background white; select all; rotate x -90"/> <param name="load"   value="rasfiles/hybrdprb.pdb"/> </applet><applet code="JmolAppletControl" archive="JmolApplet.jar"  height="17" width="17" mayscript="true" >  <param name="type"  value="button" />  <param name="label"  value="X" />  <param name="target" value="jmol1" />  <param name="script" value="lcaocartoon delete; select (atomno=1, atomno=8, atomno=13); selectionhalos on; halos 23%; color selectionhalos orange; set echo top center; color echo maroon; font echo 16 serif bold; echo Three Tetrahedral Carbon Atoms" /></applet> <font size=4><sup>&nbsp;Show sp<sup>3</sup> Hybrid Carbons</sup><br /><applet code="JmolAppletControl" archive="JmolApplet.jar"  height="17" width="17" mayscript="true"> <param name="type"  value="button"/>  <param name="label"  value="X" /> <param name="target" value="jmol1" />  <param name="script" value=\'\select (atomno=1, atomno=8, atomno=13);  lcaocartoon scale 1.0 color limegreen create "sp3a" ; delay 0.5; lcaocartoon create "sp3b"; delay 0.5; lcaocartoon create "sp3c"; delay 0.5; lcaocartoon create "sp3d"; set echo top center; color echo green; font echo 16 serif bold; echo Twelve Hybrid Orbitals\'\/></applet> <sup>&nbsp;Show sp<sup>3</sup> Hybrid Orbitals</sup><br><applet code="JmolAppletControl" archive="JmolApplet.jar"  height="17" width="17" mayscript="true" >  <param name="type"  value="chimetoggle" />  <param name="label"  value="X" /> <param name="target" value="jmol1" />  <param name="script" value="select all; selectionhalos off; halos 0%; lcaocartoon off; spacefill 73%"/><param name="altscript" value="spacefill off" /></applet> <sup>&nbsp;Spacefilling Model on/off</sup></font>';
+
+var xz='<applet name="jmol1" code="JmolApplet" archive="JmolApplet.jar" width="334" height="334" mayscript="true" ><param name="progressbar"   value="true" /><param name="progresscolor" value="white" />	<param name="boxmessage"    value="" /><param name="boxbgcolor"    value="white" /><param name="boxfgcolor"    value="white" /><param name="script" value="set frank off; spacefill 90; wireframe 40; select carbon; color atoms [150,150,150];  select hydrogen; color atoms cyan; connect (atomno=2) (atomno=3) DOUBLE; connect (atomno=4) (atomno=5) DOUBLE; connect (atomno=11) (atomno=12) TRIPLE; connect (atomno=6) (atomno=7) TRIPLE; background white; select all; rotate x -90"/> <param name="load"   value="rasfiles/hybrdprb.pdb"/> </applet><applet code="JmolAppletControl" archive="JmolApplet.jar"  height="17" width="17" mayscript="true" >  <param name="type"  value="button" />  <param name="label"  value="X" />  <param name="target" value="jmol1" />  <param name="script" value="lcaocartoon delete; select (atomno=2, atomno=4, atomno=5); selectionhalos on; halos 23%; color selectionhalos orange; set echo top center; color echo maroon; font echo 16 serif bold; echo Three Trigonal Carbon Atoms" /></applet> <font size=4><sup>&nbsp;Show sp<sup>2</sup> Hybrid Carbons</sup><br /><applet code="JmolAppletControl" archive="JmolApplet.jar"  height="17" width="17" mayscript="true"> <param name="type"  value="button"/>  <param name="label"  value="X" /> <param name="target" value="jmol1" />  <param name="script" value=\'\select (atomno=2, atomno=4, atomno=5);  lcaocartoon scale 1.0 color limegreen create "sp2a" ; delay 0.5; lcaocartoon create "sp2b"; delay 0.5; lcaocartoon create "sp2c"; set echo top center; color echo green; font echo 16 serif bold; echo Nine Hybrid Orbitals\'\/></applet> <sup>&nbsp;Show sp<sup>2</sup> Hybrid Orbitals</sup><br><applet code="JmolAppletControl" archive="JmolApplet.jar"  height="17" width="17" mayscript="true" >  <param name="type"  value="button" />  <param name="label"  value="X" /> <param name="target" value="jmol1" />  <param name="script" value=\'\selectionhalos off; halos 0%; set echo off; select (atomno=2, atomno=5); lcaocartoon scale 1.5 color red blue create "pz"; select atomno=4; lcaocartoon scale 1.5 color red blue create "-pz"; select all; set echo top center; color echo black; font echo 16 serif bold; echo Three Remaining p-Orbitals\'\/></applet> <sup>&nbsp;Show p-Orbitals</sup></font>';
+
+var yz='<applet name="jmol1" code="JmolApplet" archive="JmolApplet.jar" width="334" height="334" mayscript="true" ><param name="progressbar"   value="true" /><param name="progresscolor" value="white" />	<param name="boxmessage"    value="" /><param name="boxbgcolor"    value="white" /><param name="boxfgcolor"    value="white" /><param name="script" value="set frank off; spacefill 90; wireframe 40; select carbon; color atoms [150,150,150];  select hydrogen; color atoms cyan; connect (atomno=2) (atomno=3) DOUBLE; connect (atomno=4) (atomno=5) DOUBLE; connect (atomno=11) (atomno=12) TRIPLE; connect (atomno=6) (atomno=7) TRIPLE; background white; select all; rotate x -90"/> <param name="load"   value="rasfiles/hybrdprb.pdb"/> </applet><applet code="JmolAppletControl" archive="JmolApplet.jar"  height="17" width="17" mayscript="true" >  <param name="type"  value="button" />  <param name="label"  value="X" />  <param name="target" value="jmol1" />  <param name="script" value="lcaocartoon delete; select (atomno=6, atomno=11, atomno=12); selectionhalos on; halos 23%; color selectionhalos orange; set echo top center; color echo maroon; font echo 16 serif bold; echo Three sp-Hybrid Carbon Atoms" /></applet> <font size=4><sup>&nbsp;Show sp Hybrid Carbons</sup><br /><applet code="JmolAppletControl" archive="JmolApplet.jar"  height="17" width="17" mayscript="true"> <param name="type"  value="button"/>  <param name="label"  value="X" /> <param name="target" value="jmol1" />  <param name="script" value=\'\select atomno=12; lcaocartoon scale 1.0 color limegreen create "sp"; lcaocartoon create "-sp"; select (atomno=6, atomno=11); lcaocartoon scale 1.0 color limegreen create "sp2"; lcaocartoon create "-sp2"; set echo top center; color echo green; font echo 16 serif bold; echo Six Hybrid Orbitals; set echo bottom center; color echo black; font echo 16 serif ; echo Two are Overlapping\'\/></applet> <sup>&nbsp;Show sp Hybrid Orbitals</sup><br><applet code="JmolAppletControl" archive="JmolApplet.jar"  height="17" width="17" mayscript="true" >  <param name="type"  value="button" />  <param name="label"  value="X" /> <param name="target" value="jmol1" />  <param name="script" value=\'\selectionhalos off; set echo off; select (atomno=6, atomno=11); lcaocartoon scale 1.5 color red blue create "px"; lcaocartoon color purple yellow scale 1.5 create "py"; select atomno=12; lcaocartoon color purple yellow scale 1.5 create "px"; lcaocartoon color red blue scale 1.5 create "-py"; set echo top center; color echo black; font echo 16 serif bold; echo Six Remaining p-Orbitals; set echo bottom center; color echo black; font echo 14 serif ; echo Colored Red/Blue & Purple/Yellow\'\/></applet> <sup>&nbsp;Show p-Orbitals</sup></font>';
+
+function chngtxt(txt)   {
+document.getElementById('para1').innerHTML=txt;
+}
+
+function chngtxt2(txt)   {
+document.getElementById('para2').innerHTML=txt;
+}
+
+ //  global variables
+var anscnt=0
+var x="";
+var y="";
+var txt="";
+ var noansw="You must try to answer this question  before viewing the answer."
+
+		function process(form) {
+		if (form.state[0].checked) {
+x=3;
+ 	}
+		if (form.state[1].checked) {
+x=2;
+	}
+		if (form.state[2].checked) {
+x=1;
+}	
+}
+
+  function strbx(input) {
+input.box.value=fix(input.a.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+}
+function chck(input) { 
+anscnt=anscnt+1;
+var y=(input.box.value);
+if  (y==3) { 
+var txt="Correct";
+anscnt=2;
+}else{
+var txt="Try Again";
+}
+if (y=="") {
+var txt="enter a number."
+}
+if (x=="") {
+var txt ="Select a hybridization state."
+anscnt=0;
+}
+input.result.value = txt;
+}
+
+
+	// functions for showing answers & clearing text
+function answ1() {
+if (anscnt>=2)  {
+chngtxt2(xx);
+}
+}
+
+ function giveansw(show) {
+var txt="";
+if (x=="") {
+var txt ="Select a hybridization state.";
+}
+if (anscnt>=2)  {
+if (x==3)  {
+chngtxt(xy);
+var txt ="There are three tetrahedral hybridized carbons."
+}
+if (x==2)  {
+chngtxt(xz);
+var txt ="There are three trigonal hybridized carbons."
+}
+if (x==1)  {
+chngtxt(yz);
+var txt ="There are three sp hybridized carbons."
+}
+
+	}else{
+ var txt=noansw
+ }
+show.result.value=txt
+}
+
+ function clrbx(input) {   // Clear all text windows.
+ 	input.result.value="";
+ }
+ 
+// End of hide script comment. -->
+</SCRIPT><link rel="stylesheet" href="../Styles/edvibe.css">
+<script src="../Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<form name="show" >
+
+<A  NAME="start"></A>
+<div class="ctr">
+<H3>Hybridization Problem</H3></div>
+
+<div class="ctr"><TABLE cellpadding=4>
+<tr><td width=342><p id="para2">The structural formula drawn on the right represents a stable C<sub>9</sub>H<sub>7</sub>NO compound. You must determine the hybridization state of each carbon atom in the molecule. <br /></p> </td>
+<td align="center" rowspan=2 width=380><IMG SRC="hybrdcp.gif">
+<br /><hr /><B><span class="fc-blue">Select a hybridization state:</span></b><br /><br />
+<INPUT TYPE=RADIO NAME="state" VALUE="a">
+<b>sp<sup>3</sup> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<INPUT TYPE=RADIO NAME="state" VALUE="b">
+<b>sp<sup>2</sup></b>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<INPUT TYPE=RADIO NAME="state" VALUE="c">
+<b>sp</b>  
+<br /><br />
+Number of such hybridized carbons? &nbsp;........&nbsp; <INPUT TYPE="text" NAME="box" SIZE="3">
+<br /><hr /><br />
+<INPUT TYPE="button" VALUE="Check Answer" onClick="process(this.form); chck(this.form)"> 
+ &nbsp;  &nbsp;  &nbsp;  &nbsp;
+<INPUT TYPE="button" VALUE="Show Answer"  onClick="answ1(); giveansw(this.form)"> &nbsp;  &nbsp;
+  &nbsp;  &nbsp;
+<INPUT TYPE="button"  VALUE=" Reset " onClick="clrbx(this.form);window.location.reload(true)">
+
+<br /><br /> 
+<TEXTAREA WRAP NAME="result" ROWS="2" COLS="40"> </TEXTAREA></td></tr>
+<tr><TD  height=342 width=342>
+<p id="para1"> <IMG SRC="pixel.gif" width=130 height=2><span class="fc-maroon"><b>Directions</b></span><br />Select a hybridization state, and answer the question on the right by entering an appropriate number in the designated box.  Your answer will be evaluated by clicking the <b>Check Answer</b> button.  <br />
+Once this evaluation appears in the text box at tbe bottom right, clicking the <b>Show Answer</b> button on the right will display a molecular model of the compound here.  Hybridization features may be displayed on the model by clicking the buttons beneath it. The model may be moved about with the mouse.
+</p></td></tr>
+</table>
+
+<P ALIGN=center><IMG SRC="pixel.gif" HEIGHT= 300></P></div>
+</FORM>
+</BODY>
+</HTML>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en"><head>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="../../htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="../../htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<title>Line Formulas</title>
+
+<script language = "JavaScript" type = "text/JavaScript">
+
+	var strScript;
+	var Scriptx;
+ var showimg="";
+	var molec="";
+var rgt="<center><font color=blue><b>Correct!</b></font>";
+var wrg="<center><font color=red><b>Wrong!</b></font> &nbsp; &nbsp; Try again.";
+
+
+function process(form) {
+	if (form.prb[0].checked) {
+	molec=1;
+}
+	if (form.prb[1].checked) {
+molec=2;
+}
+	if (form.prb[2].checked) {
+molec=3;
+}
+	if (form.prb[3].checked) {
+molec=4;
+}
+	if (form.prb[4].checked) {
+molec=5;
+}
+	if (form.prb[5].checked) {
+	molec=6;
+}
+	if (form.prb[6].checked) {
+	molec=7;
+}
+	if (form.prb[7].checked) {
+	molec=8;
+}
+	if (form.prb[8].checked) {
+	molec=9;
+}
+	if (form.prb[9].checked) {
+	molec=10;
+}
+
+
+
+
+	function LoadApplet(){
+	//alert(strScript);
+	document.getElementById("fixapplt").innerHTML= (
+   "<applet " + 
+      "name='jmol' " + 
+      "id='jmol'  " + 
+      "code='JmolApplet' " + 
+      "archive='JmolApplet.jar' " + 
+      "width='300' height='300' " + 
+      "mayscript='true'>" + 
+	  "<param name = 'emulate' value ='chime' /> " +
+      "<param name='progressbar' value='true' /> " + 
+      "<param name='progresscolor' value='#0000FF' /> " +  
+      "<param name='boxmessage' value='Model Loading...' /> " + 
+      "<param name='boxbgcolor' value='#FFFFFF' /> " + 
+      "<param name='boxfgcolor' value='#112233' /> " + 
+      "<param name='bgcolor' value='#FFFFFF' /> " + 
+      "<param name='frank' value='true' /> " + 
+      "<param name='debugscript' value='true' /> " + 
+     "<param name='script' value= '" + strScript +"'/> " + 
+   "</applet>"
+);
+		return;
+}	
+
+if (molec==1) {
+showimg="<IMG SRC='Images/image1.gif'>";
+}
+if (molec==2) {
+showimg="<IMG SRC='Images/image1.gif'>";
+}
+if (molec==3) {
+showimg="<IMG SRC='Images/image2.gif'>";
+}
+if (molec==4) {
+showimg="<IMG SRC='Images/image2.gif'>";
+}
+if (molec==5) {
+showimg="<IMG SRC='Images/image3.gif'>";
+}
+if (molec==6) {
+showimg="<IMG SRC='Images/image3.gif'>";
+}
+if (molec==7) {
+showimg="<IMG SRC='Images/image4.gif'>";
+}
+if (molec==8) {
+showimg="<IMG SRC='Images/image4.gif'>";
+}
+if (molec==9) {
+showimg="<IMG SRC='Images/image5.gif'>";
+}
+if (molec==10) {
+showimg="<IMG SRC='Images/image5.gif'>";
+}
+
+
+
+document.getElementById("imgarea").innerHTML= (showimg);
+
+	MoleculePath = "Structures2/M"+molec+".pdb";
+		
+			strScript = 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all; cpk 0.5; select Hydrogen; color atoms cyan; select Chlorine; color atoms mediumseagreen; select Bromine, Nitrogen, Chlorine, Fluorine, Sulfur; label %e; color label black; set labeloffset 0 0;  select all; move 100 90 0 0 0 0 0 0 2; echo on;  set echo top center; color echo maroon; echo Problem '+molec+'';
+	LoadApplet();
+	}
+
+
+
+
+var k="";
+function radio2(form)  {
+	if (k!=0){
+		 k=0
+}
+ 	if (form.cnfg[0].checked) {
+	k=1;
+}
+	if (form.cnfg[1].checked) {
+k=2;
+}
+	if (form.cnfg[2].checked) {
+k=3;
+}
+	if (form.cnfg[3].checked) {
+k=4;
+}
+	if (form.cnfg[4].checked) {
+k=5;
+}
+}
+
+
+
+
+function chkans(show) {
+if ((molec==1)&&(k==3))  {
+document.getElementById("imgarea").innerHTML= (rgt);
+	}else{
+if (molec==1) {
+document.getElementById("imgarea").innerHTML= (wrg);
+}
+if ((molec==2)&&(k==4))  {
+document.getElementById("imgarea").innerHTML= (rgt);
+	}else{
+if (molec==2) {
+document.getElementById("imgarea").innerHTML= (wrg);
+}
+if ((molec==3)&&(k==2))  {
+document.getElementById("imgarea").innerHTML= (rgt);
+	}else{
+if (molec==3) {
+document.getElementById("imgarea").innerHTML= (wrg);
+}
+if ((molec==4)&&(k==5))  {
+document.getElementById("imgarea").innerHTML= (rgt);
+	}else{
+if (molec==4) {
+document.getElementById("imgarea").innerHTML= (wrg);
+}
+if ((molec==5)&&(k==2))  {
+document.getElementById("imgarea").innerHTML= (rgt);
+	}else{
+if (molec==5) {
+document.getElementById("imgarea").innerHTML= (wrg);
+}
+if ((molec==6)&&(k==5))  {
+document.getElementById("imgarea").innerHTML= (rgt);
+	}else{
+if (molec==6) {
+document.getElementById("imgarea").innerHTML= (wrg);
+}
+if ((molec==7)&&(k==1))  {
+document.getElementById("imgarea").innerHTML= (rgt);
+	}else{
+if (molec==7) {
+document.getElementById("imgarea").innerHTML= (wrg);
+}
+if ((molec==8)&&(k==2))  {
+document.getElementById("imgarea").innerHTML= (rgt);
+	}else{
+if (molec==8) {
+document.getElementById("imgarea").innerHTML= (wrg);
+}
+if ((molec==9)&&(k==4))  {
+document.getElementById("imgarea").innerHTML= (rgt);
+	}else{
+if (molec==9) {
+document.getElementById("imgarea").innerHTML= (wrg);
+}
+if ((molec==10)&&(k==2))  {
+document.getElementById("imgarea").innerHTML= (rgt);
+	}else{
+if (molec==10) {
+document.getElementById("imgarea").innerHTML= (wrg);
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+
+
+-->
+</script>
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- body {background-color: #FFFFFF} p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+</script>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body> 
+<p><div class="ctr"><H3>Identifying Line Formulas</H3></div> </p>
+
+<form>
+  
+<table width="480" border="1" align="center">
+  <tr>
+    <td height="300" width="356" id = "fixapplt" align="center"><h2><span class="fc-maroon">Select a Problem</span></h2><span class="fs-4">Click the <span class="fc-blue">Show Problem</span> Button</span><table align="center" cellpadding="3"><tr><td><p align="left">A three-dimensional molecular structure will be displayed here, and may be moved about with the mouse. Carbon is gray, hydrogen is cyan, oxygen is red, and nitrogen is dark blue. <br>One of the line formulas in the space beneath the model best represents the structure. Select the correct formula by pressing the button beneath it. A response to your answer will be presented by clicking the <span class="fc-green"><b>Check Answer</b></span> button.</p></td></tr></table></td>
+<td  width="120" ><p><input name="prb" type="radio" value="1" checked>Problem 1 <br>
+<input name="prb" type="radio" value="2">Problem 2 <br><input name="prb" type="radio" value="3">Problem 3 <br><input name="prb" type="radio" value="4">Problem 4 <br><input name="prb" type="radio" value="5">Problem 5 <br><input name="prb" type="radio" value="6">Problem 6 <br><input name="prb" type="radio" value="7">Problem 7 <br><input name="prb" type="radio" value="8">Problem 8<br><input name="prb" type="radio" value="9">Problem 9<br><input name="prb" type="radio" value="10">Problem 10<br><br>
+ <input name="new" type="reset" value="Show Problem" onClick ="process(this.form);reset;"><br><br> <input name="report" type="button" id="report" value="Check Answer" onClick ="radio2(this.form);chkans(this.form);reset;changeDisp();">
+</td>
+  </tr>
+<tr>
+    <td height = "50"  colspan="2" id="imgarea">A set of formulas, one of which corresponds to the molecular model, will be displayed here. <br>You must select the correct formula by pressing the button beneath it.</td></tr>
+<tr><th height = "14" colspan="2" ><table width="435"><tr><th> 
+        <input name="cnfg" type="radio" value="1"></th>
+      <th>  <input name="cnfg" type="radio" value="2"> </th>
+  <th>		<input name="cnfg" type="radio" value="3"> </th>
+      <th>  <input name="cnfg" type="radio" value="4"> </th>
+      <th>  <input name="cnfg" type="radio" value="5"></th></tr></table>
+
+</td></tr></table>
+<p></p>
+<div class="ctr">With some browsers it may be necessary to click a button twice for action.</div>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+
+</form>
+</body>
+</html>

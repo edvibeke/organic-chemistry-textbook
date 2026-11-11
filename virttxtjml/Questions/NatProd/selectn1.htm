@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var anscnt=0																										// other variables
+var answ="(1) G;  (2) A;  (3) H\r"
+ +  "(4) D;  (5) C;  (6) B\r"
+ +  "(7) G,B,H"
+
+var j=0;
+var v=0;
+var w=0;
+
+var noansw="You must try to answer this question three times before viewing the answers."
+
+
+function slct1(input) {
+
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+input.e.value=fix(input.e.value)
+input.f.value=fix(input.f.value)
+input.g.value=fix(input.g.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+
+var a1=input.a.value.toUpperCase().indexOf("G",0);	   // Set desired variables
+var b1=input.b.value.toUpperCase().indexOf("A",0);
+var c1=input.c.value.toUpperCase().indexOf("H",0);	
+var d1=input.d.value.toUpperCase().indexOf("D",0);	
+var e1=input.e.value.toUpperCase().indexOf("C",0);		
+var f1=input.f.value.toUpperCase().indexOf("B",0);		
+var g1=input.g.value.toUpperCase().indexOf("B",0);
+var g2=input.g.value.toUpperCase().indexOf("G",0);
+var g3=input.g.value.toUpperCase().indexOf("H",0);
+
+anscnt=anscnt+1;
+
+	if (j!=0){
+	j=0
+}
+	if (v!=0){
+	 v=0
+}
+	if (w!=0){
+	w=0
+}
+
+if ( input.a.value == "") { 
+		j=j+1
+}
+if ( input.b.value == "") { 
+		j=j+1
+}
+if ( input.c.value == "") { 
+		j=j+1
+}
+if ( input.d.value == "") { 
+		j=j+1
+}
+if ( input.e.value == "") { 
+		j=j+1
+}
+if ( input.f.value == "") { 
+		j=j+1
+}
+if ( input.g.value == "") { 
+		j=j+1
+}
+
+
+	if (a1>=0)  { 
+		v=v+1
+}
+	if (b1>=0)  { 
+		v=v+1
+}
+	if (c1>=0)  { 
+		v=v+1
+}
+	if (d1>=0)  { 
+		v=v+1
+}
+	if (e1>=0)  { 
+		v=v+1
+}
+	if (f1>=0)  { 
+		v=v+1
+}
+	if (g1>=0)  { 
+		w=w+1
+}
+	if (g2>=0)  { 
+		w=w+1
+}
+	if (g3>=0)  { 
+		w=w+1
+}
+var al=(input.a.value.length);
+var bl=(input.b.value.length);
+var cl=(input.c.value.length);
+var dl=(input.d.value.length);
+var el=(input.e.value.length);
+var fl=(input.f.value.length);
+var gl=(input.g.value.length);
+var tot=al+bl+cl+dl+el+fl+gl;
+
+var k=(v+w);
+var rsp="";
+
+if ((al>1) || (bl>1) || (cl>1) || (dl>1) || (el>1) || (fl>1)) {
+var rsp=rsp+"You have selected more than one compound for one or more of the first six questions. \r"								
+}
+if ((gl>3 && w==3) || (gl>2 && w==2) || (gl>1 && w==1)) {
+var rsp=rsp+"You have given one or more incorrect answers to question 7. \r"
+}
+
+if (j==7) {
+	var txt="You have not provided answers to any questions."; 
+anscnt=0
+}else{
+if   (k==9   && tot==9) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+anscnt=3
+}else{
+var txt="Your correct answers total: " + k +" \r " + rsp;
+
+}
+}
+		input.result.value = txt;
+}
+
+
+function giveansw(show) {
+if (anscnt>=3)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+
+
+
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.e.value="";
+	input.f.value="";
+  input.g.value="";
+	input.result.value=" ";
+}
+	//STOP HIDING-->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Matching Problem</TITLE>
+<body>
+<div class="ctr"><h3>Identifying Natural Products</h3>
+<TABLE cellpadding=6><TR><TH><IMG SRC="../Images/natprd1.gif"></TH><YD> </TD>
+<TD><p>From the group of compounds shown on the left, identify those that fit the following descriptions:</p>
+<FORM>
+<dir><p>
+<span class="fc-blue"><B>1.  </B></span> Which is a triglyceride? &nbsp; ............... &nbsp; <INPUT TYPE="text" NAME="a"  SIZE="3"><BR><BR>
+<span class="fc-blue"><B>2.  </B></span>  Which is a prostaglandin? ............... &nbsp; <INPUT TYPE="text" NAME="b"  SIZE="3"><BR><BR>
+<span class="fc-blue"><B>3. </B></span> Which is cholesterol (a steroid)? ........ &nbsp; <INPUT TYPE="text" NAME="c" SIZE="3"><BR><BR>
+<span class="fc-blue"><B>4. </B></span> Which is a sesquiterpene? ................ &nbsp;<INPUT TYPE="text" NAME="d" SIZE="3"><BR><BR>
+<span class="fc-blue"><B>5. </B></span> Which is stearic acid? .................... &nbsp;<INPUT TYPE="text" NAME="e" SIZE="3"><BR><BR>
+<span class="fc-blue"><B>6. </B></span> Which is a phospholipid? ............... &nbsp; <INPUT TYPE="text" NAME="f"  SIZE="3"><BR><BR>
+<span class="fc-blue"><B>7. </B></span> Which are found in cell membranes? .... <INPUT TYPE="text" NAME="g"  SIZE="6"></p></dir>
+</TD></TR></TABLE>
+
+<table align="center"><tr><td>
+<INPUT TYPE="button" VALUE=" Check Answers " onClick="slct1(this.form)"><br><br>
+<INPUT TYPE="button"  VALUE=" Clear " onClick="clrtxt(this.form)"> </td>
+<td> &nbsp; <TEXTAREA WRAP NAME="result" ROWS="5" COLS="50">
+</TEXTAREA> &nbsp; </td><td> <br> 
+<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)">
+</td></tr></table>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</FORM>
+</BODY></HTML>

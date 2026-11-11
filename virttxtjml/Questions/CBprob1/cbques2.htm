@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var question1 = '<B><FONT COLOR="blue">Which of the following is true for 3-methylbutanal?</FONT></B>';
+var question2 = '<B><FONT COLOR="blue">Which of the following is true for 3-methyl-2-butanone?</FONT></B>';
+var question3='<B><FONT COLOR="blue">Which of these methods would serve to prepare 1-phenyl-2-propanol?</FONT></B>';
+
+var C1 = '<B>a)</B> This compound may be classified as an aldehyde.';
+var C2 = '<B>b)</B> This compound may be classified as a ketone.';
+var C3 = '<B>c)</B> An aldol reaction takes place on treatment with NaOH solution.';
+var C4 = '<B>d)</B> There is no reaction with LiAlH<SUB>4</SUB> in ether solution.';
+var C5 = '<B>e)</B> An excess of CH<SUB>3</SUB>MgBr in ether reacts to give 4-methyl-2-pentanol.';
+var C6 = '<B>f)</B> Wolff-Kishner reduction gives butane.';
+var C7 = '<B>g)</B> This compound is an isomer of 3-pentanone.';
+var C8 = '<B>a)</B> It may be prepared by CrO<SUB>3</SUB> oxidation of 2-methyl-2-butanol.';
+var C9 = '<B>b)</B> Reaction with NaBH<SUB>4</SUB> gives a secondary alcohol.';
+var C10 =  '<B>c)</B> It may be prepared by acidic Hg<SUP>2+</SUP> catalyzed hydration of 3-methyl-1-butyne.';
+var C11 = '<B>d)</B> It forms a silver mirror on treatment with Ag(NH<SUB>3</SUB>)<SUB>2</SUB>.';
+var C12 = '<B>e)</B> This compound is an isomer of 4-penten-1-ol.';
+var C13 =  '<B>a)</B> Addition of benzyl Grignard reagent to acetaldehyde (ethanal).';
+var C14 = '<B>b)</B> Addition of phenyl lithium to propylene oxide (methyloxirane).';
+var C15 = '<B>c)</B> Addition of phenyl Grignard reagent to acetone (2-propanone).';
+var C16 =  '<B>d)</B> Acid-catalyzed hydration (addition of water to) of 2-phenyl-1-propene.';
+var C17 = '<B>e)</B> Addition of methyl Grignard reagent to acetophenone (methyl phenyl ketone).';
+var C18 = '<B>f)</B> Addition of methyl Grignard reagent to phenylacetaldehyde.';
+
+var anscnt=0
+var answ="(1) a, c, e, g\r"
+ +  "(2) b, c, e\r"
+ +  "(3) a, b, f"
+var noansw="You must try to answer this question twice before viewing the answers."
+var j=0
+var k=0
+function checkanswers(input)  {
+	anscnt=anscnt+1;
+	if (k!=0){
+		k=0
+}
+	if (j!=0){
+		j=0
+}
+	if (input.boxC1.checked){
+		k=k+1
+}
+  if (input.boxC2.checked){
+ 	j=j+1
+}
+ if (input.boxC3.checked){
+		k=k+1
+}
+  if (input.boxC4.checked){
+ 	j=j+1
+}
+	   if (input.boxC5.checked){
+		k=k+1
+}
+ 	if (input.boxC6.checked){
+ 	j=j+1
+}
+	    if (input.boxC7.checked){
+		k=k+1
+}
+	if (input.boxC8.checked){
+ 	j=j+1
+}
+	   if (input.boxC9.checked){
+		k=k+1
+}
+	     if (input.boxC10.checked){
+		k=k+1
+}
+	    if (input.boxC11.checked){
+ 	j=j+1
+}
+	   if (input.boxC12.checked){
+		k=k+1
+}
+	   if (input.boxC13.checked){
+		k=k+1
+}
+	    if (input.boxC14.checked){
+		k=k+1
+}
+	   if (input.boxC15.checked){
+ 	j=j+1
+}
+	 if (input.boxC16.checked){
+ 	j=j+1
+}
+	  if (input.boxC17.checked){
+ 	j=j+1
+}
+	   if (input.boxC18.checked){
+		k=k+1
+}
+
+	if (k==10 && j==0){
+anscnt=2;
+var Text="Congratulations!\rYou have answered all questions correctly.";
+}else{
+anscnt=anscnt;
+  var tot=k+j
+	var Text="Evaluation of your answers:\r"
++"*******************************\r"
++"Your correct selections number:" +k +"\r"
++"Your incorrect selections number:" +j +" \r"
++"You have made a total of " +tot +" responses.\r"
++"A total of 10 correct selections is expected."
+}
+input.resultarea.value=Text	
+}
+
+
+function giveansw(show) {
+if (anscnt>=2)  {
+var txt=answ
+}else{
+var txt=noansw
+}
+show.resultarea.value=txt
+}
+
+
+// Variables and functions that do not have to change. 
+function cleartext(input) {
+	input.resultarea.value = '';  // Clear text field.
+}
+
+
+
+function makearray(ch1,ch2,ch3,ch4,ch5,ch6,ch7,ch8,ch9,ch10,ch11,ch12,ch13,ch14,ch15,ch16,ch17,ch18) {
+
+this[1]=ch1; this[2]=ch2; this[3]=ch3; this[4]=ch4; this[5]=ch5; this[6]=ch6; this[7]=ch7;
+
+this[8]=ch8; this[9]=ch9; this[10]=ch10; this[11]=ch11; this[12]=ch12; this[13]=ch13; this[14]=ch14; this[15]=ch15;
+
+ this[16]=ch16; this[17]=ch17; this[18]=ch18;   
+}
+
+// Initialize array of possible answers.
+choice = new makearray(C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11,C12,C13,C14,C15,C16,C17,C18);
+
+// Generate the HTML code for top of the web page.
+document.write('<H3 ALIGN="center">General Selection Problem</H3>');
+document.write('<TABLE><TR><TD WIDTH="65%">');
+document.write('<P><B>1. </B>',question1,'</P>');
+// Generate the HTML code for the checkbox choices.
+document.write('<FORM NAME="questn1">');
+for ( var i = 1; i <= 7; i++) {
+	var boxname='boxC'+i;
+	document.write('<INPUT TYPE="checkbox" NAME="',boxname,'"> '+ choice[i] +'<BR>');
+}
+document.write('<BR>');
+
+document.write('<HR SIZE=6 NOSHADE>');
+
+document.write('<P><B>2. </B>',question2,'</P>');
+document.write('<FORM NAME="questn2">');
+for  (  var i =8 ; i <=12; i++)  {
+	var boxname='boxC'+i;
+	document.write('<INPUT TYPE="checkbox" NAME="',boxname,'"> '+ choice[i] +'<BR>');
+}
+document.write('<BR>');
+document.write('<HR SIZE=6 NOSHADE>');
+
+document.write('<P><B>3. </B>',question3,'</P>');
+document.write('<FORM NAME="questn3">');
+for  (  var i =13 ; i <=18; i++)  {
+	var boxname='boxC'+i;
+	document.write('<INPUT TYPE="checkbox" NAME="',boxname,'"> '+ choice[i] +'<BR>');
+}
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Organic ChkBox Problems</TITLE>
+<body>
+<FORM>
+</TD><TD BGCOLOR="cccccc">&nbsp;</TD><TD VALIGN=TOP ALIGN=CENTER WIDTH="34%">
+<INPUT TYPE="button" VALUE="Submit Answers"  onClick="checkanswers(this.form)">
+&nbsp; &nbsp; <INPUT TYPE="reset" VALUE=" Clear " onClick="cleartext(this.form)"> 
+<BR><BR><TEXTAREA WRAP NAME="resultarea" ROWS="8" COLS="38"></TEXTAREA><BR><BR>
+<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)">
+&nbsp; &nbsp;  <A HREF="helpcb2.htm#indx2" target="cbhelp" ><INPUT TYPE="button"  NAME="wind" VALUE=" Get Help " onClick=
+"window.open('helpcb2.htm#indx2','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=340,height=420')"></A>
+</FORM
+</TD></TR ></TABLE>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

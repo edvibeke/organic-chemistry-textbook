@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html lang="en">
+<HEAD>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Styles/modern.css">
+<TITLE>Isomers</TITLE>
+
+<link rel="stylesheet" href="Styles/edvibe.css">
+<script src="Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+
+<A  NAME="isomer1"></A>
+<BR><P><TABLE WIDTH="100%" CELLPADDING="2"><TR><TH BGCOLOR="green" ALIGN=center><H3><span class="fc-white">Isomer Properties</span></H3></TH></TR></TABLE></P>
+
+<div class="ctr"><H3><span class="fc-maroon">Properties of Constitutional Isomers</span></H3></div>
+<P>A striking example of the different properties that constitutional isomers may have is found in the C<sub>21</sub>H<sub>30</sub>O<sub>2</sub> compounds progesterone and &#916;<sup>1</sup>-tetrahydrocannabinol (THC). Structural formulas for these two naturally occurring chiral isomers are presented in the following diagram.</p>
+<P ALIGN=center><IMG SRC="Images/isomers.gif"></P>
+<p>The diketone progesterone is a crystalline solid, having a melting point 127-130  &#186;C. Tetrahydrocannabinol, on the other hand, is a liquid phenolic ether. Both compounds have a trisubstituted carbon-carbon double bond, but the chemical reactions of progesterone reflect its carbonyl functions; whereas, the reactions of THC are typical of a hindered phenol and a 3&#186;-alkyl ether. The physiological properties of these compounds are dramatically different; progesterone acting as a hormone and THC as a hallucinogen. Interestingly, THC is nearly twice as toxic to female rats as to males. Three dimensional models of these isomers may be examined below.<br>
+It should be noted that, in contrast to constitutional isomers, stereoisomers are more likely to have similar properties, and that enantiomers (mirror image stereoisomers) will have identical properties when tested by symmetrical probes (e.g. melting point or reactivity with bromine).</p>
+<p><TABLE  CELLSPACING=2 align=center>
+<TR><TH><H4>Progesterone</H4></TH><TD> </TD><TH><H4>&#916;<sup>1</sup>-Tetrahydrocannabinol </H4></TH></TR>
+
+<TR valign=top><TD height=305><script type="text/javascript">Jmol.getApplet("jmol1",{"width": 300, "height": 300, "color": "#FFFFFF", "use": "HTML5", "j2sPath": "htmlJ/jsmol/j2s", "addSelectionOptions": false, "script": "color atoms cpk; select hydrogen;  color atoms cyan; select carbon;  color atoms [140,140,140];  connect (atomno=3) (atomno=23) DOUBLE;  connect (atomno=18) (atomno=20) DOUBLE;  connect (atomno=4) (atomno=5) DOUBLE; select all; wireframe 40; spacefill 98;  rotate z -150; background white", "load": "rasfiles/progestone.pdb"});</script></TD> 
+<TD width=30>&nbsp; </TD>
+<TD><script type="text/javascript">Jmol.getApplet("jmol2",{"width": 300, "height": 300, "color": "#FFFFFF", "use": "HTML5", "j2sPath": "htmlJ/jsmol/j2s", "addSelectionOptions": false, "script": "select hydrogen;  color atoms cyan; select carbon;  color atoms [140,140,140];  connect (atomno=1) (atomno=6) DOUBLE;  connect (atomno=2) (atomno=3) DOUBLE;  connect (atomno=4) (atomno=5) DOUBLE;  connect (atomno=15) (atomno=16) DOUBLE; select all; wireframe 40; spacefill 98; background white", "load": "rasfiles/thc.pdb"});</script>
+</TD></TR>
+<TR><TD><dir><button type="button" class="jctl" data-target="jmol1" data-script=" spacefill 70%">X</button> <span class="fs-4"><sup>&nbsp;Show Spacefill Model</sup><br>
+<button type="button" class="jctl" data-target="jmol1" data-script="spacefill off; ">X</button> <sup>&nbsp;Show Stick Model</sup><br>
+<button type="button" class="jctl" data-target="jmol1" data-script="wireframe 40; spacefill 98">X</button> <sup>&nbsp;Show Ball&Stick Model</sup></span></dir></TD>
+<TD> </TD>
+<TD><dir><button type="button" class="jctl" data-target="jmol2" data-script=" spacefill 70%">X</button> <span class="fs-4"><sup>&nbsp;Show Spacefill Model</sup><br>
+<button type="button" class="jctl" data-target="jmol2" data-script="spacefill off; ">X</button> <sup>&nbsp;Show Stick Model</sup><br>
+<button type="button" class="jctl" data-target="jmol2" data-script="wireframe 40; spacefill 98">X</button> <sup>&nbsp;Show Ball&Stick Model</sup></span></dir></TD></TR>
+</TABLE></p><hr>
+<P><div class="ctr">
+<INPUT TYPE="button"  NAME="answr" VALUE="Return" onClick="history.go(-1)"></div></P></div> 
+<p>This page is the property of The Edvibe Team. &nbsp; 
+Comments, questions and errors should
+be sent to <A HREF="mailto:contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<br />
+These pages are provided to the IOCD to assist in capacity building in chemical education.  05/05/2013</p>
+
+<P><IMG SRC="Images/pixel.gif" WIDTH=10 HEIGHT=200 ></P>
+<div class="ctr"><span class="fc-red"><H2>End of this supplementary topic</H2></span></div>
+<P><IMG SRC="Images/pixel.gif" WIDTH=10 HEIGHT=600 ></P>
+<P><INPUT TYPE="button" VALUE="ReLoad" onClick="window.location.reload(true)"></P> 
+</div>
+</FORM>
+</BODY>
+</HTML>
+
+

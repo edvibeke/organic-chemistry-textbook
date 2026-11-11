@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Styles/modern.css">
+<script language=javascript> <!--Hide
+
+if (navigator.userAgent.indexOf("Macintosh") != -1) {
+
+document.write("<STYLE><!-- p {font-size: 12pt} p {line-height: 1.3} b {font-size: 12pt} b {line-height: 1.3} i  {font-size: 12pt} center  {font-size: 12pt} td {font-size: 12pt} td {line-height: 1.3} dt {font-size: 12pt} dl {font-size: 12pt} dd {font-size: 12pt} ol {font-size: 12pt} ol {line-height: 1.3} ul {font-size: 12pt} ul {line-height: 1.3} br {font-size: 12pt} br {line-height: 1.3} dt {font-size: 12pt} H1 {font-size: 24pt} H2 {font-size: 18pt} H3 {font-size: 16pt} H4 {font-size: 14pt} sub {font-size: 10pt} sup {font-size: 10pt} form {font-size: 10pt} --></STYLE>")
+}
+else
+{
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3} td {font-size: 11pt} dt {font-size: 11pt} dl {font-size: 11pt} dd {font-size: 11pt} ol {font-size: 11pt} ol {line-height: 1.3} ul {font-size: 11pt} ul {line-height: 1.3} br {font-size: 11pt} br {line-height: 1.3} dt {font-size: 11pt} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 12pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+}
+
+function calcmas(input) {
+var tot =0
+var cc=(input.a.value * 12.0000);	   // Set desired variables
+var hh=(input.b.value * 1.00783);
+var nn=(input.c.value * 14.0031);
+var oo=(input.d.value * 15.9949);
+var pp=(input.e.value * 30.9738);
+var ss=(input.f.value * 31.9721);
+var ff=(input.g.value * 18.9984);
+var cl=(input.h.value * 34.9689);
+var br=(input.i.value * 78.9183);
+var ii=(input.j.value * 126.9045);
+ tot =(cc + hh + nn + oo +  pp +  ss +  ff + cl + br + ii);
+input.result.value = tot;
+}
+
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.e.value="";
+	input.f.value="";
+	input.g.value="";
+	input.h.value="";
+  input.i.value="";
+  input.j.value="";
+	input.result.value=" ";
+}
+
+function clcbnd(input) {
+var tota =0;
+var totb =0;
+var ca=(input.ax.value * 1.1);	   // Set desired variables
+var cb=(input.ax.value * 0.006);
+var ha=(input.bx.value * 0.011);
+var na=(input.cx.value * 0.365);
+var oa=(input.dx.value * 0.037);
+var ob=(input.dx.value * 0.2);
+var sa=(input.ex.value * 0.78);
+var sb=(input.ex.value * 4.4);
+var sia=(input.fx.value * 5.1);
+var sib=(input.fx.value * 3.3);
+ tota=(ca + ha + na + oa +  sa + sia);
+ totb=(cb + ob +  sb + sib);
+if (totb<1) {
+totb="0"+totb;
+	}else{
+totb=totb;
+}
+
+input.result1.value = tota;
+input.result2.value = totb;
+}
+
+function clrtxt1(input) {
+	input.ax.value="";	
+	input.bx.value="";
+	input.cx.value="";
+	input.dx.value="";
+	input.ex.value="";
+	input.ex.value="";
+	input.result1.value=" ";
+	input.result2.value=" ";
+
+}
+
+
+//STOP HIDING-->
+</SCRIPT>
+
+
+<META NAME="GENERATOR" CONTENT="Mozilla/4.01 (Macintosh; I; PPC) [Netscape]"> <TITLE>Masses</TITLE>
+<link rel="stylesheet" href="Styles/edvibe.css">
+<script src="Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<FORM>
+<div class="ctr">
+<TABLE WIDTH=650 BORDER=6 CELLPADDING=4 >
+<CAPTION><H3><B>Exact Masses & Isotope Abundance Ratios</B></H3></CAPTION>
+<TR BGCOLOR="66FF99">
+<TH WIDTH="19%" ALIGN=CENTER> <B>Element </B> </TH>
+
+<TH WIDTH="11%" ALIGN=CENTER> 
+<B>Symbol</B> </TH>
+
+<TH WIDTH="11%" ALIGN=CENTER> 
+<B>Nominal Mass</B> </TH>
+
+<TH WIDTH="15%" ALIGN=CENTER> 
+<B>Exact Mass</B> </TH>
+
+<TH WIDTH="14%" ALIGN=CENTER> 
+<B>Abundance</B> </TH>
+
+<TH WIDTH="14%" ALIGN=CENTER> 
+<B>X+1<BR> Factor</B><SUP>*</SUP></TH>
+
+<TH WIDTH="16%" ALIGN=CENTER> 
+<B>X+2<BR> Factor</B><SUP>*</SUP></TH>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER>Hydrogen </TD>
+
+<TD ALIGN=CENTER> H<BR>D or 
+<span class="fs-2"><SUP> 2</SUP></span>H</TD>
+
+<TD ALIGN=CENTER>
+<div class="ctr">1<BR>2</div></TD>
+
+<TD ALIGN=CENTER>
+1.00783<BR>2.01410</TD>
+
+<TD ALIGN=CENTER>99.99<BR>0.01</TD>
+
+<TD >&nbsp;</TD>
+
+<TD >&nbsp;</TD>
+</TR>
+
+<TR BGCOLOR="F7FFCE">
+<TD ALIGN=CENTER>Carbon </TD>
+
+<TD ALIGN=CENTER>
+<span class="fs-2"><SUP>12</SUP></span>C<BR>
+<span class="fs-2"><SUP>13</SUP></span>C</TD>
+
+<TD ALIGN=CENTER>
+12<BR>13</TD>
+
+<TD ALIGN=CENTER>
+12.0000<BR>13.0034</TD>
+
+<TD ALIGN=CENTER>98.91<BR>1.09</TD>
+
+<TD ALIGN=CENTER><BR>
+1.1n<span class="fs-2"><SUB>C</SUB></span></TD>
+
+<TD ALIGN=CENTER><BR>
+0.006n<span class="fs-2"><SUB>C</SUB><SUP>2</SUP></span></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER>Nitrogen </TD>
+
+<TD ALIGN=CENTER>
+<span class="fs-2"><SUP>14</SUP></span>N<BR>
+<span class="fs-2"><SUP>15</SUP></span>N</TD>
+
+<TD  ALIGN=CENTER>
+14<BR>15</TD>
+
+<TD ALIGN=CENTER>
+14.0031<BR>15.0001</TD>
+
+<TD ALIGN=CENTER>99.6<BR>0.37</TD>
+
+<TD ALIGN=CENTER><BR>0.37n<span class="fs-2"><SUB>N</SUB></span></TD>
+
+<TD >&nbsp; </TD>
+</TR>
+
+<TR BGCOLOR="F7FFCE">
+<TD ALIGN=CENTER>Oxygen </TD>
+
+<TD ALIGN=CENTER>
+<span class="fs-2"><SUP>16</SUP></span>O<BR><span class="fs-2"><SUP>17</SUP></span>O<BR>
+<span class="fs-2"><SUP>18</SUP></span>O</TD>
+
+<TD ALIGN=CENTER>
+16<BR>17<BR>18</TD>
+
+<TD ALIGN=CENTER>
+15.9949<BR>16.9991<BR>17.9992</TD>
+
+<TD ALIGN=CENTER>99.76<BR>0.037<BR>0.20</TD>
+
+<TD ALIGN=CENTER><BR>
+0.04n<span class="fs-2"><SUB>O</SUB></span></TD>
+
+<TD ALIGN=CENTER><BR>&nbsp; <BR>
+0.2n<span class="fs-2"><SUB>O</SUB></span></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER>Fluorine </TD>
+
+<TD ALIGN=CENTER>F</TD>
+
+<TD ALIGN=CENTER>19</TD>
+
+<TD ALIGN=CENTER>18.9984</TD>
+
+<TD ALIGN=CENTER>100<BR></TD>
+
+<TD >&nbsp; </TD>
+
+<TD >&nbsp; </TD>
+</TR>
+
+<TR   BGCOLOR="F7FFCE">
+<TD ALIGN=CENTER>Silicon</TD>
+
+<TD ALIGN=CENTER>
+<span class="fs-2"><SUP>28</SUP></span>Si<BR><span class="fs-2"><SUP>29</SUP></span>Si<BR>
+<span class="fs-2"><SUP>30</SUP></span>Si</TD>
+
+<TD  ALIGN=CENTER>
+28<BR>29<BR>30</TD>
+
+<TD  ALIGN=CENTER>
+27.9769<BR>28.9765<BR>29.9738</TD>
+
+<TD  ALIGN=CENTER>92.28<BR>4.70<BR>3.02</TD>
+
+<TD  ALIGN=CENTER><BR>
+5.1n<span class="fs-2"><SUB>Si</SUB></span></TD>
+
+<TD  ALIGN=CENTER><BR>&nbsp; <BR>
+3.3n<span class="fs-2"><SUB>Si</SUB></span></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER>Phosphorus</TD>
+
+<TD  ALIGN=CENTER>P</TD>
+
+<TD  ALIGN=CENTER>31</TD>
+
+<TD  ALIGN=CENTER>30.9738</TD>
+
+<TD  ALIGN=CENTER>100</TD>
+
+<TD >&nbsp; </TD>
+
+<TD >&nbsp; </TD>
+</TR>
+
+<TR BGCOLOR="F7FFCE">
+<TD ALIGN=CENTER>Sulphur </TD>
+
+<TD ALIGN=CENTER>
+<span class="fs-2"><SUP>32</SUP></span>S<BR>
+<span class="fs-2"><SUP>33</SUP></span>S<BR>
+<span class="fs-2"><SUP>34</SUP></span>S</TD>
+
+<TD  ALIGN=CENTER>
+32<BR>33<BR>34</TD>
+
+<TD  ALIGN=CENTER>
+31.9721<BR>32.9715<BR>33.9679</TD>
+
+<TD  ALIGN=CENTER>
+95.02<BR>0.74<BR>4.22</TD>
+
+<TD  ALIGN=CENTER><BR>
+0.78n<span class="fs-2"><SUB>S</SUB></span></TD>
+
+<TD  ALIGN=CENTER><BR>&nbsp; <BR>
+4.4n<span class="fs-2"><SUB>S</SUB></span></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER>Chlorine</TD>
+
+<TD ALIGN=CENTER><span class="fs-2"><SUP>35</SUP></span>Cl<BR>
+<span class="fs-2"><SUP>37</SUP></span>Cl</TD>
+
+<TD ALIGN=CENTER>
+<div class="ctr">35<BR>37</div></TD>
+
+<TD ALIGN=CENTER>
+34.9689<BR>36.9659</TD>
+
+<TD ALIGN=CENTER>75.77<BR>24.23</TD>
+
+<TD >&nbsp;</TD>
+
+<TD  ALIGN=CENTER><BR><BR>
+32.5n<span class="fs-2"><SUB>Cl</SUB></span></TD>
+</TR>
+
+<TR   BGCOLOR="F7FFCE">
+<TD ALIGN=CENTER>Bromine</TD>
+
+<TD  ALIGN=CENTER>
+<span class="fs-2"><SUP>79</SUP></span>Br<BR>
+<span class="fs-2"><SUP>81</SUP></span>Br</TD>
+
+<TD  ALIGN=CENTER>
+79<BR>81</TD>
+
+<TD  ALIGN=CENTER>
+78.9183<BR>80.9163</TD>
+
+<TD  ALIGN=CENTER>50.5<BR>49.5</TD>
+
+<TD >&nbsp; </TD>
+
+<TD ALIGN=CENTER><BR><BR>
+98.0n<span class="fs-2"><SUB>Br</SUB></span></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER>Iodine</TD>
+
+<TD  ALIGN=CENTER>I</TD>
+
+<TD  ALIGN=CENTER>127</TD>
+
+<TD  ALIGN=CENTER>126.9045</TD>
+
+<TD ALIGN=CENTER>100<BR></TD>
+
+<TD >&nbsp; </TD>
+
+<TD >&nbsp; </TD>
+</TR>
+</TABLE>
+
+<TABLE WIDTH=660 BORDER=0>
+<TR><TD Width=440><span class="fs-2 ff-arial">
+<P>* X represents the relative intensity of the lowest mass ion
+in an isotopic ion cluster.  It is set at 100% for this calculation.  The factor is multiplied by the number of atoms (n) of the designated element to calculate the  intensity contribution from higher mass isotopes.</TD>
+<TD Width=60>&nbsp;</TD>
+<TD Width=160 BGCOLOR="66FF99"><B><span class="fs-2 ff-arial"><P ALIGN="CENTER">Organic Chemistry
+<BR>edvibe.co.ke</B></span> <br /> &nbsp;</TD>
+</TR>
+</TABLE></div><BR>
+This table is adapted from <I>Introduction to Mass Spectrometry</I>, by J.T. Watson
+<HR>
+<P><TABLE BORDER=9 BGCOLOR="antiquewhite" ALIGN=right><TR><TD>
+<TABLE CELLSPACING=4 CELLPADDING=4><TR ALIGN=center><TH COLSPAN=2><H3>Molecular Mass Calculator</H3></TH></TR>
+<TR ALIGN=center><TH COLSPAN=2 NOWRAP>C<SUB><INPUT TYPE="text" NAME="a"  SIZE="3"></SUB> H<SUB><INPUT TYPE="text" NAME="b"  SIZE="3"></SUB> N<SUB><INPUT TYPE="text" NAME="c"  SIZE="3"></SUB> O<SUB><INPUT TYPE="text" NAME="d"  SIZE="3"></SUB> P<SUB><INPUT TYPE="text" NAME="e"  SIZE="3"></SUB> S<SUB><INPUT TYPE="text" NAME="f"  SIZE="3"></SUB> F<SUB><INPUT TYPE="text" NAME="g"  SIZE="3"></SUB> Cl<SUB><INPUT TYPE="text" NAME="h"  SIZE="3"></SUB> Br<SUB><INPUT TYPE="text" NAME="i"  SIZE="3"></SUB> I<SUB><INPUT TYPE="text" NAME="j"  SIZE="3"></SUB></TH></TR>
+<TR ALIGN=center><TD><INPUT TYPE="text" NAME="result"  size="11"><BR><BR>Molecular Mass</TD>
+<TD><INPUT TYPE="button"  VALUE=" Calculate " onClick=" calcmas(this.form)">&nbsp;<BR><BR><INPUT TYPE="button"  VALUE="Clear Input" onClick="clrtxt(this.form)"></TD></TR></TABLE></TD></TR></TABLE>
+<BR>
+<P>The mass calculator on the right may be used to calculate the exact mass of a molecule based on its elemental composition. Simply enter an appropriate subscript number to the right of each symbol, leaving those elements not present blank, and press the "<U>Calculate</U>" button.  Only the mass of the most abundant isotope, relative to C (12.0000), is used for these calculations. For compounds of chlorine and bromine, increments of 1.997 and 1.998 respectively must be added for each halogen to arrive at the higher mass isotope values.</P>
+<BR clear=all>
+<P><TABLE BORDER=9 BGCOLOR="antiquewhite" ALIGN=left><TR><TH>
+<TABLE CELLSPACING=4 CELLPADDING=4> <TR ALIGN=center><TH COLSPAN=4><H3>Isotopic Abundance Calculator</H3></TH></TR>
+<TR ALIGN=center><TH COLSPAN=4 NOWRAP>C<SUB><INPUT TYPE="text" NAME="ax"  SIZE="3"></SUB> H<SUB><INPUT TYPE="text" NAME="bx"  SIZE="3"></SUB> N<SUB><INPUT TYPE="text" NAME="cx"  SIZE="3"></SUB> O<SUB><INPUT TYPE="text" NAME="dx"  SIZE="3"></SUB> S<SUB><INPUT TYPE="text" NAME="ex"  SIZE="3"></SUB>Si<SUB><INPUT TYPE="text" NAME="fx"  SIZE="3"></SUB> </TH></TR>
+<TR ALIGN=center><TH>Molecular Ion<br>100% </TH><TH>M + 1<br> <INPUT TYPE="text" NAME="result1"  size="6"></TH><TH>M + 2<br><INPUT TYPE="text" NAME="result2"  size="6"></TH>
+<TD><INPUT TYPE="button"  VALUE=" Calculate " onClick=" clcbnd(this.form)">&nbsp;<BR><BR><INPUT TYPE="button"  VALUE="Clear Input" onClick="clrtxt1(this.form)"></TD></TR></TABLE>
+</TH></TR></TABLE>
+<BR><P>The calculator on the left may be used to calculate the isotope contributions to ion abundances 1 and 2 amu greater than the molecular ion (M). Simply enter an appropriate subscript number to the right of each symbol, leaving those elements not present blank, and press the "<U>Calculate</U>" button. The numbers displayed in the M+1 and M+2 boxes are relative to M being set at 100%. Of course, compounds of chlorine and bromine have very large isotope abundances.<br>
+A more elegant and complete isotope pattern calculator has been created by Junhau Yan. To use this resource <A HREF="http://www.geocities.com/junhuayan/pattern.htm">Click Here</A>.<br>
+A useful resource, written by Jef Rozenski, calculates all possible combinations of H, C, N & O that give a specific nominal mass. To use this calculator <A HREF="http://medlib.med.utah.edu/masspec/elcomp.htm">Click Here</A>.
+</P>
+<BR clear=all>
+</FORM>
+</BODY>
+</HTML>
+

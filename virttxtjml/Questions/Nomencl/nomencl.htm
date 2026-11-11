@@ -1,0 +1,1085 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Hide script from old browsers
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  td {font-size: 11pt} td {line-height: 1.3}  ul {font-size: 11pt} ul {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var k=0
+var j=0
+var alph="You should list substituents in alphabetical order";
+var numb="You have numbered the root chain from the wrong end";
+// answer checking function
+
+function chk1(input) {
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+input.e.value=fix(input.e.value)
+input.f.value=fix(input.f.value)
+input.g.value=fix(input.g.value)
+input.h.value=fix(input.h.value)
+input.i.value=fix(input.i.value)
+input.j.value=fix(input.j.value)
+input.k.value=fix(input.k.value)
+input.l.value=fix(input.l.value)
+input.m.value=fix(input.m.value)
+input.n.value=fix(input.n.value)
+input.o.value=fix(input.o.value)
+input.p.value=fix(input.p.value)
+input.q.value=fix(input.q.value)
+input.r.value=fix(input.r.value)
+input.s.value=fix(input.s.value)
+input.t.value=fix(input.t.value)
+input.u.value=fix(input.u.value)
+function fix(s){
+return s.replace(/[ ]/g,"")
+}
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var rsp="";
+if ( input.a.value == "6"){ 
+		k=k+1
+		} else {
+if ( input.a.value != ""){ 
+		var rsp=rsp +" hexane Part A,"
+		} else {
+		j=j+1
+}
+}
+if ( input.b.value == "3"){ 
+		k=k+1
+		} else {
+if ( input.b.value != ""){ 
+		var rsp=rsp +" propane Part A,"
+		} else {
+		j=j+1
+}
+}
+if ( input.c.value == "4"){ 
+		k=k+1
+		} else {
+if ( input.c.value != ""){ 
+		var rsp=rsp +" butane Part A,"
+		} else {
+		j=j+1
+}
+}
+if ( input.d.value == "5"){ 
+		k=k+1
+		} else {
+if ( input.d.value != ""){ 
+		var rsp=rsp +" pentane Part A,"
+		} else {
+		j=j+1
+}
+}
+if ( input.e.value == "9"){ 
+		k=k+1
+		} else {
+if ( input.e.value != ""){ 
+		var rsp=rsp +" nonane Part A,"
+		} else {
+		j=j+1
+}
+}
+if ( input.f.value == "7"){ 
+		k=k+1
+		} else {
+if ( input.f.value != ""){ 
+		var rsp=rsp +" heptane Part A,"
+		} else {
+		j=j+1
+}
+}
+if ( input.g.value == "10"){ 
+		k=k+1
+		} else {
+if ( input.g.value != ""){ 
+		var rsp=rsp +" decane Part A,"
+		} else {
+		j=j+1
+}
+}
+if ( input.h.value == "2"){ 
+		k=k+1
+		} else {
+if ( input.h.value != ""){ 
+		var rsp=rsp +" ethane Part A,"
+		} else {
+		j=j+1
+}
+}
+if ( input.i.value == "10" && input.j.value == "22" ){ 
+		k=k+1
+		} else {
+if ( input.i.value != "" || input.j.value != ""){ 
+		var rsp=rsp +" Molecular Formula in Part B,"
+		} else {
+		j=j+1
+}
+}
+if ( input.k.value == "7"){ 
+		k=k+1
+		} else {
+if ( input.k.value != ""){ 
+		var rsp=rsp +" Chain Length in Part B,"
+		} else {
+		j=j+1
+}
+}
+if ( input.l.value == "2"){ 
+		k=k+1
+		} else {
+if ( input.l.value != ""){ 
+		var rsp=rsp +" Substituents in Part B,"
+		} else {
+		j=j+1
+}
+}
+if ( input.m.value.toUpperCase()=="HEXANE" )  { 
+		k=k+1
+		} else {
+if ( input.m.value != ""){ 
+		var rsp=rsp +" Root Name in Part C,"
+		} else {
+		j=j+1
+}
+}
+if ( input.n.value == "3"){ 
+		k=k+1
+		} else {
+if ( input.n.value == "2"){ 
+alert ("In Part C:  There is a more highly-substituted\r 6-carbon chain that should be selected.");
+		var rsp=rsp +" Substituents in Part C,"
+		} else {
+if ( input.n.value != ""){ 
+		var rsp=rsp +" Substituents in Part C,"
+		} else {
+		j=j+1
+}
+}
+}
+if ( input.o.value.toUpperCase()=="3,4-DIETHYL-2-METHYLHEXANE" )  { 
+		k=k+1
+		} else {
+if ( input.o.value.toUpperCase()=="2-METHYL-3,4-DIETHYLHEXANE" )  { 
+alert ( "In Part C:  " + alph);
+		var rsp=rsp +" IUPAC Name in Part C,"
+		} else {
+if ( input.o.value.toUpperCase().indexOf("5-METHYL",0)>=0 )  { 
+alert ( "In Part C:  " + numb);
+		var rsp=rsp +" IUPAC Name in Part C,"
+		} else {
+if ( input.o.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part C,"
+		} else {
+		j=j+1
+}
+}
+}
+}
+if ( input.p.value.toUpperCase()=="CYCLOHEXANE" )  { 
+		k=k+1
+		} else {
+if ( input.p.value != ""){ 
+		var rsp=rsp +" Root Name in Part D,"
+		} else {
+		j=j+1
+}
+}
+if ( input.q.value == "3"){ 
+		k=k+1
+		} else {
+if ( input.q.value != ""){ 
+		var rsp=rsp +" Substituents in Part D,"
+		} else {
+		j=j+1
+}
+}
+if ( input.r.value.toUpperCase() == "E"){ 
+		k=k+1
+		} else {
+if ( input.r.value.toUpperCase() == "C" || input.r.value.toUpperCase() == "D" || input.r.value.toUpperCase() == "F" || input.r.value.toUpperCase() == "A" || input.r.value.toUpperCase() == "B"){ 
+alert ( "In Part D:  The more heavily substituted carbon on a ring is #1");
+		var rsp=rsp +" Ring Numbering #1 in Part D,"
+		} else {
+if ( input.r.value != ""){ 
+		var rsp=rsp +" Ring Numbering #1 in Part D,"
+		} else {
+		j=j+1
+}
+}
+}
+if ( input.s.value.toUpperCase() == "D"){ 
+		k=k+1
+		} else {
+if ( input.s.value.toUpperCase() == "F"){ 
+alert ( "In Part D:  Count in the direction of the nearest substituent");
+		var rsp=rsp +" Ring Numbering #2 in Part D,"
+		} else {
+if ( input.s.value != ""){ 
+		var rsp=rsp +" Ring Numbering #2 in Part D,"
+		} else {
+		j=j+1
+}
+}
+}
+if ( input.t.value.toUpperCase()=="3-ETHYL-1,1-DIMETHYLCYCLOHEXANE")  { 
+		k=k+1
+		} else {
+if ( input.t.value.toUpperCase()=="1,1-DIMETHYL-3-ETHYLCYCLOHEXANE" )  { 
+alert ( "In Part D:  " + alph);
+		var rsp=rsp +" IUPAC Name in Part D,"
+		} else {
+if ( input.t.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part D,"
+		} else {
+		j=j+1
+}
+}
+}
+if ( input.u.value.toUpperCase()=="1-CYCLOPROPYL-1-PROPYLCYCLOPENTANE" )  { 
+		k=k+1
+		} else {
+if ( input.u.value.toUpperCase()=="1-PROPYL-1-CYCLOPROPYLCYCLOPENTANE" )  { 
+alert ( "In Part E:  " + alph);
+		var rsp=rsp +" IUPAC Name in Part E,"
+		} else {
+if ( input.u.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part E,"
+		} else {
+		j=j+1
+}
+}
+}
+
+if ( rsp=="") {
+rsp="none";
+}
+if (j==20) {
+	var txt="You have not provided answers to any questions."; 
+}else{
+if   (k==20) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+}else{
+	var txt="Your correct answers total: " + k +" \rQuestions you have answered incorrectly are:" + rsp; 
+}
+}
+input.result.value = txt;
+}
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";	
+	input.e.value="";
+	input.f.value="";
+	input.g.value="";	
+	input.h.value="";
+	input.i.value="";
+	input.j.value="";	
+	input.k.value="";
+	input.l.value="";
+	input.m.value="";	
+	input.n.value="";
+	input.o.value="";
+	input.p.value="";	
+	input.q.value="";	
+	input.r.value="";
+	input.s.value="";
+	input.t.value="";	
+	input.u.value="";	
+	input.result.value=" ";
+}
+
+function chk2(input) {
+input.aa.value=fix(input.aa.value)
+input.ab.value=fix(input.ab.value)
+input.ac.value=fix(input.ac.value)
+input.ad.value=fix(input.ad.value)
+input.ae.value=fix(input.ae.value)
+input.af.value=fix(input.af.value)
+input.ag.value=fix(input.ag.value)
+input.ah.value=fix(input.ah.value)
+input.ai.value=fix(input.ai.value)
+input.aj.value=fix(input.aj.value)
+input.ak.value=fix(input.ak.value)
+input.al.value=fix(input.al.value)
+input.am.value=fix(input.am.value)
+input.an.value=fix(input.an.value)
+function fix(s){
+return s.replace(/[ ]/g,"")
+}
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var rsp="";
+
+if ( input.aa.value == "11" && input.ab.value == "22" ){ 
+		k=k+1
+		} else {
+if ( input.aa.value != "" || input.ab.value != ""){ 
+		var rsp=rsp +" Molecular Formula in Part A,"
+		} else {
+		j=j+1
+}
+}
+if ( input.ac.value == "7"){ 
+		k=k+1
+		} else {
+if ( input.ac.value != ""){ 
+		var rsp=rsp +" Chain Length in Part A,"
+		} else {
+		j=j+1
+}
+}
+if ( input.ad.value == "6"){ 
+		k=k+1
+		} else {
+if ( input.ad.value != ""){ 
+		var rsp=rsp +" Double Bond Chain Length in Part A,"
+		} else {
+		j=j+1
+}
+}
+if ( input.ae.value == "3"){ 
+		k=k+1
+		} else {
+if ( input.ae.value == "2"){ 
+alert ("In Part A:  There is a more highly-substituted\r 6-carbon chain that should be selected.");
+		var rsp=rsp +" Substituents in Part A,"
+		} else {
+if ( input.ae.value != ""){ 
+		var rsp=rsp +" Substituents in Part A,"
+		} else {
+		j=j+1
+}
+}
+}
+if ( input.af.value.toUpperCase()=="2,5-DIMETHYL-3-PROPYL-2-HEXENE" )  { 
+		k=k+1
+		} else {
+if ( input.af.value.toUpperCase()=="3-PROPYL-2,5-DIMETHYL-2-HEXENE" )  { 
+alert ( "In Part A:  " + alph);
+		var rsp=rsp +" IUPAC Name in Part A,"
+		} else {
+if ( input.af.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part A,"
+		} else {
+		j=j+1
+}
+}
+}
+if ( input.ag.value.toUpperCase() == "C"){ 
+		k=k+1
+		} else {
+if ( input.ag.value.toUpperCase() == "B"){ 
+alert ( "In Part B:  The more substituted double bond carbon of a cycloalkene is #1");
+		var rsp=rsp +" Ring Numbering #1 in Part B,"
+		} else {
+if ( input.ag.value.toUpperCase() == "G"){ 
+alert ( "In Part B:  The double bond carbons of a cycloalkene are numbered #1 & #2");
+		var rsp=rsp +" Ring Numbering #1 in Part B,"
+		} else {
+if ( input.ag.value != ""){ 
+		var rsp=rsp +" Ring Numbering #1 in Part B,"
+		} else {
+		j=j+1
+}
+}
+}
+}
+if ( input.ah.value.toUpperCase()=="1-ETHYL-4,4-DIMETHYLCYCLOHEPTENE" )  { 
+		k=k+1
+		} else {
+if ( input.ah.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part B,"
+		} else {
+		j=j+1
+}
+}
+if ( input.ai.value.toUpperCase()=="1-METHYL-5-VINYLCYCLOPENTENE" )  { 
+		k=k+1
+		} else {
+if ( input.ai.value.toUpperCase()=="2-METHYL-3-VINYLCYCLOPENTENE" ) {
+alert ( "In Part C (1):  The more substituted double bond carbon of a cycloalkene is #1, and the other double bond carbon is #2. ");
+		var rsp=rsp +" IUPAC Name in Part C(1),"
+		} else {
+if ( input.ai.value.toUpperCase()=="5-VINYL-1-METHYLCYCLOPENTENE" ) {
+alert ( "In Part C (1): " + alph);
+		var rsp=rsp +" IUPAC Name in Part C(1),"
+		} else {
+if ( input.ai.value != "") { 
+		var rsp=rsp +" IUPAC Name in Part C(1),"
+		} else {
+		j=j+1
+}
+}
+}
+}
+if ( input.aj.value.toUpperCase()=="2,3-DIETHYL-4-METHYL-1,3-PENTADIENE" || input.ai.value.toUpperCase()==  "2,3-DIETHYL-4-METHYLPENTA-1,3-DIENE")  { 
+		k=k+1
+		} else {
+if (input.aj.value.toUpperCase().indexOf("2,4-PENTADIENE",0)>=0 )  { 
+alert ( "In PART C (2): " + numb );
+		var rsp=rsp +" IUPAC Name in PART C(2),"
+		} else {
+if (input.aj.value.toUpperCase().indexOf("HEX",0)>=0 )  { 
+alert ( "In PART C (2): The longest chain must inclure all the carbon atoms of the double bonds.");
+		var rsp=rsp +" IUPAC Name in PART C(2),"
+		} else {
+
+if ( input.aj.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part C(2),"
+		} else {
+		j=j+1
+}
+}
+}
+}
+if ( input.ak.value.toUpperCase()=="6,6-DIMETHYL-2-HEPTYNE" )  { 
+		k=k+1
+		} else {
+if ( input.ak.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part C(3),"
+		} else {
+		j=j+1
+}
+}
+if ( input.al.value.toUpperCase()=="5-CYCLOHEXYL-1-PENTEN-3-YNE" ||  input.al.value.toUpperCase()=="5-CYCLOHEXYLPENT-1-EN-3-YNE")  { 
+		k=k+1
+		} else {
+if ( input.al.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part C(4),"
+		} else {
+		j=j+1
+}
+}
+if ( input.am.value.toUpperCase()=="6-ALLYL-1,4-CYCLOOCTADIENE" )  { 
+		k=k+1
+		} else {
+if ( input.am.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part C(5),"
+		} else {
+		j=j+1
+}
+}
+if ( input.an.value.toUpperCase()=="1,4-DIPHENYLCYCLOPENTENE" )  { 
+		k=k+1
+		} else {
+if ( input.an.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part C(6),"
+		} else {
+		j=j+1
+}
+}
+
+if ( rsp=="") {
+rsp="none";
+}
+if (j==13) {
+	var txt="You have not provided answers to any questions."; 
+}else{
+if   (k==13) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+}else{
+	var txt="Your correct answers total: " + k +" \rQuestions you have answered incorrectly are:" + rsp; 
+}
+}
+input.result2.value = txt;
+}
+function clrtxt2(input) {
+	input.aa.value="";	
+	input.ab.value="";
+	input.ac.value="";
+	input.ad.value="";	
+	input.ae.value="";
+	input.af.value="";
+	input.ag.value="";	
+	input.ah.value="";
+	input.ai.value="";
+	input.aj.value="";	
+	input.ak.value="";
+	input.al.value="";
+	input.am.value="";
+	input.an.value="";
+	input.result2.value=" ";
+}
+
+function chk3(input) {
+input.ba.value=fix(input.ba.value)
+input.bb.value=fix(input.bb.value)
+input.bc.value=fix(input.bc.value)
+input.bd.value=fix(input.bd.value)
+input.be.value=fix(input.be.value)
+function fix(s){
+return s.replace(/[ ]/g,"")
+}
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var rsp="";
+if ( input.ba.value.toUpperCase()=="3-ETHYL-2-METHYLHEXANE" )  { 
+		k=k+1
+		} else {
+if (input.ba.value.toUpperCase().indexOf("PROPYL",0)>=0 )  { 
+alert ( "In PART A: You have chosen the wrong six-carbon chain." );
+		var rsp=rsp +" IUPAC Name in PART A,"
+		} else {
+if (input.ba.value.toUpperCase()=="2-METHYL-3-ETHYLHEXANE" )  { 
+alert ( "In PART A: " + alph );
+		var rsp=rsp +" IUPAC Name in PART A,"
+		} else {
+if ( input.ba.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part A,"
+		} else {
+		j=j+1
+}
+}
+}
+}
+if ( input.bb.value.toUpperCase()=="2-ETHYL-1-PENTENE" )  { 
+		k=k+1
+		} else {
+if (input.bb.value.toUpperCase().indexOf("HEX",0)>=0 )  { 
+alert ( "In PART B: Both double bond carbons must be part of the root name chain." );
+		var rsp=rsp +" IUPAC Name in PART B,"
+		} else {
+if (input.bb.value.toUpperCase()=="2-ETHYLPENTENE")  { 
+alert ( "In PART B: You must provide a locator number for the double bond." );
+		var rsp=rsp +" IUPAC Name in PART B,"
+		} else {
+if ( input.bb.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part B,"
+		} else {
+		j=j+1
+}
+}
+}
+}
+if ( input.bc.value.toUpperCase()=="2-ETHYL-4-METHYL-1,3-PENTADIENE" )  { 
+		k=k+1
+		} else {
+if (input.bc.value.toUpperCase().indexOf("4-ETHYL",0)>=0 || input.bc.value.toUpperCase().indexOf("3-ETHYL",0)>=0 )  { 
+alert ( "In PART C: " + numb );
+		var rsp=rsp +" IUPAC Name in PART C,"
+		} else {
+if ( input.bc.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part C,"
+		} else {
+		j=j+1
+}
+}
+}
+if ( input.bd.value.toUpperCase()=="4-ETHYL-2-HEXYNE")  { 
+		k=k+1
+		} else {
+if ( input.bd.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part D,"
+		} else {
+		j=j+1
+}
+}
+if ( input.be.value.toUpperCase()=="2,7,7-TRIMETHYL-2-OCTEN-5-YNE" )  { 
+		k=k+1
+		} else {
+if ( input.be.value != ""){ 
+		var rsp=rsp +" IUPAC Name in Part E,"
+		} else {
+		j=j+1
+}
+}
+
+if ( rsp=="") {
+rsp="none";
+}
+if (j==5) {
+	var txt="You have not provided answers to any questions."; 
+}else{
+if   (k==5) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+}else{
+	var txt="Your correct answers total: " + k +" \rQuestions you have answered incorrectly are:" + rsp; 
+}
+}
+input.result3.value = txt;
+}
+function clrtxt3(input) {
+	input.ba.value="";	
+	input.bb.value="";
+	input.bc.value="";
+	input.bd.value="";	
+	input.be.value="";
+	input.result3.value=" ";
+}
+
+function chk4(input) {
+input.da.value=fix(input.da.value)
+input.db.value=fix(input.db.value)
+input.dc.value=fix(input.dc.value)
+input.dd.value=fix(input.dd.value)
+input.de.value=fix(input.de.value)
+function fix(s){
+return s.replace(/[ ]/g,"")
+}
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var rsp="";
+if ( input.da.value.toUpperCase()=="1-ALLYL-2-ETHYLBENZENE" )  { 
+		k=k+1
+		} else {
+if ( input.da.value != ""){ 
+		var rsp=rsp +" IUPAC Name in (1),"
+		} else {
+		j=j+1
+}
+}
+if ( input.db.value.toUpperCase()=="NAPHTHALENE" )  { 
+		k=k+1
+		} else {
+if ( input.db.value != ""){ 
+		var rsp=rsp +" IUPAC Name in (2),"
+		} else {
+		j=j+1
+}
+}
+if ( input.dc.value.toUpperCase()=="1,2-DIMETHYLBENZENE" || input.dc.value.toUpperCase()=="O-XYLENE" || input.dc.value.toUpperCase()=="ORTHO-XYLENE" )  { 
+		k=k+1
+		} else {
+if ( input.dc.value != ""){ 
+		var rsp=rsp +" IUPAC Name in (3),"
+		} else {
+		j=j+1
+}
+}
+if ( input.dd.value.toUpperCase()=="VINYLBENZENE" || input.dd.value.toUpperCase()=="STYRENE")  { 
+		k=k+1
+		} else {
+if ( input.dd.value != ""){ 
+		var rsp=rsp +" IUPAC Name in (4),"
+		} else {
+		j=j+1
+}
+}
+if ( input.de.value.toUpperCase()=="1,3,5-TRIMETHYLBENZENE" || input.de.value.toUpperCase()=="MESITYLENE" )  { 
+		k=k+1
+		} else {
+if ( input.de.value != ""){ 
+		var rsp=rsp +" IUPAC Name in (5),"
+		} else {
+		j=j+1
+}
+}
+
+if ( rsp=="") {
+rsp="none";
+}
+if (j==5) {
+	var txt="You have not provided answers to any questions."; 
+}else{
+if   (k==5) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+}else{
+	var txt="Your correct answers total: " + k +" \rQuestions you have answered incorrectly are:" + rsp; 
+}
+}
+input.result4.value = txt;
+}
+function clrtxt4(input) {
+	input.da.value="";	
+	input.db.value="";
+	input.dc.value="";
+	input.dd.value="";	
+	input.de.value="";
+	input.result4.value=" ";
+}
+
+
+
+
+function chk5(input) {
+input.ca.value=fix(input.ca.value)
+input.cb.value=fix(input.cb.value)
+input.cc.value=fix(input.cc.value)
+input.cd.value=fix(input.cd.value)
+input.ce.value=fix(input.ce.value)
+function fix(s){
+return s.replace(/[ ]/g,"")
+}
+
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var rsp="";
+if ( input.ca.value.toUpperCase()=="3-BROMO-2,5-DIMETHYLHEXANE" )  { 
+		k=k+1
+		} else {
+if ( input.ca.value != ""){ 
+		var rsp=rsp +" IUPAC Name in (1),"
+		} else {
+		j=j+1
+}
+}
+if (input.cb.value.toUpperCase()=="7,7-DICHLORO-4-ETHYL-3,3,8-TRIMETHYL-4-PROPYLDECANE" )   { 
+		k=k+1
+		} else {
+if (input.cb.value!="" && input.cb.value.length<51)  { 
+alert ( "In (2): You may not have identified and/or numbered the location of all substituents." );
+		var rsp=rsp +" IUPAC Name in (2),"
+		} else {
+if ( input.cb.value.length>=51 && input.cb.value.toUpperCase().indexOf("4,4-DICHLORO",0)>=0 )  { 
+alert ( "In (2):  " + numb);
+		var rsp=rsp +" IUPAC Name in (2),"
+		} else {
+if ( input.cb.value != "") { 
+		var rsp=rsp +" IUPAC Name in (2),"
+		} else {
+		j=j+1
+}
+}
+}
+}
+if ( input.cc.value.toUpperCase()=="1-BROMO-5-METHYL-1,4-CYCLOHEXADIENE" )  { 
+		k=k+1
+		} else {
+if ( input.cc.value != ""){ 
+		var rsp=rsp +" IUPAC Name in (3),"
+		} else {
+		j=j+1
+}
+}
+if ( input.cd.value.toUpperCase()=="2-CHLORO-1-PENTEN-4-YNE")  { 
+		k=k+1
+		} else {
+if ( input.cd.value != ""){ 
+		var rsp=rsp +" IUPAC Name in (4),"
+		} else {
+		j=j+1
+}
+}
+if ( input.ce.value.toUpperCase()=="1-BROMO-3-ETHYL-5-METHYLBENZENE" )  { 
+		k=k+1
+		} else {
+if (input.ce.value.toUpperCase().indexOf("3-BROMO",0)>=0 ||  input.ce.value.toUpperCase().indexOf("5-BROMO",0)>=0 || input.ce.value.toUpperCase().indexOf("5-ETHYL",0)>=0)  { 
+alert ( "In (5): Numbering should begin with the alphabetically preferred substituent, and proceed to the next alphabetically preferred substituent." );
+		var rsp=rsp +" IUPAC Name in (5),"
+		} else {
+if ( input.ce.value != ""){ 
+		var rsp=rsp +" IUPAC Name in (5),"
+		} else {
+		j=j+1
+}
+}
+}
+
+if ( rsp=="") {
+rsp="none";
+}
+if (j==5) {
+	var txt="You have not provided answers to any questions."; 
+}else{
+if   (k==5) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+}else{
+	var txt="Your correct answers total: " + k +" \rQuestions you have answered incorrectly are:" + rsp; 
+}
+}
+input.result5.value = txt;
+}
+function clrtxt5(input) {
+	input.ca.value="";	
+	input.cb.value="";
+	input.cc.value="";
+	input.cd.value="";	
+	input.ce.value="";
+	input.result5.value=" ";
+}
+
+
+
+	//STOP HIDING-->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Organic Nomenclature Problems</TITLE>
+<META NAME="DC.SUBJECT" CONTENT="problems in organic nomenclature">
+<body>
+<P>
+<A NAME="begin">
+<div class="ctr"><H2>Organic Nomenclature Problems</H2></div>
+<FORM>
+<P>
+The following questions are organized somewhat by functional group (as 
+many organic courses introduce nomenclature one functional group at a 
+time).  The index below will take you to the beginning of questions that 
+focus on a particular functional group, or you may page through the 
+document as you like. 
+<P>
+<UL>
+<LI><A HREF="#hydrocarbon">Question 1:</A> <span class="fc-006600">Basic Hydrocarbon Nomenclature</span>
+<LI><A HREF="#hydrocarbon2">Question 2:</A> <span class="fc-006600">Unsaturated Hydrocarbon Nomenclature</span>
+<LI><A HREF="#hydrocarbon3">Question 3:</A> <span class="fc-006600">Nomenclature from Condensed Formulas</span>
+<LI><A HREF="#aromatic1">Question 4:</A> <span class="fc-006600">Nomenclature of Aromatic Hydrocarbons</span>
+<LI><A HREF="#halide1">Question 5:</A> <span class="fc-006600">Nomenclature of Halogen Compounds</span>
+<LI><A HREF="nomencl2.htm#alcohol1">Question 6:</A> <span class="fc-006600">Nomenclature of Alcohols</span>
+<LI><A HREF="nomencl2.htm#carbonyl1">Question 7:</A> <span class="fc-006600">Nomenclature of Aldehydes & Ketones</span>
+<LI><A HREF="nomencl2.htm#carbacid1">Question 8:</A> <span class="fc-006600">Nomenclature of Carboxylic Acids</span>
+</UL>
+<P>If you are asked to write a IUPAC name for a compound, pay careful attention to the syntax of this nomenclature system. For example, commas and dashes must be used in precisely the correct manner, and extra spaces must be avoided. Spelling must also be absolutely correct.  Computers (and some instructors) are unforgiving when it comes to judging the names you submit.</P>
+<hr>
+<P><A NAME="hydrocarbon1">
+<P>&nbsp;</P>
+<H3><span class="fc-006600">Question 1:  Basic Hydrocarbon Nomenclature</span></H3>
+<p><B>Part A:</B>  Enter the number of carbons indicated by each of the following 
+root names in the designated answer box.</p>
+<P><div class="ctr"><TABLE BORDER CELLPADDING=2>
+<TR><TH BGCOLOR="ccffcc">Root</TH><TH BGCOLOR="ccffcc">Number of Carbons</TH><TH ROWSPAN=5> </TH><TH BGCOLOR="ccffcc">Root</TH><TH BGCOLOR="ccffcc">Number of Carbons</TH></TR ALIGN=center>
+<TR><TH>Hexane</TH><TH><INPUT TYPE="text" NAME="a"  SIZE="3"></TH>
+<TH>Propane</TH><TH><INPUT TYPE="text" NAME="b"  SIZE="3"></TH></TR>
+<TR><TH>Butane</TH><TH><INPUT TYPE="text" NAME="c"  SIZE="3"></TH>
+<TH>Pentane</TH><TH><INPUT TYPE="text" NAME="d"  SIZE="3"></TH></TR>
+<TR><TH>Nonane</TH><TH><INPUT TYPE="text" NAME="e"  SIZE="3"></TH>
+<TH>Heptane</TH><TH><INPUT TYPE="text" NAME="f"  SIZE="3"></TH></TR>
+<TR><TH>Decane</TH><TH><INPUT TYPE="text" NAME="g"  SIZE="3"></TH>
+<TH>Ethane</TH><TH><INPUT TYPE="text" NAME="h"  SIZE="3"></TH></TR>
+</TABLE></div></P>
+
+<p><B>Part B:</B>  The line formula for a branched alkane is shown below.</p>
+<P><div class="ctr"><TABLE CELLPADDING=3><TR>
+<TD ROWSPAN=3 VALIGN=middle><IMG SRC="nomenq1a.gif"></TD>
+<TD ROWSPAN=3> &nbsp; </TD>
+<TD ALIGN=right>What is the molecular formula of this compound?</TD>
+<TD><span class="fs-4">C</span><SUB><INPUT TYPE="text" NAME="i"  SIZE="2"></SUB> <span class="fs-4">H</span><SUB><INPUT TYPE="text" NAME="j"  SIZE="2"></SUB></TD></TR>
+<TR><TD ALIGN=right>How many carbon atoms are in the longest chain?</TD>
+<TD><INPUT TYPE="text" NAME="k"  SIZE="2"></TD></TR>
+<TR><TD>How many alkyl substituents are attached to this chain?</TD>
+<TD><INPUT TYPE="text" NAME="l"  SIZE="2"></TD></TR></TABLE></div></P>
+
+
+<p><B>Part C:</B>  The line formula for another branched alkane is shown below.</p>
+<P><div class="ctr"><TABLE CELLPADDING=3><TR>
+<TD ROWSPAN=3 VALIGN=middle><IMG SRC="nomenq1b.gif"></TD>
+<TD ROWSPAN=3> &nbsp; </TD>
+<TD ALIGN=right>In the IUPAC system what is the root or base name of this compound?</TD>
+<TD><INPUT TYPE="text" NAME="m"  SIZE="15"></TD></TR>
+<TR><TD ALIGN=right>How many alkyl substituents are attached to the longest chain?</TD>
+<TD><INPUT TYPE="text" NAME="n"  SIZE="2"></TD></TR>
+<TR><TD ALIGN=right>Give the IUPAC name for this compound.</TD>
+<TD><INPUT TYPE="text" NAME="o"  SIZE="42"></TD></TR></TABLE></div> </P>
+
+
+<p><B>Part D:</B>  The formula for a substituted cycloalkane is shown below.</p>
+<P><div class="ctr"><TABLE CELLPADDING=3><TR>
+<TD ROWSPAN=5 VALIGN=middle><IMG SRC="nomenq1c.gif"></TD>
+<TD ROWSPAN=5> &nbsp; </TD>
+<TD ALIGN=right>In the IUPAC system what is the root or base name of this compound?</TD>
+<TD><INPUT TYPE="text" NAME="p"  SIZE="15"></TD></TR>
+<TR><TD ALIGN=right>How many alkyl substituents are attached to the ring?</TD>
+<TD><INPUT TYPE="text" NAME="q"  SIZE="2"></TD></TR>
+<TR><TD ALIGN=right>In numbering the ring, which carbon (<span class="fc-red">a-f</span>) is #1?</TD>
+<TD><INPUT TYPE="text" NAME="r"  SIZE="2"></TD></TR>
+<TR><TD ALIGN=right>In numbering the ring, which carbon (<span class="fc-red">a-f</span>) is #2?</TD>
+<TD><INPUT TYPE="text" NAME="s"  SIZE="2"></TD></TR>
+<TD>Give the IUPAC name for this compound.</TD>
+<TD><INPUT TYPE="text" NAME="t"  SIZE="42"></TD></TR></TABLE></div> </P>
+
+
+<p><B>Part E:</B>  The formula for another cycloalkane derivative is shown below.</p>
+<P><div class="ctr"><TABLE CELLPADDING=3><TR>
+<TD VALIGN=middle><IMG SRC="nomenq1d.gif"></TD>
+<TD> &nbsp; </TD>
+<TD ALIGN=right>Give the IUPAC name for this compound.</TD>
+<TD><INPUT TYPE="text" NAME="u"  SIZE="42"></TD></TR></TABLE></div> </P>
+
+
+<P><TABLE><TR><TD><INPUT TYPE="button"  VALUE="Check Problems A to D" onClick=" chk1(this.form)"><BR><BR><INPUT TYPE="button"  VALUE=" Clear Answers " onClick="clrtxt(this.form)">
+<BR><BR><INPUT TYPE="button"  VALUE=" Return " onClick="window.location='nomencl.htm#begin'"></TD><TD>&nbsp;</TD>
+<TD><TEXTAREA  WRAP NAME="result" ROWS="7" COLS="75"></TEXTAREA></TD>
+</TR></TABLE></P>
+<HR>
+
+<A NAME="hydrocarbon2">
+<P>&nbsp;</P>
+<H3><span class="fc-006600">Question 2:  Unsaturated Hydrocarbon Nomenclature</span></H3>
+<p><B>Part A:</B> The line formula for a branched alkene is shown below.</p>
+<P><div class="ctr"><TABLE CELLPADDING=3><TR>
+<TD ROWSPAN=5 VALIGN=middle><IMG SRC="nomenq2a.gif"></TD>
+<TD ROWSPAN=5> &nbsp; </TD>
+<TD ALIGN=right>What is the molecular formula of this compound?</TD>
+<TD><span class="fs-4">C</span><SUB><INPUT TYPE="text" NAME="aa"  SIZE="2"></SUB> <span class="fs-4">H</span><SUB><INPUT TYPE="text" NAME="ab"  SIZE="2"></SUB></TD></TR>
+<TR><TD ALIGN=right>How many carbon atoms are in the longest chain, ignoring the double bond?</TD>
+<TD><INPUT TYPE="text" NAME="ac"  SIZE="2"></TD></TR>
+<TR><TD ALIGN=right>What is the longest chain incorporating both carbons of the double bond?</TD>
+<TD><INPUT TYPE="text" NAME="ad"  SIZE="2"></TD></TR>
+<TR><TD ALIGN=right>How many substituents are on this chain?</TD>
+<TD><INPUT TYPE="text" NAME="ae"  SIZE="2"></TD></TR>
+<TD ALIGN=right>Give the IUPAC name for this compound.</TD>
+<TD><INPUT TYPE="text" NAME="af"  SIZE="42"></TD></TR></TABLE></div> </P>
+
+<p><B>Part B:</B>  The line formula for a cyclic alkene is shown below.</p>
+<P><div class="ctr"><TABLE CELLPADDING=3><TR>
+<TD ROWSPAN=2 VALIGN=middle><IMG SRC="nomenq2b.gif"></TD>
+<TD ROWSPAN=2> &nbsp; </TD>
+<TD ALIGN=right>In numbering the ring, which carbon (<span class="fc-red">a-g</span>) is #1?</TD>
+<TD><INPUT TYPE="text" NAME="ag"  SIZE="2"></TD></TR>
+<TR><TD ALIGN=right>Give the IUPAC name for this compound.</TD>
+<TD><INPUT TYPE="text" NAME="ah"  SIZE="42"></TD></TR></TABLE></div> </P>
+
+<p><B>Part C:</B>  Name the following compounds according to the IUPAC system:</p>
+<P><div class="ctr"><TABLE CELLPADDING=3>
+<TR><TD>(1)</TD><TD> <IMG SRC="nomenq2c.gif"></TD>
+<TD ROWSPAN=6> &nbsp; </TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="ai"  SIZE="42"></TD></TR>
+<TR><TD>(2)</TD><TD> <IMG SRC="nomenq2d.gif"></TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="aj"  SIZE="42"></TD></TR>
+<TR><TD>(3)</TD><TD> <IMG SRC="nomenq2e.gif"></TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="ak"  SIZE="42"></TD></TR>
+<TR><TD>(4)</TD><TD> <IMG SRC="nomenq2f.gif"></TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="al"  SIZE="42"></TD></TR>
+<TR><TD>(5)</TD><TD> <IMG SRC="nomenq2g.gif"></TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="am"  SIZE="42"></TD></TR>
+<TR><TD>(6)</TD><TD> <IMG SRC="nomenq2h.gif"></TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="an"  SIZE="42"></TD></TR>
+</TABLE></div> </P>
+
+<P><TABLE><TR><TD><INPUT TYPE="button"  VALUE="Check Problems A to C" onClick=" chk2(this.form)"><BR><BR><INPUT TYPE="button"  VALUE=" Clear Answers " onClick="clrtxt2(this.form)">
+<BR><BR><INPUT TYPE="button"  VALUE=" Return " onClick="window.location='nomencl.htm#begin'"></TD><TD>&nbsp;</TD>
+<TD><TEXTAREA  WRAP NAME="result2" ROWS="7" COLS="75"></TEXTAREA></TD>
+</TR></TABLE></P><HR>
+
+
+<A NAME="hydrocarbon3">
+<P>&nbsp;</P>
+<H3><span class="fc-006600">Question 3:  Hydrocarbon Nomenclature from Condensed Formulas</span></H3>
+<p><B>Part A:</B> (CH<SUB>3</SUB>)<SUB>2</SUB>CHCH(C<SUB>2</SUB>H<SUB>5</SUB>)CH<SUB>2</SUB>CH<SUB>2</SUB>CH<SUB>3</SUB>
+<TABLE CELLPADDING=3><TR>
+<TD ALIGN=right>Give the IUPAC name for this compound.</TD>
+<TD><INPUT TYPE="text" NAME="ba"  SIZE="42"></TD></TR></TABLE>
+</P>
+
+<P>
+<B>Part B:</B> CH<SUB>2</SUB>=C(C<SUB>2</SUB>H<SUB>5</SUB>)CH<SUB>2</SUB>CH<SUB>2</SUB>CH<SUB>3</SUB>
+<TABLE CELLPADDING=3><TR>
+<TD ALIGN=right>Give the IUPAC name for this compound.</TD>
+<TD><INPUT TYPE="text" NAME="bb"  SIZE="42"></TD></TR></TABLE>
+</P>
+
+<P>
+<B>Part C:</B> (CH<SUB>3</SUB>)<SUB>2</SUB>C=CHC(C<SUB>2</SUB>H<SUB>5</SUB>)=CH<SUB>2</SUB>
+<TABLE CELLPADDING=3><TR>
+<TD ALIGN=right>Give the IUPAC name for this compound.</TD>
+<TD><INPUT TYPE="text" NAME="bc"  SIZE="42"></TD></TR></TABLE>
+</P>
+
+<P>
+<B>Part D:</B> CH<SUB>3</SUB>C<span class="fs-5">&#8801;</span>CCH(C<SUB>2</SUB>H<SUB>5</SUB>)<SUB>2</SUB>
+<TABLE CELLPADDING=3><TR>
+<TD ALIGN=right>Give the IUPAC name for this compound.</TD>
+<TD><INPUT TYPE="text" NAME="bd"  SIZE="42"></TD></TR></TABLE>
+</P>
+
+<P>
+<B>Part E:</B> (CH<SUB>3</SUB>)<SUB>3</SUB>CC<span class="fs-5">&#8801;</span>CCH<SUB>2</SUB>CH=C(CH<SUB>3</SUB>)<SUB>2</SUB>
+<TABLE CELLPADDING=3><TR>
+<TD ALIGN=right>Give the IUPAC name for this compound.</TD>
+<TD><INPUT TYPE="text" NAME="be"  SIZE="42"></TD></TR></TABLE>
+</P>
+
+
+
+<P><TABLE><TR><TD><INPUT TYPE="button"  VALUE="Check Problems A to E" onClick=" chk3(this.form)"><BR><BR><INPUT TYPE="button"  VALUE=" Clear Answers " onClick="clrtxt3(this.form)">
+<BR><BR><INPUT TYPE="button"  VALUE=" Return " onClick="window.location.replace('nomencl.htm#begin')"></TD><TD>&nbsp;</TD>
+<TD><TEXTAREA  WRAP NAME="result3" ROWS="7" COLS="75"></TEXTAREA></TD>
+</TR></TABLE></P><HR>
+
+<A NAME="aromatic1">
+<P>&nbsp;</P>
+<H3><span class="fc-006600">Question 4:  Aromatic Hydrocarbons</span></H3>
+<p>Name the following compounds according to the IUPAC system: </p>
+<P><div class="ctr"><TABLE CELLPADDING=3>
+<TR><TD>(1)</TD><TD> <IMG SRC="nomenq3a.gif"></TD>
+<TD ROWSPAN=5> &nbsp; </TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="da"  SIZE="42"></TD></TR>
+<TR><TD>(2)</TD><TD> <IMG SRC="nomenq3b.gif"></TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="db"  SIZE="52"></TD></TR>
+<TR><TD>(3)</TD><TD> <IMG SRC="nomenq3c.gif"></TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="dc"  SIZE="42"></TD></TR>
+<TR><TD>(4)</TD><TD> <IMG SRC="nomenq3d.gif"></TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="dd"  SIZE="42"></TD></TR>
+<TR><TD>(5)</TD><TD> <IMG SRC="nomenq3e.gif"></TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="de"  SIZE="42"></TD></TR>
+</TABLE></div> </P>
+
+<P><TABLE><TR><TD><INPUT TYPE="button"  VALUE="Check Problems 1 to 5" onClick=" chk4(this.form)"><BR><BR><INPUT TYPE="button"  VALUE=" Clear Answers " onClick="clrtxt4(this.form)">
+<BR><BR><INPUT TYPE="button"  VALUE=" Return " onClick="window.location.replace('nomencl.htm#begin')"></TD><TD>&nbsp;</TD>
+<TD><TEXTAREA  WRAP NAME="result4" ROWS="7" COLS="75"></TEXTAREA></TD>
+</TR></TABLE></P><HR>
+
+<A NAME="halide1">
+<P>&nbsp;</P>
+<H3><span class="fc-006600">Question 5:  Halogen Substituted Compounds</span></H3>
+<p>Name the following compounds according to the IUPAC system: </p>
+<P><div class="ctr"><TABLE CELLPADDING=3>
+<TR><TD>(1)</TD><TD> <IMG SRC="nomenq4a.gif"></TD>
+<TD ROWSPAN=5> &nbsp; </TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="ca"  SIZE="42"></TD></TR>
+<TR><TD>(2)</TD><TD> <IMG SRC="nomenq4b.gif"></TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="cb"  SIZE="52"></TD></TR>
+<TR><TD>(3)</TD><TD> <IMG SRC="nomenq4c.gif"></TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="cc"  SIZE="42"></TD></TR>
+<TR><TD>(4)</TD><TD> <IMG SRC="nomenq4d.gif"></TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="cd"  SIZE="42"></TD></TR>
+<TR><TD>(5)</TD><TD> <IMG SRC="nomenq4e.gif"></TD>
+<TD ALIGN=right>Enter the IUPAC name</TD>
+<TD><INPUT TYPE="text" NAME="ce"  SIZE="42"></TD></TR>
+</TABLE></div> </P>
+
+<P><TABLE><TR><TD><INPUT TYPE="button"  VALUE="Check Problems 1 to 5" onClick=" chk5(this.form)"><BR><BR><INPUT TYPE="button"  VALUE=" Clear Answers " onClick="clrtxt5(this.form)">
+<BR><BR><INPUT TYPE="button"  VALUE=" Return " onClick="window.location.replace('nomencl.htm#begin')"></TD></TD><TD>&nbsp;</TD>
+<TD><TEXTAREA  WRAP NAME="result5" ROWS="7" COLS="75"></TEXTAREA></TD>
+</TR></TABLE></P>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>
+
+</FORM>
+</BODY>
+</HTML>

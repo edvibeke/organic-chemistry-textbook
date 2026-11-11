@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var M1="<B>&nbsp;1. </B> An acetal derivative of a ketone.";             
+var M2="<B>&nbsp;2. </B> A chiral ketone.";          
+var M3="<B>&nbsp;3. </B> An aldehyde that gives an aldol condensation with itself.&nbsp;";    
+var M4="<B>&nbsp;4. </B> An oxime derivative"; 
+var M5="<B>&nbsp;5. </B> A reagent that reduces aldehydes to 1 &#186;-alcohols. &nbsp;"; 
+var M6="<B>&nbsp;6. </B> An &#945;,&#946;-unsaturated ketone.";  
+var M7="<B>&nbsp;7. </B> A reagent that oxidizes aldehydes to carboxylic acids. &nbsp;";             
+var M8="<B>&nbsp;8. </B> A reagent that reduces ketones to alkanes.";          
+var M9="<B>&nbsp;9. </B> An enamine derivative of a ketone.";    
+var M10="<B>10. </B> An intermediate in imine formation."; 
+var M11="<B>11. </B> A cyclic hemiacetal. "; 
+var M12="<B>12. </B>  A cyanohydrin derivative.";  
+
+var aa="L"; 
+var bb="G";
+var cc="N"; 
+var dd="K";
+var ee="H"; 
+var ff="C";
+var gg="J"; 
+var hh="F";
+var ii="M"; 
+var jj="D";
+var kk="E"; 
+var ll="B";
+
+var anscnt=0
+var answ="(1) L;  (2) G;  (3) N;  (4) K \r(5) H;  (6) C;  "
+ +  "(7) J;  (8) F \r(9) M;  (10) D;  (11) E;  (12) B"
+var noansw="You must try to answer this question twice before viewing the answers."
+
+var j=0
+var k=0
+     
+function slct1(input) {
+anscnt=anscnt+1;
+input.bx1.value=fix(input.bx1.value)
+input.bx2.value=fix(input.bx2.value)
+input.bx3.value=fix(input.bx3.value)
+input.bx4.value=fix(input.bx4.value)
+input.bx5.value=fix(input.bx5.value)
+input.bx6.value=fix(input.bx6.value)
+input.bx7.value=fix(input.bx7.value)
+input.bx8.value=fix(input.bx8.value)
+input.bx9.value=fix(input.bx9.value)
+input.bx10.value=fix(input.bx10.value)
+input.bx11.value=fix(input.bx11.value)
+input.bx12.value=fix(input.bx12.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.]/g,"")
+}
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+
+if ( (input.bx1.value=='')||(input.bx2.value=='')||(input.bx3.value=='')||(input.bx4.value=='')
+||(input.bx5.value=='')||(input.bx6.value=='')||(input.bx7.value=='')||(input.bx8.value=='')
+||(input.bx9.value=='')||(input.bx10.value=='')||(input.bx11.value=='')||(input.bx12.value=='') ) {
+var Text = "Please enter a selection in each box.";
+anscnt=0;
+} else {
+		if (( input.bx1.value.toUpperCase() == aa)){ 
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bx2.value.toUpperCase() == bb) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bx3.value.toUpperCase() == cc) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bx4.value.toUpperCase() == dd) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bx5.value.toUpperCase() == ee) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bx6.value.toUpperCase() == ff) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bx7.value.toUpperCase() == gg) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bx8.value.toUpperCase() == hh) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bx9.value.toUpperCase() == ii) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bx10.value.toUpperCase() == jj) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bx11.value.toUpperCase() == kk) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bx12.value.toUpperCase() == ll) {
+		k=k+1
+		} else {
+		j=j+1
+}
+
+  var tot=k+j
+	var Text="Of " +tot +" responses: your correct answers = " +k +"  your incorrect answers = " +j 
+}
+	if   (k==12) {
+input.result.value = "Congratulations!\r" + Text;
+anscnt=2;
+		}else{
+input.result.value = Text;
+}
+}
+function giveansw(show) {
+if (anscnt>=2)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+
+function clearbx(input) {
+	input.bx1.value="";	// Clear all text windows.
+	input.bx2.value="";
+	input.bx3.value="";
+	input.bx4.value="";
+	input.bx5.value="";
+	input.bx6.value="";
+	input.bx7.value="";
+	input.bx8.value="";
+	input.bx9.value="";
+	input.bx10.value="";
+	input.bx11.value="";
+	input.bx12.value="";
+	input.result.value=" ";
+}
+
+								// array function
+function makearray(ch1,ch2,ch3,ch4,ch5,ch6,ch7,ch8,ch9,ch10,ch11,ch12) {
+this[1]=ch1; this[2]=ch2; this[3]=ch3; this[4]=ch4; this[5]=ch5; this[6]=ch6; this[7]=ch7;
+this[8]=ch8; this[9]=ch9; this[10]=ch10; this[11]=ch11; this[12]=ch12;
+}
+// Initialize array of possible answers.
+choice = new makearray(M1,M2,M3,M4,M5,M6,M7,M8,M9,M10,M11,M12);
+
+
+
+// Generate the HTML code for the web page.
+
+document.write('<FORM NAME="match">');
+document.write('<CENTER><H3>General Matching Problem</H3></CENTER>');
+document.write('<P><FONT COLOR=blue><B>In the box following each description enter a letter designating the best example from the selections at the bottom of the page.</FONT></B><BR></P>');
+// Note table within a table.
+document.write('<CENTER><TABLE WIDTH=95%>');
+document.write('<TR><TD WIDTH="49%"><TABLE>');
+for (var i=1; i<=6; i++) {
+var bname= 'bx'+i;
+document.write('<TR><TD nowrap>' + choice[i] +'</TD><TD><INPUT TYPE="text" NAME="',bname,'" SIZE="2"> </TD></TR>');
+}
+document.write('</TABLE></TD><TD BGCOLOR=cccccc>&nbsp;</TD><TD WIDTH="49%"><TABLE>');
+for (var i=7; i<=12; i++) {
+var bname= 'bx'+i;
+document.write('<TR><TD nowrap>' + choice[i] +'</TD><TD><INPUT TYPE="text" NAME="',bname,'" SIZE="2"> </TD></TR>');
+}
+document.write('</TABLE></TD></TR></TABLE></CENTER>');
+// End of hide script comment. -->
+
+
+
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>General Matching Problem</TITLE>
+<body>
+<HR>
+<INPUT TYPE="button" VALUE=" Check Answers " onClick="slct1(this.form)">
+<INPUT TYPE="button"  VALUE=" Clear " onClick="clearbx(this.form)">
+<TEXTAREA WRAP NAME="result" ROWS="3" COLS="42">
+</TEXTAREA>
+<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)">
+<HR>
+<div class="ctr"><TABLE CELLPADDING=6 BORDER=1 WIDTH=80%>
+<TR VALIGN=TOP>
+<TD><span class="fc-blue"><B>A</B></span><BR><div class="ctr"><IMG SRC="../Images/toluene.gif"></div></TD>
+<TD><span class="fc-blue"><B>B</B></span><BR><div class="ctr"><IMG SRC="../Images/cyanhydn.gif"></div></TD>
+<TD><span class="fc-blue"><B>C</B></span><BR><div class="ctr"><IMG SRC="../Images/cy6enone.gif"></div></TD>
+<TD><span class="fc-blue"><B>D</B></span><BR><div class="ctr"><IMG SRC="../Images/iminterm.gif"></div></TD>
+<TD><span class="fc-blue"><B>E</B></span><BR><div class="ctr"><IMG SRC="../Images/hemiacet.gif"></div></TD>
+<TD><span class="fc-blue"><B>F</B></span><BR><BR>Zn (Hg) <BR>H<SUB>3</SUB>O<SUP>(+)</SUP></TD>
+<TD><span class="fc-blue"><B>G</B></span><BR><div class="ctr"><IMG SRC="../Images/chirlket.gif"></div></TD></TR>
+<TR VALIGN=TOP>
+<TD><span class="fc-blue"><B>H</B></span><BR><BR>NaBH<SUB>4</SUB><BR>aq. alcohol</TD>
+<TD><span class="fc-blue"><B>I</B></span><BR><div class="ctr"><IMG SRC="../Images/benzald.gif"></div></TD>
+<TD><span class="fc-blue"><B>J</B></span><BR><BR>Ag(NH<SUB>3</SUB>)<SUB>2</SUB><SUP>(+)</SUP> OH<SUP>(-)</SUP></TD>
+<TD><span class="fc-blue"><B>K</B></span><BR><div class="ctr"><IMG SRC="../Images/oxime.gif"></div></TD>
+<TD><span class="fc-blue"><B>L</B></span><BR><div class="ctr"><IMG SRC="../Images/acetal.gif"></div></TD>
+<TD><span class="fc-blue"><B>M</B></span><BR><div class="ctr"><IMG SRC="../Images/cy6enam.gif"></div></TD>
+<TD><span class="fc-blue"><B>N</B></span><BR><div class="ctr"><IMG SRC="../Images/propald.gif"></div></TD></TR>
+</TABLE></div>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</FORM>
+</BODY></HTML>

@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var i="";
+var j="";
+var sma="";
+var smimg="";
+var rgimg="";
+		function process(form){
+	if (i!=0){
+	 i=0
+}
+	if (j!=0){
+	 j=0
+}
+		if (form.sm1[0].checked){
+smimg="CH<SUB>3</SUB>(CH<SUB>2</SUB>)<SUB>3</SUB>NH<SUB>2</SUB>";
+		i=1
+}
+		if (form.sm1[1].checked){
+smimg="<IMG SRC='../Images/piprdine.gif'>";
+		i=2
+	}
+		if (form.sm1[2].checked){
+smimg="<IMG SRC='../Images/mepyrold.gif'>";
+		i=3
+}
+		if (form.sm1[3].checked){
+smimg="<IMG SRC='../Images/aniline.gif'>";
+		i=4
+	}	
+		if (form.sm1[4].checked){
+smimg="<IMG SRC='../Images/pyridine.gif'>";
+		i=5
+}
+		if (form.sm1[5].checked){
+smimg="<IMG SRC='../Images/dimeanil.gif'>" ;
+		i=6
+	}					
+		if (form.sm2[0].checked){
+rgimg="<IMG SRC='../Images/toscl.gif'><BR>in base"
+		j=1
+}
+		if (form.sm2[1].checked){
+rgimg="(CH<SUB>3</SUB>)<SUB>3</SUB>CCOCl<BR>in base"
+		j=2
+	}
+		if (form.sm2[2].checked){
+rgimg="HNO<SUB>2</SUB><BR>H<SUB>2</SUB>O , 0 ¡C"
+		j=3
+}
+		if (form.sm2[3].checked){
+rgimg="CH<SUB>3</SUB>I &nbsp; (in excess)<BR>& pyridine"
+		j=4
+	}
+		if (form.sm2[4].checked){
+rgimg="<IMG SRC='../Images/etoac.gif'><BR>heat"
+		j=5
+}
+		if (form.sm2[5].checked){
+rgimg="H<SUB>2</SUB>C=O & HCO<SUB>2</SUB>H <BR>heat"
+		j=6
+	}
+		if (form.sm2[6].checked){
+rgimg="CH<SUB>2</SUB>=CH&#8211;C&#8801;N<BR>(in excess) "
+		j=7
+}
+		if (form.sm2[7].checked){
+rgimg="(i) (CH<SUB>3</SUB>)<SUB>2</SUB>CHCH=O<BR>(ii) H<SUB>2</SUB>, Pd catalyst"
+		j=8
+	}
+		if (form.sm2[8].checked){
+rgimg="<IMG SRC='../Images/sucanhyd.gif'><BR>heat "
+		j=9
+	}
+
+var smimg=smimg;
+var rgimg=rgimg;
+var smimg=smimg;
+var rgimg=rgimg;
+parent.child2.document.clear(); 
+parent.child2.document.write("<TABLE CELLPADDING=4 width=900 align=center><TR>"); 
+parent.child2.document.write("<TD>Draw a formula for the expected product in the <b>Drawing Window</b> on the left below. Do not draw hydrogens. ");
+parent.child2.document.write(" If one <b>diastereomeric</b> product out of two or more possible diastereomers is favored, draw the favored configuration using the wedge tool. ");
+parent.child2.document.write("<br /> <FONT COLOR='red'> If no reaction is expected, draw the starting structure.</FONT><br>  When you are finished, check your answer by pressing the <b>Check Molecule</b> button. ");
+parent.child2.document.write("</TD></TR></TABLE>");
+
+parent.child2.document.write("<TABLE CELLSPACING=9 WIDTH=900 align-center><TR align=center ><TH rowspan=2>")
+parent.child2.document.write("<applet code='JME.class' name='JME' archive='JME.jar' width=360, height=360>");
+parent.child2.document.write("You have to enable Java and JavaScript on your machine !</applet>");
+parent.child2.document.write("<FORM METHOD='POST' NAME='form' ONSUBMIT='return false;'></TH>");
+parent.child2.document.write("<TD width=30> &nbsp; </TD>");
+parent.child2.document.write("<TD nowrap>"+smimg+"</TD>");
+parent.child2.document.write("<TD>+</TD>");
+parent.child2.document.write("<TD nowrap>"+rgimg+"</TD>");
+parent.child2.document.write("<TD><IMG SRC='../Images/arrow1.gif'></TD>");
+parent.child2.document.write("<TD> <IMG SRC='../Images/question.gif'></TD>");
+parent.child2.document.write("<TD width=30> &nbsp; </TD></tr>");
+parent.child2.document.write(" <tr valign=top><TH colspan=7><FONT COLOR='blue'>The window below will display a response to your answers.</FONT><br /><br />");
+parent.child2.document.write("<TEXTAREA WRAP NAME='result' ROWS='6' COLS='56'></TEXTAREA><br /> <br /><INPUT TYPE='RESET' VALUE='Clear' onClick='parent.window.location.reload(true);back();'>");
+parent.child2.document.write("<input type='hidden' value='' name='smiles'>");
+parent.child2.document.write("<tt> &nbsp; &nbsp; &nbsp; </tt> <input type='button' value='Check Molecule' onClick='parent.child1.submitSmiles();parent.child1.processMolecule1(this.form);'></TH>");
+parent.child2.document.write("</TR></TABLE>");
+
+}
+
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+var text="";
+
+function submitSmiles() {
+  var smiles = parent.child2.document.JME.smiles();
+ parent.child2.document.form.smiles.value = smiles; 
+parent.child2.document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+ 
+  parent.child2.document.form.smiles.value = smiles; 
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+ parent.child2.document.form.smiles.value = smiles; 
+}
+
+function processMolecule1(input) {
+smiles = parent.child2.document.form.smiles.value;
+  if (smiles == "") {  alert("Nothing to process!"); return;
+}
+if (text!="") {
+text="";
+}
+		if (i==1 &&  j==1) {
+sma="CCCCNS(=O)(=O)c1ccc(C)cc1";
+}
+		if (i==1 &&  j==2) {
+sma="CCCCNC(=O)C(C)(C)C";
+}
+		if (i==1 &&  j==3) {
+sma="CCCCO";
+}
+		if (i==1 &&  j==4) {
+sma="CCCC[N+](C)(C)C";
+}
+		if (i==1 &&  j==5) {
+sma="CCCCNC(C)=O";
+}
+		if (i==1 &&  j==6) {
+sma="CCCCN(C)C";
+}
+		if (i==1 &&  j==7) {
+sma="CCCCN(CCC#N)CCC#N";
+}
+		if (i==1 &&  j==8) {
+sma="CCCCNCC(C)C";
+}
+		if (i==1 &&  j==9) {
+sma="CCCCNC(=O)CCC(=O)O";
+}
+		if (i==2 &&  j==1) {
+sma="Cc2ccc(S(=O)(=O)N1CCCCC1)cc2";
+}
+		if (i==2 &&  j==2) {
+sma="CC(C)(C)C(=O)N1CCCCC1";
+}
+		if (i==2 &&  j==3) {
+sma="O=NN1CCCCC1";
+}
+		if (i==2 &&  j==4) {
+sma="C[N+]1(C)CCCCC1";
+}
+		if (i==2 &&  j==5) {
+sma="CC(=O)N1CCCCC1";
+}
+		if (i==2 &&  j==6) {
+sma="CN1CCCCC1";
+}
+		if (i==2 &&  j==7) {
+sma="N#CCCN1CCCCC1";
+}
+		if (i==2 &&  j==8) {
+sma="CC(C)CN1CCCCC1";
+}
+		if (i==2 &&  j==9) {
+sma="O=C(O)CCC(=O)N1CCCCC1";
+}
+		if (i==3 &&  j==1) {
+sma="CN1CCCC1";
+}
+		if (i==3 &&  j==2) {
+sma="CN1CCCC1";
+}
+		if (i==3 &&  j==3) {
+sma="C[NH+]1CCCC1";
+}
+		if (i==3 &&  j==4) {
+sma="C[N+]1(C)CCCC1";
+}
+		if (i==3 &&  j==5) {
+sma="CN1CCCC1";
+}
+		if (i==3 &&  j==6) {
+sma="CN1CCCC1";
+}
+		if (i==3 &&  j==7) {
+sma="CN1CCCC1";
+}
+		if (i==3 &&  j==8) {
+sma="CN1CCCC1";
+}
+		if (i==3 &&  j==9) {
+sma="CN1CCCC1";
+}
+		if (i==4 &&  j==1) {
+sma="Cc2ccc(S(=O)(=O)Nc1ccccc1)cc2";
+}
+		if (i==4 &&  j==2) {
+sma="CC(C)(C)C(=O)Nc1ccccc1";
+}
+		if (i==4 &&  j==3) {
+sma="N#[N+]c1ccccc1";
+}
+		if (i==4 &&  j==4) {
+sma="C[N+](C)(C)c1ccccc1";
+}
+		if (i==4 &&  j==5) {
+sma="CC(=O)Nc1ccccc1";
+}
+		if (i==4 &&  j==6) {
+sma="CN(C)c1ccccc1";
+}
+		if (i==4 &&  j==7) {
+sma="N#CCCN(CCC#N)c1ccccc1";
+}
+		if (i==4 &&  j==8) {
+sma="CC(C)CNc1ccccc1";
+}
+		if (i==4 &&  j==9) {
+sma="O=C(O)CCC(=O)Nc1ccccc1";
+}
+		if (i==5 &&  j==1) {
+sma="c1ccncc1";
+}
+		if (i==5 &&  j==2) {
+sma="c1ccncc1";
+}
+		if (i==5 &&  j==3) {
+sma="c1cc[nH+]cc1";
+}
+		if (i==5 &&  j==4) {
+sma="C[n+]1ccccc1";
+}
+		if (i==5 &&  j==5) {
+sma="c1ccncc1";
+}
+		if (i==5 &&  j==6) {
+sma="c1ccncc1";
+}
+		if (i==5 &&  j==7) {
+sma="c1ccncc1";
+}
+		if (i==5 &&  j==8) {
+sma="c1ccncc1";
+}
+		if (i==5 &&  j==9) {
+sma="c1ccncc1";
+}
+		if (i==6 &&  j==1) {
+sma="CN(C)c1ccccc1";
+}
+		if (i==6 &&  j==2) {
+sma="CN(C)c1ccccc1";
+}
+		if (i==6 &&  j==3) {
+sma="CN(C)c1ccc(N=O)cc1";
+}
+		if (i==6 &&  j==4) {
+sma="C[N+](C)(C)c1ccccc1";
+}
+		if (i==6 &&  j==5) {
+sma="CN(C)c1ccccc1";
+}
+		if (i==6 &&  j==6) {
+sma="CN(C)c1ccccc1";
+}
+		if (i==6 &&  j==7) {
+sma="CN(C)c1ccccc1";
+}
+		if (i==6 &&  j==8) {
+sma="CN(C)c1ccccc1";
+}
+		if (i==6 &&  j==9) {
+sma="CN(C)c1ccccc1";
+}
+		if ((i==1 && j==3 && smiles=="CCCCO")||(i==1 && j==3 && smiles=="CCC(C)O")||(i==1 && j==3 && smiles=="CCC(C)O")||(i==1 && j==3 && smiles=="C=CCC")||(i==1 && j==3 && smiles=="CC=CC")) {
+text="1-butanol, 2-butanol, 1-butene & 2-butene products may be formed by SN1 or E1 reactions of a carbocation intermediate."
+}else{
+text=text
+}
+		if (i==1 &&  j==7 && smiles=="CCCCNCCC#N") {
+text="With an excess of acrylonitrile a second conjugate addition occurs."
+}else{
+text=text
+}
+		if (i==4 &&  j==7 && smiles=="N#CCCNc1ccccc1") {
+text="With an excess of acrylonitrile a second conjugate addition occurs."
+}else{
+text=text
+}
+		if (i==6 && j==3  && smiles=="CN(C)c1ccccc1") {
+text="The dimethylamino group activates the benzene ring, which undergoes para nitrosation by attack of NO(+)."
+}else{
+text=text
+}
+		if (i==1 &&  j==6 && smiles=="CCCCNC") {
+text="This reagent mixture exhausively methylates amines, yielding tertiary amine products."
+}else{
+text=text
+}
+		if ((i==5 && j==1)||(i==5 && j==2)||(i==5 && j==3)||(i==5 && j==9)) {
+text="Pyridine is relatively unreactive toward electrophilic substitution. It is, however, a good base."
+}else{
+text=text
+}
+		if ((i==6 && j==1)||(i==6 && j==2)||(i==6 && j==9)) {
+text="Although the dimethylamino group activates the benzene ring, this acylating reagent requires acid catalysis for reaction to occur."
+}else{
+text=text
+}
+
+if (smiles==sma) {
+var Txt="Correct Answer! \r";
+	}else{
+var Txt="Wrong Answer! Try again. \r";
+}
+	input.result.value = Txt + text;
+}
+// End of hide script comment. -->
+</SCRIPT>
+
+ <link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE> Reactions of Amines</TITLE>
+ <body>
+ <div class="ctr"><b><span class="fs-5">Reactions of Amines</span></b></div>
+<FORM>
+<span class="fs-3"><B>In this problem we shall consider six amine<span class="fc-maroon"> reactants:</span></B></span><BR>
+<div class="ctr"><TABLE BORDER=3><TR><TD>
+<TABLE BORDER CELLPADDING=7><TR VALIGN=top BGCOLOR="CCFFCC">
+<TH WIDTH=175 nowrap><span class="fs-3">butylamine </span> &nbsp;<INPUT NAME="sm1"  TYPE="radio" checked> &nbsp; </TH>
+<TH WIDTH=175 nowrap><span class="fs-3">piperidine</span> &nbsp;<INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH WIDTH=180 nowrap><span class="fs-3">1-methylpyrrolidine</span> &nbsp;<INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH></TR>
+<TR VALIGN=top BGCOLOR="CCFFCC">
+<TH><span class="fs-3">aniline</span> &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH><span class="fs-3">pyridine</span> &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH nowrap><span class="fs-3">N,N-dimethylaniline</span> &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH></TR></TABLE>
+</TD></TR></TABLE></div><br />
+<span class="fs-3"><B>These compounds may be reacted with nine different <span class="fc-maroon">reagents:</span></B></span><BR>
+<div class="ctr"><TABLE BORDER=3><TR><TD>
+<TABLE BORDER CELLPADDING=8 BGCOLOR="FFCCCC"><TR VALIGN="top">
+<TH WIDTH=200 nowrap><span class="fs-3"> CH<SUB>3</SUB>C<SUB>6</SUB>H<SUB>4</SUB>SO<SUB>2</SUB>Cl</span><BR><span class="fs-2"> in base</span></TH>
+<TH><INPUT NAME="sm2" TYPE="radio" checked></TH>
+<TH> </TH>
+<TH WIDTH=200><span class="fs-3">(CH<SUB>3</SUB>)<SUB>3</SUB>CCOCl</span><BR><span class="fs-2"> in base</span> </TH>
+<TH><INPUT NAME="sm2" TYPE="radio"></TH>
+<TH> </TH>
+<TH WIDTH=200  nowrap><span class="fs-3">Nitrous Acid (HNO<SUB>2</SUB>)</span><BR><span class="fs-2"> H<SUB>2</SUB>O, 0 &#186;C</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH></TR>
+<TR VALIGN="top" >
+<TH><span class="fs-3"> CH<SUB>3</SUB>I</span><BR><span class="fs-2">(excess) & pyridine</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH><span class="fs-3">CH<SUB>3</SUB>CO<SUB>2</SUB>C<SUB>2</SUB>H<SUB>5</SUB> </span><BR><span class="fs-2">heat</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH><span class="fs-3"> CH<SUB>2</SUB>=O & HCO<SUB>2</SUB>H</span> <BR><span class="fs-2"> heat </span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH></TR>
+<TR VALIGN="top" >
+<TH><span class="fs-3"> CH<SUB>2</SUB>=CH&#8211;C&#8801;N</span></span><BR><span class="fs-2">(in excess) </span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH nowrap> <span class="fs-3"> (i) (CH<SUB>3</SUB>)<SUB>2</SUB>CHCH=O<BR>(ii) H<SUB>2</SUB>, Pd catalyst</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH nowrap><span class="fs-3"> Succinic Anhydride</span><BR><span class="fs-2">heat </span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH></TR>
+</TABLE></TD></TR></TABLE></div>
+
+<p><table width=960 align="center "><TR valign="bottom"><TD><span class="fc-blue"><B>Select one amine compound from the first group,<br /> and one reagent from the second group.</B></span></td><th><table bgcolor="blue" align="center" border><tr><th>  
+<INPUT TYPE="button" VALUE="Show the Problem"  onClick="process(this.form)">/th></tr></table><td align="right">
+To practice using the drawing program  <A HREF="../MOLEDITOR/sterprct.htm" Target="_top"> Click Here</A><br>
+To review the chemistry of amines  <A HREF="../../amine1.htm#amin6" Target="_top"> Click Here</A>.</td></tr></table>
+</TD></TR>
+</TABLE>
+
+ </FORM>
+ </BODY>
+ </HTML>

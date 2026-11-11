@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var i=0
+var anscnt=0
+var answ="1(i) 1,3,5-isomer;  (ii) 1,2,4-isomer; (iii) 1,2,3-isomer\r"
+ + "2(i) 1,2,4,5-isomer; (ii) 1,2,3,4-isomer; (iii) 1,2,3,5-isomer\r"
+ + "3(i) 1,2-isomer; (ii) 2,2-isomer; (iii) 1,3-isomer; (iv) 1,1-isomer\r"
+var noansw="You must try to answer this question twice before viewing the answers."
+
+		function process(form) {
+	anscnt=anscnt+1;
+
+	if (i!=0){
+	 i=0
+}
+	if (form.quest1i[2].checked){
+		i=i+1
+}else {
+		i=i	
+}
+	if (form.quest1ii[1].checked){
+		i=i+1
+}else {
+		i=i	
+}		
+	if (form.quest1iii[0].checked){
+		i=i+1
+}else {
+		i=i	
+}
+	if (form.quest2i[2].checked){
+		i=i+1
+}else {
+		i=i	
+}
+	if (form.quest2ii[0].checked){
+		i=i+1
+}else {
+		i=i	
+}		
+	if (form.quest2iii[1].checked){
+		i=i+1
+}else {
+		i=i	
+}
+	if (form.quest3i[2].checked){
+		i=i+1
+}else {
+		i=i	
+}
+	if (form.quest3ii[1].checked){
+		i=i+1
+}else {
+		i=i	
+}		
+	if (form.quest3iii[3].checked){
+		i=i+1
+}else {
+		i=i	
+}
+	if (form.quest3iv[0].checked){
+		i=i+1
+}else {
+		i=i	
+}
+	var diff=10-i
+	var Text="You answered " +i +" questions correctly.\r"
++"You failed to respond to or incorrectly answered " +diff +" questions."
+		if (i==10) {
+form.resultarea.value="Congratulations!\r" + Text
+}else{
+form.resultarea.value=Text	
+}
+}
+function giveansw(show) {
+if (anscnt>=2)  {
+var txt=answ
+}else{
+var txt=noansw
+}
+show.resultarea.value=txt
+}
+//STOP HIDING-->
+</SCRIPT>
+<link rel="stylesheet" href="../../../Styles/edvibe.css">
+<script src="../../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>NMR Problem</TITLE>
+<body>
+<div class="ctr"><H3>Sample NMR Problems</H3></div>
+<FORM>
+<p><TABLE BORDER=1 CELLPADDING=5 CELLSPACING=8 WIDTH="100%">
+<TR><TD WIDTH="45%"  VALIGN=top>
+<B>1. </B> You have three unlabeled vials each containing a trichlorobenzene
+isomer. In order to correctly identify each compound and properly label
+its container you have taken their <SUP>13</SUP>C nmr spectra. Match the spectrum
+characteristics given below with a compound from the following group: 
+<HR>
+<div class="ctr"><b><span class="fc-blue">1,2,3-trichlorobenzene<BR>1,2,4-trichlorobenzene<BR>
+1,3,5-trichlorobenzene </span></b></div>
+<HR>
+<B><span class="fc-blue"><SUP>13</SUP>C NMR:<BR>(i)</b> Two peaks between &#948;125 and 140 ppm </span><BR>
+<INPUT NAME="quest1i"  TYPE="radio">1,2,3-trichlorobenzene<BR>
+<INPUT NAME="quest1i"  TYPE="radio">1,2,4-trichlorobenzene<BR>
+<INPUT NAME="quest1i"  TYPE="radio">1,3,5-trichlorobenzene<BR>
+
+<B><span class="fc-blue">(ii)</b> Six peaks between &#948;125 and 140 ppm</span><BR>
+<INPUT NAME="quest1ii"  TYPE="radio">1,2,3-trichlorobenzene<BR>
+<INPUT NAME="quest1ii"  TYPE="radio">1,2,4-trichlorobenzene<BR>
+<INPUT NAME="quest1ii"  TYPE="radio">1,3,5-trichlorobenzene<BR>
+
+<B><span class="fc-blue">(iii)</b> Four peaks between &#948;125 and 140 ppm</span><BR>
+<INPUT NAME="quest1iii"  TYPE="radio">1,2,3-trichlorobenzene<BR>
+<INPUT NAME="quest1iii"  TYPE="radio">1,2,4-trichlorobenzene<BR>
+<INPUT NAME="quest1iii"  TYPE="radio">1,3,5-trichlorobenzene<BR>
+<P><HR SIZE=8 NOSHADE></P>
+<B>2. </B> You have three unlabeled vials each containing a tetrachlorobenzene
+isomer. In order to correctly identify each compound and properly label
+its container you have taken their <SUP>13</SUP>C nmr spectra. Match the spectrum
+characteristics given below with a compound from the following group:
+<HR>
+<div class="ctr"><b><span class="fc-blue">1,2,3,4-tetrachlorobenzene<BR>1,2,3,5-tetrachlorobenzene<BR>
+1,2,4,5-tetrachlorobenzene </span></b></div>
+<HR>
+<B><span class="fc-blue"><SUP>13</SUP>C NMR:<BR>(i)</b> Two peaks between &#948;125 and 140 ppm</span><BR>
+<INPUT NAME="quest2i"  TYPE="radio">1,2,3,4-tetrachlorobenzene<BR>
+<INPUT NAME="quest2i"  TYPE="radio">1,2,3,5-tetrachlorobenzene<BR>
+<INPUT NAME="quest2i"  TYPE="radio">1,2,4,5-tetrachlorobenzene<BR>
+
+<B><span class="fc-blue">(ii)</b> Three peaks between &#948;125 and 140 ppm</span><BR>
+<INPUT NAME="quest2ii"  TYPE="radio">1,2,3,4-tetrachlorobenzene<BR>
+<INPUT NAME="quest2ii"  TYPE="radio">1,2,3,5-tetrachlorobenzene<BR>
+<INPUT NAME="quest2ii"  TYPE="radio">1,2,4,5-tetrachlorobenzene<BR>
+
+<B><span class="fc-blue">(iii)</b> Four peaks between &#948;125 and 140 ppm</span><BR>
+<INPUT NAME="quest2iii"  TYPE="radio">1,2,3,4-tetrachlorobenzene<BR>
+<INPUT NAME="quest2iii"  TYPE="radio">1,2,3,5-tetrachlorobenzene<BR>
+<INPUT NAME="quest2iii"  TYPE="radio">1,2,4,5-tetrachlorobenzene<BR>
+
+<HR SIZE=8 NOSHADE><BR>
+
+<INPUT TYPE=BUTTON VALUE="Submit Answers for Problems 1 through 3"  onClick= "process(form)"> <BR><BR>
+<INPUT TYPE="reset" VALUE="Reset"> 
+<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)">
+
+</TD><TD WIDTH="55%" VALIGN=top>
+<B>3. </B> You have four unlabeled vials each containing a different dichloropropane isomer. In order to correctly identify each compound and properly label its container you have taken their <SUP>13</SUP>C nmr  and  <SUP>1</SUP>H nmr spectra. 
+Match the spectrum characteristics given below with a compound from the following group: 
+<HR>
+<div class="ctr"><b><span class="fc-blue">1,1-dichloropropane &nbsp; &nbsp; &nbsp; &nbsp; 2,2-dichloropropane<BR>
+1,2-dichloropropane &nbsp; &nbsp; &nbsp;  &nbsp; 1,3-dichloropropane</span></b></div>
+<HR>
+<TABLE CELLPADDING=6  CELLSPACING=4>
+<TR><TH VALIGN=top><span class="fc-blue">(i)</span></TH>
+<TD VALIGN=top nowrap><B><span class="fc-blue"><SUP>13</SUP>C NMR: </b><BR>
+ Three signals between &#948;0 and 60 ppm </span></TD>
+<TD VALIGN=top><B><span class="fc-blue"><SUP>1</SUP>H NMR:</b><BR>
+Three signals between &#948;0 and 5 ppm  <br>(the lowest field signal is a sextet)</span></TD></TR>
+<TR><TD COLSPAN=3 ALIGN=CENTER>
+<INPUT NAME="quest3i"  TYPE="radio">1,1-dichloropropane<BR>
+<INPUT NAME="quest3i"  TYPE="radio">2,2-dichloropropane<BR>
+<INPUT NAME="quest3i"  TYPE="radio">1,2-dichloropropane<BR>
+<INPUT NAME="quest3i"  TYPE="radio">1,3-dichloropropane<BR></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+
+<TR><TH  VALIGN=top><span class="fc-blue">(ii)</span></TH>
+<TD  VALIGN=top><B><span class="fc-blue"><SUP>13</SUP>C NMR:</b> <BR>
+ Two signals between &#948;0 and 70 ppm</span></TD>
+<TD  VALIGN=top><B><span class="fc-blue"> <SUP>1</SUP>H NMR:</b> <BR>
+One signal, a singlet at &#948;1.2 ppm </B></span></TD></TR>
+<TR><TD COLSPAN=3 ALIGN=CENTER>
+<INPUT NAME="quest3ii"  TYPE="radio">1,1-dichloropropane<BR>
+<INPUT NAME="quest3ii"  TYPE="radio">2,2-dichloropropane<BR>
+<INPUT NAME="quest3ii"  TYPE="radio">1,2-dichloropropane<BR>
+<INPUT NAME="quest3ii"  TYPE="radio">1,3-dichloropropane<BR></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+
+<TR><TH  VALIGN=top><span class="fc-blue">(iii)</span></TH>
+<TD  VALIGN=top><B><span class="fc-blue"><SUP>13</SUP>C NMR:</b> <BR>
+ Two signals between &#948;0 and 70 ppm</span></TD>
+<TD  VALIGN=top><B><span class="fc-blue"><SUP>1</SUP>H NMR:</b>  <BR>
+ Two signals between &#948;0 and 5 ppm  <br>(the lowest field signal is a triplet)</B></span></TD></TR>
+<TR><TD COLSPAN=3 ALIGN=CENTER>
+<INPUT NAME="quest3iii"  TYPE="radio">1,1-dichloropropane<BR>
+<INPUT NAME="quest3iii"  TYPE="radio">2,2-dichloropropane<BR>
+<INPUT NAME="quest3iii"  TYPE="radio">1,2-dichloropropane<BR>
+<INPUT NAME="quest3iii"  TYPE="radio">1,3-dichloropropane<BR></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+
+<TR><TH  VALIGN=top><span class="fc-blue">(iv)</span></TH>
+<TD  VALIGN=top><B><span class="fc-blue">(iv) <SUP>13</SUP>C NMR:</b> <BR>
+ Three signals between &#948;0 and 70 ppm</span></TD>
+<TD  VALIGN=top><B><span class="fc-blue"> <SUP>1</SUP>H NMR:</b> <BR>
+ Three signals between &#948;0 and 5 ppm <br>(the lowest field signal is a triplet) </span></TD></TR>
+<TR><TD COLSPAN=3 ALIGN=CENTER>
+<INPUT NAME="quest3iv"  TYPE="radio">1,1-dichloropropane<BR>
+<INPUT NAME="quest3iv"  TYPE="radio">2,2-dichloropropane<BR>
+<INPUT NAME="quest3iv"  TYPE="radio">1,2-dichloropropane<BR>
+<INPUT NAME="quest3iv"  TYPE="radio">1,3-dichloropropane<BR></TD></TR>
+</TABLE>
+</TD></TR></TABLE></p>
+
+<TEXTAREA WRAP NAME="resultarea" ROWS="4" COLS="70"></TEXTAREA> 
+<A HREF="nmrhlp.htm" target="structure" ><INPUT TYPE="button"  NAME="wind" VALUE=" Get Help " onClick=
+"window.open('nmrhlp.htm','structure','toolbar=no,menubar=no,status=no,scrollbars=yes,width=340,height=480')"></A>
+</FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY>
+</HTML>

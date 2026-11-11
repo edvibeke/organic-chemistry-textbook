@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+															// Set variables
+var i=0;
+var anscnt=0
+                         //Answer variables
+ var answ="(1) A,C,F,G,K,L\r(2) B,D,H,J\r(3) E,I "
+  var noansw="You must try to answer this questions twice before viewing the answers."
+															// define function
+function ansbx(input) {
+ anscnt=anscnt+1;
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+var la=input.a.value.length;
+var lb=input.b.value.length;
+var lc=input.c.value.length;
+var aa=input.a.value.toUpperCase().indexOf("A",0);
+var ac=input.a.value.toUpperCase().indexOf("C",0);
+var af=input.a.value.toUpperCase().indexOf("F",0);
+var ag=input.a.value.toUpperCase().indexOf("G",0);
+var ak=input.a.value.toUpperCase().indexOf("K",0);
+var al=input.a.value.toUpperCase().indexOf("L",0);
+var bb=input.b.value.toUpperCase().indexOf("B",0);
+var bd=input.b.value.toUpperCase().indexOf("D",0);
+var bh=input.b.value.toUpperCase().indexOf("H",0);
+var bj=input.b.value.toUpperCase().indexOf("J",0);
+var ce=input.c.value.toUpperCase().indexOf("E",0);
+var ci=input.c.value.toUpperCase().indexOf("I",0);
+
+if (input.a.value=='' && input.b.value=='' && input.c.value=='') {
+input.result.value = "You have not provided any answers to these questions.";
+anscnt=0
+}else{
+	if (i!=0) {
+	i=0
+}
+	 if (aa>=0) {
+	i=i+1
+}
+	 if (ac>=0) {
+	i=i+1
+}
+	 if  (af>=0) {
+	i=i+1
+}
+	 if  (ag>=0) {
+	i=i+1
+}
+	 if  (ak>=0) {
+	i=i+1
+}
+	 if  (al>=0) {
+	i=i+1
+}
+	 if (bb>=0) {
+	i=i+1
+}
+	 if (bd>=0) {
+	i=i+1
+}
+	 if  (bh>=0) {
+	i=i+1
+}
+	 if  (bj>=0) {
+	i=i+1
+}
+	 if  (ce>=0) {
+	i=i+1
+}
+	 if  (ci>=0) {
+	i=i+1
+}
+
+ls=la+lb+lc;
+	if (la==6 && lb==4 && lc==2 && i==12) {
+var Txt="Congratulations!\rYour answer is entirely correct.";
+anscnt=2;
+} else {
+var Txt="You have identified " + i + " correct answers.\rYour incorrect selections number: " +( ls-i )
+}
+	input.result.value = Txt ;
+}
+}
+function giveansw(show) {
+ if (anscnt>=2)  {
+ var txt=answ
+ 	}else{
+ var txt=noansw
+ }
+ show.result.value=txt
+ }
+function clrbx(input) {
+	input.a.value=""  ;	// Clear all text windows.
+  input.b.value="";
+	input.c.value="";
+	input.result.value="";
+}
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Hydrogen Bonding</TITLE>
+<body>
+<div class="ctr"><H3>Hydrogen Bonding</H3></div>
+<p>The following questions refer to the twelve compounds given below on the left.  You may enter as many as six choices in each answer box (type in the appropriate letter for each choice).<BR><span class="fc-red">Do not enter superfluous characters, since they will be counted as incorrect answers.</span></p>
+<FORM NAME="select">
+<TABLE><TR><TD>
+<P><IMG SRC="../Images/hbonding1.gif"></TD>
+<TD WIDTH=25>&nbsp;</TD>
+<TD><span class="fc-blue"><B>1. Which compounds may serve only as H-bond acceptors?: </B></span><INPUT TYPE="text" NAME="a" SIZE="12"><BR><BR>
+<span class="fc-blue"><B>2. Which may serve both as H-bond acceptors and donors?: </B></span><INPUT TYPE="text" NAME="b" SIZE="12"><BR><BR>
+<span class="fc-blue"><B>3. Which compounds will not participate in H-bonding?: </B></span><INPUT TYPE="text" NAME="c" SIZE="12"><BR><BR>
+
+<INPUT TYPE="button" VALUE=" Check Answer " onClick="ansbx(this.form)"> &nbsp; 
+<INPUT TYPE="reset"  VALUE=" Clear " onClick="clrbx(this.form)"><BR>
+<TEXTAREA WRAP NAME="result" ROWS="4" COLS="40">
+</TEXTAREA><BR>
+ <INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form)"> &nbsp; <INPUT TYPE="button"  NAME="answr" VALUE="Hydrogen Bonds" onClick="window.location='../../suppmnt1.htm#exp5'"></TD></TR></TABLE>
+</FORM><HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

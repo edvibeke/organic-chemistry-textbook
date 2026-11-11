@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var aa="F"; 
+var bb="E";
+var cc="F"; 
+var dd="H";
+var ee="A"; 
+var ff="A";
+var gg="D"; 
+var hh="G";
+var ii="C"; 
+var jj="B";
+
+var anscnt=0
+var answ="(1) Donor=F; Acceptor=E\r(2) Donor=F; Acceptor=H\r"
+ +  "(3) Donor=A; Acceptor=A\r(4) Donor=D; Acceptor=G\r(5) Donor=C; Acceptor=B"
+var noansw="You must try to answer this question three times before viewing the answers."
+
+var j=0
+var k=0
+     
+function slct1(input) {
+anscnt=anscnt+1;
+input.bxa1.value=fix(input.bxa1.value)
+input.bxb1.value=fix(input.bxb1.value)
+input.bxa2.value=fix(input.bxa2.value)
+input.bxb2.value=fix(input.bxb2.value)
+input.bxa3.value=fix(input.bxa3.value)
+input.bxb3.value=fix(input.bxb3.value)
+input.bxa4.value=fix(input.bxa4.value)
+input.bxb4.value=fix(input.bxb4.value)
+input.bxa5.value=fix(input.bxa5.value)
+input.bxb5.value=fix(input.bxb5.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.]/g,"")
+}
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+
+if ( (input.bxa1.value=='')||(input.bxb1.value=='')||(input.bxa2.value=='')||(input.bxb2.value=='')
+||(input.bxa3.value=='')||(input.bxb3.value=='')||(input.bxa4.value=='')||(input.bxb4.value=='')
+||(input.bxa5.value=='')||(input.bxb5.value=='') ) {
+var Text = "Please enter a selection in each box.";
+} else {
+		if (( input.bxa1.value.toUpperCase() == aa)){ 
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bxb1.value.toUpperCase() == bb) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bxa2.value.toUpperCase() == cc) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bxb2.value.toUpperCase() == dd) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bxa3.value.toUpperCase() == ee) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bxb3.value.toUpperCase() == ff) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bxa4.value.toUpperCase() == gg) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bxb4.value.toUpperCase() == hh) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bxa5.value.toUpperCase() == ii) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.bxb5.value.toUpperCase() == jj) {
+		k=k+1
+		} else {
+		j=j+1
+}
+  var tot=k+j
+	var Text="Of " +tot +" responses: your correct answers = " +k +"\rYour incorrect answers = " +j 
+}
+	if   (k==10) {
+input.result.value = "Congratulations!\r" + Text;
+		}else{
+input.result.value = Text;
+}
+}
+function giveansw(show) {
+if (anscnt>=3)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+
+function clearbx(input) {
+	input.bxa1.value="";	// Clear all text windows.
+	input.bxb1.value="";
+	input.bxa2.value="";
+	input.bxb2.value="";
+	input.bxa3.value="";
+	input.bxb3.value="";
+	input.bxa4.value="";
+	input.bxb4.value="";
+	input.bxa5.value="";
+	input.bxb5.value="";
+	input.result.value=" ";
+}
+// Generate the HTML code for the web page.
+
+document.write('<FORM NAME="match">');
+document.write('<CENTER><H3>Claisen Condensation</H3></CENTER>');
+document.write('<P>The Claisen Condensation proceeds by carbon-carbon bond formation between an <FONT COLOR="blue">enolate donor</FONT> and a <FONT COLOR="red">carbonyl acceptor</FONT>. For each of the following Claisen products (1 through 5) select a donor and  an acceptor compound from the list at the bottom of the page (compounds A through H). Enter the letter corresponding to your selection in the appropriate answer box.</P>');
+document.write('<CENTER><TABLE CELLPADDING=8 WIDTH=60%>');
+document.write('<TR><TH><B>Claisen Product</TH><TH><FONT COLOR="blue">Donor</FONT></TH><TH><FONT COLOR="red">Acceptor</FONT></TH></TR>');
+document.write('<TR ALIGN=center><TD ROWSPAN=5><IMG SRC="../Images/claisprd.gif"></TD>');
+document.write('<TD height=59><INPUT TYPE="text" NAME="bxa1"  SIZE="2"></TD><TD><INPUT TYPE="text" NAME="bxb1" SIZE="2"></TD></TR>');
+for (var i=2; i<=5;i++) {
+var bname= 'bxa'+i;
+var bnam2='bxb'+i;
+document.write('<TR ALIGN=center  ><TD height=59><INPUT TYPE="text" NAME="',bname,'" SIZE="2"></TD><TD><INPUT TYPE="text" NAME="',bnam2,'" SIZE="2"></TD></TR>');
+}
+document.write('<TR><TD COLSPAN=3></TD></TR>');
+document.write('</TABLE></CENTER>');
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Claisen Condensation</TITLE>
+<body>
+<HR>
+<TABLE CELLSPACING=8><TR><TD BGCOLOR="ccffcc">
+<div class="ctr"><IMG SRC="../Images/claisnrx.gif"></div></TD>
+<TD align=right><INPUT TYPE="button" VALUE=" Check Answers " onClick="slct1(this.form)"><BR><BR><INPUT TYPE="button"  VALUE=" Clear " onClick="clearbx(this.form)"></TD><TD>
+<TEXTAREA WRAP NAME="result" ROWS="5" COLS="42">
+</TEXTAREA></TD><TD>
+<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)"><BR><BR><INPUT TYPE="button" VALUE="Help" onClick="window.location = '../../crbacid3.htm#react6'"> 
+</TD></TR></TABLE>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</FORM>
+</BODY></HTML>
+
+

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var anscnt=0																										// other variables
+var answ="(A) 2, 3, 1\r"
+ +  "(B) 3, 1, 2\r"
+ +  "(C) 2, 3, 1\r"
+ +  "(D) 1, 2, 3\r"
+var noansw="You must try to answer this question twice before viewing the answers."
+var k=0
+var j=0
+// answer checking function
+function chkchg(input) {
+input.aa.value=fix(input.aa.value)
+input.ab.value=fix(input.ab.value)
+input.ac.value=fix(input.ac.value)
+input.ba.value=fix(input.ba.value)
+input.bb.value=fix(input.bb.value)
+input.bc.value=fix(input.bc.value)
+input.ca.value=fix(input.ca.value)
+input.cb.value=fix(input.cb.value)
+input.cc.value=fix(input.cc.value)
+input.da.value=fix(input.da.value)
+input.db.value=fix(input.db.value)
+input.dc.value=fix(input.dc.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.]/g,"")
+}
+anscnt=anscnt+1;
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var rsp="";
+if ( input.aa.value == "2" && input.ab.value == "3"  && input.ac.value == "1"){ 
+		k=k+1
+		} else {
+if ( input.aa.value != "" || input.ab.value != "" || input.ac.value != ""){ 
+		var rsp=rsp +" A,"
+		} else {
+		j=j+1
+}
+}
+if ( input.ba.value == "3" && input.bb.value == "1"  && input.bc.value == "2"){ 
+		k=k+1
+		} else {
+if ( input.ba.value != "" || input.bb.value != "" || input.bc.value != ""){ 
+		var rsp=rsp +" B,"
+		} else {
+		j=j+1
+}
+}
+if ( input.ca.value == "2" && input.cb.value == "3"  && input.cc.value == "1"){ 
+		k=k+1
+		} else {
+if ( input.ca.value != "" || input.cb.value != "" || input.cc.value != ""){ 
+		var rsp=rsp +" C,"
+		} else {
+		j=j+1
+}
+}
+if ( input.da.value == "1" && input.db.value == "2"  && input.dc.value == "3"){ 
+		k=k+1
+		} else {
+if ( input.da.value != "" || input.db.value != "" || input.dc.value != ""){ 
+		var rsp=rsp +" D"
+		} else {
+		j=j+1
+}
+}
+
+if ( rsp=="") {
+rsp="none";
+}
+if (j==4) {
+	var txt="You have not provided answers to any questions."; 
+anscnt=0
+}else{
+if   (k==4) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+anscnt=2
+}else{
+	var txt="Your correct answers total: " + k +" \rQuestions you have answered incorrectly are:" + rsp; 
+}
+}
+input.result.value = txt;
+}
+// functions for showing answer & clearing text
+function giveansw(show) {
+if (anscnt>=2)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+
+function clrtxt(input) {
+	input.aa.value="";	
+	input.ab.value="";
+	input.ac.value="";
+	input.ba.value="";
+	input.bb.value="";
+	input.bc.value="";
+	input.ca.value="";
+	input.cb.value="";
+	input.cc.value="";
+	input.da.value="";
+	input.db.value="";
+	input.dc.value="";
+	input.result.value=" ";
+}
+	//STOP HIDING-->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Halide Reactivity</TITLE>
+<body>
+<div class="ctr"><H3>Relative Reactivity of Organic Halides</H3></div>
+<p>In each of the following sections three organic halogen compounds are listed. In the box under each formula enter a number ( <b>1</b> to <b>3</b> ) indicating the order of reactivity in the designated reaction (<b>1</b> is most reactive & <b>3</b> is least). <I>Note that</I> C<SUB>6</SUB>H<SUB>5</SUB>- <I>represents a phenyl group.</I></p>
+<HR>
+<FORM NAME="responses">
+<TABLE WIDTH=80% cellpadding=5><TR><TD COLSPAN=3> 
+<span class="fc-blue"><B>(A)</B></span>&nbsp; S<SUB>N</SUB>2 substitution by NaOCOCH<SUB>3</SUB> in methanol:</span></TD></TR>
+<TR><TH>CH<SUB>3</SUB>CH<SUB>2</SUB>CH<SUB>2</SUB>Br</TH>
+<TH>(CH<SUB>3</SUB>)<SUB>2</SUB>CHBr</TH>
+<TH>CH<SUB>2</SUB>=CHCH<SUB>2</SUB>Br</TH></TR>
+<TR ALIGN=center><TD><INPUT TYPE="text" NAME="aa"  SIZE="2"></TD>
+<TD><INPUT TYPE="text" NAME="ab"  SIZE="2"></TD>
+<TD><INPUT TYPE="text" NAME="ac"  SIZE="2"></TD></TR>
+<TR><TD COLSPAN=3></TD></TR>
+<TR><TD COLSPAN=3><span class="fc-blue"><B>(B)</B></span>&nbsp; S<SUB>N</SUB>2 substitution by NaI in acetone:</span></TD></TR>
+<TR><TH>C<SUB>6</SUB>H<SUB>5</SUB>Cl</TH>
+<TH>C<SUB>6</SUB>H<SUB>5</SUB>CH<SUB>2</SUB>Cl</TH>
+<TH>C<SUB>6</SUB>H<SUB>5</SUB>CHClCH<SUB>3</SUB></TH></TR>
+<TR ALIGN=center><TD><INPUT TYPE="text" NAME="ba"  SIZE="2"></TD>
+<TD><INPUT TYPE="text" NAME="bb"  SIZE="2"></TD>
+<TD><INPUT TYPE="text" NAME="bc"  SIZE="2"></TD></TR>
+<TR><TD COLSPAN=3></TD></TR>
+<TR><TD COLSPAN=3><span class="fc-blue"><B>(C)</B></span>&nbsp; S<SUB>N</SUB>2 substitution by NaCN in methanol:</span></TD></TR>
+<TR><TH>CH<SUB>3</SUB>CH<SUB>2</SUB>Cl</TH>
+<TH>CH<SUB>3</SUB>CH<SUB>2</SUB>F</TH>
+<TH>CH<SUB>3</SUB>CH<SUB>2</SUB>I</TH></TR>
+<TR ALIGN=center><TD><INPUT TYPE="text" NAME="ca"  SIZE="2"></TD>
+<TD><INPUT TYPE="text" NAME="cb"  SIZE="2"></TD>
+<TD><INPUT TYPE="text" NAME="cc"  SIZE="2"></TD></TR>
+<TR><TD COLSPAN=3></TD></TR>
+<TR><TD COLSPAN=3><span class="fc-blue"><B>(D)</B></span>&nbsp; S<SUB>N</SUB>2 substitution by NaSCH<SUB>3</SUB> in methanol:</span></TD></TR>
+<TR><TH nowrap>(CH<SUB>3</SUB>)<SUB>2</SUB>CHCH<SUB>2</SUB>CH<SUB>2</SUB>Br</TH>
+<TH nowrap>CH<SUB>3</SUB>CH<SUB>2</SUB>CHBrCH<SUB>2</SUB>CH<SUB>3</SUB></TH>
+<TH nowrap>(CH<SUB>3</SUB>)<SUB>3</SUB>CCH<SUB>2</SUB>Br</TH></TR>
+<TR ALIGN=center><TD><INPUT TYPE="text" NAME="da"  SIZE="2"></TD>
+<TD><INPUT TYPE="text" NAME="db"  SIZE="2"></TD>
+<TD><INPUT TYPE="text" NAME="dc"  SIZE="2"></TD></TR>
+</TABLE>
+<HR>
+
+<table align="center"><tr valign="top"><td align="right"><INPUT TYPE="button"  VALUE=" Check Answer" onClick=" chkchg(this.form)">&nbsp; <br><br><INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clrtxt(this.form)">&nbsp; </td>
+<th><TEXTAREA  WRAP NAME="result"  ROWS="4"  COLS="48">   </TEXTAREA></th>
+<td>&nbsp;<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form) "><br><br>&nbsp; <INPUT TYPE="button" VALUE="Help" onClick="window.location = '../../alhalrx3.htm#hal9'">  </td></tr></table>
+ </FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+ <HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

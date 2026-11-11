@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+ //  global variables
+var i=0
+var Txt="";
+var anscnt=0
+                         //Answer variables
+ var answ="E"
+
+ var noansw="You must try to answer this question twice before viewing the answer."
+
+                        // Set function code
+  function strbx(input) {
+anscnt=anscnt+1;
+input.a.value=fix(input.a.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+
+	if (input.a.value.toUpperCase()=="E") {
+		var Txt="Congratulations! You have answered this question correctly."
+}else{
+	if (input.a.value.toUpperCase()=="B") {
+		var Txt="Although not correct, this is a reasonable answer."
+}else{
+		var Txt = "Sorry, your answer is incorrect.";
+}  
+}   
+
+	    //Reporting code 
+anscnt=2;
+ if ( (input.a.value=='') ) {
+		var Txt = "You have not provided an answer to this question.";
+anscnt=0
+}
+ 	input.result.value =Txt
+}
+
+
+														 // functions for showing answers & clearing text
+ function giveansw(show) {
+ if (anscnt>=2)  {
+ var txt=answ
+ 	}else{
+ var txt=noansw
+
+} 
+ show.result.value=txt
+ }
+ 
+ function clrbx(input) {   // Clear all text windows.
+ 	input.a.value="";	
+ 	input.result.value="";
+ }
+// End of hide script comment. -->
+</SCRIPT>
+ <link rel="stylesheet" href="../../../Styles/edvibe.css">
+<script src="../../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Analyzing NMR Spectra</TITLE>
+ <body>
+ <div class="ctr"><H3>Interpreting a NMR Spectrum</H3></div>
+
+<div class="ctr"><IMG SRC="nmrspctr.gif"></div>
+<P>The <SUP>1</SUP>Hnmr spectrum of the unknown C<SUB>10</SUB>H<SUB>12</SUB>O<SUB>2</SUB> compound is shown above. Seven structural formulas of some possible candidates for this compound are presented below. After reviewing the chemical shifts, coupling patterns and integration values shown in this spectrum, 
+<span class="fc-blue">select the structure most likely to give this spectrum, and enter the corresponding letter ( <b>A</b> through <b>G</b> ) in the answer box.</span><BR>  <span class="fc-red">Do not enter punctuation (eg. commas or semicolons) or spaces.</span></P>
+<div class="ctr"><IMG SRC="nmrstr1.gif"></div>
+<HR>
+ <FORM NAME="match1">
+<table><tr valign="top"><td>
+<B><span class="fc-blue">Which structure best fits the above <SUP>1</SUP>Hnmr spectrum</span></b> .....<INPUT TYPE="text" NAME="a" SIZE="3"></td><td width=30> </td>
+<td> <TEXTAREA WRAP NAME="result" ROWS="2" COLS="60"> </TEXTAREA><br><br>
+<INPUT TYPE="button" VALUE="Check Answer" onClick="strbx(this.form)"> &nbsp;  &nbsp;
+<INPUT TYPE="button"  VALUE=" Clear " onClick="clrbx(this.form)"> &nbsp;  &nbsp;
+ <INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)">  &nbsp;  &nbsp;
+<A HREF="rxdisc1.htm#top" target="explain" ><INPUT TYPE="button"  NAME="wind" VALUE=" Problem Discussion " onClick=
+"window.open('rxdisc1.htm','explain','toolbar=no,menubar=no,status=no,scrollbars=yes,width=500,height=560')"></A></td></tr></table>
+</FORM><HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. <BR>Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+ </BODY>
+ </HTML>

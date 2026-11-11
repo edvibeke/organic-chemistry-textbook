@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Hide script from old browsers
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  ul {font-size: 11pt} ul {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var img1=new Image();										// variables for image switch
+var img2=new Image();
+		img1.src="../Images/cn2h22.gif";
+		img2.src="../Images/cn2h24.gif";
+var anscnt=0																										// other variables
+var answ="(1) G;   (2) J & L;   (3) H\r"
+ +  "(4) E;   (5) F,I & K"
+var noansw="You must try to answer this question three times before viewing the answers."
+var j=0
+var v=0;
+var w=0;
+var x=0;
+var y=0;
+var z=0;
+
+// answer checking function
+function chkchg(input) {
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+input.e.value=fix(input.e.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+
+var a1=input.a.value.toUpperCase().indexOf("G",0);
+var b1=input.b.value.toUpperCase().indexOf("J",0);
+var b2=input.b.value.toUpperCase().indexOf("L",0);
+var c1=input.c.value.toUpperCase().indexOf("H",0);
+var d1=input.d.value.toUpperCase().indexOf("E",0);
+var e1=input.e.value.toUpperCase().indexOf("F",0);
+var e2=input.e.value.toUpperCase().indexOf("I",0);
+var e3=input.e.value.toUpperCase().indexOf("K",0);
+
+anscnt=anscnt+1;
+
+	if (j!=0){
+	 j=0
+}
+	if (v!=0){
+	 v=0
+}
+	if (w!=0){
+	w=0
+}
+	if (x!=0){
+	 x=0
+}
+	if (y!=0){
+	y=0
+}
+	if (z!=0){
+	 z=0
+}
+
+if ( input.a.value == "") { 
+		j=j+1
+}
+if ( input.b.value == "") { 
+		j=j+1
+}
+if ( input.c.value == "") { 
+		j=j+1
+}
+if ( input.d.value == "") { 
+		j=j+1
+}
+if ( input.e.value == "") { 
+		j=j+1
+}
+
+	if (a1>=0)  { 
+		v=v+1
+}
+	if (b1>=0)  { 
+		w=w+1
+}
+	if (b2>=0)  { 
+		w=w+1
+}
+	if (c1>=0)  { 
+		x=x+1
+}
+	if (d1>=0)  { 
+		y=y+1
+}
+	if (e1>=0)  { 
+		z=z+1
+}
+	if (e2>=0)  { 
+		z=z+1
+}
+	if (e3>=0)  { 
+		z=z+1
+}
+
+var al=input.a.value.length;
+var bl=input.b.value.length;
+var cl=input.c.value.length;
+var dl=input.d.value.length;
+var el=input.e.value.length;
+var tot=al+bl+cl+dl+el;
+var k=(v+w+x+y+z);
+var rsp="";
+var rsp2="";
+
+if (al>v) {
+var rsp=rsp + "(1),"								
+}
+if (bl>w) {
+var rsp=rsp + "(2),"
+}
+if (cl>x) {
+var rsp=rsp + "(3),"
+}
+if (dl>y) {
+var rsp=rsp + "(4),"
+}
+if (el>z) {
+var rsp=rsp + "(5),"
+}
+
+if (v<1) {
+var rsp2=rsp2 + "(1),"
+}
+if (w<2) {
+var rsp2=rsp2 + "(2),"
+}
+if (x<1) {
+var rsp2=rsp2 + "(3),"
+}
+if (y<1) {
+var rsp2=rsp2 + "(4),"
+}
+if (z<3) {
+var rsp2=rsp2 + "(5)"
+}
+
+if (rsp=="") {
+rsp="none";
+}
+if (rsp2=="") {
+rsp2="none";
+}
+
+if (j==5) {
+	var txt="You have not provided answers to any questions."; 
+anscnt=0
+}else{
+if   (k==8  && tot==8) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+anscnt=3
+}else{
+var txt="Your correct answers total: " + k +" \rQuestions you have answered incompletely are:" + rsp2+ " \rQuestions for which you have given incorrect answers are:" + rsp;
+}
+}
+		input.result.value = txt;
+}
+
+// functions for showing answer, changing image & clearing text
+function giveansw(show) {
+if (anscnt>=3)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+function change() {
+if (anscnt>=3)  {
+document.images[0].src=img2.src;
+}
+}
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.e.value="";
+	input.result.value=" ";
+}
+	//STOP HIDING-->
+</SCRIPT>
+<script id="qa-imgfallback">(function(){if(window.__qaImgFallback)return;window.__qaImgFallback=1;var BOX="display:inline-block;min-width:80px;min-height:24px;padding:6px 10px;margin:2px;border:1px dashed #b9c0c8;border-radius:6px;color:#7a828c;font:italic 13px/1.35 system-ui,Segoe UI,Arial,sans-serif;background:#f6f8fa;vertical-align:middle;text-align:center;";function ph(img){var p=img.__qaPh;if(!p){p=document.createElement("span");p.setAttribute("role","img");p.setAttribute("aria-label","Figure unavailable");p.style.cssText=BOX;p.textContent="Figure unavailable";img.__qaPh=p;if(img.parentNode)img.parentNode.insertBefore(p,img.nextSibling);}p.style.display="";img.style.display="none";img.setAttribute("data-qa-broken","1");}function ok(img){if(img.__qaPh)img.__qaPh.style.display="none";if(img.getAttribute("data-qa-broken")){img.style.display="";img.removeAttribute("data-qa-broken");}}function hook(img){if(img.__qaHooked)return;img.__qaHooked=1;img.addEventListener("error",function(){ph(this);},true);img.addEventListener("load",function(){ok(this);},true);if(img.complete&&img.naturalWidth===0&&img.getAttribute("src"))ph(img);}function scan(){var a=document.getElementsByTagName("img");for(var i=0;i<a.length;i++)hook(a[i]);}if(document.readyState!=="loading")scan();else document.addEventListener("DOMContentLoaded",scan);window.addEventListener("load",scan);})();</script><link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Resonance Exercise</TITLE>
+<body>
+<div class="ctr"><H3>Canonical Structures and Resonance</H3></div>
+Lewis / Kekul&eacute; structures <span class="fc-blue"><B>A</B></span> through <span class="fc-blue"><B>D</B></span> are constitutional isomers having the molecular formula CN<SUB>2</SUB>H<SUB>2</SUB>.  The remaining structures include canonical formulas which should be incorporated in a resonance description of these four compounds.  There is also at least one formula that represents a fifth constitutional isomer of CN<SUB>2</SUB>H<SUB>2</SUB>.
+<P><div class="ctr"><img src="../Images/cn2h22.gif"></div></P>
+<HR>
+ <FORM NAME="responses"> 
+Enter appropriate letters (E through L) in each answer box. <BR>
+<UL>
+<span class="fc-blue"><B>1. </B></span>
+ Which structure(s), E through L, are constitutional isomers of A, B, C & D? ...........&nbsp;
+<INPUT TYPE="text" NAME="a"  SIZE="6"><BR>
+<span class="fc-blue"><B>2. </B></span>
+ Which structure(s), E through L, are canonical forms (resonance contributors) of A? .. &nbsp;<INPUT TYPE="text" NAME="b"  SIZE="6"> <BR>
+<span class="fc-blue"><B>3. </B></span>
+ Which structure(s), E through L, are canonical forms (resonance contributors) of B? .. &nbsp;<INPUT TYPE="text" NAME="c"
+SIZE="6"><BR>
+<span class="fc-blue"><B>4. </B></span>
+ Which structure(s), E through L, are canonical forms (resonance contributors) of C? ..  &nbsp;<INPUT TYPE="text" NAME="d" 
+SIZE="6"><BR>
+<span class="fc-blue"><B>5. </B></span>
+ Which structure(s), E through L, are canonical forms (resonance contributors) of D? .. &nbsp;<INPUT TYPE="text" NAME="e" 
+SIZE="6"></UL>
+<HR>
+<div class="ctr"><INPUT TYPE="button"  VALUE=" Check Answer" onClick=" chkchg(this.form)">&nbsp;&nbsp;<INPUT TYPE="button"  VALUE=" Clear" onClick="clrtxt(this.form)">&nbsp;&nbsp;
+<TEXTAREA  WRAP NAME="result"  ROWS="5"  COLS="46"> 
+</TEXTAREA>&nbsp;&nbsp;
+<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="change(this.form);giveansw (this.form) ">
+<BR></div>
+
+ </FORM> <HR> 
+<span class="fs-3">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span><BR>
+<span class="fc-red">The "View Answer" part of this problem does not function using Internet Explorer ver.3 and earlier.</span>
+</BODY></HTML>

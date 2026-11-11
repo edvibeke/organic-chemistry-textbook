@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+
+<HEAD>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Styles/modern.css">
+<TITLE>Molecular Models of Chiral Compounds</TITLE>
+
+
+<link rel="stylesheet" href="Styles/edvibe.css">
+<script src="Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<form name="test" method="post" action="nothing" ()" >
+<div class="ctr"><H3>Lactic Acid & Carvone Enantiomers</H3></div>
+<P>Models of the lactic acid enantiomers are shown below. The (<I>S</I>)-lactic acid configuration is on the left and the (<I>R</I>)-lactic acid is on the right. You should manipulate and view these models to confirm the R and S configurational assignments. Equivalent models of the carvone enantiomers may also be selected for examination. </P>
+
+<div class="ctr"><TABLE CELLPADDING=4>
+<TR ALIGN=center><TD COLSPAN=3><span class="fc-blue">Mirror</span></td></tr>
+<TR valign=top><TD height=270><script type="text/javascript">Jmol.getApplet("jmol1",{"width": 260, "height": 260, "color": "#FFFFFF", "use": "HTML5", "j2sPath": "htmlJ/jsmol/j2s", "addSelectionOptions": false, "script": "select hydrogen;  color atoms cyan; select carbon;  color atoms [140,140,140]; select all; wireframe 40; spacefill 90;  rotate x 175; background white; \nset echo top center;\ncolor echo maroon;\nfont echo 18 serif;\necho (S)-Lactic Acid; ", "load": "rasfiles/slactic.pdb"});</script></TD> 
+<TD bgcolor=skyblue></TD>
+<TD><script type="text/javascript">Jmol.getApplet("jmol2",{"width": 260, "height": 260, "color": "#FFFFFF", "use": "HTML5", "j2sPath": "htmlJ/jsmol/j2s", "addSelectionOptions": false, "script": "select hydrogen;  color atoms cyan; select carbon;  color atoms [140,140,140]; select all; wireframe 40; spacefill 90;  rotate y -60; rotate z -25; background white;\nset echo top center;\ncolor echo maroon;\nfont echo 18 serif;\necho (R)-Lactic Acid; ", "load": "rasfiles/rlactic.pdb"});</script>
+</TD></TR>
+
+<TR><TD> &nbsp; &nbsp; <button type="button" class="jctl" data-target="jmol1" data-script=" spacefill 70%">X</button> <span class="fs-4"><sup>&nbsp;Show Spacefill Model</sup><br>
+ &nbsp; &nbsp;<button type="button" class="jctl" data-target="jmol1" data-script="spacefill off;">X</button> <sup>&nbsp;Show Stick Model</sup></span></TD>
+<TD> </TD>
+<TD> &nbsp; &nbsp; <button type="button" class="jctl" data-target="jmol2" data-script=" spacefill 70%">X</button> <span class="fs-4"><sup>&nbsp;Show Spacefill Model</sup><br>
+ &nbsp; &nbsp;<button type="button" class="jctl" data-target="jmol2" data-script="spacefill off;">X</button> <sup>&nbsp;Show Stick Model</sup></span></TD></TR>
+
+
+<TR ALIGN=center><TD COLSPAN=3><hr size=4 noshade /><H3><span class="fc-maroon">Carvone Enantiomers</span></H3>
+<button type="button" class="jctl" data-target="jmol1" data-script="select all; zap; load rasfiles/scarvone.pdb;  wireframe 40;  select *.c; color atoms [140,140,140]; select hydrogen;  color atoms cyan; select all;  rotate y 180; background white;
+set echo top center;
+color echo maroon;
+font echo 18 serif;
+echo (S)-Carvone; ">X</button> <span class="fs-4"><sup>&nbsp;View (<i>S</i>)-Carvone</sup><br>
+<button type="button" class="jctl" data-target="jmol2" data-script="select all; zap; load rasfiles/rcarvone.pdb;  wireframe 40;  select *.c; color atoms [140,140,140]; select hydrogen;  color atoms cyan; select all; rotate x 90; rotate z 30; rotate y -12; background white;
+set echo top center;
+color echo maroon;
+font echo 18 serif;
+echo (R)-Carvone; ">X</button> <span class="fs-4"><sup>&nbsp;View (<i>R</i>)-Carvone</sup>
+</TD></TR>
+</TABLE><BR>
+</div></P> 
+</FORM>
+</TABLE>
+</BODY>
+</HTML>
+

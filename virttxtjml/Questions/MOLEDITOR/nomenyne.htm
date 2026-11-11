@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var Txt="";
+var txt="";
+var smiles = "";
+var nam="";
+var i="";
+var k="";
+var j="";
+var jme = "0 0";
+var txtdir="Write the IUPAC name for this compound in the text entry box.";
+var struct="CC";
+var ret="";
+var search = document.location.search;
+
+
+	function process(form) {
+var search = document.location.search;
+ 
+		if (form.q1[0].checked) {
+jme = "9 8 C 7.39 -4.82 C 8.79 -4.82 C 6.69 -3.60 C 6.69 -6.03 C 5.29 -6.03 C 9.49 -3.60 C 10.89 -3.60 C 9.49 -6.03 C 5.29 -3.60 1 2 2 1 3 1 1 4 1 4 5 1 2 6 1 6 7 1 2 8 1 3 9 1";
+txt = "       Problem 1\r" +txtdir;
+nam = "3-ETHYL-4-METHYL-3-HEXENE" ;  
+k="write";
+j="1";
+}
+		if (form.q1[1].checked) {
+jme = "0 0";
+txt = "       Problem 1\rDraw the structure of  3-ethyl-4-methyl-3-hexene" ;
+k="draw";
+j="1";
+struct = unescape((search + "find=CC/C(C)=C(CC)\\CC").split("find=")[1].split("&")[0]);
+}
+		if (form.q1[2].checked) {
+jme = "8 7 C 11.12 -4.56 C 5.52 -4.56 H 9.72 -6.98 C 9.72 -4.56 C 6.92 -6.98 C 6.92 -4.56 C 9.02 -5.77 C 7.62 -5.77 1 4 1 2 6 1 3 7 1 4 7 1 5 8 1 6 8 1 7 8 2";
+txt = "       Problem 2\r" +txtdir;
+nam = "CIS-3-METHYL-3-HEXENE";
+k="write";
+j="2";
+}
+		if (form.q1[3].checked) {
+jme = "0 0";
+txt = "      Problem 2\rDraw the structure of   cis-3-methyl-3-hexene" ;
+k="draw";
+j="2";
+struct = unescape((search + "find=[H]/C(CC)=C(C)/CC").split("find=")[1].split("&")[0]);
+}
+		if (form.q1[4].checked) {
+jme = "7 6 C 7.50 -6.16 C 8.90 -6.16 C 6.80 -4.95 C 9.60 -7.37 C 11.00 -7.37 Br 6.80 -7.37 C 9.60 -4.95 1 2 2 1 3 1 2 4 1 4 5 1 1 6 1 2 7 1";
+txt = "       Problem 3\r" +txtdir;
+nam = "(Z)-2-BROMO-3-METHYL-2-PENTENE";
+k="write";
+j="3";
+}
+		if (form.q1[5].checked) {
+jme = "0 0";
+txt = "     Problem 3\rDraw the structure of   (Z)-2-bromo-3-methyl-2-pentene" ;
+k="draw";
+struct = unescape((search + "find=CC/C(C)=C(C)\\Br").split("find=")[1].split("&")[0]);
+j="3";
+}
+		if (form.q1[6].checked) {
+jme = "9 8 Cl 6.41 -7.09 C 9.21 -7.09 C 7.11 -5.88 C 8.51 -5.88 C 10.61 -7.09 C 9.21 -4.67 C 10.61 -4.67 C 8.51 -8.30 H 6.41 -4.67 1 3 1 2 4 1 3 4 2 2 5 1 4 6 1 6 7 1 2 8 1 3 9 1";
+txt = "       Problem 4\r" +txtdir;
+nam = "(Z)-1-CHLORO-2-ETHYL-3-METHYL-1-BUTENE";
+k="write";
+j="4";
+}
+		if (form.q1[7].checked) {
+jme = "0 0";
+txt = "     Problem 4\rDraw the structure of   (Z)-1-chloro-2-ethyl-3-methyl-1-butene" ;
+k="draw";
+j="4";
+struct = unescape((search + "find=[H]/C(Cl)=C(CC)/C(C)C").split("find=")[1].split("&")[0]);
+}
+		if (form.q1[8].checked) {
+jme = "10 9 C 7.17 -6.50 C 9.27 -5.28 C 8.57 -6.50 C 9.27 -7.71 C 6.47 -5.28 C 5.07 -5.28 C 6.47 -7.71 C 7.17 -4.07 C 5.07 -7.71 C 10.67 -7.71 1 3 2 2 3 1 3 4 1 1 5 1 5 6 1 1 7 1 5 8 1 7 9 1 4 10 1";
+txt = "       Problem 5\r" +txtdir;
+nam = "(E)-3-ETHYL-2,4-DIMETHYL-3-HEXENE";
+k="write";
+j="5";
+}
+		if (form.q1[9].checked) {
+jme = "0 0";
+txt = "       Problem 5\rDraw the structure of   (E)-3-ethyl-2,4-dimethyl-3-hexene" ;
+k="draw";
+struct = unescape((search + "find=CC/C(C)=C(CC)/C(C)C").split("find=")[1].split("&")[0]);
+j="5";
+}
+		if (form.q1[10].checked) {
+jme = "10 9 C 10.67 -5.28 C 8.57 -8.92 C 10.67 -7.71 Cl 5.07 -5.28 C 7.17 -6.50 C 6.47 -5.28 C 9.27 -5.28 C 8.57 -6.50 C 9.27 -7.71 H 6.47 -7.71 1 7 1 2 9 1 3 9 1 4 6 1 5 6 1 5 8 2 7 8 1 8 9 1 5 10 1";
+txt = "       Problem 6\r" +txtdir;
+nam = "(E)-1-CHLORO-3-ETHYL-4-METHYL-2-PENTENE" ;
+k="write";
+j="6";
+}
+		if (form.q1[11].checked) {
+jme = "0 0";
+txt = "       Problem 6\rDraw the structure of  (E)-1-chloro-3-ethyl-4-methyl-2-pentene" ;
+k="draw";
+struct = unescape((search + "find=[H]/C(CCl)=C(CC)\\C(C)C").split("find=")[1].split("&")[0]);
+j="6";
+}
+		if (form.q1[12].checked) {
+jme = "11 10 C 10.67 -5.28 C 5.07 -5.28 C 7.17 -6.50 C 6.47 -5.28 C 9.27 -5.28 C 8.57 -6.50 C 9.27 -7.71 C 6.47 -7.71 C 11.37 -4.07 C 10.67 -7.71 C 11.37 -6.50 1 5 1 2 4 1 3 4 1 3 6 2 5 6 1 6 7 1 3 8 1 1 9 1 7 10 1 1 11 1";
+txt = "       Problem 7\r" +txtdir;
+nam = "(Z)-4-ETHYL-3,6-DIMETHYL-3-HEPTENE" ;
+k="write";
+j="7";
+}
+		if (form.q1[13].checked) {
+jme = "0 0";
+txt = "       Problem 7\rDraw the structure of   (Z)-4-ethyl-3,6-dimethyl-3-heptene" ;
+k="draw";
+struct = unescape((search + "find=CC/C(C)=C(CC)\\CC(C)C").split("find=")[1].split("&")[0]);
+j="7";
+}
+		if (form.q1[14].checked) {
+k="write";
+jme = "12 11 C 5.07 -5.28 C 6.47 -7.71 O 6.47 -5.28 H 9.27 -7.71 C 9.27 -5.28 C 7.17 -6.50 C 8.57 -6.50 C 10.67 -5.28 C 5.07 -7.71 C 7.17 -8.92 C 8.57 -4.07 Br 4.37 -8.92 1 3 1 2 6 1 3 6 1 4 7 1 5 7 1 5 8 1 6 7 2 2 9 1 2 10 1 5 11 1 9 12 1";
+txt = "       Problem 8\r" +txtdir;
+nam = "(Z)-1-BROMO-3-METHOXY-2,5-DIMETHYL-3-HEXENE";
+j="8";
+}
+		if (form.q1[15].checked) {
+jme = "0 0";
+txt = "      Problem 8\rDraw the structure of \r  (Z)-1-bromo-3-methoxy-2,5-dimethyl-3-hexene" ;
+k="draw";
+struct = unescape((search + "find=[H]/C(=C(OC)\\C(C)CBr)C(C)C").split("find=")[1].split("&")[0]);
+j="8";
+}
+		if (form.q1[16].checked) {
+k="write";
+jme = "14 14 C 7.78 -7.00 C 9.18 -7.00 C 7.08 -5.79 C 7.78 -4.58 C 7.08 -3.36 C 5.68 -3.36 C 4.98 -4.58 C 5.68 -5.79 C 9.88 -8.21 C 9.88 -5.79 C 11.28 -8.21 C 11.98 -9.42 C 11.98 -7.00 H 7.08 -8.21 1 2 2 1 3 1 4 5 1 5 6 2 6 7 1 7 8 2 3 8 1 3 4 2 2 9 1 2 10 1 9 11 1 11 12 1 11 13 1 1 14 1";
+txt = "       Problem 9\r" +txtdir;
+nam = "(E)-2,4-DIMETHYL-1-PHENYL-1-PENTENE";
+j="9";
+}
+		if (form.q1[17].checked) {
+jme = "0 0";
+txt = "     Problem 9\rDraw the structure of   (E)-2,4-dimethyl-1-phenyl-1-pentene" ;
+k="draw";
+struct = unescape((search + "find=[H]/C(=C(C)\\CC(C)C)c1ccccc1").split("find=")[1].split("&")[0]);  
+j="9";
+}
+		if (form.q1[18].checked) {
+k="write";
+jme = "16 16 C 5.88 -5.32 C 7.09 -4.62 C 8.30 -5.32 C 9.52 -4.62 C 10.73 -5.32 C 11.94 -4.62 C 8.30 -6.72 C 7.09 -7.42 C 7.09 -8.82 C 8.30 -9.52 C 9.52 -8.82 C 9.52 -7.42 C 10.73 -6.72 Cl 13.15 -5.32 H 7.09 -3.22 H 9.52 -3.22 1 2 1 2 3 2 3 4 1 4 5 2 5 6 1 3 7 1 8 9 1 9 10 2 10 11 1 11 12 2 7 12 1 7 8 2 5 13 1 6 14 1 2 15 1 4 16 1";
+txt = "       Problem 10\r" +txtdir;
+nam = "(2E,4Z)-1-CHLORO-2-METHYL-4-PHENYL-2,4-HEXADIENE";
+j="10";
+}
+		if (form.q1[19].checked) {
+jme = "0 0";
+txt = "     Problem 10\rDraw the structure of\r (2E,4Z)-1-chloro-2-methyl-4-phenyl-2,4-hexadiene" ;
+k="draw";
+struct = unescape((search + "find=[H]/C(C)=C(\\C([H])=C(C)\\CCl)/c1ccccc1").split("find=")[1].split("&")[0]); 
+j="10";
+}
+		if (form.q1[20].checked) {
+k="write";
+jme = "12 12 C 7.50 -9.75 C 10.62 -5.23 C 6.84 -7.39 C 5.01 -6.05 C 8.07 -8.47 C 9.58 -4.30 C 8.63 -7.19 C 7.11 -3.91 C 5.98 -4.73 C 8.24 -4.73 C 7.81 -6.06 C 6.41 -6.06 1 5 3 2 6 2 3 12 1 4 12 1 5 7 1 6 10 1 7 11 1 8 9 1 8 10 1 9 12 1 10 11 2 11 12 1";
+txt = "       Problem 11\r" +txtdir;
+nam = "3,3-DIMETHYL-2-PROPARGYL-1-VINYLCYCLOPENTENE";
+j="11";
+}
+		if (form.q1[21].checked) {
+jme = "0 0";
+txt = "     Problem 11\rDraw the structure of\r 3,3-dimethyl-2-propargyl-1-vinylcyclopentene" ;
+k="draw";
+struct = unescape((search + "find=C#CCC1=C(C=C)CCC1(C)C").split("find=")[1].split("&")[0]); 
+j="11";
+}
+		if (form.q1[22].checked) {
+k="write";
+jme = "12 11 C 7.37 -8.46 C 11.01 -4.96 C 3.73 -3.56 C 2.52 -5.66 C 7.39 -4.26 C 7.37 -7.06 C 4.94 -5.66 C 9.79 -5.66 C 6.16 -4.96 C 8.58 -4.96 C 3.73 -4.96 C 7.37 -5.66 1 6 3 2 8 1 3 11 1 4 11 1 5 12 1 6 12 1 7 9 1 7 11 2 8 10 1 9 12 1 10 12 1";
+txt = "       Problem 12\r" +txtdir;
+nam = "3,6-DIMETHYL-3-PROPYLHEPT-5-EN-1-YNE";
+j="12";
+}
+		if (form.q1[23].checked) {
+jme = "0 0";
+txt = "     Problem 12\rDraw the structure of\r 3,6-dimethyl-3-propylhept-5-en-1-yne" ;
+k="draw";
+struct = unescape((search + "find=C#CC(C)(C/C=C(C)/C)CCC").split("find=")[1].split("&")[0]); 
+j="12";
+}
+		if (form.q1[24].checked) {
+k="write";
+jme = "12 12 C 5.97 -6.92 C 5.97 -5.52 C 7.30 -7.35 C 7.30 -5.08 C 8.64 -4.65 C 8.64 -7.78 C 9.97 -4.22 C 11.01 -5.15 C 9.97 -8.21 C 11.01 -7.28 O 11.93 -8.33 H 12.09 -6.39 1 2 2 2 4 1 1 3 1 4 5 3 3 6 3 5 7 1 7 8 1 6 9 1 9 10 1 8 10 1 10 11 -1 10 12 -2";
+txt = "       Problem 13\r" +txtdir;
+nam = "(R)-3-CYCLODECEN-1,5-DIYN-8-OL";
+j="13";
+}
+		if (form.q1[25].checked) {
+jme = "0 0";
+txt = "     Problem 13\rDraw the structure of\r (R)-3-cyclodecen-1,5-diyn-8-ol";
+k="draw";
+struct = unescape((search + "find=[H][C@]1(O)CC#CC=CC#CCC1").split("find=")[1].split("&")[0]); 
+j="13";
+}
+		if (form.q1[26].checked) {
+k="write";
+jme = "13 12 C 16.60 -6.70 C 1.20 -4.28 C 10.30 -5.49 C 8.90 -5.49 C 11.70 -5.49 C 7.50 -5.49 C 13.10 -5.49 C 6.10 -5.49 C 14.50 -5.49 C 4.70 -5.49 C 15.90 -5.49 C 2.60 -4.28 C 3.30 -5.49 1 11 2 2 12 1 3 4 1 3 5 3 4 6 3 5 7 1 6 8 1 7 9 3 8 10 3 9 11 1 10 13 1 12 13 2";
+txt = "       Problem 14\r" +txtdir;
+nam = "(11E)-1,11-TRIDECADIENE-3,5,7,9-TETRAYNE";   
+j="14";
+}
+		if (form.q1[27].checked) {
+jme = "0 0";
+txt = "     Problem 14\rDraw the structure of\r (11E)-1,11-tridecadiene-3,5,7,9-tetrayne" ;
+k="draw";
+struct = unescape((search + "find= C=CC#CC#CC#CC#C/C=C/C").split("find=")[1].split("&")[0]); 
+j="14";
+}
+ document.JME.readMolecule(jme);
+document.form.result1.value= Txt + txt;
+}
+
+function submitSmiles(input) {
+   var smiles = document.JME.smiles();
+   document.form.smiles.value = smiles; 
+     var name = input.aa.value.toUpperCase();       
+ var ret = document.getElementById("jmolSmiles1").find(struct, smiles, false, false);
+
+  if ((k=="draw") && (smiles == "")) {  alert("Nothing to process! \rDraw a structural formula."); return;
+	}else{
+ if (ret < 0){
+    alert(document.getElementById("jmolSmiles1").getLastError())
+    }else{ 
+    if ((k== "draw") && (ret == 1)){
+	var Txt="  Problem "+j+"\rCorrect Answer! ";
+	}else{
+
+
+if ((j=="2") &&( k=="draw") && (document.getElementById("jmolSmiles1").find("CC/C=C(C)/CC", smiles, false, false) == 1)) {
+var Txt="  Problem "+j+"\rWrong. You have drawn the wrong configuration. ";
+	}else{
+if ((j=="3") &&( k=="draw") && (document.getElementById("jmolSmiles1").find("CC/C(C)=C(C)/Br", smiles, false, false) == 1)) {
+var Txt="  Problem "+j+"\rWrong. You have drawn the wrong configuration. ";
+	}else{
+if ((j=="4") &&( k=="draw") && (document.getElementById("jmolSmiles1").find("CC/C(=C\Cl)C(C)C", smiles, false, false) == 1)) {
+var Txt="  Problem "+j+"\rWrong. You have drawn the wrong configuration.";
+	}else{
+if ((j=="5") &&( k=="draw") && (document.getElementById("jmolSmiles1").find("CC/C(C)=C(CC)\C(C)C", smiles, false, false) == 1)) {
+var Txt="  Problem "+j+"\rWrong. You have drawn the wrong configuration. ";
+	}else{
+if ((j=="6") &&( k=="draw") && (document.getElementById("jmolSmiles1").find("CC/C(=C/CCl)C(C)C", smiles, false, false) == 1)) {
+var Txt="  Problem "+j+"\Wrong. You have drawn the wrong configuration. ";
+	}else{
+if ((j=="7") &&( k=="draw") && (document.getElementById("jmolSmiles1").find("CC/C(C)=C(CC)/CC(C)C", smiles, false, false) == 1))  {
+var Txt="  Problem "+j+"\rWrong. You have drawn the wrong configuration. ";
+	}else{
+if ((j=="8") &&( k=="draw") && (document.getElementById("jmolSmiles1").find("CO/C(=C/C(C)C)C(C)CBr", smiles, false, false) == 1))  {
+var Txt="  Problem "+j+"\rWrong. You have drawn the wrong configuration. ";
+	}else{
+if ((j=="9") &&( k=="draw") && (document.getElementById("jmolSmiles1").find("C/C(=C/c1ccccc1)CC(C)C", smiles, false, false) == 1))  {
+var Txt="  Problem "+j+"\rWrong. You have drawn the wrong configuration. ";
+	}else{
+if ((j=="10") &&( k=="draw") && ((document.getElementById("jmolSmiles1").find("C/C=C(/C=C(C)\CCl)\c1ccccc1", smiles, false, false) == 1)||(document.getElementById("jmolSmiles1").find("C/C=C(\C=C(C)\CCl)/c1ccccc1", smiles, false, false) == 1)||(document.getElementById("jmolSmiles1").find("C/C=C(\C=C(C)/CCl)/c1ccccc1", smiles, false, false) == 1)))  {
+var Txt="  Problem "+j+"\rWrong. You have drawn an incorrect configuration for one or more double bond. ";
+	}else{
+if  ((k=="write") && (input.aa.value.toUpperCase()=="")) { 
+alert("Nothing to process! \rWrite a name in the answer box."); return;
+	}else{
+if  ((k=="write") && (input.aa.value.toUpperCase().indexOf(nam,0)>=0)) { 
+var Txt="  Problem "+j+"\rCorrect Name! "
+	}else{
+if ((j=="2") &&( k=="write") && (input.aa.value.toUpperCase()=="(Z)-3-METHYL-3-HEXENE")) {
+var Txt="  Problem "+j+"\rCorrect Name! ";
+	}else{
+if ((j=="4") &&( k=="write") && (input.aa.value.toUpperCase()=="(Z)-1-CHLORO-2-ISOPROPYL-1-BUTENE")) {
+var Txt="  Problem "+j+"\rWrong. Pick the longest chain having the most substituent groups. ";
+	}else{
+if ((j=="5") &&( k=="write") && ((input.aa.value.toUpperCase()=="(E)-3-ISOPROPYL-4-METHYL-3-HEXENE")||(input.aa.value.toUpperCase()=="(E)-3-(METHYLETHYL)-4-METHYL-3-HEXENE"))) {
+var Txt="  Problem "+j+"\rWrong. Pick the longest chain having the most substituent groups. ";
+	}else{
+if ((j=="6") &&( k=="write") && (input.aa.value.toUpperCase()=="(E)-1-CHLORO-3-ISOPROPYL-2-PENTENE")) {
+var Txt="  Problem "+j+"\rWrong. Pick the longest chain having the most substituent groups. ";
+	}else{
+if ((j=="12") &&( k=="write") && (input.aa.value.toUpperCase()=="5-ETHYNYL-2,5-DIMETHYL-2-OCTENE")) {
+var Txt="  Problem "+j+"\rWrong. The root chain must include both the double and triple bonds. ";
+	}else{
+if ((j=="12") &&( k=="write") && (input.aa.value.toUpperCase()=="2,5-DIMETHYL-5-PROPYLHEPT-2-EN-6-YNE")) {
+var Txt="  Problem "+j+"\rWrong. The root chain must be numbered from the end nearest a multiple bond. ";
+	}else{
+var Txt="  Problem "+j+"\rWrong! Try again. ";
+} }
+} }
+} }
+} }
+} }
+} }
+} }
+} }
+} }
+}
+}
+
+
+ document.form.result1.value = Txt;
+}
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<TITLE>Alkene & Alkyne Nomenclature</TITLE>
+<body>
+
+<div class="ctr"><H2>Nomenclature of Alkenes & Alkynes II</H2></div>
+<P>For each of the following problems, select the type of question. If you select <B>Write Name</B> a structure will appear in the drawing window when the <B>Show Problem</B> button is pressed. You should then write the IUPAC name for this compound in the text window just below the drawing window. Be careful to include all the necessary parentheses and commas in your name. <BR>
+If you select <B>Draw Structure</B> a name will appear in the larger <B>Information Window</B> on the bottom left when the <B>Show Problem</B> button is pressed. You should then draw a formula corresponding to this name in the drawing window. For configurational isomers of double bonds, drawing a hydrogen substituent (using the <b>X</b> button) is optional.<BR>
+When you are finished, check your answer by pressing the  <b>Check Answer</b> button. A response will appear in the <B>Information Window</B>. The answer to a given problem will be displayed by showing its alternate form.<BR>
+<div class="ctr"><span class="fc-maroon">To practice using this drawing program <A 
+HREF="newprct.htm" 
+>Click Here</A></span></div></P>
+<TABLE WIDTH=90% CELLPADDING=4 BORDER><TR><TH ROWSPAN=14>
+<FORM  METHOD="SUBMIT" NAME="form" onsubmit="return checkForm()">
+<applet code="JME.class" name="JME" archive="JME.jar" width=365 height=346>
+<param name= "options"  value="autoez">
+You have to enable Java and JavaScript on your machine !
+</applet>
+
+<div class="ctr"><span class="fc-blue">Enter the Compound Name Here</span><BR><INPUT TYPE="text" NAME="aa"  SIZE="66"><BR>
+<P><input type="button" value="Show Problem" onClick="process(form);"> &nbsp; &nbsp; &nbsp; <INPUT TYPE="RESET" VALUE="Clear" onClick="document.JME.reset()"> &nbsp; &nbsp; &nbsp; <input type="button" value="Check Answer" onClick="submitSmiles(this.form);"></P>
+<P><span class="fc-blue">Information Window</span><BR><TEXTAREA WRAP NAME="result1" ROWS="3" COLS="64"></TEXTAREA><BR>
+</div></P></TH>
+<TH NOWRAP><B><span class="fc-blue fs-4"> Problem 1</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 2</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 3</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 4</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 5</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 6</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 7</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 8</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 9</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 10</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 11</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 12</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 13</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 14</span></B><BR>
+Write Name <INPUT TYPE=RADIO NAME="q1" VALUE="write"> &nbsp; &nbsp; 
+Draw Structure <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+
+
+</TABLE><object name='jmolSmiles1' id='jmolSmiles1' classid='java:JmolSmilesApplet' type='application/x-java-applet' width='10' height='10' > 
+<param name='name' value='jmolSmilesApplet' /> 
+<param name='archive' value='JmolSmilesApplet.jar' /> 
+<param name='mayscript' value='true' /> 
+<param name='codebase' value='.' /> 
+</object>
+
+<BR>
+
+</form>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.
+<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>
+

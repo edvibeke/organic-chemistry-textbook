@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Hide script from old browsers
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var img1=new Image();										// variables for image switch
+var img2=new Image();
+		img1.src="../Images/funcgrp10.gif";
+		img2.src="../Images/funcgrp11.gif";
+					            																															// other variables
+var anscnt=0																					
+var answ="A.(1,8);  B.(2,5);  C.(6); D.(3); E(3,4,6,7,9)\r"
+ +  "F.(6,8,9);  G.(6);  H.(7);  I.(9); J.(4,7)"
+var noansw="You must try to answer this question twice before viewing the answers."
+var k=0
+var j=0
+// answer checking function
+function check(input) {
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+input.e.value=fix(input.e.value)
+input.f.value=fix(input.f.value)
+input.g.value=fix(input.g.value)
+input.h.value=fix(input.h.value)
+input.i.value=fix(input.i.value)
+input.j.value=fix(input.j.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+
+var a1=input.a.value.indexOf("1",0);	   // Set desired variables
+var a8=input.a.value.indexOf("8",0);
+var b2=input.b.value.indexOf("2",0);
+var b5=input.b.value.indexOf("5",0);
+var c6=input.c.value.indexOf("6",0);	
+var d3=input.d.value.indexOf("3",0);
+var e3=input.e.value.indexOf("3",0);
+var e4=input.e.value.indexOf("4",0);
+var e6=input.e.value.indexOf("6",0);
+var e7=input.e.value.indexOf("7",0);
+var e9=input.e.value.indexOf("9",0);
+var f6=input.f.value.indexOf("6",0);
+var f8=input.f.value.indexOf("8",0);
+var f9=input.f.value.indexOf("9",0);	
+var g6=input.g.value.indexOf("6",0);
+var h7=input.h.value.indexOf("7",0);
+var i9=input.i.value.indexOf("9",0);
+var j4=input.j.value.indexOf("4",0);	
+var j7=input.j.value.indexOf("7",0);
+anscnt=anscnt+1;
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var rsp="";
+
+	if (a1>=0 && a8>=0)  { 
+		k=k+2
+		} else {
+	if (a1>=0 || a8>=0)  { 
+		k=k+1
+var rsp=rsp +" A,"
+		} else {
+	if ( input.a.value == "") { 
+		j=j+1
+}
+}
+}
+	if (b2>=0 && b5>=0)  { 
+		k=k+2
+		} else {
+	if (b2>=0 || b5>=0)  { 
+		k=k+1
+var rsp=rsp +" B,"
+		} else {
+	if ( input.b.value == "") { 
+		j=j+1
+}
+}
+}
+	if (c6>=0)  { 
+		k=k+1
+		} else {
+	if ( input.c.value == "") { 
+		j=j+1
+}
+}
+	if (d3>=0)  { 
+		k=k+1
+		} else {
+	if ( input.d.value == "") { 
+		j=j+1
+}
+}
+	if (e3>=0 && e4>=0 && e6>=0 && e7>=0 && e9>=0)  { 
+		k=k+5
+		} else {
+	if ((e3>=0 && e4>=0 && e6>=0 && e7>=0) || (e4>=0 && e6>=0 && e7>=0 && e9>=0) || (e3>=0 && e6>=0 && e7>=0 && e9>=0) || (e3>=0 && e4>=0 && e7>=0 && e9>=0))  { 
+		k=k+4
+var rsp=rsp +" E,"
+		} else {
+	if ((e3>=0 && e4>=0 && e6>=0) || (e3>=0 && e4>=0 && e7>=0) || (e3>=0 && e4>=0 && e9>=0) || (e3>=0 && e6>=0 && e7>=0) || (e3>=0 && e6>=0 && e9>=0) || (e4>=0 && e6>=0 && e7>=0) || (e4>=0 && e7>=0 && e9>=0) || (e6>=0 && e7>=0 && e9>=0) || (e3>=0 && e7>=0 && e9>=0) || (e4>=0 && e6>=0 && e9>=0))  { 
+		k=k+3
+var rsp=rsp +" E,"
+		} else {
+	if ((e3>=0 && e4>=0) || (e3>=0 && e6>=0) || (e3>=0 && e7>=0) || (e3>=0 && e9>=0) || (e4>=0 && e6>=0) || (e4>=0 && e7>=0) || (e4>=0 && e9>=0) || (e6>=0 && e7>=0) || (e6>=0 && e9>=0) || (e7>=0 && e9>=0))  { 
+		k=k+2
+var rsp=rsp +" E,"
+		} else {
+	if (e3>=0 || e4>=0 || e6>=0 || e7>=0 || e9>=0)  { 
+		k=k+1				
+var rsp=rsp +" E,"
+		} else {
+	if ( input.e.value == "") { 
+		j=j+1
+}
+}
+}
+}
+}
+}
+	if (f6>=0 && f8>=0 && f9>=0)  { 
+		k=k+3
+		} else {
+	if ((f6>=0 && f8>=0) || (f6>=0 && f9>=0) || (f8>=0 && f9>=0))  { 
+		k=k+2
+var rsp=rsp +" F,"
+		} else {
+	if (f6>=0 || f8>=0 || f9>=0)  { 
+		k=k+1
+var rsp=rsp +" F,"
+		} else {
+	if ( input.f.value == "") { 
+		j=j+1
+}
+}
+}
+}
+	if (g6>=0)  { 
+		k=k+1
+		} else {
+	if ( input.g.value == "" ) { 
+		j=j+1
+}
+}
+	if (h7>=0)  { 
+		k=k+1
+		} else {
+	if ( input.h.value == "") { 
+		j=j+1
+}
+}
+	if (i9>=0)  { 
+		k=k+1
+		} else {
+	if ( input.i.value == "") { 
+		j=j+1
+}
+}
+	if (j4>=0 && j7>=0)  { 
+		k=k+2
+		} else {
+	if (j4>=0 || j7>=0)  { 
+		k=k+1
+var rsp=rsp +" J"
+		} else {
+	if ( input.j.value == "") { 
+		j=j+1
+}
+}
+}
+
+if ( rsp=="") {
+rsp="none";
+}
+
+var tot=(input.a.value.length)+(input.b.value.length)+(input.c.value.length)+(input.d.value.length)+
+(input.e.value.length)+(input.f.value.length)+(input.g.value.length)+(input.h.value.length)+
+(input.i.value.length)+(input.j.value.length);
+
+if (j==10) {
+	var txt="You have not provided answers to any of the questions."; 
+anscnt=0
+}else{
+if   (k==19  && tot==19) {
+	var txt="Congratulations!\rYou have answered all questions correctly." ;
+anscnt=2
+}else{
+var wrg=tot-k
+	var txt="Your correct answers total: " + k +" \rYour incorrect answers total:" +wrg+"\rYou have given correct but incomplete answers to questions:" + rsp; 
+}
+}
+input.result.value = txt;
+}
+
+// functions for showing answer, changing image & clearing text
+function giveansw(show) {
+if (anscnt>=2)  {
+var Text=answ
+	}else{
+var Text=noansw
+}
+show.result.value=Text;
+}
+
+function change() {
+if (anscnt>=2)  {
+document.images[0].src=img2.src;
+}
+}
+
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.e.value="";
+	input.f.value="";
+	input.g.value="";
+  input.h.value="";
+	input.i.value="";
+	input.j.value="";
+	input.result.value=" ";
+}
+	//STOP HIDING-->
+</SCRIPT>
+<script id="qa-imgfallback">(function(){if(window.__qaImgFallback)return;window.__qaImgFallback=1;var BOX="display:inline-block;min-width:80px;min-height:24px;padding:6px 10px;margin:2px;border:1px dashed #b9c0c8;border-radius:6px;color:#7a828c;font:italic 13px/1.35 system-ui,Segoe UI,Arial,sans-serif;background:#f6f8fa;vertical-align:middle;text-align:center;";function ph(img){var p=img.__qaPh;if(!p){p=document.createElement("span");p.setAttribute("role","img");p.setAttribute("aria-label","Figure unavailable");p.style.cssText=BOX;p.textContent="Figure unavailable";img.__qaPh=p;if(img.parentNode)img.parentNode.insertBefore(p,img.nextSibling);}p.style.display="";img.style.display="none";img.setAttribute("data-qa-broken","1");}function ok(img){if(img.__qaPh)img.__qaPh.style.display="none";if(img.getAttribute("data-qa-broken")){img.style.display="";img.removeAttribute("data-qa-broken");}}function hook(img){if(img.__qaHooked)return;img.__qaHooked=1;img.addEventListener("error",function(){ph(this);},true);img.addEventListener("load",function(){ok(this);},true);if(img.complete&&img.naturalWidth===0&&img.getAttribute("src"))ph(img);}function scan(){var a=document.getElementsByTagName("img");for(var i=0;i<a.length;i++)hook(a[i]);}if(document.readyState!=="loading")scan();else document.addEventListener("DOMContentLoaded",scan);window.addEventListener("load",scan);})();</script><link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<div class="ctr"><H3>Identifying Functional Groups</H3></div>
+<P>The compounds whose structures are shown below, incorporate a variety of functional groups. The questions on the right ask you to identify which compounds have a specific functional group. For each compound that has the designated group, enter the appropriate number (shown in green) in the answer box. The aromatic rings should not be counted as double bonds.<BR><span class="fc-red">Do not enter superfluous characters, since they will be counted as incorrect answers.</span></P>
+<FORM NAME="identify">
+<div class="ctr"><TABLE CELLSPACING=5>
+<TR VALIGN=TOP><TD WIDTH="60%"><IMG SRC="../Images/funcgrp10.gif"></TD>
+<TD WIDTH="40%" nowrap>
+<span class="fc-blue"><B>A. Which have carbon-carbon double bonds? <INPUT TYPE="text" NAME="a"  SIZE="10">
+<HR>B. Which have a ketone carbonyl group? <INPUT TYPE="text" NAME="b"  SIZE="10">
+<HR>C. Which have an aldehyde carbonyl group? <INPUT TYPE="text" NAME="c"  SIZE="10">
+<HR>D. Which have amino groups? <INPUT TYPE="text" NAME="d"  SIZE="10">
+<HR>E. Which have aromatic rings? <INPUT TYPE="text" NAME="e"  SIZE="10">
+<HR>F. Which have a hydroxyl group? <INPUT TYPE="text" NAME="f"  SIZE="10">
+<HR>G. Which have ether groups? <INPUT TYPE="text" NAME="g"  SIZE="10">
+<HR>H. Which have an ester group? <INPUT TYPE="text" NAME="h"  SIZE="10">
+<HR>I. Which have an amide group? <INPUT TYPE="text" NAME="i"  SIZE="10">
+<HR>J. Which have a carboxylic acid group? <INPUT TYPE="text" NAME="j"  SIZE="10">
+</B></span>
+<HR>
+<INPUT TYPE="button"  VALUE=" Check Answer" onClick=" check(this.form)">
+<INPUT TYPE="reset"  VALUE=" Clear Answers" onClick="clrtxt(this.form)"><BR>
+<TEXTAREA  WRAP NAME="result"  ROWS="5"  COLS="46"> 
+</TEXTAREA><BR>
+<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="change(this.form);giveansw (this.form) "> 
+ </FORM> 
+</TD></TR>
+</TABLE></div>
+ <HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span><BR>
+</BODY></HTML>

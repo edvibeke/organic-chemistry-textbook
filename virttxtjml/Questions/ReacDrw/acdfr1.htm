@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var i="";
+var j="";
+var sma="";
+var smimg="";
+var rgimg="";
+		function process(form){
+	if (i!=0){
+	 i=0
+}
+	if (j!=0){
+	 j=0
+}
+		if (form.sm1[0].checked){
+smimg="CH<SUB>3</SUB>CH<SUB>2</SUB>CH<SUB>2</SUB>CO<SUB>2</SUB>H";
+		i=1
+}
+		if (form.sm1[1].checked){
+smimg="<IMG SRC='../Images/benzacid.gif'>";
+		i=2
+	}
+		if (form.sm1[2].checked){
+smimg="<IMG SRC='../Images/cy5acid.gif'>";
+		i=3
+}
+		if (form.sm1[3].checked){
+smimg="<IMG SRC='../Images/pivacid.gif'>";
+		i=4
+	}	
+		if (form.sm2[0].checked){
+rgimg="(i) LiAlH<SUB>4</SUB> in ether<BR>(ii) aqueous acid&nbsp;workup"
+		j=1
+}
+		if (form.sm2[1].checked){
+rgimg="SOCl<SUB>2</SUB> , heat<BR>(or PCl<SUB>3</SUB>)"
+		j=2
+	}
+		if (form.sm2[2].checked){
+rgimg="CH<SUB>3</SUB>CH<SUB>2</SUB>OH<BR>acid catalyst , heat (-H<SUB>2</SUB>O)"
+		j=3
+}
+		if (form.sm2[3].checked){
+rgimg="CH<SUB>2</SUB>N<SUB>2</SUB><BR>in ether"
+		j=4
+	}
+		if (form.sm2[4].checked){
+rgimg="(i) NaOH (1 eq.)<BR>(ii) C<SUB>6</SUB>H<SUB>5</SUB>CH<SUB>2</SUB>Br"
+		j=5
+}
+		if (form.sm2[5].checked){
+rgimg="Br<SUB>2</SUB> , heat<BR>PBr<SUB>3</SUB> catalyst"
+		j=6
+	}
+		if (form.sm2[6].checked){
+rgimg="(i) CH<SUB>2</SUB>N<SUB>2</SUB> in ether<BR>(ii) 2 CH<SUB>3</SUB>MgBr in ether <BR>(iii) aqueous acid workup"
+		j=7
+}
+		if (form.sm2[7].checked){
+rgimg="(i) SOCl<SUB>2</SUB> , heat<BR>(ii) 2 C<SUB>6</SUB>H<SUB>5</SUB>NH<SUB>2</SUB>"
+		j=8
+	}
+		if (form.sm2[8].checked){
+rgimg="(i) SOCl<SUB>2</SUB> , heat<BR>(ii) AlCl<SUB>3</SUB> , heat<BR> <IMG SRC='../Images/pxylene.gif'> , "
+		j=9
+	}
+
+var smimg=smimg;
+var rgimg=rgimg;
+parent.child2.document.clear(); 
+parent.child2.document.write("<TABLE CELLPADDING=4 width=900 align=center><TR>"); 
+parent.child2.document.write("<TD>Draw a formula for the expected product in the <b>Drawing Window</b> on the left below. Do not draw hydrogens. ");
+parent.child2.document.write(" If one <b>diastereomeric</b> product out of two or more possible diastereomers is favored, draw the favored configuration using the wedge tool. ");
+parent.child2.document.write("<br /> <FONT COLOR='red'> If no reaction is expected, draw the starting structure.</FONT><br>  When you are finished, check your answer by pressing the <b>Check Molecule</b> button. ");
+parent.child2.document.write("</TD></TR></TABLE>");
+
+parent.child2.document.write("<TABLE CELLSPACING=9 WIDTH=900 align-center><TR align=center ><TH rowspan=2>")
+parent.child2.document.write("<applet code='JME.class' name='JME' archive='JME.jar' width=360, height=360>");
+parent.child2.document.write("You have to enable Java and JavaScript on your machine !</applet>");
+parent.child2.document.write("<FORM METHOD='POST' NAME='form' ONSUBMIT='return false;'></TH>");
+parent.child2.document.write("<TD width=30> &nbsp; </TD>");
+parent.child2.document.write("<TD nowrap>"+smimg+"</TD>");
+parent.child2.document.write("<TD>+</TD>");
+parent.child2.document.write("<TD nowrap>"+rgimg+"</TD>");
+parent.child2.document.write("<TD><IMG SRC='../Images/arrow1.gif'></TD>");
+parent.child2.document.write("<TD> <IMG SRC='../Images/question.gif'></TD>");
+parent.child2.document.write("<TD width=30> &nbsp; </TD></tr>");
+parent.child2.document.write(" <tr valign=top><TH colspan=7><FONT COLOR='blue'>The window below will display a response to your answers.</FONT><br /><br />");
+parent.child2.document.write("<TEXTAREA WRAP NAME='result' ROWS='6' COLS='56'></TEXTAREA><br /> <br /><INPUT TYPE='RESET' VALUE='Clear' onClick='parent.window.location.reload(true);back();'>");
+parent.child2.document.write("<input type='hidden' value='' name='smiles'>");
+parent.child2.document.write("<tt> &nbsp; &nbsp; &nbsp; </tt> <input type='button' value='Check Molecule' onClick='parent.child1.submitSmiles();parent.child1.processMolecule1(this.form);'></TH>");
+parent.child2.document.write("</TR></TABLE>");
+
+}
+
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+var text="";
+
+function submitSmiles() {
+  var smiles = parent.child2.document.JME.smiles();
+ parent.child2.document.form.smiles.value = smiles; 
+parent.child2.document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+ 
+  parent.child2.document.form.smiles.value = smiles; 
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+ parent.child2.document.form.smiles.value = smiles; 
+}
+
+function processMolecule1(input) {
+smiles = parent.child2.document.form.smiles.value;
+  if (smiles == "") {  alert("Nothing to process!"); return;
+}
+if (text!="") {
+text="";
+}
+		if (i==1 &&  j==1) {
+sma="CCCCO";
+}
+		if (i==1 &&  j==2) {
+sma="CCCC(=O)Cl";
+}
+		if (i==1 &&  j==3) {
+sma="CCCC(=O)OCC";
+}
+		if (i==1 &&  j==4) {
+sma="CCCC(=O)OC";
+}
+		if (i==1 &&  j==5) {
+sma="CCCC(=O)OCc1ccccc1";
+}
+		if (i==1 &&  j==6) {
+sma="CCC(Br)C(=O)O";
+}
+		if (i==1 &&  j==7) {
+sma="CCCC(C)(C)O";
+}
+		if (i==1 &&  j==8) {
+sma="CCCC(=O)Nc1ccccc1";
+}
+		if (i==1 &&  j==9) {
+sma="CCCC(=O)c1cc(C)ccc1C";
+}
+		if (i==2 &&  j==1) {
+sma="OCc1ccccc1";
+}
+		if (i==2 &&  j==2) {
+sma="O=C(Cl)c1ccccc1";
+}
+		if (i==2 &&  j==3) {
+sma="CCOC(=O)c1ccccc1";
+}
+		if (i==2 &&  j==4) {
+sma="COC(=O)c1ccccc1";
+}
+		if (i==2 &&  j==5) {
+sma="O=C(OCc1ccccc1)c2ccccc2";
+}
+		if (i==2 &&  j==6) {
+sma="O=C(O)c1ccccc1";
+}
+		if (i==2 &&  j==7) {
+sma="CC(C)(O)c1ccccc1";
+}
+		if (i==2 &&  j==8) {
+sma="O=C(Nc1ccccc1)c2ccccc2";
+}
+		if (i==2 &&  j==9) {
+sma="Cc2ccc(C)c(C(=O)c1ccccc1)c2";
+}
+		if (i==3 &&  j==1) {
+sma="OCC1CCCC1";
+}
+		if (i==3 &&  j==2) {
+sma="O=C(Cl)C1CCCC1";
+}
+		if (i==3 &&  j==3) {
+sma="CCOC(=O)C1CCCC1";
+}
+		if (i==3 &&  j==4) {
+sma="COC(=O)C1CCCC1";
+}
+		if (i==3 &&  j==5) {
+sma="O=C(OCc1ccccc1)C2CCCC2";
+}
+		if (i==3 &&  j==6) {
+sma="O=C(O)C1(Br)CCCC1";
+}
+		if (i==3 &&  j==7) {
+sma="CC(C)(O)C1CCCC1";
+}
+		if (i==3 &&  j==8) {
+sma="O=C(Nc1ccccc1)C2CCCC2";
+}
+		if (i==3 &&  j==9) {
+sma="Cc2ccc(C)c(C(=O)C1CCCC1)c2";
+}
+		if (i==4 &&  j==1) {
+sma="CC(C)(C)CO";
+}
+		if (i==4 &&  j==2) {
+sma="CC(C)(C)C(=O)Cl";
+}
+		if (i==4 &&  j==3) {
+sma="CCOC(=O)C(C)(C)C";
+}
+		if (i==4 &&  j==4) {
+sma="COC(=O)C(C)(C)C";
+}
+		if (i==4 &&  j==5) {
+sma="CC(C)(C)C(=O)OCc1ccccc1";
+}
+		if (i==4 &&  j==6) {
+sma="CC(C)(C)C(=O)O";
+}
+		if (i==4 &&  j==7) {
+sma="CC(C)(C)C(C)(C)O";
+}
+		if (i==4 &&  j==8) {
+sma="CC(C)(C)C(=O)Nc1ccccc1";
+}
+		if (i==4 &&  j==9) {
+sma="Cc1ccc(C)c(C(=O)C(C)(C)C)c1";
+}
+
+		if (i==2  && j==6  && smiles=="O=C(Br)c1ccccc1") {
+text="\rThe phosphorus tribromide is present in only a catalytic quantity. The amount of acyl bromide formed will therefore be very small."
+}else{
+text=text;
+}
+		if ((i==4  && j==3  && smiles=="CCOC(=O)C(C)(C)C")||(i==4  && j==3  && smiles=="CC(C)(C)C(=O)O")) {
+text="\rThis carboxyl group is hindered, but slow Fischer esterification takes place."
+}else{ 
+text=text;
+}
+
+if (smiles ==sma) {
+var Txt="Correct Answer!";
+	}else{
+var Txt="Wrong Answer! Try again.";
+}
+	input.result.value = Txt + text;
+}
+// End of hide script comment. -->
+</SCRIPT>
+
+ <link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE> Carboxylic Acid Reactions</TITLE>
+ <body>
+  <div class="ctr"><B><span class="fs-5">Reactions of Carboxylic Acids</span></B></div>
+<FORM>
+<span class="fs-3"><B>In this problem we shall consider four carboxylic acid <span class="fc-blue">reactants:</span></B></span><BR>
+<div class="ctr"><TABLE BORDER=3 align="center"><TR><TD>
+<TABLE BORDER CELLPADDING=6><TR VALIGN=top BGCOLOR="CCFFCC">
+<TH width=160 nowrap>&nbsp; &nbsp; butanoic acid  &nbsp;<INPUT NAME="sm1"  TYPE="radio" checked> &nbsp;</TH>
+<TH width=160 nowrap>&nbsp; &nbsp; benzoic acid &nbsp;<INPUT NAME="sm1"  TYPE="radio"> &nbsp;</TH>
+<TH nowrap> cyclopentanecarboxylic acid &nbsp;<INPUT NAME="sm1"  TYPE="radio"> &nbsp;</TH>
+<TH nowrap> 2,2-dimethyl propanoic acid  &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp;</TH>
+</TR></TABLE>
+</TD></TR></TABLE></div><br>
+<span class="fs-3"><B>These compounds may be reacted with nine different <span class="fc-blue">reagents:</span></B></span><BR>
+<div class="ctr"><TABLE BORDER=3><TR><TD>
+<TABLE BORDER CELLPADDING=8 BGCOLOR="FFCCCC"><TR VALIGN="top">
+<TH WIDTH=220><span class="fs-3"> LiAlH<SUB>4</SUB></span> <span class="fs-2">in ether<BR>(aqueous acid workup)</span></TH>
+<TH><INPUT NAME="sm2" TYPE="radio" checked></TH>
+<TH> </TH>
+<TH WIDTH=220><span class="fs-3">SOCl<SUB>2</SUB></span> <span class="fs-2">& heat<BR> (or PCl<SUB>3</SUB> & heat)</span></TH>
+<TH><INPUT NAME="sm2" TYPE="radio"></TH>
+<TH> </TH>
+<TH WIDTH=220><span class="fs-3">CH<SUB>3</SUB>CH<SUB>2</SUB>OH</span><span class="fs-2"><BR>acid catalyst , heat (&#8211;H<SUB>2</SUB>O)</TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH></TR>
+<TR VALIGN="top">
+<TH><span class="fs-3">CH<SUB>2</SUB>N<SUB>2</SUB></span><span class="fs-2"><BR> in ether</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH><span class="fs-3">(i) NaOH<SUB>&nbsp;</SUB></span><span class="fs-2">(1 equiv.)</span><BR>
+<span class="fs-3">(ii) C<SUB>6</SUB>H<SUB>5</SUB>CH<SUB>2</SUB>Br</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH><span class="fs-3"> Br<SUB>2</SUB></span><span class="fs-2"> & heat<BR>PBr<SUB>3</SUB> catalyst</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH></TR>
+<TR VALIGN="top">
+<TH nowrap><span class="fs-3">(i) CH<SUB>2</SUB>N<SUB>2</SUB></span><span class="fs-2"> in ether</span><BR>
+<span class="fs-3"> &nbsp; &nbsp; (ii) 2 CH<SUB>3</SUB>MgBr</span><span class="fs-2"> in ether</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH nowrap><span class="fs-3">(i) SOCl<SUB>2</SUB></span><span class="fs-2"> & heat</span><BR>
+<span class="fs-3"> &nbsp; &nbsp; (ii) 2 C<SUB>6</SUB>H<SUB>5</SUB>NH<SUB>2</SUB></span> <span class="fs-2">(aniline)</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH nowrap><span class="fs-3">(i) SOCl<SUB>2</SUB></span><span class="fs-2"> & heat</span><BR>
+<span class="fs-3"> &nbsp; &nbsp; (ii) p-xylene</span><span class="fs-2"> & AlCl<SUB>3</SUB> + heat</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH></TR>
+</TABLE></TD></TR></TABLE></div>
+
+<p><table width=960 align="center "><TR valign="bottom"><TD><span class="fc-blue"><B>Select one carboxylic acid from the first group,<br /> and one reagent from the second group.</B></span></td><th><table bgcolor="blue" align="center" border><tr><th>  
+<INPUT TYPE="button" VALUE="Show the Problem"  onClick="process(this.form)"></th></tr></table> </th><td align="right">
+To practice using the drawing program  <A HREF="../MOLEDITOR/sterprct.htm" Target="_top"> Click Here</A> &nbsp; <br>
+To review the chemistry of carboxylic acids  <A HREF="../../crbacid1.htm#crbacd6" Target="_top"> Click Here</A> &nbsp; </TD></TR>
+</TABLE>
+
+
+
+
+ </FORM>
+ </BODY>
+ </HTML>

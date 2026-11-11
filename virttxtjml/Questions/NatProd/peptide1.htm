@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+ //  global variables
+var k=0;
+var i=0;
+var text=" You have found correct sequences for:\r";
+var txt2="";
+var anscnt=0;
+                         //Answer variables
+ var answ="A: Ser-Ala-Gln-Hsr  (or SAQZ) \r"
+ +"B: Ala-Phe-Ser-Ala-Gln-Hsr  (or AFSAQZ) \r"
+ +"C: Ser-Ala-Gln-Met-Ala-Phe  (or SAQMAF) \r"
++"X: Ser-Ala-Gln-Met-Ala-Phe-Ser-Ala-Gln-Met-Ala-Phe  (or SAQMAFSAQMAF) \r"
+ var noansw="You must try to answer these questions three times before viewing the answers.\rConsider the symmetry implications of the chymotrypsin cleavage."
+
+  function process(form) {
+		if (form.select[1].checked){
+		k=1
+}else {
+		k=0
+}
+}
+
+                        // Set function code
+  function strbx(input) {
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+                        // Set desired answer variables.  xx= ----("Y",0)
+var aa=input.a.value.toUpperCase().indexOf("SERALAGLNHSR",0);
+var ab=input.a.value.toUpperCase().indexOf("SAQZ",0);
+var ba=input.b.value.toUpperCase().indexOf("ALAPHESERALAGLNHSR",0);
+var bb=input.b.value.toUpperCase().indexOf("AFSAQZ",0);
+var ca=input.c.value.toUpperCase().indexOf("SERALAGLNMETALAPHE",0);	
+var cb=input.c.value.toUpperCase().indexOf("SAQMAF",0);
+var da=input.d.value.toUpperCase().indexOf("SERALAGLNMETALAPHESERALAGLNMETALAPHE",0);
+var db=input.d.value.toUpperCase().indexOf("SAQMAFSAQMAF",0);
+var al=(input.a.value.length);
+var bl=(input.b.value.length);
+var cl=(input.c.value.length);
+var dl=(input.d.value.length);
+var txta="";
+var txtb="";
+var txtc="";
+var txtx="";
+	if (i!=0){
+	 i=0
+}
+anscnt=anscnt+1;
+                      
+ if ((input.a.value=="") && (input.b.value=="") && (input.c.value=="") && (input.d.value=="")) {
+input.result.value = "You have not provided any answers.";
+anscnt=0
+}else{
+	if (((k==0 && aa>=0 && al==12)||(k==1 && ab>=0 && al==4)) && ((k==0 && ba>=0 && bl==18)||(k==1 && bb>=0 && bl==6)) && ((k==0 && ca>=0 && cl==18)||(k==1 && cb>=0 && cl==6)) && ((k==0 && da>=0 && dl==36)||(k==1 && db>=0 && dl==12))) {
+input.result.value ="Congratulations! You have answered all questions correctly."
+anscnt=3
+}else{
+	if ((k==0 && aa>=0 && al==12)||(k==1 && ab>=0 && al==4)) {
+		var txta = "Peptide A,"
+i=i+1
+}
+		if ((k==0 && ba>=0 && bl==18)||(k==1 && bb>=0 && bl==6)) {
+		var txtb = "Peptide B,"
+i=i+1
+}
+	if ((k==0 && ca>=0 && cl==18)||(k==1 && cb>=0 && cl==6)) {
+		var txtc = "Peptide C,"
+i=i+1
+}		
+	if ((k==0 && da>=0 && dl==36)||(k==1 && db>=0 && dl==12)) {
+		var txtx = "Peptide X"
+i=i+1
+}
+
+if (i==0) {
+input.result.value = "Your answer(s) is incorrect.\rTry again."
+}else{
+
+     	input.result.value = text + txta + txtb +txtc + txtx 
+}
+}
+}
+}
+
+ 
+ function giveansw(show) {
+
+ if (anscnt>=3)  {
+ var txt=answ
+ 	}else{
+ var txt=noansw
+
+} 
+ show.result.value=txt
+ }
+ 
+ function clrbx(input) {   // Clear all text windows.
+ 	input.a.value="";	
+ 	input.b.value="";
+ 	input.c.value="";
+ 	input.d.value="";
+ 	input.result.value=" ";
+ }
+// End of hide script comment. -->
+</SCRIPT>
+ <link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Peptide Structure</TITLE>
+ <body>
+<A NAME="start"></A>
+ <div class="ctr"><H3>Determining the Primary Structure of a Peptide</H3></div>
+
+<P>Amino acid analysis of a dodecapeptide <B>X</B> produced the following mixture: <b>4Ala, 2Gln, 2Met, 2Phe & 2Ser</b>. <BR>N-Terminal analysis identified the sequence: <B>Ser-Ala-Gln---</B>.  C-Terminal analysis identified:  <B>---Ala-Phe</B>. Selective peptide cleavage gave the following results.</P>
+<P><B>Cyanogen bromide</B> treatment generates three fragments:<br>
+ &nbsp; &nbsp; &nbsp; A dipeptide, <B>Ala-Phe</B>.<br>
+ &nbsp; &nbsp; &nbsp; A tetrapeptide (<B>A</B>) having a homoserine (Hsr) at the C-terminus.<br>
+ &nbsp; &nbsp; &nbsp; A hexapeptide (<B>B</B>) having a homoserine (Hsr) at the C-terminus.</p>
+<P><B>Chymotrypsin</B> gave a single hexapeptide (<B>C</B>) and no other products.</P> 
+
+ <FORM>
+<TABLE><TR><TH>Select an amino acid notation:</TH><TH> </TH>
+<TH><INPUT NAME="select"  TYPE="radio"  checked> &nbsp; Three letter abbreviation<BR>
+<INPUT NAME="select"  TYPE="radio"> &nbsp; &nbsp; One letter abbreviation</TH></TR></TABLE>
+<P>Using the notation selected above, write an amino acid sequence for each of the unknown peptides in the designated answer box. You may run the letter abbreviations together, or separate them by spaces or dashes.</P>
+
+ <span class="fc-blue"><B>A</B></span> ....<INPUT TYPE="text" NAME="a" SIZE="24"> &nbsp; Use Hsr or Z as a symbol for homoserine.<BR><BR>
+ <span class="fc-blue"><B>B</B></span> ....<INPUT TYPE="text" NAME="b" SIZE="40"> &nbsp; Use Hsr or Z as a symbol for homoserine.<BR><BR>
+ <span class="fc-blue"><B>C</B></span> ....<INPUT TYPE="text" NAME="c" SIZE="40"><BR><BR>
+<span class="fc-blue"><B>D</B></span> ....<INPUT TYPE="text" NAME="d" SIZE="50">
+
+ <P>
+ <TABLE><TR><TD>
+ <TEXTAREA WRAP NAME="result" ROWS="5" COLS="76">
+ </TEXTAREA> &nbsp; </TD><TD> </TD><TD>
+<INPUT TYPE="button" VALUE="Check Answers" onClick="process(form); strbx(this.form)">&nbsp;<BR><BR>
+<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)"><BR><BR>
+ <INPUT TYPE="button"  VALUE=" Clear " onClick="clrbx(this.form)"></TD></TR></TABLE>
+</FORM>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+ </BODY>
+ </HTML>

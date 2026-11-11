@@ -1,0 +1,593 @@
+<!doctype html>
+
+<META NAME="author" content="The Edvibe Team">
+<META NAME="subject" content="Virtual Text of Organic Chemistry">
+<meta name="description" content="Cahn Ingold Prelog nomenclature. diastereoisomerism, Fischer projections, meso compounds, conformational enantiomorphism, resolution">
+<meta name="keywords" content="stereoisomerism, stereo notation">
+<META NAME="ROBOTS">
+
+<html lang="en">
+<HEAD>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Styles/modern.css">
+<Title>Stereoisomers</Title>
+
+
+
+<script language=javascript> <!--Hide
+
+function chse1(exmp) {
+var phos=window.open('illust2.htm#top1','cbhelp','toolbar=yes,menubar=no,status=no,scrollbars=yes,width=760,height=650'); window.location='sterism3.htm#isom14'
+}
+
+	var strScript;
+	var Scriptx;
+ var intro="<FONT SIZE=1>A response to your selection will appear here.<br>A sequence assignment will be shown above.</font>";
+	var molec="";
+var rgt="<font color=blue><b>Correct!</b></font><br>The chiral center is light green.";
+var wrg="<font color=red><b>Wrong!</b></font><br>The chiral center is light green.";
+var rgta="<font color=blue><b>Correct!</b></font><br>This compound is achiral.";
+var wrga="<font color=red><b>Wrong!</b></font><br>This compound is achiral";
+
+function process(form) {
+	if (form.prb[0].checked) {
+	molec=1;
+}
+	if (form.prb[1].checked) {
+molec=2;
+}
+	if (form.prb[2].checked) {
+molec=3;
+}
+	if (form.prb[3].checked) {
+molec=4;
+}
+	if (form.prb[4].checked) {
+molec=5;
+}
+	if (form.prb[5].checked) {
+	molec=6;
+}
+	if (form.prb[6].checked) {
+	molec=7;
+}
+	if (form.prb[7].checked) {
+	molec=8;
+}
+	if (form.prb[8].checked) {
+	molec=9;
+}
+	if (form.prb[9].checked) {
+	molec=10;
+}
+if (form.prb[10].checked) {
+	molec=11;
+}
+if (form.prb[11].checked) {
+	molec=12;
+}
+
+
+
+	function LoadApplet(){
+	//alert(strScript);
+	document.getElementById("fixapplt").innerHTML= (
+   "<applet " + 
+      "name='jmol' " + 
+      "id='jmol'  " + 
+      "code='JmolApplet' " + 
+      "archive='JmolApplet.jar' " + 
+      "width='300' height='300' " + 
+      "mayscript='true'>" + 
+	  "<param name = 'emulate' value ='chime' /> " +
+      "<param name='progressbar' value='true' /> " + 
+      "<param name='progresscolor' value='#0000FF' /> " +  
+      "<param name='boxmessage' value='Model Loading...' /> " + 
+      "<param name='boxbgcolor' value='#FFFFFF' /> " + 
+      "<param name='boxfgcolor' value='#112233' /> " + 
+      "<param name='bgcolor' value='#FFFFFF' /> " + 
+      "<param name='frank' value='true' /> " + 
+      "<param name='debugscript' value='true' /> " + 
+     "<param name='script' value= '" + strScript +"'/> " + 
+   "</applet>"
+);
+		return;
+}	
+
+document.getElementById("txtarea").innerHTML= (intro);
+
+	MoleculePath = "Structures/M"+molec+".pdb";
+		
+			strScript = 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all; cpk 0.5; select Hydrogen; color atoms cyan; select Chlorine; color atoms mediumseagreen; select Bromine, Chlorine, Fluorine, Sulfur; label %e; color label black; set labeloffset 0 0;  select all; move 100 90 0 0 0 0 0 0 2; echo on;  set echo top center; color echo maroon; echo Example '+molec+'';
+	LoadApplet();
+	}
+
+
+
+function changeDisp()  {
+	function LoadApplet2(){
+	//alert(Scriptx);
+	document.getElementById("fixapplt").innerHTML= (
+   "<applet " + 
+      "name='jmol' " + 
+      "id='jmol'  " + 
+      "code='JmolApplet' " + 
+      "archive='JmolApplet.jar' " + 
+      "width='300' height='300' " + 
+      "mayscript='true'>" + 
+	  "<param name = 'emulate' value ='chime' /> " +
+      "<param name='progressbar' value='true' /> " + 
+      "<param name='progresscolor' value='#0000FF' /> " +  
+      "<param name='boxmessage' value='Model Loading...' /> " + 
+      "<param name='boxbgcolor' value='#FFFFFF' /> " + 
+      "<param name='boxfgcolor' value='#112233' /> " + 
+      "<param name='bgcolor' value='#FFFFFF' /> " + 
+      "<param name='frank' value='true' /> " + 
+      "<param name='debugscript' value='true' /> " + 
+     "<param name='script' value= '" + Scriptx +"'/> " + 
+   "</applet>"
+);
+		return;
+}	
+
+
+	MoleculePath = "Structures/M"+molec+".pdb";
+
+if (molec==1) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=2; color atoms lawngreen; select atomno=6; label 1; font label 20; color label yellow; select atomno=3; label 2; font label 20; color label yellow; select atomno=1; label 3; font label 20; color label yellow; select atomno=9; label 4; font label 20; color label yellow;  select all;  set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Example '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==2) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=4; color atoms lawngreen; select atomno=11; label 1; font label 20; color label yellow; select atomno=1; label 2; font label 20; color label yellow; select atomno=5; label 3; font label 20; color label yellow; select atomno=7; label 4; font label 20; color label yellow; select all;  set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Example '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==3) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=11; color atoms lawngreen; select atomno=2; label 1; font label 20; color label yellow; select atomno=8; label 2; font label 20; color label yellow; select atomno=13; label 3; font label 20; color label yellow; select atomno=12; label 4; font label 20; color label yellow; select all;  set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Example '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==4) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan;  select (atomno=2, atomno=5, atomno=7, atomno=8, atomno=13, atomno=21, atomno=22, atomno=26);  color atoms black; select all;   move 100 90 0 0 0 0 0 0 2; echo on;  set echo top center; color echo black; echo Example '+molec+'; set echo bottom left; font echo 14; color echo black; echo The Black Chains are Identical';
+}
+if (molec==5) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=15; color atoms lawngreen; select atomno=12; label 1; font label 20; color label yellow; select atomno=14; label 2; font label 20; color label yellow; select atomno=16; label 3; font label 20; color label yellow; select atomno=25; label 4; font label 20; color label yellow; select all; zoom 120; set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Example '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==6) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=1; color atoms lawngreen; select atomno=9; label 1; font label 20; color label yellow; select atomno=2; label 2; font label 20; color label yellow; select atomno=5; label 3; font label 20; color label yellow; select atomno=10; label 4; font label 20; color label yellow; select all; zoom 120; set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Example '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==7) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan;  select (atomno=2, atomno=3, atomno=4, atomno=6);  color atoms black; select all;   echo on;  set echo top center; color echo black; echo Example '+molec+'; set echo bottom left; font echo 14; color echo black; echo The Black Segments are Identical';
+}
+if (molec==8) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=2; color atoms lawngreen; select atomno=7; color atoms mediumseagreen; label 1; font label 20; color label yellow; select atomno=3; label 2; font label 20; color label yellow; select atomno=1; label 3; font label 20; color label yellow; select atomno=11; label 4; font label 20; color label yellow; select all; zoom 120; set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Example '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==9) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=6; color atoms lawngreen; select atomno=18; label 1; font label 20; color label yellow; select atomno=5; label 2; font label 20; color label yellow; select atomno=7; label 3; font label 20; color label yellow; select atomno=12; label 4; font label 20; color label yellow; select all;  set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Example '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==10) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan;  select atomno=26; color atoms mediumseagreen; select (atomno=5, atomno=3, atomno=12, atomno=15);  color atoms black; select all;   echo on;  set echo top center; color echo black; echo Example '+molec+'; set echo bottom left; font echo 14; color echo black; echo The Black Segments are Identical';
+}
+if (molec==11) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=7; color atoms lawngreen; select atomno=8; label 1; font label 20; color label yellow; select atomno=14; label 2; font label 20; color label yellow; select atomno=6; label 3; font label 20; color label yellow; select atomno=22; label 4; font label 20; color label yellow; select all; zoom 120; set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Example '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==12) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=6; color atoms lawngreen; select atomno=5; label 1; font label 20; color label yellow; select atomno=11; label 2; font label 20; color label yellow; select atomno=7; label 3; font label 20; color label yellow; select atomno=10; label 4; font label 20; color label yellow; select all; set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Example '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+
+
+
+	LoadApplet2();
+} 
+
+var k="";
+function radio2(form)  {
+	if (k!=0){
+		 k=0
+}
+ 	if (form.cnfg[0].checked) {
+	k=1;
+}
+	if (form.cnfg[1].checked) {
+k=2;
+}
+	if (form.cnfg[2].checked) {
+k=3;
+}
+}
+
+
+
+
+function chkans(show) {
+if ((molec==1)&&(k==1))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==1) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==2)&&(k==1))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==2) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==3)&&(k==1))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==3) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==4)&&(k==3))  {
+document.getElementById("txtarea").innerHTML= (rgta);
+	}else{
+if (molec==4) {
+document.getElementById("txtarea").innerHTML= (wrga);
+}
+if ((molec==5)&&(k==1))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==5) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==6)&&(k==1))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==6) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==7)&&(k==3))  {
+document.getElementById("txtarea").innerHTML= (rgta);
+	}else{
+if (molec==7) {
+document.getElementById("txtarea").innerHTML= (wrga);
+}
+if ((molec==8)&&(k==2))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==8) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==9)&&(k==2))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==9) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==10)&&(k==3))  {
+document.getElementById("txtarea").innerHTML= (rgta);
+	}else{
+if (molec==10) {
+document.getElementById("txtarea").innerHTML= (wrga);
+}
+if ((molec==11)&&(k==1))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==11) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==12)&&(k==1))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==12) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+
+
+
+var k=1;
+function chng1() {
+k=k+1
+document.images[14].src="Images/biphen"+k+".gif"
+if (k>=2) {
+k=0
+}
+}
+
+var i=1;
+function chng2() {
+i=i+1
+document.images[15].src="Images/biphenl"+i+".gif"
+if (i>=3) {
+i=0
+}
+}
+
+var m=1;
+function chng3() {
+m=m+1
+document.images.config.src="Images/RSnote"+m+".gif"
+if (m>=2) {
+m=0
+}
+}
+
+
+
+// --> </script>
+<link rel="stylesheet" href="Styles/edvibe.css">
+<script src="Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<FORM NAME="info">
+
+<A  NAME="isom13"></A>
+
+<BR><P><TABLE WIDTH="100%" CELLPADDING="2"><TR><TH BGCOLOR="green" ALIGN=center><H3><span class="fc-white">Chiral Configurations</span></H3></TH></TR></TABLE></P>
+<div class="ctr"><span class="fc-maroon"><H2>Designating the Configuration of Chiral Centers</H2></span></div>
+<P>Although enantiomers may be identified by their characteristic specific rotations, the assignment of a unique configuration to each has not yet been discussed. We have referred to the mirror-image configurations of enantiomers as "right-handed" and "left-handed", but deciding which is which is not a trivial task. An early procedure assigned a <B>D</B> prefix to enantiomers chemically related to a right-handed reference compound and a <B>L</B> prefix to a similarly related left-handed group of enantiomers. Although this notation is still applied to carbohydrates and amino acids, it required chemical transformations to establish group relationships, and proved to be ambiguous in its general application.  A final solution to the vexing problem of configuration assignment was devised by three European chemists: R. S. Cahn, <A HREF="http://www.chemistry.msu.edu/Portraits/PortraitsHH_Detail.asp?HH_LName=Ingold">C. K. Ingold</a> and <A HREF="http://www.chemistry.msu.edu/Portraits/PortraitsHH_Detail.asp?HH_LName=Prelog">V. Prelog</a>. The resulting nomenclature system is sometimes called the <B>CIP</B> system or the <B>R-S</B> system.<BR>
+In the CIP system of nomenclature, each chiral center in a molecule is assigned a prefix (R or S), according to whether its configuration is right- or left-handed. No chemical reactions or interrelationship are required for this assignment. The symbol <B>R</B> comes from the Latin <I>rectus</I> for right, and <B>S</B> from the Latin <I>sinister</I> for left. The assignment of these prefixes depends on the application of two rules: &nbsp; 
+<B>The Sequence Rule</B> and <B> The Viewing Rule</B>.<BR>
+The sequence rule is the same as that used for assigning <B>E-Z</B> prefixes to <A HREF="sterisom.htm#isom2">double bond stereoisomers</A>. Since most of the chiral stereogenic centers we shall encounter are asymmetric carbons, all four different substituents must be ordered in this fashion.
+
+<P><div class="ctr"><TABLE WIDTH=920 BORDER=4 CELLPADDING=4 BGCOLOR="#ffebcf"><TR><TD><div class="ctr"><span class="fc-maroon"><H4>The Sequence Rule for Assignment of Configurations to Chiral Centers</H4></span></div>
+<span class="fc-blue"><dir>
+<p><B>Assign sequence priorities to the four substituents by looking at the atoms attached directly to the chiral center.</B> </p><dir>
+<p><b>1.</b>&nbsp; The higher the atomic number of the immediate substituent atom, the higher the priority. <BR>For example, H&#8211;  &nbsp;&lt;&nbsp; C&#8211;  &nbsp;&lt;&nbsp; N&#8211; &nbsp;&lt;&nbsp; O&#8211;  &nbsp;&lt;&nbsp; Cl&#8211;. 
+(Different isotopes of the same element are assigned a priority according to their atomic mass.)<br>
+<b>2.</b>&nbsp;  If two substituents have the same immediate substituent atom, <br>evaluate atoms progressively further away from the chiral center until a difference is found.<BR>
+For example, CH<SUB>3</SUB>&#8211; &nbsp;&lt;&nbsp;  C<SUB>2</SUB>H<SUB>5</SUB>&#8211; &nbsp;&lt;&nbsp;  ClCH<SUB>2</SUB>&#8211; &nbsp;&lt;&nbsp;  BrCH<SUB>2</SUB>&#8211; &nbsp;&lt; &nbsp;CH<SUB>3</SUB>O&#8211;. <br>
+<b>3.</b>&nbsp; If double or triple bonded groups are encountered as substituents, they are treated as an equivalent set of single-bonded atoms.<BR>
+For example, C<SUB>2</SUB>H<SUB>5</SUB>&#8211; &nbsp;&lt;&nbsp;  CH<SUB>2</SUB>=CH&#8211; &nbsp;&lt;&nbsp;  HC&#8801;C&#8211; <br>
+</dir></dir></TD></TR>
+</TABLE></P><h3>The Viewing Rule</h3> </div>
+<P>Once the relative priorities of the four substituents have been determined, the chiral center must be viewed from the side opposite the lowest priority group. If we number the substituent groups from 1 to 4, with 1 being the highest and 4 the lowest in priority sequence, the two enantiomeric configurations are shown in the following diagram along with a viewers eye on the side opposite substituent #4.</P>
+<P ALIGN=center><IMG SRC="Images/viewrule.gif"></P>
+<P>Remembering the geometric implication of <A HREF="sterisom.htm#isom5">wedge and hatched bonds</A>, an observer (the eye) notes whether a curved arrow drawn from the # 1 position to the # 2 location and then to the # 3 position turns in a clockwise or counter-clockwise manner. If the turn is clockwise, as in the example on the right, the configuration is classified <B>R</B>. If it is counter-clockwise, as in the left illustration, the configuration is <B>S</B>. Another way of remembering the viewing rule, is to think of the asymmetric carbon as a steering wheel. The bond to the lowest priority group (# 4) is the steering column, and the other bonds are spokes on the wheel. If the wheel is turned from group # 1 toward group # 2, which in turn moves toward group # 3, this would either negotiate a right turn (<I>R</I>) or a left turn (<I>S</I>). This model is illustrated below for a right-handed turn, and the corresponding (<I>R</I>)-configurations of lactic acid and carvone are shown to its right. The stereogenic carbon atom is colored magenta in each case, and the sequence priorities are shown as light blue numbers. Note that if any two substituent groups on a stereogenic carbon are exchanged or switched, the configuration changes to its mirror image.</P>
+<A  NAME="isom13b"></A>
+<P ALIGN=center><IMG SRC="Images/RSexamp1.gif"></P>
+<P>The sequence order of the substituent groups in lactic acid should be obvious, but the carvone example requires careful analysis. The hydrogen is clearly the lowest priority substituent, but the other three groups are all attached to the stereogenic carbon by bonds to carbon atoms (colored blue here). Two of the immediate substituent species are methylene groups (CH<SUB>2</SUB>), and the third is a doubly-bonded carbon. Rule # 3 of the sequence rules allows us to order these substituents. The carbon-carbon double bond is broken so as to give imaginary single-bonded carbon atoms (the phantom atoms are colored red in the equivalent structure). In this form the double bond assumes the priority of a 3&#186;-alkyl group, which is greater than that of a methylene group. To establish the sequence priority of the two methylene substituents (both are part of the ring), we must move away from the chiral center until a point of difference is located. This occurs at the next carbon, which on one side is part of a carbonyl double bond (C=O), and on the other, part of a carbon-carbon double bond. Rule # 3 is again used to evaluate the two cases. The carbonyl group places two oxygens (one phantom) on the adjacent carbon atom, so this methylene side is ranked ahead of the other.<BR>
+An interesting feature of the two examples shown here is that the R-configuration in both cases is levorotatory (-) in its optical activity. The mirror-image S-configurations are, of course, dextrorotatory (+). <B>It is important to remember that there is no simple or obvious relationship between the R or S designation of a molecular configuration and the experimentally measured specific rotation of the compound it represents</B>. In order to determine the true or "absolute" configuration of an enantiomer, as in the cases of lactic acid and carvone reported here, it is necessary either to relate the compound to a known reference structure, or to conduct a rather complex X-ray analysis on a single crystal of the sample.</P>
+<P> <span class="fc-maroon">The configurations of lactic acid and carvone enantiomers may be examined as interactive models by </span><INPUT TYPE="button"  NAME="wind" VALUE=" Clicking Here" onClick=
+"window.open('RSexamp.htm','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=880,height=900')">.</P>
+<hr>
+<A  NAME="isom13c"></A>
+<p><table cellpadding=4 width=95%><tr><td valign="middle">The module on the right provides examples of chiral and achiral molecules for analysis. These are displayed as three-dimensional structures which may be moved about and examined from various points of view. By using this resource the reader's understanding of configurational notation may be tested.<br>
+This visualization makes use of the Jmol applet. With some browsers it may be necessary to click a button twice for action.<p></td><td width="520">
+<table width="480" border="1">
+  <tr>
+    <td colspan="2" height="280" width="356" id = "fixapplt" align="center"><h2><span class="fc-maroon">Select an Example</span></h2><span class="fs-4">Click the <span class="fc-blue">Show Example</span> Button</span><table align="center" cellpadding="3"><tr><td><p align="left"><span class="fs-2">A three-dimensional molecular structure will be displayed here, and may be moved about with the mouse. Carbon is gray, hydrogen is cyan, oxygen is red, and nitrogen is dark blue. Other atoms are colored differently and are labeled.<br>Characterize the configuration of the molecule by selecting one of the three terms listed below. A response to your answer will be presented by clicking the <span class="fc-green"><b>Check Answer</b></span> button.</span></p></td></tr></table></td>
+<td rowspan="3" width="120" ><p><input name="prb" type="radio" value="1" checked>Example 1 <br>
+<input name="prb" type="radio" value="2">Example 2 <br><input name="prb" type="radio" value="3">Example 3 <br><input name="prb" type="radio" value="4">Example 4 <br><input name="prb" type="radio" value="5">Example 5 <br><input name="prb" type="radio" value="6">Example 6 <br><input name="prb" type="radio" value="7">Example 7 <br><input name="prb" type="radio" value="8">Example 8<br><input name="prb" type="radio" value="9">Example 9<br><input name="prb" type="radio" value="10">Example 10<br><input name="prb" type="radio" value="11">Example 11<br><input name="prb" type="radio" value="12">Example 12</td>
+  </tr>
+<tr>
+    <td width="252" height = "36"  align="center" >
+        <input name="cnfg" type="radio" value="S"><b>S &nbsp; &nbsp; 
+        <input name="cnfg" type="radio" value="R">R &nbsp; &nbsp; 
+		<input name="cnfg" type="radio" value="Achir">Achiral</b></td>
+    <td width="104" height = "36" align="center" bgcolor="blue"><input name="new" type="reset" value="Show Example" onClick ="process(this.form);reset;"></td>
+  </tr>
+  <tr>
+    <td  width="252" height="36" align="center"  id="txtarea" >
+   <span class="fs-1">A response to your selection will appear here.<br>A sequence assignment will be shown above.</span>
+   </td>
+    <td height="36" align="center" bgcolor="green" > <input name="report" type="button" id="report" value="Check Answer" onClick ="radio2(this.form);chkans(this.form);reset;changeDisp();"></td>
+  </tr>
+</table>
+</td></tr></table></p>
+<p>Configurational drawings of chiral molecules sometimes display structures in a way that does not permit an easy application of the viewing rule.  In the example of carvone, shown above, the initial formula directed the lowest priority substituent (H) toward the viewer, requiring either a reorientation display or a very good sense of three-dimensional structure on the part of the reader.  The Fischer projection formulas, <A HREF="#isom16">described later</a>, are another example of displays that challenge even experienced students.  A useful mnemonic, suggested by Professor Michael Rathke, is illustrated below.  Here a stereogenic tetrahedral carbon has four different substituents, designated <b>1, 2, 3 & 4</b>.  If we assume that these numbers represent the sequence priority of these substituents (1 > 2 > 3 > 4), then the <i>R</i> and <i>S</i> configurations are defined.</p>
+<P ALIGN=center><A HREF="javascript:chng3()"><IMG SRC="Images/RSnote1.gif" name="config" border=0></a></P>
+<p>The viewing rule states that when the lowest priority substituent (4) is oriented behind the triangular face defined by the three higher priority substituents (shaded light gray here), a clockwise sequential arrangement of these substituents (1, 2 & 3) is defined as <i>R</i>, and a counter-clockwise sequence as <i>S</i>. <br /> Now a tetrahedral structure may be viewed from any of the four triangular faces, and the symmetry of the system is such that a correct R/S assignment is made if the remote out-of plane group has an even number sequence priority (2 or 4), whereas the wrong assignment results when the out-of plane group has an odd priority (1 or 3).  Once one recognizes this relationship, the viewing options are increased and a configurational assignment is more easily achieved.  For an example, click on the diagram to see the 1:3:4-face, shaded light gray. oriented in front of substituent 2.  Note that the R/S assignment is unchanged.</p> 
+
+<A  NAME="isom14"></A>
+<BR><P><TABLE WIDTH="100%" CELLPADDING="2"><TR><TH BGCOLOR="green" ALIGN=center><H3><span class="fc-white">Two or More Chiral Centers</span></H3></TH></TR></TABLE></P>
+<div class="ctr"><span class="fc-maroon"><H3>Compounds Having Two or More Chiral Centers</H3></span></div>
+<P>The Chinese shrub Ma Huang (<I>Ephedra vulgaris</I>) contains two physiologically active compounds <B>ephedrine</B> and <B>pseudoephedrine</B>. Both compounds are stereoisomers of 2-methylamino-1-phenyl-1-propanol, and both are optically active, one being levorotatory and the other dextrorotatory. Since the properties of these compounds (see below) are significantly different, they cannot be enantiomers. How, then, are we to classify these isomers and others like them?</P>
+<p><div class="ctr"><TABLE><TR><TD>
+Ephedrine from Ma Huang:</TD><TD> m.p. 35 - 40 &#186; C, &nbsp; [&#945;]<SUB>D</SUB> = &#8211;41&#186;, &nbsp; moderate water solubility </TD>
+<TD>[this isomer may be referred to as (&#8211;)-ephedrine]</TD></TR>
+<TR><TD>Pseudoephedrine from Ma Huang:</TD><TD> m.p. 119 &#186; C, &nbsp; [&#945;]<SUB>D</SUB> = +52&#186;, &nbsp; relatively insoluble in water </TD><TD>[this isomer may be referred to as (+)-pseudoephedrine]</TD></TR>   
+</TABLE></div></p>
+<P>Since these two compounds are optically active, each must have an enantiomer. Although these missing stereoisomers were not present in the natural source, they have been prepared synthetically and have the expected identical physical properties and opposite-sign specific rotations with those listed above. The structural formula of 2-methylamino-1-phenylpropanol has two stereogenic carbons (#1 & #2). Each may assume an R or S configuration, so there are four stereoisomeric combinations possible. These are shown in the following illustration, together with the assignments that have been made on the basis of chemical interconversions.</P> 
+<P ALIGN=center><IMG SRC="Images/ephediso.gif"></P>
+<P><B><span class="fc-blue">As a general rule, a structure having <U>n</U> chiral centers will have 2<SUP>n</SUP> possible combinations of these centers</span></B>. Depending on the overall symmetry of the molecular structure, some of these combinations may be identical, but in the absence of such identity, we would expect to find 2<SUP>n</SUP> stereoisomers. Some of these stereoisomers will have enantiomeric relationships, but enantiomers come in pairs, and non-enantiomeric stereoisomers will therefore be common. We refer to such stereoisomers as <B>diastereomers</B>. In the example above, either of the ephedrine enantiomers has a diastereomeric relationship with either of the pseudoephedrine enantiomers.</P>
+<p>For an interesting example illustrating the distinction between a chiral center and an asymmetric carbon
+<A HREF= "javascript:chse1('illust2.htm#top1');">Click Here</A>.</p>
+
+<P> <span class="fc-maroon">The configurations of ephedrine and pseudoephedrine enantiomers may be examined as interactive models by </span><INPUT TYPE="button"  NAME="wind" VALUE=" Clicking Here" onClick=
+"window.open('ephedrin.htm','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=880,height=900')">.</P>
+
+<A  NAME="isom15"></A>
+<BR><P><TABLE WIDTH="100%" CELLPADDING="2"><TR><TH BGCOLOR="green" ALIGN=center><H3><span class="fc-white">Stereogenic Nitrogen Atoms</span></H3></TH></TR></TABLE></P>
+<div class="ctr"><span class="fc-maroon"><H3>Stereogenic Nitrogen</H3></span></div>
+
+<P>A close examination of the ephedrine and pseudoephedrine isomers suggests that another stereogenic center, the nitrogen, is present. As noted earlier, single-bonded nitrogen is pyramidal in shape, with the non-bonding electron pair pointing to the unoccupied corner of a tetrahedral region. Since the nitrogen in these compounds is bonded to three different groups, its configuration is chiral. The non-identical mirror-image configurations are illustrated in the following diagram (the remainder of the molecule is represented by R, and the electron pair is colored yellow). If these configurations were stable, there would be four additional stereoisomers of ephedrine and pseudoephedrine. However, pyramidal nitrogen is normally not  configurationally stable. It rapidly inverts its configuration (equilibrium arrows) by passing through a planar, sp<SUP>2</SUP>-hybridized transition state, leading to a mixture of interconverting R and S configurations. If the nitrogen atom were the only chiral center in the molecule, a 50:50 (racemic) mixture of R and S configurations would exist at equilibrium. If other chiral centers are present, as in the ephedrin isomers, a mixture of diastereomers will result.  In any event, <b>nitrogen groups such as this, if present in a compound, do not contribute to isolable stereoisomers.</b></P>
+<P ALIGN=center><IMG SRC="Images/nitroinv.gif"></P>
+
+<P> <span class="fc-maroon">The inversion of pyramidal nitrogen in ammonia may be examined  by </span><INPUT TYPE="button"  NAME="wind" VALUE=" Clicking Here" onClick=
+"window.open('ammonia.htm','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=560,height=640')">.</P>
+
+<A  NAME="isom16"></A>
+<BR><P><TABLE WIDTH="100%" CELLPADDING="2"><TR><TH BGCOLOR="green" ALIGN=center><H3><span class="fc-white">Fischer Projection Formulas</H3></span></TH></TR></TABLE></P>
+<div class="ctr"><span class="fc-maroon"><H3>Fischer Projection Formulas</H3></span></div>
+<P>The problem of drawing three-dimensional configurations on a two-dimensional surface, such as a piece of paper, has been a long-standing concern of chemists. The wedge and hatched line notations we have been using are effective, but can be troublesome when applied to compounds having many chiral centers. As part of his Nobel Prize-winning research on carbohydrates, the great German chemist <A HREF="http://www.chemistry.msu.edu/Portraits/PortraitsHH_Detail.asp?HH_LName=FischerE">Emil Fischer</a>, devised a simple notation that is still widely used. In a Fischer projection drawing, the four bonds to a chiral carbon make a cross with the carbon atom at the intersection of the horizontal and vertical lines. The two horizontal bonds are directed toward the viewer (forward of the stereogenic carbon). The two vertical bonds are directed behind the central carbon (away from the viewer). Since this is not the usual way in which we have viewed such structures, the following diagram shows how a stereogenic carbon positioned in the common two-bonds-in-a-plane orientation ( x&#8211;C&#8211;y define the reference plane ) is rotated into the Fischer projection orientation (the far right formula). When writing Fischer projection formulas it is important to remember these conventions. Since the vertical bonds extend away from the viewer and the horizontal bonds toward the viewer, a Fischer structure may only be turned by 180&#186; within the plane, thus maintaining this relationship. <B>The structure must not be flipped over or rotated by 90&#186;</B>.</P>
+<P ALIGN=center><IMG SRC="Images/tetra.gif"></P>
+<P> <span class="fc-maroon">A model of the preceding diagram may be examined by </span><INPUT TYPE="button"  NAME="wind" VALUE=" Clicking Here" onClick=
+"window.open('fischer.htm','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=600,height=700')">.</P>
+<P>In the above diagram, if x = CO<SUB>2</SUB>H, y = CH<SUB>3</SUB>, a = H & b = OH, the resulting formula describes (<I>R</I>)-(&#8211;)-lactic acid. The mirror-image formula, where x = CO<SUB>2</SUB>H, y = CH<SUB>3</SUB>, a = OH & b = H, would, of course, represent (<I>S</I>)-(+)-lactic acid.</P>
+<P>Using the Fischer projection notation, the stereoisomers of 2-methylamino-1-phenylpropanol are drawn in the following manner. Note that it is customary to set the longest carbon chain as the vertical bond assembly. </P>
+<P ALIGN=center><IMG SRC="Images/ephefsch.gif"></P>
+<P>The usefulness of this notation to Fischer, in his carbohydrate studies, is evident in the following diagram. There are eight stereoisomers of 2,3,4,5-tetrahydroxypentanal, a group of compounds referred to as the aldopentoses. Since there are three chiral centers in this constitution, we should expect a maximum of 2<SUP>3</SUP> stereoisomers. These eight stereoisomers consist of four sets of enantiomers. If the configuration at C-4 is kept constant (<I>R</I> in the examples shown here), the four stereoisomers that result will be <B>diastereomers</B>. Fischer formulas for these isomers, which Fischer designated as the "D"-family, are shown in the diagram. Each of these compounds has an enantiomer, which is a member of the "L"-family so, as expected, there are eight stereoisomers in all. Determining whether a chiral carbon is R or S may seem difficult when using Fischer projections, but it is actually quite simple. If the lowest priority group (often a hydrogen) is on a vertical bond, the configuration is given directly from the relative positions of the three higher-ranked substituents. If the lowest priority group is on a horizontal bond, the positions of the remaining groups give the wrong answer (you are in looking at the configuration from the wrong side), so you simply reverse it.</P>
+<A  NAME="isom16b"></A>
+<P ALIGN=center><IMG SRC="Images/pentoses.gif"></P>
+<P>The aldopentose structures drawn above are all diastereomers. A more selective term, <B>epimer</B>, is used to designate diastereomers that differ in configuration at only one chiral center. Thus, ribose and arabinose are epimers at C-2, and arabinose and lyxose are epimers at C-3. However, arabinose and xylose are not epimers, since their configurations differ at both C-2 and C-3.</P>
+
+<A  NAME="isom17"></A>
+<BR><P><TABLE WIDTH="100%" CELLPADDING="2"><TR><TH BGCOLOR="green" ALIGN=center><H3><span class="fc-white">Meso Compounds</H3></span></TH></TR></TABLE></P>
+
+<div class="ctr"><span class="fc-maroon"><H3>Achiral Diastereomers (meso-Compounds)</H3></span></div>
+<P>The chiral centers in the preceding examples have all been different, one from another. In the case of 2,3-dihydroxybutanedioic acid, known as tartaric acid, the two chiral centers have the same four substituents and are equivalent. As a result, two of the four possible stereoisomers of this compound are identical due to a plane of symmetry, so there are only three stereoisomeric tartaric acids. Two of these stereoisomers are enantiomers and the third is an achiral diastereomer, called a <B>meso</B> compound.  Meso compounds are achiral (optically inactive) diastereomers of chiral stereoisomers. Investigations of isomeric tartaric acid salts, carried out by <A HREF="http://www.chemistry.msu.edu/Portraits/PortraitsHH_Detail.asp?HH_LName=Pasteur">Louis Pasteur</a> in the mid 19th century, were instrumental in elucidating some of the subtleties of stereochemistry. <br />
+Some physical properties of the isomers of tartaric acid are given in the following table.</P>
+<div class="ctr"><p><TABLE CELLSPACING=4 width=320><TR><TD>
+(+)-tartaric acid: </TD><TD>[&#945;]<SUB>D</SUB> = +13&#186; </TD>
+<TD> m.p. 172 &#186;C</TD></TR>
+<TR><TD>(&#8211;)-tartaric acid: </TD><TD>[&#945;]<SUB>D</SUB> = &#8211;13&#186; </TD><TD> m.p. 172 &#186;C</TD></TR>   
+<TR><TD><I>meso</I>-tartaric acid: </TD><TD>[&#945;]<SUB>D</SUB> = 0&#186; </TD><TD> m.p. 140 &#186;C</TD></TR>
+</TABLE></p></div>
+<P>Fischer projection formulas provide a helpful view of the configurational relationships within the structures of these isomers. In the following illustration a mirror line is drawn between formulas that have a mirror-image relationship. In demonstrating the identity of the two meso-compound formulas, remember that a Fischer projection formula may be rotated 180&#186; in the plane.</P>
+<P ALIGN=center><IMG SRC="Images/tartaric.gif"></P>
+<P> <span class="fc-maroon">A model of meso-tartaric acid may be examined by </span><INPUT TYPE="button"  NAME="wind" VALUE=" Clicking Here" onClick=
+"window.open('symmetry/mesotart.htm','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=840,height=760')".</P>
+<P> <span class="fc-maroon">An additional example, consisting of two meso compounds, may be examined by </span><INPUT TYPE="button"  NAME="wind" VALUE=" Clicking Here" onClick=
+"window.open('suppmnt1.htm#exp1','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=800,height=760')".</P><br>
+
+<p><A  NAME="isom17b"></A></p>
+<BR><P><TABLE WIDTH="100%" CELLPADDING="2"><TR><TH BGCOLOR="green" ALIGN=center><H3><span class="fc-white">Other Configuration Notations</H3></span></TH></TR></TABLE></P>
+<div class="ctr"><span class="fc-maroon"><H3>Formulas Using Other Configurational Notations</H3></span></div>
+<P>Fischer projection formulas are particularly useful for comparing configurational isomers within a family of related chiral compounds, such as the carbohydrates. However, the eclipsed conformations implied by these representations are unrealistic. When describing acyclic compounds incorporating two or more chiral centers, many chemists prefer to write zig-zag line formulas for the primary carbon chain. Here, the zig-zag carbon chain lies in a plane and the absolute or relative configurations at the chiral centers are then designated by wedge or hatched bonds to substituent groups. This is illustrated for D-(-)-ribose and the diastereoisomeric D-tetroses erythrose and threose in the following diagram.</P>
+<P ALIGN=center><IMG SRC="Images/tetroses.gif"></P>
+<P>These compounds are all chiral and only one enantiomer is drawn (the D-family member). Many times, however, we must refer to and name diastereoisomers that are racemic or achiral. For example, addition of chlorine to cis-2-butene yields a stereoisomer of 2,3-dichlorobutane different from the one obtained by chlorine addition to trans-2-butene. In cases having two adjacent chiral centers, such as this, the prefixes <B>erythro</B> and <B>threo</B> may be used to designate the <B>relative configuration</B> of the centers. These prefixes, taken from the names of the tetroses erythrose and threose (above), may be applied to racemic compounds, as well as pure enantiomers and meso compounds, as shown in the following diagram. In the commonly used zig-zag drawings substituents may lie on the same side of the carbon chain, a <B>syn</B> orientation, or on opposite sides, an <B>anti</B> orientation. For adjacent (vicinal) substituents this is opposite to their location in a Fischer formula. Thus, the substituents in the erythro isomer have an anti orientation, but are syn in the threo isomer.</P>
+<P ALIGN=center><IMG SRC="Images/zigzag1.gif"></P>
+<P>The syn-anti nomenclature may be applied to acyclic compounds having more than two chiral centers, as illustrated by the example in the colored box. The stereogenic center nearest carbon #1 serves as a reference. At sites having two substituents, such as carbon #5, the terms refer to the relative orientation of the highest order substituent, as determined by the <A HREF="#isom13">C.I.P. sequence rules</A>.</P>
+
+
+<A  NAME="isom18"></A>
+<BR><P><TABLE WIDTH="100%" CELLPADDING="2"><TR><TH BGCOLOR="green" ALIGN=center><H3><span class="fc-white">Resolution</H3></span></TH></TR></TABLE></P>
+<div class="ctr"><span class="fc-maroon"><H3>Resolution of Racemates</H3></span></div>
+<P>As noted earlier, chiral compounds synthesized from achiral starting materials and reagents are generally racemic (i.e. a 50:50 mixture of enantiomers). Separation of racemates into their component enantiomers is a process called <B>resolution</B>.  Since enantiomers have identical physical properties, such as solubility and melting point, resolution is extremely difficult. Diastereomers, on the other hand, have different physical properties, and this fact is used to achieve resolution of racemates. Reaction of a racemate with an enantiomerically pure chiral reagent gives a mixture of diastereomers, which can be separated. Reversing the first reaction then leads to the separated enantiomers plus the recovered reagent.</P>
+<P>Many kinds of chemical and physical reactions, including salt formation, may be used to achieve the diastereomeric intermediates needed for separation. The following diagram illustrates this general principle by showing how a nut having a right-handed thread (R) could serve as a "reagent" to discriminate and separate a mixture of right- and left-handed bolts of identical size and weight. Only the two right-handed partners can interact to give a fully-threaded intermediate, so separation is fairly simple. The resolving moiety, i.e. the nut, is then removed, leaving the bolts separated into their right and left-handed forms. Chemical reactions of enantiomers are normally not so dramatically different, but a practical distinction is nevertheless possible.</P>  
+<P ALIGN=center><IMG SRC="Images/boltsnut.gif"></P> 
+<p><TABLE WIDTH=640 CELLPADDING=6 ALIGN=center BORDER><TR BGCOLOR="eeffdd" align=center><TD>
+To learn more about chemical procedures for achieving resolution <A HREF="suppmnt4.htm#top2">Click Here</A>.</p></TD></TR></TABLE></p>
+
+<A  NAME="isom19"></A>
+<BR><P><TABLE WIDTH="100%" CELLPADDING="2"><TR><TH BGCOLOR="green" ALIGN=center><H3><span class="fc-white">Conformational Enantiomorphism</H3></span></TH></TR></TABLE></P><BR>
+
+<div class="ctr"><span class="fc-maroon"><H3>Conformational Enantiomorphism</H3></span></div>
+<P>The Fischer projection formula of meso-tartaric acid has a plane of symmetry bisecting the C2&#8211;C3 bond, as shown on the left in the diagram below, so this structure is clearly achiral. The eclipsed orientation of bonds that is assumed in the Fischer drawing is, however, an unstable conformation, and we should examine the staggered conformers that undoubtedly make up most of the sample molecules. The four structures that are shown to the right of the Fischer projection consist of the achiral Fischer conformation (<b>A</b>) and three staggered conformers, all displayed in both sawhorse and Newman projections. The second and fourth conformations (<b>B & D</b>) are dissymmetric, and are in fact enantiomeric structures. The third conformer (<b>C</b>) has a center of symmetry and is achiral.</P>
+<p><TABLE align=center><TR><TH COLSPAN=5><H4>Conformations of meso-Tartaric Acid</H4></TH></TR>
+<TR><TD COLSPAN=5><IMG SRC="Images/mesotart.gif"></TD></TR>
+<TR><TH WIDTH=120><span class="fc-maroon">Fischer<BR>Projection</span></TH><TH WIDTH=145><span class="fc-maroon">A</span><BR>eclipsed, achiral</TH><TH WIDTH=144><span class="fc-maroon">B</span><BR>staggered, chiral</TH><TH WIDTH=147><span class="fc-maroon">C</span><BR>staggered, achiral</TH><TH WIDTH=148><span class="fc-maroon">D</span><BR>staggered, chiral</TH></TR>
+</TABLE></p>
+<P>Since a significant proportion of the meso-tartaric acid molecules in a sample will have chiral conformations, the achiral properties of the sample (e.g. optical inactivity) should not be attributed to the symmetry of the Fischer formula. Equilibria among the various conformations are rapidly established, and the proportion of each conformer present at equilibrium depends on its relative potential energy (the most stable conformers predominate). Since enantiomers have equal potential energies, they will be present in equal concentration, thus canceling their macroscopic optical activity and other chiral behavior. Simply put, any chiral species that are present are racemic.</P>
+<P>It is interesting to note that chiral conformations are present in most conformationally mobile compounds, even in the absence of any chiral centers. The gauche conformers of butane, for example, are chiral and are present in equal concentration in any sample of this hydrocarbon. The following illustration shows the enantiomeric relationship of these conformers, which are an example of a chiral axis rather than a chiral center.</P>
+<P ALIGN=center><IMG SRC="Images/gauchent.gif"></P><BR>
+<A  NAME="isom19b"></A>
+<p><div class="ctr"><H4>Conformations of Biphenyls</H4></div></p>
+<P>Another class of compounds that display conformational enantiomorphism are the substituted biphenyls. As shown in the following diagram, biphenyl itself is not planar, one benzene ring being slightly twisted or canted in relation to the other as a consequence of steric crowding. <span class="fc-brown">This crowding will be demonstrated by clicking on the diagram</span>. The resulting chiral conformation, having a dihedral angle of about 45&#186;, equilibrates rapidly with its enantiomer by rotation about the connecting single bond. Note that a conformation having a 90&#186; dihedral angle is achiral, as a consequence of a plane of symmetry.</P>
+<P ALIGN=center><A HREF="javascript:chng1()"><IMG SRC="Images/biphen1.gif" BORDER=0 ></A></P>
+<P>If each of the phenyl rings of a biphenyl has two different ortho or meta substituents (one may be hydrogen), even the twisted  90&#186; dihedral angle conformer becomes chiral. In order to interconvert such conformers with their mirror image structures, a rotation through the higher energy coplanar form must be made. The ease with which this interconversion occurs will depend on the size of the ortho substituents, since these groups must slide past each other. The 2,2'-dicarboxylic acid on the left below cannot be resolved at room temperature, since thermal (kinetic) energy is sufficient to provide the necessary activation energy for racemization. The two additionally substituted diacids to its right have a higher activation energy for racemization, and can be resolved if care is taken to avoid heating them. <B>As a rule, an activation energy barrier of 16 to 19 kcal/mole is required to prevent spontaneous room temperature racemization of substituted biphenyls.</B> Since fluorine is smaller than a nitro group, the center compound racemizes more rapidly on heating than does the nitro compound to its right. Conformational isomers that are isolable due to high energy barriers are called <B>atropisomers</B>.</P>
+<P ALIGN=center><A HREF="javascript:chng2()"><IMG SRC="Images/biphenl1.gif" BORDER=0 ></A></P>
+<P><span class="fc-brown">By clicking on the diagram</span>, three additional examples of resolvable biphenyls will be displayed. The 2,2'-disulfonic acid (compound <B>A</B>) can be resolved with care, confirming the larger size of SO<SUB>3</SUB>H compared with CO<SUB>2</SUB>H. Compounds <B>B</B> and <B>C</B> provide additional insight into the racemization of biphenyls. Although these biphenyls have identical ortho substituents, the meta nitro substituent adjacent to the methoxyl group in <B>C</B> exerts a <B>buttressing</B> influence that increases the effective size of that ortho substituent. <BR>Finally, <span class="fc-brown">by clicking on the diagram a second time</span> two additional examples of substituted biphenyls will be shown. The left hand compound is held in a twisted conformation by the bridging carbon chain. Racemization requires passing through a planar configuration, and the increased angle and eclipsing strain in this structure contribute to a large activation energy. Consequently, this compound is easily resolved into enantiomeric stereoisomers. The right hand compound is heavily ortho-substituted and most certainly resists assuming a planar configuration. However, the right benzene ring has two identical ortho substituents, so the stable 90&#186; dihedral angle conformer has a plane of symmetry. All chiral twisted conformers are present as racemates, so this compound cannot be resolved.
+</P>
+<P><span class="fc-maroon">To see models of biphenyl and a chiral tetrasubstituted derivative  &nbsp;</span> <INPUT TYPE="button"  NAME="wind" VALUE=" Click Here" onClick=
+"window.open('conform2.htm#biphen','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=760,height=660')">.</div></P>
+
+<A  NAME="isom20"></A>
+<BR><P><TABLE WIDTH="100%" CELLPADDING="2"><TR><TH BGCOLOR="green" ALIGN=center><H3><span class="fc-white">Stereoisomers of Disubstituted Cyclohexanes</H3></span></TH></TR></TABLE></P>
+<div class="ctr"><span class="fc-maroon"><H3>Stereoisomerism in Disubstituted Cyclohexanes</H3></span></div>
+
+<P>The distinction between configurational stereoisomers and the conformers they may assume is well-illustrated by the disubstituted cyclohexanes.  The following discussion uses the various isomers of dichlorocyclohexane as examples.  The 1,1-dichloro isomer is omitted because it is an unexceptional <B>constitutional isomer</B> of the others, and has no centers of chirality (asymmetric carbon atoms).  The 1,2- and 1,3-dichlorocyclohexanes each have two centers of chirality, bearing the same set of substituents. The cis & trans-1,4-dichlorocyclohexanes do not have any chiral centers, since the two ring groups on the substituted carbons are identical.<BR>
+</P>
+<P>There are three <B>configurational isomers</B> of 1,2-dichlorocyclohexane and three <B>configurational isomers</B> of 1,3-dichlorocyclohexane.  These are shown in the following table. </P> 
+
+<p><div class="ctr"><TABLE BORDER=2 CELLPADDING=9 WIDTH=95%>
+<TR><TH><span class="fc-blue">The 1,2-Dichlorocyclohexanes</span></TH>
+<TH><span class="fc-blue">The 1,3-Dichlorocyclohexanes</span></TH></TR>
+<TR valign=top align=center><TD height=115><IMG SRC="Images/12diclc6.gif"></TD>
+<TD><IMG SRC="Images/13diclc6.gif"></TD></TR>
+<TR valign=top align=center><TD height=336><IMG SRC="Images/12conf6.gif"></TD>
+<TD><IMG SRC="Images/13conf6.gif"></TD></TR>
+</TABLE>
+<TABLE><TR ALIGN=center><TD><TABLE BORDER=8 CELLPADDING=5 CELLSPACING=5><TR  bgcolor="#ffebcf"><TD nowrap><A HREF="c12dcc6.htm">Examine Conformations of<BR> cis-1,2-Dichlorocyclohexane</A></TD></TR></TABLE></TD><TD><TABLE BORDER=8 CELLPADDING=5 CELLSPACING=5><TR  bgcolor="#ffebcf"><TD nowrap><A HREF="t12dcc6.htm">Examine Conformations of<BR> trans-1,2-Dichlorocyclohexane</A></TD></TR></TABLE></TD><TD WIDTH=16>&nbsp;</TD>
+<TD><TABLE BORDER=8 CELLPADDING=5 CELLSPACING=5><TR  bgcolor="#ffebcf"><TD nowrap><A HREF="c13dcc6.htm">Examine Conformations of<BR> cis-1,3-Dichlorocyclohexane</A></TD></TR></TABLE></TD><TD><TABLE BORDER=8 CELLPADDING=5 CELLSPACING=5><TR  bgcolor="#ffebcf"><TD nowrap><A HREF="t13dcc6.htm">Examine Conformations of<BR> trans-1,3-Dichlorocyclohexane</A></TD></TR></TABLE></TD></TR></TABLE></div></p>
+
+<P>All the 1,2-dichloro isomers are <B>constitutional</B> isomers of the 1,3-dichloro isomers.  In each category (1,2- & 1,3-), the (<I>R,R</I>)-trans isomer and the (<I>S,S</I>)-trans isomer are enantiomers.  The cis isomer is a diastereomer of the trans isomers.  Finally, all of these isomers may exist as a mixture of two (or more) conformational isomers, as shown in the table.</P>
+
+<P>The chair conformer of the cis 1,2-dichloro isomer is chiral.  It exists as a 50:50 mixture of enantiomeric conformations, which interconvert so rapidly they cannot be resolved (ie. separated).  Since the cis isomer has two centers of chirality (asymmetric carbons) and is optically inactive, it is a meso-compound. The corresponding trans isomers also exist as rapidly interconverting chiral conformations.  The diequatorial conformer predominates in each case, the (<I>R,R</I>) conformations being mirror images of the (<I>S,S</I>) conformations. All these conformations are diastereomeric with the cis conformations.</P>
+<P>The diequatorial chair conformer of the cis 1,3-dichloro isomer is achiral. It is the major component of a fast equilibrium with the diaxial conformer, which is also achiral. This isomer is also a meso compound.  The corresponding trans isomers also undergo a rapid conformational interconversion.  For these isomers, however, this interconversion produces an identical conformer, so each enantiomer (<I>R,R</I>) and (<I>S,S</I>) has predominately a single chiral conformation.  These enantiomeric conformations are diastereomeric with the cis conformations.</P>
+<P>The 1,4-dichlorocyclohexanes may exist as cis or trans stereoisomers.  Both are achiral, since the disubstituted six-membered ring has a plane of symmetry.  These isomers are diastereomers of each other, and are constitutional isomers of the 1,2- and 1,3- isomers.</P>
+<p><div class="ctr"><H4>The 1,4-Dichlorocyclohexanes</H4></p>
+<p><IMG SRC="Images/14diclc6.gif"></p></div>
+<P>All the chair conformers of these isomers are achiral, and the diequatorial conformer of the trans isomer is the predominate species at equilibrium. 
+
+<A  NAME="prp8"></A>
+<BR><P><TABLE WIDTH="100%" CELLPADDING="2"><TR><TH BGCOLOR="green" ALIGN=center><H4><span class="fc-white">Practice Problems </H4></span></TH></TR></TABLE></P>
+<P>The first five problems ask you to identify equivalent groups of atoms, symmetry elements, stereogenic centers and the presence or absence of chirality. Part two of the fourth problem also requires the application of R/S nomenclature. The nomenclature terminology and classification of stereoisomers is examined in the next two problems, followed by a question concerning the relationship of isomeric pairs. Designation of CIP names is the subject of the next three problems. Products from stereoselective reactions are examined in the next problem, and a review of cyclohexane conformational terminology is the subject of the last two problems.</P>
+<div class="ctr"><TABLE CELLPADDING=6 WIDTH=50% ><TR  VALIGN=middle ALIGN=center>
+<TD>
+<SCRIPT Language="JavaScript">
+<!--HIDE
+			function jump()  {
+var loc=document.info.jumpMenu.options[document.info.jumpMenu.selectedIndex]
+.text;	
+   if  (loc == "Equivalent Atom Groups"){
+location="Questions/Stereocem/eqvgrp2.htm";
+}else if  (loc == "Recognizing Symmetry"){
+location="Questions/Stereocem/symmetr1.htm";
+}else if  (loc == "Recognizing Chirality"){
+location="Questions/Match/match11.htm";
+}else if  (loc == "Recognizing Chirality & Symmetry"){
+location="Questions/Stereocem/symmetr2.htm";
+}else if  (loc == "Identifying & Designating Chirality"){
+location="Questions/Stereocem/cipnomen1.htm";
+}else if  (loc == "Stereochemical Terminology"){
+location="Questions/Match/match5.htm";
+}else if  (loc == "Classification of Stereoisomers"){
+location="Questions/Match/match10.htm";
+}else if  (loc == "Relationship of Isomer Pairs"){
+location="Questions/MOLEDITOR/sternotn.htm";
+}else if  (loc == "Applying CIP Notation I"){
+location="Questions/Stereocem/cnfgprb.htm";
+}else if  (loc == "Applying CIP Notation II"){
+location="Questions/Stereocem/rscnfg1.htm";
+}else if  (loc == "Applying CIP Notation III"){
+location="Questions/MOLEDITOR/rs_cnfig.htm";
+}else if  (loc == "Drawing Stereoisomers from Names"){
+location="Questions/Stereocem/steronom.htm";
+}else if  (loc == "Drawing Stereoisomeric Products"){
+location="Questions/Stereocem/sternom2.htm";
+}else if  (loc == "Gauche Interactions in Cyclohexanes"){
+location="Questions/Stereocem/gauche1.htm";
+}else if  (loc == "Axial/Equatorial Relationships"){
+location="Questions/Stereocem/axialequ.htm";
+
+}
+}
+//STOP HIDING-->
+</SCRIPT>
+<INPUT TYPE="hidden" VALUE="choice">
+<SELECT NAME="jumpMenu" onChange="jump()">
+<OPTION SELECTED>Choose a Problem
+<OPTION>Equivalent Atom Groups
+<OPTION>Recognizing Symmetry
+<OPTION>Recognizing Chirality
+<OPTION>Recognizing Chirality & Symmetry
+<OPTION>Identifying & Designating Chirality
+<OPTION>Stereochemical Terminology
+<OPTION>Classification of Stereoisomers
+<OPTION>Relationship of Isomer Pairs
+<OPTION>Applying CIP Notation I
+<OPTION>Applying CIP Notation II
+<OPTION>Applying CIP Notation III
+<OPTION>Drawing Stereoisomers from Names
+<OPTION>Drawing Stereoisomeric Products
+<OPTION>Gauche Interactions in Cyclohexanes
+<OPTION>Axial/Equatorial Relationships
+
+ </SELECT>
+</TD></TR></TABLE></div><BR>
+<P><div class="ctr"><TABLE BGCOLOR="ffebcf" CELLPADDING=7 BORDER=4><TR><TH><A HREF="index.htm">Return to Table of Contents</A></TH></TR></TABLE></div></P>
+<p>This page is the property of The Edvibe Team. &nbsp; 
+Comments, questions and errors should
+be sent to <A HREF="mailto:contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<br />
+These pages are provided to the IOCD to assist in capacity building in chemical education.  05/05/2013</p>
+<P ALIGN=center><IMG SRC="Images/pixel.gif" HEIGHT= 400></P>
+</FORM>
+</BODY>
+</HTML>
+
+

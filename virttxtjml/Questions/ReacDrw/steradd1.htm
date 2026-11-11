@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+document.form.smiles.value = smiles; 
+}
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+document.form.smiles.value = smiles; 
+}
+function processMolecule1(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "CC[C@H](Br)[C@@H](Br)CC"  || smiles =="CC[C@@H](Br)[C@H](Br)CC") {
+var Txt="Correct!";   
+	}else{
+if (smiles == "CC[C@H](Br)[C@H](Br)CC"  || smiles =="CC[C@@H](Br)[C@@H](Br)CC") {
+var Txt="The configuration of your product is wrong.";  
+	}else{
+if (smiles == "CCC(Br)C(Br)CC") {
+var Txt="Wrong. You should indicate the configuration of  the chiral centers";  
+	}else{
+var Txt="Wrong! Try again.";
+}
+}
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule2(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "CC[C@@H](O)[C@@H](O)CC" ||  smiles =="CC[C@H](O)[C@H](O)CC" ) { 
+var Txt="Correct!";
+	}else{
+if (smiles == "CC[C@H](O)[C@@H](O)CC" ||  smiles =="CC[C@@H](O)[C@H](O)CC") {
+var Txt="The configuration of your product is wrong.";  
+	}else{
+if (smiles == "CCC(O)C(O)CC") {
+var Txt="Wrong. You should indicate the configuration of  the chiral centers";  
+	}else{
+var Txt="Wrong! Try again.";
+}
+}
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule3(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "CC[C@H]1O[C@H]1CC" ||  smiles =="CC[C@@H]1O[C@@H]1CC") {
+var Txt="Correct!";
+	}else{
+if (smiles == "CC[C@H]1O[C@@H]1CC" ||  smiles =="CC[C@@H]1O[C@H]1CC") {
+var Txt="The configuration of your product is wrong.";  
+	}else{
+if (smiles == "CCC1OC1CC") {
+var Txt="Wrong. You should indicate the configuration of  the chiral centers";  
+
+	}else{
+var Txt="Wrong! Try again.";
+}
+}
+}
+	input.result.value = Txt ;
+}
+
+
+function processMolecule4(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "CC[C@H](O)[C@@H](O)CC" ||  smiles =="CC[C@@H](O)[C@H](O)CC") {
+var Txt="Correct!";
+	}else{
+if (smiles == "CC[C@H](O)[C@H](O)CC" ||  smiles =="CC[C@@H](O)[C@@H](O)CC") {
+var Txt="The configuration of your product is wrong.";  
+	}else{
+if (smiles == "CCC(O)C(O)CC") {
+var Txt="Wrong. You should indicate the configuration of  the chiral centers";  
+	}else{
+var Txt="Wrong! Try again.";
+}
+}
+}
+	input.result.value = Txt ;
+}
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<TITLE>Stereospecificity of Addition Reactions</TITLE>
+<META NAME="DC.SUBJECT" CONTENT="Practice questions for organic
+chemistry students>
+<body>
+<form method="post" name="form">
+<div class="ctr"><H3>Stereospecificity of Addition Reactions</H3>
+<h4><span class="fc-blue">The following questions concern reactions of <I>cis</I>-3-hexene.</span></h4></div>
+<p>In the drawing window on the left, draw a structural formula for the expected product in each case. Indicate the configuration of the major stereoisomer by using the <B>wedge/hatched bond tool</B>. Do not draw hydrogen atoms. When you are finished, check your answer by pressing the <b>Check Product #</b> button under each question. <BR>If you wish to practice drawing stereo formulas with this Editor <A 
+HREF="https://edvibe.co.ke/virttxtjml/Questions/MOLEDITOR/sterprct.htm" >Click Here</A>.
+
+<table><tr><th valign="top" width=370><applet code="JME.class" name="JME" archive="JME.jar" width=360, height=360><param name= "options"  value="autoez">
+You have to enable Java and JavaScript on your machine !
+</applet><FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"> &nbsp; </th>
+<td width=340>
+<p><B>1.</B>&nbsp; <span class="fc-blue"> cis-3-hexene + Br<SUB>2</SUB></span><BR>
+<input type="hidden" value="" name="smiles"> &nbsp; &nbsp; <input type="button" value="Check Product 1" onClick="submitSmiles(); processMolecule1(this.form);"><HR></p>
+
+<p><B>2.</B>&nbsp; <span class="fc-blue"> cis-3-hexene + KMnO<SUB>4</SUB></span><BR>
+<input type="hidden" value="" name="smiles"> &nbsp; &nbsp; <input type="button" value="Check Product 2" onClick="submitSmiles(); processMolecule2(this.form);"><HR></p>
+
+<p><B>3.</B>&nbsp; <span class="fc-blue"> cis-3-hexene + perbenzoic acid</span><BR>
+<input type="hidden" value="" name="smiles"> &nbsp; &nbsp; <input type="button" value="Check Product 3" onClick="submitSmiles(); processMolecule3(this.form);"><HR></p>
+
+<p><B>4.</B>&nbsp; <span class="fc-blue"> Product from <B>3</B> + H<SUB>3</SUB>O<SUP>(+)</SUP></span><BR>
+<input type="hidden" value="" name="smiles"> &nbsp; &nbsp; <input type="button" value="Check Product 4" onClick="submitSmiles(); processMolecule4(this.form);"><HR></p>
+
+<TEXTAREA  WRAP NAME="result"  ROWS="3"  COLS="40"> 
+ </TEXTAREA><BR> <INPUT TYPE="RESET" VALUE="Clear"> &nbsp; &nbsp; &nbsp; 
+<INPUT TYPE="button" VALUE="Help" onClick="window.location = '../../addene1.htm'"> </td></tr></table>
+<p> For a similar problem using <i>trans</i>-3-hexene <A 
+HREF="steradd2.htm" >Click Here</A> </p>
+
+</form>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>
+
+

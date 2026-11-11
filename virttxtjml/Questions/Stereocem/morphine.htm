@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+   
+<head>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="../../htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="../../htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<META NAME="author" content="The Edvibe Team">
+<META NAME="ROBOTS">
+<META NAME="DC.DATE" CONTENT="1999">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+var 	i=0;
+var k="";
+var txt="";
+
+		function process(form){
+	if (i!=0){
+		 i=0
+}
+	if (k!=""){
+		 k=""
+}
+		if (form.quest1[0].checked){
+		i=i+1
+}else {
+		i=i
+k="C5, "
+}
+		if (form.quest2[1].checked){
+		i=i+1
+}else {
+		i=i	
+k=k + "C6, "
+	}		
+		if (form.quest3[0].checked){
+		i=i+1
+}else {
+		i=i	
+k=k + "C9, "
+}
+		if (form.quest4[1].checked){
+		i=i+1
+}else {
+		i=i
+k=k + "C13, "
+	}
+		if (form.quest5[0].checked){
+		i=i+1
+}else {
+		i=i
+k=k + "C14 "
+	}
+
+if (i==5){
+var Text ="Congratulations!\rYou have answered all questions correctly.";
+}else{
+var Text="You have answered " +i +" questions correctly.\r"
++"You failed to respond to or incorrectly answered " +k;
+}
+
+form.result.value=Text;	
+}
+
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+
+<title>Chiral Carbons of Morphine</title>
+</head>
+<body>
+<form>
+<table align="center"><tr><td nowrap>
+ <div class="ctr"><h3>Naming Stereogenic Centers in Morphine</h3></div> 
+<p>A structural formula of the alkaloid morphine is drawn below. The five chiral centers are labled by magenta numbers.<br />A 3-D model of this compound is shown to its right. In this display the molecule can be moved about by using the mouse. <br />The chiral centers of the model may be labeled in the manner of the drawing by clicking the designated button. <br />You should provide a C.I.P. configuration for each chiral center by selecting an <i>R</i> or <i>S</i> notation following its number. </p></td></tr></table>
+
+
+<table align="center" cellpadding=4><tr><th>
+<IMG SRC ="../Images/morphine.gif"><br />morphine</th><td>
+<script type="text/javascript">Jmol.getApplet("jmol1",{"width": 300, "height": 300, "color": "#FFFFFF", "use": "HTML5", "j2sPath": "../../htmlJ/jsmol/j2s", "addSelectionOptions": false, "script": " select *; zoom 110; spacefill 66; rotate x 140;  select carbon; color atoms [140,140,140]; select hydrogen; color atoms cyan;  select(atomno=1, atomno=2); connect double; select(atomno=3, atomno=4); connect double; select(atomno=5, atomno=6); connect double; select(atomno=21, atomno=28); connect double;  select all; wireframe 30; background white; "});</script></td><td width=50>&nbsp; </td>
+
+<td><button type="button" class="jctl" data-target="jmol1" data-script=" spacefill 70%">X</button> <span class="fs-4"><sup>&nbsp;Show Spacefill Model</sup><br />
+<button type="button" class="jctl" data-target="jmol1" data-script="spacefill off; wireframe 25;">X</button> <sup>&nbsp;Show Stick Model</sup><br />
+<button type="button" class="jctl" data-target="jmol1" data-script="spacefill 66; wireframe 30;">X</button> <sup>&nbsp;Show Ball&Stick Model</sup><br />
+<button type="button" class="jctl" data-target="jmol1" data-script="select atomno=8; label 9;  select atomno=9; label 14;  select atomno=10; label 13;  select atomno=12; label 5;  select atomno=23; label 6;  select *; colour label magenta; set labeloffset 0 0; set fontsize 16; select all; spacefill off; wireframe 20;" data-altscript="select all; label off">X</button> <sup>&nbsp;Labels on/off</sup></span></td></tr>
+<tr><td colspan=3></td><td bgcolor="wheat"><div class="ctr"><b>Other Examples</b></div><A HREF="strycnin.htm">Stereogenic Centers in Strychnine</a> <br /><A HREF="taxol.htm">Stereogenic Centers in Taxol</a></td></tr>
+</table>
+<hr />
+<table align="center" width=300>
+<caption><span class="fc-blue"><b>Identify the configuration at each center</b></span></caption>
+<tr><th>Carbon #</th><th> R </th><th> S </th><th rowspan=6>
+<INPUT TYPE="button"  VALUE="Check Answer" onClick="process(form)"><br /><br /><INPUT TYPE="reset" VALUE="Clear"></th></tr>
+<tr align=center><td> 5</td><td><INPUT NAME="quest1"  TYPE="radio"></td><td><INPUT NAME="quest1"  TYPE="radio"></td></tr>
+<tr align=center><td> 6</td><td><INPUT NAME="quest2"  TYPE="radio"></td><td><INPUT NAME="quest2"  TYPE="radio"></td></tr>
+<tr align=center><td> 9</td><td><INPUT NAME="quest3"  TYPE="radio"></td><td><INPUT NAME="quest3"  TYPE="radio"></td></tr>
+<tr align=center><td> 13</td><td><INPUT NAME="quest4"  TYPE="radio"></td><td><INPUT NAME="quest4"  TYPE="radio"></td></tr>
+<tr align=center><td> 14</td><td><INPUT NAME="quest5"  TYPE="radio"></td><td><INPUT NAME="quest5"  TYPE="radio"></td></tr>
+<tr><th colspan=4><TEXTAREA  WRAP NAME="result"  ROWS="3"  COLS="44">  </TEXTAREA></th></tr></table>
+
+
+
+
+
+</div>
+
+
+
+    
+
+</body></html>
+
+
+
+
+
+

@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var M1="<p><B>&nbsp;1. </B> Which two line formulas (A to G) are the same? Enter two letters or <B>X</B> for <U>none</U> ";             
+var M2="<p><B>&nbsp;2. </B>Which if any of the line formulas (A to G) is not a constitutional isomer of the others? <br> Enter the appropriate letter or <B>X</B> for <U>none</U>.</p>";          
+var M3="<p><B>&nbsp;3. </B> From the list of condensed formulas (H to O) pick that which corresponds to <B>A</B>.</p>";    
+var M4="<p><B>&nbsp;4. </B> From the list of condensed formulas (H to O) pick that which corresponds to <B>B</B>.</p>";   
+var M5="<p><B>&nbsp;5. </B> From the list of condensed formulas (H to O) pick that which corresponds to <B>C</B>.</p>";   
+var M6="<p><B>&nbsp;6. </B> From the list of condensed formulas (H to O) pick that which corresponds to <B>D</B>.</p>";    
+var M7="<p><B>&nbsp;7. </B> Which if any of the line formulas (A to G) is 2,4-dimethylpentane? </p>";             
+var M8="<p><B>&nbsp;8. </B>  Which if any of the line formulas (A to G) is 2,2,3-trimethylbutane? </p>";            
+var M9="<p><B>&nbsp;9. </B> Which if any of the line formulas (A to G) is 2,2-dimethylpentane? </p>";     
+var M10="<B>10. </B>  Which if any of the line formulas (A to G) is 2,2,4-trimethylpentane? </p>";   
+var M11="<B>11. </B>  Which if any of the line formulas (A to G) is 3-ethylpentane? </p>"; 
+var M12="<B>12. </B>   Which if any of the line formulas (A to G) is 2-methylhexane? </p>";   
+
+var aa="CE"; 
+var ab="EC";
+var bb="A";
+var cc="J"; 
+var dd="K";
+var ee="N"; 
+var ff="H";
+var gg="B"; 
+var hh="G";
+var ii="D"; 
+var jj="A";
+var kk="X"; 
+var ll="F";
+
+var anscnt=0
+var answ="(1) C & E;  (2) A;  (3) J;  (4) K \r(5) N;  (6) H;  "
+ +  "(7) B;  (8) G \r(9) D;  (10) A;  (11) X (none);  (12) F"
+var noansw="You must try to answer this question twice before viewing the answers."
+
+var j=0
+var k=0
+     
+function slct1(input) {
+anscnt=anscnt+1;
+input.bx1.value=fix(input.bx1.value)
+input.bx2.value=fix(input.bx2.value)
+input.bx3.value=fix(input.bx3.value)
+input.bx4.value=fix(input.bx4.value)
+input.bx5.value=fix(input.bx5.value)
+input.bx6.value=fix(input.bx6.value)
+input.bx7.value=fix(input.bx7.value)
+input.bx8.value=fix(input.bx8.value)
+input.bx9.value=fix(input.bx9.value)
+input.bx10.value=fix(input.bx10.value)
+input.bx11.value=fix(input.bx11.value)
+input.bx12.value=fix(input.bx12.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var tx1="";
+		if ( input.bx1.value.toUpperCase() == aa ||  input.bx1.value.toUpperCase() == ab) { 
+		k=k+1
+		} else {
+		if ( input.bx1.value!="") {
+var tx1=tx1 + "problem 1, ";
+		} else {
+		j=j+1
+}
+}
+	if   ( input.bx2.value.toUpperCase() == bb) {
+		k=k+1
+		} else {
+		if ( input.bx2.value!="") {
+var tx1=tx1 + "problem 2, ";
+		} else {
+		j=j+1
+}
+}
+	if   ( input.bx3.value.toUpperCase() == cc) {
+		k=k+1
+		} else {
+		if ( input.bx3.value!="") {
+var tx1=tx1 + "problem 3, ";
+		} else {
+		j=j+1
+}
+}
+	if   ( input.bx4.value.toUpperCase() == dd) {
+		k=k+1
+		} else {
+		if ( input.bx4.value!="") {
+var tx1=tx1 + "problem 4, ";
+		} else {
+		j=j+1
+}
+}
+	if   ( input.bx5.value.toUpperCase() == ee) {
+		k=k+1
+		} else {
+		if ( input.bx5.value!="") {
+var tx1=tx1 + "problem 5, ";
+		} else {
+		j=j+1
+}
+}
+	if   ( input.bx6.value.toUpperCase() == ff) {
+		k=k+1
+		} else {
+		if ( input.bx6.value!="") {
+var tx1=tx1 + "problem 6, ";
+		} else {
+		j=j+1
+}
+}
+	if   ( input.bx7.value.toUpperCase() == gg) {
+		k=k+1
+		} else {
+		if ( input.bx7.value!="") {
+var tx1=tx1 + "problem 7, ";
+		} else {
+		j=j+1
+}
+}
+	if   ( input.bx8.value.toUpperCase() == hh) {
+		k=k+1
+		} else {
+		if ( input.bx8.value!="") {
+var tx1=tx1 + "problem 8, ";
+		} else {
+		j=j+1
+}
+}
+	if   ( input.bx9.value.toUpperCase() == ii) {
+		k=k+1
+		} else {
+		if ( input.bx9.value!="") {
+var tx1=tx1 + "problem 9, ";
+		} else {
+		j=j+1
+}
+}
+	if   ( input.bx10.value.toUpperCase() == jj) {
+		k=k+1
+		} else {
+		if ( input.bx10.value!="") {
+var tx1=tx1 + "problem 10, ";
+		} else {
+		j=j+1
+}
+}
+	if   ( input.bx11.value.toUpperCase() == kk) {
+		k=k+1
+		} else {
+		if ( input.bx11.value!="") {
+var tx1=tx1 + "problem 11, ";
+		} else {
+		j=j+1
+}
+}
+	if   ( input.bx12.value.toUpperCase() == ll) {
+		k=k+1
+		} else {
+		if ( input.bx12.value!="") {
+var tx1=tx1 + "problem 12";
+		} else {
+		j=j+1
+}
+}
+if (tx1=="") {
+tx1="no problems.";
+}
+
+	var Text="You have answered " +k +" questions correctly.\rYou have given incorrect answers to: " + tx1; 
+if (k==12)  {
+		input.result.value = "Congratulations!\rYou have answered all questions correctly.";
+anscnt=2;
+	}else{
+if (j==12)  {
+		input.result.value = "You have not answered any questions.";
+anscnt=0;
+}else{
+		input.result.value = Text;
+}
+}
+}
+function giveansw(show) {
+if (anscnt>=2)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+
+function clearbx(input) {
+	input.bx1.value="";	// Clear all text windows.
+	input.bx2.value="";
+	input.bx3.value="";
+	input.bx4.value="";
+	input.bx5.value="";
+	input.bx6.value="";
+	input.bx7.value="";
+	input.bx8.value="";
+	input.bx9.value="";
+	input.bx10.value="";
+	input.bx11.value="";
+	input.bx12.value="";
+	input.result.value="";
+}
+
+								// array function
+function makearray(ch1,ch2,ch3,ch4,ch5,ch6,ch7,ch8,ch9,ch10,ch11,ch12) {
+this[1]=ch1; this[2]=ch2; this[3]=ch3; this[4]=ch4; this[5]=ch5; this[6]=ch6; this[7]=ch7;
+this[8]=ch8; this[9]=ch9; this[10]=ch10; this[11]=ch11; this[12]=ch12;
+}
+// Initialize array of possible answers.
+choice = new makearray(M1,M2,M3,M4,M5,M6,M7,M8,M9,M10,M11,M12);
+
+
+
+// Generate the HTML code for the web page.
+
+document.write('<FORM NAME="match">');
+document.write('<CENTER><H3>Formula Recognition and Nomenclature</H3></CENTER>');
+document.write('<P><FONT COLOR=blue><B>In the box following each question enter one or more letters designating formulas displayed at the bottom of the page.  If there is no formula that fits the conditions enter <U>X</U> for <U>none</U>.</FONT></B></P>');
+document.write('<CENTER><TABLE WIDTH=95% >');
+document.write('<TR><TD WIDTH="49%" nowrap><TABLE>');
+for (var i=1; i<=6; i++) {
+var bname= 'bx'+i;
+document.write('<TR><TD nowrap>' + choice[i] +'</TD><TD><INPUT TYPE="text" NAME="',bname,'" SIZE="3"> </TD></TR>');
+}
+document.write('</TABLE></TD><TD BGCOLOR=cccccc>&nbsp;</TD><TD WIDTH="49%" nowrap><TABLE>');
+for (var i=7; i<=12; i++) {
+var bname= 'bx'+i;
+document.write('<TR><TD nowrap>' + choice[i] +'</TD><TD><INPUT TYPE="text" NAME="',bname,'" SIZE="2"> </TD></TR>');
+}
+document.write('</TABLE></TD></TR></TABLE></CENTER>');
+// End of hide script comment. -->
+
+
+
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>General Matching Problem</TITLE>
+<body>
+<HR>
+
+<table align="center"><tr><td  valign="top">
+<INPUT TYPE="button" VALUE=" Check Answers " onClick="slct1(this.form)"> &nbsp; 
+<INPUT TYPE="reset"  VALUE=" Clear " onClick="clearbx(this.form)"> &nbsp; </td>
+<td><TEXTAREA WRAP NAME="result" ROWS="4" COLS="50">
+</TEXTAREA> &nbsp; </td>
+<td  valign="top"> <INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)">
+</td></tr></table> 
+<div class="ctr"><TABLE BORDER=1><TR><TD BGCOLOR="ccffcc">
+<IMG SRC="../Images/linefrm1.gif">
+</TD></TR></TABLE>
+<TABLE CELLPADDING=8 BORDER WIDTH=90% BGCOLOR="ccffcc">
+<TR VALIGN=TOP>
+<TD><span class="fc-blue"><B>H</B></span><BR><div class="ctr">CH<SUB>3</SUB>CH<SUB>2</SUB>CH<SUB>2</SUB>C(CH<SUB>3</SUB>)<SUB>3</SUB></div></TD>
+<TD><span class="fc-blue"><B>I</B></span><BR><div class="ctr">(CH<SUB>3</SUB>CH<SUB>2</SUB>)<SUB>3</SUB>CH</div></TD>
+<TD><span class="fc-blue"><B>J</B></span><BR><div class="ctr">(CH<SUB>3</SUB>)<SUB>3</SUB>CCH<SUB>2</SUB>CH(CH<SUB>3</SUB>)<SUB>2</SUB></div></TD>
+<TD><span class="fc-blue"><B>K</B></span><BR><div class="ctr">[(CH<SUB>3</SUB>)<SUB>2</SUB>CH]<SUB>2</SUB>CH<SUB>2</SUB></div></TD></TR>
+<TR><TD><span class="fc-blue"><B>L</B></span><BR><div class="ctr">(CH<SUB>3</SUB>)<SUB>3</SUB>CCH(CH<SUB>3</SUB>)<SUB>2</SUB></div></TD>
+<TD><span class="fc-blue"><B>M</B></span><BR><div class="ctr">CH<SUB>3</SUB>(CH<SUB>2</SUB>)<SUB>4</SUB>CH<SUB>3</SUB></div></TD>
+<TD><span class="fc-blue"><B>N</B></span><BR><div class="ctr">(C<SUB>2</SUB>H<SUB>5</SUB>)<SUB>2</SUB>C(CH<SUB>3</SUB>)<SUB>2</SUB></div></TD>
+<TD><span class="fc-blue"><B>O</B></span><BR><div class="ctr">(CH<SUB>3</SUB>)<SUB>2</SUB>CH(CH<SUB>2</SUB>)<SUB>3</SUB>CH<SUB>3</SUB></div></TD></TR>
+
+</TABLE></div>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</FORM>
+</BODY></HTML>

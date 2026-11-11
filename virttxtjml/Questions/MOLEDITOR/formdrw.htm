@@ -1,0 +1,312 @@
+<!doctype html>
+
+<html lang="en">
+<HEAD>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="../../htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="../../htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var smiles = "";
+var jmeans = "0 0";
+var jme = "0 0";
+var i="";
+var anscnt=0;
+var molec="";
+var scrpt='';
+var strt="<font color=green>A response to your answer will appear here.</font>";
+var rgt="<font color=blue><b>Correct!</b></font><br>";
+var wrg="<font color=red><b>Wrong!</b></font><br>";
+
+var k="";
+
+function process(form) {
+if (anscnt!=0) {
+anscnt=0;
+}
+if (scrpt!='') {
+scrpt='';
+}
+document.getElementById("txtarea").innerHTML= (strt);
+	if (form.prb[0].checked) {
+	molec=1;
+i="CC(C)C(C)(C)C";
+jmeans = "7 6 C 4.73 -6.70 C 4.73 -4.28 C 8.23 -5.49 C 7.53 -4.28 C 7.53 -6.70 C 5.43 -5.49 C 6.83 -5.49 1 6 1 2 6 1 3 7 1 4 7 1 5 7 1 6 7 1";
+}
+	if (form.prb[1].checked) {
+molec=2;
+i="CC(C)CC(O)CC(C)C";
+jmeans = "10 9 C 8.81 -3.72 C 10.02 -5.82 C 3.96 -3.72 C 2.74 -5.82 O 6.38 -3.72 C 7.59 -5.82 C 5.17 -5.82 C 8.81 -5.12 C 3.96 -5.12 C 6.38 -5.12 1 8 1 2 8 1 3 9 1 4 9 1 5 10 1 6 8 1 6 10 1 7 9 1 7 10 1";
+}
+	if (form.prb[2].checked) {
+molec=3;
+i="BrC1(Br)CCCC1";
+jmeans = "7 7 Br 10.61 -6.56 Br 10.11 -4.49 C 7.21 -5.74 C 7.64 -7.07 C 8.34 -4.91 C 9.04 -7.07 C 9.48 -5.74 1 7 1 2 7 1 3 4 1 3 5 1 4 6 1 5 7 1 6 7 1";
+}
+	if (form.prb[3].checked) {
+molec=4;
+i="CC1(C)CCC(=O)CC1";
+jmeans = "9 9 C 7.80 -7.20 C 6.42 -5.62 O 11.44 -3.70 C 9.02 -3.70 C 10.23 -5.80 C 7.80 -4.40 C 9.02 -6.50 C 10.23 -4.40 C 7.80 -5.80 1 9 1 2 9 1 3 8 2 4 6 1 4 8 1 5 7 1 5 8 1 6 9 1 7 9 1";
+}
+	if (form.prb[4].checked) {
+molec=5;
+i="Cc1cc(C)cc(C)c1";
+jmeans = "9 9 C 5.81 -3.19 C 8.23 -7.39 C 10.66 -3.19 C 7.02 -5.29 C 8.23 -3.19 C 9.44 -5.29 C 7.02 -3.89 C 8.23 -5.99 C 9.44 -3.89 1 7 1 2 8 1 3 9 1 4 7 2 4 8 1 5 7 1 5 9 2 6 8 2 6 9 1";
+}
+	if (form.prb[5].checked) {
+	molec=6;
+i="O=C(O)CCC(=O)O";
+jmeans = "8 7 O 10.56 -5.54 O 4.50 -4.84 O 9.35 -3.44 O 5.71 -6.94 C 8.14 -5.54 C 6.92 -4.84 C 9.35 -4.84 C 5.71 -5.54 1 7 2 2 8 2 3 7 1 4 8 1 5 6 1 5 7 1 6 8 1";
+}
+	if (form.prb[6].checked) {
+	molec=7;
+i="COCCCl";
+jmeans = "5 4 C 4.54 -5.66 Cl 9.39 -5.66 C 8.17 -4.96 C 6.96 -5.66 O 5.75 -4.96 1 5 1 2 3 1 3 4 1 4 5 1";
+}
+	if (form.prb[7].checked) {
+	molec=8;
+i="OCC12CCC(CC1)C2";
+jmeans = "9 10 O 8.21 -2.38 C 7.00 -3.08 C 5.79 -6.58 C 8.21 -6.58 C 5.79 -5.18 C 8.21 -5.18 C 6.51 -5.79 C 7.00 -7.28 C 7.00 -4.48 1 2 1 2 9 1 3 5 1 3 8 1 4 6 1 4 8 1 5 9 1 6 9 1 7 8 1 7 9 1";
+}
+	if (form.prb[8].checked) {
+	molec=9;
+i="[H][C@@]1(C(=C)C)CC=C(C)C(=O)C1"; 
+jmeans = "12 12 H 8.80 -8.52 C 11.23 -9.93 C 8.80 -9.93 C 10.02 -3.64 O 7.59 -5.04 C 11.23 -5.74 C 11.23 -7.13 C 8.80 -7.13 C 10.02 -9.23 C 10.02 -5.04 C 8.80 -5.74 C 10.02 -7.83 12 1 -2 2 9 2 3 9 1 4 10 1 5 11 2 6 7 1 6 10 2 7 12 1 8 11 1 8 12 1 12 9 -1 10 11 1";
+}
+	if (form.prb[9].checked) {
+	molec=10;
+i="FC1C3CC2CC1CC(Cl)(C2)C3";
+jmeans = "12 12 H 6.18 -7.70 C 8.60 -9.10 C 6.18 -9.10 C 7.39 -2.80 O 4.97 -4.20 C 8.60 -4.90 C 8.60 -6.30 C 6.18 -6.30 C 7.39 -8.40 C 7.39 -4.20 C 6.18 -4.90 C 7.39 -7.00 12 1 -2 2 9 2 3 9 1 4 10 1 5 11 2 6 7 1 6 10 2 7 12 1 8 11 1 8 12 1 12 9 -1 10 11 1";
+}
+if (form.prb[10].checked) {
+	molec=11;
+i="[H][C@@](CN(C)C)(c1ccc(Br)cc1)c2ccccn2"; 
+jmeans = "19 20 H 9.26 -6.37 C 8.01 -9.80 C 10.43 -9.80 Br 8.01 -1.40 C 4.37 -9.10 C 5.58 -9.80 C 4.37 -7.70 C 6.80 -9.10 C 6.80 -3.50 C 9.22 -3.50 C 6.80 -4.90 C 9.22 -4.90 C 9.22 -7.70 N 5.58 -7.00 C 8.01 -2.80 C 8.01 -5.60 C 6.80 -7.70 N 9.22 -9.10 C 8.01 -7.00 19 1 -2 2 18 1 3 18 1 4 15 1 5 6 1 5 7 2 6 8 2 7 14 1 8 17 1 9 11 2 9 15 1 10 12 1 10 15 2 11 16 1 12 16 2 13 18 1 19 13 -1 14 17 2 16 19 1 17 19 1";
+}
+if (form.prb[11].checked) {
+	molec=12;
+i="C=C[C@]1(C)CCC=C(C)C(=O)N1";  
+jmeans = "12 12 C 3.02 -6.61 C 9.30 -3.78 C 4.20 -5.24 O 6.94 -2.64 C 4.37 -6.99 C 8.52 -6.02 C 7.64 -7.11 C 6.24 -7.11 N 5.68 -4.65 C 8.21 -4.65 C 6.94 -4.04 C 5.37 -6.02 1 5 2 2 10 1 12 3 -2 4 11 2 12 5 -1 6 7 1 6 10 2 7 8 1 8 12 1 9 11 1 9 12 1 10 11 1";
+}
+if (form.prb[12].checked) {
+	molec=13;
+i="[H][C@]1(C)CC(=O)C[C@@]1([H])C";
+jmeans = "10 10 H 7.32 -7.96 H 11.51 -7.82 C 7.90 -9.10 C 10.94 -9.10 O 9.42 -4.42 C 8.29 -6.64 C 10.55 -6.64 C 9.42 -5.82 C 8.72 -7.97 C 10.12 -7.97 9 1 -2 10 2 -2 9 3 -1 10 4 -1 5 8 2 6 8 1 6 9 1 7 8 1 7 10 1 9 10 1";
+}
+if (form.prb[13].checked) {
+	molec=14;
+i="O=N(=O)c1cccc(N(=O)=O)c1";
+jmeans = "12 12 O 3.92 -6.08 O 5.14 -3.98 O 9.98 -3.98 O 11.20 -6.08 C 7.56 -8.18 C 6.35 -7.48 C 8.77 -7.48 C 7.56 -5.38 C 6.35 -6.08 C 8.77 -6.08 N 5.14 -5.38 N 9.98 -5.38 1 11 2 2 11 2 3 12 2 4 12 2 5 6 1 5 7 2 6 9 2 7 10 1 8 9 1 8 10 2 9 11 1 10 12 1";
+}
+if (form.prb[14].checked) {
+	molec=15;
+i="[H][C@]3(C(=O)O)CSC(c2nc1ccc(O)cc1s2)=N3";
+jmeans = "19 21 H 14.07 -5.98 O 13.86 -8.92 O 15.28 -6.95 O 3.52 -7.40 C 4.73 -5.29 C 5.94 -4.59 C 5.94 -7.40 C 12.87 -5.29 N 11.53 -7.12 N 8.48 -4.86 S 11.53 -4.86 S 8.48 -7.12 C 14.00 -7.52 C 10.71 -5.99 C 4.73 -6.69 C 9.31 -5.99 C 7.15 -5.29 C 7.15 -6.69 C 12.87 -6.69 19 1 -1 2 13 2 3 13 1 4 15 1 5 6 1 5 15 2 6 17 2 7 15 1 7 18 2 8 11 1 8 19 1 9 14 2 9 19 1 10 16 2 10 17 1 11 14 1 12 16 1 12 18 1 19 13 -2 14 16 1 17 18 1";
+}
+
+	function LoadApplet(){
+	//alert(strScript);
+	document.getElementById("fixapplt").innerHTML= (
+   "<applet " + 
+      "name='jmol' " + 
+      "id='jmol'  " + 
+      "code='JmolApplet' " + 
+      "archive='JmolApplet.jar' " + 
+      "width='300' height='300' " + 
+      "mayscript='true'>" + 
+	  "<param name = 'emulate' value ='chime' /> " +
+      "<param name='progressbar' value='true' /> " + 
+      "<param name='progresscolor' value='#0000FF' /> " +  
+      "<param name='boxmessage' value='Model Loading...' /> " + 
+      "<param name='boxbgcolor' value='#FFFFFF' /> " + 
+      "<param name='boxfgcolor' value='#112233' /> " + 
+      "<param name='bgcolor' value='#FFFFFF' /> " + 
+      "<param name='frank' value='true' /> " + 
+      "<param name='debugscript' value='true' /> " + 
+     "<param name='script' value= '" + strScript +"'/> " + 
+   "</applet>"
+);
+		return;
+}	
+	MoleculePath = "Structures/MM"+molec+".pdb";		
+
+if (molec==5) {
+scrpt= 'connect (atomno=2) (atomno=3) DOUBLE; connect (atomno=4) (atomno=5) DOUBLE; connect (atomno=6) (atomno=8) DOUBLE; '
+}
+if (molec==6) {
+scrpt= 'connect (atomno=2) (atomno=3) DOUBLE; connect (atomno=7) (atomno=8) DOUBLE;  '
+}
+if ((molec==9)||(molec==11)||(molec==12)||(molec==15)) {
+scrpt= 'set echo bottom center; color echo blue; font echo 18 serif; echo Show all groups at stereogenic centers; '
+}
+if (molec==13) {
+scrpt= 'set echo bottom center; color echo blue; font echo 18 serif; echo Show all groups at stereogenic centers; connect (atomno=1) (atomno=2) DOUBLE; '
+}
+if (molec==14) {
+scrpt= 'connect (atomno=2) (atomno=3) DOUBLE; connect (atomno=4) (atomno=5) DOUBLE; connect (atomno=6) (atomno=7) DOUBLE; '
+}
+
+
+			strScript = 'load ' + MoleculePath + '; set echo off; set frank off; spin off; wireframe 0.15; '+ scrpt +' select all; cpk 0.5; select hydrogen; color atoms cyan; select carbon;  color atoms [140,140,140]; select chlorine; color atoms lime; select  bromine; color atoms orange; select bromine, chlorine, fluorine, sulfur; label %e; color label black; set labeloffset 0 0;  select all;  move 100 90 0 0 0 0 0 0 1; set echo top center; color echo maroon; echo Problem '+molec+'';
+	LoadApplet();
+}
+
+
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+  if (smiles == "") {
+alert("Nothing to process!\rYou must draw a structural formula"); return;
+}
+anscnt=anscnt+1;
+if  (smiles == i) { 
+document.getElementById("txtarea").innerHTML= (rgt);
+	anscnt=2;
+	}else{
+if ((molec==13)&&(smiles== "[H][C@@]1(C)CC(=O)C[C@]1([H])C")) {
+document.getElementById("txtarea").innerHTML= (rgt);
+}else{
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+}
+}
+
+
+
+
+function getJmeFile() {
+  var jme = document.JME.jmeFile();
+  document.form.jme_output.value = jme;
+}
+function processJmeans() {
+  document.JME.readMolecule(document.form.jmeans_output.value);
+}
+
+
+function showans() { 
+if (anscnt>=2) {
+document.JME.readMolecule(jmeans);
+}else{
+document.getElementById("txtarea").innerHTML= "You must try to answer this question twice<br>before viewing the correct structure.";
+}
+}
+
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<TITLE>Drawing Formulas</TITLE>
+<body>
+
+<div class="ctr"><b><span class="fs-4">Drawing Structures from Models</span></b></div>
+<P>When you show a problem, a model of a compound will appear in the window on the left. Carbon atoms are gray, hydrogen is cyan, oxygen is red, nitrogen is blue, and other elements are labeled by their symbol. This model may be moved about by the mouse, and examined from different perspectives. You should then draw a structural formula for this compound in the drawing window on the right, and check your answer.<br />Problems 9, 11,12, 13 and 15 require use of the wedge drawing tool to indicate configuration, and also attachment of hydrogen (use the <b>X</b> button) to stereogenic centers. Do not use this tool or add hydrogen in other cases.</P>
+<p><TABLE  CELLPADDING=3 valign="top" border>
+<FORM METHOD="POST" NAME="form" ONSUBMIT="return false;">
+<TR valign="top">
+<TD width=380><div class="ctr"><b><span class="fs-4">Model Display Window</span></b></div>
+<table width="340" height="340"> <tr>
+    <td height="330" width="330" id = "fixapplt" align="center" colspan=2><p><span class="fc-maroon">After selecting a problem<br />Click the <span class="fc-blue">Show Problem</span> Button</span></span></td></tr>
+
+<tr><td width="40"></td><td><button type="button" class="jctl" data-target="jmol" data-script=" spacefill 70%">X</button>&nbsp;Show Spacefill Model<br>
+<button type="button" class="jctl" data-target="jmol" data-script="spacefill off; ">X</button>&nbsp;Show Stick Model<br>
+<button type="button" class="jctl" data-target="jmol" data-script="wireframe 40; spacefill 90; ">X</button>&nbsp;Show Ball&Stick Model</td></tr>
+<tr><td colspan=2><span class="fc-blue fs-2">This model may be moved about by click-dragging the cursor over the display. The display may be altered by the buttons under the model. </span></td></tr></table>
+</TD>
+<TH width=130>
+<h4>Select a Problem</h4>
+<span class="fc-blue fs-3"> Problem 1</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw" checked>
+<input type="hidden" value="" name="smiles"><br />
+
+<span class="fc-blue fs-3"> Problem 2</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw">
+<input type="hidden" value="" name="smiles"><br />
+
+<span class="fc-blue fs-3"> Problem 3</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw">
+<input type="hidden" value="" name="smiles"><br />
+
+<span class="fc-blue fs-3"> Problem 4</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw">
+<input type="hidden" value="" name="smiles"><br />
+
+<span class="fc-blue fs-3"> Problem 5</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw">
+<input type="hidden" value="" name="smiles"><br />
+
+<span class="fc-blue fs-3"> Problem 6</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw">
+<input type="hidden" value="" name="smiles"><br />
+
+<span class="fc-blue fs-3"> Problem 7</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw">
+<input type="hidden" value="" name="smiles"><br />
+
+<span class="fc-blue fs-3"> Problem 8</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw">
+<input type="hidden" value="" name="smiles"><br />
+
+<span class="fc-blue fs-3"> Problem 9</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw">
+<input type="hidden" value="" name="smiles"><br />
+
+<span class="fc-blue fs-3"> Problem 10</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw">
+<input type="hidden" value="" name="smiles"><br />
+
+<span class="fc-blue fs-3"> Problem 11</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw">
+<input type="hidden" value="" name="smiles"><br />
+
+<span class="fc-blue fs-3"> Problem 12</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw">
+<input type="hidden" value="" name="smiles"><br />
+
+<span class="fc-blue fs-3"> Problem 13</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw">
+<input type="hidden" value="" name="smiles"><br />
+
+<span class="fc-blue fs-3"> Problem 14</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw">
+<input type="hidden" value="" name="smiles"><br />
+
+<span class="fc-blue fs-3"> Problem 15</span></B> 
+ <INPUT TYPE=RADIO NAME="prb" VALUE="draw">
+<input type="hidden" value="" name="smiles"><br />
+<hr />
+<input type="button" value="Show Problem" onClick="process(this.form);document.JME.reset();"><br><br>
+<input type="button" value="Check Answer" onClick="submitSmiles();"><br /><br />
+<INPUT TYPE="button" VALUE="Show Answer" onClick="showans();"><br /><br />
+<INPUT TYPE='RESET' VALUE='Reset' onClick='document.JME.reset();'></td>
+
+</TH>
+<TD width=390><div class="ctr"><b><span class="fs-4">Molecular Drawing Window</span></b></div><br />
+<table><tr><th><applet code="JME.class" name="JME" archive="JME.jar" width=320, height=320>
+<param name= "options"  value="multipart">
+You have to enable Java and JavaScript on your machine !
+</applet></th></tr>
+<tr> <td  width="252" height="36" align="center"  id="txtarea" >
+   <span class="fc-green">A response to your answer will appear here.</span>
+   </td></tr>
+<tr><td><p><br /><span class="fs-2"><a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl <br />To practice using this drawing program <A 
+HREF="newprct.htm">Click Here</A>.</span></p></td></tr></table>
+</TD> </TR></TABLE>
+<HR> 
+<span class="fs-2">Property of The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+
+</form>
+</BODY>
+</HTML>

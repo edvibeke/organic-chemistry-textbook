@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var i="";
+var j="";
+var sma="";
+var smimg="";
+var rgimg="";
+		function process(form){
+	if (i!=0){
+	 i=0
+}
+	if (j!=0){
+	 j=0
+}
+		if (form.sm1[0].checked){
+smimg="CH<SUB>3</SUB>CH<SUB>2</SUB>CH<SUB>2</SUB>OH";
+		i=1
+}
+		if (form.sm1[1].checked){
+smimg="CH<SUB>3</SUB>CH(OH)CH<SUB>2</SUB>CH<SUB>3</SUB>";
+		i=2
+	}
+		if (form.sm1[2].checked){
+smimg="(CH<SUB>3</SUB>)<SUB>3</SUB>COH";
+		i=3
+}
+		if (form.sm1[3].checked){
+smimg="<IMG SRC='../Images/cy6ol.gif'>";
+		i=4
+	}	
+		if (form.sm1[4].checked){
+smimg="<IMG SRC='../Images/phenol.gif'>";
+		i=5
+}
+		if (form.sm1[5].checked){
+smimg="<IMG SRC='../Images/benzalc.gif'>";
+		i=6
+	}					
+		if (form.sm2[0].checked){
+rgimg="(CH<SUB>3</SUB>CO)<SUB>3</SUB>O<BR>in pyridine"
+		j=1
+}
+		if (form.sm2[1].checked){
+rgimg="SOCl<SUB>2</SUB><BR>pyridine , heat"
+		j=2
+	}
+		if (form.sm2[2].checked){
+rgimg=" HBr (conc.), heat"
+		j=3
+}
+		if (form.sm2[3].checked){
+rgimg="Jones' reagent<SUB>&nbsp;</SUB><BR>CrO<SUB>3</SUB> in H<SUB>3</SUB>O<SUP>(+)</SUP>"
+		j=4
+	}
+		if (form.sm2[4].checked){
+rgimg="PCC in CH<SUB>2</SUB>Cl<SUB>2</SUB><BR>(pyridinium chlorochromate)"
+		j=5
+}
+		if (form.sm2[5].checked){
+rgimg="H<SUB>2</SUB>SO<SUB>4</SUB> catalyst<BR> &gt; 150  &#186;C"
+		j=6
+	}
+		if (form.sm2[6].checked){
+rgimg="C<SUB>7</SUB>H<SUB>7</SUB>SO<SUB>2</SUB>Cl<BR>pyridine"
+		j=7
+}
+		if (form.sm2[7].checked){
+rgimg="dilute aqueous HNO<SUB>3</SUB>"
+		j=8
+	}
+		if (form.sm2[8].checked){
+rgimg="dimethyl sulfate (CH<SUB>3</SUB>O)<SUB>2</SUB>SO<SUB>2</SUB><BR>aqueous NaOH"
+		j=9
+	}
+
+var smimg=smimg;
+var rgimg=rgimg;
+parent.child2.document.clear(); 
+parent.child2.document.write("<TABLE CELLPADDING=4 width=900 align=center><TR>"); 
+parent.child2.document.write("<TD>Draw a formula for the expected product in the <b>Drawing Window</b> on the left below. Do not draw hydrogens. ");
+parent.child2.document.write(" If one <b>diastereomeric</b> product out of two or more possible diastereomers is favored, draw the favored configuration using the wedge tool. ");
+parent.child2.document.write("<br /> <FONT COLOR='red'> If no reaction is expected, draw the starting structure.</FONT><br>  When you are finished, check your answer by pressing the <b>Check Molecule</b> button. ");
+parent.child2.document.write("</TD></TR></TABLE>");
+
+parent.child2.document.write("<TABLE CELLSPACING=9 WIDTH=900 align-center><TR align=center ><TH rowspan=2>")
+parent.child2.document.write("<applet code='JME.class' name='JME' archive='JME.jar' width=360, height=360>");
+parent.child2.document.write("You have to enable Java and JavaScript on your machine !</applet>");
+parent.child2.document.write("<FORM METHOD='POST' NAME='form' ONSUBMIT='return false;'></TH>");
+parent.child2.document.write("<TD width=30> &nbsp; </TD>");
+parent.child2.document.write("<TD nowrap>"+smimg+"</TD>");
+parent.child2.document.write("<TD>+</TD>");
+parent.child2.document.write("<TD nowrap>"+rgimg+"</TD>");
+parent.child2.document.write("<TD><IMG SRC='../Images/arrow1.gif'></TD>");
+parent.child2.document.write("<TD> <IMG SRC='../Images/question.gif'></TD>");
+parent.child2.document.write("<TD width=30> &nbsp; </TD></tr>");
+parent.child2.document.write(" <tr valign=top><TH colspan=7><FONT COLOR='blue'>The window below will display a response to your answers.</FONT><br /><br />");
+parent.child2.document.write("<TEXTAREA WRAP NAME='result' ROWS='6' COLS='56'></TEXTAREA><br /> <br /><INPUT TYPE='RESET' VALUE='Clear' onClick='parent.window.location.reload(true);back();'>");
+parent.child2.document.write("<input type='hidden' value='' name='smiles'>");
+parent.child2.document.write("<tt> &nbsp; &nbsp; &nbsp; </tt> <input type='button' value='Check Molecule' onClick='parent.child1.submitSmiles();parent.child1.processMolecule1(this.form);'></TH>");
+parent.child2.document.write("</TR></TABLE>");
+}
+
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+var text="";
+
+function submitSmiles() {
+  var smiles = parent.child2.document.JME.smiles();
+ parent.child2.document.form.smiles.value = smiles; 
+parent.child2.document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+ 
+  parent.child2.document.form.smiles.value = smiles; 
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+ parent.child2.document.form.smiles.value = smiles; 
+}
+function processMolecule1(input) {
+smiles = parent.child2.document.form.smiles.value;
+  if (smiles == "") {  alert("Nothing to process!"); return;
+}
+if (text!="") {
+text="";
+}
+		if (i==1 &&  j==1) {
+sma="CCCOC(C)=O";
+}
+		if (i==1 &&  j==2) {
+sma="CCCCl";
+}
+		if (i==1 &&  j==3) {
+sma="CCCBr";
+}
+		if (i==1 &&  j==4) {
+sma="CCC(=O)O";
+}
+		if (i==1 &&  j==5) {
+sma="CCC=O";
+}
+		if (i==1 &&  j==6) {
+sma="C=CC";
+}
+		if (i==1 &&  j==7) {
+sma="CCCOS(=O)(=O)c1ccc(C)cc1";
+}
+		if (i==1 &&  j==8) {
+sma="CCCO";
+}
+		if (i==1 &&  j==9) {
+sma="CCCOC";
+}
+		if (i==2 &&  j==1) {
+sma="CCC(C)OC(C)=O";
+}
+		if (i==2 &&  j==2) {
+sma="CCC(C)Cl";
+}
+		if (i==2 &&  j==3) {
+sma="CCC(C)Br";
+}
+		if (i==2 &&  j==4) {
+sma="CCC(C)=O";
+}
+		if (i==2 &&  j==5) {
+sma="CCC(C)=O";
+}
+		if (i==2 &&  j==6) {
+sma="CC=CC";
+}
+		if (i==2 &&  j==7) {
+sma="CCC(C)OS(=O)(=O)c1ccc(C)cc1";
+}
+		if (i==2 &&  j==8) {
+sma="CCC(C)O";
+}
+		if (i==2 &&  j==9) {
+sma="CCC(C)OC";
+}
+		if (i==3 &&  j==1) {
+sma="CC(=O)OC(C)(C)C";
+}
+		if (i==3 &&  j==2) {
+sma="C=C(C)C";
+}
+		if (i==3 &&  j==3) {
+sma="CC(C)(C)Br";
+}
+		if (i==3 &&  j==4) {
+sma="CC(C)(C)O";
+}
+		if (i==3 &&  j==5) {
+sma="CC(C)(C)O";
+}
+		if (i==3 &&  j==6) {
+sma="C=C(C)C";
+}
+		if (i==3 &&  j==7) {
+sma="C=C(C)C";
+}
+		if (i==3 &&  j==8) {
+sma="CC(C)(C)O";
+}
+		if (i==3 &&  j==9) {
+sma="COC(C)(C)C";
+}
+		if (i==4 &&  j==1) {
+sma="CC(=O)OC1CCCCC1";
+}
+		if (i==4 &&  j==2) {
+sma="ClC1CCCCC1";
+}
+		if (i==4 &&  j==3) {
+sma="BrC1CCCCC1";
+}
+		if (i==4 &&  j==4) {
+sma="O=C1CCCCC1";
+}
+		if (i==4 &&  j==5) {
+sma="O=C1CCCCC1";
+}
+		if (i==4 &&  j==6) {
+sma="C1=CCCCC1";
+}
+		if (i==4 &&  j==7) {
+sma="Cc2ccc(S(=O)(=O)OC1CCCCC1)cc2";
+}
+		if (i==4 &&  j==8) {
+sma="OC1CCCCC1";
+}
+		if (i==4 &&  j==9) {
+sma="COC1CCCCC1";
+}
+		if (i==5 &&  j==1) {
+sma="CC(=O)Oc1ccccc1";
+}
+		if (i==5 &&  j==2) {
+sma="O=S(Cl)Oc1ccccc1";
+}
+		if (i==5 &&  j==3) {
+sma="Oc1ccccc1";
+}
+		if (i==5 &&  j==4) {
+sma="O=c1ccc(=O)cc1";
+}
+		if (i==5 &&  j==5) {
+sma="O=c1ccc(=O)cc1";
+}
+		if (i==5 &&  j==6) {
+sma="O=S(=O)(O)c1ccc(O)cc1";
+}
+		if (i==5 &&  j==7) {
+sma="Cc2ccc(S(=O)(=O)Oc1ccccc1)cc2";
+}
+		if (i==5 &&  j==8) {
+sma="O=N(=O)c1ccc(O)cc1";
+}
+		if (i==5 &&  j==9) {
+sma="COc1ccccc1";
+}
+		if (i==6 &&  j==1) {
+sma="CC(=O)OCc1ccccc1";
+}
+		if (i==6 &&  j==2) {
+sma="ClCc1ccccc1";
+}
+		if (i==6 &&  j==3) {
+sma="BrCc1ccccc1";
+}
+		if (i==6 &&  j==4) {
+sma="O=C(O)c1ccccc1";
+}
+		if (i==6 &&  j==5) {
+sma="O=Cc1ccccc1";
+}
+		if (i==6 &&  j==6) {
+sma="OCc1ccccc1";
+}
+		if (i==6 &&  j==7) {
+sma="Cc2ccc(S(=O)(=O)OCc1ccccc1)cc2";
+}
+		if (i==6 &&  j==8) {
+sma="OCc1ccccc1";
+}
+		if (i==6 &&  j==9) {
+sma="COCc1ccccc1";
+}
+		if (i==2 &&  j==6 && smiles=="C=CCC") {
+text="Acid catalyzed dehydration of 2-butanol favors 2-butene over 1-butene.\rThe Saytzeff Rule."
+}else{
+text=text
+}
+		if (i==3 &&  j==2 && smiles=="CC(C)(C)Cl") {
+text="The base pyridine will induce elimination of HCl from t-butyl chloride, giving 2-methylpropene as the product."
+}else{
+text=text
+}
+		if (i==3 &&  j==7) {
+text="The base pyridine will induce elimination of the tosylate, giving 2-methylpropene as the product."
+}else{
+text=text
+}
+		if (i==5 &&  j==2 && smiles=="Oc1ccccc1") {
+text="The initial product will be the chlorosulfite ester of phenol.\rOn hydrolysis this will give phenol."
+}else{
+text=text
+}
+		if ((i==5 && j==4)||(i==5 && j==5)) {
+text="Phenol is easily oxidized. A mixture of products is obtained, one of which is 1,4-benzoquinone." 
+}else{
+text=text
+}
+		if ((i==5 &&  j==6 && smiles=="Oc1ccccc1")||(i==5 &&  j==6 && smiles=="O=S(=O)(O)c1ccccc1O")||(i==5 &&  j==6 && smiles=="O=S(=O)(O)Oc1ccccc1")) {
+text="Phenol undergoes electrophilic substitution very rapidly. Some sulfonation will occur, predominately para to the hydroxyl group. A sulfonate ester will be hydrolyzed in workup."
+}else{
+text=text
+}
+		if ((i==5 &&  j==8 && smiles=="O=N(=O)c1ccc(O)cc1")||(i==5 &&  j==8 && smiles=="O=N(=O)c1ccccc1O")) {
+text="Phenol undergoes nitration very rapidly. Nitration will occur predominately para to the hydroxyl group, but also at the ortho locations."
+}else{
+text=text
+}
+		if (i!=5  && j==8) {
+text="Dilute nitric acid does not react with most alcohols. With the exception of phenol and anisole it does not nitrate aromatic rings."
+}else{
+text=text
+}
+
+if ((smiles.indexOf("@",0)>=0)) {
+var text="Do not use the wedge drawing tool.";
+}
+
+
+if (smiles==sma) {
+var Txt="Correct Answer! \r";
+	}else{
+var Txt="Wrong Answer! Try again. \r";
+}
+	input.result.value = Txt + text;
+}
+// End of hide script comment. -->
+</SCRIPT>
+
+ <link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE> Reactions of Alcohols</TITLE>
+ <body>
+  <div class="ctr"><b><span class="fs-5">Reactions of Alcohols & Phenols</span></b></div>
+<FORM>
+<span class="fs-3"><B>In this problem we shall consider six hydroxyl group<span class="fc-maroon"> reactants:</span></B></span><BR>
+<div class="ctr"><TABLE BORDER=3><TR><TD>
+<TABLE BORDER CELLPADDING=6><TR  VALIGN=top BGCOLOR="CCFFCC">
+<TH WIDTH=180 nowrap><span class="fs-3">1-propanol </span> &nbsp;<INPUT NAME="sm1"  TYPE="radio" checked> &nbsp; </TH>
+<TH WIDTH=180 nowrap><span class="fs-3">2-butanol</span> &nbsp;<INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH WIDTH=180 nowrap><span class="fs-3">2-methyl-2-propanol</span> &nbsp;<INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TD></TR>
+<TR  VALIGN=top BGCOLOR="CCFFCC">
+<TH><span class="fs-3">cyclohexanol</span> &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH><span class="fs-3">phenol</span> &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH><span class="fs-3">benzyl alcohol</span> &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH></TR></TABLE>
+</TD></TR></TABLE></div><br />
+<B>These compounds may be reacted with nine different <span class="fc-maroon">reagents:</span></B><br />
+<div class="ctr"><TABLE BORDER=3><TR><TD>
+<TABLE BORDER CELLPADDING=8  BGCOLOR="FFCCCC"><TR VALIGN="top">
+<TH WIDTH=200><span class="fs-3"> (CH<SUB>3</SUB>CO)<SUB>2</SUB>O</span><BR> <span class="fs-2">in pyridine</span></TH>
+<TH><INPUT NAME="sm2" TYPE="radio" checked></TH>
+<TH> </TH>
+<TH WIDTH=200><span class="fs-3"> SOCl<SUB>2</SUB></span> <BR><span class="fs-2">pyridine, heat </span></TH>
+<TH><INPUT NAME="sm2" TYPE="radio"></TH>
+<TH> </TH>
+<TH WIDTH=200><span class="fs-3"> HBr (48%)<SUB>&nbsp;</SUB></span><BR> <span class="fs-2"> &nbsp; heat  </span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH></TR>
+<TR VALIGN="top" >
+<TH><span class="fs-3"> CrO<SUB>3</SUB></span><BR><span class="fs-2">aqueous H<SUB>2</SUB>SO<SUB>4</SUB></span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH nowrap><span class="fs-3">C<SUB>5</SUB>H<SUB>5</SUB>NH &#149; ClCrO<SUB>3</SUB> </span><BR><span class="fs-2">(PCC) in methylene chloride</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH><span class="fs-3"> H<SUB>2</SUB>SO<SUB>4</SUB> </span> <BR><span class="fs-2"> heat ( &gt;150  &#186;C) </span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH></TR>
+<TR VALIGN="top">
+<TH nowrap><span class="fs-3"> C<SUB>7</SUB>H<SUB>7</SUB>SO<SUB>2</SUB>Cl</span><BR><span class="fs-2">(tosyl chloride) in pyridine</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH> <span class="fs-3"> HNO<SUB>3</SUB></span><BR><span class="fs-2"> dilute aqueous</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH nowrap><span class="fs-3"> (CH<SUB>3</SUB>O)<SUB>2</SUB>SO<SUB>2</SUB></span><BR> <span class="fs-2">(dimethyl sulfate) in NaOH soln</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH></TR>
+</TABLE></TD></TR></TABLE></div>
+
+<p><table width=960 align="center "><tr valign="bottom"><td>
+<span class="fc-blue"><b>Select one hydroxyl compound from the first group, <br /> and one reagent from the second group.</b></span></td><th><table bgcolor="blue" align="center" border><tr><th>  
+<INPUT TYPE="button" VALUE="Show the Problem"  onClick="process(this.form)"></th></tr></table> </th><td align="right">To practice using the drawing program  <A HREF="../MOLEDITOR/sterprct.htm" Target="_top"> Click Here</A> &nbsp; <br>
+To review the chemistry of alcohols  <A HREF="../../alcohol1.htm#alcrx1" Target="_top"> Click Here</A>. &nbsp; </TD></tr></table>
+
+ </FORM>
+ </BODY>
+ </HTML>

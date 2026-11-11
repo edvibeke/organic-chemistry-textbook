@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+															// Set variables
+var i=0;
+var j=0;
+var Txt3="Congratulations. Your answers are all good.";
+var Txt2="Your good answers have been retained.\rAny poor answers have been removed.\rIf you miss any keep trying.";
+var Txt="\rYour reaction type answers are not correct";
+
+var anscnt=0
+                         //Answer variables
+ var answ="The correct values are shown above in the appropriate colored areas."
+
+var noansw="You must try to answer this question three times before seeing the results."
+
+
+
+var xx='<table align=center cellpadding=6 border=2 BGCOLOR="#f9f9f9"><tr ><td>The energy change that takes place in a chemical reaction is reflected by the <b>heat of reaction</b> (&#916;H&#186;), and this may be calculated from the standard energies of bonds that are broken and formed in the reaction. In doing so we assume that unchanged bonds have no influence, and that all bonds of the same kind (e.g. C&#8211;H) have the same energy. Both assumptions are incorrect, but the error introduced is normally small.<br />1. For the fluorination of methane (first reaction) one C&#8211;H and a F&#8211;F bond are broken, while  C&#8211;F and H&#8211;F bonds are formed. The sum of the standard energies of the broken bonds is 99 + 36.6 = 135.6, and that of the formed bonds is 116 + 135 = 251.  In practice, &#916;H&#186; is calculated by subtracting the energy of the bonds formed by the products from that of the bonds broken in the reactants. In this case, 135.6 - 251 = -115.4. If the resulting &#916;H&#186;  is negative the reaction is exothermic, if positive it is endothermic.<br />2. For the iodination of methane, &#916;H&#186; = reactants (99 + 36) - products (51 + 71) = +13.<br />3. For propene hydrogenation, &#916;H&#186; = reactants (63 + 104) - products (99 + 99) = -31. (63 is the difference between C&#8211;C bond energy and C=C bond energy)<br /> 4. For bromine addition to propene, &#916;H&#186; = reactants (63 + 46) - products (68 + 68) = -27.<br /> 5. For hydrogen addition to propyne, &#916;H&#186; = reactants (54 + 104) - products (99 + 99) = -40.<br />6. For tautomerization, &#916;H&#186; = reactants (63 + 111) - products (99 + 91) = -16. (91 is the difference between C&#8211;O bond energy and C=O bond energy)<br />7. For the dehydration of 2-propanol, &#916;H&#186; = reactants (85.5 + 99) - products (63 + 111) = +10.5. <br />Note that the addition of hydrogen to propene (#3) and propyne (#4), and the dehydration of 2-propanol (#7) require catalysts, and in the last case heat.</P> <br /><center><INPUT TYPE="button" VALUE=" Close "  onClick="javascript:chngtxt2(xy);window.location=&#39;#strc5c&#39;"></center></td></tr></table>  ';
+
+var xy=' For an analysis of these reactions</sub>s <A HREF="javascript:chngtxt2(xx)">Click Here</a>. ';
+function chngtxt2(txt)   {
+document.getElementById('para2').innerHTML=txt;
+}
+
+function bnds() {
+var str=window.open('../bndenrgy.htm','bonds','toolbar=no,menubar=no,status=no,scrollbars=yes,width=660,height=860'); window.location='reaction.htm'
+}
+
+function typchk(input) {
+input.typa.value=fix(input.typa.value)
+input.typb.value=fix(input.typb.value)
+input.typc.value=fix(input.typc.value)
+input.typd.value=fix(input.typd.value)
+input.type.value=fix(input.type.value)
+input.typf.value=fix(input.typf.value)
+input.typg.value=fix(input.typg.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+if  (input.typa.value == "X" && input.typb.value == "E"  && input.typc.value == "X"  && input.typd.value == "X"   && input.type.value == "X"   && input.typf.value == "X"  && input.typg.value == "E") { 
+Txt="\rYour reaction type answers are correct";
+}else{
+Txt="\rYour reaction type answers are not correct";
+}
+}
+
+function validate()  {
+i=0
+anscnt = anscnt+1;
+var na=document.MyForm.numa.value; 
+if (na<-116 || na >-114){
+i=i;
+document.MyForm.numa.value="";
+}else{
+i=i+1;
+}
+
+var nb=document.MyForm.numb.value; 
+if (nb<12 || nb >14){
+i=i;
+document.MyForm.numb.value="";
+}else{
+i=i+1;
+}
+
+var nc=document.MyForm.numc.value; 
+if (nc<-32 || nc >-30){
+i=i;
+document.MyForm.numc.value="";
+}else{
+i=i+1;
+}
+
+var nd=document.MyForm.numd.value; 
+if (nd<-28 || nd>-26){
+i=i
+document.MyForm.numd.value="";
+}else{
+i=i+1;
+}
+
+var ne=document.MyForm.nume.value; 
+if (ne<-41 || ne >-39){
+i=i
+document.MyForm.nume.value="";
+}else{
+i=i+1;
+}
+
+var nf=document.MyForm.numf.value; 
+if (nf<-17 || nf >-15){
+i=i;
+document.MyForm.nume.value="";
+}else{
+i=i+1;
+}
+
+var ng=document.MyForm.numg.value; 
+if (ng<9.5 || ng >11.5){
+i=i;
+document.MyForm.numg.value="";
+}else{
+i=i+1;
+}
+
+
+if (i==7){
+document.MyForm.result.value=Txt3 + Txt
+}else{
+document.MyForm.result.value=Txt2 + Txt
+}
+
+}
+
+function giveansw(show) {
+ if (anscnt>=3)  {
+ var txt=answ
+
+	show.numa.value="-115.4";
+document.getElementById ('txta').style.backgroundColor='yellow';
+	show.numb.value="+13";
+document.getElementById ('txtb').style.backgroundColor='yellow';
+	show.numc.value="-31";
+document.getElementById ('txtc').style.backgroundColor='yellow';
+	show.numd.value="-27";
+document.getElementById ('txtd').style.backgroundColor='yellow';
+	show.nume.value="-40";
+document.getElementById ('txte').style.backgroundColor='yellow';
+	show.numf.value="-16";
+document.getElementById ('txtf').style.backgroundColor='yellow';
+	show.numg.value="10.5";
+document.getElementById ('txtg').style.backgroundColor='yellow';
+		show.typa.value="X";
+document.getElementById ('tpa').style.backgroundColor='yellow';
+ 		show.typb.value="E";
+document.getElementById ('tpb').style.backgroundColor='yellow';
+		show.typc.value="X";
+document.getElementById ('tpc').style.backgroundColor='yellow';
+		show.typd.value="X";
+document.getElementById ('tpd').style.backgroundColor='yellow';
+		show.type.value="X";
+document.getElementById ('tpe').style.backgroundColor='yellow';
+		show.typf.value="X";
+document.getElementById ('tpf').style.backgroundColor='yellow';
+		show.typg.value="E";
+document.getElementById ('tpg').style.backgroundColor='yellow';
+
+ 	}else{
+
+ var txt=noansw
+ }
+ show.result.value=txt
+ }
+ 
+function clrbx(input) {
+	input.numa.value="";
+document.getElementById ('txta').style.backgroundColor='white';
+	input.numb.value="";
+document.getElementById ('txtb').style.backgroundColor='white';
+	input.numc.value="";
+document.getElementById ('txtc').style.backgroundColor='white';
+	input.numd.value="";
+document.getElementById ('txtd').style.backgroundColor='white';
+	input.nume.value="";
+document.getElementById ('txte').style.backgroundColor='white';
+	input.nume.value="";
+document.getElementById ('txtf').style.backgroundColor='white';
+	input.numf.value="";
+document.getElementById ('txtg').style.backgroundColor='white';
+	input.numg.value="";
+
+}
+// End of hide script comment. -->;
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<FORM name="MyForm">
+<TITLE>Reaction Type</TITLE>
+<body>
+<div class="ctr"><H3>Estimating Heats of Reaction</H3></div>
+<P>Seven reactions are shown below.  Using the table of <A HREF="javascript:bnds();">standard bond energies</a>, enter a heat of reaction for each of these in the designated answer box. Answers will be judged correct if they are within 1 Kcal/mole of the observed value. Be careful to designate negative values for &#916;H&#186;.<br /> Finally, indicate whether each reaction is endothermic or exothermic by entering <b>E</b> for the former and <b>X</b> for the latter in the <b>Type</b> box.</P>
+
+<FORM>
+<p><TABLE  align=center >
+<tr><th>Overall Reaction</th><th>Heat of Reaction</th><th>Type</th><tr>
+<TR><TD rowspan=7><IMG SRC="../Images/reaction.gif"> </TD>
+<TD> &nbsp; <span class="fc-blue"><b>&#916;H&#186;</b></span> = <INPUT TYPE="text" NAME="numa" ID="txta" SIZE="5"> &nbsp; </TD><td> &nbsp; <INPUT TYPE="text" NAME="typa" ID="tpa" SIZE="2" onkeyup="this.value = this.value.toUpperCase();"> </td></TR>
+<TR><TD> &nbsp; <span class="fc-blue"><b>&#916;H&#186;</b></span> = <INPUT TYPE="text" NAME="numb" ID="txtb" SIZE="5"> &nbsp; </TD><td> &nbsp; <INPUT TYPE="text" NAME="typb" ID="tpb" SIZE="2" onkeyup="this.value = this.value.toUpperCase();"> &nbsp;  </td></TR>
+<TR><TD> &nbsp; <span class="fc-blue"><b>&#916;H&#186;</b></span> = <INPUT TYPE="text" NAME="numc" ID="txtc" SIZE="5"> &nbsp; </TD><td> &nbsp; <INPUT TYPE="text" NAME="typc" ID="tpc" SIZE="2" onkeyup="this.value = this.value.toUpperCase();"> </td></TR>
+<TR><TD> &nbsp; <span class="fc-blue"><b>&#916;H&#186;</b></span> = <INPUT TYPE="text" NAME="numd" ID="txtd" SIZE="5"> &nbsp; </TD><td> &nbsp; <INPUT TYPE="text" NAME="typd" ID="tpd" SIZE="2" onkeyup="this.value = this.value.toUpperCase();"> </td></TR>
+<TR><TD> &nbsp; <span class="fc-blue"><b>&#916;H&#186;</b></span> = <INPUT TYPE="text" NAME="nume" ID="txte" SIZE="5"> &nbsp; </TD><td> &nbsp; <INPUT TYPE="text" NAME="type" ID="tpe" SIZE="2" onkeyup="this.value = this.value.toUpperCase();"> </td></TR>
+<TR><TD> &nbsp; <span class="fc-blue"><b>&#916;H&#186;</b></span> = <INPUT TYPE="text" NAME="numf" ID="txtf" SIZE="5"> &nbsp; </TD><td> &nbsp; <INPUT TYPE="text" NAME="typf" ID="tpf" SIZE="2" onkeyup="this.value = this.value.toUpperCase();"></td></TR>
+<TR><TD> &nbsp; <span class="fc-blue"><b>&#916;H&#186;</b></span> = <INPUT TYPE="text" NAME="numg" ID="txtg" SIZE="5"> &nbsp; </TD><td> &nbsp; <INPUT TYPE="text" NAME="typg" ID="tpg" SIZE="2" onkeyup="this.value = this.value.toUpperCase();"></td></TR>
+<tr align="right"><td colspan=3>E = endo<br />X = exo</td></tr>
+</TABLE></p>
+<HR>
+
+<table align=center cellpadding=4><tr><td><INPUT TYPE="button" VALUE=" Check Answer " onClick="typchk(this.form);validate()"><br /><br />
+<INPUT TYPE="reset"  VALUE=" Clear " onClick="clrbx(this.form)"></td>
+<td><TEXTAREA WRAP NAME="result" ROWS="4" COLS="46">
+</TEXTAREA></td>
+<td> <INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form)"> </td></tr></table>
+<p id="para2">For an analysis of these reactions <A HREF="javascript:chngtxt2(xx)">Click Here</a>. </p> &nbsp; </p>
+
+</FORM>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

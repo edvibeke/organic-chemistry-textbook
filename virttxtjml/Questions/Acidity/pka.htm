@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+															// Set variables
+var i=0;
+
+var Txt3="Congratulations. Your estimates are all good."
+var Txt2="Your good estimates have been retained.\rAny poor estimates have been removed.\rIf you miss any keep trying.";
+var anscnt=0
+                         //Answer variables
+ var answ=" The observed values are shown above in the appropriate colored areas."
+
+var noansw=" You must try to answer this question three times before seeing the results."
+
+
+
+var xx='<table align=center cellpadding=6 border=2 BGCOLOR="#f9f9f9"><tr ><td>Carboxylic acids are roughly a million times more acidic than phenols, and phenols a million times more acidic than simple alcohols. The two carboxylic acids on the left have similar pK<sub>a</sub>s, benzoic acid being stronger due to the greater electron withdrawing character of the phenyl group (sp<sup>2</sup> carbons are more electronegative than sp<sup>2</sup> carbons). The two phenols differ in acidity by roughly 100 times, with the electron withdrawing formyl substituent enhancing the acidity and the electron donating methoxy group decreasing it. Phenol itself has a pK<sub>a</sub> = 10. The tertiary alcohol (fourth compound) is the weakest acid of the group.  </P> <center><INPUT TYPE="button" VALUE=" Close "  onClick="javascript:chngtxt2(xy);window.location=&#39;#strc5c&#39;"></center></td></tr></table>  ';
+
+var xy=' For an analysis of these pK<sub>a</sub>s <A HREF="javascript:chngtxt2(xx)">Click Here</a>. ';
+function chngtxt2(txt)   {
+document.getElementById('para2').innerHTML=txt;
+}
+
+
+
+function validate()  {
+i=0
+anscnt = anscnt+1;
+var na=document.MyForm.numa.value; 
+if (na<3.9 || na >4.5){
+i=i+1;
+document.MyForm.numa.value="";
+}
+
+var nb=document.MyForm.numb.value; 
+if (nb<4.6 || nb >5.2){
+i=i+1;
+document.MyForm.numb.value="";
+}
+
+var nc=document.MyForm.numc.value; 
+if (nc<7.7 || nc >8.3){
+i=i+1;
+document.MyForm.numc.value="";
+}
+
+var nd=document.MyForm.numd.value; 
+if (nd<18 || nd >19.5){
+i=i+1;
+document.MyForm.numd.value="";
+}
+
+var ne=document.MyForm.nume.value; 
+if (ne<9.9 || ne >10.5){
+i=i+1;
+document.MyForm.nume.value="";
+}
+
+if (i==0) {
+document.MyForm.result.value=Txt3
+}else{
+document.MyForm.result.value=Txt2 
+}
+
+}
+
+function giveansw(show) {
+ if (anscnt>=3)  {
+ var txt=answ
+
+	show.numa.value="4.2";
+document.getElementById ('txta').style.backgroundColor='yellow';
+	show.numb.value="4.9";
+document.getElementById ('txtb').style.backgroundColor='yellow';
+	show.numc.value="8.0";
+document.getElementById ('txtc').style.backgroundColor='yellow';
+	show.numd.value="19";
+document.getElementById ('txtd').style.backgroundColor='yellow';
+	show.nume.value="10.2";
+document.getElementById ('txte').style.backgroundColor='yellow';
+ 	}else{
+ var txt=noansw
+ }
+ show.result.value=txt
+ }
+ 
+function clrbx(input) {
+	input.numa.value="";
+document.getElementById ('txta').style.backgroundColor='white';
+	input.numb.value="";
+document.getElementById ('txtb').style.backgroundColor='white';
+	input.numc.value="";
+document.getElementById ('txtc').style.backgroundColor='white';
+	input.numd.value="";
+document.getElementById ('txtd').style.backgroundColor='white';
+	input.nume.value="";
+}
+// End of hide script comment. -->;
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<FORM name="MyForm">
+<TITLE>Estimating pK<sub>a</sub>s</TITLE>
+<body>
+<div class="ctr"><H3>Estimating pK<sub>a</sub>s </H3></div>
+<P>Five compounds incorporating acidic hydroxyl groups are shown below.  Enter an estimated pK<sub>a</sub> for each of these in the designated answer box.  .  Answers will be judged correct if they are within 0.3 pK<sub>a</sub> units of the observed value.</P>
+<FORM>
+<p><TABLE CELLPADDING=6 align=center border>
+<TR><TD colspan=5><IMG SRC="../Images/acids1.gif"> </TD></TR>
+<TR><TD><span class="fc-blue"><b>pK<sub>a</sub></b></span> <INPUT TYPE="text" NAME="numa" ID="txta" SIZE="5"> &nbsp; </TD><TD><span class="fc-blue"><b>pK<sub>a</sub></b></span> <INPUT TYPE="text" NAME="numb" ID="txtb" SIZE="5"> &nbsp; </TD>
+<TD><span class="fc-blue"><b>pK<sub>a</sub></b></span> <INPUT TYPE="text" NAME="numc" ID="txtc" SIZE="5"> &nbsp; </TD><TD><span class="fc-blue"><b>pK<sub>a</sub></b></span> <INPUT TYPE="text" NAME="numd" ID="txtd" SIZE="5"> &nbsp; </TD><TD><span class="fc-blue"><b>pK<sub>a</sub></b></span> <INPUT TYPE="text" NAME="nume" ID="txte" SIZE="5"> &nbsp; </TD></TR>
+</TABLE></p>
+<HR>
+
+<table align=center cellpadding=4><tr><td><INPUT TYPE="button" VALUE=" Check Answer " onClick="validate()"><br /><br />
+<INPUT TYPE="reset"  VALUE=" Clear " onClick="clrbx(this.form)"></td>
+<td><TEXTAREA WRAP NAME="result" ROWS="3" COLS="46">
+</TEXTAREA></td>
+<td> <INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form)"> </td></tr></table>
+<p id="para2">For an analysis of these pK<sub>a</sub>'s <A HREF="javascript:chngtxt2(xx)">Click Here</a>. </p> &nbsp; </p>
+
+</FORM>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

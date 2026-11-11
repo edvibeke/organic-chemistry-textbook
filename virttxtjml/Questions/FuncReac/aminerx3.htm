@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var anscnt=0
+var k=0;
+var noansw="You must try to answer three times before viewing the answers."
+var answ="Problem 1: FADB\r"
+ +  "Problem 2: AHIGDC\r"
++ "Problem 3: AED\r"
+ +  "Problem 4: FIA or IFA \r"
+ +  "Problem 5: AHIFGA or AHIFAG \r"
+
+function checkRx1(input,x) {
+anscnt=anscnt+1;
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+input.e.value=fix(input.e.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+var txt="";
+	if (k!=0){
+	 k=0
+}
+		if (input.a.value.toUpperCase() == "FADB") {
+k=k+1
+		} else {
+var txt = txt + "first, ";
+	}
+		if (input.b.value.toUpperCase() == "AHIGDC") {
+k=k+1
+		} else {
+var txt = txt + "second, ";
+	}
+		if (input.c.value.toUpperCase() == "AED") {
+k=k+1
+		} else {
+var txt = txt + "third, ";
+	}
+		if ((input.d.value.toUpperCase() == "FIA") || (input.d.value.toUpperCase() == "IFA")) {
+k=k+1
+		} else {
+var txt = txt + "fourth, ";
+	}
+		if ((input.e.value.toUpperCase() == "AHIFGA") || (input.e.value.toUpperCase() == "AHIFAG")) {
+k=k+1
+		} else {
+var txt = txt + "fifth ";
+	}
+
+if ( input.a.value == "" && input.b.value == "" && input.c.value == "" && input.d.value == "" && input.e.value == "" ) {
+	var Text="You have not tried to answer any questions." ; 
+anscnt=0
+}else{
+if   (k==5) {
+	var Text="Congratulations!\rYou have answered all questions correctly." ;
+anscnt=3
+}else{
+	var Text="Your correct answers total: " + k +" \rYou have failed to answer or given incorrect answers to the " + txt +"problem(s)."; 
+}
+}
+		input.result.value = Text;
+}
+function clearRx1(input,x) {									// Clear all text windows.
+	input.a.value="";	
+	input.b.value="";
+	input.c.value="";	
+	input.d.value="";
+	input.e.value="";	
+	input.result.value=" ";
+}
+
+
+function giveansw(show) {
+if (anscnt>=3)  {
+var text=answ
+	}else{
+var text=noansw
+}
+show.result.value=text
+}
+
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE> Amine Reagent Selection</TITLE>
+<body>
+  <div class="ctr"><H3>Nitrobenzene as a Synthetic Starting Material</H3> </div>
+<P>Nitrobenzene is a versatile compound that may be converted into a wide variety of substituted benzenes. Five such syntheses are shown below.
+<span class="fc-blue"><B>In each reaction box above an arrow enter letters designating the reagents and conditions, selected from the list at the bottom of the page, that would effect the transformation.</B></span> The reagents must be entered in the answer box <b>in the correct order of their use</b>. You may assume appropriate heating or cooling takes place, and more than one equivalent of the reagent may be used if needed.
+ <FORM NAME="reagents">
+  <div class="ctr"><TABLE  WIDTH=95% CELLPADDING=5> 
+  <TR><TH><span class="fc-blue">Reactant</TH> 
+  <TH><span class="fc-blue">Reagent</TH> 
+<TH><span class="fc-blue">Product</TH> 
+<TH ROWSPAN=6 WIDTH=36> </TH>
+<TH><span class="fc-blue">Answer<BR>Evaluation</TH><TH ROWSPAN=6 WIDTH=10></TH>
+<TH ROWSPAN=6><P><span class="fc-blue">Response Box</span><BR><TEXTAREA  WRAP NAME="result"  ROWS="4"  COLS="46"> 
+  </TEXTAREA><BR>
+  <INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)"> 
+</TH></TR> 
+<TR ALIGN=CENTER><TD ROWSPAN=5 BGCOLOR="CCFFCC">
+<IMG SRC="../Images/nitrobnz.gif"><BR>nitrobenzene</TD> 
+<TD height=73><INPUT TYPE="text" NAME="a" SIZE="11"> <BR><IMG SRC="../Images/arrow2.gif"></TD>
+<TD ROWSPAN=5><IMG SRC="../Images/aminprb5.gif"></TD>
+<TD ROWSPAN=5 ALIGN=center><INPUT TYPE="button"  VALUE=" Check Answer" onClick="checkRx1(this.form)"><BR><BR><INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clearRx1(this.form)"></TD></TR>
+<TR ALIGN=CENTER><TD  height=72 ><INPUT TYPE="text" NAME="b" SIZE="11"><BR> <IMG SRC="../Images/arrow2.gif"></TD>
+</TR>
+<TR ALIGN=CENTER><TD  height=72><INPUT TYPE="text" NAME="c" SIZE="11"><BR> <IMG SRC="../Images/arrow2.gif"></TD>
+</TR>
+<TR ALIGN=CENTER><TD  height=72><INPUT TYPE="text" NAME="d" SIZE="11"><BR> <IMG SRC="../Images/arrow2.gif"></TD>
+</TR>
+<TR ALIGN=CENTER><TD  height=84><INPUT TYPE="text" NAME="e" SIZE="11"><BR> <IMG SRC="../Images/arrow2.gif"></TD>
+</TR>
+</TABLE></div><BR> 
+
+  <HR NOSHADE SIZE=3> 
+
+<div class="ctr"><TABLE BORDER=1 CELLPADDING=5 width=800>
+<CAPTION><span class="fc-blue"><B>REAGENTS</B></span></CAPTION>
+<TR VALIGN=top><TD WIDTH=75><span class="fc-blue"><B>A. </B></span><BR>H<SUB>2</SUB><BR>Ni catalyst </TD>
+<TD WIDTH=75><span class="fc-blue"><B>B. </B></span><BR>KBr &<BR>Cu<SUB>2</SUB>Br<SUB>2</SUB></TD>
+<TD WIDTH=75><span class="fc-blue"><B>C. </B></span><BR>KCN &<BR>Cu<SUB>2</SUB>(CN)<SUB>2</SUB></TD>
+<TD WIDTH=75><span class="fc-blue"><B>D. </B></span><BR>HNO<SUB>2</SUB> <BR>0¡ C</TD>
+<TD WIDTH=75><span class="fc-blue"><B>E. </B></span><BR>CH<SUB>3</SUB>I &<BR>pyridine</TD>
+<TD WIDTH=75><span class="fc-blue"><B>F. </B></span><BR>Cl<SUB>2</SUB> &<BR>FeCl<SUB>3</SUB> </TD>
+<TD WIDTH=75><span class="fc-blue"><B>G. </B></span><BR> NaOH <BR>10% solution </TD>
+<TD WIDTH=75><span class="fc-blue"><B>H. </B></span><BR>(CH<SUB>3</SUB>CO)<SUB>2</SUB>O<BR>pyridine</TD>
+<TD WIDTH=75><span class="fc-blue"><B>I. </B></span><BR>HNO<SUB>3</SUB> &<BR>H<SUB>2</SUB>SO<SUB>4</SUB>
+</TR>
+</TABLE><BR>
+</FORM></div>
+
+<HR> 
+
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

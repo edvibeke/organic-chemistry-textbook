@@ -1,0 +1,230 @@
+
+A:link { color: blue;  }
+A:visited { color: teal;  }
+a:hover {color: cyan; text-decoration: underline}
+A:active { color: cyan }
+A.plain  {text-decoration: none }
+
+/* Font and margins for Paragraph */
+/* text may be aligned left, right. center or justified */
+  p           { font-family: Arial, Helvetica, Verdana, sans-serif; font-weight: normal;
+                font-size: 11pt; line-height: 1.2em text-align: left;
+                }
+  p.just           { font-family: Arial, Helvetica, Verdana, sans-serif; font-weight: normal;
+                font-size: 10pt; line-height: 1.2em; text-align: justify; letter-spacing: 0;
+                 margin-left: 5%;
+                 margin-right: 5%; }
+  p.cent           { font-family: Arial, Helvetica, Verdana, sans-serif; font-weight: normal;
+                         font-size: 12pt;  line-height: 1.2em; text-align: center;} 
+   p.novl { font-family: Times New Roman, serif; font-weight: normal;  font-size: 12pt;  color: blue;  text-indent: 40pt;  line-height: 1.4em; }
+
+br     { font-family: Arial, Helvetica, Verdana, sans-serif; 
+             font-size: 11pt; line-height: 1.3em;
+               margin: 0;}
+
+* Font for headers */
+h1, h2, h3, h4  {  font-family: Arial, Helvetica, Verdana, sans-serif; }
+  h1           {  text-align: center; font-size: 20pt; margin-top: 1em; margin-bottom: O.6em;}
+  h1.maroon    { font-size: 20pt; color: maroon;  background: transparent; margin-top: 1em; margin-bottom: 0.4em;}
+  h2           {  text-align: center; font-size: 18pt; margin-top: 1em; margin-bottom: 0.4em;}
+  h2.maroon   { font-size: 18pt; color: maroon;  background: transparent; margin-top: 1em; margin-bottom: 0.4em; }
+  h3           { font-size: 14pt;  margin-top: 1em; margin-bottom: 0.4em; }
+ h3.maroon   {  margin-left: -3%; font-size: 14pt; color: maroon; margin-top: 1em; margin-bottom: 0.4em; }
+  h4       { font-size: 12pt;  margin-top: 1em; margin-bottom: 0.4em; }
+  h4.bar   {  font-size: 12pt; margin-top: 0.2em; margin-bottom: 0.2em; }
+
+  h5.full   { font-size: 11pt; margin-top: 1.0em; margin-bottom: 1.0em; }
+ h5.half   { font-size: 11pt; margin-top: 0.5em; margin-bottom: 0.5em;}
+  h6   { font-size: 4pt; page-break-before:always; }
+
+/* Footer Paragraphs*/
+  p.foot           { font-family: Arial, Helvetica, Verdana, sans-serif;
+                        line-height: 1.2em;  font-size: 75%;  margin-top: 1em;   }
+
+/* Font, right margin, left indent levels for DIV */
+  div          { font-family: Arial, Helvetica, Verdana, sans-serif; font-size: 10pt; }
+  div.level1   { margin-left:  5%;  }
+  div.level2   { margin-left:  10%; }
+  div.level3   { margin-left: 15%; }
+  div.level4   { margin-left: 20%; }
+  div.level5   { margin-left: 25%; }
+  div.level6   { margin-left: 30%; }
+  div.level7   { margin-left: 35%; }
+  div.level8   { margin-left: 40%;  }
+  div.level9   { margin-left: 50%; }
+  div.level10   { margin-left: 60%; }
+ div.level11   { margin-left: 70%; }
+ div.level12   { margin-left: 80%; }
+
+
+/*border styles: solid, dotted, dashed, double, groove, ridge, inset, outset */
+/*border width: thin, medium, thick or #px */
+   div.box1 { border-style: groove; border-width: medium; border-color: navy;  background: #ededed; text-align: center;  margin-left:15%;  width: 60%; }
+   div.box2 { border: ridge; border-width: thick; border-color: red;  background: #ffeeee;  margin-left:4%; width:90%; text-align: center;  }
+   div.box3 { border-left: solid; border-width: 5px; border-color: navy;  background: #ffffff; text-align: center;  width: 100%; }
+   div.box4 { background: #ffffff; margin-left: 2em; width: 95%; }
+/* Font colors */
+  .green       { color: green;
+                 background: transparent; } 
+  .maroon      { color: maroon; 
+                 background: transparent; }
+  .blue      { color: blue;
+                 background: transparent; }
+  .red      { color: red;
+                 background: transparent; }
+  .teal      { color: teal;
+                 background: transparent; }
+  .fuchsia      { color: fuchsia;
+                 background: transparent; }
+  .aqua      { color: aqua;
+                 background: transparent; }
+  .navy      { color: navy;
+                 background: transparent; }
+
+* Font style */
+  .italic       { font-style : italic; } 
+  .oblique       { font-style : oblique; } 
+  .bold        { font-weight : bold; } 
+  .under       { text-decoration : underline; } 
+  .plain      { font-style : normal; font-weight: normal; text-decoration: none;} 
+/* Font family */
+ .symb   { font-family: Symbol; }
+.pre { font-family: monospace; }
+
+.first-letter { font-family: Arial, Helvetica, Verdana, sans-serif; font-size: 160%; float: left; margin-bottom: 0.3em  }
+
+
+.ac   { text-align: center; }
+.ar  {text-align: right; }
+
+/* alignment in tables and table cells */
+  TD.ac       { font-family: Arial, Helvetica, Verdana, sans-serif;   font-size: 11pt;
+                 text-align: center; }
+  TD.ar       { font-family: Arial, Helvetica, Verdana, sans-serif;   font-size: 11pt;
+                 text-align: right; }
+  TD.ndx       { font-family: Arial, Helvetica, Verdana, sans-serif; font-size: 110%;
+                 font-weight: bold; text-decoration: none; text-align: center }
+
+
+/* hide overflow:hidden from IE5/Mac */ 
+/* \*/ 
+
+/* */ 
+}
+
+body { margin: 0; }
+#footer {
+	background: #fff;
+    color: black;
+	text-align: center;
+    clear: both; 
+	padding: 1em;
+}
+#main {
+	margin-bottom: 1em;
+	padding: 0.5em;  
+}
+
+ #col2, #col3 {
+    float: left;
+    width: 31%;
+    padding: 0 1%;
+    margin: 0; min-width: 18em; 
+ border-left: solid 2px #DDF;
+ }
+#col1 {float: left; width: 29%;   margin-right: 2em;
+  min-width: 12em; }
+#contents { 
+    min-width: 60em; 
+}
+
+
+ul {
+
+	list-style: none;
+
+	margin: 0;
+
+	padding: 0;
+
+	}
+
+	
+
+	
+
+#menu {
+
+	width: 78%;
+
+	height: 330px;
+	background-color: #E2EDF7;
+
+	border-style: thin;
+
+	border-color: #608FB5;
+
+	border-width: 1px;
+	font-weight: bold;
+	margin-left:1em;
+
+	}
+
+	
+
+#menu li a {
+
+  	height: 32px;
+
+  	voice-family: "\"}\""; 
+
+  	voice-family: inherit;
+
+  	height: 22px;
+
+	text-decoration: none;
+
+	}	
+
+	
+
+#menu li a:link, #menu li a:visited {
+
+	color: mediumblue;
+
+	display: block;
+
+	background: url(../Images/bgrnd.gif) repeat-x;
+
+	padding: 10px 0 0 10px;
+
+	}
+
+	
+
+#menu li a:hover {
+
+	color: #000;
+
+	background: url(../Images/bgrnd.gif) repeat-x 0 -32px;
+
+	padding: 10px 0 0 10px;
+
+	}
+
+	
+
+#menu li a:active {
+
+	color: #fff;
+
+	background: url(../Images/bgrnd.gif) repeat-x 0 -64px;
+
+	padding: 10px 0 0 10px;
+
+	}
+
+
+
+
+

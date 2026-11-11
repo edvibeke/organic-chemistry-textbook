@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+
+<title>JSmol -- Jmol/HTML5 Demo</title>
+
+<script type="text/javascript" language="javascript" src="jsme/jsme/jsme.nocache.js"></script>
+<script type="text/javascript" src="js/JSmoljQuery.js"></script>
+<script type="text/javascript" src="js/JSmolCore.js"></script>
+<script type="text/javascript" src="js/JSmolApplet.js"></script>
+<script type="text/javascript" src="js/JSmolApi.js"></script>
+<script type="text/javascript" src="js/j2sjmol.js"></script>
+<script type="text/javascript" src="js/JSmol.js"></script>
+<script type="text/javascript" src="js/JSmolJME.js"></script>
+
+<script type="text/javascript">
+
+var jmol="jmol";
+var jme = "jme";
+
+// 1/21/2013 10:54:15 PM -- adds image handling
+var jmolApplet0; // set up in HTML table, below
+// logic is set by indicating order of USE -- default is HTML5 for this test page, though
+var use = "HTML5" // JAVA HTML5 WEBGL IMAGE  are all options
+var s = document.location.search;
+
+// Developers: The debugCode flag is checked in j2s/core/core.z.js, 
+// and, if TRUE, skips loading the core methods, forcing those
+// to be read from their individual directories. Set this
+// true if you want to do some code debugging by inserting
+// System.out.println, document.title, or alert commands
+// anywhere in the Java or Jmol code.
+
+Jmol.debugCode = (s.indexOf("debugcode") >= 0);
+
+jmol_isReady = function(applet) {
+	document.title = (applet._id + " is ready")
+	Jmol._getElement(applet, "appletdiv").style.border="none"
+}	
+
+var JmolInfo = {
+	width: 400,
+	height: 400,
+	debug: false,
+	color: "snow",
+	addSelectionOptions: true,
+	serverURL: "https://edvibe.co.ke/virttxtjml/htmlJ/jsmol/jsmol.php",
+	use: "HTML5",
+	readyFunction: jmol_isReady,
+	script: "set antialiasDisplay;background snow;load data/caffeine.mol;set echo top center; color echo black;echo caffeine;",
+	jarPath: "..",
+	jarFile: "JmolAppletSigned.jar",
+	j2sPath: "../jsmol/j2s",
+	isSigned: true,
+	defaultModel: "",
+console: "none", 
+}
+
+var JMEInfo = {  
+	use: "HTML5"
+ //,divId: "jmediv"
+	//,jarPath: "jme",
+	//,jarFile: "JME.jar"
+  //optional parameters
+  //,"options" : "query,nohydrogens"
+  //,"jme" : startingStructure 
+}
+
+</script>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body>
+<table width=500 cellpadding=9 align=center>
+<caption><H3 align="center">Molecular Model Viewer</H3></caption>
+<tr><th colspan=2 bgcolor="snow"> 
+<script>
+// note that the variable name MUST match the first parameter in quotes
+// note that now scripts can be sent immediately after the _Applet object is created
+
+jmol = Jmol.getApplet("jmolApplet0", JmolInfo)
+jme = Jmol.getJMEApplet(jme , JMEInfo, jmol);
+var lastPrompt=0;
+
+</script>
+<div class="ctr">
+<a href="javascript:Jmol.showInfo(jmol, true)">2D</a> &nbsp; 
+<a href="javascript:Jmol.showInfo(jmol, false)">3D</a>
+</div>
+
+</th></tr>
+
+<tr><td valign=top>
+<a href="javascript:Jmol.script(jmolApplet0,'select *;cartoons off;spacefill only')">spacefill</a> &nbsp; 
+<a href="javascript:Jmol.script(jmolApplet0,'select *;cartoons off;wireframe -0.1')">wire</a> &nbsp; 
+<a href="javascript:Jmol.script(jmolApplet0,'select *;cartoons off;spacefill 23%;wireframe 0.15')">ball&amp;stick</a> &nbsp; <br />
+<a href="javascript:Jmol.script(jmolApplet0,'color cpk')">color cpk</a> &nbsp; 
+<a href="javascript:Jmol.script(jmolApplet0,'color structure')">color structure</a>  <br /> 
+<a href="javascript:Jmol.script(jmolApplet0,'select protein or nucleic;cartoons only')">cartoons</a> 
+&nbsp; 
+<a href="javascript:Jmol.script(jmolApplet0,'set cartoonFancy true')">fancy</a> &nbsp; 
+<a href="javascript:Jmol.script(jmolApplet0,'set cartoonFancy false')">not</a> &nbsp; 
+<a href="javascript:Jmol.script(jmolApplet0,'set cartoonFancy false;set hermitelevel 0')">flat</a>
+<br />
+<a href="javascript:Jmol.script(jmolApplet0,'if (_fileType == &quot;Pdb&quot;){select *.CA;label %n%r}else{select *;label %a};select *;')"> labels on</a> &nbsp; 
+<a href="javascript:Jmol.script(jmolApplet0,'select *;labels off')">off</a> &nbsp; 
+<a href="javascript:Jmol.script(jmolApplet0,'console')">console</a> 
+ <br /><br />Animation Examples<br />
+
+  <a href="javascript:Jmol.script(jmolApplet0,'var x=antialiasDisplay;load data/cyclohexaneFlip.jmol;antialiasdisplay = x; select hydrogen; color atoms lime;  select (atomno=7, atomno=9, atomno=11, atomno=13, atomno=14, atomno=17); color atoms magenta; select */1 and (atomno=8, atomno=10, atomno=12, atomno=15, atomno=16, atomno=18); label Ax; set fontsize 12; set labeloffset 0 0; color label black;  select */35 and (atomno=8, atomno=10, atomno=12, atomno=15, atomno=16, atomno=18); label Eq; set fontsize 12; set labeloffset 0 0; color label black; background snow; select all; animation mode palindrome; animation on')">cyclohexane ring flip</a> &nbsp; <a href="javascript:Jmol.script(jmolApplet0,'animation off')">off</a>
+  <br />
+   <a href="javascript:Jmol.script(jmolApplet0,'var x=antialiasDisplay;load data/biphen.xyz; animation mode loop; animation on')">biphenyl rotation</a> &nbsp; <a href="javascript:Jmol.script(jmolApplet0,'animation off')">off</a>
+   <br />
+
+</td>
+<td valign=top>
+ <a href="javascript:Jmol.loadFile(jmolApplet0,'$aspirin',';set echo top center; color echo black;echo aspirin');">load :aspirin (PubChem name)</a>
+ <br /> 
+   <a href="javascript:Jmol.loadFile(jmolApplet0,'$glucopyranose',';rotate x 36;set echo top center; color echo black;echo glucopyranose');">load :glucopyranose (NCI)</a>
+ <br /> 
+  <a href="javascript:Jmol.loadFile(jmolApplet0,'$morphine',';set echo top center; color echo black;echo morphine');">load :morphine (NCI)</a>
+ <br /> 
+  <a href="javascript:Jmol.loadFile(jmolApplet0,'==HEM',';set echo top center; color echo black;echo heme')">load ==HEM (RCSB ligand)</a><br />
+ <a href="javascript:Jmol.loadFile(jmolApplet0,'=1blu',';display not water;select protein or nucleic;cartoons only;color structure;select *; set echo top center; color echo black;echo 1blu')">load =1blu (from RCSB)</a>
+ <br />
+  <a href="javascript:Jmol.loadFile(jmolApplet0,'=1d66',';display not water;select protein or nucleic;cartoons only;color structure;select *; set echo top center; color echo black;echo 1d66')">load =1d66 (from RCSB)</a>
+   <br /> 
+ <a href="javascript:Jmol.loadFile(jmolApplet0,'data/1crn.pdb',';set echo top center; color echo black;echo 1crn')">load 1crn.pdb (local data)</a>
+<br />
+ <a href="javascript:Jmol.loadFile(jmolApplet0,'data/complex1.mol',';select atomno=2; color atoms lime; select all ;set echo top center; color echo black;echo epoxidation complex;set echo bottom center; color echo green;echo titanium is green;')">load complex1 (local data)</a>
+ 
+ </td>
+</tr></table>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Hide script from old browsers
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var anscnt=0;																									// other variables
+var answ="    Boiling Points in Degrees Celsius\r"
+ +  "propanoic acid  141;    2-butanol  98;\r"
+ +  "2-butanone  80;    2-aminobutane  63;\r"
+ +  "N-methylisopropylamine  50;    N,N-dimethylethylamine  37;\r"
+ +  "2-methoxypropane  32;    2-methylbutane  28\r"
+var noansw="You must try to answer this question three times before viewing the answers.";
+var noansw2="Discussions will not be displayed until three efforts to answer the question have been made."
+var k=0
+var j=0
+
+function chkchg(input) {
+anscnt=anscnt+1;
+input.a.value=fix(input.a.value)
+
+input.b.value=fix(input.b.value)
+
+input.c.value=fix(input.c.value)
+
+input.d.value=fix(input.d.value)
+
+input.e.value=fix(input.e.value)
+
+input.f.value=fix(input.f.value)
+
+input.g.value=fix(input.g.value)
+
+input.h.value=fix(input.h.value)
+
+function fix(s){
+
+return s.replace(/[ ,\-\;\.]/g,"")
+
+}
+
+
+
+	if (k!=0){
+
+	 k=0
+
+}
+
+	if (j!=0){
+
+	j=0
+
+}
+
+
+
+if ( input.a.value == "") { 
+
+		j=j+1
+
+}
+
+if ( input.b.value == "") { 
+
+		j=j+1
+
+}
+
+if ( input.c.value == "") { 
+
+		j=j+1
+
+}
+
+if ( input.d.value == "") { 
+
+		j=j+1
+
+}
+
+if ( input.e.value == "") { 
+
+		j=j+1
+
+}
+
+if ( input.f.value == "") { 
+
+		j=j+1
+
+}
+
+if ( input.g.value == "") { 
+
+		j=j+1
+
+}
+
+if ( input.h.value == "") { 
+
+		j=j+1
+
+}
+
+if ( input.a.value == "6") {
+
+k=k+1
+
+}
+
+if ( input.b.value == "2") {
+
+k=k+1
+
+}
+
+if ( input.c.value == "5") {
+
+k=k+1
+
+}
+
+if ( input.d.value == "8") {
+
+k=k+1
+
+}
+
+if ( input.e.value == "1") {
+
+k=k+1
+
+}
+
+if ( input.f.value == "4") {
+
+k=k+1
+
+}
+
+if ( input.g.value == "3") {
+
+k=k+1
+
+}
+
+if ( input.h.value == "7") {
+
+k=k+1
+
+}
+
+if (j==8) {
+
+var txt="You have not provided answers to any questions."; 
+
+anscnt=0
+
+}else{
+
+if (k==8) {
+
+var txt="Congratulations!\rYou have answered all questions correctly." ;
+
+anscnt=3
+
+}else{
+
+var txt="You have answered "+k+" questions correctly.\r"; 
+
+if  ((k!=8) && (input.b.value == "2"  && input.e.value == "1")) { 
+
+var txt=txt + "You have correctly identified the two highest boiling compounds. \r";
+
+}else{
+
+if  ((k!=8) && (input.e.value == "1" )) { 
+
+var txt=txt + "You have correctly identified the highest boiling compound. \r";
+
+}
+
+}
+
+}
+
+}
+
+if  ((k!=8) && (input.d.value == "8"  && input.h.value == "7" && input.a.value == "6")) { 
+
+var txt=txt + "You have correctly identified the three lowest boiling compounds. \r";
+
+}else{
+
+if  (((k!=8) && ((input.d.value == "7"  && input.h.value == "8" && input.a.value == "6") || (input.d.value == "7"  && input.h.value == "6" && input.a.value == "8") || (input.d.value == "8"  && input.h.value == "6" && input.a.value == "7") || (input.d.value == "6"  && input.h.value == "7" && input.a.value == "8") || (input.d.value == "6"  && input.h.value == "8" && input.a.value == "7")))) { 
+
+var txt=txt + "You have correctly identified the three lowest boiling compounds, but not in the right order. \r";
+
+}
+
+}
+
+
+
+input.result.value = txt;
+
+}
+
+
+
+// functions for showing answer & clearing text
+
+function giveansw(show) {
+
+if (anscnt>=3)  {
+
+var txt=answ
+
+	}else{
+
+var txt=noansw
+
+}
+
+show.result.value=txt
+
+}
+
+
+
+function clrtxt(input) {
+
+	input.a.value="";	
+
+	input.b.value="";
+
+	input.c.value="";
+
+  input.d.value="";
+
+  input.e.value="";	
+
+	input.f.value="";
+
+	input.g.value="";
+
+  input.h.value="";
+
+	input.result.value=" ";
+
+}
+
+
+
+
+
+
+
+	//STOP HIDING-->
+
+</SCRIPT>
+
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+
+<TITLE>Boiling Point</TITLE>
+
+<body>
+
+<div class="ctr"><H3>Relative Boiling Points</H3></div>
+<p>The line formulas and names of eight similarly sized and shaped compounds are shown below. Other than hydrogen, they are all composed of five heavier second row atoms, have molecular weights in the 72 to 74 amu range and have from 40 to 42 electrons. The boiling points of these compounds range from 28&#186; to 141 &#186;C.<BR>Estimate the boiling point order by typing an appropriate number in the box below each name. (<span class="fc-blue"><B>1</B> is highest boiling & <B>8</B> is lowest boiling</span>). </p>
+
+<FORM NAME="responses">
+<P align=center><IMG SRC="../Images/boilptcp.gif">
+<TABLE ALIGN=center WIDTH=834>
+<TR><TH WIDTH=104><INPUT TYPE="text" NAME="a"  SIZE="2"></TH>
+<TH WIDTH=103><INPUT TYPE="text" NAME="b"  SIZE="2"></TH>
+<TH WIDTH=103><INPUT TYPE="text" NAME="c"  SIZE="2"></TH>
+<TH WIDTH=10>&nbsp;</TH>
+<TH WIDTH=104><INPUT TYPE="text" NAME="d"  SIZE="2"></TH>
+<TH WIDTH=104><INPUT TYPE="text" NAME="e"  SIZE="2"></TH>
+<TH WIDTH=103><INPUT TYPE="text" NAME="f"  SIZE="2"></TH>
+<TH WIDTH=103><INPUT TYPE="text" NAME="g"  SIZE="2"></TH>
+<TH WIDTH=100><INPUT TYPE="text" NAME="h"  SIZE="2"></TH>
+</TR></TABLE>
+<HR>
+<div class="ctr">
+<TEXTAREA  WRAP NAME="result"  ROWS="7"  COLS="74">  </TEXTAREA>
+<p><INPUT TYPE="button"  VALUE=" Check Answer" onClick=" chkchg(this.form)">&nbsp;&nbsp;<INPUT TYPE="button"  VALUE=" Clear" onClick="clrtxt(this.form)">&nbsp;
+&nbsp;<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form) ">&nbsp;<INPUT TYPE="button" VALUE="Discussion" onClick="window.location='../../suppmnt1.htm#exp4'"></p>
+
+<P><TABLE WIDTH=25% BORDER=7 BGCOLOR= "ccffcc"><TR ALIGN=center><TD>
+<A HREF="boilpnt2.htm"> <B>Proceed to Part 2</B></A>.</TD></TR></TABLE>
+</div></P>
+<BR>
+ </FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+ <HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+
+</BODY></HTML>
+

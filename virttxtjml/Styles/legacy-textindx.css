@@ -1,0 +1,5 @@
+ A:link { color: blue; text-decoration: none }
+A:visited { color: teal;  }
+a:hover {color: cyan; text-decoration: underline}
+A:active { color: cyan }
+A.plain  {text-decoration: none }

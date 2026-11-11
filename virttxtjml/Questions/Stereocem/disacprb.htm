@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css"> 
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var anscnt=0
+var answ="1.MGP;  2.MGP;  3.MGP\r" + "4.X;  5.S;  6.T"
+var noansw="You must try to answer this question twice before viewing the answers."
+var j=0
+var k=0
+     function slct1(input) {
+anscnt=anscnt+1;
+input.p1.value=fix(input.p1.value)
+input.p2.value=fix(input.p2.value)
+input.p3.value=fix(input.p3.value)
+input.p4.value=fix(input.p4.value)
+input.p5.value=fix(input.p5.value)
+input.p6.value=fix(input.p6.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+var aa=input.p1.value.toUpperCase().indexOf("M",0);
+var ab=input.p1.value.toUpperCase().indexOf("G",0);
+var ac=input.p1.value.toUpperCase().indexOf("P",0);
+var ba=input.p2.value.toUpperCase().indexOf("M",0);
+var bb=input.p2.value.toUpperCase().indexOf("G",0);
+var bc=input.p2.value.toUpperCase().indexOf("P",0);
+var ca=input.p3.value.toUpperCase().indexOf("M",0);
+var cb=input.p3.value.toUpperCase().indexOf("G",0);
+var cc=input.p3.value.toUpperCase().indexOf("P",0);
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var txr="";
+var txw="";
+
+		if ( aa>=0 && ab>=0 && ac>=0 && input.p1.value.length==3) { 
+		k=k+1
+var txr=txr + "1, ";
+		} else {
+		if ( input.p1.value!="") {
+var txw=txw + "1, ";
+		} else {
+		j=j+1
+}
+}
+		if ( ba>=0 && bb>=0 && bc>=0 && input.p2.value.length==3) { 
+		k=k+1
+var txr=txr + "2, ";
+		} else {
+		if ( input.p1.value!="") {
+var txw=txw + "2, ";
+		} else {
+		j=j+1
+}
+}
+		if ( ca>=0 && cb>=0 && cc>=0 && input.p3.value.length==3) { 
+		k=k+1
+var txr=txr + "3, ";
+		} else {
+		if ( input.p1.value!="") {
+var txw=txw + "3, ";
+		} else {
+		j=j+1
+}
+}
+		if ( input.p4.value.toUpperCase().indexOf("X",0)>=0 && input.p4.value.length==1) { 
+		k=k+1
+var txr=txr + "4, ";
+		} else {
+		if ( input.p1.value!="") {
+var txw=txw + "4, ";
+		} else {
+		j=j+1
+}
+}
+		if ( input.p5.value.toUpperCase().indexOf("S",0)>=0 && input.p5.value.length==1) { 
+		k=k+1
+var txr=txr + "5, ";
+		} else {
+		if ( input.p1.value!="") {
+var txw=txw + "5, ";
+		} else {
+		j=j+1
+}
+}
+		if ( input.p6.value.toUpperCase().indexOf("T",0)>=0 && input.p6.value.length==1) { 
+		k=k+1
+var txr=txr + "6, ";
+		} else {
+		if ( input.p1.value!="") {
+var txw=txw + "6, ";
+		} else {
+		j=j+1
+}
+}
+
+                       	    //Reporting code 
+ if ( j==6 ) {
+		var Txt5 = "You have not provided answers to any questions.";
+anscnt=0
+		 }else{
+if (k==6) {
+		var Txt5="Congratulations! You have answered all questions correctly."
+anscnt=2;
+		 }else{
+		var Txt5="Results:\rYou have answered problems " + txr +  "correctly.\rYour answers to problems " + txw + "are incomplete or in part incorrect.\r" ;
+}
+}
+ 	input.result.value =Txt5
+}
+
+function giveansw(show) {
+if (anscnt>=2)  {
+var txt=answ
+window.open('answ1.htm#prb1','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=560,height=600')
+	}else{
+var txt=noansw
+}
+show.result.value=txt;
+}
+
+
+function clrtxt(input) {
+	input.p1.value="";	
+	input.p2.value="";
+	input.p3.value="";
+	input.p4.value="";
+	input.p5.value="";
+	input.p6.value="";
+	input.result.value=" ";
+}
+
+
+	//STOP HIDING-->
+</script>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<TITLE>A Disaccharide Problem</TITLE>
+<body>
+<form>
+<div class="ctr"><H3>Determining the Structure of Disaccharides</H3></div>
+<p>Some properties and characteristics of five disaccharides are listed in the following table. The entry in the "Reducing Sugar" column refers to whether the compound is oxidized by Tollens', Benedict's or Fehling's reagent. Sugars that are oxidized are called reducing sugars, since the cationic silver or copper oxidant is reduced in the reaction. The hydrolysis referred to in the last column is accomplished by aqueous acid or by enzymes (see below).</p>
+
+<p><TABLE CELLPADDING=4 align="center" BORDER>
+<TR BGCOLOR="ccffcc"><TH>Compound Name</TH><TH>Molecular Formula</TH><TH>Reducing Sugar</TH><TH>Hydrolysis Products</TH></TR>
+<TR ALIGN="center"><TD>Melibiose</TD><TD>C<SUB>12</SUB>H<SUB>22</SUB>O<SUB>11</SUB></TD><TD>Yes</TD><TD>D-Glucose &<BR>D-Galactose</TD></TR>
+<TR ALIGN="center"><TD>Gentiobiose</TD><TD>C<SUB>12</SUB>H<SUB>22</SUB>O<SUB>11</SUB></TD><TD>Yes</TD><TD>D-Glucose<BR>only</TD></TR>
+<TR ALIGN="center"><TD>Trehalose</TD><TD>C<SUB>12</SUB>H<SUB>22</SUB>O<SUB>11</SUB></TD><TD>No</TD><TD>D-Glucose<BR>only</TD></TR>
+<TR ALIGN="center"><TD>Primeverose</TD><TD>C<SUB>11</SUB>H<SUB>20</SUB>O<SUB>10</SUB></TD><TD>Yes</TD><TD>D-Glucose &<BR>D-Xylose</TD></TR>
+<TR ALIGN="center"><TD>Sucrose</TD><TD>C<SUB>12</SUB>H<SUB>22</SUB>O<SUB>11</SUB></TD><TD>No</TD><TD>D-Glucose &<BR>D-Fructose</TD></TR>
+</TABLE></p>
+<P>To establish the structure of these compounds by chemical means, two kinds of reactions are conducted. First, enzymatic cleavage is used to determine the configuration of the glycosidic linkage (&#945; or &#946;). Second, the disaccharide is permethylated (exhaustively methylated) by reaction with excess methyl iodide & silver oxide. This converts every free hydroxyl group in the molecule into a methyl ether. The permethylation is then followed by acid-catalyzed hydrolysis to mixtures of methylated monosaccharides having known structures. From the results of these experiments we can deduce the structure/configuration of the initial disaccharide.</P>
+
+<p><TABLE CELLPADDING=4 align="center" BORDER>
+<TR BGCOLOR="ccffcc"><TH>Compound Name</TH><TH>Cleavage Enzyme</TH><TH>O-CH<SUB>3</SUB> Groups formed<BR> by Permethylation</TH><TH>Hydrolysis Products<BR>following Permethylation</TH></TR>
+<TR ALIGN="center"><TD>Melibiose</TD><TD>Maltase<BR>&#945;-glycosidase</TD><TD>8</TD><TD>2,3,4,6-tetra-O-methyl-D-galactose<BR>& 2,3,4-tri-O-methyl-D-glucose</TD></TR>
+<TR ALIGN="center"><TD>Gentiobiose</TD><TD>Emulsin<BR>&#946;-glycosidase</TD><TD>8</TD><TD>2,3,4,6-tetra-O-methyl-D-glucose<BR>& 2,3,4-tri-O-methyl-D-glucose</TD></TR>
+<TR ALIGN="center"><TD>Trehalose</TD><TD>Maltase<BR>&#945;-glycosidase</TD><TD>8</TD><TD>2,3,4,6-tetra-O-methyl-D-glucose<BR>only</TD></TR>
+<TR ALIGN="center"><TD>Primeverose</TD><TD>Emulsin<BR>&#946;-glycosidase</TD><TD>7</TD><TD>2,3,4-tri-O-methyl-D-xylose<BR>& 2,3,4-tri-O-methyl-D-glucose</TD></TR>
+<TR ALIGN="center"><TD>Sucrose</TD><TD>Invertase<BR>&#946;-fructosidase</TD><TD>8</TD><TD>1,3,4,6-tetra-O-methyl-D-fructose<BR>& 2,3,4,6-tetra-O-methyl-D-glucose</TD></TR>
+</TABLE></p>
+<p>The following questions may be answered using the first letter of each compound's name as its designator: <span class="fc-blue"><B>M</B></span>elibiose, <span class="fc-blue"><B>G</B></span>entiobiose, <span class="fc-blue"><B>T</B></span>rehalose, <span class="fc-blue"><B>P</B></span>rimeverose & <span class="fc-blue"><B>S</B></span>ucrose. If none of the five disaccharides satisfy the specified condition, enter <span class="fc-blue"><B>X</B></span> for an answer.</p>
+<p><TABLE CELLPADDING=4 align="center"><TR>
+<TD><span class="fc-blue"><B>1.</B></span> Which compounds can be reduced by NaBH<SUB>4</SUB>? </TD><TD><INPUT TYPE="text" NAME="p1"  SIZE="5"></TD></TR> 
+<TR><TD><span class="fc-blue"><B>2.</B></span> In your answer to (<span class="fc-blue">1</span>), which of the reduced units are glucose?</TD><TD><INPUT TYPE="text" NAME="p2"  SIZE="5"></TD></TR> 
+<TR><TD><span class="fc-blue"><B>3.</B></span> Which compounds have a 1,6'-glycoside link? </TD><TD><INPUT TYPE="text" NAME="p3"  SIZE="5"></TD></TR>   
+<TR><TD><span class="fc-blue"><B>4.</B></span> Which compounds have a 1,4'-glycoside link? </TD><TD><INPUT TYPE="text" NAME="p4"  SIZE="5"></TD></TR> 
+<TR><TD><span class="fc-blue"><B>5.</B></span> Which compounds have a 1,2'-glycoside link? </TD><TD><INPUT TYPE="text" NAME="p5"  SIZE="5"></TD></TR> 
+<TR><TD><span class="fc-blue"><B>6.</B></span> Which compounds have a 1,1'-glycoside link? </TD><TD><INPUT TYPE="text" NAME="p6"  SIZE="5"></TD></TR></TABLE></p>
+<p><table align="center"><tr><td><INPUT TYPE="button"  VALUE=" Check Answer" onClick=" slct1(this.form)"><br><br><INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clrtxt(this.form)"></td>
+<td><TEXTAREA  WRAP NAME="result"  ROWS="4"  COLS="66"> </TEXTAREA></td>
+<td><br><INPUT TYPE="button"  NAME="answr" VALUE="Show Structures" onClick="giveansw (this.form)"><br></tr></td></table>
+
+</form>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.
+
+</BODY>
+</HTML>

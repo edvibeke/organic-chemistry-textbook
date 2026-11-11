@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en"> 
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+if (navigator.userAgent.indexOf("Macintosh") != -1) {
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center  {font-size: 11pt} br {font-size: 11pt} br {line-height: 1.3}  H2 {font-size: 18pt}  sub {font-size: 10pt}sup {font-size: 10pt}form {font-size: 10pt} --></STYLE>")
+}
+else
+{
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H2 {font-size: 16pt}  sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+}
+
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+
+function jmehelp() { window.open('../MOLEDITOR/jme_help.html','JME','width=800,height=800,scrollbars=yes');
+}
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+
+  // this function is called from jme_window
+
+  // editor fills variable smiles & jme
+
+
+
+  if (smiles=="") {
+
+    alert ("no molecule submitted");
+
+    return;
+
+}
+
+document.form.smiles.value = smiles; 
+
+}
+
+function processMolecule1(input) {
+
+ smiles = document.form.smiles.value;
+
+  if (smiles == "") {alert("Nothing to process!"); return;
+
+}
+
+
+
+if (smiles == "CCCCC(C)C") {
+
+var Txt="Correct!";
+
+	}else{
+
+var Txt="Wrong! Try again.";
+
+}
+
+	input.result.value = Txt ;
+
+
+}
+
+function processMolecule2(input) {
+
+ smiles = document.form.smiles.value;
+
+  if (smiles == "") {alert("Nothing to process!"); return;
+
+}
+
+if (smiles == "Br[Mg]C1=CCCCC1") {
+
+var Txt="Correct!";
+
+	}else{
+if (smiles == "[MgBr]C1=CCCCC1") {
+var Txt="\rYou must draw the Mg and Br as separate atoms connected by a single bond.";
+}else{
+
+var Txt="Wrong! Try again.";
+}
+}
+
+	input.result.value = Txt ;
+}
+function processMolecule3(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "CN1CCC1=O") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+function processMolecule4(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "O=N(=O)c1ccccc1") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+function processMolecule5(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "Cc1ccc(S(=O)(=O)Cl)cc1") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body>
+<form method="post" name="form">
+<div class="ctr"><H2>Practice in Drawing Structural Formulas</H2></div>
+<P>The <B>Molecular Editor</B> is easy to use and has a help section. Structural formulas are created in the drawing window opened by the <span class="fc-maroon">Draw Formulas</span> button. The menu bar of the drawing window allows you to draw single, double or triple bonds and different sized rings. Hetero atoms, such as N, O, F, Cl, S & Br may be designated by the left-side menu. Do not attempt to draw hydrogens; they are automatically provided for hetero atoms. Hydrogen, metals and other elements not on the menu bar are designated by the <B>X</B> button, which opens a small text window in which the symbol may be entered.  Stereoisomers, such as cis- & trans-2-butene, are not distinguished by this program.<BR>Using the Drawing Window, practice drawing the structures shown on the right. When you have finished drawing a structure, check it by pressing the <b>Check Molecule #</b> button.</P>
+
+<TABLE cellspacing=5 align=center>
+
+<TH ROWSPAN=9>
+ <applet code="JME.class" name="JME" archive="JME.jar" width=360, height=360> 
+You have to enable Java and JavaScript on your machine !
+</applet><FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"> 
+<BR>
+<IMG SRC=../Images/pixel.gif WIDTH=360 HEIGHT=30><BR>
+Evaluation Window<BR>
+<TEXTAREA WRAP NAME="result" ROWS="4" COLS="40"></TEXTAREA><BR>
+<INPUT TYPE="RESET" VALUE="Clear"> &nbsp; &nbsp; &nbsp; <input type="button" value="Help" onClick="jmehelp();">
+</TH>
+<TD><B><span class="fc-blue">Example 1. </B></span></TD> <TD> CH<SUB>3</SUB>(CH<SUB>2</SUB>)<SUB>3</SUB>CH(CH<SUB>3</SUB>)<SUB>2</SUB> </TD> <TD> <input type="hidden" value="" name="smiles"><input type="button" value="Check Molecule 1" onClick="submitSmiles(); processMolecule1(this.form);"></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+<TR ALIGN=center><TD><B><span class="fc-blue">Example 2. </B></span></TD> 
+<TD> <IMG SRC=../Images/cy6engrg.gif> </TD> <TD> <input type="hidden" value="" name="smiles2"><input type="button" value="Check Molecule 2" onClick="submitSmiles(); processMolecule2(this.form);"></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+<TR ALIGN=center><TD><B><span class="fc-blue">Example 3. </B></span></TD>
+<TD> <IMG SRC=../Images/blactam.gif> </TD> 
+<TD><input type="hidden" value="" name="smiles3"><input type="button" value="Check Molecule 3" onClick="submitSmiles(); processMolecule3(this.form);"></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+<TR ALIGN=center><TD><B><span class="fc-blue">Example 4. </B></span></TD>
+<TD> <IMG SRC=../Images/nitrbnz2.gif></TD> 
+<TD><input type="hidden" value="" name="smiles4"><input type="button" value="Check Molecule 4" onClick="submitSmiles(); processMolecule4(this.form);"><SUP>*</SUP></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+<TR ALIGN=center><TD><B><span class="fc-blue">Example 5. </B></span></TD>
+<TD> <IMG SRC=../Images/toscl.gif> </TD> 
+<TD><input type="hidden" value="" name="smiles5"><input type="button" value="Check Molecule 5" onClick="submitSmiles(); processMolecule5(this.form);"></TD></TR></TABLE><BR>
+
+<P><IMG SRC=../Images/pixel.gif WIDTH=100 HEIGHT=4 ALIGN=left>* The editor also accepts a nitro group representation having two N:O double bonds, even though this violates the octet rule.<br />
+<IMG SRC=../Images/pixel.gif WIDTH=100 HEIGHT=4 ALIGN=left>A new version of the Molecular Editor handles stereoisomerism. To practice drawing with this Editor <A 
+HREF="sterprct.htm" >Click Here</A>.
+
+</FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<TABLE WIDTH=800><TR><TD>
+
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl <BR>
+ </TD>
+<TD> &nbsp; &nbsp;</TD><TD ALIGN=right><IMG SRC="novartis.gif" ALT="Novartis logo"></TD></TR></TABLE>
+
+</BODY>
+</HTML>

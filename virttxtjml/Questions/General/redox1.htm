@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  td {font-size: 11pt} td {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var quest= "<FONT COLOR=blue>Which compound has the IUPAC name "
+var i=0
+var anscnt=0
+var answ="(1) both are oxidized\r(2) red is reduced, blue is oxidized\r"
+ +  "(3) reduced; (4) oxidized\r(5) red is reduced, blue is oxidized\r"
+ +  "(6) red is reduced, blue is oxidized\r"
+var noansw="You must try to answer this question twice before viewing the answers."
+var txt="";
+
+		function process(form){
+	anscnt=anscnt+1;
+	if (i!=0){
+		 i=0
+}
+		if (form.quest1a[1].checked){
+		i=i+1
+}else {
+		i=i
+}
+		if (form.quest1b[1].checked){
+		i=i+1
+}else {
+		i=i	
+	}		
+		if (form.quest2a[0].checked){
+		i=i+1
+}else {
+		i=i	
+}
+		if (form.quest2b[1].checked){
+		i=i+1
+}else {
+		i=i
+	
+}
+		if (form.quest3[0].checked){
+		i=i+1
+}else {
+		i=i
+	
+}		
+		if (form.quest4[1].checked){
+		i=i+1
+}else {
+		i=i
+	
+}
+		if (form.quest5a[0].checked){
+		i=i+1
+}else {
+		i=i
+
+}
+		if (form.quest5b[1].checked){
+		i=i+1
+}else {
+		i=i
+}
+		if (form.quest6a[0].checked){
+		i=i+1
+}else {
+		i=i
+
+}
+		if (form.quest6b[1].checked){
+		i=i+1
+}else {
+		i=i
+}
+if (i==10){
+var txt ="Congratulations!";
+anscnt=2;
+}else{
+var txt="";
+}
+if (i==0){
+anscnt=0;
+}
+	var diff=10-i
+	var Text=txt + "\rYou answered " +i +" questions correctly.\r"
++"You failed to respond to or incorrectly answered " +diff +" questions."
+
+form.resultarea.value=Text;	
+}
+
+function giveansw(show) {
+if (anscnt>=2)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.resultarea.value=txt;
+}
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Oxidation-Reduction</TITLE>
+<body>
+<H3><div class="ctr">Changes in Oxidation States</div></H3>
+<p>Consider reactions 1 through 6. Those carbon atoms undergoing change, as part of a functional group, are colored (red and blue). In the cases shown, each carbon atom has either been reduced or oxidized. Your job is to identify the change in oxidation state that has occurred for each of the colored carbons.</p>
+<FORM>
+
+<div class="ctr"><TABLE CELLPADDING=10 WIDTH=95%><TR><TH COLSPAN=3><span class="fs-4"><B>Reaction</B></span></TH>
+<TH><B><span class="fc-red fs-4">Red Carbon</span></B></TH>
+<TH><B><span class="fc-blue fs-4">Blue Carbon</span></B></TH></TR>
+
+<TR><TD><B>1. </B> CH<SUB>3</SUB><span class="fc-red">C</span>H=<span class="fc-0066ff">C</span>H<SUB>2</SUB></TD>
+<TD ALIGN=CENTER><span class="fs-2">Br<SUB>2</SUB></span><BR><IMG SRC="../Images/arrow.gif"><BR>&nbsp;</TD> 
+<TD>CH<SUB>3</SUB><span class="fc-red">C</span>HBr<span class="fc-0066ff">C</span>H<SUB>2</SUB>Br</TD>
+<TD><INPUT NAME="quest1a"  TYPE="radio"><B>Reduced</B><BR>
+<INPUT NAME="quest1a"  TYPE="radio"><B>Oxidized</B></TD>
+<TD><INPUT NAME="quest1b"  TYPE="radio"><B>Reduced</B><BR>
+<INPUT NAME="quest1b"  TYPE="radio"><B>Oxidized</B></TD></TR>
+
+<TR><TD><B>2. </B> CH<SUB>3</SUB><span class="fc-red">C</span>H=<span class="fc-0066ff">C</span>H<SUB>2</SUB></TD>
+<TD ALIGN=CENTER><span class="fs-2">(i) B<SUB>2</SUB>H<SUB>6</SUB></span><BR><IMG SRC="../Images/arrow.gif"><BR><span class="fs-2">(ii) H<SUB>2</SUB>O<SUB>2</SUB> , NaOH</span></TD> 
+<TD>CH<SUB>3</SUB><span class="fc-red">C</span>H<SUB>2</SUB><span class="fc-0066ff">C</span>H<SUB>2</SUB>OH</TD>
+<TD><INPUT NAME="quest2a"  TYPE="radio"><B>Reduced</B><BR>
+<INPUT NAME="quest2a"  TYPE="radio"><B>Oxidized</B></TD>
+<TD><INPUT NAME="quest2b"  TYPE="radio"><B>Reduced</B><BR>
+<INPUT NAME="quest2b"  TYPE="radio"><B>Oxidized</B></TD></TR>
+
+<TR><TD><B>3. </B> CH<SUB>3</SUB>CH<SUB>2</SUB><span class="fc-red">C</span>H=O</TD>
+<TD ALIGN=CENTER><span class="fs-2">NaBH<SUB>4</SUB></span><BR><IMG SRC="../Images/arrow.gif"><BR>&nbsp;</TD> 
+<TD>CH<SUB>3</SUB>CH<SUB>2</SUB><span class="fc-red">C</span>H<SUB>2</SUB>OH</TD>
+<TD><INPUT NAME="quest3"  TYPE="radio"><B>Reduced</B><BR>
+<INPUT NAME="quest3"  TYPE="radio"><B>Oxidized</B></TD>
+<TD>&nbsp;</TD></TR>
+
+<TR><TD><B>4. </B> CH<SUB>3</SUB>CH<SUB>2</SUB><span class="fc-red">C</span>H=O</TD>
+<TD ALIGN=CENTER><span class="fs-2">Ag<SUP>(+)</SUP></span><BR><IMG SRC="../Images/arrow.gif"><BR><span class="fs-2">H<SUB>2</SUB>O , pH>8</span></TD> 
+<TD>CH<SUB>3</SUB>CH<SUB>2</SUB><span class="fc-red">C</span>O<SUB>2</SUB>H</TD>
+<TD><INPUT NAME="quest4"  TYPE="radio"><B>Reduced</B><BR>
+<INPUT NAME="quest4"  TYPE="radio"><B>Oxidized</B></TD>
+<TD>&nbsp;</TD></TR>
+
+<TR><TD><B>5. </B> CH<SUB>3</SUB>CO<span class="fc-red">C</span>H<SUB>2</SUB><span class="fc-0066ff">C</span>O<SUB>2</SUB>H</TD>
+<TD ALIGN=CENTER><span class="fs-2">Heat</span><BR><IMG SRC="../Images/arrow.gif"><BR>&nbsp;</TD> 
+<TD>CH<SUB>3</SUB>CO<span class="fc-red">C</span>H<SUB>3</SUB><BR>+<BR>O=<span class="fc-0066ff">C</span>=O</TD>
+<TD><INPUT NAME="quest5a"  TYPE="radio"><B>Reduced</B><BR>
+<INPUT NAME="quest5a"  TYPE="radio"><B>Oxidized</B></TD>
+<TD><INPUT NAME="quest5b"  TYPE="radio"><B>Reduced</B><BR>
+<INPUT NAME="quest5b"  TYPE="radio"><B>Oxidized</B></TD></TR>
+
+<TR><TD><B>6. </B> H<SUB>2</SUB><span class="fc-red">C</span>=<span class="fc-0066ff">C</span>(OH)C<SUB>2</SUB>H<SUB>5</SUB></TD>
+<TD ALIGN=CENTER><span class="fs-2">tautomerization</span><BR><IMG SRC="../Images/arrow.gif"><BR>&nbsp;</TD> 
+<TD>H<SUB>3</SUB><span class="fc-red">C</span><span class="fc-0066ff">C</span>OC<SUB>2</SUB>H<SUB>5</SUB></TD>
+<TD><INPUT NAME="quest6a"  TYPE="radio"><B>Reduced</B><BR>
+<INPUT NAME="quest6a"  TYPE="radio"><B>Oxidized</B></TD>
+<TD><INPUT NAME="quest6b"  TYPE="radio"><B>Reduced</B><BR>
+<INPUT NAME="quest6b"  TYPE="radio"><B>Oxidized</B></TD></TR>
+
+</TABLE>
+<HR>
+<TABLE><TR>
+<TD VALIGN=top>
+<INPUT TYPE=BUTTON VALUE="Submit Answers for Problems" onClick= "process(form)">
+<TEXTAREA WRAP NAME="resultarea" ROWS="6" COLS="40"></TEXTAREA>
+
+<INPUT TYPE="reset" VALUE="Reset/Clear"> &nbsp; 
+ <INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)"> &nbsp; <INPUT TYPE="button" VALUE="Help" onClick="window.location = '../../special3.htm#top6'">
+</TD></TR>
+</TABLE></div>
+</FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-3">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY>
+</HTML>

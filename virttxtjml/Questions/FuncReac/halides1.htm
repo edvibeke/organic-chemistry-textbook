@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var j=0;
+var k=0;
+     function slct1(input) {
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+input.e.value=fix(input.e.value)
+input.f.value=fix(input.f.value)
+input.g.value=fix(input.g.value)
+input.h.value=fix(input.h.value)
+input.i.value=fix(input.i.value)
+input.j.value=fix(input.j.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.]/g,"")
+}
+
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var rsp="";
+if (input.a.value == "2" || input.a.value == "4"){ 
+		k=k+1
+		} else {
+if ( input.a.value != ""){ 
+		var rsp=rsp +" A,"
+		} else {
+		j=j+1
+}
+}
+if (input.b.value == "2") { 
+		k=k+1
+		} else {
+if (input.b.value != ""){ 
+		var rsp=rsp +" B,"
+		} else {
+		j=j+1
+}
+}
+if (input.c.value == "2"){ 
+		k=k+1
+		} else {
+if ( input.c.value != ""){ 
+		var rsp=rsp +" C,"
+		} else {
+		j=j+1
+}
+}
+if (input.d.value == "1") { 
+		k=k+1
+		} else {
+if (input.d.value != ""){ 
+		var rsp=rsp +" D,"
+		} else {
+		j=j+1
+}
+}
+if ( input.e.value == "1"){ 
+		k=k+1
+		} else {
+if (input.e.value != ""){ 
+		var rsp=rsp +" E,"
+		} else {
+		j=j+1
+}
+}
+if (input.f.value == "1") { 
+		k=k+1
+		} else {
+if ( input.f.value != ""){ 
+		var rsp=rsp +" F,"
+		} else {
+		j=j+1
+}
+}
+if (input.g.value == "6"){ 
+		k=k+1
+		} else {
+if ( input.g.value != ""){ 
+		var rsp=rsp +" G,"
+		} else {
+		j=j+1
+}
+}
+if (input.h.value == "2" || input.h.value == "5") { 
+		k=k+1
+		} else {
+if (input.h.value != ""){ 
+		var rsp=rsp +" H,"
+		} else {
+		j=j+1
+}
+}
+if (input.i.value == "2"){ 
+		k=k+1
+		} else {
+if ( input.i.value != ""){ 
+		var rsp=rsp +" I,"
+		} else {
+		j=j+1
+}
+}
+if (input.j.value == "6") { 
+		k=k+1
+		} else {
+if (input.j.value != ""){ 
+		var rsp=rsp +" J"
+		} else {
+		j=j+1
+}
+}
+if ( rsp=="") {
+rsp="none";
+}
+
+if (j==10) {
+	var txt="You have not provided answers to any of the questions."; 
+}else{
+if   (k==10) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+}else{
+	var txt="Your correct answers total: " + k +" \rCompounds for which your answers are incorrect are:" + rsp; 
+}
+}
+input.result.value = txt;
+}
+
+function clearbx1(input) {
+	input.a.value="";	// Clear all text windows.
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.e.value="";
+	input.f.value="";
+	input.g.value="";
+	input.h.value="";
+	input.i.value="";
+	input.j.value="";
+	input.result.value=" ";
+}
+
+     function slct2(input) {
+input.aa.value=fix(input.aa.value)
+input.bb.value=fix(input.bb.value)
+input.cc.value=fix(input.cc.value)
+input.dd.value=fix(input.dd.value)
+input.ee.value=fix(input.ee.value)
+input.ff.value=fix(input.ff.value)
+input.gg.value=fix(input.gg.value)
+input.hh.value=fix(input.hh.value)
+input.ii.value=fix(input.ii.value)
+input.jj.value=fix(input.jj.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.]/g,"")
+}
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var rsp="";
+if (input.aa.value == "2"){ 
+		k=k+1
+		} else {
+if ( input.aa.value != ""){ 
+		var rsp=rsp +" A,"
+		} else {
+		j=j+1
+}
+}
+if (input.bb.value == "2") { 
+		k=k+1
+		} else {
+if ( input.bb.value != ""){ 
+		var rsp=rsp +" B,"
+		} else {
+		j=j+1
+}
+}
+if (input.cc.value == "2"){ 
+		k=k+1
+		} else {
+if ( input.cc.value != ""){ 
+		var rsp=rsp +" C,"
+		} else {
+		j=j+1
+}
+}
+if (input.dd.value == "1") { 
+		k=k+1
+		} else {
+if ( input.dd.value != ""){ 
+		var rsp=rsp +" D,"
+		} else {
+		j=j+1
+}
+}
+if ( input.ee.value == "1"){ 
+		k=k+1
+		} else {
+if ( input.ee.value != ""){ 
+		var rsp=rsp +" E,"
+		} else {
+		j=j+1
+}
+}
+if (input.ff.value == "5") { 
+		k=k+1
+		} else {
+if ( input.ff.value != ""){ 
+		var rsp=rsp +" F,"
+		} else {
+		j=j+1
+}
+}
+if ( input.gg.value == "6"){ 
+		k=k+1
+		} else {
+if ( input.gg.value != ""){ 
+		var rsp=rsp +" G,"
+		} else {
+		j=j+1
+}
+}
+if (input.hh.value == "2") { 
+		k=k+1
+		} else {
+if ( input.hh.value != ""){ 
+		var rsp=rsp +" H,"
+		} else {
+		j=j+1
+}
+}
+if ( input.ii.value == "2"){ 
+		k=k+1
+		} else {
+if ( input.ii.value != ""){ 
+		var rsp=rsp +" I,"
+		} else {
+		j=j+1
+}
+}
+if (input.jj.value == "6") { 
+		k=k+1
+		} else {
+if ( input.jj.value != ""){ 
+		var rsp=rsp +" J"
+		} else {
+		j=j+1
+}
+}
+if ( rsp==" ") {
+rsp="none";
+}
+
+if (j==10) {
+	var txt="You have not provided answers to any of the questions."; 
+}else{
+if   (k==10) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+}else{
+	var txt="Your correct answers total: " + k +" \rCompounds for which your answers are incorrect are:" + rsp; 
+}
+}
+input.result.value = txt;
+}
+
+function clearbx2(input) {
+	input.aa.value="";	// Clear all text windows.
+	input.bb.value="";
+	input.cc.value="";
+	input.dd.value="";
+	input.ee.value="";
+	input.ff.value="";
+	input.gg.value="";
+	input.hh.value="";
+	input.ii.value="";
+	input.jj.value="";
+	input.result.value="";
+}
+     function slct3(input) {
+input.k.value=fix(input.k.value)
+input.l.value=fix(input.l.value)
+input.m.value=fix(input.m.value)
+input.n.value=fix(input.n.value)
+input.o.value=fix(input.o.value)
+input.p.value=fix(input.p.value)
+input.q.value=fix(input.q.value)
+input.r.value=fix(input.r.value)
+input.s.value=fix(input.s.value)
+input.t.value=fix(input.t.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.]/g,"")
+}
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var rsp="";
+if (input.k.value == "2"){ 
+		k=k+1
+		} else {
+if ( input.k.value != ""){ 
+		var rsp=rsp +" A,"
+		} else {
+		j=j+1
+}
+}
+if (input.l.value == "2") { 
+		k=k+1
+		} else {
+if (input.l.value != ""){ 
+		var rsp=rsp +" B,"
+		} else {
+		j=j+1
+}
+}
+if (input.m.value == "2"){ 
+		k=k+1
+		} else {
+if ( input.m.value != ""){ 
+		var rsp=rsp +" C,"
+		} else {
+		j=j+1
+}
+}
+if (input.n.value == "1") { 
+		k=k+1
+		} else {
+if (input.n.value != ""){ 
+		var rsp=rsp +" D,"
+		} else {
+		j=j+1
+}
+}
+if ( input.o.value == "1"){ 
+		k=k+1
+		} else {
+if (input.o.value != ""){ 
+		var rsp=rsp +" E,"
+		} else {
+		j=j+1
+}
+}
+if (input.p.value == "1" || input.p.value == "5") { 
+		k=k+1
+		} else {
+if ( input.p.value != ""){ 
+		var rsp=rsp +" F,"
+		} else {
+		j=j+1
+}
+}
+if (input.q.value == "3"){ 
+		k=k+1
+		} else {
+if ( input.q.value != ""){ 
+		var rsp=rsp +" G,"
+		} else {
+		j=j+1
+}
+}
+if (input.r.value == "4") { 
+		k=k+1
+		} else {
+if (input.r.value != ""){ 
+		var rsp=rsp +" H,"
+		} else {
+		j=j+1
+}
+}
+if (input.s.value == "2"){ 
+		k=k+1
+		} else {
+if ( input.s.value != ""){ 
+		var rsp=rsp +" I,"
+		} else {
+		j=j+1
+}
+}
+if (input.t.value == "3") { 
+		k=k+1
+		} else {
+if (input.t.value != ""){ 
+		var rsp=rsp +" J"
+		} else {
+		j=j+1
+}
+}
+if ( rsp=="") {
+rsp="none";
+}
+
+if (j==10) {
+	var txt="You have not provided answers to any of the questions."; 
+}else{
+if   (k==10) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+}else{
+	var txt="Your correct answers total: " + k +" \rCompounds for which your answers are incorrect are:" + rsp; 
+}
+}
+input.result.value = txt;
+}
+
+function clearbx3(input) {
+	input.k.value="";	// Clear all text windows.
+	input.l.value="";
+	input.m.value="";
+	input.n.value="";
+	input.o.value="";
+	input.p.value="";
+	input.q.value="";
+	input.r.value="";
+	input.s.value="";
+	input.t.value="";
+	input.result.value=" ";
+}
+
+     function slct4(input) {
+
+input.kk.value=fix(input.kk.value)
+input.ll.value=fix(input.ll.value)
+input.mm.value=fix(input.mm.value)
+input.nn.value=fix(input.nn.value)
+input.oo.value=fix(input.oo.value)
+input.pp.value=fix(input.pp.value)
+input.qq.value=fix(input.qq.value)
+input.rr.value=fix(input.rr.value)
+input.ss.value=fix(input.ss.value)
+input.tt.value=fix(input.tt.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.]/g,"")
+}
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var rsp="";
+if (input.kk.value == "4"){ 
+		k=k+1
+		} else {
+if ( input.kk.value != ""){ 
+		var rsp=rsp +" A,"
+		} else {
+		j=j+1
+}
+}
+if (input.ll.value == "2") { 
+		k=k+1
+		} else {
+if ( input.ll.value != ""){ 
+		var rsp=rsp +" B,"
+		} else {
+		j=j+1
+}
+}
+if (input.mm.value == "2"){ 
+		k=k+1
+		} else {
+if ( input.mm.value != ""){ 
+		var rsp=rsp +" C,"
+		} else {
+		j=j+1
+}
+}
+if (input.nn.value == "1") { 
+		k=k+1
+		} else {
+if ( input.nn.value != ""){ 
+		var rsp=rsp +" D,"
+		} else {
+		j=j+1
+}
+}
+if ( input.oo.value == "1"){ 
+		k=k+1
+		} else {
+if ( input.oo.value != ""){ 
+		var rsp=rsp +" E,"
+		} else {
+		j=j+1
+}
+}
+if (input.pp.value == "1" || input.pp.value == "5") { 
+		k=k+1
+		} else {
+if ( input.pp.value != ""){ 
+		var rsp=rsp +" F,"
+		} else {
+		j=j+1
+}
+}
+if ( input.qq.value == "3"){ 
+		k=k+1
+		} else {
+if ( input.qq.value != ""){ 
+		var rsp=rsp +" G,"
+		} else {
+		j=j+1
+}
+}
+if (input.rr.value == "3") { 
+		k=k+1
+		} else {
+if ( input.rr.value != ""){ 
+		var rsp=rsp +" H,"
+		} else {
+		j=j+1
+}
+}
+if ( input.ss.value == "4"){ 
+		k=k+1
+		} else {
+if ( input.ss.value != ""){ 
+		var rsp=rsp +" I,"
+		} else {
+		j=j+1
+}
+}
+if (input.tt.value == "3") { 
+		k=k+1
+		} else {
+if ( input.tt.value != ""){ 
+		var rsp=rsp +" J"
+		} else {
+		j=j+1
+}
+}
+if ( rsp=="") {
+rsp="none";
+}
+
+if (j==10) {
+	var txt="You have not provided answers to any of the questions."; 
+}else{
+if   (k==10) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+}else{
+	var txt="Your correct answers total: " + k +" \rCompounds for which your answers are incorrect are:" + rsp; 
+}
+}
+input.result.value = txt;
+}
+
+function clearbx4(input) {
+	input.kk.value="";	// Clear all text windows.
+	input.ll.value="";
+	input.mm.value="";
+	input.nn.value="";
+	input.oo.value="";
+	input.pp.value="";
+	input.qq.value="";
+	input.rr.value="";
+	input.ss.value="";
+	input.tt.value="";
+	input.result.value=" ";
+}
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Organic Halide Reactions</TITLE>
+<body>
+<FORM NAME="match">
+<div class="ctr"><H3>Organohalide Reactions</H3></div>
+<P>The following organic halide derivatives (<B>A</B> through <B>J</B>) are reacted in <B>ethanol solution</B> with each of the nucleophiles: <B>acetate, methylthiolate, cyanide and hydroxide</B> anions. Six possible results from these combinations of reactants are designated <B>1</B> through <B>6</B> below.<br>
+Enter the number corresponding to your best estimate of the outcome of each reaction in the appropriate answer box below.</p>
+
+<TABLE WIDTH=800><TR><TD  VALIGN="center"><IMG SRC="../Images/halides1.gif" BORDER=1></TD>
+<TD  VALIGN="top"><B><U>Possible Outcomes</U></B>
+<P><span class="fc-blue"><B>1.</B> &nbsp; No Reaction</P><P><B>2.</B> &nbsp; Substitution</P>
+<P><B>3.</B> &nbsp; Elimination</P><P><B>4.</B> &nbsp; Substitution & Elimination</P>
+<P><B>5.</B> &nbsp; No Reaction or Slow Substitution</P>
+<P><B>6.</B> &nbsp; No Reaction or Slow Elimination</span></TD></TR>
+</TABLE>
+<HR>
+<div class="ctr"><TABLE BORDER CELLPADDING=6>
+<TR VALIGN="top"><TH><span class="fc-blue">Compound:</TH><TH><span class="fc-blue">A</span></TH>
+<TH><span class="fc-blue">B</span></TH><TH><span class="fc-blue">C</span></TH>
+<TH><span class="fc-blue">D</span></TH><TH><span class="fc-blue">E</span></TH>
+<TH><span class="fc-blue">F</span></TH><TH><span class="fc-blue">G</span></TH>
+<TH><span class="fc-blue">H</span></TH><TH><span class="fc-blue">I</span></TH>
+<TH><span class="fc-blue">J</span></TH><TH> Answer Evaluation</TH></TR>
+<TR BGCOLOR="ccffcc"><TH>CH<SUB>3</SUB>CO<SUB>2</SUB>Na</TH><TH><INPUT TYPE="text" NAME="a"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="b"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="c"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="d"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="e"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="f"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="g"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="h"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="i"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="j"  SIZE="2"></TH><TH><INPUT TYPE="button" VALUE=" Check Answers " onClick="slct1(this.form)"><BR>
+<INPUT TYPE="button"  VALUE=" Clear " onClick="clearbx1(this.form)"></TH></TR>
+<TR BGCOLOR="ffffcc"><TH>CH<SUB>3</SUB>SNa</TH><TH><INPUT TYPE="text" NAME="aa"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="bb"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="cc"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="dd"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="ee"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="ff"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="gg"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="hh"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="ii"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="jj"  SIZE="2"></TH><TH><INPUT TYPE="button" VALUE=" Check Answers " onClick="slct2(this.form)"><BR>
+<INPUT TYPE="button"  VALUE=" Clear " onClick="clearbx2(this.form)"></TH></TR>
+<TR BGCOLOR="ccffff"><TH>NaCN</TH><TH><INPUT TYPE="text" NAME="k"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="l"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="m"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="n"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="o"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="p"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="q"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="r"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="s"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="t"  SIZE="2"></TH><TH><INPUT TYPE="button" VALUE=" Check Answers " onClick="slct3(this.form)"><BR>
+<INPUT TYPE="button"  VALUE=" Clear " onClick="clearbx3(this.form)"></TH></TR>
+<TR BGCOLOR="ffcccc"><TH>NaOH</TH><TH><INPUT TYPE="text" NAME="kk"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="ll"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="mm"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="nn"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="oo"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="pp"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="qq"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="rr"  SIZE="2"></TH>
+<TH><INPUT TYPE="text" NAME="ss"  SIZE="2"></TH><TH><INPUT TYPE="text" NAME="tt"  SIZE="2"></TH><TH><INPUT TYPE="button" VALUE=" Check Answers " onClick="slct4(this.form)"><BR>
+<INPUT TYPE="button"  VALUE=" Clear " onClick="clearbx4(this.form)"></TH></TR>
+</TABLE>
+<HR><TABLE><TR><TD>
+<span class="fc-blue">Answer Evaluation: &nbsp; <TEXTAREA WRAP NAME="result" ROWS="4" COLS="58">
+</TEXTAREA></span></TD><TD>
+<INPUT TYPE="button" VALUE="Reactivity Summary" onClick="window.location = '../../alhalrx3.htm#hal9'"><BR><BR>
+<INPUT TYPE="button"  NAME="wind" VALUE=" Answer Discussion " onClick=
+"window.open('discuss1.htm','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=500,height=660')"></TD></TR></TABLE>
+
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> </div>
+<span class="fs-3">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</FORM>
+</BODY></HTML>
+
+
+</HTML>
+
+

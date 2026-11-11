@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  td {font-size: 11pt} td {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+var j=0;
+var k=0;
+var m=0;
+var Txt="";
+var txt="";
+var anscnt=0;
+	function process(form) {
+	if (j!=0){
+	 j=0
+}
+		if (form.q1[0].checked) {
+		j=1
+}
+		if (form.q1[1].checked) {
+		j=2
+}
+		if (form.q1[2].checked) {
+		j=3
+}
+		if (form.q1[3].checked) {
+		j=4
+}
+		if (form.q1[4].checked) {
+		j=5
+}
+		if (form.q1[5].checked) {
+		j=6
+}
+		if (form.q1[6].checked) {
+		j=7
+}
+		if (form.q1[7].checked) {
+		j=8
+}
+		if (form.q1[8].checked) {
+		j=9
+}
+		if (form.q1[9].checked) {
+		j=10
+}
+		if (form.q1[10].checked) {
+		j=11
+}
+		if (form.q1[11].checked) {
+		j=12
+}
+}
+
+function setanscnt() {
+	if (anscnt!=0){
+		anscnt=0;
+}
+}
+
+function check(input)  {
+	if (k!=0){
+		k=0;
+}
+	if (m!=0){
+		m=0;
+}
+anscnt=anscnt+1;
+	if (input.a1.checked){
+		k=k+1
+		m=m+1
+}
+  if (input.a2.checked){
+ 	k=k+2
+		m=m+1
+}
+ if (input.a3.checked){
+		k=k+4
+		m=m+1
+}
+  if (input.a4.checked){
+ 	k=k+8
+		m=m+1
+}
+	   if (input.a5.checked){
+		k=k+16
+		m=m+1;
+}
+ 	if (input.a6.checked){
+ 	k=k+32
+		m=m+1
+}
+ 	if (input.a7.checked){
+ 	k=k+64
+		m=m+1
+}
+ 	if (input.a8.checked){
+ 	k=k+128
+		m=m+1
+}
+ 	if (input.a9.checked){
+ 	k=k+256
+		m=m+1
+}
+ 	if (input.a10.checked){
+ 	k=k+512
+		m=m+1
+}
+}
+
+function processAnsw(input) { 
+if  ((j == 1 && k==3)||(j==2 && k==47)||(j==3 && k==60)||(j==4 && k==63)||(j==5 && k==60)||(j==6 && k==47)||(j==7 && k==239)||(j==8 && k==0)||(j==9 && k==63)||(j==10 && k==63)||(j==11 && k==3)||(j==12 && k==63)) { 
+var Txt="Correct Answer! ";
+anscnt=3;
+}else{
+if ((j == 1 && m<=2)||(j==2 &&m<=4)||(j == 3 && m<=3)||(j == 4 && m<=5)||(j == 5 && m<=3)||(j == 6 && m<=4)||(j==7 && m<=6)||(j == 9 && m<=5)||(j == 10 && m<=5)||(j == 11 && m<=2)||(j == 12 && m<=5)) {
+var Txt="You need to select more poor solvents.";
+}else{ 
+if (k==0) {
+var Txt="You have not made any selections!";
+}else{
+var Txt="Wrong! Try again.";
+}
+}
+}
+if  ((j == 1  && m>=3)||(j==2 && m>=6)||(j==3 && m>=5)||(j==4 &&  m>=7)||(j==5 && m>=5)||(j==6 && m>=6)||(j==7 && m>=8)||(j==8 &&  m>=1)||(j==9 &&  m>=7)||(j==10 &&  m>=7)||(j==11 &&  m>=3)||(j==12 &&  m>=7)) { 
+var Txt=Txt + "\rYou have made too many selections. ";
+}
+if  ((j == 4  && k==831)||(j==5 && k==828)||(j==9 && k==831)) { 
+var Txt=Txt + "\rThe solubilizing character of hexane and benzene is not considered here. ";
+}
+	 document.form.result1.value = Txt;
+}
+
+
+ function giveansw() {
+var answ="";
+ if ((anscnt>=3) && (j==1)) {
+answ="Hydroxylic solvents such as water & ethanol will react with thionyl chloride. \rAcetone and ethyl acetate would not be good choices.";
+}else{
+ if ((anscnt>=3) && (j==2)) {
+answ= "Water and ethanol would give hypobromous reagents.\rAcetone, ethyl acetate and acetonitrile may undergo slow alpha-bromination.";
+}else{
+ if ((anscnt>=3) && (j==3)) {
+answ= "Acetone may give aldol products\rEthyl acetate and acetonitrile may be hydrolyzed or undergo Claisen-like condensation.\rChloroform reacts with strong base to give varied products."; 
+}else{
+ if ((anscnt>=3) && (j==4)) {
+answ= "Hydroxylic solvents protonate Grignard reagents.\rCarbonyl compounds and nitriles react with Grignard reagents.\rChloroform will react with Mg or Grignard reagents in several ways.\rHexane and benzene do not react, but are poor solvents for Grignard formation.";  
+}else{
+ if ((anscnt>=3) && (j==5)) {
+answ= "Acetone, ethyl acetate and acetonitrile may be hydrolyzed or undergo Claisen-like condensation.\rChloroform reacts with strong base to give varied products.\rHexane and benzene would be poor choices due to solubility issues. ";  
+}else{
+ if ((anscnt>=3) && (j==6)) {
+answ= "Water would hydrolyze the ester product.\rEthanol would result in a mixture of esters.\rEthyl acetate would give transesterification products.\rAcetonitrile would add alcohol slowly.\rAcetone may give aldol products.";
+}else{
+ if ((anscnt>=3) && (j==7)) {
+answ= "Only chloroform and the hydrocarbon solvents would be suitable.\rThe other solvents would be hydrolyzed or react by alkoxy cleavage reactions.\rAcetone may give aldol products.";
+}else{
+ if ((anscnt>=3) && (j==8)) {
+answ= "Pericyclic reactions such as Diels-Alder cycloaddition are not very solvent dependent, provided reactive substituents are not present. \rWater systems may need to be homogenized.";
+}else{
+ if ((anscnt>=3) && (j==9)) {
+answ= "Hydroxylic solvents exchange protons with the alkoxide.\rCarbonyl compounds and nitriles react with strong bases by exchange or condensation reactions.\rChloroform reacts with strong base in several ways.\rHexane and benzene do not react, but are poor solvents for ionic reagents.";  
+}else{
+ if ((anscnt>=3) && (j==10)) {
+answ= "Hydroxylic solvents protonate acetylide anion.\rThe acetylide reagent adds to carbonyl groups.\rNitriles may react by addition or condensation reactions.\rChloroform may react with acetylide in several ways.";  
+}else{
+ if ((anscnt>=3) && (j==11)) {
+answ= "Hydroxylic solvents such as water & ethanol will react with acetic anhydride.";
+}else{
+ if ((anscnt>=3) && (j==12)) {
+answ= "Hydroxylic solvents protonate alkyl lithium reagents.\rCarbonyl compounds and nitriles react with lithium reagents.\rChloroform will react with lithium reagents in several ways."; 
+}else{
+answ="You must try to answer this questions three times before viewing the answer."
+}}
+}}
+}}
+}
+}
+}
+}
+}
+} 
+  document.form.result1.value=answ
+}
+
+// End of hide script comment. -->
+</SCRIPT>
+ <link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Solvent Selection</TITLE>
+ <body>
+ <FORM  NAME="form">
+ <div class="ctr"><H3>Selecting Solvents for Reactions</H3></div>
+<P>In many questions about chemical reactions the solvent is often ignored. This question asks you to consider the suitability of certain common solvents for use in a specified reaction. Focus on reactivity problems rather than solubility issues.</P>
+<p><span class="fc-blue"><B><span class="fs-4"> Choose one of the twelve following reactions by clicking on its radio button.</span></B></span>
+
+<dir><span class="fs-4"><INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; Reaction of thionyl chloride (SOCl<sub>2</sub>) with (CH<sub>3</sub>)<sub>2</sub>CHCH<sub>2</sub>OH to form (CH<sub>3</sub>)<sub>2</sub>CHCH<sub>2</sub>Cl.<BR>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; Addition of Br<sub>2</sub> to CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH=CH<sub>2</sub> to form CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CHBrCH<sub>2</sub>Br.<BR>
+<INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; E2 elimination of cyclohexylbromide to cyclohexene by treatment with hot KOH.<sub>&nbsp;</sub><BR>
+<INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; Formation of the Grignard reagent (CH<sub>3</sub>)<sub>2</sub>CHCH<sub>2</sub>MgBr from (CH<sub>3</sub>)<sub>2</sub>CHCH<sub>2</sub>Br by reaction with Mg.<BR>
+<INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; Aldol reaction of CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH=O  by treatment with NaOH.<BR>
+<INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; Fischer esterification of CH<sub>3</sub>CH<sub>2</sub>CO<sub>2</sub>H with  (CH<sub>3</sub>)<sub>2</sub>CHCH<sub>2</sub>OH  by heating with a strong acid catalyst.<BR>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; Conversion of CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>2</sub>OH to CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>2</sub>I by heating with conc. HI.<BR>
+<INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; Diels-Alder cycloaddition of CH<sub>2</sub>=CH&#8211;CH=CH<sub>2</sub> with  CH<sub>2</sub>=CH&#8211;C&#8801;N<BR>
+<INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; Williamson ether formation by reaction of (CH<sub>3</sub>)<sub>2</sub>CHCH<sub>2</sub>O<sup>(&#8211;)</sup>K<sup>(+)</sup> with  CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>2</sub>Br.<BR>
+<INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; Reaction of sodium acetylide (HC&#8801;CNa) with CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>Br to give CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>C&#8801;CH.<BR>
+<INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; Acetylation of C<sub>6</sub>H<sub>5</sub>CH<sub>2</sub>OH  with (CH<sub>3</sub>CO)<sub>2</sub>O (pyridine catalyst) to give C<sub>6</sub>H<sub>5</sub>CH<sub>2</sub>OCOCH<sub>3</sub>.<BR>
+<INPUT TYPE=RADIO NAME="q1" VALUE="prob"> &nbsp; Formation of a Wittig reagent by reaction 
+of (C<sub>6</sub>H<sub>5</sub>)<sub>3</sub>PCH<sub>3</sub><sup>(+)</sup> Br<sup>(&#8211;)</sup> with n-butyl lithium (CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>2</sub>Li).</dir>
+<P>Once the problem is selected check all the following solvents that would be <b><span class="fc-red fs-4">unsuitable</span></b> for that reaction</span>. (simply click the box beneath the name).</P>
+<p> <TABLE BORDER=1 CELLPADDING=9 width=840>
+<caption><b><span class="fs-4">Common Solvents</span></b></caption>
+ <TR VALIGN=TOP>
+ <TH width=60> Water<br>
+ <INPUT TYPE=CHECKBOX NAME="a1" VALUE="answ"></TH>
+ <TH width=60>Ethanol<br>
+ <INPUT TYPE=CHECKBOX NAME="a2" VALUE="answ"></TH>
+ <TH width=60>Acetone<br>
+ <INPUT TYPE=CHECKBOX NAME="a3" VALUE="answ"></TH>
+<TH  nowrap>Ethyl Acetate<br>
+ <INPUT TYPE=CHECKBOX NAME="a4" VALUE="answ"></TH>
+<TH  nowrap>Chloroform<br>
+ <INPUT TYPE=CHECKBOX NAME="a5" VALUE="answ"></TH>
+<TH> Acetonitrile<br>
+ <INPUT TYPE=CHECKBOX NAME="a6" VALUE="answ"></TH>
+<TH width=60> Ether<br>
+ <INPUT TYPE=CHECKBOX NAME="a7" VALUE="answ"></TH>
+<TH width=60> THF <br>
+ <INPUT TYPE=CHECKBOX NAME="a8" VALUE="answ"></TH>
+ <TH width=60> Hexane<br>
+ <INPUT TYPE=CHECKBOX NAME="a9" VALUE="answ"></TH>
+ <TH width=60> Benzene<br>
+ <INPUT TYPE=CHECKBOX NAME="a10" VALUE="answ"></TH>
+ </TR></TABLE></P>
+ <HR>
+<table cellpadding=5><tr><td align=right>
+<INPUT TYPE="button" VALUE="Check Answers" onClick="process(form);check(form);processAnsw(this.form);"><br><br>
+ <INPUT TYPE="RESET" VALUE="Reset" onClick="setanscnt()"></td>
+ <td><TEXTAREA WRAP NAME="result1" ROWS="5" COLS="72">
+ </TEXTAREA></td>
+ <td><INPUT TYPE="button"  NAME="answr" VALUE="View Answer" onClick="giveansw (this.form)"><br><br>
+<INPUT TYPE="button"  VALUE="Solvent Table" onClick="window.location = 'https://edvibe.co.ke/OrgPage/solvent.htm'">
+</td></tr></table>
+</FORM><HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+ </BODY>
+ </HTML>

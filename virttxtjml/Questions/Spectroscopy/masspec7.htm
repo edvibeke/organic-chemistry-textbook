@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var i=0;
+var k=0;
+var anscnt=0
+var answ="Problem 1: 1,1,2,2-tetrafluoroethane. The nearest large fragment ion to the small molecular ion is at m/z=83, a loss of 19 amu. This suggests loss of fluorine. The m/z=51 ion represents half the molecule. A hydrogen shift is necessary to explain the m/z=33 ion.\r\r"
+ + "Problem 2: 1,1,1,2-tetrafluoroethane. Important differences from isomer 1 are that the m/z=51 ion is much smaller, m/z=33 is much larger, and a new strong ion at m/z=69 has appeared. Since fluorine is present, this may be assigned as a trifluoromethyl cation. \r"
+var noansw="You must try to answer this question three times before viewing the answers."
+var text1 = "";
+var text2 = "";
+function checkanswers(input)  {
+	anscnt=anscnt+1;
+
+var a1=input.a.value.toUpperCase().indexOf("1,1,2,2-TETRAFLUOROETHANE",0);	       
+var b1=input.b.value.toUpperCase().indexOf("1,1,1,2-TETRAFLUOROETHANE",0);
+
+	if (i!=0){
+	 i=0	
+}
+  if (k!=0){
+		k=0
+}
+
+	if (a1>=0) { 
+i=2
+}else{
+	if ( input.a.value!= "") { 
+i=1
+}
+}
+	if (b1>=0) { 
+k=2
+}else{
+	if ( input.b.value!= "") { 
+k=1
+}
+}
+
+  if (i==2) {
+var text1= "Your answer to Problem 1 is correct.";
+}else{
+if (i==0) {
+var text1="You have not provided an answer to Problem 1.";
+}else{
+var text1= "Your answer to Problem 1 is incorrect.";
+}
+}
+
+   if (k==2) {
+var text2="Your answer to Problem 2 is correct.";
+}else{
+if (k==0) {
+var text2= "You have not provided an answer to Problem 2.";
+}else{
+var text2= "Your answer to Problem 2 is incorrect.";
+}
+}
+
+input.resultarea.value = text1 +"\r" +  text2;
+}
+
+function giveansw(show) {
+if (anscnt>=3)  {
+var txt=answ
+}else{
+var txt=noansw
+}
+show.resultarea.value=txt
+}
+//STOP HIDING-->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+
+<TITLE>Mass Spectrometry Problems</TITLE>
+</HEAD>
+<body>
+
+<div class="ctr"><H3>Practice Questions for Mass Spectrometry VII</H3></div>
+<P>The mass spectra of two constitutional isomers are shown here. Both are gases at room temperature. The molecular ion is the small peak at m/z = 102 amu.</p>
+<div class="ctr"><TABLE CELLSPACING=6><TR><TD><IMG SRC="../Images/tetflet2.gif"></TD><TD WIDTH=30> </TD><TD><IMG SRC="../Images/tetflet1.gif"></TD></TR>
+<TR ALIGN=center><TD><span class="fc-blue">Isomer 1</span></TD><TD WIDTH=30> </TD><TD><span class="fc-blue">Isomer 2</span></TD></TR></TABLE></div>
+
+<FORM>
+<P><span class="fc-blue"><B>1.</B> &nbsp; In the answer box to the right enter the name of the isomer that would give mass spectrum 1.</span> &nbsp; &nbsp; <INPUT TYPE="text" NAME="a"  SIZE="30"> </P>
+<P><span class="fc-blue"><B>2.</B> &nbsp; In the answer box to the right enter the name of the isomer that would give mass spectrum 2.</span> &nbsp; &nbsp; <INPUT TYPE="text" NAME="b"  SIZE="30"> </P>
+<P>Be careful to follow the IUPAC rules of nomenclature and to spell correctly. Remember to use hyphens and commas where required.</P>
+<HR>
+
+<INPUT TYPE=BUTTON VALUE="Submit Answers"  onClick= "checkanswers(this.form)"> 
+<TEXTAREA WRAP NAME="resultarea" ROWS="9" COLS="86"></TEXTAREA><INPUT TYPE="reset" VALUE="Reset"> 
+<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)"> 
+</FORM>
+ <HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

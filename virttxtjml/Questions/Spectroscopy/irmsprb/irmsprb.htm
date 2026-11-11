@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../../Styles/modern.css">
+
+<Title>Mass Spectrometry</Title>
+
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var anscnt=0;
+var i=1;
+function show(form) {
+if (anscnt!=0){
+anscnt=0
+}
+		if (form.quest[0].checked){
+    i=1
+document.images[0].src="problem"+i+".gif"
+}
+		if (form.quest[1].checked){
+		i=2
+document.images[0].src="problem"+i+".gif"
+}
+		if (form.quest[2].checked){
+		i=3
+document.images[0].src="problem"+i+".gif"
+}
+		if (form.quest[3].checked){
+		i=4
+document.images[0].src="problem"+i+".gif"
+}
+}
+function disply1() {
+document.images[0].src="irspctr"+i+".gif"
+}
+function disply2() {
+document.images[0].src="msspctr"+i+".gif"
+}
+
+
+function chk1(input) {
+var rsp="";
+anscnt=anscnt+1;
+if ((( i==1)) && ((input.answ.value.toUpperCase()=="METHYL 2,2-DIMETHYLPROPANOATE")  || (input.answ.value.toUpperCase()=="METHYL 2,2-DIMETHYLPROPIONATE") || (input.answ.value.toUpperCase()=="METHYL TRIMETHYLACETATE") || (input.answ.value.toUpperCase()=="METHYL PIVALATE")) ) { 
+	rsp="Correct answer to the first problem.";
+anscnt=2
+		} else {
+if ((( i==2)) && ((input.answ.value.toUpperCase()=="BENZONITRILE")  || (input.answ.value.toUpperCase()=="PHENYL CYANIDE") || (input.answ.value.toUpperCase()=="CYANOBENZENE")) ) { 
+	rsp="Correct answer to the second problem.";
+anscnt=2
+		} else {
+if ((( i==3)) && ((input.answ.value.toUpperCase()=="PENTANAMIDE")  || (input.answ.value.toUpperCase()=="VALERAMIDE")) ) { 
+	rsp="Correct answer to the third problem";
+anscnt=2
+		} else {
+if ((( i==4)) && ((input.answ.value.toUpperCase()=="HEXAFLUOROACETONE")  || (input.answ.value.toUpperCase()=="HEXAFLUORO-2-PROPANONE")) ) { 
+	rsp="Correct answer to the fourth problem.";
+anscnt=2
+		} else {
+if ( input.answ.value != ""){ 
+		rsp="Wrong Answer"
+}
+}
+}
+}
+}
+if ( rsp=="") {
+rsp="no answer given";
+anscnt=0;
+}
+input.result.value = rsp;
+}
+function clrtxt(input) {
+	input.answ.value="";	
+	input.result.value=" ";
+}
+
+function giveansw(show) {
+var noansw="You must try to answer each question twice before viewing an answer.";
+var ans1= "The infrared spectrum suggests an ester. Carbonyl stretching at 1737 and C-O stretching at 1194  & 1166. Lack of C-H absorption above 3000 indicates no unsaturation. The molecular ion has an even mass, and most fragment ions have odd masses. The base peak at m/z=57 suggests a tert-butyl group. The M-15 ion is quite weak, and the 85 ion is due to loss of methoxide. The compound is methyl 2,2-dimethylpropanoate. ";
+var ans2= "The strong infrared absorption at 2230 sugests a nitrile function (nitrogen is probably present because of the odd mass molecular ion). Exclusive absorption above 3000 indicates an aromatic ring substituent. Other absorptions (758 & 688) indicate a monosubstituted benzene ring.\rThe molecular ion is also the base ion, and accounts for most of the ion density. This again suggests an aromatic compound. \rThe compound is benzonitrile. ";
+var ans3= "The infrared spectrum suggests a primary amide function (N-H pair at 3366 & 3190 together with amide I & II absorptions at 1663 & 1633).  Nitrogen is probably present because of the odd mass molecular ion.\rThe base peak in the mass spectrum (m/z=59) must be the McLafferty rearrangement ion (C2H5NO). The m/z=44 ion is probably the alpha-cleavage ion CH2NO. \rThe compound is pentanamide. ";
+var ans4= "The most important feature in the infrared spectrum is the absence of any C-H absorption. The 1800 absorption points to a carbonyl group, but it is surprisingly weak, and the frequency suggests a strained ring or electronegative substituents.\r  The mass spectrum is unusual because the ions are widely separated. The molecular ion is small and the closest fragment ion is 19 mass units away. This difference also shows up in some of the smaller fragments, such as 31, 50 & 69. \rThe compound is hexafluoroacetone. ";
+ if ((anscnt>=2) && (i==1)) {
+rsp =ans1
+	}else{
+ if ((anscnt>=2) && (i==2)) {
+rsp =ans2
+	}else{
+ if ((anscnt>=2) && (i==3)) {
+rsp =ans3
+	}else{
+ if ((anscnt>=2) && (i==4)) {
+rsp =ans4
+	}else{
+rsp=noansw
+}
+}
+}
+}
+show.result.value = rsp;
+}
+
+
+
+//STOP HIDING-->
+</SCRIPT>
+<link rel="stylesheet" href="../../../Styles/edvibe.css">
+<script src="../../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Spectroscopy Problems</TITLE>
+<body>
+<FORM>
+<div class="ctr"><H3>Spectroscopy Problems</H3></div>
+<P>The following four problems test your ability to interpret infrared and mass spectra of an unknown compound. The first three problems are straightforward, but the fourth is more challenging. Select a problem by checking a radio button, and then click the "<b>Show the Selected Problem</b>" button. The actual spectra may be examined by clicking one of the designated buttons.<BR>
+Once you have deduced the structure of the unknown, write its name in the designated answer box near the bottom of the page and check it by clicking the "<b>Check Answer</b>" button. Be careful to enter the names correctly, with all commas and dashes in place. Common names and IUPAC names are accepted.</P> 
+<div class="ctr"><TABLE><TR><TD COLSPAN=4><IMG SRC="problem1.gif"></TD></TR>
+<TR><TH><INPUT NAME="quest"  TYPE="radio" checked> Problem 1</TH><TH><INPUT NAME="quest"  TYPE="radio"> Problem 2</TH><TH><INPUT NAME="quest"  TYPE="radio"> Problem 3</TH><TH><INPUT NAME="quest"  TYPE="radio"> Problem 4</TH></TR>
+<TR><TH COLSPAN=4><INPUT TYPE="button"  VALUE="Show the Selected Problem" onClick="show(this.form)"></TH></TR>
+<TR><TH COLSPAN=2><BR><INPUT TYPE="button"  VALUE=" Show IR Spectrum" onClick=" disply1(this.form)"></TH><TH COLSPAN=2><BR><INPUT TYPE="button"  VALUE="Show Mass Spectrum" onClick="disply2(this.form)"></TH></TR></TABLE>
+<HR>
+<TABLE WIDTH=760><TR><TH COLSPAN=4>Enter a name for the unknown compound in the following box:<br><table align="center" border=2  bgcolor = maroon><tr><td><INPUT TYPE="text" NAME="answ"  SIZE="60"></td></tr></table></TH></TR>
+<TR><TH COLSPAN=3><TEXTAREA WRAP NAME="result" ROWS="7" COLS="84">
+ </TEXTAREA></TH><TH><INPUT TYPE="button"  VALUE="Check Answer" onClick=" chk1(this.form)"><BR><BR><INPUT TYPE="button"  VALUE="Clear Text" onClick="clrtxt(this.form)"><BR><BR> <INPUT TYPE="button"  NAME="answr" VALUE=" View Answer" onClick="giveansw (this.form)"></TH></TR>
+</TABLE>
+<P> <BR> </P>
+
+</FORM>
+</BODY>
+</HTML>
+

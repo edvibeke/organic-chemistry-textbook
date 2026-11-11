@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var img1=new Image();										// variables for image switch
+var img2=new Image();
+		img1.src="../Images/nmrgrp1a.gif";
+		img2.src="../Images/nmrgrp1b.gif";
+var anscnt=0																										// other variables
+
+var noansw="You must try to answer this question twice before viewing the answers."
+var pa="";
+var pb="";
+var pc="";
+var pd="";
+var pe="";
+var pf="";
+var pg="";
+var ph="";
+var pi="";
+var pj="";
+var fa="";
+var fb="";
+var fc="";
+var fd="";
+var fe="";
+var ff="";
+var fg="";
+var fh="";
+
+var txt1="";
+var k=0
+var i=0
+		function process(form){
+	if (i!=0){
+		 i=0
+}
+	if (k!=0){
+		 k=0
+}
+
+		if (form.sugar[0].checked) {
+
+pa=1; pb=0; pc=0; pd=1; pe=0; pf=1; pg=1; ph=0; pi=0; pj=0;
+
+fa=1; fb=0; fc=1; fd=0; fe=0; ff=1; fg=2; fh=0;
+
+txt1="arabinose";
+
+}
+
+		if (form.sugar[1].checked) {
+
+pa=1; pb=0; pc=1; pd=0; pe=0; pf=1; pg=1; ph=0; pi=0; pj=0;
+
+fa=1; fb=0; fc=0; fd=1; fe=0; ff=1; fg=2; fh=0;
+
+txt1="ribose";
+
+}
+
+		if (form.sugar[2].checked) {
+
+pa=1; pb=0; pc=1; pd=0; pe=1; pf=0; pg=1; ph=0; pi=0; pj=0;
+
+fa=1; fb=0; fc=0; fd=1; fe=1; ff=0; fg=2; fh=0;
+
+txt1="xylose";
+
+}
+
+		if (form.sugar[3].checked) {
+
+pa=1; pb=0; pc=1; pd=0; pe=1; pf=0; pg=1; ph=0; pi=2; pj=0;
+
+fa=1; fb=0; fc=0; fd=1; fe=1; ff=0; fg=3; fh=0;
+
+txt1="glucose";
+
+}
+
+		if (form.sugar[4].checked) {
+
+pa=1; pb=0; pc=1; pd=0; pe=1; pf=0; pg=0; ph=1; pi=2; pj=0;
+
+fa=1; fb=0; fc=0; fd=1; fe=1; ff=0; fg=0; fh=3;
+
+txt1="galactose";
+
+}
+
+		if (form.sugar[5].checked) {
+
+pa=1; pb=0; pc=0; pd=1; pe=1; pf=0; pg=1; ph=0; pi=2; pj=0;
+
+fa=1; fb=0; fc=1; fd=0; fe=1; ff=0; fg=3; fh=0;
+
+txt1="mannose";
+
+}
+		if (form.sugar[6].checked) {
+pa=1; pb=2; pc=0; pd=1; pe=0; pf=1; pg=1; ph=0; pi=0; pj=0;
+fa=1; fb=2; fc=1; fd=0; fe=0; ff=1; fg=2; fh=0;
+txt1="fructose";
+}
+
+		if (form.paa[pa].checked && form.pab[pb].checked) {
+		i=i+1
+}else {
+alert ("Remember to draw the 'beta' anomer in every case.");
+		i=i
+}
+
+		if (form.pac[pc].checked && form.pad[pd].checked) {
+		i=i+1
+}else {
+		i=i	
+}
+
+		if (form.pae[pe].checked && form.paf[pf].checked) {
+		i=i+1
+}else {
+		i=i
+	}		
+
+		if (form.pag[pg].checked && form.pah[ph].checked) {
+		i=i+1
+}else {
+		i=i
+}
+
+		if (form.pai[pi].checked && form.pah[ph].checked) {
+		i=i+1
+}else {
+		i=i
+}
+
+		if (form.faa[fa].checked && form.fab[fb].checked){
+		k=k+1
+}else {
+		k=k
+}
+
+		if (form.fac[fc].checked && form.fad[fd].checked){
+		k=k+1
+}else {
+		k=k	
+}
+
+		if (form.fae[fe].checked && form.faf[ff].checked){
+		k=k+1
+}else {
+		k=k
+	}		
+
+		if (form.fag[fg].checked && form.fah[fh].checked){
+		k=k+1
+}else {
+		k=k
+}
+
+
+	var difp=5-i
+var diff=4-k
+	var Text="For " +txt1 +" you correctly configured " +i +" pyranose sites and " +k +" furanose sites."
++"You failed to designate or incorrectly configured " +difp +" pyranose and " +diff + " furanose sites."
+
+form.resultarea.value=Text;	
+}
+	//STOP HIDING-->
+</SCRIPT>
+<script id="qa-imgfallback">(function(){if(window.__qaImgFallback)return;window.__qaImgFallback=1;var BOX="display:inline-block;min-width:80px;min-height:24px;padding:6px 10px;margin:2px;border:1px dashed #b9c0c8;border-radius:6px;color:#7a828c;font:italic 13px/1.35 system-ui,Segoe UI,Arial,sans-serif;background:#f6f8fa;vertical-align:middle;text-align:center;";function ph(img){var p=img.__qaPh;if(!p){p=document.createElement("span");p.setAttribute("role","img");p.setAttribute("aria-label","Figure unavailable");p.style.cssText=BOX;p.textContent="Figure unavailable";img.__qaPh=p;if(img.parentNode)img.parentNode.insertBefore(p,img.nextSibling);}p.style.display="";img.style.display="none";img.setAttribute("data-qa-broken","1");}function ok(img){if(img.__qaPh)img.__qaPh.style.display="none";if(img.getAttribute("data-qa-broken")){img.style.display="";img.removeAttribute("data-qa-broken");}}function hook(img){if(img.__qaHooked)return;img.__qaHooked=1;img.addEventListener("error",function(){ph(this);},true);img.addEventListener("load",function(){ok(this);},true);if(img.complete&&img.naturalWidth===0&&img.getAttribute("src"))ph(img);}function scan(){var a=document.getElementsByTagName("img");for(var i=0;i<a.length;i++)hook(a[i]);}if(document.readyState!=="loading")scan();else document.addEventListener("DOMContentLoaded",scan);window.addEventListener("load",scan);})();</script><link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+
+<TITLE>Monosaccharide Hemiacetal Forms</TITLE>
+<body>
+<div class="ctr"><H3>Hemiacetal Forms of Simple Sugars</H3></div>
+<P>Monosaccharides exist predominantly as cyclic hemiacetals, referred to as pyranose (6-membered ring) and furanose (5-membered ring) forms. For each of seven D-sugars: <span class="fc-blue">Arabinose, Ribose, Xylose, Glucose, Galactose, Mannose & Fructose</span>, specify the ring substituents at each of the designated bonds in the following formulas. These substituents will be -H, -OH,  -CH<SUB>2</SUB>OH, or -CH(OH)CH<SUB>2</SUB>OH. Assign a &#946;-configuration at the anomeric carbon ( a blue circle), and keep in mind that these are D-sugars..<BR>
+Note that the chair conformation specified here may not be the most stable pyranose conformation in every case. It is the configuration at each stereo center that must be correctly specified.</P>
+<div class="ctr"><IMG SRC="../Images/sacchcnf.gif"></div>
+
+ <FORM > 
+<p>If you need to refresh your memory concerning the structures and configurations of these compounds click this button: &nbsp; 
+<INPUT TYPE="button"  NAME="show" VALUE="Carbohydrate Structures" onClick=
+"window.open('carbstrc.htm','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=760,height=660')"></p>
+
+
+<div class="ctr"><H3><span class="fc-blue">Select a Monosaccharide</span></H3>
+<p><TABLE CELLPADDING=6 BORDER WIDTH=760>
+<TR><TD><INPUT NAME="sugar"  TYPE="radio" checked>&nbsp;Arabinose</TD>
+<TD ><INPUT NAME="sugar"  TYPE="radio">&nbsp;Ribose </TD><TD ><INPUT NAME="sugar"  TYPE="radio">&nbsp;Xylose </TD><TD ><INPUT NAME="sugar"  TYPE="radio">&nbsp;Glucose </TD><TD ><INPUT NAME="sugar"  TYPE="radio">&nbsp;Galactose </TD><TD ><INPUT NAME="sugar"  TYPE="radio">&nbsp;Mannose </TD><TD ><INPUT NAME="sugar"  TYPE="radio">&nbsp;Fructose </TD></TR></TABLE></p><br>
+
+<H3><span class="fc-blue">Assign Substituents for the Pyranose Form</span></H3>
+<p><TABLE CELLPADDING=3 BORDER WIDTH=960><TR>
+<TH>Position <span class="fc-red">a</span></TH><TH>Position <span class="fc-red">b</span></TH><TH>Position <span class="fc-red">c</span></TH> <TH>Position <span class="fc-red">d</span></TH><TH>Position <span class="fc-red">e</span></TH><TH>Position <span class="fc-red">f</span></TH><TH >Position <span class="fc-red">g</span></TH><TH>Position <span class="fc-red">h</span></TH><TH>Position <span class="fc-red">i</span></TH><TH>Position <span class="fc-red">j</span></TH></TR>
+
+<TR><TD><INPUT NAME="paa"  TYPE="radio"> -H<BR>
+
+<INPUT NAME="paa"  TYPE="radio"> -OH<BR><INPUT NAME="paa"  TYPE="radio">&nbsp;-CH<SUB>2</SUB>OH</TD>
+
+<TD><INPUT NAME="pab"  TYPE="radio"> -H<BR><INPUT NAME="pab"  TYPE="radio"> -OH<BR><INPUT NAME="pab"  TYPE="radio">&nbsp;-CH<SUB>2</SUB>OH</TD>
+
+<TD><INPUT NAME="pac"  TYPE="radio"> -H<BR><INPUT NAME="pac"  TYPE="radio"> -OH<BR><INPUT NAME="pac"  TYPE="radio">&nbsp;-CH<SUB>2</SUB>OH</TD>
+
+<TD><INPUT NAME="pad"  TYPE="radio"> -H<BR><INPUT NAME="pad"  TYPE="radio"> -OH<BR><INPUT NAME="pad"  TYPE="radio">&nbsp;-CH<SUB>2</SUB>OH</TD>
+
+<TD><INPUT NAME="pae"  TYPE="radio"> -H<BR><INPUT NAME="pae"  TYPE="radio"> -OH<BR><INPUT NAME="pae"  TYPE="radio">&nbsp;-CH<SUB>2</SUB>OH</TD>
+
+<TD><INPUT NAME="paf"  TYPE="radio"> -H<BR><INPUT NAME="paf"  TYPE="radio"> -OH<BR><INPUT NAME="paf"  TYPE="radio">&nbsp;-CH<SUB>2</SUB>OH</TD>
+
+<TD><INPUT NAME="pag"  TYPE="radio"> -H<BR><INPUT NAME="pag"  TYPE="radio"> -OH<BR><INPUT NAME="pag"  TYPE="radio">&nbsp;-CH<SUB>2</SUB>OH</TD>
+
+<TD><INPUT NAME="pah"  TYPE="radio"> -H<BR><INPUT NAME="pah"  TYPE="radio"> -OH<BR><INPUT NAME="pah"  TYPE="radio">&nbsp;-CH<SUB>2</SUB>OH</TD>
+
+<TD><INPUT NAME="pai"  TYPE="radio"> -H<BR><INPUT NAME="pai"  TYPE="radio"> -OH<BR><INPUT NAME="pai"  TYPE="radio">&nbsp;-CH<SUB>2</SUB>OH</TD>
+
+<TD><INPUT NAME="paj"  TYPE="radio"> -H<BR><INPUT NAME="paj"  TYPE="radio"> -OH<BR><INPUT NAME="paj"  TYPE="radio">&nbsp;-CH<SUB>2</SUB>OH</TD></TR></TABLE></p><BR>
+
+<H3><span class="fc-blue">Assign Substituents for the Furanose Form</span></H3>
+<p><TABLE CELLPADDING=3 BORDER WIDTH=960><TR>
+
+<TH>Position <span class="fc-red">a</span></TH><TH>Position <span class="fc-red">b</span></TH><TH>Position <span class="fc-red">c</span></TH> <TH>Position <span class="fc-red">d</span></TH><TH>Position <span class="fc-red">e</span></TH><TH>Position <span class="fc-red">f</span></TH><TH>Position <span class="fc-red">g</span></TH><TH>Position <span class="fc-red">h</span></TH></TR>
+
+<TR><TD nowrap><INPUT NAME="faa"  TYPE="radio"> -H<BR>
+
+<INPUT NAME="faa"  TYPE="radio"> -OH<BR><INPUT NAME="faa"  TYPE="radio"> -CH<SUB>2</SUB>OH<BR><INPUT NAME="faa"  TYPE="radio">&nbsp;-CH(OH)CH<SUB>2</SUB>OH</TD>
+
+<TD nowrap><INPUT NAME="fab"  TYPE="radio"> -H<BR><INPUT NAME="fab"  TYPE="radio"> -OH<BR><INPUT NAME="fab"  TYPE="radio"> -CH<SUB>2</SUB>OH<BR><INPUT NAME="fab"  TYPE="radio">&nbsp;-CH(OH)CH<SUB>2</SUB>OH</TD>
+
+<TD nowrap><INPUT NAME="fac"  TYPE="radio"> -H<BR><INPUT NAME="fac"  TYPE="radio"> -OH<BR><INPUT NAME="fac"  TYPE="radio"> -CH<SUB>2</SUB>OH<BR><INPUT NAME="fac"  TYPE="radio">&nbsp;-CH(OH)CH<SUB>2</SUB>OH</TD>
+
+<TD nowrap><INPUT NAME="fad"  TYPE="radio"> -H<BR><INPUT NAME="fad"  TYPE="radio"> -OH<BR><INPUT NAME="fad"  TYPE="radio"> -CH<SUB>2</SUB>OH<BR><INPUT NAME="fad"  TYPE="radio">&nbsp;-CH(OH)CH<SUB>2</SUB>OH</TD>
+
+<TD nowrap><INPUT NAME="fae"  TYPE="radio"> -H<BR><INPUT NAME="fae"  TYPE="radio"> -OH<BR><INPUT NAME="fae"  TYPE="radio"> -CH<SUB>2</SUB>OH<BR><INPUT NAME="fae"  TYPE="radio">&nbsp;-CH(OH)CH<SUB>2</SUB>OH</TD>
+
+<TD nowrap><INPUT NAME="faf"  TYPE="radio"> -H<BR><INPUT NAME="faf"  TYPE="radio"> -OH<BR><INPUT NAME="faf"  TYPE="radio"> -CH<SUB>2</SUB>OH<BR><INPUT NAME="faf"  TYPE="radio">&nbsp;-CH(OH)CH<SUB>2</SUB>OH</TD>
+
+<TD nowrap><INPUT NAME="fag"  TYPE="radio"> -H<BR><INPUT NAME="fag"  TYPE="radio"> -OH<BR><INPUT NAME="fag"  TYPE="radio"> -CH<SUB>2</SUB>OH<BR><INPUT NAME="fag"  TYPE="radio">&nbsp;-CH(OH)CH<SUB>2</SUB>OH</TD>
+
+<TD nowrap><INPUT NAME="fah"  TYPE="radio"> -H<BR><INPUT NAME="fah"  TYPE="radio"> -OH<BR><INPUT NAME="fah"  TYPE="radio"> -CH<SUB>2</SUB>OH<BR><INPUT NAME="fah"  TYPE="radio">&nbsp;-CH(OH)CH<SUB>2</SUB>OH</TD>
+</TR></TABLE></p>
+<p><TABLE CELLPADDING=4><TR><TD>
+
+<TEXTAREA WRAP NAME="resultarea" ROWS="5" COLS="50"></TEXTAREA></TD>
+
+<TD><INPUT TYPE=BUTTON VALUE="Submit Answers for Problems" onClick= "process(form)"> <BR><BR>
+
+<INPUT TYPE="reset" VALUE="Reset/Clear"> </TD></TR></TABLE></P></div>
+
+
+
+</FORM>
+
+<NOSCRIPT>
+
+<H2>This page requires a JavaScript-capable browser.</H2>
+
+</NOSCRIPT>
+
+<HR> 
+
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+
+</BODY>
+
+</HTML>
+

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  td {font-size: 11pt} td {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var img1=new Image();										// variables for image switch
+var img2=new Image();
+		img1.src="../Images/honc2.gif";
+		img2.src="../Images/honc3.gif";
+var anscnt=0																										// other variables
+var answ="(1) A,C,E,G,H;  (2) B,D,I;  (3) X;\r"
+ +  "(4) X;  (5) B,F;  (6) F;  (7) D,I;\r"
+ +  "(8) E,F,H"
+var noansw="You must try to answer this question three times before viewing the answers."
+var j=0;
+var s=0;
+var t=0;
+var u=0;
+var v=0;
+var w=0;
+var x=0;
+var y=0;
+var z=0;
+
+// answer checking function
+function chkchg(input) {
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+input.e.value=fix(input.e.value)
+input.f.value=fix(input.f.value)
+input.g.value=fix(input.g.value)
+input.h.value=fix(input.h.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+var a1=input.a.value.toUpperCase().indexOf("A",0);
+var a2=input.a.value.toUpperCase().indexOf("C",0);
+var a3=input.a.value.toUpperCase().indexOf("E",0);
+var a4=input.a.value.toUpperCase().indexOf("G",0);
+var a5=input.a.value.toUpperCase().indexOf("H",0);
+var b1=input.b.value.toUpperCase().indexOf("B",0);
+var b2=input.b.value.toUpperCase().indexOf("D",0);	
+var b3=input.b.value.toUpperCase().indexOf("I",0);	
+var c1=input.c.value.toUpperCase().indexOf("X",0);	
+var d1=input.d.value.toUpperCase().indexOf("X",0);	
+var e1=input.e.value.toUpperCase().indexOf("B",0);		
+var e2=input.e.value.toUpperCase().indexOf("F",0);
+var f1=input.f.value.toUpperCase().indexOf("F",0);
+var g1=input.g.value.toUpperCase().indexOf("D",0);
+var g2=input.g.value.toUpperCase().indexOf("I",0);
+var h1=input.h.value.toUpperCase().indexOf("E",0);
+var h2=input.h.value.toUpperCase().indexOf("F",0);
+var h3=input.h.value.toUpperCase().indexOf("H",0);
+
+anscnt=anscnt+1;
+
+	if (j!=0){
+	 j=0
+}
+	if (s!=0){
+	s=0
+}
+	if (t!=0){
+	 t=0
+}
+	if (u!=0){
+	u=0
+}
+	if (v!=0){
+	 v=0
+}
+	if (w!=0){
+	w=0
+}
+	if (x!=0){
+	 x=0
+}
+	if (y!=0){
+	y=0
+}
+	if (z!=0){
+	 z=0
+}
+
+if ( input.a.value == "") { 
+		j=j+1
+}
+if ( input.b.value == "") { 
+		j=j+1
+}
+if ( input.c.value == "") { 
+		j=j+1
+}
+if ( input.d.value == "") { 
+		j=j+1
+}
+if ( input.e.value == "") { 
+		j=j+1
+}
+if ( input.f.value == "") { 
+		j=j+1
+}
+if ( input.g.value == "") { 
+		j=j+1
+}
+if ( input.h.value == "") { 
+		j=j+1
+}
+
+	if (a1>=0)  { 
+		s=s+1
+}
+	if (a2>=0)  { 
+		s=s+1
+}
+	if (a3>=0)  { 
+		s=s+1
+}
+	if (a4>=0)  { 
+		s=s+1
+}
+	if (a5>=0)  { 
+		s=s+1
+}
+	if (b1>=0)  { 
+		t=t+1
+}
+	if (b2>=0)  { 
+		t=t+1
+}
+	if (b3>=0)  { 
+		t=t+1
+}
+	if (c1>=0)  { 
+		u=u+1
+}
+	if (d1>=0)  { 
+		v=v+1
+}
+	if (e1>=0)  { 
+		w=w+1
+}
+	if (e2>=0)  { 
+		w=w+1
+}
+	if (f1>=0)  { 
+		x=x+1
+}
+	if (g1>=0)  { 
+		y=y+1
+}
+	if (g2>=0)  { 
+		y=y+1
+}
+	if (h1>=0)  { 
+		z=z+1
+}
+	if (h2>=0)  { 
+		z=z+1
+}
+	if (h3>=0)  { 
+		z=z+1
+}
+
+var al=(input.a.value.length);
+var bl=(input.b.value.length);
+var cl=(input.c.value.length);
+var dl=(input.d.value.length);
+var el=(input.e.value.length);
+var fl=(input.f.value.length);
+var gl=(input.g.value.length);
+var hl=(input.h.value.length);
+var tot=al+bl+cl+dl+el+fl+gl+hl;
+var k=(s+t+u+v+w+x+y+z);
+var rsp="";
+var rsp2="";
+
+if (al>s) {
+var rsp=rsp + "(1),"								
+}
+if (bl>t) {
+var rsp=rsp + "(2),"
+}
+if (cl>u) {
+var rsp=rsp + "(3),"
+}
+if (dl>v) {
+var rsp=rsp + "(4),"
+}
+if (el>w) {
+var rsp=rsp + "(5),"
+}
+if (fl>x) {
+var rsp=rsp + "(6),"								
+}
+if (gl>y) {
+var rsp=rsp + "(7),"
+}
+if (hl>z) {
+var rsp=rsp + "(8)"
+}
+
+if (s<5) {   
+var rsp2=rsp2 + "(1),"								 
+}
+if (t<3) {
+var rsp2=rsp2 + "(2),"
+}
+if (u<1) {
+var rsp2=rsp2 + "(3),"
+}
+if (v<1) {
+var rsp2=rsp2 + "(4),"
+}
+if (w<2) {
+var rsp2=rsp2 + "(5),"
+}
+if (x<1) {
+var rsp2=rsp2 + "(6),"
+}
+if (y<2) {
+var rsp2=rsp2 + "(7),"
+}
+if (z<3) {
+var rsp2=rsp2 + "(8)"
+}
+if (rsp=="") {
+rsp="none";
+}
+if (rsp2=="") {
+rsp2="none";
+}
+
+if (j==8) {
+	var txt="You have not provided answers to any questions."; 
+anscnt=0
+}else{
+if   (k==18  && tot==18) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+anscnt=3
+}else{
+var txt="Your correct answers total: " + k +" \rQuestions you have answered incompletely are:" + rsp2+ " \rQuestions for which you have given incorrect answers are:" + rsp;
+
+}
+}
+input.result.value = txt;
+}
+// functions for showing answer, changing image & clearing text
+function giveansw(show) {
+if (anscnt>=3)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+
+function change() {
+if (anscnt>=3)  {
+document.images[0].src=img2.src;
+}
+}
+
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.e.value="";
+	input.f.value="";
+	input.g.value="";
+  input.h.value="";
+	input.result.value=" ";
+}
+	//STOP HIDING-->
+</SCRIPT>
+<script id="qa-imgfallback">(function(){if(window.__qaImgFallback)return;window.__qaImgFallback=1;var BOX="display:inline-block;min-width:80px;min-height:24px;padding:6px 10px;margin:2px;border:1px dashed #b9c0c8;border-radius:6px;color:#7a828c;font:italic 13px/1.35 system-ui,Segoe UI,Arial,sans-serif;background:#f6f8fa;vertical-align:middle;text-align:center;";function ph(img){var p=img.__qaPh;if(!p){p=document.createElement("span");p.setAttribute("role","img");p.setAttribute("aria-label","Figure unavailable");p.style.cssText=BOX;p.textContent="Figure unavailable";img.__qaPh=p;if(img.parentNode)img.parentNode.insertBefore(p,img.nextSibling);}p.style.display="";img.style.display="none";img.setAttribute("data-qa-broken","1");}function ok(img){if(img.__qaPh)img.__qaPh.style.display="none";if(img.getAttribute("data-qa-broken")){img.style.display="";img.removeAttribute("data-qa-broken");}}function hook(img){if(img.__qaHooked)return;img.__qaHooked=1;img.addEventListener("error",function(){ph(this);},true);img.addEventListener("load",function(){ok(this);},true);if(img.complete&&img.naturalWidth===0&&img.getAttribute("src"))ph(img);}function scan(){var a=document.getElementsByTagName("img");for(var i=0;i<a.length;i++)hook(a[i]);}if(document.readyState!=="loading")scan();else document.addEventListener("DOMContentLoaded",scan);window.addEventListener("load",scan);})();</script><link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Lewis & Kekul&eacute; Formulas</TITLE>
+<body>
+<div class="ctr"><H3>Lewis / Kekul&eacute; Structures</H3></div>
+<p>For the Lewis / Kekul&eacute; structures shown on the left, answer questions <span class="fc-blue"><B>1</B></span> through <span class="fc-blue"><B>8</B></span>. For each designated condition enter appropriate letters (<span class="fc-blue"><B>A</B></span> to <span class="fc-blue"><B>I</B></span>), identifying the chosen structures, in each answer box. If no structure fits the description enter the letter <span class="fc-blue"><B>X</B></span>. <span class="fc-red">Do not enter superfluous characters, since they will be counted as incorrect answers.</span></p>
+ <FORM NAME="responses"> 
+<TABLE  WIDTH=96%> 
+<TR HEIGHT=1><TD COLSPAN=4 ><HR></TD></TR> 
+<TR valign="top"><TD  ROWSPAN=9><div class="ctr"><img src="../Images/honc2.gif"></div></TD>
+<TD  ROWSPAN=9 WIDTH="8%">&nbsp;</TD>
+<TD><span class="fc-blue"><B>1.</B></span></TD>
+<TD> Formulas that have no formal charged atoms.  <INPUT TYPE="text" NAME="a"  SIZE="11"></TD></TR> 
+ <TR valign="top"><TD><span class="fc-blue"><B>2.</B></span></TD>
+<TD> Formulas in which nitrogen has a (+) formal charge. <INPUT TYPE="text" NAME="b"  SIZE="11"></TD></TR> 
+ <TR><TD><span class="fc-blue"><B>3.</B></span></TD>
+<TD> Formulas in which nitrogen has a (&#8211;) formal charge. <INPUT TYPE="text" NAME="c"  SIZE="11"></TD></TR> 
+ <TR><TD ><span class="fc-blue"><B>4.</B></span></TD>
+<TD> Formulas in which oxygen has a (+) formal charge. <INPUT TYPE="text" NAME="d"  SIZE="11"></TD></TR> 
+ <TR><TD ><span class="fc-blue"><B>5.</B></span></TD>
+<TD> Formulas in which oxygen has a (&#8211;) formal charge. <INPUT TYPE="text" NAME="e"
+SIZE="11"></TD></TR>
+ <TR><TD ><span class="fc-blue"><B>6.</B></span></TD>
+<TD> Formulas in which carbon has a (+) formal charge. <INPUT TYPE="text" NAME="f" 
+SIZE="11"></TD></TR>
+<TR><TD ><span class="fc-blue"><B>7.</B></span></TD>
+<TD> Formulas in which carbon has a (&#8211;) formal charge. <INPUT TYPE="text" NAME="g" 
+SIZE="11"></TD></TR>
+ <TR><TD ><span class="fc-blue"><B>8.</B></span></TD>
+<TD> Formulas having an electron deficient C, N or O.  <INPUT TYPE="text" NAME="h" 
+SIZE="11"></TD></TR>
+</TABLE>
+<HR>
+<div class="ctr"><INPUT TYPE="button"  VALUE=" Check Answer" onClick=" chkchg(this.form)">&nbsp;&nbsp;<INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clrtxt(this.form)">&nbsp;&nbsp;
+<TEXTAREA  WRAP NAME="result"  ROWS="5"  COLS="50"> 
+</TEXTAREA>&nbsp;&nbsp;
+<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="change(this.form);giveansw (this.form) "></div>
+ </FORM> <HR> 
+<span class="fs-3">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+<HEAD>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Styles/modern.css">
+<TITLE>Substituted Cyclohexane Conformations</TITLE>
+
+
+<link rel="stylesheet" href="Styles/edvibe.css">
+<script src="Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<P>
+<form name="show" >
+<div class="ctr"><H3>Conformers of cis-1,3-dichlorocyclohexane</H3></div>
+<P>The structures shown here are the result of chair-chair interconversion. You should try to find the plane of symmetry in each of these conformations. Because of this symmetry both are achiral. Also observe the extreme crowding of the chlorine atoms (green) in the diaxial (A) conformer on the right. The spacefilling rendering is best for this purpose. Crowding of this kind reduces the stability of the structure, so the diequatorial (E) conformer predominates in the equilibrium mixture.<br>
+These models can be moved about by clicking on the structure and dragging the mouse.  Holding the shift key during this operation allows zooming. </P>
+<div class="ctr"><p><TABLE>
+
+
+<TR valign=top><TD height=270><script type="text/javascript">Jmol.getApplet("jmol1",{"width": 260, "height": 260, "color": "#FFFFFF", "use": "HTML5", "j2sPath": "htmlJ/jsmol/j2s", "addSelectionOptions": false, "script": "color atoms cpk; select hydrogen;  color atoms cyan; select carbon;  color atoms [140,140,140]; select all; wireframe 40; spacefill 90;  select chlorine; spacefill 110; select atomno=8; label E; set fontsize 12; set labeloffset 0 0; color label black; select atomno=7; label E; set fontsize 12; set labeloffset 0 0; color label black; select all;   background white", "load": "rasfiles/c13dcc6a.pdb"});</script></TD> 
+<TD VALIGN=middle><IMG SRC="Images/arrows2.gif"> </TD>
+<TD><script type="text/javascript">Jmol.getApplet("jmol2",{"width": 260, "height": 260, "color": "#FFFFFF", "use": "HTML5", "j2sPath": "htmlJ/jsmol/j2s", "addSelectionOptions": false, "script": "select hydrogen;  color atoms cyan; select carbon;  color atoms [140,140,140]; select all; wireframe 40; spacefill 90; select chlorine; spacefill 110; select atomno=9; label A; set fontsize 12; set labeloffset 0 0; color label black; select atomno=13; label A; set fontsize 12; set labeloffset 0 0; color label black; select all;  zoom 80;  background white", "load": "rasfiles/c13dcc6b.pdb"});</script>
+</TD></TR>
+<TR><TD><dir><button type="button" class="jctl" data-target="jmol1" data-script=" spacefill 70%">X</button> <span class="fs-4"><sup>&nbsp;Show Spacefill Model</sup><br>
+<button type="button" class="jctl" data-target="jmol1" data-script="spacefill off; ">X</button> <sup>&nbsp;Show Stick Model</sup><br>
+<button type="button" class="jctl" data-target="jmol1" data-script="spacefill off;  select chlorine; spacefill 70%">X</button> <sup>&nbsp;Show Chlorines</sup></span></dir></TD>
+<TD> </TD>
+<TD><dir><button type="button" class="jctl" data-target="jmol2" data-script=" spacefill 70%">X</button> <span class="fs-4"><sup>&nbsp;Show Spacefill Model</sup><br>
+<button type="button" class="jctl" data-target="jmol2" data-script="spacefill off; ">X</button> <sup>&nbsp;Show Stick Model</sup><br>
+<button type="button" class="jctl" data-target="jmol2" data-script="spacefill off;  select chlorine; spacefill 70%">X</button> <sup>&nbsp;Show Chlorines</sup></span></dir></TD></TR>
+
+</TABLE></p></div>
+<HR>
+<P><div class="ctr">
+<INPUT TYPE="button"  NAME="answr" VALUE="Return" onClick="history.go(-1)"></div></P>
+<br>
+</FORM>
+</BODY>
+</HTML>
+

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var i="";
+var j="";
+var k="";
+var l="";
+var sma="";
+var Txt="";
+		function process(form){
+	if (i!=""){
+	 i=""
+}
+	if (j!=""){
+	 j=""
+}
+		if (form.choose[0].checked){
+		i=1
+    j="3";
+}
+		if (form.choose[1].checked){
+		i=2
+    j="2";
+}
+		if (form.choose[2].checked){
+		i=3
+    j="3";
+}
+		if (form.choose[3].checked){
+		i=4
+    j="1";
+}
+}
+
+var smiles = "";
+var jme = "0 0";
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+document.form.smiles.value = smiles; 
+}
+var acnt1="0";
+function processMolecule1(input) {
+input.a.value=fix(input.a.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!\rDraw a Structure."); return;
+}
+		if (i==1) {
+sma="C=CC=CCC=C";                     		
+}
+		if (i==2) {
+sma="C=CC1(C=C)CCCC1";
+}
+		if (i==3) {
+sma="C=CC(C=C)C=C";
+}
+		if (i==4) {
+sma="C=C1C2CCCC1C2";
+}
+
+if (smiles==sma  && input.a.value == j) {
+var Txt="Correct Structure \rCorrect Number of Elimination Steps.";
+acnt1=2
+	}else{
+if (smiles==sma  && input.a.value != j) {
+var Txt="Correct Structure! \rWrong Number of Elimination Steps.";
+acnt1=2
+	}else{
+if (smiles!=sma  && input.a.value == j) {
+var Txt="Incorrect Structure! \rCorrect Number of Elimination Steps.";
+acnt1=acnt1+1
+	}else{
+var Txt="Try again!";
+}
+}
+}
+	input.result.value = Txt ;
+}
+
+		function process2(form){
+	if (k!=""){
+	 k=""
+}
+	if (l!=""){
+	 l=""
+}
+		if (form.chse[0].checked){
+		k=1
+    l="Y";
+}
+		if (form.chse[1].checked){
+		k=2
+     l="N";
+}
+		if (form.chse[2].checked){
+		k=3
+    l="Y";
+}
+		if (form.chse[3].checked){
+		k=4
+     l="N";
+}
+}
+
+var acnt2="0";
+function processMolecule2(input) {
+input.b.value=fix(input.b.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+var sml="";
+var sml2="";
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!\rDraw a Structure."); return;
+}
+		if (k==1) {
+sml="C=Cc1ccccc1C=C"; 
+sml2= "!!";                     		
+}
+		if (k==2) {
+sml="CN(C)c1ccccc1C2(C)C=CCC2" ;
+sml2= "CC2(c1ccccc1[N+](C)(C)C)C=CCC2"; 
+}
+		if (k==3) {
+sml="C=CC=Cc1ccccc1C=C"; 
+sml2= "!!"; 
+}
+		if (k==4) {
+sml="C=CCCC=Cc1ccccc1CN(C)C"; 
+sml2= "C=CCCC=Cc1ccccc1C[N+](C)(C)C";
+}
+
+if ((k==2 || k==4) && (smiles==sml)) {
+alert ( "Any remaining nitrogen will exist as a quaternary salt.");
+}
+if ((k==4) && (smiles=="C=CCC=CCc1ccccc1C[N+](C)(C)C") ||  (smiles=="C=CCC=CCc1ccccc1CN(C)C")) {
+alert ( "A good solution. \rHowever, benzylic hydrogens are more acidic than alkyl hydrogens. Try drawing an isomer.");
+}
+
+if ((smiles==sml  && input.b.value.toUpperCase().indexOf(l,0)>= 0) || (smiles==sml2  && input.b.value.toUpperCase().indexOf(l,0)>= 0)) {
+var Txt="Correct Structure \rCorrect Evaluation.";
+acnt2=2
+	}else{
+if ((smiles==sml  && input.b.value.toUpperCase().indexOf(l,0)!= 0) || (smiles==sml2  && input.b.value.toUpperCase().indexOf(l,0)!= 0)) {
+var Txt="Correct Structure! \rWrong Evaluation.";
+acnt2=2
+	}else{
+if (smiles!=sml  && input.b.value.toUpperCase().indexOf(l,0)>= 0) {
+var Txt="Incorrect Structure! \rCorrect Evaluation.";
+acnt2=acnt2+1
+	}else{
+var Txt="Try again!";
+}
+}
+}
+	input.result.value = Txt ;
+}
+function answ0() {
+if (acnt1>=2) {
+var answr=window.open('answ4.htm#prb5','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=560,height=400')
+}else{
+if (acnt2>=2) {
+var answr=window.open('answ4.htm#prb6','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=560,height=400')
+}else{
+alert("You must try to work this problem before viewing the answers.");
+}
+}
+}
+
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<TITLE>Hofmann Elimination</TITLE>
+<META NAME="DC.SUBJECT" CONTENT="Practice questions for organic
+chemistry students>
+<body>
+<form method="post" name="form">
+<div class="ctr"><H3>Sequential Hofmann Elimination Reactions</H3></div>
+<p><b><span class="fc-blue">Part 1.</span></b>
+<br />For each of the amines <B>A</B> through <B>D</B>, exhaustive methylation (treatment with excess methyl iodide), followed by Hofmann elimination (heating with AgOH), repeated as necessary, removes the nitrogen atom in the form of trimethylamine. Select a compound by checking one of the buttons under the formulas, and then indicate the number of repetitive Hofmann eliminations required to remove the nitrogen by entering a number (1 to 4) in the designated answer site (red). 
+Finally, draw a structural formula for the <B>hydrocarbon product</B> remaining, after all the eliminations are completed, in the Drawing Window on the right. Don't draw hydrogen substituents or specify stereoisomers. When you are finished, check your answer by pressing the "<b>Check Answer</b>" button for Part I. </P>
+<p><b><span class="fc-blue">Part 2.</span></b> 
+<br />For some of the amines <B>E</B> through <B>H</B>, repetitive exhaustive methylation, followed by Hofmann elimination removes the nitrogen atom in the form of trimethylamine; for others this severing of the nitrogen function is not possible. Select a compound by checking one of the buttons under the formulas, and then indicate whether the nitrogen function can be removed by entering a <B>Y</B>es or <B>N</B>o in the designated answer site(red). Finally, draw a structural formula for the <B>product</B> remaining, after all the eliminations are completed, in the Drawing Window. Don't specify stereoisomers. When you are finished, check your answer by pressing the "<b>Check Answer</b>" button for Part II.</P>
+
+
+<TABLE CELLPADDING=2 align=center width-1100>
+<tr><td>
+<table><tr><th colspan=6><span class="fc-blue"><b>Part I</b></span></th></tr>
+<TR><TH width=440 colspan=6><IMG SRC="../Images/aminprb2.gif"></TH></tr>
+<tr><th width=5> &nbsp; </th><th><INPUT NAME="choose"  TYPE="radio" checked></th>
+<th><INPUT NAME="choose"  TYPE="radio" checked></th>
+<th><INPUT NAME="choose"  TYPE="radio" checked></th>
+<th><INPUT NAME="choose"  TYPE="radio" checked></th><th width=40> &nbsp; </th></tr> <tr><td colspan=6> &nbsp; </td></tr>
+<tr><td colspan=6><span class="fc-red"><B>Number of eliminations?</B></span>  <INPUT TYPE="text" NAME="a"  SIZE="2"> <tt>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </tt><input type="hidden" value="" name="smiles"><input type="button" value="Check Answer" onClick="submitSmiles(); process(this.form); processMolecule1(this.form);"> </td></tr></table>
+</td> <td width=1 bgcolor=gray>&nbsp;</td>
+<td align=right><table ><tr><th colspan=5><span class="fc-blue"><b>Part II</b></span></th></tr>
+<TR><TH width=420 colspan=5><IMG SRC="../Images/aminprb3.gif"></TH></tr>
+<tr><th><INPUT NAME="chse"  TYPE="radio" checked></th>
+<th><INPUT NAME="chse"  TYPE="radio" checked></th>
+<th width=20> &nbsp; </th>
+<th><INPUT NAME="chse"  TYPE="radio" checked></th>
+<th><INPUT NAME="chse"  TYPE="radio" checked></th></tr>
+<tr><td colspan=5> &nbsp; </td></tr>
+<tr><td colspan=5><span class="fc-red"><B>Removal of nitrogen?</B></span>  <INPUT TYPE="text" NAME="b"  SIZE="3">  <tt>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </tt><input type="hidden" value="" name="smiles2"><input type="button" value="Check Answer" onClick="submitSmiles(); process2(this.form); processMolecule2(this.form);"> </td></tr></table>
+</td></tr> <tr> <td colspan=3> <hr> </td></tr>
+
+<tr><th><applet code="JME.class" name="JME" archive="JME.jar" width=360, height=360>
+You have to enable Java and JavaScript on your machine !
+</applet><FORM METHOD="POST" NAME="form" ONSUBMIT="return false;">  </th>
+
+<td colspan=2><br /><TEXTAREA WRAP NAME="result" ROWS="4" COLS="36">
+</TEXTAREA><br /><br /><INPUT TYPE="RESET" VALUE="Clear"> &nbsp; 
+<INPUT TYPE="button"  VALUE=" View Answers " onClick=
+"answ0();"> &nbsp; <INPUT TYPE="button" VALUE="Help" onClick="window.location = '../../amine2.htm#amin9b'"> </td></tr></table>
+
+<HR>
+
+</form>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>
+
+

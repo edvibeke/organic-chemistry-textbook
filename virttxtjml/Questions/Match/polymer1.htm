@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+														
+var anscnt1=0
+var anscnt2=0
+var answ1="C\rThe amide bonds in nylon are hydrolytically cleaved by acid or base. "
+var answ2="B\rRubber,polyisoprene, has many double bonds (one in each monomer unit), so it is attacked by ozone. The other polymers have no double bonds. "
+var noansw="You must try to answer this questions twice before viewing the answers."
+														
+function strbx(input) {
+anscnt1=0
+ anscnt1=anscnt1+1;
+input.a.value=fix(input.a.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+if (input.a.value=='') {
+	var Txt= "You have not provided an answer.";
+anscnt1=0
+}else{
+	if (input.a.value.toUpperCase().indexOf("C",0)>=0) {
+	var Txt="Your answer is correct.";
+anscnt1=2
+} else {
+var Txt="Wrong!" 
+}
+}
+	input.result.value = Txt ;
+}
+
+function giveansw(show) {
+ if (anscnt1>=2)  {
+ var txt=answ1
+ 	}else{
+ var txt=noansw
+ }
+ show.result.value=txt
+ }
+
+function strbx2(input) {
+anscnt2=0
+ anscnt2=anscnt2+1;
+input.b.value=fix(input.b.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+if (input.b.value=='') {
+var Txt2= "You have not provided an answer.";
+anscnt2=0
+}else{
+	if (input.b.value.toUpperCase().indexOf("B",0)>=0) {
+	var Txt2="Your answer is correct.";
+anscnt2=2
+} else {
+var Txt2="Wrong!" 
+}
+}
+	input.result.value = Txt2;
+}
+
+function giveansw2(show) {
+ if (anscnt2>=2)  {
+ var txt2=answ2
+ 	}else{
+ var txt2=noansw
+ }
+ show.result.value=txt2
+ }
+
+function clrbx(input) {
+	input.a.value="";
+  input.b.value=""	
+	input.result.value=" ";
+}
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Polymer Problem</TITLE>
+<body>
+<div class="ctr"><H3>Chemical Resistance of Plastics</H3></div>
+<P>A manufacturer plans to construct plastic reagent bottles, some of which will be used for 20% solutions of hydrochloric acid and sodium hydroxide. <br>Among the following materials, which would be <B>least suitable for this purpose. <span class="fc-blue">Enter one letter, corresponding to your selection.</span> </B>.</p>
+<p><TABLE CELLPADDING=5 align="center" BORDER=1 WIDTH=80%>
+<TR VALIGN=TOP>
+<TD><span class="fc-blue"><B>A</B></span><BR><div class="ctr">High Density Polyethylene</SUB></div></TD>
+<TD><span class="fc-blue"><B>B</B></span><BR><div class="ctr">Polypropylene (isotactic)</div></TD>
+<TD><span class="fc-blue"><B>C</B></span><BR><div class="ctr">Nylon 66</div></TD>
+<TD><span class="fc-blue"><B>D</B></span><BR><div class="ctr">Polystyrene</div></TD>
+<TD><span class="fc-blue"><B>E</B></span><BR><div class="ctr">Poly(ethylene oxide)</div></TD>
+</TR></TABLE></p>
+<FORM>
+<span class="fc-blue"><B>Enter your selection here:</B></span> &nbsp;<INPUT TYPE="text" NAME="a" SIZE="2"><BR></div>
+<dir><INPUT TYPE="button" VALUE=" Check Answer " onClick="strbx(this.form)"> &nbsp;
+<INPUT TYPE="reset"  VALUE=" Clear " onClick="clrbx(this.form)"> &nbsp;
+ <INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form)"></dir>
+<HR SIZE=5 NOSHADE>
+<div class="ctr"><TEXTAREA WRAP NAME="result" ROWS="4" COLS="48">
+</TEXTAREA></div>
+<HR SIZE=5 NOSHADE>
+<div class="ctr"><H3>Sensitivity to Ozone</H3></div>
+<P>Which of the following polymers is most likely to suffer chemical degradation on exposure to atmospheric ozone?<br>
+<span class="fc-blue"><b>Enter one letter, corresponding to your selection.</b></span> </p>
+<dir><P><span class="fc-blue"><B>A</B></span> &nbsp; Polyproplyene<BR>
+<span class="fc-blue"><B>B</B></span> &nbsp; Natural Rubber<BR>
+<span class="fc-blue"><B>C</B></span> &nbsp; Poly(vinyl chloride)<BR>
+<span class="fc-blue"><B>D</B></span> &nbsp; Teflon<BR>
+<span class="fc-blue"><B>E</B></span> &nbsp; Polyacrylonitrile</P></dir>
+<span class="fc-blue"><B>Enter your selection here:</B></span> &nbsp;<INPUT TYPE="text" NAME="b" SIZE="2"><BR></div>
+<dir><INPUT TYPE="button" VALUE=" Check Answer " onClick="strbx2(this.form)"> &nbsp;
+<INPUT TYPE="reset"  VALUE=" Clear " onClick="clrbx(this.form)"> &nbsp;
+ <INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw2 (this.form)"> &nbsp;
+<INPUT TYPE="button" VALUE=" View Polymer Structures " onClick="location.href='../../polymers.htm#polmr3'"></dir>
+
+</FORM><HR> 
+<span class="fs-3">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

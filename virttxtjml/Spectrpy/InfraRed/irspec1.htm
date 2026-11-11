@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+
+<Title>Infrared Spectrometry</Title>
+
+
+<script language=javascript> <!--Hide
+
+function chg1(spec) {
+document.images[3].src=spec+".gif"
+}
+
+function chg2(spec) {
+document.images[6].src=spec+".gif" 
+}
+
+function shalc(spec) {
+document.images[12].src=spec+".gif"
+}
+
+function phase(spec) {
+document.images[13].src=spec+".gif"
+}
+
+var i=1;
+function chg3() {
+i=i+1
+document.images[14].src="../Images/1amine"+i+".gif" 
+if (i>=4) {
+i=0
+}
+}
+
+var j=0;
+function chg4() {
+j=j+1
+document.images[14].src="../Images/2amine"+j+".gif" 
+if (j>=4) {
+j=0
+}
+}
+
+var k=0;
+function chg5() {
+k=k+1
+document.images[14].src="../Images/3amine"+k+".gif" 
+if (k>=2) {
+k=0
+}
+}
+
+var l=1
+function chg6() {
+l=l+1
+document.images[23].src="../Images/crbnyl"+l+".gif" 
+if (l>=6) {
+l=0
+}
+}
+
+var ii=0
+function chg7() {
+ii=ii+1
+document.images[24].src="../Images/acylhal"+ii+".gif" 
+if (ii==1) {
+document.forms[0].text1.value="The inductive effect of a halogen substituent on the carbonyl stretching frequency is demonstrated. An overtone near 3600 is often observed in concentrated samples. A second overtone related absorption is often seen on the low frequency side of the strong carbonyl absorption."
+}
+if (ii==2) {
+document.forms[0].text1.value="The inductive effect of a halogen substituent on the carbonyl stretching frequency is also evident here. Conjugation with the benzene pi-electron system lowers this absorption, as noted in the table above."
+}
+if (ii>=2) {
+ii=0
+}
+}
+var jj=0
+function chg8() {
+jj=jj+1
+document.images[24].src="../Images/anhydr"+jj+".gif" 
+if (jj==1) {
+document.forms[0].text1.value="The inductive effect of the acyloxy substituent on the carbonyl stretching frequency is demonstrated. Two carbonyl absorptions due to asymmetric and symmetric coupling are observed, the former having the higher frequency. The asymmetric absorption is stronger in the case of acyclic anhydrides. Two C-O stretching bands are usually evident."
+}
+if (jj==2) {
+document.forms[0].text1.value="Two carbonyl absorptions due to asymmetric and symmetric coupling are observed. Conjugation with the benzene pi-electron system lowers their frequencies, as noted in the table above."
+}
+if (jj==3) {
+document.forms[0].text1.value="Cyclic anhydrides, such as this, also exhibit two carbonyl stretching absorptions, but the lower frequency symmetric absorption is the stronger one. Since the six-membered ring is unstrained, the frequencies are relatively unperturbed."
+}
+if (jj==4) {
+document.forms[0].text1.value="This cyclic anhydride illustrates the influence of ring-size on carbonyl stretching frequency, as well as the influence of pi- electron conjugation. The asymmetric C=O band is raised in frequency, and the symmetric C=O band is roughly unchanged, because the conjugation lowering counters the ring size increase."
+}
+
+if (jj>=4) {
+jj=0
+}
+}
+var kk=0
+function chg9() {
+kk=kk+1
+document.images[24].src="../Images/ester"+kk+".gif" 
+if (kk==1) {
+document.forms[0].text1.value="This spectrum is typical of saturated acyclic esters. The C=O frequency is higher than that of simple ketones. A C-O stretching band is seen near 1200."
+}
+if (kk==2) {
+document.forms[0].text1.value="Phenyl esters have somewhat higher C=O stretching absorptions than aliphatic esters. This may be due to competition for the electrons of the ether-like oxygen, resulting in a greater inductive influence on the carbonyl group. Two C-O stretching bands are usually observed."
+}
+if (kk==3) {
+document.forms[0].text1.value="Methyl benzoate shows the influence of pi-conjugation on the ester C=O stretching frequency, although the degree to which the frequency is lowered is less than for ketones."
+}
+if (kk==4) {
+document.forms[0].text1.value="Cyclic esters, or lactones, show the same ring-size effect noted above for ketones and anhydrides. Thus the five-membered lactone carbonyl shown here is shifted to 1770."
+}
+if (kk==5) {
+document.forms[0].text1.value="Conjugation of a double bond with the lactone carbonyl reduces the C=O stretching frequency by a small amount. The fixed cisoid- orientation of the double bond to the carbonyl function enhances the strength of the C=C absorption."
+}
+if (kk==6) {
+document.forms[0].text1.value="Conjugation with a benzene ring also results in a small reduction of the carbonyl stretching frequency."
+}
+
+if (kk>=6) {
+kk=0
+}
+}
+var ll=0
+function chg10() {
+ll=ll+1
+document.images[24].src="../Images/amide"+ll+".gif" 
+if (ll==1) {
+document.forms[0].text1.value="Primary amides show two strong N-H absorptions (one asymmetric & one symmetric). Strong C=O absorption occurs at lower frequencies than in ketones, due to the extensive p-pi conjugation in amides. There are usually two strong bands in this region, the higher frequency absorption (amide I band) is essentially C=O stretching, the lower frequency (amide II band) is chiefly N-H bending. All these absorptions may display H-bonding association shifts. A C-N stretching band is also seen."
+}
+if (ll==2) {
+document.forms[0].text1.value="Conjugation with pi-electron substituents does not have a strong influence. In fact, the amide I & II bands are shifted to higher frequencies in this case. The C-N absorption is not strong, and the broad low frequency N-H bending (out-of-plane) often lies under other stronger and sharper bands."
+}
+if (ll==3) {
+document.forms[0].text1.value=" As in the previous two examples, the two strong widely-separated N-H stretching bands dominate the high frequency region. The influence of a conjugated benzene ring on the amide I & II bands is insignificant."
+}
+if (ll==4) {
+document.forms[0].text1.value="Secondary amides display only a single N-H absorption band (strong & broad). The amide I & II absorptions are found at slightly lower frequencies."
+}
+if (ll==5) {
+document.forms[0].text1.value="Cyclic amides, or lactams, do not usually show an amide II band, unless the ring is very large. The expected N-H stretching and bending absorptions, and the amide I band are present. The ring-size factor also influences the amide I band. "
+}
+if (ll==6) {
+document.forms[0].text1.value="Tertiary amides do not have any N-H absorption bands. Only an amide I C=O absorption is observed."
+}
+
+if (ll>=6) {
+ll=0
+}
+}
+function chg11() {
+document.images[24].src="../Images/naprpate.gif" 
+document.forms[0].text1.value="A carboxylate anion does not have a distinct carbonyl group. The negative charge is delocalized over both oxygens and the two C-O bonds become equivalent. Consequently, there are two absorption bands, one fron an asymmetrically coupled vibration and the other from a symmetrically coupled stretching. Both absorptions are found at lower frequency than an isolated (ketone) C=O function."
+}
+
+function display() {
+document.forms[0].text1.value="The solution infrared spectrum of propionic acid, a typical carboxylic acid, is shown above. By clicking the buttons below this box, the spectra of a variety of carboxylic acid derivatives will replace it. The influence of different carbonyl substituents should be evident in these spectra. Also, the effect of ring size and pi-conjugation will be illustrated."
+}
+
+
+//STOP HIDING-->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<body onLoad="display()">
+<FORM>
+
+<A NAME="ir1"></A>
+<div class="ctr"><H2>The Nature of Vibrational Spectroscopy</H2></div>
+<P>We have noted that the covalent bonds of molecules are not rigid , but are more like stiff springs that can be stretched and bent. At ordinary temperatures these bonds vibrate in a variety of ways, and the vibrational energies of molecules may be assigned to quantum levels in the same manner as are their electronic states. Transitions between vibrational energy states may be induced by absorption of infrared radiation, having photons of the appropriate energy. It requires more energy to stretch (or compress) a bond than to bend it, and as might be expected, the energy or frequency that characterizes the stretching vibration of a given bond is proportional to the bond dissociation energy.</P>
+<IMG SRC="../Images/hookeq.gif" ALIGN=right HSPACE=12>
+<P>The equation on the right describes the major factors that influence the stretching frequency of a covalent bond between two atoms of mass m<SUB>1</SUB> and m<SUB>2</SUB> respectively. The force constant (f) is proportional to the strength of the covalent bond linking m<SUB>1</SUB> and m<SUB>2</SUB>. In the analogy of a spring, it corresponds to the spring's stiffness. For example, a C=N double bond is about twice as strong as a C-N single bond, and the C&#8801;N triple bond is similarly stronger than the double bond. The infrared stretching frequencies of these groups vary in the same order, ranging from 1100 cm<SUP>-1</SUP> for C-N, to 1660 cm<SUP>-1</SUP> for C=N, to 2220 cm<SUP>-1</SUP> for C&#8801;N.</P>
+<p><TABLE CELLPADDING=4 BORDER ALIGN=left HSPACE=7>
+<TR BGCOLOR="ddffdd"><TH COLSPAN=5><p>Approximate Infrared Stretching Frequencies</p></TH></TR>
+<TR><TH><p>B-H<br>2400 cm<SUP>-1</SUP></p></TH><TH><p>C-H<BR>3000 cm<SUP>-1</SUP></p></TH><TH><p>N-H<BR>3400 cm<SUP>-1</SUP></p></TH><TH><p>O-H<BR>3600 cm<SUP>-1</SUP></p></TH><TH><p>F-H<BR>4000 cm<SUP>-1</SUP></p></TH></TR>
+<TR><TH><p>Al-H<BR>1750</p></TH><TH><p>Si-H<BR>2150</p></TH><TH><p>P-H<BR>2350</SUP></p></TH><TH><p>S-H<BR>2570</p></TH><TH><p>Cl-H<BR>2890</p></TH></TR>
+<TR><TH>&nbsp;</TH><TH><p>Ge-H<BR>2070</p></TH><TH><p>As-H<BR>2150</p></TH><TH><p>Se-H<BR>2300</p></TH><TH><p>Br-H<BR>2650</p></TH></TR></TABLE></p>
+<P>If one of the bonded atoms (m<SUB>1</SUB> or m<SUB>2</SUB>) is a hydrogen (atomic mass =1), the mass ratio in the equation is roughly unity, but for two heavier atoms it is much smaller. Consequently, C-H, N-H and O-H bonds have much higher stretching frequencies than do corresponding bonds to heavier atoms. Other X-H stretching frequencies are shown in the table to the left, the trends observed being due chiefly to differences in the force constants.  The mass effect on stretching frequencies is particularly evident when deuterium isotope equivalents are compared with corresponding hydrogen functions. Thus, the stretching frequency of a free O-H bond is 3600 cm<SUP>-1</SUP>, but the O-D equivalent is lowered to 2600 cm<SUP>-1</SUP>. Since deuterium has a mass = 2, the mass term in the equation changes fron 1 to 1/2, and the frequency is reduced by the square root of 2.  In this discussion we have focussed on stretching vibrations, and it should be noted that bending vibrations may be treated in a similar fashion.</P>
+<P>Not all molecular vibrations lead to observable infrared absorptions. In general, a vibration must cause a change in the charge distribution within a molecule to absorb infrared light. The greater the change in charge distribution, the stronger the absorption.</P>
+
+<BR CLEARALL><HR>
+<P><div class="ctr">
+<INPUT TYPE="button"  NAME="answr" VALUE="Return" onClick="history.go(-1)"></P>
+<P><IMG SRC="../Images/../Images/pixel.gif" WIDTH=10 HEIGHT=200 ></P>
+<span class="fc-red"><H4>End of this supplementary topic</H4></span>
+<P><IMG SRC="../Images/../Images/pixel.gif" WIDTH=10 HEIGHT=600 ></div></P><BR>
+
+
+
+<A NAME="ir2"></A>
+<div class="ctr"><H2>Alkene Absorption Frequencies</H2></div>
+<P>The use of infrared spectroscopy for determining the substitution pattern of alkenes is illustrated by the following data, and the spectra examples underneath. Stretching absorptions are marked in blue, bending absprptions in green. Overtones are colored orange. The 3000 cm<SUP>-1</SUP> separation between sp<SUP>2</SUP> and sp<SUP>3</SUP> C-H stretching modes is clearly evident. By clicking on any of the five structural names in the first column, a corresponding spectrum will be displayed beneath the table.<SUP>&nbsp;</SUP></P>
+<div class="ctr"><p><TABLE CELLPADDING=3 >
+<TR><TH></TH><TH COLSPAN=3 BGCOLOR="ddeeff"><p>Stretching Vibrations</p></TH><TH COLSPAN=3 BGCOLOR="ddffee"><p>Bending Vibrations</p></TH></TR>
+<TR><TH><U><p>Alkene Substitution</p></U></TH><TH BGCOLOR="ddeeff"><p>Range (cm<sup>-1</sup>)</p></TH><TH BGCOLOR="ddeeff"><p>Intensity</p></TH><TH BGCOLOR="ddeeff"><p>Assignment</p></TH><TH BGCOLOR="ddffee"><p>Range (cm<sup>-1</sup>)</p></TH><TH BGCOLOR="ddffee"><p>Intensity</p></TH><TH BGCOLOR="ddffee"><p>Assignment</p></TH></TR>
+
+<TR VALIGN=top><TD ALIGN=center NOWRAP><p><A HREF= "javascript:chg1('../Images/1pentene');">Mono-Alkyl (vinyl group)</A><BR><span class="fc-maroon">R-CH=CH<SUB>2</SUB></span></p></TD><TD BGCOLOR="ddeeff" NOWRAP>3010-3040 & 3075-3095<DD>1645</TD><TD BGCOLOR="ddeeff">med<DD>med</TD><TD BGCOLOR="ddeeff">=C-H (2-bands)<DD>C=C</TD><TD BGCOLOR="ddffee" NOWRAP>905-920 & 985-1000<BR>1280-1320 & 1410-1420</TD><TD BGCOLOR="ddffee">str & str<BR>med & med</TD><TD BGCOLOR="ddffee">=C-H bending</TD></TR>
+<TR VALIGN=top><TD ALIGN=center><p><A HREF= "javascript:chg1('../Images/cis2ene');">Di-Alkyl (cis)</A><BR><span class="fc-maroon">RCH=CHR</span></p></TD>
+<TD BGCOLOR="ddeeff">3010-3040<DD>1658</TD><TD BGCOLOR="ddeeff">med<DD>med</TD><TD BGCOLOR="ddeeff" NOWRAP>=C-H<DD>C=C (symmetry reduces intensity)</TD><TD BGCOLOR="ddffee">680-730</TD><TD BGCOLOR="ddffee">str</TD><TD BGCOLOR="ddffee">=C-H bending</TD></TR>
+<TR VALIGN=top><TD ALIGN=center><p><A HREF= "javascript:chg1('../Images/trn2ene');">Di-Alkyl (trans)</A><BR><span class="fc-maroon">RCH=CHR</span></p></TD><TD BGCOLOR="ddeeff">3010-3040<DD>1675</TD><TD BGCOLOR="ddeeff">med<DD>med</TD><TD BGCOLOR="ddeeff">=C-H<DD>C=C (symmetry reduces intensity)</TD><TD BGCOLOR="ddffee">960-970 & 1295-1310</TD><TD BGCOLOR="ddffee">str & med</TD><TD BGCOLOR="ddffee">=C-H bending</TD></TR>
+<TR VALIGN=top><TD ALIGN=center><p><A HREF= "javascript:chg1('../Images/2mebuten');">Di-Alkyl (geminal)</A><BR><span class="fc-maroon">R<SUB>2</SUB>C=CH<SUB>2</SUB></span></p></TD><TD BGCOLOR="ddeeff">3075-3095<DD>1653</TD><TD BGCOLOR="ddeeff">med<DD>med</TD><TD BGCOLOR="ddeeff">=C-H<DD>C=C</TD><TD BGCOLOR="ddffee">885-895 & 1410-1420</TD><TD BGCOLOR="ddffee">both str</TD><TD BGCOLOR="ddffee">=C-H bending</TD></TR>
+<TR VALIGN=top><TD ALIGN=center><p><A HREF= "javascript:chg1('../Images/3methene');">Tri-Alkyl</A><BR><span class="fc-maroon">R<SUB>2</SUB>C=CHR</span></p></TD><TD BGCOLOR="ddeeff">3010-3040<DD>1670</TD><TD BGCOLOR="ddeeff">med<DD>med</TD><TD BGCOLOR="ddeeff">=C-H<DD>C=C</TD><TD BGCOLOR="ddffee">790-840</TD><TD BGCOLOR="ddffee">str</TD><TD BGCOLOR="ddffee">=C-H bending</TD></TR>
+</TABLE></p></div>
+ <P ALIGN=center><IMG SRC="../Images/1pentene.gif" WIDTH=712 HEIGHT=348></P>
+
+<BR CLEARALL><HR>
+<P><div class="ctr">
+<INPUT TYPE="button"  NAME="answr" VALUE="Return" onClick="history.go(-1)"></P>
+<P><IMG SRC="../Images/../Images/pixel.gif" WIDTH=10 HEIGHT=200 ></P>
+<span class="fc-red"><H4>End of this supplementary topic</H4></span>
+<P><IMG SRC="../Images/../Images/pixel.gif" WIDTH=10 HEIGHT=600 ></div></P><BR>
+
+<A NAME="ir3"></A>
+<div class="ctr"><H2>Arene Absorption Frequencies</H2></div>
+<P>The use of infrared spectroscopy for determining the substituent pattern of substituted benzene rings is illustrated by the following data, and the spectra examples underneath. Stretching absorptions are marked in blue, bending absprptions in green. The 3000 cm<SUP>-1</SUP> separation between sp<SUP>2</SUP> and sp<SUP>3</SUP> C-H stretching modes is clearly evident. By clicking on any of the ten structural terms in the first column, a corresponding spectrum will be displayed beneath the table.<SUP>&nbsp;</SUP></P>
+<div class="ctr"><p><TABLE CELLPADDING=3 >
+<TR><TH></TH><TH COLSPAN=3 BGCOLOR="ddeeff"><p>Stretching Vibrations</p></TH><TH COLSPAN=3 BGCOLOR="ddffee"><p>Bending Vibrations</p></TH></TR>
+<TR><TH><U><p>Arene Substitution</p></U></TH><TH BGCOLOR="ddeeff" nowrap><p>Range (cm<sup>-1</sup>)</p></TH><TH BGCOLOR="ddeeff"><p>Intensity</p></TH><TH BGCOLOR="ddeeff"><p>Assignment</p></TH><TH BGCOLOR="ddffee"><p>Range (cm<sup>-1</sup>)</p></TH><TH BGCOLOR="ddffee"><p>Intensity</p></TH><TH BGCOLOR="ddffee"><p>Assignment</p></TH></TR>
+
+<TR VALIGN=top><TD ALIGN=center NOWRAP><p><A HREF= "javascript:chg2('../Images/toluene');">Mono-Alkyl</A> &nbsp; (<span class="fc-maroon">R-C<SUB>6</SUB>H<SUB>5</SUB></span>)</p></TD><TD BGCOLOR="ddeeff">3000-3070<DD>1500-1600</TD><TD BGCOLOR="ddeeff">med<DD>med-var</TD><TD BGCOLOR="ddeeff" NOWRAP>C-H (2 or 3-bands)<DD>C=C (ring, 2 or 3-bands)</TD><TD BGCOLOR="ddffee" NOWRAP>730-770 & 680-720<BR><BR>950-1225 (2 or 3 bands)</TD><TD BGCOLOR="ddffee">str & str<BR><BR>wk & sharp</TD><TD BGCOLOR="ddffee" NOWRAP>=C-H bending<BR>(out-of-plane)<BR>(in-plane & ring torsion)</TD></TR>
+
+<TR VALIGN=top><TD ALIGN=center><p>Di-Alkyl &nbsp; (<span class="fc-maroon">R<SUB>2</SUB>C<SUB>6</SUB>H<SUB>4</SUB></span>)<DD><A HREF= "javascript:chg2('../Images/oxylene');">ortho</A><DD><A HREF= "javascript:chg2('../Images/mxylene');">meta</A><DD><A HREF= "javascript:chg2('../Images/pxylene');">para</A></p></TD><TD BGCOLOR="ddeeff">3000-3070<DD>1500-1600<DD>1500-1600<DD>1500-1600</TD><TD BGCOLOR="ddeeff">med<DD>med<DD>med<DD>med</TD><TD BGCOLOR="ddeeff" NOWRAP>C-H (2 or 3-bands)<DD>C=C (ring, 2 or 3-bands)<DD>C=C (ring, 2 or 3-bands)<DD>C=C (ring, usually 2-bands)</TD><TD BGCOLOR="ddffee" NOWRAP><BR>735-770<BR>685-720 & 750-810 & 810-900 <BR>800-860</TD><TD BGCOLOR="ddffee" NOWRAP><BR>str<BR>str & str & med<BR>str</TD><TD BGCOLOR="ddffee"><BR>C-H bending<BR>(out-of-plane)<BR>& ring torsion<BR>(esp. meta)</TD></TR>
+
+<TR VALIGN=top><TD ALIGN=center><p>Tri-Alkyl &nbsp; (<span class="fc-maroon">R<SUB>3</SUB>C<SUB>6</SUB>H<SUB>3</SUB></span>)<DD><A HREF= "javascript:chg2('../Images/123mebnz');">1,2,3-</A><DD><A HREF= "javascript:chg2('../Images/124mebnz');">1,2,4-</A><DD><A HREF= "javascript:chg2('../Images/135mebnz');">1,3,5-</A></p></TD><TD BGCOLOR="ddeeff">3000-3070<DD>1500-1600<DD>1500-1600<DD>1500-1600</TD><TD BGCOLOR="ddeeff">med<DD>med<DD>med<DD>med</TD><TD BGCOLOR="ddeeff">C-H (2 or 3-bands)<DD>C=C (ring, 2 or 3-bands)<DD>C=C (ring, 2 or 3-bands)<DD>C=C (ring, usually 2-bands)</TD><TD BGCOLOR="ddffee"><BR>685-720 & 750-810<BR>800-860 & 820-900<BR>685-720 & 820-900</TD><TD BGCOLOR="ddffee"><BR>med & str<BR>str & med<BR>med & str</TD><TD BGCOLOR="ddffee"><BR>=C-H bending<BR>(out-of-plane)<BR>& ring torsion<BR>(esp. sym. subst.)</TD></TR>
+
+<TR VALIGN=top><TD ALIGN=center><p>Tetra-Alkyl  &nbsp; (<span class="fc-maroon">R<SUB>4</SUB>C<SUB>6</SUB>H<SUB>2</SUB></span>)<DD><A HREF= "javascript:chg2('../Images/1234mebz');">1,2,3,4-</A><DD><A HREF= "javascript:chg2('../Images/1235mebz');">1,2,3,5-</A><DD><A HREF= "javascript:chg2('../Images/1245mebz');">1,2,4,5-</A></TD><TD BGCOLOR="ddeeff">3000-3070<DD>1500-1600<DD>1500-1600<DD>1500-1600</p></TD><TD BGCOLOR="ddeeff">med<DD>med<DD>med<DD>med</TD><TD BGCOLOR="ddeeff">C-H (2 or 3-bands)<DD>C=C (ring, 2 or 3-bands)<DD>C=C (ring, 2 or 3-bands)<DD>C=C (ring, usually 2-bands)</TD><TD BGCOLOR="ddffee" NOWRAP><BR>800-840<BR>840-880<BR>840-880</TD><TD BGCOLOR="ddffee"><BR> str<BR>str<BR>str</TD><TD BGCOLOR="ddffee"><BR>=C-H bending<BR>(out-of-plane)</TD></TR>
+
+<TR VALIGN=top><TD ALIGN=center><p><A HREF= "javascript:chg2('../Images/5mebenz');">Penta-Alkyl</A>  &nbsp; (<span class="fc-maroon">R<SUB>5</SUB>C<SUB>6</SUB>H</span>)</p></TD><TD BGCOLOR="ddeeff">3010-3040<DD>1670</TD><TD BGCOLOR="ddeeff">med<DD>med</TD><TD BGCOLOR="ddeeff">=C-H<DD>C=C</TD><TD BGCOLOR="ddffee">840-880</TD><TD BGCOLOR="ddffee">str</TD><TD BGCOLOR="ddffee">=C-H bending<BR>(out-of-plane)</TD></TR>
+</TABLE></div>
+<P>Several sharp, weaker absorptions in the 950 to 1250 range are due to in-plane C-H bending. These are not diagnostically useful, except for indicating a substituted benzene ring.
+Weak overtone and combination tone absorptions are found in the 1600-2000 region and are colored orange. These are sometimes used for identification, but are only seen in concentrated samples.</P>
+ <P ALIGN=center><IMG SRC="../Images/toluene.gif"></P>
+
+<BR CLEARALL><HR>
+<P><div class="ctr">
+<INPUT TYPE="button"  NAME="answr" VALUE="Return" onClick="history.go(-1)"></P>
+<P><IMG SRC="../Images/../Images/pixel.gif" WIDTH=10 HEIGHT=200 ></P>
+<span class="fc-red"><H4>End of this supplementary topic</H4></span>
+<P><IMG SRC="../Images/../Images/pixel.gif" WIDTH=10 HEIGHT=600 ></div></P><BR>
+
+<A NAME="ir4"></A>
+<div class="ctr"><H2>Hydroxyl and Amino Groups</H2></div>
+<dir><H3>1. Alcohols and Phenols</H3></dir>
+<P>The O-H stretching absorption of the hydroxyl group is sensitive to <A HREF="../../suppmnt1.htm#exp5">hydrogen bonding</A>. In the gas phase and in dilute CCl<SUB>4</SUB> solution (0.01 M) small to moderate sized alcohols exhibit a sharp absorption in the 3620 to 3670 cm<SUP>-1</SUP> region. In more concentrated solution, or as a pure liquid, hydrogen bonding of the hydroxyl groups to each other occurs, and this lowers and broadens the stretching frequencies of the participating O-H bonds. This change is illustrated below for 1-hexanol. The O-H stretching absorption is exclusively monomeric in the gas phase, but in moderately dilute CCl<SUB>4</SUB> solution both monomeric and hydrogenbonded absorptions are evident. Dimeric clusters shift the absorption frequency to 3500 cm<SUP>-1</SUP>, but polymeric associations are shifted further, 3200 to 3500 cm<SUP>-1</SUP>, and broadened. In the pure liquid the polymeric absorption band dominates this region of the spectrum. Note that the typical C-H stretching absorptions near 2950 and 2870 cm<SUP>-1</SUP> remain relatively unchanged for the three samples shown below.
+</P>
+ <P ALIGN=center><IMG SRC="../Images/ohstrcmp.gif"></P>
+<P>Molecules having both hydrogen bonding donors and acceptors located so that intramolecular hydrogen bonding is favored, display slightly broadened O-H stretching absorption in the 3500 to 3600 cm<SUP>-1</SUP> range. The spectrum of vanillin shows this for the phenolic hydroxyl, which is hydrogen bonded to the adjacent ether oxygen.</P>
+ <P ALIGN=center><IMG SRC="../Images/vanilin2.gif"></P>
+<P>Alcohols also display C-O stretching absorption at 970 to 1250 <SUP>-1</SUP>. This is marked in the preceding spectrum along with the ether C-O absorptions; and the following spectrum of cyclohexanol shows two such absorptions, coming from the equatorial and axial conformers. It is possible to assign each of these absorptions to a specific conformer by examining the spectra of the corresponding cis and trans-4-tert-butylcyclohexanol configurational isomers (<span class="fc-blue">click on the appropriate structure or name to see its spectrum replace that of cyclohexanol</span>). As expected, the equatorial C-O absorption at 1068 is relatively stronger than the axial C-O absorption at 970, but a reliable analysis of the data requires knowledge of the molar absorptivities of each of the stretching vibrations.</P>   
+<map name="examp">
+<AREA SHAPE="rect" COORDS="5,1,205,75" href="javascript:shalc('../Images/cy6ol');">
+<AREA SHAPE="rect" COORDS="255,1,430,75" href="javascript:shalc('../Images/cistb6ol');">
+<AREA SHAPE="rect" COORDS="495,1,685,75" href="javascript:shalc('../Images/trntb6ol');">
+</map>
+ <P ALIGN=center><IMG SRC="../Images/cyhexols.gif"  USEMAP="#examp" BORDER=0></P>
+ <P ALIGN=center><IMG SRC="../Images/cy6ol.gif"></P>
+<P>Some interesting features are also present in the O-H stretching absorptions of these compounds. The equatorial -OH group in the trans-isomer appears as a typical polymeric hydrogen bonded envelope near 3300 cm<SUP>-1</SUP>(shaded orange). A smaller peak at higher frequency (light blue) is presumed due to less associated clusters. The cis isomer, on the other hand, has a more hindered hydroxyl group which adopts some conformations having smaller hydrogen bonded clusters. The O-H stretching absorption band is therefore split into two (shaded orange and blue).</P>
+<BR><HR><BR>
+
+<A NAME="ir4b"></A>
+<dir><H3>2. Carboxylic Acids</H3></dir>
+<P>The carboxyl group is associated with two characteristic infrared stretching absorptions which change markedly with hydrogen bonding. The spectrum of a CCl<SUB>4</SUB> solution of propionic acid (propanoic acid), shown below, is illustrative. Carboxylic acids exist predominantly as <A HREF="../../suppmnt1.htm#exp5b">hydrogen bonded dimers</A> in condensed phases. The O-H stretching absorption for such dimers is very strong and broad, extending from 2500 to 3300 cm<SUP>-1</SUP>. This absorption overlaps the sharper C-H stretching peaks, which may be seen extending beyond the O-H envelope at 2990, 2950 and 2870 cm<SUP>-1</SUP>. The smaller peaks protruding near 2655 and 2560 are characteristic of the dimer. In ether solvents a sharper hydrogen bonded monomer absorption near 3500 cm<SUP>-1</SUP> is observed, due to competition of the ether oxygen as a hydrogen bond acceptor. The carbonyl stretching frequency of the dimer is found near 1710 cm<SUP>-1</SUP>, but is increased by 25 cm<SUP>-1</SUP> or more in the monomeric state. Other characteristic stretching and bending absorptions are marked in the spectrum. <SUP>&nbsp;</SUP></P>
+<div class="ctr"><p><TABLE><TR><TD COLSPAN=3><IMG SRC="../Images/propacd2.gif"></TD></TR>
+<TR><TH><INPUT TYPE="button"  VALUE="Solution" onClick="javascript:phase('../Images/propacd2')"></TH>
+<TH><INPUT TYPE="button" VALUE="Liquid Film" onClick="javascript:phase('../Images/propacd1')"></TH>
+<TH><INPUT TYPE="button" VALUE="Gas Phase" onClick="javascript:phase('../Images/propacdg')"></TH></TR>
+</TABLE></p></div>
+<P>The buttons beneath the spectrum will display spectra for propionic acid as a pure liquid and in the gas phase. The absorptions in the liquid film spectrum are stronger and broader than those in solution, but are in general the same. The broad O-H bend at 935 cm<SUP>-1</SUP>, for example is typical of the dimeric species. The gas phase spectrum is remarkable for the absence of dimer absorptions, although at higher pressures these are present.<SUP>&nbsp;</SUP></P>
+<BR CLEAR=all><HR><BR>
+
+<A NAME="ir4c"></A>
+<dir><H3>3. Amines</H3></dir>
+<P>The infrared spectrum of aniline is shown beneath the following table. By clicking the "<U>Toggle 1&deg;-Amine</U>" button, solution and gas phase spectra will be displayed sequentially, along with the spectrum of cyclohexylamine, an aliphatic 1&deg;-amine. The "<U>Toggle 2&deg;-Amine</U>" and "<U>Toggle 3&deg;-Amine</U>" buttons display illustrative spectra for these classes of amines. Some of the characteristic absorptions for C-H stretching and aromatic ring substitution are also marked, but not colored.</P>
+
+<TABLE CELLPADDING=3  WIDTH=780 ALIGN=center>
+<TR><TH WIDTH=100><p>Amine Class</p></TH><TH WIDTH=450 > <p><span class="fc-blue">Stretching Vibrations</span></p></TH><TH WIDTH=240 ><p><span class="fc-green">Bending Vibrations</span></p></TH></TR>
+<TR VALIGN=top><TH WIDTH=100><p>Primary (1&deg;)</p></TH>
+<TD WIDTH=450 BGCOLOR="ddeeff"><P>The N-H stretching absorption is less sensitive to hydrogen bonding than are O-H absorptions. In the gas phase and in dilute CCl<SUB>4</SUB> solution free N-H absorption is observed in the 3400 to 3500 cm<SUP>-1</SUP> region. Primary aliphatic amines display two well-defined peaks due to asymmetric (higher frequency) and symmetric N-H stretching, separated by 80 to 100 cm<SUP>-1</SUP>. In aromatic amines these absorptions are usually 40 to 70 cm<SUP>-1</SUP> higher in frequency. A smaller absorption near 3200 cm<SUP>-1</SUP> (shaded orange in the spectra) is considered to be the result of interaction between an overtone of the 1600 cm<SUP>-1</SUP> band with the symmetric N-H stretching band. <BR>C-N stretching absorptions are found at 1200 to 1350 cm<SUP>-1</SUP> for aromatic amines, and at 1000 to 1250 cm<SUP>-1</SUP> for aliphatic amines.</P></TD>
+<TD WIDTH=240 BGCOLOR="ddffee"><P>Strong in-plane NH<SUB>2</SUB> scissoring absorptions at 1550 to 1650 cm<SUP>-1</SUP>, and out-of-plane wagging at 650 to 900 cm<SUP>-1</SUP> (usually broad) are characteristic of 1&deg;-amines.</P></TD></TR>
+<TR VALIGN=top><TH WIDTH=100><p>Secondary (2&deg;)</p></TH>
+<TD WIDTH=450 BGCOLOR="ddeeff"><P>Secondary amines exhibit only one absorption near 3420 cm<SUP>-1</SUP>. Hydrogen bonding in concentrated liquids shifts these absorptions to lower frequencies by about 100 cm<SUP>-1</SUP>. Again, this absorption appears at slightly higher frequency when the nitrogen atom is bonded to an aromatic ring. <BR>The C-N absorptions are found in the same range, 1200 to 1350 cm<SUP>-1</SUP>(aromatic) and 1000 to 1250 cm<SUP>-1</SUP> (aliphatic) as for 1&deg;-amines.</P></TD>
+<TD WIDTH=240 BGCOLOR="ddffee"><P>A weak N-H bending absorption is sometimes visible at 1500 to 1600 cm<SUP>-1</SUP>. A broad wagging absorption at 650 to 900 cm<SUP>-1</SUP> may be discerned in liquid film samples. </P></TD></TR>
+<TR VALIGN=top><TH WIDTH=100><p>Tertiary (3&deg;)</p></TH>
+<TD WIDTH=450 BGCOLOR="ddeeff"><P>No N-H absorptions. The C-N absorptions are found in the same range, 1200 to 1350 cm<SUP>-1</SUP> (aromatic) and 1000 to 1250 cm<SUP>-1</SUP> (aliphatic) as for 1&deg;-amines.</P></TD>
+<TD WIDTH=240 BGCOLOR="ddffee"><P>Aside from the C-N stretch noted on the left, these compounds have spectra characteristic of their alkyl and aryl substituents.</P></TD></TR></TABLE>
+
+<P ALIGN=center><IMG SRC="../Images/1amine1.gif"></P>
+<div class="ctr"><p><TABLE WIDTH=90%><TR>
+<TH><TABLE BORDER=4><TR BGCOLOR="#ffebcf"><TH><p> <A HREF= "javascript:chg3();">Toggle 1&deg;-Amines</A> </p></TH></TR></TABLE></TH>
+<TH><TABLE BORDER=4><TR BGCOLOR="#ffebcf"><TH><p> <A HREF= "javascript:chg4();">Toggle 2&deg;-Amines</A> </p></TH></TR></TABLE> </TH>
+<TH><TABLE BORDER=4><TR BGCOLOR="#ffebcf"><TH><p> <A HREF= "javascript:chg5();">Toggle 3&deg;-Amines</A> </p></TH></TR></TABLE></TH></TR></TABLE></p></div>
+<P>Amines are bases, and their corresponding conjugate acid "onium" salts are often the form in which they are commonly encountered. These derivatives display strong, broad N-H stretching absorptions in the 2250 to 3000 cm<SUP>-1</SUP> region, with  1&deg;-ammonium salts absorbing at the high frequency end, where overlap with C-H absorption occurs. Salts of 1&deg; and 2&deg;-amines also exhibit strong bending absorptions in the range of 1500 to 1600 cm<SUP>-1</SUP>, but the corresponding band from 3&deg;-ammonium salts is relatively weak.</P>
+<BR CLEARALL><HR>
+<P><div class="ctr">
+<INPUT TYPE="button"  NAME="answr" VALUE="Return" onClick="history.go(-1)"></P>
+<P><IMG SRC="../Images/../Images/pixel.gif" WIDTH=10 HEIGHT=200 ></P>
+<span class="fc-red"><H4>End of this supplementary topic</H4></span>
+<P><IMG SRC="../Images/../Images/pixel.gif" WIDTH=10 HEIGHT=600 ></div></P><BR>
+
+<A NAME="ir5"></A>
+<div class="ctr"><H2>Carbonyl Compounds</H2></div>
+<dir><H3>1. Aldehydes and Ketones</H3></dir>
+<p><IMG SRC="../Images/crbnlres.gif" ALIGN=right HSPACE=12 ></p>
+<P>For simple aldehydes and ketones the stretching vibration of the carbonyl group gives rise to a strong and distinctive infrared absorption at 1710 to 1740 cm<SUP>-1</SUP>. As noted in the diagram on the right, the dipole moment of this function is increased on stretching (single bond character is greater), and this results in a strong absorption. Since alkyl substituents stabilize the carbocation character of the ionic contributer, ketone carbonyls have slightly lower stretching frequencies, 1715 &plusmn; 7 cm<SUP>-1</SUP>, compared with aldehydes, 1730 &plusmn; 7 cm<SUP>-1</SUP>. The values cited here are for pure liquid or CCl<SUB>4</SUB> solution spectra. Hydrogen bonding solvents will lower these frequencies by 15 to 20 cm<SUP>-1</SUP>.</P>
+<P><B>Three factors are known to perturb the carbonyl stretching frequency:</B></p><dir>
+<p><span class="fc-blue"><B>1. </B> Conjugation with a double bond or benzene ring lowers the stretching frequency.</span><BR>
+The 30 to 40 cm<SUP>-1</SUP> decrease in frequency is illustrated by the following examples. The stretching frequency of the conjugated double bond is also lowered (blue notation) and may be enhanced in intensity. The cinnamaldehyde example (far right) shows that extended conjugation further lowers the absorption frequency, although not to the same degree.</p>
+<P ALIGN=center><IMG SRC="../Images/irconj1.gif"></P>
+<p><span class="fc-blue"><B>2. </B> Incorporation of the carbonyl group in a small ring (5, 4 or 3-membered), raises the stretching frequency.</span><BR>
+ The increase in frequency ranges from 30 to 45 cm<SUP>-1</SUP> for a 5-membered ring, to 50 to 60 cm<SUP>-1</SUP> for a 4-membered ring, and nearly 130 cm<SUP>-1</SUP> for a 3-membered ring. This shift also occurs in the presence of the previous conjugative lowering of the stretching absorption. Examples of this effect are shown below.</p>
+<P ALIGN=center><IMG SRC="../Images/iringsiz.gif"></P>
+<p><span class="fc-blue"><B>3. </B> Changing an alkyl substituent of a ketone for an electron releasing or withdrawing group.</span><BR> This effect, which may shift the carbonyl stretching frequency up or down, is particularly important when an alkyl substituent is replaced by a hetero atom such as N, O or X (halogen). Such cases will be discussed as carboxylic acid derivatives. The following examples show the influence of a strongly electron withdrawing group (-CCl<SUB>3</SUB>) and a conjugatively electron donating group (-OCH<SUB>3</SUB>).</P>
+<P ALIGN=center><IMG SRC="../Images/irsubst1.gif"></P></dir>
+
+<P><div class="ctr"><TABLE BORDER=4 BGCOLOR="#ffebcf"><TR><TD>
+<TABLE WIDTH=730 CELLPADDING=5><TR><TD>
+<P><B>To understand the functioning of these factors consider the following analyses:</B></p><dir>
+<p><B>1. </B> Conjugation extends the dipolar character of the carbonyl group to the double bond (or aromatic ring) so that the beta-carbon atom shares the positive character of the carbonyl carbon. As illustrated by the following resonance equation, this not only explains <A HREF="../../special2.htm#top4d">conjugate addition reactions</A> of nucleophiles, but also suggests that the carbonyl double bond has slightly more single bond character than does an unconjugated function. The bond energy (and force constant) of the conjugated C=O group is correspondingly reduced, and this results in a lower stretching frequency.</P></dir></TD></TR>
+<TR valign=top><TH height=40><IMG SRC="../Images/enoneres.gif"></TH></TR>
+<TR><TD>
+<dir><P><B>2. </B> Under ideal conditions the carbon atom of a carbonyl group is essentially sp<SUP>2</SUP> hybridized, which implies that the bond angles will be 120&deg; and the C-O sigma bond has 33% s-character. If this group is incorporated in a small ring, the C-CO-C bond angle is reduced to 108&deg; (5-membered ring), 90&deg; (4-membered ring) or 60&deg; (3-membered ring). When this happens, the C-C bonds of the ring assume greater p-character and the C-O sigma bond has correspondingly greater s-character. The double bond of the carbonyl group is therefore shorter and stronger, and exhibits a larger stretching frequency. </p>
+<p><B>3. </B> Electron donating substituents on the carbonyl group stabilize the ionic resonance contributor, and increase the single bond character of the C=O bond. The stretching frequency is therefore decreased, as noted in the right hand example below. Electron withdrawing groups have an opposite influence, and increase the stretching frequency of the carbonyl group. Trichloroacetaldehyde (left below) provides a good example.</p></dir></TD></TR>
+<TR valign=top><TH height=120><IMG SRC="../Images/cosubeff.gif"></TH></TR>
+</TABLE></TD></TR></TABLE></div></P>
+
+<P>Starting with the spectrum of cyclohexanone, infrared spectra of six illustrative ketones will be displayed below on clicking the "<U>Toggle Spectra</U>" button. The difference between liquid film and solution spectra is shown for cyclohexanone, but all other compounds are examined as liquid films. The carbonyl stretching absorption is colored blue, and characteristic overtones near 3400 cm<SUP>-1</SUP>, which are only prominent in liquid phase spectra, are colored orange.</P> 
+<P ALIGN=center><IMG SRC="../Images/crbnyl1.gif"></P>
+<div class="ctr"><p><INPUT TYPE="button" VALUE="Toggle Spectra" onClick="javascript:chg6()"></p></div>
+<BR><HR><BR>
+
+<A NAME="ir5b"></A>
+<dir><H3>2. Carboxylic Acid Derivatives</H3></dir>
+<P>The influence of heteroatom substituents on the reactivity of carbonyl functions toward nucleophiles was discussed earlier with respect to <A HREF="../../crbacid2.htm#react">carboxylic acid derivatives</A>. A useful relationship exists between the reactivity of these derivatives and their carbonyl stretching frequencies. Thus, the very reactive acyl halides and anhydrides absorb at frequencies significantly higher than ketones, whereas the relatively unreactive amides absorb at lower frequencies. These characteristics are listed below.<BR>
+Infrared spectra of many carboxylic acid derivatives will be displayed in the figure below the table by clicking the appropriate buttons presented there.</P>
+
+
+<TABLE CELLPADDING=3  WIDTH=840 Border ALIGN=center>
+<TR bgcolor="#ddeeff"><TH WIDTH=220><p>Carbonyl Derivative</p></TH><TH WIDTH=170><p>Carbonyl Absorption</p></TH><TH WIDTH=440 ><p>Comments</p></TH></TR>
+<TR VALIGN=top><TD><P><B>Acyl Halides (RCOX)</B><BR>X = F<BR>X = Cl<BR>X = Br</TD><TD><P><B>C=O stretch</B><BR>1860 &plusmn; 20 cm<SUP>-1</SUP><BR>1800  &plusmn; 15<BR>1800  &plusmn; 15</TD><TD><span class="fc-blue">Conjugation lowers the C=O frequencies reported here, as with aldehydes & ketones</span>.<BR>In acyl chlorides a lower intensity shoulder or peak near 1740 cm<SUP>-1</SUP> is due to an overtone interaction.</TD></TR>
+<TR VALIGN=top><TD><P><B>Acid Anhydride, (RCO)<SUB>2</SUB>O</B><BR>acyclic<BR>6-membered ring<BR>5-membered ring</TD><TD><P><B>C=O stretch</B> (2 bands)<BR>1750 & 1820 cm<SUP>-1</SUP><BR>1750 &1820<BR>1785 & 1865</TD><TD><span class="fc-blue">Conjugation lowers the C=O frequencies reported here, as with aldehydes & ketones</span>.<BR>The two stretching bands are separated by 60  &plusmn; 30 cm<SUP>-1</SUP>, and for acyclic anhydrides the higher frequency (asymmetric stretching) band is stronger than the lower frequency (symmetric) absorption.<BR>Cyclic anhydrides also display two carbonyl stretching absorptions, but the lower frequency band is the strongest.<BR>One or two -CO-O-CO- stretching bands are observed in the 1000 to 1300 cm<SUP>-1</SUP> region.</P></TD></TR>
+<TR VALIGN=top><TD><P><B>Esters & Lactones (RCOOR')</B><BR>esters<BR>6-membered lactone<BR>5-membered lactone<BR>4-membered lactone</TD><TD><P><B>C=O stretch</B> <BR>1740 cm &plusmn; 10 cm<SUP>-1</SUP><BR>1740 cm &plusmn; 10<BR>1765 cm&plusmn; 5<BR>1840 cm &plusmn; 5</TD><TD><span class="fc-blue">Conjugation lowers the C=O frequencies reported here, as with aldehydes & ketones</span><BR>Strong CO-O stretching absorptions (one ot two) are found from 1150 to 1250 cm<SUP>-1</SUP><BR></P></TD></TR>
+<TR VALIGN=top><TD><P><B>Amides & Lactams (RCONR<SUB>2</SUB>)</B><BR>1&deg; & 2&deg;-amides<BR>3&deg;-amides<BR>6-membered lactams<BR>5-membered lactams<BR>4-membered lactams</TD><TD><P><B>C=O bands</B><BR>1510 to 1700 cm<SUP>-1</SUP> (2 bands)<BR>1650&plusmn; 15 (one band)<BR>1670  &plusmn; 10 (one band)<BR>1700  &plusmn; 15 <BR>1745  &plusmn; 15 </TD><TD><span class="fc-blue">The effect of conjugation is much less than for aldehydes & ketones</span>.<BR>The higher frequency absorption (1665&plusmn; 30) is called the <B>Amide I band</B>. The lower frequency <B>Amide II band</B> (1620&plusmn; 30 in 1&deg; amides & 1530&plusmn; 30 in 2&deg; amides) is largely due to N-H bending trans to the carbonyl oxygen. In concentrated samples this absorption is often obscured by the stronger amide I absorption. Hydrogen bonded association shifts some of these absorptions, as well as the prominent N-H stretching absorptions.<BR><B>N-H stretch</B>: 3170 to 3500 cm<SUP>-1</SUP>. Two bands for 1&deg;-amides, one for 2&deg;-amides.</TD></TR>
+</TABLE>
+
+<P ALIGN=center><IMG SRC="../Images/propacid.gif"></P>
+
+<div class="ctr"><TEXTAREA NAME="text1" ROWS="5" COLS="112" WRAP></TEXTAREA></div>
+<P><div class="ctr">
+<TABLE CELLSPACING=7><TR>
+<TH><TABLE BORDER=4><TR BGCOLOR="#ffebcf"><TH><A HREF= "javascript:chg7();"><p> Toggle Acyl Halides </p></A></TH></TR></TABLE></TH>
+<TH><TABLE BORDER=4><TR BGCOLOR="#ffebcf"><TH><A HREF= "javascript:chg8();"><p> Toggle Anhydrides </p></A></TH></TR></TABLE> </TH>
+<TH><TABLE BORDER=4><TR BGCOLOR="#ffebcf"><TH><A HREF= "javascript:chg9();"><p> Toggle Esters </p></A></TH></TR></TABLE></TH>
+<TH><TABLE BORDER=4><TR BGCOLOR="#ffebcf"><TH><A HREF= "javascript:chg10();"><p> Toggle Amides </p></A></TH></TR></TABLE></TH><TH><TABLE BORDER=4><TR BGCOLOR="#ffebcf"><TH><A HREF= "javascript:chg11();"><p> Show Carboxylate </p></A></TH></TR></TABLE></TH></TR></TABLE></div></P>
+<BR CLEARALL><HR>
+<P><div class="ctr">
+<INPUT TYPE="button"  NAME="answr" VALUE="Return" onClick="history.go(-1)"></P>
+<P><IMG SRC="../Images/../Images/pixel.gif" WIDTH=10 HEIGHT=200 ></P>
+<span class="fc-red"><H4>End of this supplementary topic</H4></span>
+<P><IMG SRC="../Images/../Images/pixel.gif" WIDTH=10 HEIGHT=600 ></div></P><BR>
+
+</FORM>
+</BODY>
+</HTML>
+

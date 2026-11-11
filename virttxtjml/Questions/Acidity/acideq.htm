@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var aa="AD"; 
+var ab="DA";
+var bb="C";
+var ca="AB"; 
+var cb="BA";
+var da="AD"; 
+var db="DA";
+var ee="B"; 
+var fa="CD";
+var fb="DC"; 
+var ga="BC";
+var gb="CB"; 
+var hh="D";
+var ia="AB"; 
+var ib="BA";
+var ja="BD";
+var jb="DB"; 
+var kk="C";
+var la="AB"; 
+var lb="BA";
+var ma="BC";
+var mb="CB"; 
+var nn="D";
+var oa="AB";
+var ob="BA";
+
+anscnt=0;
+
+var answ="1st equation: AD, C, AB\r2nd equation: AD, B, CD\r"
+ +"3rd equation: BC, D, AB\r4th equation: BD, C, AB\r5th equation: BC, D, AB"
+var noansw="You must try to answer this question twice before viewing the answers."
+
+var hint="Remember:\rStronger acids have weaker conjugate bases.\r"
+ +"Equilibrium favors the weaker acid and weaker base."
+
+var j=0
+var k=0
+     
+function slct1(input) {
+
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+input.e.value=fix(input.e.value)
+input.f.value=fix(input.f.value)
+input.g.value=fix(input.g.value)
+input.h.value=fix(input.h.value)
+input.i.value=fix(input.i.value)
+input.j.value=fix(input.j.value)
+input.k.value=fix(input.k.value)
+input.l.value=fix(input.l.value)
+input.m.value=fix(input.m.value)
+input.n.value=fix(input.n.value)
+input.o.value=fix(input.o.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+
+anscnt=anscnt+1;
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var tx1="";
+		if (( input.a.value.toUpperCase() == aa ||  input.a.value.toUpperCase() == ab) && ( input.b.value.toUpperCase() == bb) && ( input.c.value.toUpperCase() == ca ||  input.c.value.toUpperCase() == cb ))  { 
+		k=k+1
+		} else {
+		if ( input.a.value!="" && input.b.value!="" && input.c.value!="") {
+var tx1=tx1 + "the 1st equation, ";
+		} else {
+		j=j+1
+}
+}
+		if (( input.d.value.toUpperCase() == da ||  input.d.value.toUpperCase() == db) && ( input.e.value.toUpperCase() == ee) && ( input.f.value.toUpperCase() == fa ||  input.f.value.toUpperCase() == fb ))  { 
+		k=k+1
+		} else {
+		if ( input.d.value!="" && input.e.value!="" && input.f.value!="") {
+var tx1=tx1 + "the 2nd equation, ";
+		} else {
+		j=j+1
+}
+}
+		if (( input.g.value.toUpperCase() == ga ||  input.g.value.toUpperCase() == gb) && ( input.h.value.toUpperCase() == hh) && ( input.i.value.toUpperCase() == ia ||  input.i.value.toUpperCase() == ib ))  { 
+		k=k+1
+		} else {
+		if ( input.g.value!="" && input.h.value!="" && input.i.value!="") {
+var tx1=tx1 + "the 3rd equation, ";
+		} else {
+		j=j+1
+}
+}
+		if (( input.j.value.toUpperCase() == ja ||  input.j.value.toUpperCase() == jb) && ( input.k.value.toUpperCase() == kk) && ( input.l.value.toUpperCase() == la ||  input.l.value.toUpperCase() == lb ))  { 
+		k=k+1
+		} else {
+		if ( input.j.value!="" && input.k.value!="" && input.k.value!="") {
+var tx1=tx1 + "the 4th equation, ";
+		} else {
+		j=j+1
+}
+}
+		if (( input.m.value.toUpperCase() == ma ||  input.m.value.toUpperCase() == mb) && ( input.n.value.toUpperCase() == nn) && ( input.o.value.toUpperCase() == oa ||  input.o.value.toUpperCase() == ob ))  { 
+		k=k+1
+		} else {
+		if ( input.m.value!="" && input.n.value!="" && input.o.value!="") {
+var tx1=tx1 + "the 5th equation, ";
+		} else {
+		j=j+1
+}
+}
+
+if (tx1=="") {
+tx1="no problems.";
+}
+
+	var Text="You have answered " +k +" questions correctly.\rYou have given incorrect answers to: " + tx1; 
+if (k==5)  {
+		input.result.value = "Congratulations!\rYou have answered all questions correctly.";
+anscnt=2;
+	}else{
+if (j==5)  {
+		input.result.value = "You have not answered any questions.";
+anscnt=0;
+}else{
+		input.result.value = Text;
+}
+}
+}
+function giveansw(show) {
+if (anscnt>=2)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+
+function givehint(show) {
+var txt=hint
+show.result.value=txt
+}
+
+function clearbx(input) {
+	input.a.value="";	// Clear all text windows.
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.e.value="";
+	input.f.value="";
+	input.g.value="";
+	input.h.value="";
+	input.i.value="";
+	input.j.value="";
+	input.k.value="";
+	input.l.value="";
+  input.m.value="";
+	input.n.value="";
+	input.o.value="";
+	input.result.value=" ";
+}
+//Stop Hiding-->
+</SCRIPT>
+
+   <TITLE>Acidity Problem</TITLE>
+   <META NAME="GENERATOR" CONTENT="User-Agent: Mozilla/3.01Gold (Macintosh; I; PPC)">
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<div class="ctr"><H3> Br&oslash;nsted Acid-Base Equilibria</H3></div>
+<P>Five acid-base equilibria are shown below.  In each equation the two reactants on the left side of the equilibrium are designated <B>A</B> & <B>B</B>; the two reactants on the right are designated <B>C</B> & <B>D</B>.  In the first equation, the charges of ionic reactants are shown; for the other four reactions these charges are omitted.  In the fifth equation, H<SUB>2</SUB>CO<SUB>3</SUB> is reactant <B>C</B> and NH<SUB>3</SUB> is <B>D</B>.  NaCl is an inert product. A table of pK<SUB>a</SUB> values is provided at the bottom of the page. <BR>For each equilibrium, three questions are posed:<UL>
+<LI><span class="fc-blue">Which reactants function as Br&oslash;nsted acids?</span>  &nbsp; [Two letters (<B>A</B> through <B>D</B>) should be entered in the answer box.]
+<LI><span class="fc-blue">Which reactant is the stronger base?</span>  &nbsp; [One letter (<B>A</B> through <B>D</B>) should be entered in the answer box.]
+<LI><span class="fc-blue">Which side of the equilibrium is favored?</span>  &nbsp; [Two letters (<B>AB</B> or <B>CD</B>) should be entered in the answer box.]
+</UL>
+
+<FORM>
+<TABLE BORDER=0 CELLPADDING=5 WIDTH=920>
+<TR VALIGN=middle ALIGN=center><TH nowrap><span class="fc-blue">Reactant A + Reactant B</span></TH><TD><IMG SRC="../Images/eqarrow2.gif"></TD><TH nowrap><span class="fc-blue">Reactant C  +  Reactant D</span></TH><TH><span class="fc-blue">Which act<BR>as acids?</span></TH><TH><span class="fc-blue">Which is the<BR>stronger base?</span></TH><TH><span class="fc-blue">Which side<BR>is favored?</span></TR>
+<TR VALIGN=middle ALIGN=center><TD nowrap>(CH<SUB>3</SUB>)<SUB>3</SUB>COH &nbsp; + &nbsp; Na<SUP>(+)</SUP> OH<SUP>(&#8211;)</SUP></TD><TD><IMG SRC="../Images/equarrow.gif"></TD><TD nowrap>(CH<SUB>3</SUB>)<SUB>3</SUB>CO<SUP>(&#8211;)</SUP> Na<SUP>(+)</SUP> &nbsp; + &nbsp; H<SUB>2</SUB>O</TD><TD nowrap>Enter two letters<br><INPUT TYPE="text" NAME="a"  SIZE="3"></TD><TD nowrap>Enter one letter<br><INPUT TYPE="text" NAME="b"  SIZE="2"></TD><TD nowrap>Enter two letters<br><INPUT TYPE="text" NAME="c"  SIZE="3"></TD></TR>
+<TR  VALIGN=middle ALIGN=center><TD>HF &nbsp; &nbsp; + &nbsp; &nbsp; CH<SUB>3</SUB>CO<SUB>2</SUB>Na</TD><TD><IMG SRC="../Images/equarrow.gif"></TD><TD>NaF &nbsp; &nbsp; + &nbsp; &nbsp; CH<SUB>3</SUB>CO<SUB>2</SUB>H</TD><TD>Enter two letters<br><INPUT TYPE="text" NAME="d"  SIZE="3"></TD><TD>Enter one letter<br><INPUT TYPE="text" NAME="e"  SIZE="2"></TD><TD>Enter two letters<br><INPUT TYPE="text" NAME="f"  SIZE="3"></TD></TR>
+<TR  VALIGN=middle ALIGN=center><TD>NaSH &nbsp; &nbsp; + &nbsp; &nbsp; C<SUB>6</SUB>H<SUB>5</SUB>OH</TD><TD><IMG SRC="../Images/equarrow.gif"></TD><TD>H<SUB>2</SUB>S &nbsp; &nbsp; + &nbsp; &nbsp; C<SUB>6</SUB>H<SUB>5</SUB>ONa</TD><TD>Enter two letters<BR><INPUT TYPE="text" NAME="g"  SIZE="3"></TD><TD>Enter one letter<BR><INPUT TYPE="text" NAME="h"  SIZE="2"></TD><TD>Enter two letters<BR><INPUT TYPE="text" NAME="i"  SIZE="3"></TD></TR>
+<TR  VALIGN=middle ALIGN=center><TD>NaCN &nbsp; &nbsp; + &nbsp; &nbsp; Na<SUB>2</SUB>HPO<SUB>4</SUB></TD><TD><IMG SRC="../Images/equarrow.gif"></TD><TD>Na<SUB>3</SUB>PO<SUB>4</SUB> &nbsp; &nbsp; + &nbsp; &nbsp; HCN</TD><TD>Enter two letters<BR><INPUT TYPE="text" NAME="j"  SIZE="3"></TD><TD>Enter one letter<BR><INPUT TYPE="text" NAME="k"  SIZE="2"></TD><TD>Enter two letters<BR><INPUT TYPE="text" NAME="l"  SIZE="3"></TD></TR>
+<TR  VALIGN=middle ALIGN=center><TD>NaHCO<SUB>3</SUB> &nbsp; &nbsp; + &nbsp; &nbsp; NH<SUB>4</SUB>Cl</TD><TD><IMG SRC="../Images/equarrow.gif"></TD><TD>H<SUB>2</SUB>CO<SUB>3</SUB> &nbsp; + &nbsp; NH<SUB>3</SUB> &nbsp; + &nbsp; NaCl</TD><TD>Enter two letters<BR><INPUT TYPE="text" NAME="m"  SIZE="3"></TD><TD>Enter one letter<BR><INPUT TYPE="text" NAME="n"  SIZE="2"></TD><TD>Enter two letters<BR><INPUT TYPE="text" NAME="o"  SIZE="3"></TD></TR>
+</TABLE>
+<HR>
+<div class="ctr"><TABLE CELLSPACING=8><TR>
+<TD><INPUT TYPE="button" VALUE=" Check Answers " onClick="slct1(this.form)">
+<INPUT TYPE="button"  VALUE=" Clear " onClick="clearbx(this.form)">
+<TEXTAREA WRAP NAME="result" ROWS="5" COLS="56">
+</TEXTAREA>
+<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)">
+<INPUT TYPE="button"  NAME="hint" VALUE="Hint" onClick="givehint (this.form)">
+</TD></TR></TABLE>
+</FORM>
+<HR>
+<TABLE BORDER CELLSPACING=2 CELLPADDING=6>
+<TR align="center"><TH width=50>Acid</TH><TD width=56>HCl</TD><TD width=60>H<SUB>3</SUB>O<SUP>(+)</SUP></TD><TD width=60>H<SUB>3</SUB>PO<SUB>4</SUB></TD><TD width=56>HF</TD><TD width=66>CH<SUB>3</SUB>CO<SUB>2</SUB>H</TD>
+<TD width=60>H<SUB>2</SUB>CO<SUB>3</SUB></TD><TD width=60>H<SUB>2</SUB>S</TD><TD>NH<SUB>4</SUB><SUP>(+)</SUP></TD><TD width=56>HCN</TD><TD width=66>C<SUB>6</SUB>H<SUB>5</SUB>OH</TD><TD width=56>H<SUB>2</SUB>O</TD><TD width=66>(CH<SUB>3</SUB>)<SUB>3</SUB>COH</TD><TD width=56>NH<SUB>3</SUB></TD></TR>
+<TR VALIGN=top ALIGN=center><TH width=50>pK<SUB>a</SUB></TH><TD>-7</TD><TD>-1.7</TD><TD>2.2<BR>7.2<BR>12.3</TD><TD>3.2</TD><TD>4.7</TD><TD>6.4<BR>10.3</TD><TD>7.0</TD><TD>9.2</TD><TD>9.3</TD><TD>10.0</TD><TD>15.7</TD><TD>19</TD><TD>34</TD><TR>
+</TABLE></div>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+</BODY>
+</HTML>
+

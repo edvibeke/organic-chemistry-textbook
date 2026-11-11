@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+															// Set variables
+var i=0;
+var j=0;
+var m=0;
+var n=0;
+
+var Txt2="\rThe expected number of correct answers for problem 1 is 6.\rThe correct answers for problem 2 total 5.";
+var anscnt=0
+                         //Answer variables
+ var answ="1. (acids) A, B, D, E ;  (bases) A, E\r2. (acids) A, G ;  (bases) A, C, F\r\r"
++"Since water is amphoteric, it appears in all categories."
+  var noansw="You must try to answer this questions twice before viewing the answers."
+															// define function
+function strbx(input) {
+ anscnt=anscnt+1;
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+var la=input.a.value.length;
+var lb=input.b.value.length;
+var lc=input.c.value.length;
+var ld=input.d.value.length;
+var aa=input.a.value.toUpperCase().indexOf("A",0);
+var ab=input.a.value.toUpperCase().indexOf("B",0);
+var ad=input.a.value.toUpperCase().indexOf("D",0);
+var ae=input.a.value.toUpperCase().indexOf("E",0);
+var ba=input.b.value.toUpperCase().indexOf("A",0);
+var be=input.b.value.toUpperCase().indexOf("E",0);
+var ca=input.c.value.toUpperCase().indexOf("A",0);
+var cg=input.c.value.toUpperCase().indexOf("G",0);
+var da=input.d.value.toUpperCase().indexOf("A",0);
+var dc=input.d.value.toUpperCase().indexOf("C",0);
+var df=input.d.value.toUpperCase().indexOf("F",0);
+if ((input.a.value=='') && (input.b.value=='') && (input.c.value=='') && (input.d.value=='')) {
+input.result.value = "Please enter one or more letters in the answer boxes.";
+}else{
+	if (i!=0) {
+	i=0
+}
+	if (j!=0) {
+	j=0
+}
+	if (m!=0) {
+	m=0
+}
+	if (n!=0) {
+	n=0
+}
+
+	 if (aa>=0) {
+	i=i+1
+} else {
+	i=i
+}
+	 if  (ab>=0) {
+	i=i+1
+} else {
+	i=i
+}
+	 if  (ad>=0) {
+	i=i+1
+} else {
+	i=i
+}
+	 if  (ae>=0) {
+	i=i+1
+} else {
+	i=i
+}
+	 if (ba>=0) {
+	j=j+1
+} else {
+	j=j
+}
+	 if  (be>=0) {
+	j=j+1
+} else {
+	j=j
+}
+	 if (ca>=0) {
+	m=m+1
+} else {
+	m=m
+}
+	 if  (cg>=0) {
+	m=m+1
+} else {
+	m=m
+}
+	 if (da>=0) {
+	n=n+1
+} else {
+	n=n
+}
+	 if  (dc>=0) {
+	n=n+1
+} else {
+	n=n
+}
+	 if  (df>=0) {
+	n=n+1
+} else {
+	n=n
+}
+
+var tot1=(i+j);
+var tot2=(m+n);
+var l1=(la+lb);
+var l2=(lc+ld);
+
+
+	if (la==4 && i==4 && lb==2 && j==2 && lc==2 && m==2 && ld==3 && n==3 ) {
+var Txt="Congratulations!\rYour answer is entirely correct.";
+} else {
+var Txt="You have identified " + tot1+ " correct answers for problem 1,\rand "+tot2+ " correct answers for problem 2.\rYour incorrect selections are: " +( l1-tot1 )+ " for problem 1, and " +( l2-tot2 )+" for problem 2.\r  --------------------------------------------------------"+ Txt2 ;
+}
+	input.result.value = Txt ;
+}
+}
+function giveansw(show) {
+ if (anscnt>=2)  {
+ var txt=answ
+ 	}else{
+ var txt=noansw
+ }
+ show.result.value=txt
+ }
+function clrbx(input) {
+	input.a.value="";
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.result.value=" ";
+}
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Identifying Acids & Bases</TITLE>
+<body>
+<div class="ctr"><H3>Identifying Acid and Base Components </H3></div>
+<P>Two aqueous solutions are described below (<B>1</B> & <B>2</B>). From the list at the bottom select molecules and ions that could function as acids or bases in these solutions, and enter letters identifying your selections in the appropriate answer box. Assume that the hydroxide ion concentration in the sulfuric acid solution and the hydronium ion concentration in the ammonia solution are both negligible.<BR><span class="fc-red">Do not enter superfluous characters, since they will be counted as incorrect answers.</span></P>
+<FORM>
+<p><TABLE CELLPADDING=6 border>
+<TR><TD><span class="fc-blue"><b>1.</b></span> &nbsp; 10% H<SUB>2</SUB>SO<SUB>4</SUB> in water</TD><TD>Acidic components: <INPUT TYPE="text" NAME="a" SIZE="10"></TD><TD> &nbsp; </TD><TD>Basic components: <INPUT TYPE="text" NAME="b" SIZE="10"></TR>
+<TR><TD COLSPAN=4> </TD></TR>
+<TR><TD><span class="fc-blue"><b>2.</b></span> &nbsp; 15% NH<SUB>3</SUB> in water</TD><TD>Acidic components: <INPUT TYPE="text" NAME="c" SIZE="10"></TD><TD> &nbsp; </TD>
+<TD>Basic components: <INPUT TYPE="text" NAME="d" SIZE="10"></TD></TR>
+</TABLE></p>
+<HR>
+<div class="ctr">
+<INPUT TYPE="button" VALUE=" Check Answer " onClick="strbx(this.form)">
+<INPUT TYPE="reset"  VALUE=" Clear " onClick="clrbx(this.form)">
+<TEXTAREA WRAP NAME="result" ROWS="6" COLS="68">
+</TEXTAREA>
+ <INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form)">  
+<P><TABLE CELLPADDING=4 BORDER=1 >
+<TR VALIGN=TOP>
+<TD nowrap width=70><span class="fc-blue"><B>A</B></span><BR><div class="ctr">H<SUB>2</SUB>O</div></TD>
+<TD nowrap width=70><span class="fc-blue"><B>B</B></span> <BR><div class="ctr">H<SUB>3</SUB>O<SUP>(+)</SUP></div></TD>
+<TD nowrap width=70><span class="fc-blue"><B>C</B></span> <BR><div class="ctr">OH<SUP>(&#8211;)</SUP></div></TD>
+<TD nowrap width=70><span class="fc-blue"><B>D</B></span> <BR><div class="ctr">H<SUB>2</SUB>SO<SUB>4</SUB></div></TD>
+<TD nowrap width=70><span class="fc-blue"><B>E</B></span> <BR><div class="ctr">HSO<SUB>4</SUB><SUP>(&#8211;)</SUP></div></TD>
+<TD nowrap width=70><span class="fc-blue"><B>F</B></span> <BR><div class="ctr">NH<SUB>3</SUB></div></TD>
+<TD nowrap width=70><span class="fc-blue"><B>G</B></span> <BR><div class="ctr">NH<SUB>4</SUB><SUP>(+)</SUP></div></TD>
+</TR>
+</TABLE></P></div>
+
+</FORM><HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

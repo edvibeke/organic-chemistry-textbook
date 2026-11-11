@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var i="";
+var j="";
+var sma="";
+var smimg="";
+var rgimg="";
+		function process(form){
+	if (i!=0){
+	 i=0
+}
+	if (j!=0){
+	 j=0
+}
+		if (form.sm1[0].checked){
+smimg="CH<SUB>3</SUB>CH<SUB>2</SUB>CH<SUB>2</SUB>-Br";
+		i=1
+}
+		if (form.sm1[1].checked){
+smimg="<IMG SRC='../Images/cy5brom.gif'>";
+		i=2
+	}
+		if (form.sm1[2].checked){
+smimg="<IMG SRC='../Images/4mebnzcl.gif'>";
+		i=3
+}
+		if (form.sm1[3].checked){
+smimg="CH<SUB>3</SUB>CH<SUB>2</SUB>C(CH<SUB>3</SUB>)<SUB>2</SUB>-Cl";
+		i=4
+	}	
+		if (form.sm1[4].checked){
+smimg="<IMG SRC='../Images/2mebrbnz.gif'>";
+		i=5
+}
+		if (form.sm1[5].checked){
+smimg="(CH<SUB>3</SUB>CH<SUB>2</SUB>)<SUB>3</SUB>CCH<SUB>2</SUB>-Cl";
+		i=6
+	}					
+		if (form.sm2[0].checked){
+rgimg="Mg &nbsp; in ether"
+		j=1
+}
+		if (form.sm2[1].checked){
+rgimg="Li &nbsp; in pentane"
+		j=2
+	}
+		if (form.sm2[2].checked){
+rgimg="<IMG SRC='../Images/nathiphe.gif'><BR>in acetone"
+		j=3
+}
+		if (form.sm2[3].checked){
+rgimg="NaI in acetone"
+		j=4
+	}
+		if (form.sm2[4].checked){
+rgimg="KOCH<SUB>3</SUB> in CH<SUB>3</SUB>OH"
+		j=5
+}
+		if (form.sm2[5].checked){
+rgimg="NaCN in CH<SUB>3</SUB>OH"
+		j=6
+	}
+		if (form.sm2[6].checked){
+rgimg="H<SUB>2</SUB>O + Acetonitrile<BR><FONT COLOR=red> &nbsp; heat</FONT>"
+		j=7
+}
+		if (form.sm2[7].checked){
+rgimg="<IMG SRC='../Images/piprdine.gif'><BR>2 equivalents in acetone"
+		j=8
+	}
+
+
+var smimg=smimg;
+var rgimg=rgimg;
+parent.child2.document.clear(); 
+parent.child2.document.write("<TABLE CELLPADDING=4 width=900 align=center><TR>"); 
+parent.child2.document.write("<TD>Draw a formula for the expected product in the <b>Drawing Window</b> on the left below. Do not draw hydrogens. ");
+parent.child2.document.write(" If one <b>diastereomeric</b> product out of two or more possible diastereomers is favored, draw the favored configuration using the wedge tool. ");
+parent.child2.document.write("<br /> <FONT COLOR='red'> If no reaction is expected, draw the starting structure.</FONT><br>  When you are finished, check your answer by pressing the <b>Check Molecule</b> button. ");
+parent.child2.document.write("</TD></TR></TABLE>");
+
+parent.child2.document.write("<TABLE CELLSPACING=9 WIDTH=900 align-center><TR align=center ><TH rowspan=2>")
+parent.child2.document.write("<applet code='JME.class' name='JME' archive='JME.jar' width=360, height=360>");
+parent.child2.document.write("You have to enable Java and JavaScript on your machine !</applet>");
+parent.child2.document.write("<FORM METHOD='POST' NAME='form' ONSUBMIT='return false;'></TH>");
+parent.child2.document.write("<TD width=30> &nbsp; </TD>");
+parent.child2.document.write("<TD nowrap>"+smimg+"</TD>");
+parent.child2.document.write("<TD>+</TD>");
+parent.child2.document.write("<TD nowrap>"+rgimg+"</TD>");
+parent.child2.document.write("<TD><IMG SRC='../Images/arrow1.gif'></TD>");
+parent.child2.document.write("<TD> <IMG SRC='../Images/question.gif'></TD>");
+parent.child2.document.write("<TD width=30> &nbsp; </TD></tr>");
+parent.child2.document.write(" <tr valign=top><TH colspan=7><FONT COLOR='blue'>The window below will display a response to your answers.</FONT><br /><br />");
+parent.child2.document.write("<TEXTAREA WRAP NAME='result' ROWS='6' COLS='56'></TEXTAREA><br /> <br /><INPUT TYPE='RESET' VALUE='Clear' onClick='parent.window.location.reload(true);back();'>");
+parent.child2.document.write("<input type='hidden' value='' name='smiles'>");
+parent.child2.document.write("<tt> &nbsp; &nbsp; &nbsp; </tt> <input type='button' value='Check Molecule' onClick='parent.child1.submitSmiles();parent.child1.processMolecule1(this.form);'></TH>");
+parent.child2.document.write("</TR></TABLE>");
+}
+
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+var text="";
+
+function submitSmiles() {
+  var smiles = parent.child2.document.JME.smiles();
+ parent.child2.document.form.smiles.value = smiles; 
+parent.child2.document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+ 
+  parent.child2.document.form.smiles.value = smiles; 
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+ parent.child2.document.form.smiles.value = smiles; 
+}
+function processMolecule1(input) {
+smiles = parent.child2.document.form.smiles.value;
+  if (smiles == "") {  alert("Nothing to process!"); return;
+}
+if (text!="") {
+text="";
+}
+		if (i==1 &&  j==1) {
+sma="CCC[Mg]Br";
+}
+		if (i==1 &&  j==2) {
+sma="CCC[Li]";
+}
+		if (i==1 &&  j==3) {
+sma="CCCSc1ccccc1";
+}
+		if (i==1 &&  j==4) {
+sma="CCCI";
+}
+		if (i==1 &&  j==5) {
+sma="CCCOC";
+}
+		if (i==1 &&  j==6) {
+sma="CCCC#N";
+}
+		if (i==1 &&  j==7) {
+sma="CCCBr";
+}
+		if (i==1 &&  j==8) {
+sma="CCCN1CCCCC1";
+}
+		if (i==2 &&  j==1) {
+sma="Br[Mg]C1CCCC1";
+}
+		if (i==2 &&  j==2) {
+sma="[Li]C1CCCC1";
+}
+		if (i==2 &&  j==3) {
+sma="c2ccc(SC1CCCC1)cc2";
+}
+		if (i==2 &&  j==4) {
+sma="IC1CCCC1";
+}
+		if (i==2 &&  j==5) {
+sma="C1=CCCC1";
+}
+		if (i==2 &&  j==6) {
+sma="N#CC1CCCC1";
+}
+		if (i==2 &&  j==7) {
+sma="OC1CCCC1";
+}
+		if (i==2 &&  j==8) {
+sma="C1=CCCC1";  
+}
+		if (i==3 &&  j==1) {
+sma="Cc1ccc(C[Mg]Cl)cc1";
+}
+		if (i==3 &&  j==2) {
+sma="Cc1ccc(C[Li])cc1";
+}
+		if (i==3 &&  j==3) {
+sma="Cc2ccc(CSc1ccccc1)cc2";
+}
+		if (i==3 &&  j==4) {
+sma="Cc1ccc(CI)cc1";
+}
+		if (i==3 &&  j==5) {
+sma="COCc1ccc(C)cc1";
+}
+		if (i==3 &&  j==6) {
+sma="Cc1ccc(CC#N)cc1";
+}
+		if (i==3 &&  j==7) {
+sma="Cc1ccc(CO)cc1";
+}
+		if (i==3 &&  j==8) {
+sma="Cc2ccc(CN1CCCCC1)cc2";
+}
+		if (i==4 &&  j==1) {
+sma="CCC(C)(C)[Mg]Cl";
+}
+		if (i==4 &&  j==2) {
+sma="CCC(C)(C)[Li]";
+}
+		if (i==4 &&  j==3) {
+sma="CC=C(C)C";
+}
+		if (i==4 &&  j==4) {
+sma="CCC(C)(C)Cl";
+}
+		if (i==4 &&  j==5) {
+sma="CC=C(C)C";
+}
+		if (i==4 &&  j==6) {
+sma="CC=C(C)C";
+}
+		if (i==4 &&  j==7) {
+sma="CCC(C)(C)O";
+}
+		if (i==4 &&  j==8) {
+sma="CC=C(C)C";
+}
+		if (i==5 &&  j==1) {
+sma="Cc1cc(C)cc([Mg]Br)c1";
+}
+		if (i==5 &&  j==2) {
+sma="Cc1cc(C)cc([Li])c1";
+}
+		if (i==5 &&  j==3) {
+sma="Cc1cc(C)cc(Br)c1";
+}
+		if (i==5 &&  j==4) {
+sma="Cc1cc(C)cc(Br)c1";
+}
+		if (i==5 &&  j==5) {
+sma="Cc1cc(C)cc(Br)c1";
+}
+		if (i==5 &&  j==6) {
+sma="Cc1cc(C)cc(Br)c1";
+}
+		if (i==5 &&  j==7) {
+sma="Cc1cc(C)cc(Br)c1";
+}
+		if (i==5 &&  j==8) {
+sma="Cc1cc(C)cc(Br)c1";
+}
+		if (i==6 &&  j==1) {
+sma="CCC(CC)(CC)C[Mg]Cl";
+}
+		if (i==6  &&  j==2) {
+sma="CCC(CC)(CC)C[Li]";
+}
+		if (i==6  &&  j==3) {
+sma="CCC(CC)(CC)CCl";
+}
+		if (i==6  &&  j==4) {
+sma="CCC(CC)(CC)CCl";
+}
+		if (i==6  &&  j==5) {
+sma="CCC(CC)(CC)CCl";
+}
+		if (i==6  &&  j==6) {
+sma="CCC(CC)(CC)CCl";
+}
+		if (i==6  &&  j==7) {
+sma="CCC(CC)(CC)CCl";
+}
+		if (i==6  &&  j==8) {
+sma="CCC(CC)(CC)CCl";
+}
+
+		if (i==1 &&  j==7 ) {
+text="Primary alkyl halides do not normally give Sn1 or E1 reactions."
+}else{
+text=text
+}
+		if (i==1 &&  j==5 ) {
+text="Primary alkyl halides usually react by an Sn2 mechanism rather than an E2 mechanism."
+}else{
+text=text
+}
+		if (i==2 && (j==3 || j==6 )) {
+text="Even moderately weak bases such as cyanide and sulfide anions may cause some E2 elimination to cyclopentene. However, substitution is favored by these nucleophiles. Cyanide ion is the stronger base and should give more elimination."
+}else{
+text=text
+}
+		if (i==2 && j==8 ) {
+text="Since this amine is a base, E2 elimination to cyclopentene is expected.  However, some substitution may also take place."
+}else{
+text=text
+}
+		if (i==2  &&  j==7) {
+text="Solvolysis of secondary halides is slow, and may give both SN1 and E1 products. The substitution product is usually favored"
+}else{
+text=text
+}
+		if (i==2 && j==5) {
+text="Nucleophilic reactions of secondary alkyl halides are sometimes difficult to predict if both substitution and elimination reactions are possible. Since methoxide anion is a strong base, elimination should be favored, but some substitution may also take place."
+}else{
+text=text
+}
+		if (i==3  && j==7) {
+text="Solvolysis of primary benzylic halides occurs under these conditions. Substitution products are produced, since elimination is not possible."
+}else{
+text=text
+}
+		if ((i==4) && (j==3 || j==6 || j==8 )) {
+text="Tertiary alkyl halides do not give SN2 substitution, so even moderately weak bases such as this give elimination. The alkene predicted by the Zaitsev rule will be the major product."
+}else{
+text=text
+}
+		if (i==4  && j==4) {
+text="Tertiary alkyl halides do not give SN2 substitution, even with strong nucleophiles Iodide anion is too weak a base to cause elimination."
+}else{
+text=text
+}
+		if (i==4  && j==5) {
+text="The alkene predicted by the Zaitsev rule is the major product in this E2 elimination."
+}else{
+text=text
+}
+		if ((i==5 || i==6) && (j==3 || j==4 || j==5 || j==6  || j==7 || j==8 )) {
+text="Aryl halides and neopentyl-like halides (complete alkyl substitution of the beta-carbon) do not undergo SN2 or E2 reactions. Since 1-chloro-2,2-diethylbutane is a primary chloride, it is unlikely to give solvolysis reactions. Also, aryl halides do not give solvolysis reactions."
+}else{
+text=text
+}
+
+if (smiles==sma) {
+var Txt="Correct Answer! \r";
+	}else{
+		if ((i==2 && j==8 ) && (smiles=="C2CCN(C1CCCC1)CC2")) { 
+var Txt="Correct Answer! \r";
+}else{
+
+
+var Txt="Wrong Answer! Try again. \r" ;
+}
+}
+	input.result.value = Txt + text;
+}
+// End of hide script comment. -->
+</SCRIPT>
+
+ <link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE> Reactions of Organo Halides</TITLE>
+ <body>
+ <div class="ctr"><b><span class="fs-5">Reactions of Organic Halogen Derivatives</span></b></div>
+<FORM>
+<span class="fs-3"><B>In this problem we shall consider six halide <span class="fc-maroon"> reactants:</span></B></span><br />
+<div class="ctr"><TABLE BORDER=3><TR><TD>
+<TABLE BORDER CELLPADDING=6><TR VALIGN=top BGCOLOR="CCFFCC">
+<TH WIDTH=210 nowrap><span class="fs-3">1-bromopropane </span> &nbsp;<INPUT NAME="sm1"  TYPE="radio" checked> &nbsp; </TH>
+<TH WIDTH=210 nowrap><span class="fs-3">bromocyclopentane</span> &nbsp;<INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH WIDTH=210 nowrap><span class="fs-3">4-methylbenzyl chloride</span> &nbsp;<INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH></TR>
+<TR VALIGN=top BGCOLOR="CCFFCC">
+<TH nowrap><span class="fs-3">2-chloro-2-methylbutane</span> &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH nowrap><span class="fs-3">1-bromo-3,5-dimethylbenzene</span> &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH nowrap><span class="fs-3">1-chloro-2,2-diethylbutane</span> &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH></TR></TABLE>
+</TD></TR></TABLE></div><br />
+<span class="fs-3"><B>These compounds may be reacted with eight different <span class="fc-maroon">reagents:</span></B></span><BR>
+<div class="ctr"><TABLE BORDER=3><TR><TD>
+<TABLE BORDER CELLPADDING=8  BGCOLOR="FFCCCC"><TR VALIGN="top">
+<TH WIDTH=175 nowrap><span class="fs-3"> Magnesium</span><BR><span class="fs-2"> in ether</span></TH>
+<TH><INPUT NAME="sm2" TYPE="radio" checked></TH>
+<TH> </TH>
+<TH WIDTH=175><span class="fs-3"> Lithium</span><BR><span class="fs-2">in pentane </span></TH>
+<TH><INPUT NAME="sm2" TYPE="radio"></TH>
+<TH> </TH>
+<TH WIDTH=180><span class="fs-3"> C<SUB>6</SUB>H<SUB>5</SUB>SNa</span><BR><span class="fs-2">in acetone</span> </TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH WIDTH=175><span class="fs-3"> NaI</span><BR><span class="fs-2">in acetone</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+</TR>
+<TR VALIGN="top">
+<TH><span class="fs-3"> KOCH<SUB>3</SUB></span><BR><span class="fs-2">in methanol</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH nowrap><span class="fs-3"> NaCN </span> <BR><span class="fs-2">in methanol</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH nowrap><span class="fs-3"> H<SUB>2</SUB>O + Acetonitrile</span><BR><span class="fs-2">mixed solvents & heat</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH nowrap> <span class="fs-3"> C<SUB>5</SUB>H<SUB>10</SUB>N-H</span><BR><span class="fs-2">in acetone</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH></TR>
+</TABLE></TD></TR></TABLE></div>
+
+<p><table width=960 align="center " ><TR ><TD width=660><span class="fc-blue"><B>Select one halide compound from the first group, and one reagent from the second group.</B></span>
+<p><span class="fs-3">To review the chemistry of alkyl halides  <A HREF="../../alhalrx1.htm#hal1" Target="_top"> Click Here</A>.</p></TD>
+<TD> 
+<table bgcolor="blue" border><tr><th>  
+<INPUT TYPE="button" VALUE="Show the Problem"  onClick="process(this.form)"></th></tr></table>
+</TD></TR>
+</TABLE>
+
+</FORM>
+ </BODY>
+ </HTML>

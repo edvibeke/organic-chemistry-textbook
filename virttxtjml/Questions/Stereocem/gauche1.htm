@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var img1=new Image();										// variables for image switch
+var img2=new Image();
+		img1.src="../Images/cnfgstr3.gif";
+		img2.src="../Images/cnfgstr4.gif";
+var anscnt=0																										// other variables
+var answ="(A) 2;  (B) 4;  (C) 0;  (D) 0;\r"
+ +  "(E) 3;  (f) 1;  (G) 2;  (H) 3;\r"
+ +  "The gauche interactions are colored red in the above structures."
+
+var noansw="You must try to answer this question three times before viewing the answers."
+var k=0
+var j=0
+// answer checking function
+function chkchg(input) {
+anscnt=anscnt+1;
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+input.e.value=fix(input.e.value)
+input.f.value=fix(input.f.value)
+input.g.value=fix(input.g.value)
+input.h.value=fix(input.h.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var rsp="";
+if ( input.a.value == "2") { 
+		k=k+1
+		} else {
+		var rsp=rsp +" A,"
+		j=j+1
+}
+
+if ( input.b.value == "4") { 
+		k=k+1
+		} else {
+		var rsp=rsp +" B,"
+		j=j+1
+}
+
+if ( input.c.value == "0") { 
+		k=k+1
+		} else {
+		var rsp=rsp +" C,"
+		j=j+1
+}
+
+if ( input.d.value == "0" ) { 
+		k=k+1
+		} else {
+		var rsp=rsp +" D,"
+		j=j+1
+}
+ if ( input.e.value == "3") { 
+		k=k+1
+		} else {
+		var rsp=rsp +" E,"
+		j=j+1
+}
+
+if ( input.f.value == "1") { 
+		k=k+1
+		} else {
+		var rsp=rsp +" F,"
+		j=j+1
+}
+
+if ( input.g.value == "2") { 
+		k=k+1
+		} else {
+		var rsp=rsp +" G,"
+		j=j+1
+}
+
+if ( input.h.value == "3" ) { 
+		k=k+1
+		} else {
+		var rsp=rsp +" H,"
+		j=j+1
+}
+
+if ( rsp=="") {
+rsp="none";
+}
+if (j==8) {
+	var txt="You have not provided answers to any questions."; 
+anscnt=0
+}else{
+if   (k==8) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+anscnt=3
+}else{
+	var txt="Your correct answers total: " + k +" \rCompounds for which you have given incorrect answers are:" + rsp; 
+}
+}
+input.result.value = txt;
+}
+// functions for showing answer, changing image & clearing text
+function giveansw(show) {
+if (anscnt>=3)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+
+function change() {
+if (anscnt>=3)  {
+document.images[0].src=img2.src;
+}
+}
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.e.value="";
+	input.f.value="";
+	input.g.value="";
+	input.h.value="";
+		input.result.value=" ";
+}
+	//STOP HIDING-->
+</SCRIPT>
+<script id="qa-imgfallback">(function(){if(window.__qaImgFallback)return;window.__qaImgFallback=1;var BOX="display:inline-block;min-width:80px;min-height:24px;padding:6px 10px;margin:2px;border:1px dashed #b9c0c8;border-radius:6px;color:#7a828c;font:italic 13px/1.35 system-ui,Segoe UI,Arial,sans-serif;background:#f6f8fa;vertical-align:middle;text-align:center;";function ph(img){var p=img.__qaPh;if(!p){p=document.createElement("span");p.setAttribute("role","img");p.setAttribute("aria-label","Figure unavailable");p.style.cssText=BOX;p.textContent="Figure unavailable";img.__qaPh=p;if(img.parentNode)img.parentNode.insertBefore(p,img.nextSibling);}p.style.display="";img.style.display="none";img.setAttribute("data-qa-broken","1");}function ok(img){if(img.__qaPh)img.__qaPh.style.display="none";if(img.getAttribute("data-qa-broken")){img.style.display="";img.removeAttribute("data-qa-broken");}}function hook(img){if(img.__qaHooked)return;img.__qaHooked=1;img.addEventListener("error",function(){ph(this);},true);img.addEventListener("load",function(){ok(this);},true);if(img.complete&&img.naturalWidth===0&&img.getAttribute("src"))ph(img);}function scan(){var a=document.getElementsByTagName("img");for(var i=0;i<a.length;i++)hook(a[i]);}if(document.readyState!=="loading")scan();else document.addEventListener("DOMContentLoaded",scan);window.addEventListener("load",scan);})();</script><link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Gauche Interactions</TITLE>
+<body>
+<div class="ctr"><H3>Identifying Gauche Interactions</H3></div>
+<p>For each of the compounds <B>A</B> through <B>H</B> indicate the number of <B>gauche butane interactions</B> present in the most stable chair conformation. Enter a number from 0 to 9 in each answer box. </p>
+
+ <FORM NAME="responses"> 
+<p><TABLE align="center"> 
+<TR><TD><span class="fc-blue"><B>Compound A.</B></span></TD>
+<TD>Number of gauche interactions: &nbsp; <INPUT TYPE="text" NAME="a"  SIZE="2"></TD>
+<TD> &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; </TD>
+<TD><span class="fc-blue"><B>Compound B.</B></span></TD>
+<TD>Number of gauche interactions: &nbsp; <INPUT TYPE="text" NAME="b"  SIZE="2"></TD>
+</TR> 
+<TR><TD><span class="fc-blue"><B>Compound C.</B></span></TD>
+<TD>Number of gauche interactions: &nbsp; <INPUT TYPE="text" NAME="c"  SIZE="2"></TD>
+<TD></TD>
+<TD><span class="fc-blue"><B>Compound D.</B></span></TD>
+<TD>Number of gauche interactions: &nbsp; <INPUT TYPE="text" NAME="d"  SIZE="2"></TD>
+</TR> 
+<TR><TD><span class="fc-blue"><B>Compound E.</B></span></TD>
+<TD>Number of gauche interactions: &nbsp; <INPUT TYPE="text" NAME="e"  SIZE="2"></TD>
+<TD></TD>
+<TD><span class="fc-blue"><B>Compound F.</B></span></TD>
+<TD>Number of gauche interactions: &nbsp; <INPUT TYPE="text" NAME="f"  SIZE="2"></TD>
+</TR> 
+<TR><TD><span class="fc-blue"><B>Compound G.</B></span></TD>
+<TD>Number of gauche interactions: &nbsp; <INPUT TYPE="text" NAME="g"  SIZE="2"></TD>
+<TD></TD>
+<TD><span class="fc-blue"><B>Compound H.</B></span></TD>
+<TD>Number of gauche interactions: &nbsp; <INPUT TYPE="text" NAME="h"  SIZE="2"></TD>
+</TR> 
+</TABLE></p>
+<div class="ctr"><img src="../Images/cnfgstr3.gif"></div>
+
+<HR>
+<table align="center"><tr><td>
+<INPUT TYPE="button"  VALUE=" Check Answer" onClick=" chkchg(this.form)"> <br><br><INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clrtxt(this.form)"> </td>
+<td><TEXTAREA  WRAP NAME="result"  ROWS="4"  COLS="50">   </TEXTAREA> </td>
+<td> <INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="change(this.form);giveansw (this.form) "> <br><br> <INPUT TYPE="button"  NAME="answr" VALUE="Help" onClick="window.location = '../../sterisom.htm#isom6'">
+ </td></tr></table>
+ </FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT></div>
+ <HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

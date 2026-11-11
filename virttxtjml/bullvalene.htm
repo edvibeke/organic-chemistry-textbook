@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+<HEAD>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Styles/modern.css">
+<Title>Degenerate Cope</Title>
+
+
+<script language=javascript> <!--Hide
+var i=1;
+function chng1() {
+i=i+1
+document.images[0].src="Images4/cope"+i+".gif"
+if (i>=3) {
+i=0
+}
+}
+
+// --> </script>
+
+<link rel="stylesheet" href="Styles/edvibe.css">
+<script src="Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+
+<A  NAME="start">
+<div class="ctr"><h3>Self-Replicating Cope Rearrangements</h3></div>
+<p>The simplest Cope rearrangement is the degenerate rearrangement of 1,5-hexatriene.  As drawn in the following diagram, this [3.3]-sigmatropic shift may take place by one of two transition states, a lower energy chair state or a higher energy boat state.  Because the product is identical with the reactant, isotopic labeling is needed to establish that change has occurred. The relatively high activation energy of this reaction requires a temperature near 300 &#186;C. </p>
+<div class="ctr"><A HREF="javascript:chng1()"><IMG SRC="Images4/cope1.gif" border=0></a></div>
+<p>If ring strain is relieved in this rearrangement, as in the case of cis-1,2 -divinylcyclopropane, the activation energy is substantially reduced so that conversion to 1,4-cycloheptadiene occurs below 20 &#186;C  within 30 minutes, as shown above by <span class="fc-brown">clicking on the diagram</span>.  This rearrangement becomes degenerate for the compound bicyclo[5.1.0]octa-2,7-diene, and the activation energy is further reduced. In both cases a boat transition state is forced by structural constraint. <br />If tricyclic analogs are formed by bridging the C1 and C8 carbons of  bicyclo[5.1.0]octa-2,7-diene, similar degenerate rearrangements are observed.  Examples will be displayed above by <span class="fc-brown">clicking on the diagram</span> again. For three of these compounds the activation energy is even lower due to a combination of increased ground state strain and transition state stabilization by interallylic bonding.  The remarkable C<sub>10</sub>H<sub>10</sub> hydrocarbon bullvalene is exceptional in two respects. First, its ground state is stabilized relative to the dihydro analog by &#960;-conjugation with the three-membered ring. Second, its three-fold symmetry permits numerous self-replicating Cope rearrangements leading to over a million (10!/3=1,209,600) identical valence tautomers.  All the carbons and hydrogens in bullvalene appear to be equivalent on the nmr time scale at 100 &#186;C, and cannot be discriminated until cooled to -15 &#186;C.  Molecules of this kind are termed <b>fluxional</b>. It is important to recognize that valence tautomerization of this kind is <b>not resonance</b> (the relative positions of the atoms undergo small changes). 
+</p>
+
+ 
+</p>
+<div class="ctr"><table border><tr><th>
+<table width=460>
+<caption><h4>Bullvalene</h4></caption>
+<tr><td> <p>In the following model carbon is dark grey and hydrogen is cyan. The <b>Show Rearrangement</b> button activates a three stage demonstration.  First, the original valence tautomer is drawn with carbon 1 colored light green and labeled.  Next an approximation of the Cope transition state is shown with dotted lines representing the shifting electrons.  Finally the valence tautomeric product of that [3,3] sigmatropic rearrangement is drawn, with the designated carbon still colored.</p>
+<tr><th height=300><script type="text/javascript">Jmol.getApplet("jmol0",{"width": 280, "height": 280, "color": "#FFFFFF", "use": "HTML5", "j2sPath": "htmlJ/jsmol/j2s", "addSelectionOptions": false, "script": " wireframe 30; spacefill 80; zoom 120; select carbon;  color atoms [140,140,140];  select hydrogen;  color atoms cyan;   select all;   background white;  rotate y -96; rotate x -16; set echo off; save orientation ", "load": "rasfiles/bullvalene.smol"});</script>
+</th></tr>
+
+
+<tr><td nowrap><dir>
+
+<button type="button" class="jctl" data-target="jmol0" data-script="set echo off; set label off; spacefill 70%; select carbon;  color atoms [140,140,140]; select all">X</button><span class="fs-4"> <sup>&nbsp;Show Spacefill Model</sup><br>
+
+<button type="button" class="jctl" data-target="jmol0" data-script="set echo off; set label off; wireframe 30; spacefill 80; select carbon;  color atoms [140,140,140]; select all">X</button> <sup>&nbsp;Show Ball&Stick Model</sup><br>
+
+<button type="button" class="jctl" data-target="jmol0" data-script="set echo off; set label off; wireframe 30; spacefill off; select carbon;  color atoms [140,140,140]; select all ">X</button> <sup>&nbsp;Show Stick Model</sup><br>
+
+<button type="button" class="jctl" data-target="jmol0">X</button> <sup>&nbsp;Show Numbering</sup><br>
+
+<button type="button" class="jctl" data-target="jmol0">X</button> <sup>&nbsp;Show Rearrangement</sup><br>
+
+</span></TD></TR></TABLE></th></tr></table></div>
+
+
+<div class="ctr"><P><IMG SRC="Images/pixel.gif" WIDTH=10 HEIGHT=100 ></P></span></div>
+</FORM>
+</BODY>
+
+</HTML>

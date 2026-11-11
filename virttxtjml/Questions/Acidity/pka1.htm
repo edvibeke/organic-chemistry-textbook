@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+															// Set variables
+var i=0;
+
+var Txt3="Congratulations. Your estimates are all good."
+var Txt2="Your good estimates have been retained.\rAny poor estimates have been removed.\rIf you miss any keep trying.";
+var anscnt=0
+                         //Answer variables
+ var answ=" The observed values are shown above in the appropriate colored areas."
+
+var noansw=" You must try to answer this question three times before seeing the results."
+
+
+
+var xx='<table align=center cellpadding=6 border=2 BGCOLOR="#f9f9f9"><tr ><td><H4><i>meta</i>-Hydroxybenzoic Acid</H4><P>These pK<sub>a</sub>s can be rationalized by the inductive effect of a substituent. Since oxygen is more electronegative than hydrogen (or carbon), the acidity of both functions should increase by a small degree (0.1 or less of a pK<sub>a</sub> unit).</P><H4><i>para</i>-Hydroxybenzoic Acid</H4><P>In this case the inductive effect of the substituents should be less than the <i>meta</i>-isomer, since they are more remote. The resonance effects dominate, and act in opposite directions. The carboxylic acid function becomes less acidic due to electron donation from the hydroxyl group, as shown in part A of the following diagram.  Remarkably, the ionized carboxyl group still acts as an electron acceptor and enhances the acidity of the phenolic fuction (part B below) by roughly 0.6 pK<sub>a</sub> units.</P><P><TABLE ALIGN=center><TR><TD><IMG SRC="../Images/acidityres.gif"></TD></TR></TABLE></P><H4><i>ortho</i>-Hydroxybenzoic Acid</H4><P>The <i>ortho</i>-isomer (salicylic acid) shows a dramatic shift in the acidity of both functional groups, again in opposite directions.  Although resonance interaction is possible, as in the <i>para</i>-isomer, and inductive effects should be strong, the chief factor is the hydrogen bonding of the neighboring functions (shown in part C above). Thus, pK<sub>a</sub><sup>1</sup> decreases by more than a pK<sub>a</sub> unit, and pK<sub>a</sub><sup>2</sup> increases by more than three pK<sub>a</sub> units. Salicylic acid has been known as an analgesic (pain killer) since ancient times, but its acidity caused gastric irritation and limited its long term effectiveness.  The acetyl ester of salicylic acid (asprin) has a  pK<sub>a</sub> of 3.5 (the CH<sub>3</sub>CO<sub>2</sub>- substituent exerts a significant inductive effect) and has become a widely used pharmaceutical agent.   </P> <center><INPUT TYPE="button" VALUE=" Close "  onClick="javascript:chngtxt2(xy);window.location=&#39;#strc5c&#39;"></center></td></tr></table>  ';
+
+var xy=' For an analysis of these pK<sub>a</sub>s <A HREF="javascript:chngtxt2(xx)">Click Here</a>. ';
+function chngtxt2(txt)   {
+document.getElementById('para2').innerHTML=txt;
+}
+
+
+
+function validate()  {
+i=0
+anscnt = anscnt+1;
+var na=document.MyForm.numa.value; 
+if (na<2.75 || na >3.15){
+i=i+1;
+document.MyForm.numa.value="";
+}
+
+var nb=document.MyForm.numb.value; 
+if (nb<3.88 || nb >4.28){
+i=i+1;
+document.MyForm.numb.value="";
+}
+
+var nc=document.MyForm.numc.value; 
+if (nc<4.28 || nc >4.68){
+i=i+1;
+document.MyForm.numc.value="";
+}
+
+var nd=document.MyForm.numd.value; 
+if (nd<13.00 || nd >14.00){
+i=i+1;
+document.MyForm.numd.value="";
+}
+
+var ne=document.MyForm.nume.value; 
+if (ne<9.70 || ne >10.15){
+i=i+1;
+document.MyForm.nume.value="";
+}
+
+var nf=document.MyForm.numf.value; 
+if (nf<9.20 || nf >9.60){
+i=i+1;
+document.MyForm.numf.value="";
+}
+if (i==0) {
+document.MyForm.result.value=Txt3
+}else{
+document.MyForm.result.value=Txt2 
+}
+
+}
+
+function giveansw(show) {
+ if (anscnt>=3)  {
+ var txt=answ
+
+	show.numa.value="2.95";
+document.getElementById ('txta').style.backgroundColor='yellow';
+	show.numb.value="4.08";
+document.getElementById ('txtb').style.backgroundColor='yellow';
+	show.numc.value="4.48";
+document.getElementById ('txtc').style.backgroundColor='yellow';
+	show.numd.value="13.5";
+document.getElementById ('txtd').style.backgroundColor='yellow';
+	show.nume.value="9.94";
+document.getElementById ('txte').style.backgroundColor='yellow';
+	show.numf.value="9.39";
+document.getElementById ('txtf').style.backgroundColor='yellow';
+
+ 	}else{
+ var txt=noansw
+ }
+ show.result.value=txt
+ }
+ 
+function clrbx(input) {
+	input.numa.value="";
+document.getElementById ('txta').style.backgroundColor='white';
+	input.numb.value="";
+document.getElementById ('txtb').style.backgroundColor='white';
+	input.numc.value="";
+document.getElementById ('txtc').style.backgroundColor='white';
+	input.numd.value="";
+document.getElementById ('txtd').style.backgroundColor='white';
+	input.nume.value="";
+document.getElementById ('txte').style.backgroundColor='white';
+	input.numf.value="";
+document.getElementById ('txtf').style.backgroundColor='white';
+	input.result.value=" ";
+	
+}
+// End of hide script comment. -->;
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<FORM name="MyForm">
+<TITLE>Estimating pK<sub>a</sub>s</TITLE>
+<body>
+<div class="ctr"><H3>Estimating pK<sub>a</sub>s </H3></div>
+<P>The three isomeric hydroxybenzoic acids are shown below. These compounds all have two acidic functions, the carboxylic acid and the phenolic hydroxyl group, Each compound will therefore have a pK<sub>a</sub><sup>1</sup> and a pK<sub>a</sub><sup>2</sup>. The pK<sub>a</sub> of benzoic acid itself is 4.20. The pK<sub>a</sub> of phenol is10.00.  Enter an estimated pK<sub>a</sub> for each of these in the designated answer box.  The stronger acid should be pK<sub>a</sub><sup>1</sup>.  Answers will be judged correct if they are within 0.2 pK<sub>a</sub> units of the observed value.</P>
+<FORM>
+<p><TABLE CELLPADDING=6 align=center border>
+<TR><TD colspan=3><IMG SRC="../Images/hdroxacids.gif"> </TD></TR>
+<TR><TH><i>ortho</i> </TH><TH><i>meta</i> </TH><TH><i>para</i> </TH></TR>
+<TR><TD><span class="fc-blue"><b>pK<sub>a</sub><sup>1</sup></b></span> <INPUT TYPE="text" NAME="numa" ID="txta" SIZE="6"> &nbsp; </TD><TH><span class="fc-blue"><b>pK<sub>a</sub><sup>1</sup></b></span> <INPUT TYPE="text" NAME="numb" ID="txtb" SIZE="6"></TH>
+<TH><span class="fc-blue"><b>pK<sub>a</sub><sup>1</sup></b></span> <INPUT TYPE="text" NAME="numc" ID="txtc" SIZE="6"></TH></TR>
+<TR><TD><span class="fc-blue"><b>pK<sub>a</sub><sup>2</sup></b></span> <INPUT TYPE="text" NAME="numd" ID="txtd" SIZE="6"> &nbsp; </TD><TH><span class="fc-blue"><b>pK<sub>a</sub><sup>2</sup></b></span> <INPUT TYPE="text" NAME="nume" ID="txte" SIZE="6"> &nbsp; </TH>
+<TH><span class="fc-blue"><b>pK<sub>a</sub><sup>2</sup></b></span> <INPUT TYPE="text" NAME="numf" ID="txtf" SIZE="6"> &nbsp; </TH></TR>
+</TABLE></p>
+<HR>
+
+<table align=center cellpadding=4><tr><td><INPUT TYPE="button" VALUE=" Check Answer " onClick="validate()"><br /><br />
+<INPUT TYPE="reset"  VALUE=" Clear " onClick="clrbx(this.form)"></td>
+<td><TEXTAREA WRAP NAME="result" ROWS="3" COLS="46">
+</TEXTAREA></td>
+<td> <INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form)"> </td></tr></table>
+<p id="para2">For an analysis of these pK<sub>a</sub>'s <A HREF="javascript:chngtxt2(xx)">Click Here</a>. </p> &nbsp; </p>
+
+</FORM>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

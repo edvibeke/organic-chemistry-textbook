@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var Txt="";
+var txt1="If the above structure is achiral check that button. If a stereogenic center is present, evaluate whether its configuration is R or S.\r"
+var txt2="Note that this structure is a Fischer projection."
+var smiles = "";
+var j="";
+var k=0;
+var jme = "0 0";
+
+	function process(form) {
+
+		if (form.q1[0].checked) {
+jme = "6 5 C 7.11 -3.81 C 7.11 -5.21 H 5.90 -5.91 O 7.91 -6.36 C 8.51 -5.34 C 8.32 -3.11 1 2 1 2 3 1 2 4 -1 2 5 -2 1 6 1";
+jmeans="6 5 C:2 9.29 -5.82 C 9.29 -7.22 H:4 8.08 -7.92 O:1 10.09 -8.37 C:3 10.69 -7.35 C 10.50 -5.12 1 2 1 2 3 1 2 4 -1 2 5 -2 1 6 1";
+j="1";
+}
+		if (form.q1[1].checked) {
+jme = "8 7 C 9.12 -5.38 C 9.12 -6.78 C 7.91 -7.48 H 9.92 -7.93 N 10.52 -6.91 O 10.33 -4.68 C 6.70 -6.78 C 5.49 -7.48 1 2 1 2 3 1 2 4 -1 2 5 -2 1 6 1 3 7 1 7 8 1";
+jmeans="8 7 C:2 9.12 -5.38 C 9.12 -6.78 C:3 7.91 -7.48 H:4 9.92 -7.93 N:1 10.52 -6.91 O 10.33 -4.68 C 6.70 -6.78 C 5.49 -7.48 1 2 1 2 3 1 2 4 -1 2 5 -2 1 6 1 3 7 1 7 8 1";
+ j="2";
+}
+		if (form.q1[2].checked) {
+jme = "9 8 C 10.58 -5.77 C 10.58 -7.17 C 9.37 -7.87 C 11.38 -8.32 C 11.98 -7.30 C 8.16 -7.17 C 6.95 -7.87 C 10.78 -9.59 Cl 11.79 -5.07 1 2 1 2 3 1 2 4 -1 2 5 -2 3 6 1 6 7 1 4 8 2 1 9 1";
+jmeans="9 8 C:1 10.58 -5.77 C 10.58 -7.17 C:3 9.37 -7.87 C:2 11.38 -8.32 C:4 11.98 -7.30 C 8.16 -7.17 C 6.95 -7.87 C 10.78 -9.59 Cl 11.79 -5.07 1 2 1 2 3 1 2 4 -1 2 5 -2 3 6 1 6 7 1 4 8 2 1 9 1";
+ j="3";
+}
+		if (form.q1[3].checked) {
+jme = "7 6 H 6.89 -5.94 C 8.29 -5.96 C 8.29 -4.56 O 9.69 -5.95 C 8.29 -7.36 C 9.50 -3.86 O 7.08 -8.06 1 2 1 2 3 1 2 4 1 2 5 1 3 6 1 5 7 1";
+jmeans="7 6 H:4 6.89 -5.94 C 8.29 -5.96 C:3 8.29 -4.56 O:1 9.69 -5.95 C:2 8.29 -7.36 C 9.50 -3.86 O 7.08 -8.06 1 2 1 2 3 1 2 4 1 2 5 1 3 6 1 5 7 1";
+ j="4";
+}
+		if (form.q1[4].checked) {
+jme = "11 10 C 8.01 -6.78 C 9.41 -6.80 C 9.41 -5.40 C 10.81 -6.79 C 9.41 -8.20 C 8.20 -8.90 C 10.63 -4.70 C 11.52 -8.00 C 11.51 -5.58 C 12.21 -6.78 N 6.61 -6.76 1 2 1 2 3 1 2 4 1 2 5 1 5 6 1 3 7 2 4 8 1 4 9 1 4 10 1 1 11 3";
+jmeans="11 10 C:1 8.01 -6.78 C 9.41 -6.80 C:3 9.41 -5.40 C:2 10.81 -6.79 C:4 9.41 -8.20 C 8.20 -8.90 C 10.63 -4.70 C 11.52 -8.00 C 11.51 -5.58 C 12.21 -6.78 N 6.61 -6.76 1 2 1 2 3 1 2 4 1 2 5 1 5 6 1 3 7 2 4 8 1 4 9 1 4 10 1 1 11 3";
+ j="5";
+}
+		if (form.q1[5].checked) {
+jme = "12 12 C 9.56 -6.75 C 9.56 -5.35 C 8.34 -4.65 C 7.13 -5.35 C 7.13 -6.75 C 8.34 -7.45 O 10.77 -4.65 C 8.34 -3.25 C 8.34 -8.85 C 7.13 -9.55 C 9.56 -9.55 H 9.66 -7.94 1 2 1 2 3 1 3 4 2 4 5 1 5 6 1 6 1 1 2 7 2 3 8 1 6 9 -2 9 10 1 9 11 2 6 12 -1";
+jmeans="12 12 C:2 9.56 -6.75 C 9.56 -5.35 C 8.34 -4.65 C 7.13 -5.35 C:3 7.13 -6.75 C 8.34 -7.45 O 10.77 -4.65 C 8.34 -3.25 C:1 8.34 -8.85 C 7.13 -9.55 C 9.56 -9.55 H:4 9.66 -7.94 1 2 1 2 3 1 3 4 2 4 5 1 5 6 1 6 1 1 2 7 2 3 8 1 6 9 -2 9 10 1 9 11 2 6 12 -1";
+ j="6";
+}
+		if (form.q1[6].checked) {
+jme = "10 11 C 9.33 -6.52 C 9.33 -5.12 C 8.12 -4.42 C 6.91 -5.12 C 6.91 -6.52 C 8.12 -7.22 C 7.58 -5.71 C 8.78 -5.99 C 8.12 -8.62 O 10.54 -4.42 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 -1 6 8 -1 7 8 1 6 9 1 2 10 2";
+jmeans="10 11 C 5.58 -6.32 C 5.58 -4.90 C 4.35 -4.19 C 3.13 -4.90 C 3.13 -6.32 C 4.35 -7.03 C 3.81 -5.50 C 5.02 -5.78 C 4.35 -8.44 O 6.80 -4.19 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 -1 6 8 -1 7 8 1 6 9 1 2 10 2|1 0 = 8.85 -5.77|10 11 C 14.20 -6.13 C 14.20 -4.73 C 12.99 -4.03 C 11.78 -4.73 C 11.78 -6.13 C 12.99 -6.83 C 13.62 -5.28 C 12.37 -5.58 C 12.99 -8.23 O 10.57 -4.03 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 -1 6 8 -1 8 7 1 6 9 1 4 10 2";
+ j="7";
+}
+		if (form.q1[7].checked) {
+jme = "11 11 C 8.01 -6.78 C 9.41 -6.80 C 9.41 -5.40 S 10.81 -6.79 C 9.41 -8.20 O 10.62 -4.70 C 8.20 -8.90 O 8.20 -4.70 C 6.81 -6.07 C 6.79 -7.47 C 8.19 -10.30 1 2 1 2 3 1 2 4 1 2 5 1 3 6 2 5 7 1 3 8 1 9 10 1 1 10 1 1 9 1 7 11 1";
+jmeans="11 11 C:3 8.01 -6.78 C 9.41 -6.80 C:2 9.41 -5.40 S:1 10.81 -6.79 C:4 9.41 -8.20 O 10.62 -4.70 C 8.20 -8.90 O 8.20 -4.70 C 6.81 -6.07 C 6.79 -7.47 C 8.19 -10.30 1 2 1 2 3 1 2 4 1 2 5 1 3 6 2 5 7 1 3 8 1 9 10 1 1 10 1 1 9 1 7 11 1";
+ j="8";
+}
+		if (form.q1[8].checked) {
+jme = "11 12 C 8.76 -6.68 C 9.20 -5.34 C 8.06 -4.52 C 6.93 -5.34 C 7.36 -6.68 C 10.16 -6.67 C 8.32 -8.00 C 9.55 -8.66 C 10.72 -7.95 O 12.05 -8.40 O 5.68 -4.71 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 1 6 -2 1 7 -1 7 8 1 6 9 1 9 8 1 9 10 2 4 11 2";
+jmeans="11 12 C 4.68 -6.23 C 5.11 -4.90 C 3.98 -4.07 C 2.84 -4.90 C 3.28 -6.23 C 6.08 -6.22 C 4.23 -7.55 C 5.46 -8.21 C 6.63 -7.51 O 7.96 -7.95 O 1.59 -4.26 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 1 6 -2 1 7 -1 7 8 1 6 9 1 9 8 1 9 10 2 4 11 2|1 0 = 9.46 -6.10|11 12 C 16.10 -6.34 C 16.53 -5.01 C 15.40 -4.19 C 14.27 -5.01 C 14.70 -6.34 O 17.86 -4.58 C 13.30 -6.33 C 15.13 -7.67 C 14.05 -8.56 C 12.72 -7.60 O 11.34 -7.83 1 2 1 2 3 1 3 4 1 4 5 1 5 1 1 2 6 2 5 7 -2 5 8 -1 8 9 1 7 10 1 10 9 1 10 11 2";
+ j="9";
+}
+		if (form.q1[9].checked) {
+jme = "11 12 O 5.65 -8.48 O 7.76 -3.55 C 10.49 -6.17 C 10.02 -4.69 C 6.04 -6.02 C 7.17 -5.19 C 9.33 -6.96 C 7.87 -7.35 C 6.47 -7.35 C 8.62 -4.65 C 8.30 -6.02 1 9 2 2 10 2 3 4 2 3 7 1 4 10 1 5 6 2 5 9 1 11 6 -2 7 11 1 8 9 1 8 11 1 11 10 -1";
+jmeans = "11 12 O 5.65 -8.48 O 7.76 -3.55 C 10.49 -6.17 C 10.02 -4.69 C 6.04 -6.02 C:2 7.17 -5.19 C:4 9.33 -6.96 C:3 7.87 -7.35 C 6.47 -7.35 C:1 8.62 -4.65 C 8.30 -6.02 1 9 2 2 10 2 3 4 2 3 7 1 4 10 1 5 6 2 5 9 1 11 6 -2 7 11 1 8 9 1 8 11 1 11 10 -1";
+j="10";
+}
+
+}
+
+function processJme() {
+  document.JME.readMolecule(document.form.jme_output.value);
+}
+function chkvar() { 
+  document.JME.readMolecule(jme);
+}
+function getTxt() { 
+   if ((j==4)||(j==5)||(j==8)) {
+    document.form.result1.value = txt1 + txt2;
+}else{
+    document.form.result1.value = txt1;
+}
+}
+
+
+function chkans(form) { 
+  document.JME.readMolecule(jmeans);
+if (k!=0) {
+k=0;
+}
+	if (form.a1[0].checked) {
+k=0;
+}
+	if (form.a1[1].checked) {
+k=1;
+}
+	if (form.a1[2].checked) {
+k=2;
+}
+var Txt="Wrong! \rThe priority assignment of substituents at the stereogenic center is shown above.";
+	if (((k==0)) && ((j==7)||(j==9))) {
+var Txt="Correct! This structure is achiral.";
+}
+	if (((k==1)) &&(( j==1)||(j==2)||(j==3)||(j==6))) {
+var Txt="Correct! This structure has an R configuration.\rThe priority assignment of substituents at the stereogenic center is shown above.";
+}
+	if (((k==2)) &&(( j==4)||(j==5)||(j==8)||(j==10))) {
+var Txt="Correct! This structure has an S configuration.\rThe priority assignment of substituents at the stereogenic center is shown above.";
+}
+if ((k!=0) && (j==7)) {
+var Txt="Wrong! This structure is achiral.\rThe two -CH2CH2- bridging chains are identical.";
+}
+if ((k!=0) && (j==9)) {
+var Txt="Wrong! This structure is achiral.\rThe mirror images are identical.";
+}
+	 document.form.result1.value = Txt ;
+}
+
+
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<TITLE>Stereochemistry</TITLE>
+<body>
+
+<div class="ctr"><H3>Identifying Configurations</H3></div>
+<P>Select a problem from the list on the right. When the <B>Show Problem</B> button is pressed a structural formula will be displayed in the drawing window. If the structure has a stereogenic center, assign the configuration as <span class="fc-blue"><b>R</b></span> or  <span class="fc-blue"><b>S</b></span>. If the structure is  <span class="fc-blue"><b>achiral</b></span>, check that button. To evaluate your answer click the <b>Check Answer</b> button; numbers indicating the CIP priority order of substituents at the stereogenic center will be displayed (<span class="fc-magenta">1</span> = highest priority, <span class="fc-magenta">4</span> = lowest).</P>
+<p><TABLE WIDTH=700 CELLPADDING=4 ALIGN=center BORDER><TR><TH ROWSPAN=12>
+<FORM METHOD="POST" NAME="form" ONSUBMIT="return false;">
+<INPUT TYPE="RESET" VALUE="Reset" onClick="document.JME.reset()"> &nbsp; &nbsp; 
+<applet code="JME.class" name="JME" archive="JME.jar" width=336, height=328>
+<param name= "options"  value="multipart">
+You have to enable Java and JavaScript on your machine !
+</applet>
+<div class="ctr">
+<P><table cellpadding=7 width=420><tr><td>
+<input type="button" value="Show Problem" onClick="process(form);chkvar(); getTxt()"><br><br>
+<input type="button" value="Check Answer" onClick="chkans(this.form);"></td>
+<td> &nbsp; </td>
+<td><B><span class="fc-blue fs-4"> Achiral </span></B> 
+ <INPUT TYPE=RADIO NAME="a1" VALUE="prob" checked><br>
+<B><span class="fc-blue fs-4"> R Configuration </span></B> 
+ <INPUT TYPE=RADIO NAME="a1" VALUE="prob"><br>
+<B><span class="fc-blue fs-4"> S Configuration </span></B> 
+ <INPUT TYPE=RADIO NAME="a1" VALUE="prob"></td>
+</tr></table></P>
+<P><TEXTAREA WRAP NAME="result1" ROWS="4" COLS="62"></TEXTAREA><BR>
+</div></P></TH>
+<TH NOWRAP ><B><span class="fc-blue fs-4"> Problem 1</span></B> 
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob" checked>
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 2</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 3</span></B> 
+  <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 4</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 5</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 6</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 7</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 8</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 9</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 10</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+</TABLE>
+<BR>
+
+</form>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.
+<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>
+

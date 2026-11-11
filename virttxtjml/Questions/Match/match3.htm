@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var anscnt=0
+var Text = "Please enter a selection in each box.";
+var answ="Reaction(1): Step 1=B, Step 2=D.  "
+
+ +  "Reaction(2): Step 1=E, Step 2=F, Step 3=C. \r"
+
+ +  "Reaction(3): Step 1=I, Step 2=A.\r"
+
+ +  "Reaction(4): Step 1=L, Step 2=G.\r"
+
+ +  "Reaction(5): Step 1=B, Step 2=L, Step 3=C.\r"
+
+var noansw="You must try to answer three problems before viewing the answers."
+
+function checkRx1(input,x,y) {
+anscnt=anscnt+1;
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.]/g,"")
+}
+if ( (input.a.value=='')||(input.b.value=='') ) {
+		input.result.value = Text;
+} else {
+
+		if (  ( ( input.a.value.toUpperCase() == "B")     
+		   &&  ( input.b.value.toUpperCase() == "D")   )) {
+		input.result.value = "Correct Answer!";
+		} else {
+		input.result.value = "Please Try Again.";      
+		}
+	}
+}
+
+function clearRx1(input,x,y) {									// Clear all text windows.
+	input.a.value="";	
+	input.b.value="";
+	input.result.value=" ";
+}
+
+function checkRx2(input,x,y,z) {
+anscnt=anscnt+1;
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+input.e.value=fix(input.e.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.]/g,"")
+}
+if ( (input.c.value=='')||(input.d.value=='')||(input.e.value=='') ) {
+		input.result.value = Text;
+} else {
+		if (  ( ( input.c.value.toUpperCase() == "E")     
+		   &&  ( input.d.value.toUpperCase() == "F") 
+		   &&  ( input.e.value.toUpperCase() == "C")  )) {
+		input.result.value = "Correct Answer!";
+		} else {
+		input.result.value = "Please Try Again.";         // Give feedback.
+		}
+	}
+}
+
+function clearRx2(input,x,y,z) {
+	input.c.value="";	// Clear all text windows.
+	input.d.value="";
+	input.e.value="";
+	input.result.value=" ";
+}
+
+function checkRx3(input,x,y) {
+anscnt=anscnt+1;
+input.f.value=fix(input.f.value)
+input.g.value=fix(input.g.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.]/g,"")
+}
+if ( (input.f.value=='')||(input.g.value=='') ) {
+		input.result.value = Text;
+} else {
+		if (  ( ( input.f.value.toUpperCase() == "I")     
+		   &&  ( input.g.value.toUpperCase() == "A")   )) {
+		input.result.value = "Correct Answer!";
+		} else {
+		input.result.value = "Please Try Again.";         // Give feedback.
+		}
+	}
+}
+
+function clearRx3(input,x,y) {
+	input.f.value="";	// Clear all text windows.
+	input.g.value="";
+	input.result.value=" ";
+}
+
+function checkRx4(input,x,y) {
+anscnt=anscnt+1;
+input.h.value=fix(input.h.value)
+input.i.value=fix(input.i.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.]/g,"")
+}
+if ( (input.h.value=='')||(input.i.value=='') ) {
+		input.result.value = Text;
+} else {
+
+		if (  ( ( input.h.value.toUpperCase() == "L")     
+		   &&  ( input.i.value.toUpperCase() == "G")   )) {
+		input.result.value = "Correct Answer!";
+		} else {
+		input.result.value = "Please Try Again.";         // Give feedback.
+		}
+	}
+}
+
+function clearRx4(input,x,y) {
+	input.h.value="";	// Clear all text windows.
+	input.i.value="";
+	input.result.value=" ";
+}
+
+function checkRx5(input,x,y,z) {
+anscnt=anscnt+1;
+input.j.value=fix(input.j.value)
+input.k.value=fix(input.k.value)
+input.l.value=fix(input.l.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.]/g,"")
+}
+if ( (input.j.value=='')||(input.k.value=='')||(input.l.value=='') ) {
+		input.result.value = Text;
+} else {
+
+		if (  ( ( input.j.value.toUpperCase() == "B")     
+		   &&  ( input.k.value.toUpperCase() == "L") 
+		   &&  ( input.l.value.toUpperCase() == "C")  )) {
+		input.result.value = "Correct Answer!";
+		} else {
+		input.result.value = "Please Try Again.";         // Give feedback.
+		}
+	}
+}
+function clearRx5(input,x,y,z) {
+	input.j.value="";	// Clear all text windows.
+	input.k.value="";
+	input.l.value="";
+	input.result.value="";
+}
+function giveansw(show) {
+if (anscnt>=3)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+
+
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Reagent Selection Exercise</TITLE>
+<body>
+  <div class="ctr"><H3>Reagent Selection</H3> </div>
+<p><span class="fc-blue"><B>In each reaction box enter a single letter designating the best reagent and conditions selected from the list at the bottom of the page.</B></span></p>
+
+  <FORM NAME="reagents"> 
+  <div class="ctr"><p><TABLE  WIDTH=90%> 
+  <TR HEIGHT=1><TD COLSPAN=4 ><HR></TD></TR> 
+  <TR><TD WIDTH=28%><IMG SRC="../Images/mecy6ene.gif" ALIGN=right><span class="fc-blue"><H3>Reaction 1</H3></span></TD> 
+  <TD ALIGN=CENTER WIDTH=26%><span class="fc-blue">&nbsp; First Step </span><INPUT TYPE="text" NAME="a" SIZE="2"><BR><IMG SRC="../Images/arrow.gif"><BR><span class="fc-blue">Second Step </span><INPUT TYPE="text" NAME="b" SIZE="2"></TD> 
+<TD><IMG SRC="../Images/cy6ohome.gif"></TD> 
+<TD ALIGN=center><INPUT TYPE="button"  VALUE=" Check Answer" onClick="checkRx1(this.form)"> <BR> <INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clearRx1(this.form)"></TD></TR> 
+  <TR HEIGHT=1><TD COLSPAN=4><HR></TD></TR> 
+  <TR><TD><IMG SRC="../Images/mecy6ene.gif" ALIGN=right><span class="fc-blue"><H3>Reaction 2</H3></span></TD> 
+  <TD ALIGN=CENTER>&nbsp;<BR><span class="fc-blue">&nbsp; First Step </span><INPUT TYPE="text" NAME="c" SIZE="2"><BR><IMG SRC="../Images/arrow.gif"><BR><span class="fc-blue">Second Step </span><INPUT TYPE="text" NAME="d" SIZE="2"><BR><span class="fc-blue">&nbsp; Third Step </span><INPUT TYPE="text" NAME="e" SIZE="2"></TD> 
+  <TD><IMG SRC="../Images/mecy6one.gif"></TD> 
+  <TD ALIGN=center><INPUT TYPE="button"  VALUE=" Check Answer" onClick="checkRx2(this.form)"><BR><INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clearRx2(this.form)"></TD></TR> 
+  <TR HEIGHT=1><TD COLSPAN=4 ><HR></TD></TR> 
+  <TR><TD><IMG SRC="../Images/mecy6ene.gif" ALIGN=right><span class="fc-blue"><H3>Reaction 3</H3></span></TD> 
+  <TD ALIGN=CENTER><span class="fc-blue">&nbsp; First Step </span><INPUT TYPE="text" NAME="f" SIZE="2"><BR><IMG SRC="../Images/arrow.gif"><BR><span class="fc-blue">Second Step </span><INPUT TYPE="text" NAME="g" SIZE="2"></TD> 
+  <TD><IMG SRC="../Images/c7diol16.gif"></TD> 
+  <TD  ALIGN=center><INPUT TYPE="button"  VALUE=" Check Answer" onClick="checkRx3(this.form)"><BR><INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clearRx3(this.form)"></TD></TR> 
+  <TR HEIGHT=1><TD COLSPAN=4 ><HR></TD></TR> 
+  <TR><TD><IMG SRC="../Images/cyhxone.gif" ALIGN=right><span class="fc-blue"><H3>Reaction 4</H3></span></TD> 
+  <TD ALIGN=CENTER><span class="fc-blue">&nbsp; First Step </span><INPUT TYPE="text" NAME="h" SIZE="2"><BR><IMG SRC="../Images/arrow.gif"><BR><span class="fc-blue">Second Step </span><INPUT TYPE="text" NAME="i" SIZE="2"></TD> 
+  <TD><IMG SRC="../Images/phcy6ene.gif"></TD> 
+  <TD  ALIGN=center><INPUT TYPE="button"  VALUE=" Check Answer" onClick="checkRx4(this.form)"><BR><INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clearRx4(this.form)"></TD></TR> 
+  <TR HEIGHT=1><TD COLSPAN=4><HR></TD></TR> 
+  <TR><TD><IMG SRC="../Images/cy6ene.gif" ALIGN=right><span class="fc-blue"><H3>Reaction 5</H3></span></TD> 
+  <TD ALIGN=CENTER>&nbsp;<BR><span class="fc-blue">&nbsp; First Step </span><INPUT TYPE="text" NAME="j" SIZE="2"><BR><IMG SRC="../Images/arrow.gif"><BR><span class="fc-blue">Second Step </span><INPUT TYPE="text" NAME="k" SIZE="2"><BR><span class="fc-blue">&nbsp; Third Step </span><INPUT TYPE="text" NAME="l" SIZE="2"></TD> 
+  <TD><IMG SRC="../Images/phcy6one.gif"></TD> 
+  <TD  ALIGN=center><INPUT TYPE="button"  VALUE=" Check Answer" onClick="checkRx5(this.form)"><BR><INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clearRx5(this.form)"></TD></TR> 
+  <TR HEIGHT=1><TD COLSPAN=4 ><HR></TD></TR> 
+  <TR><TH COLSPAN=4 > <TEXTAREA  WRAP NAME="result"  ROWS="5"  COLS="42"> 
+  </TEXTAREA> &nbsp; 
+  <INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)">  </TH></TR>   </TABLE></p> 
+</div> 
+  <HR> 
+
+<div class="ctr"><p><TABLE BORDER=1 CELLPADDING=5>
+<TR><TD><span class="fc-blue"><B>A. </B></span> NaBH<SUB>4</SUB> in alcohol. </TD>
+<TD><span class="fc-blue"><B>B. </B></span> C<SUB>6</SUB>H<SUB>5</SUB>CO<SUB>3</SUB>H in CH<SUB>2</SUB>Cl<SUB>2</SUB>. </TD>
+<TD><span class="fc-blue"><B>C. </B></span> PCC in CH<SUB>2</SUB>Cl<SUB>2</SUB>. </TD>
+<TD><span class="fc-blue"><B>D. </B></span> CH<SUB>3</SUB>ONa in CH<SUB>3</SUB>OH</TD>
+</TR><TR>
+<TD><span class="fc-blue"><B>E. </B></span> B<SUB>2</SUB>H<SUB>6</SUB> in THF. </TD>
+<TD><span class="fc-blue"><B>F. </B></span> H<SUB>2</SUB>O<SUB>2</SUB> in aqueous NaOH. </TD>
+<TD><span class="fc-blue"><B>G. </B></span> H<SUB>3</SUB>PO<SUB>4</SUB> and heat.</TD>
+<TD><span class="fc-blue"><B>H. </B></span> AlCl<SUB>3</SUB> in C<SUB>6</SUB>H<SUB>6</SUB>. </TD></TR><TR>
+<TD><span class="fc-blue"><B>I. </B></span> O<SUB>3</SUB> in CH<SUB>2</SUB>Cl<SUB>2</SUB>. </TD>
+<TD><span class="fc-blue"><B>J. </B></span> Br<SUB>2</SUB> in CH<SUB>2</SUB>Cl<SUB>2</SUB>.</TD>
+<TD><span class="fc-blue"><B>K. </B></span> 20% KOH & heat. </TD>
+<TD><span class="fc-blue"><B>L. </B></span> C<SUB>6</SUB>H<SUB>5</SUB>Li in ether. </TD>
+</TR>
+</TABLE></p>
+
+<A HREF="rxdisc.htm#top" target="explain" ><INPUT TYPE="button"  NAME="wind" VALUE=" Problem Discussion " onClick=
+"window.open('rxdisc.htm','explain','toolbar=no,menubar=no,status=no,scrollbars=yes,width=360,height=420')"></A>
+</FORM></div>
+
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

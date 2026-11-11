@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+   
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Styles/modern.css">
+<META NAME="author" content="The Edvibe Team">
+<META NAME="subject" content="Virtual Text of Organic Chemistry">
+<meta name="description" content="a comprehensive virtual textbook of organic chemistry. Includes interactive problems">
+<meta name="keywords" content="organic chemistry
+principles
+interactive problems
+animations
+advanced topics">
+<META NAME="ROBOTS">
+<META NAME="DC.DATE" CONTENT="1999">
+<title>Table of Contents</title>
+
+<script type="text/javascript">
+ <!--Hide
+
+var x='<span class="bold">Functional Groups</span> are atoms or small groups of atoms (two to four) that exhibit a characteristic reactivity when treated with certain reagents. A particular functional group will almost always display its characteristic chemical behavior when it is present in a compound. Because of this, the discussion of organic reactions is often organized according to functional groups.  The contents table on the far right  summarizes the general chemical behavior of the common functional groups. The alkanes are relatively unreactive, and provide a background of behavior in the absence of more localized functional groups.'
+
+var y='The Jmol applet for displaying molecular structure functions well on fast computers running Windows XP ( or similar Microsoft operating systems ), Macintosh OS 10.x, as well as other platforms. It is important that you install the <A HREF="http://www.java.com/en/">latest version of Java</A>. Internet Explorer is recommended over Netscape 7.x for Windows users.  Mac OS X users can run Safari without further modification, but FireFox/Mozilla require installation of the following <A HREF="http://javaplugin.sourceforge.net/">Java plugin</a>. Compared with Chime, Jmol takes longer to load, and may sometimes require a reload before all the applets on a page are properly displayed. However, Jmol is more versatile than Chime, and will see increasing use. To access a pop-up menu use the right button on a PC or do a control-click on a Mac while the cursor is inside the display frame.<br /><A HREF="http://jmol.sourceforge.net">Jmol</A> is an open source molecular structure viewer from Sourceforge.';
+
+var txt=new Array()
+txt[0]='<table><tr><th colspan=2>Time Line</th></tr><tr align="left"><td><span class="bold">2000</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td>olefin metathesis<br />catalytic cross coupling reactions<br />the human genome decoded</td></tr><tr align="left"><td><span class="bold">1980</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td>discovery of fullerenes<br />Woodward Hoffmann rules<br />stereoselective catalytic polymerization<br />xenon hexafluoroplatinate prepared by N. Bartlett</td></tr><tr align="left"><td><span class="bold">1960</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td>applications of photochemistry<br />structure of vitamin B12 <br />conformational analysis<br />DNA double helix described<br />X-ray of DNA obtained by Rosalind Franklin <br />nuclear magnetic resonance, Purcell & Bloch<br />the protein alpha-helix is described<br />partition chromatography<br />E. Fermi builds the first fission reactor</td></tr><tr align="left"><td><span class="bold">1940</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td>W. Carothers discovers nylon<br />L. Hammett defines physical organic chemistry<br />Pauling&#8217;s Nature of the Chemical Bond<br />catalytic cracking of petroleum<br />Lewis and Bronsted acid-base theories<br />organolithium compounds are made<br />Bohr atomic orbital shell model <br />H. Staudinger describes polymers<br />A. Fleming discovers penicillin</td></tr><tr align="left"><td><span class="bold">1920</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td>Lewis defines a covalent bond<br />the Haber synthesis of ammonia<br />Grignard reagents are made<br />spectroscopic methods are used</td></tr><tr align="left"><td><span class="bold">1900</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td>Gomberg observes a free radical<br />E. Fischer&#8217;s elucidation of glucose<br />Hoffman prepares aspirin<tr align="left"><td><span class="bold">1880</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td>configuration of optical isomers<br />Miescher discovers DNA<br />Mendeleev&#8217;s periodic table</td></tr><tr align="left"><td><span class="bold">1860</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td>Kekule structural formulas<br />Perkin synthesizes mauve<br />Pasteur resolves (&#177;)-tartaric acid<br />Goodyear vulcanizes rubber</td></tr><tr align="left"><td><span class="bold">1840</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td>Wohler synthesizes urea<br />Faraday discovers benzene<tr align="left"><td><span class="bold">1820</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td>Avogadro&#8217;s law<br />Dalton&#8217;s atomic theory<tr align="left"><td><span class="bold">1800</span></td><td> &nbsp; </td></tr></table>'
+
+
+txt[1]='<table><tr><tr><th colspan=2><font color="darkgreen">Nobel Prize</font></th></tr><tr align="left"><td> &nbsp; </td><td><font color="darkgreen">R. Heck,  E. Negishi & A. Suzuki <div class="level7">Pd catalyzed cross coupling</div><br />Y. Chauvin, R. Grubbs & R. Schrock <div class="level7">olefin metathesis</div><br />W. Knowles, R. Noyori & B. Sharpless <div class="level7">chiral catalysis</div></font></td></tr><tr align="left"><td><span class="bold">2000</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td><font color="darkgreen">R. Curl, H. Kroto & R. Smalley <div class="level7">fullerenes</div><br />G. Olah<div class="level6">carbocation chemistry</div><br />R. Ernst <div class="level6">nmr techniques</div><br />E.J. Corey <div class="level6">organic synthesis</div><br />D.Cram, J-M. Lehn & C. Pedersen <div class="level6">structure-specific interactions </div><br />R. Merrifield<div class="level6">peptide synthesis</div><br />K. Fukui & R. Hoffmann<div class="level6">theory of concerted reactions</div></font></td></tr><tr align="left"><td><span class="bold">1980</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td><font color="darkgreen">P. Berg W. Gilbert & F. Sanger<div class="level6">DNA studies</div><br />H.C. Brown & G. Wittig<div class="level6">boron & phosphorus reagents</div><br />J. Cornforth & V. Prelog<div class="level6">reaction stereochemistry</div><br />E.O. Fischer & G. Wilkinson<div class="level6">organometallic sandwich compounds</div><br />D. Barton & O. Hassel<div class="level6">conformational analysis</div><br />R. Mulliken<div class="level6">molecular orbital theory</div><br />R. Woodward<div class="level6">organic synthesis</div><br />D. Hodgkin<div class="level6">X-ray structure determination</div><br />K. Ziegler & G. Natta<div class="level6">catalytic polymerization </div><br />M. Perutz & J. Kendrew<div class="level6">protein structure</div><br />F. Crick, J. Watson & M. Wilkins<div class="level6">DNA structure</div><br />M. Calvin<div class="level6">photosynthesis</div></font></td></tr><tr align="left"><td><span class="bold">1960</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td><font color="darkgreen">F. Sanger<div class="level6">structure of insulin</div><br />A. Todd<div class="level6">nucleotide chemistry</div><br />V. duVigneaud<div class="level6">protein hormones</div><br />L. Pauling<div class="level6">structure & bonding</div><br />H. Staudinger<div class="level6">macromolecular chemistry</div><br />F. Bloch & E. Purcell<div class="level6">nmr spectroscopy</div><br />O. Diels & K. Alder<div class="level6">diene cycloadditions</div><br />R. Robinson<div class="level6">natural product chemistry</div></font></td></tr><tr align="left"><td><span class="bold">1940</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td><font color="darkgreen">A. Butenandt & L. Ruzicka<div class="level6">steroid hormones and terpenes</div><br />R. Kuhn<div class="level6">carotenoids and vitamins</div><br />W. Haworth & P. Karrer<div class="level6">carbohydrates and vitamins</div><br />H. Urey<div class="level6">discovery of deuterium</div><br />H. Fischer<div class="level6">studies of haemin & chlorophyll</div><br />H. Windaus<div class="level6">structure of sterols</div><br />H. Wieland<div class="level6">structure of bile acids</div><br /> F. Aston<div class="level6">mass spectrometric analysis</div></td></tr><tr align="left"><td><span class="bold">1920</span></td><td> &nbsp; </td></tr><tr align="left"><td> &nbsp; </td><td><font color="darkgreen">F. Haber<div class="level6">synthesis of ammonia</div><br />R. Willstatter<div class="level6">chlorophyll & plant pigments</div><br />V. Grignard & P. Sabatier<div class="level6">Mg reagents & hydrogenation catalysts</div><br />M. Curie<div class="level6">isolation of radium</div><br />O. Wallach<div class="level6">study of alicyclic compounds</div><br />J. von Baeyer<div class="level6">organic dyestuffs</div><br />E. Fischer<div class="level6">study of purines & sugars</div><br />J. vant Hoff<div class="level6">chemical dynamics</div></td></tr><tr align="left"><td><span class="bold">1900</span></td><td> &nbsp; </td></tr></table>'
+
+function changetxt()
+{
+newtxt=document.getElementById('time').innerHTML=txt[a]
+} 
+
+
+var m=1;
+var a=0
+function chng() {
+m=m+1
+a=(m-1);
+document.images[0].src="Images/butn"+m+".gif"
+if (m>=2) {
+m=0
+}
+}
+
+
+function chngtxt(txt)   {
+
+document.getElementById('para1').innerHTML=txt;
+}
+// --> </script>
+
+<link rel="stylesheet" href="Styles/legacy-index.css">
+
+<link rel="stylesheet" href="Styles/edvibe.css">
+<script src="Styles/edvibe.js" defer></script>
+
+<style id="ev-index">
+#contents{min-width:0}
+#main{display:grid;gap:clamp(14px,2vw,22px);margin:1rem auto;max-width:1280px}
+@media(min-width:1000px){#main{grid-template-columns:270px 1fr 1fr;align-items:start}}
+#col1,#col2,#col3{float:none!important;width:auto!important;min-width:0!important;margin:0!important;padding:1.1rem 1.2rem!important;background:var(--ev-surface);border:1px solid var(--ev-border)!important;border-radius:var(--ev-radius);box-shadow:var(--ev-shadow-sm)}
+#col1 h3,#col2 h3,#col3 h3{display:inline-block;font-family:var(--ev-font-head);font-size:1.18rem;color:var(--ev-ink);padding-bottom:.35rem;border-bottom:2px solid var(--ev-yellow);margin-top:.1rem}
+#col2 p,#col3 p{margin:.45rem 0}
+#col2 p>a>span.bold,#col3 p>a>span.bold,#col2 p>span.bold,#col3 p>span.bold{display:block;font-family:var(--ev-font-head);font-weight:600;color:var(--ev-deep);font-size:1.02rem;margin-top:.65rem;padding-bottom:.15rem;border-bottom:1px dashed var(--ev-border)}
+html[data-theme="dark"] #col2 p>a>span.bold,html[data-theme="dark"] #col3 p>a>span.bold,html[data-theme="dark"] #col2 p>span.bold,html[data-theme="dark"] #col3 p>span.bold{color:var(--ev-green)}
+#col2>div[class^=level],#col3>div[class^=level]{margin:.12rem 0;font-size:.93rem;line-height:1.5}
+#menu{width:auto;height:auto;margin:0;border:0;background:transparent;font-weight:400}
+#menu ul{list-style:none;margin:0;padding:0}
+#menu li{margin:.1rem 0}
+#menu li a{display:block;padding:.42rem .7rem;border-radius:8px;font-weight:500;font-size:.93rem;color:var(--ev-link);text-decoration:none;transition:background-color .12s,color .12s}
+#menu li a:hover{background:var(--ev-yellow-soft);color:var(--ev-yellow-dark);text-decoration:none}
+html[data-theme="dark"] #menu li a:hover{color:var(--ev-yellow)}
+#para1{font-size:.88rem;color:var(--ev-muted)}
+.ev-quick{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:clamp(10px,1.6vw,16px);margin:1.1rem auto;max-width:1280px}
+#col1 .box4{border-left:4px solid var(--ev-green);padding:1rem 1.1rem}
+#col1 .box3{max-height:none;overflow:visible}
+#footer table{max-width:100%}
+#footer td{padding:.25em .5em}
+</style>
+</head>
+
+<body>
+<A  NAME="start"></A>
+
+<section class="ev-hero">
+<div style="flex:1 1 340px">
+<p class="ev-eyebrow">Virtual Textbook of Organic Chemistry</p>
+<h1>All-in-One Organic Chemistry</h1>
+<p>A comprehensive, interactive virtual textbook with animations, molecular models, spectroscopy tools and practice problems — free for students everywhere.</p>
+<p style="margin-top:1.15rem;display:flex;gap:.6rem;flex-wrap:wrap">
+<a class="ev-cta" href="textindx.htm">Browse Chapters</a>
+<a class="ev-cta ev-cta--ghost" href="Questions/problems.htm">Practice Problems</a>
+<a class="ev-cta ev-cta--ghost" href="#indx">Alphabetical Index</a>
+</p>
+</div>
+<div class="ev-hero-media"><img src="Styles/edvibe/hero-banner.png" alt="Molecular model illustration" width="426" height="379"></div>
+</section>
+
+<h2 style="border-bottom:0;margin-top:2rem">Explore by Topic</h2>
+<div class="ev-quick">
+<a class="ev-toc-card" href="intro2.htm#start"><span class="ev-badge">Fundamentals</span><h4>Structure &amp; Bonding</h4><span class="ev-toc-sub">Electron configurations, valence, charge distribution</span></a>
+<a class="ev-toc-card" href="intro3.htm#strc4"><span class="ev-badge">Fundamentals</span><h4>Shape, Isomers &amp; Resonance</h4><span class="ev-toc-sub">Molecular geometry, isomerism, orbitals</span></a>
+<a class="ev-toc-card" href="physprop.htm#exp3"><span class="ev-badge">Fundamentals</span><h4>Physical Properties</h4><span class="ev-toc-sub">Intermolecular forces, boiling points, solubility</span></a>
+<a class="ev-toc-card" href="react1.htm#rx1"><span class="ev-badge">Core</span><h4>Chemical Reactivity</h4><span class="ev-toc-sub">Classification, mechanisms, acid-base, energy</span></a>
+<a class="ev-toc-card" href="nomen1.htm#start"><span class="ev-badge">Core</span><h4>Nomenclature</h4><span class="ev-toc-sub">Alkanes, cycloalkanes, alkenes, alkynes</span></a>
+<a class="ev-toc-card" href="sterisom.htm#start"><span class="ev-badge">Core</span><h4>Stereoisomers</h4><span class="ev-toc-sub">Configuration, conformation, chirality</span></a>
+<a class="ev-toc-card" href="addene1.htm#add1"><span class="ev-badge">Reactions</span><h4>Alkenes &amp; Alkynes</h4><span class="ev-toc-sub">Additions, oxidation, reduction, radicals</span></a>
+<a class="ev-toc-card" href="alhalrx1.htm#hal1"><span class="ev-badge">Reactions</span><h4>Alkyl Halides</h4><span class="ev-toc-sub">S<sub>N</sub>1/S<sub>N</sub>2 substitution, elimination</span></a>
+<a class="ev-toc-card" href="alcohol1.htm#alcnom"><span class="ev-badge">Reactions</span><h4>Alcohols, Ethers &amp; Phenols</h4><span class="ev-toc-sub">Substitution, elimination, oxidation</span></a>
+<a class="ev-toc-card" href="benzrx1.htm#benz1"><span class="ev-badge">Reactions</span><h4>Aromatic Chemistry</h4><span class="ev-toc-sub">Electrophilic substitution, fused rings</span></a>
+<a class="ev-toc-card" href="amine1.htm#aminom"><span class="ev-badge">Reactions</span><h4>Amines</h4><span class="ev-toc-sub">Basicity, alkylation, diazonium chemistry</span></a>
+<a class="ev-toc-card" href="aldket1.htm#aknom"><span class="ev-badge">Reactions</span><h4>Aldehydes &amp; Ketones</h4><span class="ev-toc-sub">Nucleophilic addition, enolate chemistry</span></a>
+<a class="ev-toc-card" href="crbacid1.htm#crbacd1"><span class="ev-badge">Reactions</span><h4>Carboxylic Acids &amp; Derivatives</h4><span class="ev-toc-sub">Acyl substitution, Claisen condensation</span></a>
+<a class="ev-toc-card" href="Spectrpy/spectro.htm#intro"><span class="ev-badge">Analysis</span><h4>Spectroscopy</h4><span class="ev-toc-sub">MS, UV-Vis, IR and NMR spectroscopy</span></a>
+<a class="ev-toc-card" href="biomol.htm"><span class="ev-badge">Special topics</span><h4>Biomolecules</h4><span class="ev-toc-sub">Carbohydrates, lipids, proteins, nucleic acids</span></a>
+<a class="ev-toc-card" href="polymers.htm#polmr1"><span class="ev-badge">Special topics</span><h4>Synthetic Polymers</h4><span class="ev-toc-sub">Addition &amp; condensation polymers</span></a>
+</div>
+
+<div id="contents">
+<div id="main">
+<div id="col1">
+<div class="box4">
+<div class="level7"><h4 style="margin-top:.2rem">Quick Menu</h4></div>
+	<div id="menu">
+		<ul>
+			<li><A 
+HREF="Questions/MOLEDITOR/brwsrtst.htm" title="checks the applets and other display symbols used in this text">Browser Test Page</a></li>
+
+			<li><A HREF="Intro/intrindx.htm" title="a non-technical review of important principles">
+For the Novice</a></li>
+
+			<li><A HREF="javascript:chngtxt(x)" title="the subject covered in the right hand column">
+Functional Groups</a></li>
+
+			<li><A HREF="#indx" title="jump to the index">
+Alphabetical Index</a></li>
+
+			<li><A HREF="#top1" title="subjects not covered in the tables on the right">
+Other Topics</a></li>
+
+			<li><A HREF="Questions/problems.htm" title="all the interactive problems and more in one site">Problem Collection</A></li>	
+			<li><A HREF="textindx.htm" title="a textbook organization">
+TextBook Format</a></li>	
+			<li><A HREF="https://edvibe.co.ke/OrgPage/tables.htm" title="useful ltables">
+Useful Data Tables</a></li>	
+			<li><A HREF="https://edvibe.co.ke/OrgPage/web_pages.htm" title="useful links">
+Useful Web Site Links</a></li>	
+			<li><A HREF="javascript:chngtxt(y)" title="the Jmol rendering applet">About Jmol</a></li>
+			<li><A HREF="cem&soc.htm" title="Chemicals, Society & Risk">Chemicals & Risk</a></li>
+			<li><A 
+HREF="htmlJ/jsmol/jsmol.htm" title="a javascript version">Molecular Model Viewer</A></li>
+			<li><A 
+HREF="http://www.organicdivision.org/" title="ACS division of organic chemistry">Division of Organic Chemistry</a> </li>
+		</ul> 
+	</div>
+<p id="para1" style="margin-top:.9rem">&#8226; For the best experience use a modern browser on any screen size.<br />
+&#8226; Use the sun/moon button in the header to switch dark mode.</p>
+
+<div class="ev-callout" style="margin:.9rem 0"><p style="margin:0">At various points throughout this text, links to supplementary information or special topics will be located in shaded boxes of this kind.</p></div>
+<hr />
+<div class="box3" id='time'>
+<table><tr><th colspan=2>Time Line</th></tr>
+<tr align="left"><td><span class="bold">2000</span></td><td> &nbsp; </td></tr>
+<tr align="left"><td> &nbsp; </td><td>olefin metathesis<br />
+catalytic cross coupling reactions<br />
+the human genome decoded</td></tr>
+<tr align="left"><td><span class="bold">1980</span></td><td> &nbsp; </td></tr>
+<tr align="left"><td> &nbsp; </td><td>discovery of fullerenes<br />
+Woodward Hoffmann rules<br />
+stereoselective catalytic polymerization<br />
+xenon hexafluoroplatinate prepared by N. Bartlett</td></tr>
+<tr align="left"><td><span class="bold">1960</span></td><td> &nbsp; </td></tr>
+<tr align="left"><td> &nbsp; </td><td>
+applications of photochemistry<br />
+structure of vitamin B12 <br />
+conformational analysis<br />
+DNA double helix described<br />
+X-ray of DNA obtained by R. Franklin <br />
+nuclear magnetic resonance spectroscopy<br />
+the alpha-helix is described<br />
+partition chromatography <br />
+E. Fermi builds the first fission reactor
+</td></tr>
+<tr align="left"><td><span class="bold">1940</span></td><td> &nbsp; </td></tr>
+<tr align="left"><td> &nbsp; </td><td>W. Carothers discovers nylon<br />
+L. Hammett defines physical organic chemistry<br />
+Pauling's Nature of the Chemical Bond<br />
+catalytic cracking of petroleum<br />
+Lewis and Bronsted acid-base theories<br />
+organolithium compounds are made<br />
+Bohr atomic orbital shell model <br />
+H. Staudinger describes polymers<br />
+A. Fleming discovers penicillin
+</td></tr>
+<tr align="left"><td><span class="bold">1920</span></td><td> &nbsp; </td></tr>
+<tr align="left"><td> &nbsp; </td><td>
+G.N. Lewis defines a covalent bond<br />
+Haber synthesis of ammonia<br />
+Grignard reagents are made<br />
+infrared spectroscopy begins
+</td></tr>
+<tr align="left"><td><span class="bold">1900</span></td><td> &nbsp; </td></tr>
+<tr align="left"><td> &nbsp; </td><td>M. Gomberg observes a free radical<br />
+Fischer's elucidation of hexoses<br />
+Hoffman prepares aspirin
+<tr align="left"><td><span class="bold">1880</span></td><td> &nbsp; </td></tr>
+<tr align="left"><td> &nbsp; </td><td>configuration of optical isomers<br />
+Miescher discovers DNA<br />
+Mendeleev's periodic table</td></tr>
+<tr align="left"><td><span class="bold">1860</span></td><td> &nbsp; </td></tr>
+<tr align="left"><td> &nbsp; </td><td>Kekule structural formulas<br />
+Perkin synthesizes mauve<br />
+Pasteur resolves (&#177;)-tartaric acid<br />
+Goodyear vulcanizes rubber</td></tr>
+<tr align="left"><td><span class="bold">1840</span></td><td> &nbsp; </td></tr>
+<tr align="left"><td> &nbsp; </td><td>Wohler synthesizes urea<br />
+Faraday discovers benzene
+<tr align="left"><td><span class="bold">1820</span></td><td> &nbsp; </td></tr>
+<tr align="left"><td> &nbsp; </td><td>Avogadro's law<br />
+Dalton's atomic theory
+<tr align="left"><td><span class="bold">1800</span></td><td> &nbsp; </td></tr>
+</table></div>
+
+<span class="ac"><p><A HREF="javascript:chng();avascript:changetxt('newtxt(a)')"><IMG SRC="Images/butn1.gif" BORDER=0 /></A></p></span>
+</div>
+</div>
+
+<div id="col2">
+<span class="ac"><H3>General Principles</H3></span>
+ <p>
+<A HREF="intro2.htm#start"><span class="bold">Structure & Bonding</span></A>
+<div class="level2"><A HREF="intro2.htm#strc1">Electron Configurations of Atoms</A></div>
+<div class="level2"><A HREF="intro2.htm#strc2">Chemical Bonding & Valence</A></div>
+<div class="level2"><A HREF="intro2.htm#strc3">Charge Distribution in Molecules</A></div>
+<div class="level10"><A HREF="intro2.htm#prb1">Practice Problems</A></div>
+<div class="level2"><A HREF="intro3.htm#strc4">The Shape of Molecules</A></div>
+<div class="level2"><A HREF="intro3.htm#strc5">Isomers</A></div>
+<div class="level2"><A HREF="intro3.htm#strc6">Analysis of Molecular Formulas</A></div>
+<div class="level2"><A HREF="intro3.htm#strc7">Resonance</A></div>
+<div class="level2"><A HREF="intro3.htm#strc8">Atomic and Molecular Orbitals</A></div>
+<div class="level10"><A HREF="intro3.htm#prb2">Practice Problems</A></div></p>
+
+<p><A HREF="physprop.htm#exp3"><span class="bold">Intermolecular Forces</span></A>
+<div class="level2"><A HREF="physprop.htm#exp4">Boiling & Melting Points</A></div>
+<div class="level2"><A HREF="physprop.htm#exp5">Hydrogen Bonding</A></div>
+<div class="level2"><A HREF="physprop.htm#xtal1">Crystalline Solids</A></div>
+<div class="level2"><A HREF="physprop.htm#exp6">Water Solubility</A></div>
+<div class="level10"><A HREF="physprop.htm#prp2b">Practice Problems</A></div> </p>
+
+<p><A HREF="react1.htm#rx1"><span class="bold">Chemical Reactivity</span></A>
+<div class="level2"><A HREF="react1.htm#rx2">Reaction Classification</A></div>
+<div class="level4"><A HREF="react1.htm#rx2a">By Structural Change</A></div>
+<div class="level4"><A HREF="react1.htm#rx2ab">By Reaction Type</A></div>
+<div class="level6"><A HREF="react1.htm#rx1b">Acid-Base Reactions</A></div>
+<div class="level6"><A HREF="react1.htm#rx2b">Oxidations & Reductions</A></div>
+<div class="level4"><A HREF="react1.htm#rx3">By Functional Group</A></div>
+<div class="level2"><A HREF="react1.htm#rx4a">Reaction Variables</A></div>
+<div class="level4"><A HREF="react1.htm#rx4a">Reactants & Reagents</A></div>
+<div class="level4"><A HREF="react1.htm#rx4ab">Product Selectivity</A></div>
+<div class="level4"><A HREF="react1.htm#rx4ac">Other Variables</A></div>
+<div class="level6"><A HREF="react2.htm#rx7c">Reaction Rate</A></div>
+<div class="level6"><A HREF="react1.htm#rx4c">Intermediates</A></div>
+<div class="level6"><A HREF="react2.htm#rx7">Reaction Energetics</A></div>
+<div class="level8"><A HREF="react2.htm#rx6">Bond Energy</A></div>
+<div class="level6"><A HREF="react1.htm#rx4ac">Electronic Effects</A></div>
+<div class="level6"><A HREF="react1.htm#rx4ac">Steric Effects</A></div> 
+<div class="level6"><A HREF="react1.htm#rx4ac">Solvent Effects</A></div>
+<div class="level2"><A HREF="react1.htm#rx4">Reaction Mechanisms</A></div>
+<div class="level4"><A HREF="react1.htm#rx4b">Curved Arrow Notation</A></div>
+<div class="level4"><A HREF="react1.htm#rx4c">Reactive Intermediates</A></div>
+<div class="level2"><A HREF="react2.htm#rx5">Reaction Illustrations</A></div>
+<div class="level4"><A HREF="react3.htm#rx10">Nucleophilicity & Basicity</A></div>
+<div class="level4"><A HREF="react3.htm#rx11">Acid-Base Catalysis</A></div>
+<div class="level10"><A HREF="react1.htm#prb3">Practice Problems</A></div>
+</p>
+
+<p><A HREF="react3.htm#rx8"><span class="bold">Aromaticity</span></A>
+<div class="level2"><A HREF="react3.htm#rx8">Benzene</A></div>
+<div class="level2"><A HREF="react3.htm#rx8c">Fused Ring Compounds</A></div>
+<div class="level2"><A HREF="react3.htm#rx9">Other Aromatic Compounds</div>
+<div class="level2"><A HREF="react3.htm#rx9a">The H&uuml;ckel Rule</A></div>
+<div class="level10"><A HREF="react3.htm#prb3b">Practice Problems</A></div></p>
+
+<p><A HREF="nomen1.htm#start"><span class="bold">Nomenclature</span></A>
+<div class="level2"><A HREF="nomen1.htm#nom1">Alkanes</A></div>
+<div class="level2"><A HREF="nomen1.htm#nom2">Cycloalkanes</A></div>
+<div class="level10"><A HREF="nomen1.htm#prp4">Practice Problems</A></div>
+<div class="level2"><A HREF="nomen1.htm#nom3">Alkenes & Alkynes</A></div>
+<div class="level2"><A HREF="nomen1.htm#nom4">Substituted Benzenes</A></div>
+<div class="level2"><A HREF="nomexmp2.htm#nom5">Other Functional Groups</A></div>
+<div class="level10"><A HREF="nomen1.htm#prp5">Practice Problems</A></div></p>
+
+
+<p><A HREF="sterisom.htm#start"><span class="bold">Stereoisomers Part I</span></A>
+<div class="level2"><A HREF="sterisom.htm#isom1">Alkene Configurational Isomers</A></div>
+<div class="level2"><A HREF="sterisom.htm#isom3">Cycloalkane Configurational Isomers</A></div>
+<div class="level10"><A HREF="sterisom.htm#prp6">Practice Problems</A></div>
+<div class="level2"><A HREF="sterisom.htm#isom4">Conformational Isomers</A></div>
+<div class="level4"><A HREF="sterisom.htm#isom5">Ethane</A></div>
+<div class="level4"><A HREF="sterisom.htm#isom6">Butane</A></div>
+<div class="level4"><A HREF="sterism2.htm#isom7">Cycloalkanes</A></div>
+<div class="level4"><A HREF="sterism2.htm#isom8">Substituted Cyclohexanes</A></div>
+<div class="level10"><A HREF="sterism2.htm#prp7">Practice Problems</A></div></p>
+
+<p><A HREF="sterism2.htm#isom9"><span class="bold">Stereoisomers Part II</span></A>
+<div class="level2"><A HREF="sterism2.htm#isom10">Chirality & Symmetry</A></div>
+<div class="level4"><A HREF="symmetry/symmtry.htm#start">Symmetry Elements</A></div>
+<div class="level2"><A HREF="sterism2.htm#isom11">Enantiomorphism</A></div>
+<div class="level2"><A HREF="sterism2.htm#isom12">Optical Activity</A></div>
+<div class="level2"><A HREF="sterism3.htm#isom13">Configurational Nomenclature</A></div>
+<div class="level2"><A HREF="sterism3.htm#isom14">Compounds with Several Stereogenic Centers</A></div>
+<div class="level2"><A HREF="sterism3.htm#isom15">Stereogenic Nitrogen</A></div>
+<div class="level2"><A HREF="sterism3.htm#isom16">Fischer Projection Formulas</A></div>
+<div class="level2"><A HREF="sterism3.htm#isom17">Achiral Diastereomers</A></div>
+<div class="level2"><A HREF="sterism3.htm#isom17b">Other Configurational Notations</A></div>
+<div class="level2"><A HREF="sterism3.htm#isom18">Resolution</A></div>
+<div class="level2"><A HREF="sterism3.htm#isom19">Conformational Enantiomorphism</A></div>
+<div class="level10"><A HREF="sterism3.htm#prp8">Practice Problems</A></div></p>
+<p><A HREF="suppmnt1.htm#exp2"><span class="bold">Summary of Isomerism</span></A></p>
+<p><br /></p>
+<A  NAME="top1"></A>
+<hr />
+<span class="maroon"><span class="ac"><h3>Other Topics</h3></span></span>
+<div class="level2"><p><span class="bold"><A HREF="Spectrpy/spectro.htm#intro">Spectroscopy</A></span></p></div>
+<div class="level4"><A HREF="Spectrpy/MassSpec/masspec1.htm#ms1">
+Mass Spectrometry</A></div>
+<div class="level4"><A HREF="Spectrpy/UV-Vis/spectrum.htm#uv1">Ultraviolet-Visible Spectroscopy</A></div>
+<div class="level4"><A HREF="Spectrpy/InfraRed/infrared.htm#ir1">Infrared Spectroscopy</A></div>
+<div class="level4"><A HREF="Spectrpy/nmr/nmr1.htm#nmr1">Nuclear Magnetic Resonance Spectroscopy</A></div>
+<div class="level2"><p><span class="bold"><A HREF="biomol.htm">Biochemicals</A></span></p></div>
+<div class="level4"><A HREF="carbhyd.htm#carb1">Carbohydrates</A></div>
+<div class="level4"><A HREF="lipids.htm#lipid1">Lipids</A></div>
+<div class="level4"><A HREF="proteins.htm#aacd1">Proteins and Amino Acids</A></div>
+<div class="level4"><A HREF="nucacids.htm#nacd1">Nucleic Acids</A></div>
+<div class="level2"><p><span class="bold"><A HREF="nonionic.htm#rad1">Free Radicals</A></span></p></div>
+<div class="level2"><p><span class="bold"><A HREF="heterocy.htm#top1">Heterocycles</A></span></p></div>
+<div class="level2"><p><span class="bold"><A HREF="polymers.htm#polmr1">Macromolecules</A></span></p></div>
+<div class="level2"><p><span class="bold"><A HREF="orgmetal.htm#met10">Organometallic Chemistry</A></span></p></div>
+<div class="level2"><p><span class="bold"><A HREF="pericycl.htm#top1">Pericyclic Reactions</A></span></p></div>
+<div class="level2"><p><span class="bold"><A HREF="photchem.htm">Photochemistry</A></span></p></div>
+<div class="level2"><p><span class="bold"><A HREF="rearang2.htm#top1">Anionic Rearrangements</A></span></p></div>
+<div class="level2"><p><span class="bold"><A HREF="rearrang.htm#top1">Cationic Rearrangements</A></span></p></div>
+<div class="level2"><p><span class="bold"><A HREF="synth1.htm">Introduction to Synthesis</A></span></p></div>
+<div class="level4"><A HREF="synth2.htm">Principles of Modern Synthesis</A></div>
+<div class="level4"><A HREF="sterslct.htm#top1">Stereoselective Synthesis</A></div>
+<p> <br /></p>
+<hr />
+ <span class="ac"><span class="maroon"><H4>Concerning Practice Problems</H4></span></span>
+<p>The practice problems provided as part of this text are chiefly interactive, and should provide a useful assessment of the reader's understanding at various stages in the development of the subject. Some of these problems make use of a <span class="bold">Molecular Editor</span> drawing application created by Peter.Ertl. To practice using this editor <A 
+HREF="https://edvibe.co.ke/virttxtjml/Questions/MOLEDITOR/practice.htm" 
+>Click Here</A>.<br />
+Since problem solving is essential to achieving an effective mastery of the subject, it is recommended that many more problems be worked. Most organic chemistry textbooks contain a broad assortment of suitable problems, and paperback collections of practice problems are also available. In addition, a large collection of multiple choice problems may be viewed <A 
+HREF="Questions/problems/indexam.htm">Here</a>.<br /> 
+The following button will activate a collection of problems concerning the reactivity of common functional groups. 
+<span class="ac"><INPUT TYPE="button"  NAME="answr" VALUE="Reaction Problems" onClick="window.location='Questions/RxChoose/rxindex.htm'" /></span> </p>
+<p><span class="bold"><span class="green">The following web-sites provide nice collections of problems and answers:</span></span><br />
+<A HREF="http://pages.towson.edu/ladon/orgrxs/reactsum.htm">Towson University-reaction quizzes and summaries</A><br />
+<A HREF="http://www.chemistry.ohio-state.edu/organic/flashcards/">Ohio State University-electronic flashcards</A><br />
+<A HREF="http://www.chem.wisc.edu/~concept/topicsorg.html ">University of Wisconsin-concept questions</A><br />
+<A HREF="http://web.chem.ucla.edu/~harding/index.html">UCLA-helpful advice</A><br />
+<A HREF="http://www.nd.edu/~smithgrp/structure/workbook.html">Notre Dame-spectroscopy problems</A></p>  
+<P>For a useful collection of study materials, including links to other sites, visit the 
+<A HREF="http://www.stolaf.edu/depts/chemistry/courses/toolkits/247/">Organic chemistry tool-kit</A>. Prepared by Bob Hanson, St. Olaf College</P>
+</div>
+
+
+<div id="col3">
+<span class="ac"><H3>Functional Group Reactions</H3></span>
+           <p><span class="bold">Alkanes</span>                             
+<div class="level2"><A HREF="funcrx1.htm#combust">Combustion</A> </div>
+<div class="level2"><A HREF="funcrx1.htm#halogen">Substitution (of H by halogen)</A></div>
+<div class="level10"><A HREF="funcrx1.htm#prbx">Practice Problems</A></div></p>
+
+<p><span class="bold">Alkenes</span>
+<div class="level2"><A HREF="addene1.htm#add1">Electrophilic Additions</A></div>
+<div class="level4"><A HREF="addene1.htm#add1b">Strong Br&oslash;nsted Acids</A></div>
+<div class="level4"><A HREF="addene1.htm#add2">Lewis Acids (non-Proton Electrophiles)</A></div>
+<div class="level6"><A HREF="addene1.htm#add3b">Electrophilic Halogen Reagents</A></div>
+<div class="level6"><A HREF="addene2.htm#add3c">Other Electrophilic Reagents</A></div>
+<div class="level2"><A HREF="addene2.htm#add4">Reduction</A></div>
+<div class="level2"><A HREF="addene2.htm#add4b">Oxidation</A></div>
+<div class="level2"><A HREF="addene2.htm#add5">Radical Additions</A></div>
+<div class="level4"><A HREF="addene2.htm#add6">Allylic Substitution</A></div>
+<div class="level10"><A HREF="addene2.htm#add7">Practice Problems</A></div>
+
+<div class="level1"><A HREF="addene2.htm#dien1"><span class="bold">Dienes</span></A></div>
+<div class="level2"><A HREF="addene2.htm#dien2">Addition Reactions</A></div>
+<div class="level2"><A HREF="addene2.htm#dien3">Diels-Alder Cycloaddition</A></div>
+<div class="level10"><A HREF="addene2.htm#dien4">Practice Problems</A></div></p>
+
+<p><span class="bold">Alkynes</span>
+<div class="level2"><A HREF="addyne1.htm#add1">Addition Reactions</A></div>
+<div class="level4"><A HREF="addyne1.htm#add1">Hydrogenation</A></div>
+<div class="level4"><A HREF="addyne1.htm#add1bb">Electrophiles</A></div>
+<div class="level4"><A HREF="addyne1.htm#add3">Hydration & Tautomerism</A></div>
+<div class="level4"><A HREF="addyne1.htm#add4">Hydroboration</A></div>
+<div class="level2"><A HREF="addyne1.htm#add6">Nucleophilic Addition & Reduction</A></div>
+<div class="level2"><A HREF="addyne1.htm#add7">Acidity of Terminal Alkynes (Substitution of H)</A></div>
+<div class="level10"><A HREF="addyne1.htm#add8">Practice Problems</A></div>
+</p>
+
+<p><span class="bold">Alkyl Halides</span>
+<div class="level2"><A HREF="alhalrx1.htm#hal0">Occurrence</A></div>
+<div class="level2"><A HREF="alhalrx1.htm#hal1">General Reactivity</A></div>
+<div class="level2"><A HREF="alhalrx1.htm#hal2">Substitution(of X)</A></div>
+<div class="level4"><A HREF="alhalrx1.htm#hal2e">S<SUB>N</SUB>2 Mechanism</A></div>
+<div class="level4"><A HREF="alhalrx2.htm#hal5">S<SUB>N</SUB>1 Mechanism</A></div>
+<div class="level2"><A HREF="alhalrx3.htm#hal6">Elimination (of HX)</A></div>
+<div class="level6"><A HREF="alhalrx3.htm#hal9">Summary of Substitution vs. Elimination</A></div>
+<div class="level2"><A HREF="alhalrx4.htm#hal10">Substitution by Metals</A></div>
+<div class="level2"><A HREF="alhalrx4.htm#hal11">Elimination Reactions of Dihalides</A></div>
+<div class="level10"><A HREF="alhalrx4.htm#hal13">Practice Problems</A></div>   </p>
+
+<p><span class="bold">Alcohols</span>
+<div class="level2"><A HREF="alcohol1.htm#alcnom">Nomenclature</A></div>
+<div class="level2"><A HREF="alcohol1.htm#alcrx1">Reactions of Alcohols</A></div>
+<div class="level4"><A HREF="alcohol1.htm#alcrx1">Substitution of the Hydroxyl H</A></div>
+<div class="level4"><A HREF="alcohol1.htm#alcrx2">Substitution of the Hydroxyl Group</A></div>
+<div class="level4"><A HREF="alcohol1.htm#alcrx3">Elimination of Water</A></div>
+<div class="level4"><A HREF="alcohol2.htm#alcrx4">Oxidation of Alcohols</A></div>
+<div class="level2"><A HREF="alcohol2.htm#alcrx5">Reactions of Phenols</A></div>
+<div class="level4"><A HREF="alcohol2.htm#alcrx5">Acidity of Phenols</A></div>
+<div class="level4"><A HREF="alcohol2.htm#alcrx5b">Ring Substitution of Phenols</A></div>
+<div class="level4"><A HREF="alcohol2.htm#alcrx5c">Oxidation to Quinones</A></div>
+<div class="level10"><A HREF="alcohol2.htm#alcrx6">Practice Problems</A></div></p>
+
+<p><span class="bold">Ethers</span>
+<div class="level2"><A HREF="alcohol2.htm#ethnom">Nomenclature</A></div>
+<div class="level2"><A HREF="alcohol2.htm#ethrx1">Preparation of Ethers</A></div>
+<div class="level2"><A HREF="alcohol2.htm#ethrx2">Reactions of Ethers</A></div>
+<div class="level4"><A HREF="alcohol2.htm#ethrx2">Acid Cleavage</A></div>
+<div class="level4"><A HREF="alcohol2.htm#ethrx2">Peroxide Formation</A></div>
+<div class="level4"><A HREF="alcohol2.htm#ethrx2b">Epoxide Reactions</A></div>
+<div class="level10"><A HREF="alcohol2.htm#ethprb">Practice Problems</A></div></p>
+
+<p><span class="bold">Thiols & Sulfides</span>
+<div class="level2"><A HREF="special2.htm#top1a">Sulfur Analogs of Alcohols & Ethers</A></div></p>
+
+<p><span class="bold">Benzene & Derivatives</span>
+<div class="level2"><A HREF="benzrx1.htm#benz1">Electrophilic Substitution</A></div>
+<div class="level4"><A HREF="benzrx1.htm#benz1b">A Substitution Mechanism</A></div>
+<div class="level4"><A HREF="benzrx1.htm#benz3">Reactions of Substituted Benzenes</A></div>
+<div class="level4"><A HREF="benzrx1.htm#benz7">Reaction Characteristics</A></div>
+<div class="level4"><A HREF="benzrx2.htm#benz8">Reactions of Disubstituted Rings</A></div>
+<div class="level2"><A HREF="benzrx2.htm#benz9a">Reactions of Substituent Groups</A></div>
+<div class="level2"><A HREF="benzrx2.htm#benz11">Nucleophilic Substitution, Elimination & Addition Reactions</A></div>
+<div class="level10"><A HREF="benzrx2.htm#benz12">Practice Problems</A></div></p>
+
+<p><span class="bold">Amines</span>
+<div class="level2"><A HREF="amine1.htm#aminom">Nomenclature & Structure</A></div>
+<div class="level2"><A HREF="amine1.htm#amin2">Properties of Amines</A></div>
+<div class="level4"><A HREF="amine1.htm#amin2">Boiling Point & Solubility</A></div>
+<div class="level4"><A HREF="amine1.htm#amin3">Basicity of Nitrogen Compounds</A></div>
+<div class="level4"><A HREF="amine1.htm#amin4">Acidity of Nitrogen Compounds</A></div>
+<div class="level4"><A HREF="amine1.htm#amin5">Important Reagent Bases</A></div>
+<div class="level2"><A HREF="amine1.htm#amin6">Reactions of Amines</A></div>
+<div class="level4"><A HREF="amine1.htm#amin6">Electrophilic Substitution at Nitrogen</A></div>
+<div class="level2"><A HREF="amine1.htm#amin6b">Preparation of 1&#186;-Amines</A></div>
+<div class="level2"><A HREF="amine1.htm#amin6c">Preparation of 2&#186; & 3&#186;-Amines</A></div>
+<div class="level10"><A HREF="amine1.htm#amin6d">Practice Problems</A></div>
+<div class="level2"><A HREF="amine2.htm#amin7">Reactions with Nitrous Acid</A></div>
+<div class="level2"><A HREF="amine2.htm#amin8">Reactions of Aryl Diazonium Intermediates</A></div>
+<div class="level2"><A HREF="amine2.htm#amin9">Elimination Reactions of Amines</A></div>
+<div class="level2"><A HREF="amine2.htm#amin10">Oxidation States of Nitrogen</A></div>
+<div class="level10"><A HREF="amine2.htm#amin11">Practice Problems</A></div></p>
+
+<p><span class="bold">Phosphines</span>
+<div class="level2"><A HREF="special2.htm#top1c">Phosphorus Analogs of Amines</A></div></p>
+
+<p><span class="bold">Aldehydes & Ketones</span>
+<div class="level2"><A HREF="aldket1.htm#aknom">Nomenclature of Aldehydes & Ketones</A></div>
+<div class="level2"><A HREF="aldket1.htm#akoc1">Occurrence of Aldehydes & Ketones</A></div>
+<div class="level4"><A HREF="aldket1.htm#akoc1">Natural Products</A></div>
+<div class="level2"><A HREF="aldket1.htm#akoc2">Synthetic Preparation</A></div>
+<div class="level2"><A HREF="aldket1.htm#prop">Properties of Aldehydes & Ketones</A></div>
+<div class="level2"><A HREF="aldket1.htm#rx1">Reversible Addition Reactions</A></div>
+<div class="level4"><A HREF="aldket1.htm#rx1">Hydration & Hemiacetal Formation</A></div>
+<div class="level4"><A HREF="aldket1.htm#rx1a">Acetal Formation</A></div>
+<div class="level4"><A HREF="aldket1.htm#rx1b">Imine Formation</A></div>
+<div class="level4"><A HREF="aldket1.htm#rx1c">Enamine Formation</A></div>
+<div class="level4"><A HREF="aldket1.htm#rx1d">Cyanohydrin Formation</A></div>
+<div class="level2"><A HREF="aldket1.htm#rx2">Irreversible Addition Reactions</A></div>
+<div class="level4"><A HREF="aldket1.htm#rx2a">Complex Metal Hydrides</A></div>
+<div class="level4"><A HREF="aldket1.htm#rx2b">Organometallic Reagents</A></div>
+<div class="level2"><A HREF="aldket1.htm#rx3">Carbonyl Group Modification</A></div>
+<div class="level4"><A HREF="aldket1.htm#rx3a">Wolff-Kishner Reduction</A></div>
+<div class="level4"><A HREF="aldket1.htm#rx3b">Clemmensen Reduction</A></div>
+<div class="level4"><A HREF="aldket1.htm#rx3c">Hydrogenolysis of Thioacetals</A></div>
+<div class="level2"><A HREF="aldket1.htm#rx4">Oxidations</A></div>
+<div class="level2"><A HREF="aldket2.htm#rx5">Reactions at the &#945;-Carbon</A></div>
+<div class="level4"><A HREF="aldket2.htm#rx5b">Mechanism of Electrophilic &#945;-Substitution</A></div>
+<div class="level4"><A HREF="aldket2.htm#rx6">The Aldol Reaction</A></div>
+<div class="level4"><A HREF="aldket2.htm#rx7">Ambident Enolate Anions</A></div>
+<div class="level4"><A HREF="aldket2.htm#rx8">Alkylation of Enolate Anions</A></div>
+<div class="level10"><A HREF="aldket2.htm#alktprb">Practice Problems </A></div></p>
+
+<p><span class="bold">Carboxylic Acids</span>
+<div class="level2"><A HREF="crbacid1.htm#crbacd1">Nomenclature of Carboxylic Acids</A></div>
+<div class="level2"><A HREF="crbacid1.htm#crbacd2b">Natural Products</A></div>
+<div class="level2"><A HREF="crbacid1.htm#crbacd3">Related Derivatives</A></div>
+<div class="level2"><A HREF="crbacid1.htm#crbacd4">Physical Properties</A></div>
+<div class="level4"><A HREF="crbacid1.htm#crbacd4b">Acidity</A></div>
+<div class="level2"><A HREF="crbacid1.htm#crbacd5">Preparation of Carboxylic Acids</A></div>
+<div class="level2"><A HREF="crbacid1.htm#crbacd6">Reactions of Carboxylic Acids</A></div>
+<div class="level4"><A HREF="crbacid1.htm#crbacd6">Salt Formation</A></div>
+<div class="level4"><A HREF="crbacid1.htm#crbacd6b">Substitution of Hydroxyl Hydrogen</A></div>
+<div class="level4"><A HREF="crbacid1.htm#crbacd6c">Substitution of the Hydroxyl Group</A></div>
+<div class="level4"><A HREF="crbacid1.htm#crbacd7">Reduction & Oxidation</A></div>
+<div class="level10"><A HREF="crbacid1.htm#crbacd8">Practice Problems </A></div></p>
+
+<p><span class="bold">Carboxylic Derivatives</span>
+<div class="level2"><A HREF="crbacid2.htm#acderv">Physical Properties</A></div>
+<div class="level2"><A HREF="crbacid2.htm#nomen">Nomenclature</A></div>
+<div class="level2"><A HREF="crbacid2.htm#react">Reactions of Carboxylic Acid Derivatives</A></div>
+<div class="level4"><A HREF="crbacid2.htm#react1">Acyl Group Substitution</A></div>
+<div class="level6"><A HREF="crbacid2.htm#react1b">Mechanism</A></div>
+<div class="level4"><A HREF="crbacid2.htm#react2">Reduction</A></div>
+<div class="level6"><A HREF="crbacid2.htm#react2a">Catalytic Reduction</A></div>
+<div class="level6"><A HREF="crbacid2.htm#react2b">Metal Hydride Reduction</A></div>
+<div class="level6"><A HREF="crbacid2.htm#react2c">Diborane Reduction</A></div>
+<div class="level4"><A HREF="crbacid2.htm#react3">Reaction with Organometallic Reagents</A></div>
+<div class="level10"><A HREF="crbacid2.htm#crbacd8">Practice Problems </A></div>
+<div class="level2"><A HREF="crbacid3.htm#react5">Reactions at the &#945; Carbon</A></div>
+<div class="level4"><A HREF="crbacid3.htm#react5b">Acidity of &#945; C&#8211;H</A></div>
+<div class="level4"><A HREF="crbacid3.htm#react6">The Claisen Condensation</A></div>
+<div class="level2"><A HREF="crbacid3.htm#react7">Synthesis Applications</A></div>
+<div class="level10"><A HREF="crbacid3.htm#acidprb">Practice Problems</A></div></p>
+</div>
+</div>
+
+<div id="footer"> 
+<A  NAME="indx"></A>
+ <H4>Alphabetical Index </H4>
+<TABLE width=760 align="center"><TR><TD nowrap><A HREF="intro1b.htm#indxa">[ <B>A</B> ]</A></TD> 
+<TD nowrap><A HREF="intro1b.htm#indxb">[ <B>B</B> ]</A></TD>
+<TD nowrap><A HREF="intro1b.htm#indxc">[ <B>C</B> ]</A></TD> 
+<TD nowrap><A HREF="intro1b.htm#indxd">[ <B>D</B> ]</A></TD>
+<TD nowrap><A HREF="intro1b.htm#indxe">[ <B>E</B> ]</A></TD> 
+<TD nowrap><A HREF="intro1b.htm#indxf">[<B>F-G</B>]</A></TD>
+<TD nowrap><A HREF="intro1b.htm#indxh">[ <B>H</B> ]</A></TD>  
+<TD nowrap><A HREF="intro1b.htm#indxi">[<B>I-K</B>]</A></TD>
+<TD nowrap><A HREF="intro1b.htm#indxl">[ <B>L</B> ]</A></TD>
+<TD nowrap><A HREF="intro1b.htm#indxm">[ <B>M</B> ]</A></TD>
+<TD nowrap><A HREF="intro1b.htm#indxn">[<B>N-O</B>]</A></TD> 
+<TD nowrap><A HREF="intro1b.htm#indxp">[ <B>P</B> ]</A></TD>   
+<TD nowrap><A HREF="intro1b.htm#indxq">[<B>Q-R</B>]</A></TD>
+<TD nowrap><A HREF="intro1b.htm#indxs">[ <B>S</B> ]</A></TD>
+<TD nowrap><A HREF="intro1b.htm#indxt">[ <B>T</B> ]</A></TD> 
+<TD nowrap><A HREF="intro1b.htm#indxu">[<B>U-V</B>]</A></TD> 
+<TD nowrap><A HREF="intro1b.htm#indxw">[<B>W-Z</B>]</A></TD> 
+</TR></TABLE>
+<span class="footer"><p>These pages are the property of The Edvibe Team.<br />
+&copy;2025 The Edvibe Team, The pages are licensed by CC BY-NC-SA 4.0. [creativecommons.org]
+
+  &nbsp; (most recent revision 6/2010)<BR />
+Comments, questions and errors should
+be sent to <A HREF="mailto:contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<br />
+These pages are provided to the IOCD to assist in capacity building in chemical education. 06/06/2025</p></span>
+</div>
+
+<!-- Creative Commons License -->
+<br />
+This work is licensed under a Creative Commons License CC BY-NC-SA 4.0 </a>.
+<!-- /Creative Commons License -->
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:title> Virtual Text of Organic Chemistry</dc:title>
+   <dc:date>1999</dc:date>
+   <dc:description> An interactive textbook covering the usual topics treated in a college sophomore-level course. Links are offered to advanced discussions of selected topics.</dc:description>
+   <dc:creator><Agent>
+      <dc:title> <dc:rights>The Edvibe Team</dc:rights></dc:title>
+   </Agent></dc:creator>
+  
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <dc:source rdf:resource="https://edvibe.co.ke/virttxtjml/vtxtindex.htm"/>
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+</License>
+</rdf:RDF>
+
+<P><IMG SRC="Images/pixel.gif" WIDTH=10 HEIGHT=160 / ></P>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var Txt="";
+var txt1="Which of the above descriptions may be applied to these isomeric structural formulas. Check all that fit\r"
+var txt2="Note that these structures are Fischer projections."
+var smiles = "";
+var j="";
+var k=0;
+var m=0;
+var jme = "0 0";
+
+	function process(form) {
+
+		if (form.q1[0].checked) {
+jme = "5 4 C 2.18 -5.82 C 3.40 -5.12 C 4.61 -5.82 C 5.82 -5.12 O 4.61 -7.22 1 2 1 2 3 1 3 4 1 3 5 -1|5 4 C 10.75 -6.16 C 11.96 -5.46 C 13.18 -6.16 C 14.39 -5.46 O 11.96 -4.06 1 2 1 2 3 1 3 4 1 2 5 -2";
+j="1";
+}
+		if (form.q1[1].checked) {
+jme = "9 9 C 5.75 -7.76 C 5.75 -6.36 C 4.54 -5.66 C 3.32 -6.36 C 3.32 -7.76 C 4.54 -8.46 C 3.31 -4.96 C 2.00 -6.80 Cl 4.54 -4.26 1 2 1 2 3 1 3 4 1 4 5 1 5 6 2 6 1 1 4 7 1 4 8 1 3 9 -1|9 9 C 13.64 -7.64 C 13.64 -6.24 C 12.43 -5.54 C 11.22 -6.24 C 11.22 -7.64 C 12.43 -8.34 C 11.21 -4.84 C 9.95 -6.83 Cl 10.01 -8.34 1 2 1 2 3 2 3 4 1 4 5 1 5 6 1 6 1 1 4 7 1 4 8 1 5 9 -1";
+ j="2";
+}
+		if (form.q1[2].checked) {
+jme = "9 9 C 5.52 -6.90 C 5.95 -5.57 C 4.82 -4.75 C 3.68 -5.57 C 4.12 -6.90 C 3.80 -3.78 C 5.79 -3.74 O 7.15 -4.08 O 5.40 -2.39 1 2 1 2 3 1 3 4 1 4 5 1 5 1 2 3 6 -1 3 7 -2 7 8 1 7 9 2|9 9 C 13.19 -6.73 C 13.62 -5.40 C 12.49 -4.58 C 11.36 -5.40 C 11.79 -6.73 C 13.25 -8.13 C 14.59 -6.65 O 12.07 -8.88 O 14.50 -8.77 1 2 1 2 3 1 3 4 2 4 5 1 5 1 1 1 6 -1 1 7 -2 6 8 2 6 9 1";
+ j="3";
+}
+		if (form.q1[3].checked) {
+jme = "11 10 C 4.68 -4.70 C 4.68 -6.10 O 6.08 -6.10 H 3.28 -6.10 C 4.68 -7.50 O 6.08 -7.50 H 3.28 -7.50 C 4.68 -8.90 O 5.89 -4.00 O 3.47 -9.60 O 5.89 -9.60 1 2 1 2 3 1 2 4 1 2 5 1 5 6 1 5 7 1 5 8 1 1 9 1 8 10 2 8 11 1|11 10 C 14.10 -4.65 C 14.10 -6.05 H 12.70 -6.05 O 15.50 -6.05 O 15.31 -3.95 O 12.89 -3.95 C 14.10 -7.45 H 15.50 -7.42 O 12.70 -7.45 C 14.10 -8.85 O 12.89 -9.55 1 2 1 2 3 1 2 4 1 1 5 2 1 6 1 2 7 1 7 8 1 7 9 1 7 10 1 10 11 1";
+ j="4";
+}
+		if (form.q1[4].checked) {
+jme = "10 9 C 4.68 -4.70 C 4.68 -6.10 H 6.08 -6.10 O 3.28 -6.10 C 4.68 -7.50 O 6.08 -7.50 H 3.28 -7.50 C 4.68 -8.90 O 5.89 -4.00 C 5.89 -9.60 1 2 1 2 3 1 2 4 1 2 5 1 5 6 1 5 7 1 5 8 1 1 9 1 8 10 1|10 9 C 14.09 -4.65 C 14.09 -6.05 H 12.69 -6.05 O 15.49 -6.05 C 12.88 -3.95 C 14.09 -7.45 H 15.49 -7.42 O 12.69 -7.45 C 14.09 -8.85 O 12.88 -9.55 1 2 1 2 3 1 2 4 1 1 5 1 2 6 1 6 7 1 6 8 1 6 9 1 9 10 1";
+ j="5";
+}
+		if (form.q1[5].checked) {
+jme = "12 11 C 4.69 -6.10 C 4.69 -7.50 H 6.09 -7.50 O 3.29 -7.50 C 4.69 -8.90 C 6.09 -8.90 Cl 3.29 -8.90 C 4.69 -10.30 O 3.29 -6.10 H 6.09 -6.10 C 4.69 -4.70 N 4.69 -3.30 1 2 1 2 3 1 2 4 1 2 5 1 5 6 1 5 7 1 5 8 1 1 9 1 1 10 1 1 11 1 11 12 3|12 11 C 14.13 -4.70 C 14.13 -6.10 H 12.74 -6.10 O 15.53 -6.10 C 14.13 -7.50 Cl 12.74 -7.50 C 14.13 -8.90 H 15.53 -4.70 O 12.74 -4.70 C 14.13 -3.30 N 14.13 -10.30 C 15.53 -7.48 1 2 1 2 3 1 2 4 1 2 5 1 5 6 1 5 7 1 1 8 1 1 9 1 1 10 1 7 11 3 5 12 1";
+ j="6";
+}
+		if (form.q1[6].checked) {
+jme = "8 7 C 2.86 -7.85 C 4.07 -7.15 C 5.28 -7.85 C 6.50 -7.15 C 7.71 -7.85 O 4.07 -5.74 O 6.50 -5.74 C 1.65 -7.15 1 2 1 2 3 1 3 4 1 4 5 1 2 6 -1 4 7 -2 1 8 1|8 7 C 13.36 -6.10 C 14.57 -5.40 C 15.79 -6.10 O 14.57 -4.00 C 13.36 -7.50 C 12.15 -8.20 O 12.15 -9.60 C 10.94 -7.50 1 2 1 2 3 1 2 4 -2 1 5 1 5 6 1 6 7 -1 6 8 1";
+ j="7";
+}
+		if (form.q1[7].checked) {
+jme = "13 14 C 4.63 -6.64 C 4.63 -5.24 C 3.42 -4.54 C 2.20 -5.24 C 2.20 -6.64 C 3.42 -7.34 C 5.96 -7.07 C 6.78 -5.94 C 5.96 -4.80 C 4.67 -3.84 C 4.66 -8.04 O 6.39 -3.47 Br 3.42 -8.74 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 7 8 1 8 9 1 2 9 1 1 7 1 2 10 -1 1 11 -2 9 12 2 6 13 -1|13 14 C 14.54 -7.81 C 14.54 -6.41 C 13.33 -5.71 C 12.12 -6.41 C 12.12 -7.81 C 13.33 -8.51 C 13.04 -4.34 C 11.64 -4.20 C 11.08 -5.48 C 10.90 -7.11 C 14.57 -5.06 O 13.97 -3.30 Br 10.90 -8.51 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 7 8 1 8 9 1 4 9 1 3 7 1 4 10 -1 3 11 -2 7 12 2 5 13 -2";
+ j="8";
+}
+		if (form.q1[8].checked) {
+jme = "9 8 C 2.20 -7.11 C 3.41 -6.41 C 4.62 -7.11 C 5.84 -6.41 C 7.05 -7.11 C 8.26 -6.41 O 5.84 -5.01 O 3.41 -5.01 O 7.05 -8.51 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 4 7 -1 2 8 -1 5 9 -1|9 8 C 11.88 -6.16 C 13.09 -5.46 C 14.30 -6.16 C 14.30 -7.56 C 15.52 -8.26 C 16.73 -7.56 O 13.09 -4.06 O 15.52 -5.46 O 15.52 -9.66 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 2 7 -2 3 8 -1 5 9 -2";
+ j="9";
+}
+		if (form.q1[9].checked) {
+jme = "15 14 C 4.68 -5.04 C 4.68 -6.44 H 6.08 -6.44 O 3.28 -6.44 C 4.68 -7.84 H 6.08 -7.84 O 3.28 -7.84 C 4.68 -9.24 O 5.89 -9.94 O 3.28 -5.04 H 6.08 -5.04 C 4.68 -3.64 O 3.47 -9.94 O 5.90 -2.94 O 3.47 -2.94 1 2 1 2 3 1 2 4 1 2 5 1 5 6 1 5 7 1 5 8 1 8 9 2 1 10 1 1 11 1 1 12 1 8 13 1 12 14 2 12 15 1|15 14 C 13.59 -5.15 C 13.59 -6.55 H 12.19 -6.55 O 14.99 -6.55 C 13.59 -7.96 H 14.99 -7.93 O 12.19 -7.96 C 13.59 -9.36 H 14.99 -5.15 O 12.19 -5.15 C 13.59 -3.75 O 14.80 -3.05 O 12.38 -3.05 O 12.37 -10.06 O 14.80 -10.06 1 2 1 2 3 1 2 4 1 2 5 1 5 6 1 5 7 1 5 8 1 1 9 1 1 10 1 1 11 1 11 12 2 11 13 1 8 14 1 8 15 2";
+ j="10";
+}
+		if (form.q1[10].checked) {
+jme = "14 13 C 4.68 -5.04 C 4.68 -6.44 H 6.08 -6.44 O 3.28 -6.44 C 4.68 -7.84 O 6.08 -7.84 H 3.28 -7.84 C 4.68 -9.24 O 5.89 -9.94 O 3.28 -5.04 H 6.08 -5.04 C 4.68 -3.64 O 3.47 -9.94 O 5.90 -2.94 1 2 1 2 3 1 2 4 1 2 5 1 5 6 1 5 7 1 5 8 1 8 9 2 1 10 1 1 11 1 1 12 1 8 13 1 12 14 1|14 13 C 14.09 -5.71 C 14.09 -7.11 H 12.69 -7.11 O 15.49 -7.11 C 14.09 -8.52 H 15.49 -8.49 O 12.69 -8.52 C 14.09 -9.92 H 15.49 -5.71 O 12.69 -5.71 C 14.09 -4.31 O 15.30 -3.61 O 12.88 -3.61 O 12.88 -10.62 1 2 1 2 3 1 2 4 1 2 5 1 5 6 1 5 7 1 5 8 1 1 9 1 1 10 1 1 11 1 11 12 2 11 13 1 8 14 1";
+ j="11";
+}
+		if (form.q1[11].checked) {
+jme = "11 11 C 5.80 -7.39 C 6.67 -6.30 C 6.36 -4.93 C 5.10 -4.32 C 3.83 -4.93 C 3.52 -6.30 C 4.40 -7.39 Cl 7.45 -4.06 Cl 6.40 -8.65 O 2.16 -6.61 O 2.74 -4.06 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 7 1 7 1 1 3 8 -1 1 9 -1 6 10 -2 5 11 -2|11 11 C 13.64 -7.73 C 14.51 -6.63 C 14.20 -5.27 C 12.94 -4.66 C 11.67 -5.27 C 11.36 -6.63 C 12.24 -7.73 Cl 12.94 -3.26 Cl 15.87 -6.94 O 11.63 -8.99 O 10.00 -6.94 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 7 1 7 1 1 4 8 -1 2 9 -2 7 10 -1 6 11 -2";
+ j="12";
+}
+}
+
+function processJme() {
+  document.JME.readMolecule(document.form.jme_output.value);
+}
+function chkvar() { 
+  document.JME.readMolecule(jme);
+}
+function getTxt() { 
+   if ((j==4)||(j==5)||(j==6)||(j==10)||(j==11)) {
+    document.form.result1.value = txt1 + txt2;
+}else{
+    document.form.result1.value = txt1;
+}
+}
+
+function check(input)  {
+	if (k!=0){
+		k=0;
+}
+	if (m!=0){
+		m=0;
+}
+	if (input.a1.checked){
+		k=k+1
+}
+  if (input.a2.checked){
+ 	k=k+2
+}
+ if (input.a3.checked){
+		k=k+4
+}
+  if (input.a4.checked){
+ 	k=k+8
+}
+	   if (input.a5.checked){
+		k=k+16
+		m=m+1;
+}
+ 	if (input.a6.checked){
+ 	k=k+32
+		m=m+2;
+}
+}
+
+function processAnsw(input) { 
+if  ((j == 1 && k==20)||(j==2 && k==20)||(j==3 && k==35)||(j==4 && k==24)||(j==5 && k==20)||(j==6 && k==18)||(j==7 && k==50)||(j==8 && k==19)||(j==9 && k==20)||(j==10 && k==40)||(j==11 && k==24)||(j==12 && k==56)) { 
+var Txt="Correct Answer! ";
+}else{
+if ((j==3 && k==33)||(j == 6 && k==16)||(j == 7 && k==48)||(j == 8 && k==17)) {
+var Txt="Your selections are correct, but not complete.\rDo these structures represent stereoisomers?";
+}else{ 
+if  ((j == 1 && m==1)||(j==2 && m==1)||(j==3 && m==2)||(j==4 && m==1)||(j==5 && m==1)||(j==6 && m==1)||(j==7 && m==3)||(j==8 && m==1)||(j==9 && m==1)||(j==10 && m==2)||(j==11 && m==1)||(j==12 && m==3)) { 
+var Txt="You have identified chirality correctly.\rBut your other responses are either incorrect or incomplete. ";
+}else{
+if (k<=15) {
+var Txt="You have not indicated the chirality of these compounds!";
+}else{
+if ((j==7 && k==34)||(j == 7 && k==18)||(j == 12 && k==40)||(j == 12 && k==24)) {
+var Txt="Your selections are partially correct.\rReconsider your chirality assignment.";
+}else{
+if (k==0) {
+var Txt="You have not made any selections!";
+}else{
+var Txt="Wrong! Try again.";
+}
+}
+}
+}
+}
+}
+	 document.form.result1.value = Txt;
+}
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<TITLE>Stereochemistry</TITLE>
+<body>
+
+<div class="ctr"><H3>Comparing Stereoformulas</H3></div>
+<P>Select a problem from the list on the right. When the <B>Show Problem</B> button is pressed two isomeric structural formulas will be displayed in the drawing window. You are asked to designate the relationship of these isomers by checking one or more of the six descriptions beneath the window. Your answer is evaluated by the <b>Check Answer</b> button.</P>
+<p><TABLE WIDTH=700 CELLPADDING=4 ALIGN=center BORDER><TR><TH ROWSPAN=13>
+<FORM METHOD="POST" NAME="form" ONSUBMIT="return false;">
+<P><input type="button" value="Show Problem" onClick="process(form);chkvar(); getTxt()"> &nbsp; &nbsp; &nbsp;  <INPUT TYPE="RESET" VALUE="Reset" onClick="document.JME.reset()"> &nbsp; &nbsp; &nbsp; <input type="button" value="Check Answer" onClick="check(this.form);processAnsw(this.form);"></P>
+<applet code="JME.class" name="JME" archive="JME.jar" width=336, height=328>
+<param name= "options"  value="multipart">
+You have to enable Java and JavaScript on your machine !
+</applet>
+<div class="ctr">
+<P><table cellpadding=7 border><tr><th><p>
+<span class="fc-blue fs-4"> They are identical  <INPUT TYPE=CHECKBOX NAME="a1" VALUE="answ">  &nbsp; &nbsp; &nbsp; &nbsp;They are not stereoisomers <INPUT TYPE=CHECKBOX NAME="a2" VALUE="answ"><br>
+They are enantiomers <INPUT TYPE=CHECKBOX NAME="a3" VALUE="answ">   &nbsp; &nbsp; &nbsp; They are diastereomers <INPUT TYPE=CHECKBOX NAME="a4" VALUE="answ"><br>
+One (or both) is chiral <INPUT TYPE=CHECKBOX NAME="a5" VALUE="answ">   &nbsp; &nbsp; &nbsp; &nbsp; One (or both) is achiral <INPUT TYPE=CHECKBOX NAME="a6" VALUE="answ"></span></p></th></tr></table></P>
+<P><TEXTAREA WRAP NAME="result1" ROWS="4" COLS="62"></TEXTAREA><BR>
+
+</div></P></TH>
+<TH NOWRAP ><B><span class="fc-blue fs-4"> Problem 1</span></B> 
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob" checked>
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 2</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 3</span></B> 
+  <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 4</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 5</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 6</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 7</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 8</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 9</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 10</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH NOWRAP><B><span class="fc-blue fs-4"> Problem 11</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+
+
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 12</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="prob">
+</TH></TR>
+
+</TABLE>
+<BR>
+
+</form>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.
+<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>
+

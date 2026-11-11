@@ -1,0 +1,250 @@
+<!doctype html>
+
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Styles/modern.css">
+<Title>Chemical Reactivity</Title>
+
+
+<script language=javascript> <!--Hide
+
+var i=1;
+function chng1() {
+i=i+1
+document.images[2].src="Images/stdstat"+i+".gif"
+if (i>=3) {
+i=0
+}
+}
+function calc(input) {
+var txt="";
+var aa=(input.a.value);
+var bb=(input.b.value);
+if (input.a.value == "" && input.b.value == "") {
+txt = "";
+input.a.value = txt;
+input.b.value = txt;
+}
+
+if (input.a.value != "" && input.b.value != "") {
+alert("Clear Input")
+}
+ 
+if (input.a.value >= 1000001 && input.b.value == "") {
+alert("Free Energy change is negative, and larger than -8 kcal/mol") 
+}
+
+if (input.a.value <= 0.0000009 && input.b.value == "") {
+alert("Free Energy change is greater than 8 kcal/mol")
+}
+
+if (input.b.value >= 8.1 && input.a.value == "") {
+alert("The Equilibrium Constant is less than 0.000001") 
+}
+
+if (input.b.value <= -8.1 && input.a.value == "") {
+alert("The Equilibrium Constant is greater than 900,000")
+}
+
+if (input.a.value != "" && input.b.value == "") {
+var txt =-parseInt((Math.log(aa)*0.59070)*1000)/1000;
+input.b.value = txt;
+}
+
+if (input.a.value == "" && input.b.value != "") {
+var txt = parseInt((Math.exp(bb/-0.59070))*10000)/10000;
+input.a.value = txt;
+}
+}
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+}
+
+
+
+
+// --> </script>
+
+<link rel="stylesheet" href="Styles/edvibe.css">
+<script src="Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<FORM>
+<A NAME="enrg1"></A>
+<BR><P><TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="4"><TR><TH BGCOLOR="ffaaaa" ><H2 >The Nature of Energy</H2></TH></TR></TABLE></P><BR>
+<P>The term <B>energy</B> is commonly used in many contexts, but seldom in a carefully defined way. A speeding automobile has considerable <B>kinetic energy</B>, which is transformed into <B>heat energy</B> and <B>work</B> (the rupture of metal and plastic components) if the automobile crashes into a stone wall. The accumulated snow on a steep mountain has considerable <B>potential energy</B> which is transformed in an avalanche, first into kinetic energy, and then into heat and work as the avalanche engulfs forests and towns and eventually comes to a stop. In these examples the potential and kinetic energy are directed (oriented) in space, whereas the heat produced consists of random molecular motion.</P>
+<P>Chemists are concerned with both physical and chemical change, and the energy associated with each. Chemical reactions involve the making and breaking of covalent bonds, and these transformations have energy consequences. <B>Heat</B> is the most common form of energy introduced into or released from chemical reactions, but light, electrical current and sound may also be involved.  Also, if gases are produced in a reaction, the work done on the surroundings by volume expansion becomes part of the energy balance, and in explosive reactions may be the major consequence. Of course, reactions that consume a gas undergo an opposite volume change, and work is done on the system by the surroundings.<BR>
+The traditional unit of heat energy used by organic chemists is the <B>calorie</B>, defined as the heat needed to raise the temperature of 1 gram of water 1&#186; C (from 14.5 to 15.5&#186; C).  Note that this calorie is not the same as the Calorie used for nutritional purposes. In 1960 a revised metric system based on seven fundamental units was established, and the resulting <B>SI</B> unit of energy is the <B>joule (J)</B>. The joule is a unit derived from three fundamental units (mass, length and time), and is used to express both heat and work. Both the joule and the calorie are small, so it is common to express heats of reaction in kilocalories (kcal) or kilojoules (kJ) per mole. To interconvert calories (or kcal) and joules (or kJ) the following factors may be used:</P>
+<p><TABLE align = "center"> <TR><TH><p>1 cal = 4.184 J</p></TH><TD WIDTH=70> &nbsp;  </TD><TH><p>1 J = 0.2388 cal</p></TH></TR></TABLE></p>
+<P>The covalent bond of a chlorine molecule provides a simple example of the energy changes associated with bond breaking and bond making. This bond may be broken by the introduction of heat or light energy, and it has been determined that 57.9 kcal/mol (242.3 kJ/mol) is required for <A HREF="react1.htm#rx4b">bond  homolysis</A>. This is shown in the first of the following reactions; the second reaction describes the reverse bond-forming process. The energy absorbed or released in these reactions is referred to as the <B>bond dissociation energy</B>. If the bond dissociation energy is introduced from the surroundings in the form of heat, the transformation is said to be <B>endothermic</B>. If heat passes from the system to the surroundings, the transformation is termed <B>exothermic</B>. Using our initial terminology, we may say that the covalently bonded system has a lower potential energy than the unbonded diatomic system. Indeed, It is helpful to think of exothermic reactions as proceeding from a higher energy (less stable) reactant state to a lower energy (more stable) product state, as shown in the diagram on the right.  Some basic principles of reaction energetics were <A HREF="react2.htm#rx7">discussed earlier</A>.</P>
+<p><TABLE CELLPADDING=6 ALIGN="center"><TR><TD NOWRAP><p> Cl<sup>_</sup>Cl &nbsp; + &nbsp; <span class="fc-red">heat</span> &nbsp; <B><sup>____</sup>></B>  &nbsp;  2Cl &#149; </TD><TH NOWRAP><p><sup>&nbsp;</sup>An Endothermic Transformation</p></TH>
+<TD ROWSPAN=2 ALIGN="right" WIDTH=300><IMG SRC="Images/exoendo.gif" HSPACE=10  ALIGN=right></TD></TR>
+<TR><TD><p> 2Cl &#149;  &nbsp; <B><sup>____</sup>></B>  &nbsp;  Cl<sup>_</sup>Cl &nbsp; + &nbsp;  <span class="fc-red">heat</span></TD> <TH><p><sup>&nbsp;</sup>An Exothermic Transformation</p></TH></TR></TABLE></p>
+<P>In more complex chemical reactions some (or even all) of the bonds that hold together the atoms of reactant and product molecules may be broken while other bonds are formed.  Energy is required to break bonds, and since different bonds have different bond dissociation energies, there is often a significant overall energy change in the course of a reaction.  In the combustion of methane, for example, all six bonds in the reactant molecules are broken, and six new bonds are formed in the product molecules (equation 1). To analyze such reactions we need to keep track of and evaluate heat changes in a precise and systematic manner.</P>
+<p><TABLE CELLSPACING=8><TR><TD NOWRAP><p><B>(1)</B> &nbsp; CH<SUB>4</SUB> &nbsp;  + &nbsp; 2 O<SUB>2</SUB></p></TD><TD><IMG SRC="Images/arrow.gif"></TD><TD NOWRAP><p>CO<SUB>2</SUB> &nbsp;  +  &nbsp; 2 H<SUB>2</SUB>O  &nbsp; <span class="fc-red"> + &nbsp;  heat</span></p></TD></TR>
+<TR VALIGN=top  Align=center>
+<TD><p>Reactants</p></TD><TD></TD><TD><p>Products</p></TD></TR></TABLE></p>
+<BR><HR>
+
+<A NAME="enrg2"></A>
+<span class="fc-maroon"><div class="ctr"><H2>Thermodynamics</H2></div></span>
+<H3>1. Enthalpy</H3>
+<P>The science that investigates the passage of energy from one system to another, and the transformation of energy from one form to another is called <B>thermodynamics</B>. Classical thermodynamics is a statistical science in which observations are made on macroscopic samples. Heat energy or heat content is designated as <B>enthalpy</B>, symbol <B>H</B>. The enthalpy change in a physical or chemical transformation is written <B>&#916;H</B>, defined as <B>H<SUB>products</SUB> -  H<SUB>reactants</SUB></B>. Because of this formalism, which holds for other thermodynamic functions as well, <span class="fc-blue"><B>exothermic reactions have a negative &#916;H, and endothermic reactions have a positive &#916;H</B></span>. Careful calorimetric measurements of the heat produced by the combustion of methane (equation 1 above) establish a &#916;H = -212.8 kcal/mol for this reaction.<BR>
+In order to consolidate and make use of thermochemical data of this kind, a <B>standard state</B> has been defined. This is taken to be the form in which a substance is stable at 25&#186; C and one atmosphere pressure (760 torr). For solutions the standard state is a 1M concentration. The standard states of some typical substances are listed in the following table.</P>
+<P ALIGN=center><A HREF="javascript:chng1()"><IMG SRC="Images/stdstat1.gif" BORDER=0 ></A></P>
+<P>Care must be taken to identify the most stable phase or form a given substance will assume under standard conditions. In the case of water this is the liquid phase, and for carbon it is graphite, not diamond. The relative enthalpy of different compounds may then be given as a <B>heat of formation</B>, symbol <B>&#916;H&#186;<SUB>f</SUB></B>, as noted in the right hand column. <B>By definition, the heat of formation of an element in its standard state is 0.0 kcal/mol</B>. <SUP>&nbsp;</SUP>Reactions involving elements are then used to determine the &#916;H&#186;<SUB>f</SUB> of the compounds produced.  A small degree sign to the upper right of the enthalpy symbol (e.g. <B>H&#186;</B>) designates a measurement made under standard state conditions.<SUP>&nbsp;</SUP><BR>
+<SUP>&nbsp;</SUP>For examples of direct and indirect determinations of heats of formation <span class="fc-brown">click on the above table</span>. <SUP>&nbsp;</SUP>The first two equations show how the heats of formation of water and carbon dioxide are measured. A second click on the diagram displays an indirect method for determining the &#916;H&#186;<SUB>f</SUB> of methane. </P> 
+
+<A NAME="enrg2b"></A>
+<H3>2. Bond Energies</H3>
+<P>Most heats of formation are negative, reflecting the strong covalent bonds and lower enthalpy that characterizes stable compounds relative to their elements. However, some stable compounds are found to have positive heats of formation, e.g. benzene and condensed ring aromatics, making it unwise to generalize from this data alone. As we have noted, heats of reaction reflect the bond dissociation energies of bonds that are broken and formed in the reaction, but the formalism of setting elemental heats of formation to zero obscures the covalent bond dissociation energies of diatomic elements such as H<SUB>2</SUB>, O<SUB>2</SUB>, N<SUB>2</SUB> and Cl<SUB>2</SUB>. Elements that have solid standard states (e.g. carbon) present an even more complex bond dissociation energy challenge. Fortunately, it is possible to determine the bond dissociation energy of diatomic elements and compounds with precision by non-thermodynamic methods, and together with thermodynamic data such information permits a table of <A HREF="react2.htm#rx6">average bond energies</A> to be assembled. These bond energies or <B>bond dissociation enthalpies</B> are always positive, since they represent the endothermic homolysis of a covalent bond. It must be emphasized that for the common covalent bonds found in polyatomic molecules (e.g. C-H and C-C) these are <B>average</B> dissociation enthalpies, in contrast to specific bond dissociation enthalpies determined for individual bonds in designated compounds. Factors such as hybridization, strain and conjugation may raise or lower these numbers substantially. <BR>
+Common sense suggests that molecules held together by strong covalent bonds will be more stable than molecules constructed from weaker bonds.  Previously we defined bond dissociation energy as the energy required to break a bond into neutral fragments (radicals or atoms).  The sum of all the bond energies of a molecule can therefore be considered its  <B>atomization energy</B>, i.e. the energy required to break the molecule completely into its component atoms.  If this concept is applied to the reactants and products of a reaction, it should be clear that a common atomization state exists, and that the total bond energies of the reactants compared with the bond energies of the products determines the enthalpy change of the reaction.  Thus, if the products have a greater total bond energy than the reactants the reaction will be exothermic, and the opposite is true for an endothermic reaction. The following diagram illustrates this relationship for the combustion of methane. Always remember, <B>a bond energy is energy that must be introduced to break a bond, and is not a component of a molecule's potential energy</B>.</P>
+<p align=center><IMG SRC="Images/bndenrg1.gif" ></p>
+<P>Bond energies may be used for rough calculations of enthalpies of reaction. To do so the total bond energies of the reactant molecules must be subtracted from the total bond energies of the product molecules, and the resulting sign must be changed. This operation is outlined above for the combustion of methane. To compare such a calculation with an experimental standard enthalpy of reaction, correction factors for heats of condensation (or fusion) must be added to achieve standard state conditions. In the above example, gaseous water must be condensed to the liquid state, releasing 10.5 kcal/mol of heat. Once this is done, a reasonably good <B>estimate</B> of the standard enthalpy change is obtained.<BR>It may be helpful to note that the potential energy of a given molecular system is inversely proportional to its total bond energies. In this sense the potential energy of the methane + oxygen reactants is greater than that of the carbon dioxide + water products. In this reaction, potential energy is lost by conversion to kinetic (heat) energy.</P><BR>
+
+<A NAME="enrg3"></A>
+<H3>3. Activation Energy</H3>
+<P>Thermodynamic calculations and arguments focus only on the initial and final states of a system. The path by which a change takes place is not considered. Intuitively, one might expect strongly exothermic reactions to occur spontaneously, but this is usually not true. For example, the methane combustion described above does not proceed spontaneously, but requires an initiating spark or flame. Once begun, the heat produced by the combustion serves to maintain the reaction until one or both of the reactants are completely consumed. <BR>
+Likewise, benzene has a heat of formation of +11.7 kcal/mol, suggesting that it could decompose spontaneously to hydrogen and carbon. Yet every chemist knows that benzene is a stable liquid that can be purified by distillation at 80&#186; C without decomposition. Clearly, many potentially favorable reactions are prohibited or retarded by substantial energy barriers to the transformation.</P>
+<P> To understand why some reactions occur readily (almost spontaneously), whereas other reactions are slow, even to the point of being unobservable, we need to consider the intermediate stages through which reacting molecules pass on the way to products.<BR>
+Every reaction in which bonds are broken will necessarily have a higher energy <B>transition state</B> on the reaction path that must be traversed before products can form.  This is true for both exothermic and endothermic reactions. In order for the reactants to reach this transition state, energy must be supplied from the surroundings and reactant molecules must orient themselves in a suitable fashion.  The heat energy needed to raise the reactants to the transition state energy level  is called the <B>activation enthalpy, &#916;H<SUP>&#135;</SUP></B>. Further treatment of this subject, and examples of reaction path profiles that illustrate transition states are provided <A HREF="react2.htm#rx7b">elsewhere in this text</A>. However, in these introductory discussions a distinction between enthalpy and "potential energy" is not made. As expected, the rate at which chemical reactions proceed is, in large part, inversely proportional to their activation enthalpies, and is dependent on the concentrations of the reactants. The study of reaction rates is called <A HREF="react2.htm#rx7c"> chemical kinetics</A>. </P>   <BR>
+<H3>4. Stability</H3>
+<P>Common use of the term <B>stability</B> implies an object, system or situation that is likely to remain unchanged for a significant period of time. In chemistry, however, we often refer to two kinds of stability.<BR>
+ &nbsp;  &nbsp;  &nbsp;  &nbsp;  <span class="fc-maroon"><B>Thermodynamic Stability</B> : </span>&nbsp;  The enthalpy or potential energy of a compound relative to a reference state. For exothermic reactions we may say that the products are thermodynamically more stable than the reactants. The opposite would be true for endothermic reactions.<BR>
+ &nbsp;  &nbsp;  &nbsp;  &nbsp; <span class="fc-maroon"><B>Chemical Stability</B> : </span>&nbsp;  The resistance of a compound or mixture of compounds to chemical change (reaction). This is clearly proportional to the activation energies of all possible reactions. As noted above, benzene is thermodynamically unstable compared with elemental carbon and hydrogen, but it is chemically stable under normal laboratory conditions, even when mixed with some reactive compounds such as bromine. Compounds or mixtures that are chemically unstable are often called <B>labile</B>.</P>
+<P>When the rates of reactions and equilibria between reactants and products are carefully examined, it becomes apparent that overall enthalpy changes and enthalpy of activation barriers are not by themselves sufficient to explain the observations. A modified energy function, called <B>free energy</B>, is needed. This thermodynamic function is described in the next two sections.</P> 
+<BR>
+
+<A NAME="enrg4"></A>
+<H3>5. Entropy</H3>
+<P>Enthalpy is not the only thermodynamic function that influences the overall energy changes, rates and equilibria of chemical and physical transformations. Two examples will serve to demonstrate this fact.<BR>
+First, nitrogen pentaoxide is an unstable solid that undergoes a spontaneous and <B>endothermic</B> decomposition to nitrogen dioxide and oxygen, as shown below. Clearly, some factor other than a change in enthalpy must act to favor this decomposition. </P>
+<p><TABLE CELLSPACING=8> <TR><TD><p>N<SUB>2</SUB>O<SUB>5&nbsp; (solid)</SUB></p></TD><TD><IMG SRC="Images/arrow.gif"></TD><TD><p>2 NO <SUB>2&nbsp; (gas)</SUB> &nbsp; + &nbsp; 1/2 O<SUB>2&nbsp; (gas)</SUB></p></TD><TD> </TD><TD><p>&#916;H&#186; = +26.2 kcal/mol</p></TD></TR></TABLE></p>
+<P>Second, the melting of solids (e.g. ice) and the vaporization of liquids (e.g. water) are endothermic processes. Since intermolecular attractions favor the liquefaction of gases and the solidification of liquids by lowering the enthalpy of the condensed phase, our world would be a frozen lump of solid matter were enthalpy the only controlling factor. </P>
+<P><span class="fc-blue"><b>What do these two cases have in common that could account for their behavior?</b></span> <BR>
+In the first example two well-defined molecules in the solid state break apart into five discrete product molecules, all of them in the gaseous state. The second example likewise describes a progression from a highly ordered array of molecules in the solid state to a less ordered assemblage as a liquid, and finally to a nearly random disordered gaseous state. This disposition, favoring disorder, seems to be universal, as evidenced by the failure of a shuffled deck of cards to arrange itself into ordered suits. The thermodynamic name for this tendency toward randomness or disorder is <B>entropy</B>, symbol <B>S</B>. Entropy increases spontaneously, since greater randomness or disorder in a system has a higher statistical probability. Returning to the deck of cards example, the number of different ways 52 cards may be arranged is very large (52!), and only a tiny fraction of these would be ordered in any discernible manner. A disordered state is therefore more probable than an ordered one.<BR>
+ Since the disorder created by molecular motion increases with temperature, the units of entropy, <B>eu</B>, are calories per degree Kelvin per mole. Only differences in entropy have significance, so the standard state entropy of a substance is the difference between its entropy at 298&#186; K (25&#186; C) and its entropy at absolute zero (defined as 0 by the third law of thermodynamics). The standard state entropies of some elements and compounds are given in the following table. Two obvious trends to note are that gases have higher entropies than liquids or solids of the same size, and molecules composed of many atoms have higher entropies than diatomic or triatomic molecules.</P>
+<div class="ctr"><p><TABLE CELLPADDING=5 WIDTH=600 BORDER>
+<CAPTION><H4>Standard State Entropies, S&#186;, of  Representative Substances</H4></CAPTION>
+<TR><TH COLSPAN=2 BGCOLOR="ffeedd"><p>Gases</p></TH><TH COLSPAN=2 BGCOLOR="ddeeff"><p>Liquids</p></TH><TH COLSPAN=2 BGCOLOR="eeffdd"><p>Solids</p></TH></TR>
+<TR><TD>H<SUB>2</SUB></TD><TD NOWRAP>31.2 (cal/deg mole)</TD><TD>Br<SUB>2</SUB></TD><TD NOWRAP>18.4 (cal/deg mole)</TD><TD NOWRAP>C <SUB>graphite</SUB></TD> <TD NOWRAP>1.4 (cal/deg mole)</TD></TR>
+<TR><TD>O<SUB>2</SUB></TD><TD>49.0</TD><TD>H<SUB>2</SUB>O</TD><TD>16.8</TD><TD NOWRAP>C <SUB>diamond</SUB></TD> <TD>0.6</TD></TR>
+<TR><TD>CO<SUB>2</SUB></TD><TD>53.2</TD><TD>Cyclohexane</TD><TD>49.2</TD><TD>I <SUB>2</SUB></TD> <TD>14.0</TD></TR>
+<TR><TD>H<SUB>2</SUB>O</TD><TD>45.2</TD><TD>Benzene</TD><TD>41.9</TD><TD>NaCl</TD> <TD>17.2</TD></TR></TABLE></p></div>
+
+<P> The entropy change in a physical or chemical transformation is written <B>&#916;S</B>, and defined as <B>S<SUB>products</SUB> -  S<SUB>reactants</SUB></B>. This is the same notation used to represent an enthalpy change, and the sign of &#916;S</B> indicates a similar directional change. Thus, a positive &#916;S</B> denotes an increase in entropy on going from reactants to products, while a negative sign is associated with a decrease in entropy. </P>
+<P>It should be noted that a given sign for &#916;S&#186; carries a different interpretation than it does for &#916;H&#186;. Accordingly, a negative &#916;H&#186; is associated with an exothermic and energetically favorable transformation; but a negative &#916;S&#186; indicates an increase in system order (a less random system), and this is entropically unfavorable. Depending on the case to which they apply, these two functions may complement (support) each other or act in opposition. In careful studies of rates and equilibria the consequence of this relationship must be calculated.<BR>
+Because entropy increases proportionally with the randomness or statistical probability of a state, it is useful to identify and describe some common chemical transformations that result in significant changes in entropy (|&#916;S&#186;| is relatively large). Examples of these will be found at the end of this chapter.</P><dir>
+
+<p><b>1. </b> For a given number of total atoms, a process that converts a few large molecules to many smaller molecules proceeds with a significant increase in entropy (&#916;S&#186; is +).<br>
+<b>2. </b> <SUP>&nbsp;</SUP>If the total number of molecules remains unchanged, a process that converts a single molecular species to a mixture of different molecules proceeds with a significant increase in entropy (&#916;S&#186; is +).<br>
+<b>3. </b> In general, a change from a condensed phase (solid or liquid) to a gaseous state will proceed with a significant increase in entropy (&#916;S&#186; is +).<br>
+<b>4. </b> Ionization reactions in solution are complicated by <A HREF="enrgtop.htm#top4"> solvation effects</A>.<SUP>&nbsp;</SUP> The expected increase in entropy from the first factor listed above may be offset by solvent molecule orientation about the ions. This ordering of solvent molecules causes  a decrease in &#916;S&#186;.
+</p></dir>
+<p><TABLE WIDTH=100%  cellpadding =10><TR BGCOLOR="ffebcf"><TD><p>
+The description of entropy given above reflects a traditional or classic view, which is presently undergoing a significant revision. This revision focuses on changes in the microscopic distribution of energy among a large number of translational, rotational and vibrational quantum states. Instead of the macroscopic concept of order versus disorder, attention is focused on the concentration or dispersal of energy in molecular systems. Two fundamental tenets are that energy spontaneously disperses if not hindered from doing so (e.g. by activation energy barriers), and that a change in entropy is a measure of molecular motional energy that has been dispersed (or concentrated) in a system (as a function of absolute temperature).<br>
+To gain a better understanding of this new description the reader is encouraged to visit the <A HREF="http://www.entropysite.com/"> entropy web-site</A>, authored by Professor Frank Lambert. </p>
+</TD></TR></TABLE></p>
+
+
+<A NAME="enrg5"></A>
+<H3>6. Free Energy</H3>
+<P>The interaction between enthalpy and entropy changes in chemical reactions is best observed by studying their influence on the equilibrium constants of reversible reactions. To this end a new thermodynamic function called <B>Free Energy</B> (or <A HREF="http://www.chemistry.msu.edu/Portraits/PortraitsHH_Detail.asp?HH_LName=Gibbs">Gibbs</a> Free Energy), symbol <B>&#916;G</B>, is defined as shown in the first equation below. Two things should be apparent from this equation. First, in cases where the entropy change is small,  &#916;G  &#8773; &#916;H. Second, the importance of  &#916;S in determining &#916;G increases with increasing temperature. </P>
+
+<p><TABLE CELLSPACING=8 ALIGN="center">
+<TR><TD NOWRAP><B><p>&#916;G&#186; = &#916;H&#186;  &#8211; T&#916;S&#186;</TD><TD> <SUP>&nbsp;</SUP><span class="fc-blue">T = temperature in &#186;K</span></TD></TR>
+</TABLE></p>
+
+<P>The free energy function provides improved insight into the thermodynamic driving forces that influence reactions. A negative &#916;G&#186; is characteristic of an <B>exergonic reaction</B>, one which is thermodynamically favorable and often spontaneous, as is the melting of ice at 1 &#186;C. Likewise a positive &#916;G&#186; is characteristic of an <B>endergonic reaction</B>, one which requires an input of energy from the surroundings.<BR> 
+For an example of the relationship of free energy to enthalpy consider the decomposition of cyclobutane to ethene, shown in the following equation. The standard state for all the compounds is gaseous.</P>
+<p align=center><IMG SRC="Images/cy4decmp.gif"></p>
+<P>This reaction is endothermic, but the increase in number of molecules from one (reactants) to two (products) results in a large positive &#916;S&#186;.<BR>
+At 25 &#186;C (298 &#186;K), &#916;G&#186; = 19 kcal/mol &#8211; 298(43.6) cal/mole = 19 &#8211; 13 kcal/mole = +6 kcal/mole. Thus, the entropy change opposes the enthalpy change, but is not sufficient to change the sign of the resulting free energy change, which is endergonic.  Indeed, cyclobutane is perfectly stable when kept at room temperature. <BR>
+Because the entropy contribution increases with temperature, this energetically unfavorable transformation can be made favorable by raising the temperature. 
+At 200 &#186;C (473 &#186;K), &#916;G&#186; = 19 kcal/mol &#8211; 473(43.6) cal/mole = 19 &#8211; 20.6 kcal/mole = &#8211;1.6 kcal/mole. This is now an <B>exergonic reaction</B>, and the thermal cracking of cyclobutane to ethene is known to occur at higher temperatures.</P>
+<P><TABLE CELLSPACING=8 ALIGN="center">
+<TR><TD NOWRAP><p><b>&#916;G&#186; = &#8211;RT lnK = &#8211;2.303RT logK</TD><TD> <p><SUP> &nbsp; </SUP><span class="fc-blue">R = 1.987 cal/ &#186;K mole &nbsp;  &nbsp; T = temperature in &#186;K &nbsp;  &nbsp; K = equilibrium constant</span></p></TD></TR>
+</TABLE></p>
+<p><TABLE  CELLPADDING=5 WIDTH=100%><TR VALIGN=top><TD>
+<P>A second equation, shown above, is important because it demonstrates the fundamental relationship of &#916;G&#186; to the equilibrium constant, K. Because of the negative logarithmic relationship between these variables, a negative &#916;G&#186; generates a K>1, whereas a positive &#916;G&#186; generates a K<1. When &#916;G&#186; = 0, K = 1. Furthermore, small changes in &#916;G&#186; produce large changes in K. A change of 1.4 kcal/mole in &#916;G&#186; changes K by approximately a factor of 10. This interrelationship may be explored with the calculator on the right. Entering free energies outside the range -8 to 8 kcal/mole or equilibrium constants outside the range 10<SUP>-6</SUP> to 900,000 will trigger an alert, indicating the large imbalance such numbers imply. </P></TD>
+<TD ALIGN=center>
+<TABLE BORDER=9 BGCOLOR="#ffebcf" ><TR><TD>
+<TABLE CELLSPACING=3 CELLPADDING=3><TR ALIGN=center><TH COLSPAN=2><H4>Free Energy - Equilibrium Converter</H4></TH></TR>
+<TR><TD NOWRAP><p><INPUT TYPE="text" NAME="a"  SIZE="7"> <B> Equilibrium Constant.<BR><BR><INPUT TYPE="text" NAME="b"  size="7"> &#916;G&#186;</B> (kcal / mol, 25 &#186;C).</p></TD>
+<TD NOWRAP><INPUT TYPE="button"  VALUE=" Calculate " onClick=" calc(this.form)">&nbsp;<BR><BR><INPUT TYPE="button"  VALUE="Clear Input" onClick="clrtxt(this.form)"></TD></TR></TABLE></TD></TABLE>
+<p>Enter a value in the appropriate box and press "Calculate".</p></TD></TR></TABLE></p>
+<BR CLEAR=all>
+
+<A NAME="enrg6"></A>
+<H3>7. Free Energy of Activation</H3>
+<P>Although spontaneous transformations all have negative &#916;G&#186; s, not all exergonic processes are spontaneous, due to activation energy barriers to reaction. Our <A HREF="#enrg3">previous treatment</A> of activation energy was framed in terms of enthalpy or potential energy. It should now be clear that, if entropy factors are to be incorporated in the activation barrier, we should be thinking about <B>Free Energy of Activation, &#916;G<SUP>&#135;</SUP> </B>. The defining equation then becomes:</P>
+
+<p><TABLE  ALIGN="center">
+<TR><TD NOWRAP><span class="fc-navy"><H4>&#916;G<SUP>&#135;</SUP> = &#916;H<SUP>&#135;</SUP>  &#8211;  T&#916;S<SUP>&#135;</SUP></H4></span></TD></TR>
+</TABLE></p>
+
+<P><IMG SRC="Images/equation.gif" ALIGN=right HSPACE=16 VSPACE=9 BORDER=1></p>
+<p>Transition state theory proposes an equilibrium between reactants and the transition state, so each of the functions in this equation may be viewed as a [<B>F<SUB>Transition State</SUB></B> &#8211; <B>F<SUB>Reactants</SUB></B>] difference, where F represents H, S or G. 
+The equations on the right demonstrate the similar exponential relationship of  &#916;G&#186; to K<SUB>eq</SUB> and &#916;G<SUP>&#135;</SUP> to k. Since the rate constant equation incorporates the temperature variable twice, and &#916;G<SUP>&#135;</SUP> also changes with temperature, observed reaction rates are clearly temperature dependent. Organic chemists make general use of this relationship in two ways. First, it is a rule-of-thumb that a 10&#186; C increase in reaction temperature will roughly double the rate of that reaction. Second, since this rule applies as well to accompanying reactions, the rates of such side reactions also increase with temperature, sometimes more than the desired reaction. Consequently, the practical yield of the desired product may actually decrease at higher temperatures. Thus, a cleaner (less contaminated) product is often obtained be running a reaction at the lowest effective temperature that gives the desired product. <BR>
+Because &#916;G<SUP>&#135;</SUP> incorporates a temperature dependent entropy factor and is related exponentially to the rate constant, k, reaction rate studies at different temperatures may be interpreted to provide the activation parameters. Consider, for example, the exergonic substitution reactions that take place when a 1&#186;-alkyl bromide reacts with sodium thiophenylate, as shown in the following equation. Careful rate studies made at 20&#186; C in methanol solution gave the rate constants, k, reported in the second column of the table below. Enthalpy and entropy of activation values were obtained by measurements at different temperatures, and are given in the third and fourth columns of the table.</P>
+<div class="ctr">
+<p><TABLE CELLPADDING=4 > <TR><TD><p>R-CH<SUB>2</SUB>-Br &nbsp; + &nbsp; C<SUB>6</SUB>H<SUB>5</SUB>S<SUP>(&#8211;)</SUP> Na<SUP>(+)</SUP></p> </TD><TD><IMG SRC="Images/arrow.gif"></TD><TD><p>R-CH<SUB>2</SUB>-SC<SUB>6</SUB>H<SUB>5</SUB> &nbsp; + &nbsp; Na<SUP>(+)</SUP>  Br<SUP>(&#8211;)</SUP></p></TD></TR></TABLE></p>
+
+<p><TABLE CELLPADDING=5 BORDER WIDTH=360>
+<TR ALIGN=center BGCOLOR="cceeff"><TH><p>R-</p></TH><TD NOWRAP><p><B>k</B><BR>( l/mole sec * 10<SUP>4</SUP> )</p></TD><TD NOWRAP><p><B>&#916;H<SUP>&#135;</SUP> </B><BR>kcal/mole</p></TD><TD NOWRAP><p><B>&#916;S<SUP>&#135;</SUP></B><BR>cal/deg mole</p></TD><TD NOWRAP><B>&#916;G<SUP>&#135;</SUP></B><BR>kcal/mole</p></TD></TR>
+<TR align=center><TD BGCOLOR="cceeff" NOWRAP ><B>H</B><BR>methyl bromide</TD><TD>100</TD><TD>+16.2</TD><TD>-7.5</TD><TD>+18.4</TD></TR>
+<TR align=center><TD BGCOLOR="cceeff"><B>CH<SUB>3</SUB></B><BR>ethyl bromide</TD><TD>39</TD><TD>+18.1</TD><TD>-7.7</TD><TD>+20.35</TD></TR>
+<TR align=center><TD BGCOLOR="cceeff"><B>C<SUB>2</SUB>H<SUB>5</SUB></B><BR>propyl bromide</TD><TD>25.7</TD><TD>+17.7</TD><TD>-10.0</TD><TD>+20.6</TD></TR>
+<TR align=center><TD BGCOLOR="cceeff"><B>C<SUB>3</SUB>H<SUB>7</SUB></B><BR>butyl bromide</TD><TD>26.8</TD><TD>+17.7</TD><TD>-10.0</TD><TD>+20.6</TD></TR>
+</TABLE></p></div>
+<P>From this data we can deduce several characteristics of the transition states through which these simple S<SUB>N</SUB>2 reactions must pass. To begin with, the negative &#916;S<SUP>&#135; </SUP> indicates a transition state that is more highly ordered than the reactants. This agrees with contemporary views of the <A HREF="alhalrx1.htm#hal2e
+">S<SUB>N</SUB>2 transition state</A>, in that two independent reactant molecules have combined to form a single transition complex.<BR>
+Second, the greater reactivity of methyl bromide over ethyl bromide is largely due to an increase in &#916;H<SUP>&#135;</SUP>, presumably due to steric hindrance to nucleophile approach from the opposite side of carbon #1.<BR>
+Finally, the decrease in reaction rates of 1-propyl and 1-butyl bromides compared with ethyl bromide, while less pronounced and nearly the same in each case, is due primarily to an increasingly negative &#916;S<SUP>&#135; </SUP>. It has been proposed that this comes from a restriction of conformational mobility about the C2-C3 bond of the alkyl group in the transition state. Of three possible staggered conformations, on average one will interfere significantly with nucleophile approach, resulting in a one third lower probability for achieving the transition complex.<BR>
+In this respect it should be noted that entropy has been related to the statistical probability of a system, <B>W</B> (the number of equivalent way molecules can be arranged) by the expression: S&nbsp;=&nbsp;&#954;*lnW &nbsp; (&#954; is the Boltzman constant = R/Avogadro's Number)</P> 
+<P><span class="fc-blue">Some applications of the concepts and principles presented here to specific chemical systems are presented in the topics accessed from the following menu</span>.</P>
+</FORM>
+
+<FORM NAME="info">
+<TABLE ALIGN=center>
+<TR  ALIGN=center><TD><SCRIPT Language="JavaScript">
+<!--HIDE
+			function jump()  {
+var loc=document.info.jumpMenu.options[document.info.jumpMenu.selectedIndex]
+.text;	
+  if  (loc == "Diels-Alder Reactions"){
+location="enrgtop.htm#top1";
+}else   if  (loc == "Cheletropic Addition/Elimination"){
+location="enrgtop.htm#top2";
+}else   if  (loc == "Lactone Formation"){
+   location="enrgtop.htm#top3";
+}else   if  (loc == "Solvation of Ions"){
+   location="enrgtop.htm#top4";
+}else   if  (loc == "Free Energy Relationships"){
+   location="enrgtop.htm#top5";
+
+}
+}
+//STOP HIDING-->
+</SCRIPT>
+<INPUT TYPE="hidden" VALUE="choice">
+<SELECT NAME="jumpMenu" onChange="jump()">
+<OPTION SELECTED>Choose a Topic
+<OPTION>Diels-Alder Reactions
+<OPTION>Cheletropic Addition/Elimination
+<OPTION>Lactone Formation
+<OPTION>Solvation of Ions
+<OPTION>Free Energy Relationships
+
+
+ </SELECT>
+</TD></TR></TABLE></TD></TR></TABLE><BR>
+
+<P><IMG SRC="Images/pixel.gif" WIDTH=10 HEIGHT=200 ></P>
+
+</FORM>
+</BODY>
+</HTML>

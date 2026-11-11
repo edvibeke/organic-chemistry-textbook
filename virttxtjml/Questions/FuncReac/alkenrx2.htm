@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var anscnt=0
+var answ="(1) Starting Material=B; Reagent=3 or S.M.=C  & Reag.=7\r(2) Starting Material=A or B; Reagent=7\r"
+ +  "(3) Starting Material=A; Reagent=7\r(4) Starting Material=B; Reagent=2\r(5) Starting Material=C; Reagent=6\r(6) Starting Material=A or B; Reagent=1\r(7) Starting Material=C; Reagent=2\r(8) Starting Material=A; Reagent=4"
+var noansw="You must try to answer this question twice before viewing the answers."
+
+var j=0;
+var k=0;
+     
+function slct1(input) {
+anscnt=anscnt+1;
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+var rsp="";
+if (( input.sma.value.toUpperCase() == "B" && input.rga.value == "3") || ( input.sma.value.toUpperCase() == "C" && input.rga.value == "7")){ 
+		k=k+1
+		} else {
+if ( input.sma.value != "" || input.rga.value != ""){ 
+		var rsp=rsp +" 1.,"
+		} else {
+		j=j+1
+}
+}
+
+if (((input.smb.value.toUpperCase() == "A" ) || (input.smb.value.toUpperCase() == "B" )) && (input.rgb.value == "7")){ 
+		k=k+1
+		} else {
+if ( input.smb.value != ""  || input.rgb.value != ""){ 
+		var rsp=rsp +" 2.,"
+		} else {
+		j=j+1
+}
+}
+
+if ( input.smc.value.toUpperCase() == "A" && input.rgc.value == "3") { 
+		k=k+1
+		} else {
+if ( input.smc.value != "" || input.rgc.value != ""){ 
+		var rsp=rsp +" 3.,"
+		} else {
+		j=j+1
+}
+}
+
+if ( input.smd.value.toUpperCase() == "B" && input.rgd.value == "2"){ 
+		k=k+1
+		} else {
+if ( input.smd.value != "" || input.rgd.value != ""){ 
+		var rsp=rsp +" 4.,"
+		} else {
+		j=j+1
+}
+}
+
+if ( input.sme.value.toUpperCase() == "C" && input.rge.value == "6"){ 
+		k=k+1
+		} else {
+if ( input.sme.value != "" || input.rge.value != ""){ 
+		var rsp=rsp +" 5.,"
+		} else {
+		j=j+1
+}
+}
+
+if (((input.smf.value.toUpperCase() == "A" ) || (input.smf.value.toUpperCase() == "B" )) && (input.rgf.value == "1")){ 
+		k=k+1
+		} else {
+if ( input.smf.value != "" || input.rgf.value != ""){ 
+		var rsp=rsp +" 6.,"
+		} else {
+		j=j+1
+}
+}
+
+if ( input.smg.value.toUpperCase() == "C" && input.rgg.value == "2"){ 
+		k=k+1
+		} else {
+if ( input.smg.value != "" || input.rgg.value != ""){ 
+		var rsp=rsp +" 7.,"
+		} else {
+		j=j+1
+}
+}
+
+if ( input.smh.value.toUpperCase() == "A" && input.rgh.value == "4"){ 
+		k=k+1
+		} else {
+if ( input.smh.value != "" || input.rgh.value != ""){ 
+		var rsp=rsp +" 8"
+		} else {
+		j=j+1
+}
+}
+
+if ( rsp=="") {
+rsp="none";
+}
+
+if (j==8) {
+	var txt="You have not provided answers to any of the questions."; 
+anscnt=0
+}else{
+if   (k==8) {
+	var txt="Congratulations!\r You have answered all questions correctly." ;
+anscnt=2
+}else{
+	var txt="Your correct answers total: " + k +" \rQuestions for which your answers are incorrect are:" + rsp; 
+
+}
+}
+input.result.value = txt;
+
+}
+
+function giveansw(show) {
+if (anscnt>=2)  {
+var res=answ
+	}else{
+var res=noansw
+}
+show.result.value=res
+}
+
+function clearbx(input) {
+	input.sma.value="";	// Clear all text windows.
+	input.smb.value="";
+	input.smc.value="";
+	input.smd.value="";
+	input.sme.value="";
+	input.smf.value="";
+	input.smg.value="";
+	input.smh.value="";
+	input.rga.value="";
+	input.rgb.value="";
+	input.rgc.value="";
+	input.rgd.value="";
+	input.rge.value="";
+	input.rgf.value="";
+	input.rgg.value="";
+	input.rgh.value="";
+	input.result.value="";
+}
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Alkene Reactions</TITLE>
+<body>
+<FORM NAME="match">
+<div class="ctr"><H3>Alkene Reactions</H3></div>
+<table width=860><tr valign="middle"><td nowrap>
+<P>Three isomeric cycloalkene starting materials are available for your use.  They are: </td>
+<td > &nbsp; <IMG SRC ="../Images/reactants.gif"></td></tr></table>
+ 
+<p>Using one of these compounds, and selecting reagents from the list on the right, indicate how the following products might be prepared.<br/>
+Each question (<B>1.</B> through <B>8.</B>) requires two responses.  Under <U>Starting Material</U> enter <B>A</B>, <B>B</B> or <B>C</B>.  Under <U>Reagents</U> enter a number corresponding to your selection.<br />
+Ignore the possibility of molecular rearrangement.</P>
+
+<TABLE CELLPADDING=6 align=center>
+<TR><TH rowspan=2><TABLE CELLSPACING=4 CELLPADDING=4 BORDER><TR   bgcolor=lightskyblue><TH>Desired Product</TH><TH>Response Boxes</TH><td width=30 rowspan=5 bgcolor=white> &nbsp; </td><TH>Desired Product</TH><TH>Response Boxes</TH></TR>
+<TR><TD rowspan=4><IMG SRC ="../Images/product1.gif"></TD><TD>Starting Material &nbsp;<INPUT TYPE="text" NAME="sma"  SIZE="2"><BR>Reagent Number &nbsp;<INPUT TYPE="text" NAME="rga"  SIZE="2"></TD><TD rowspan=4><IMG SRC ="../Images/product2.gif"></TD><TD nowrap>Starting Material &nbsp;<INPUT TYPE="text" NAME="sme"  SIZE="2"><BR>Reagent Number &nbsp;<INPUT TYPE="text" NAME="rge"  SIZE="2"></TD></TR>
+<TR><TD>Starting Material &nbsp;<INPUT TYPE="text" NAME="smb"  SIZE="2"><BR>Reagent Number &nbsp;<INPUT TYPE="text" NAME="rgb"  SIZE="2"></TD><TD>Starting Material &nbsp;<INPUT TYPE="text" NAME="smf"  SIZE="2"><BR>Reagent Number &nbsp;<INPUT TYPE="text" NAME="rgf"  SIZE="2"></TD></TR>
+<TR><TD>Starting Material &nbsp;<INPUT TYPE="text" NAME="smc"  SIZE="2"><BR>Reagent Number &nbsp;<INPUT TYPE="text" NAME="rgc"  SIZE="2"></TD><TD>Starting Material &nbsp;<INPUT TYPE="text" NAME="smg"  SIZE="2"><BR>Reagent Number &nbsp;<INPUT TYPE="text" NAME="rgg"  SIZE="2"></TD></TR>
+<TR><TD>Starting Material &nbsp;<INPUT TYPE="text" NAME="smd"  SIZE="2"><BR>Reagent Number &nbsp;<INPUT TYPE="text" NAME="rgd"  SIZE="2"></TD><TD>Starting Material &nbsp;<INPUT TYPE="text" NAME="smh"  SIZE="2"><BR>Reagent Number &nbsp;<INPUT TYPE="text" NAME="rgh"  SIZE="2"></TD></TR></table>
+</th> <td width=15 rowspan=2 bgcolor=white> &nbsp; </td> <td valign=top>
+
+<table border><tr><TH BGCOLOR="lightskyblue" >Reagents</th>
+</tr><tr>
+<td><P><span class="fc-blue"><B>1.</B></span>  &nbsp; HBr (conc.)</p>
+<p><span class="fc-blue"><B>2.</B></span>  &nbsp; HOBr</p>
+<p><span class="fc-blue"><B>3.</B></span>  &nbsp; diborane (B<SUB>2</SUB>H<SUB>6</SUB>)<BR /> &nbsp; &nbsp; &nbsp; followed by H<SUB>2</SUB>O<SUB>2</SUB> in base</p>
+<p><span class="fc-blue"><B>4.</B></span>  &nbsp; HOCl &nbsp; </p>
+<p><span class="fc-blue"><B>5.</B></span>  &nbsp; acetic acid (CH<SUB>3</SUB>CO<SUB>2</SUB>H) </p>
+<p><span class="fc-blue"><B>6.</B></span>  &nbsp; HCl in CHCl<sub>3</sub>  &nbsp; </p>
+<p><span class="fc-blue"><B>7.</B></span>  &nbsp; mercuric acetate [Hg(OAc)<SUB>2</SUB>]<BR> &nbsp; &nbsp; &nbsp; followed by NaBH<SUB>4</SUB> in ethyl alcohol &nbsp; </P>
+<p><span class="fc-blue"><B>8.</B></span>  &nbsp; Br<sub>2</sub> in CH<sub>2</sub>Cl<sub>2</sub>  &nbsp; </p>
+</TD></tr></table></td></tr></table>
+
+
+
+<HR>
+<TABLE CELLSPACING=8><TR>
+<TD> &nbsp; <INPUT TYPE="button" VALUE=" Check Answers " onClick="slct1(this.form)"><br /><br />
+ &nbsp; <INPUT TYPE="button"  VALUE=" Clear " onClick="clearbx(this.form)"></td>
+<td><TEXTAREA WRAP NAME="result" ROWS="8" COLS="60">
+</TEXTAREA></td>
+<td><INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)">
+</TD></TR></TABLE>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+</FORM>
+</BODY></HTML>
+
+

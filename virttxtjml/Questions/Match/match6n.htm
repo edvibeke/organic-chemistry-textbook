@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+															// Set variables
+var i=0;
+var Txt2="\rThe expected number of correct answers is: 5";
+var anscnt=0
+                         //Answer variables
+ var answ="B, D, E, G & H "
+  var noansw="You must try to answer this questions twice before viewing the answers."
+															// define function
+function strbx(input) {
+ anscnt=anscnt+1;
+var l=input.a.value.length;
+var ab=input.a.value.toUpperCase().indexOf("B",0);
+var ad=input.a.value.toUpperCase().indexOf("D",0);
+var ae=input.a.value.toUpperCase().indexOf("E",0);
+var ag=input.a.value.toUpperCase().indexOf("G",0);
+var ah=input.a.value.toUpperCase().indexOf("H",0);
+if (input.a.value=='') {
+input.result.value = "Please enter one or more values in the answer box.";
+}else{
+	if (i!=0) {
+	i=0
+}
+
+	 if (ab>=0) {
+	i=i+1
+} else {
+	i=i
+}
+	 if  (ad>=0) {
+	i=i+1
+} else {
+	i=i
+}
+	 if  (ae>=0) {
+	i=i+1
+} else {
+	i=i
+}
+	 if  (ag>=0) {
+	i=i+1
+} else {
+	i=i
+}
+	 if  (ah>=0) {
+	i=i+1
+} else {
+	i=i
+}
+	if (l==5 && i==5) {
+var Txt="Congratulations!\rYour answer is entirely correct.";
+} else {
+var Txt="You have identified " + i + " correct answers.\rYour incorrect selections number: " +( l-i ) + Txt2 ;
+}
+	input.result.value = Txt ;
+}
+}
+function giveansw(show) {
+ if (anscnt>=2)  {
+ var txt=answ
+ 	}else{
+ var txt=noansw
+ }
+ show.result.value=txt
+ }
+function clrbx(input) {
+	input.a.value="";	// Clear all text windows.
+	input.result.value=" ";
+}
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Nucleophiles</TITLE>
+<body>
+<div class="ctr"><H3>Which of the following molecules and ions are nucleophilic?</H3></div>
+<p>You may enter as many as five choices in the answer box (type in the appropriate letter for each choice).<BR><span class="fc-red">Do not enter punctuation (eg. commas or semicolons) or spaces.</span></p>
+<div class="ctr"><p><TABLE CELLPADDING=5 BORDER=1 WIDTH=80%>
+<TR VALIGN=TOP>
+<TD><span class="fc-blue"><B>A</B></span><BR><div class="ctr">CH<SUB>4</SUB></div></TD>
+<TD><span class="fc-blue"><B>B</B></span><BR><div class="ctr">H<SUB>2</SUB>O</div></TD>
+<TD><span class="fc-blue"><B>C</B></span><BR><div class="ctr">BH<SUB>3</SUB></div></TD>
+<TD><span class="fc-blue"><B>D</B></span><BR><div class="ctr">H<SUB>2</SUB>C=CH<SUB>2</SUB></div></TD>
+<TD><span class="fc-blue"><B>E</B></span><BR><div class="ctr">OH<SUP>(&#8211;)</div></TD>
+<TD><span class="fc-blue"><B>F</B></span><BR><div class="ctr">Br<SUP>(+)</SUP></div></TD>
+<TD><span class="fc-blue"><B>G</B></span><BR><div class="ctr">NH<SUB>3</SUB></div></TD>
+<TD><span class="fc-blue"><B>H</B></span><BR><div class="ctr">Br<SUP>(&#8211;)</SUP></div></TD></TR>
+</TABLE></p>
+<FORM NAME="eqnbalance">
+<span class="fc-blue"><B>Enter your selections here:</B></span> &nbsp;<INPUT TYPE="text" NAME="a" SIZE="6"><BR><BR>
+<INPUT TYPE="button" VALUE=" Check Answer " onClick="strbx(this.form)">
+<INPUT TYPE="reset"  VALUE=" Clear " onClick="clrbx(this.form)">
+<TEXTAREA WRAP NAME="result" ROWS="4" COLS="46">
+</TEXTAREA>
+ <INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form)">  <INPUT TYPE="button" VALUE="Help" onClick="window.location = '../../react3.htm#rx10'"> </div>
+</FORM><HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

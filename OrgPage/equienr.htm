@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Styles/modern.css">
+<TITLE>Equilib/Energy</TITLE>
+<META NAME="GENERATOR" CONTENT="Internet Assistant for Microsoft Word 2.0z">
+
+<script language=javascript> <!--Hide
+function calc(input) {
+var txt="";
+var aa=(input.a.value);
+var bb=(input.b.value);
+if (input.a.value == "" && input.b.value == "") {
+txt = "";
+input.a.value = txt;
+input.b.value = txt;
+}
+
+if (input.a.value != "" && input.b.value != "") {
+alert("Clear Input")
+}
+ 
+if (input.a.value >= 1000001 && input.b.value == "") {
+alert("Free Energy change is negative, and larger than -8 kcal/mol") 
+}
+
+if (input.a.value <= 0.0000009 && input.b.value == "") {
+alert("Free Energy change is greater than 8 kcal/mol")
+}
+
+if (input.b.value >= 8.1 && input.a.value == "") {
+alert("The Equilibrium Constant is less than 0.000001") 
+}
+
+if (input.b.value <= -8.1 && input.a.value == "") {
+alert("Free Energy change is greater than 900,000")
+}
+
+if (input.a.value != "" && input.b.value == "") {
+var txt =-(Math.log(aa)*0.59070)
+input.b.value = txt;
+}
+
+if (input.a.value == "" && input.b.value != "") {
+var txt = (Math.exp(bb/-0.59070))
+input.a.value = txt;
+}
+}
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+}
+//STOP HIDING-->
+</SCRIPT>
+
+<link rel="stylesheet" href="Styles/edvibe.css">
+<script src="Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<FORM>
+<P>
+<div class="ctr"><B><H2>Equilibria and Free Energy<BR>
+</H2></B></div>
+<div class="ctr"><TABLE>
+<TR><TD ALIGN=CENTER WIDTH=33%><BR>
+<IMG SRC="Images/equil.gif"></TD>
+<TD ALIGN=CENTER WIDTH=33%><IMG SRC="Images/Keq.gif"></TD>
+<TD ALIGN=CENTER WIDTH=33%><BR>
+<span class="ff-symbol">D</span>G&deg; = -RT ln K</TD></TR>
+</TABLE>
+
+<TABLE WIDTH=500 CELLSPACING=3 CELLPADDING=2 BORDER=6>
+<TR BGCOLOR="66FF99">
+<TH ALIGN=CENTER WIDTH=25%><B><span class="fs-2 ff-helvetica">K</span></B></TH>
+<TH ALIGN=CENTER WIDTH=25%><B><span class="fs-2 ff-helvetica">% Product</span></B></TH>
+<TH ALIGN=CENTER WIDTH=25%><B><span class="fs-2 ff-helvetica">% Reactant</span></B></TH>
+<TH ALIGN=CENTER WIDTH=25%><B><span class="ff-symbol">D</span>G&#176; <span class="fs-1 ff-helvetica">(kcal/mole)</span></B></TH></TR>
+<TR>
+<TD ALIGN=CENTER><span class="fs-2 ff-helvetica">0.0001</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">0.01</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">99.99</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">+5.46</span>
+</TD></TR>
+<TR BGCOLOR="F7FFCE">
+<TD ALIGN=CENTER><span class="fs-2 ff-helvetica">0.001</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">0.1</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">99.9</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">+4.09</span>
+</TD></TR>
+<TR>
+<TD ALIGN=CENTER><span class="fs-2 ff-helvetica">0.01</span></TD>
+<TD ALIGN=CENTER><span class="fs-2 ff-helvetica">0.99</span></TD>
+<TD ALIGN=CENTER><span class="fs-2 ff-helvetica">99.0</span></TD>
+<TD ALIGN=CENTER><span class="fs-2 ff-helvetica">+2.73</span>
+</TD></TR>
+<TR BGCOLOR="F7FFCE">
+<TD ALIGN=CENTER><span class="fs-2 ff-helvetica">0.1</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">9.1</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">90.9</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">+1.36</span>
+</TD></TR>
+
+<TR>
+<TD ALIGN=CENTER><span class="fs-2 ff-helvetica">0.33</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">25</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">75</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">+0.65</span>
+</TD></TR>
+
+<TR BGCOLOR="F7FFCE">
+<TD ALIGN=CENTER><span class="fs-2 ff-helvetica">1</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">50</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">50</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">0</span>
+</TD></TR>
+
+<TR>
+<TD ALIGN=CENTER><span class="fs-2 ff-helvetica">3</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">75</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">25</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">-0.65</span>
+</TD></TR>
+
+<TR BGCOLOR="F7FFCE">
+<TD><div class="ctr"><span class="fs-2 ff-helvetica">10</span></div>
+</TD><TD><div class="ctr"><span class="fs-2 ff-helvetica">90.9</span></div>
+</TD><TD><div class="ctr"><span class="fs-2 ff-helvetica">9.1</span></div>
+</TD><TD><div class="ctr"><span class="fs-2 ff-helvetica">-1.36</span></div>
+</TD></TR>
+
+<TR>
+<TD><div class="ctr"><span class="fs-2 ff-helvetica">100</span></div>
+</TD><TD><div class="ctr"><span class="fs-2 ff-helvetica">99.0</span></div>
+</TD><TD><div class="ctr"><span class="fs-2 ff-helvetica">0.99</span></div>
+</TD><TD><div class="ctr"><span class="fs-2 ff-helvetica">-2.73</span></div>
+</TD></TR>
+<TR BGCOLOR="F7FFCE">
+<TD><div class="ctr"><span class="fs-2 ff-helvetica">1000</span></div>
+</TD><TD><div class="ctr"><span class="fs-2 ff-helvetica">99.9</span></div>
+</TD><TD><div class="ctr"><span class="fs-2 ff-helvetica">0.1</span></div>
+</TD><TD><div class="ctr"><span class="fs-2 ff-helvetica">-4.09</span></div>
+</TD></TR>
+<TR>
+<TD ALIGN=CENTER><span class="fs-2 ff-helvetica">10,000</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">99.99</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">0.01</span>
+</TD><TD ALIGN=CENTER><span class="fs-2 ff-helvetica">-5.46</span>
+</TD></TR>
+</TABLE>
+<HR>
+<H3>A Free Energy - Equilibrium Constant Calculator</H3>
+<P>Enter a value for one of these variables in the appropriate box and press "Calculate".
+<TABLE BORDER=9 BGCOLOR="antiquewhite"  WIDTH=340><TR><TD>
+<TABLE CELLSPACING=3 CELLPADDING=3><TR ALIGN=center><TH COLSPAN=2><H3>Free Energy - Equilibrium Converter</H3></TH></TR>
+<TR><TD NOWRAP><INPUT TYPE="text" NAME="a"  SIZE="7"> <B>Equilibrium Constant.<BR><BR><INPUT TYPE="text" NAME="b"  size="7"> <span class="ff-symbol">D</span>G&deg;</B> (kcal / mol, 25 &deg;C).</TD>
+<TD NOWRAP><INPUT TYPE="button"  VALUE=" Calculate " onClick=" calc(this.form)">&nbsp;<BR><BR><INPUT TYPE="button"  VALUE="Clear Input" onClick="clrtxt(this.form)"></TD></TR></TABLE>
+</TD></TABLE>
+ <HR> </P>
+
+<TABLE WIDTH=500  BORDER=0><TR>
+<TD Width=40%></TD>
+<TD Width=10%>&nbsp;</TD>
+<TD WIDTH=50% BGCOLOR="66FF99"><B><span class="fs-3 ff-arial"><P ALIGN="CENTER">Organic Chemistry
+<BR>edvibe.co.ke</B></span> <br /> &nbsp;</TD>
+</TR>
+</TABLE></div>
+</FORM>
+</BODY>
+</HTML>
+

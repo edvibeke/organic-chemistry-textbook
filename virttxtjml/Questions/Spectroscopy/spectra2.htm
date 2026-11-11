@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+function startEditor() { window.open('../MOLEDITOR/jme_window.html','JME','width=460,height=430,scrollbars=no');
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+document.form.smiles.value = smiles; 
+}
+function processMolecule1(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "O=C1CCC(=O)CC1") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+  // in actual application remove line above and add something like this
+  // document.form.submit();
+}
+function processMolecule2(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "COCCOC") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+function processMolecule3(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (smiles == "Clc1ccc(Cl)cc1") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+// End of hide script comment. -->
+</script>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<TITLE>Spectroscopic Problems</TITLE>
+<body>
+<form method="post" name="form">
+<div class="ctr"><H3>Using Spectroscopy to Determine a Structural Formula</H3></div>
+<p>Each of the following 'unknown' problems provides sufficient spectroscopic data to enable you to draw a structural formula, using the drawing window opened by the <b>Draw Formulas</b> button. When you are finished, <b>Submit</b> your formula and then check it by pressing the <b>Check Molecule</b> button. A help screen is available for the drawing window.
+<div class="ctr"><input type="button" value="Draw Formulas" onClick="startEditor();"></div></P>
+<DIR><DIR><hr>
+<P><span class="fc-blue"><B>1.</B></span> A compound composed of carbon, hydrogen & oxygen has a molecular ion at m/z=112 amu in its mass spectrum. The base peak is at m/z=28 amu. The infrared spectrum shows strong absorption in the 2850 to 2980 cm<SUP>-1</SUP> region, and very strong  absorption at 1717 cm<SUP>-1</SUP>. The  <SUP>1</SUP>H nmr shows a single sharp signal at &#948; = 2.7 ppm, and the <SUP>13</SUP>C nmr has two signals ( &#948; = 37 & 208 ppm ). <BR>
+<input type="hidden" value="" name="smiles"><BR>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" value="Check Molecule 1" onClick="processMolecule1(this.form);"></P>
+<HR>
+<P><span class="fc-blue"><B>2.</B></span> A compound composed of carbon, hydrogen & oxygen has a molecular ion at m/z=90 amu in its mass spectrum. The base peak is at m/z=45 amu. The infrared spectrum shows strong absorption in the 2840 to 2980 cm<SUP>-1</SUP> region, and very strong  absorption from 1105 to 1125 cm<SUP>-1</SUP>. The  <SUP>1</SUP>H nmr shows two sharp signals at &#948; = 3.40 & 3.55 ppm (intensity ratio 3:2 respectively), and the <SUP>13</SUP>C nmr also has two signals ( &#948; =59 & 72 ppm ). <BR>
+<input type="hidden" value="" name="smiles2"><BR>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" value="Check Molecule 2" onClick="processMolecule2(this.form);"></P>
+<HR>
+<P><span class="fc-blue"><B>3.</B></span> A compound used as a moth repellant has three molecular ion peaks at m/z=146 (100%), 148 (65%) & 150 (10%) amu in its mass spectrum. A pair of smaller peaks are seen at m/z=111 (34%) & 113 (11%).  The infrared spectrum shows sharp absorption just above 3000 cm<SUP>-1</SUP> region, and also at 1480 cm<SUP>-1</SUP>. The  <SUP>1</SUP>H nmr shows a single sharp signal at &#948; = 7.2 ppm, and the <SUP>13</SUP>C nmr has two signals ( &#948; =133 & 130 ppm ). <BR>
+<input type="hidden" value="" name="smiles3"><BR>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" value="Check Molecule 3" onClick="processMolecule3(this.form);"></P>
+</DIR></DIR>
+<HR>
+<div class="ctr"> <P>Evaluation Window<IMG SRC=../Images/pixel.gif WIDTH=50 HEIGHT=2><BR>
+<IMG SRC=../Images/pixel.gif WIDTH=50 HEIGHT=2 ALIGN=left><TEXTAREA WRAP NAME="result" ROWS="2" COLS="25">
+</TEXTAREA>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT TYPE="RESET" VALUE="Clear">
+<INPUT TYPE="button"  NAME="wind" VALUE=" Discussion " onClick=
+"window.open('answ1.htm','help','toolbar=no,menubar=no,status=no,scrollbars=yes,width=460,height=600')"></P></div>
+</form>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.
+<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>

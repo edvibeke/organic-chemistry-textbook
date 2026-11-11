@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var i=0
+var j=0
+var t=0
+var Txt1=" Your correct answers number:";
+var Txt3=" Your incorrect answers number:";
+var Txt4=" The expected number of correct answers is:";
+var Txt2="";
+  var anscnt=0
+                         //Answer variables
+ var answ="2, 3 & 5"
+  var noansw="You must try to answer this questions twice before viewing the answers."
+                         // Basic function code for problem 1
+ 
+ function ansbx(input) {
+input.a.value=fix(input.a.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+
+var a2=input.a.value.indexOf("2",0);	
+var a3=input.a.value.indexOf("3",0);
+var a5=input.a.value.indexOf("5",0);
+ anscnt=anscnt+1;
+ if ( (input.a.value=='') ) {
+ input.result.value = "Please enter your choices (up to 5) in the answer box.";
+		 }else{
+	if (i!=0){
+ 	 i=0
+ }
+ 	if (j!=0){
+ 	j=0
+ }
+ 	if (t!=0){
+ 	t=0
+}
+
+  //  Change < & > to fit desired answers
+
+if (input.a.value.length==3 && a2>=0 && a3>=0 && a5>=0) {
+		var Txt2="Congratulations! You have identified all compounds that meet the requirement.";
+ 		i=i+3
+ 		} else {
+if (a2>=0 && a3>=0 && a5>=0) {
+ 	var Txt2="Results";
+ 		i=i+3
+ 		} else {
+	if  (a2>=0 ) { 
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+}  
+	if  (a3>=0 ) { 
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+}  
+	if  (a5>=0 ) { 
+ 		i=i+1
+var Txt2="Results:";
+ 		} else {
+ 		j=j+1
+var Txt2="Results:";
+}  
+}
+}
+var s=i + j
+t=input.a.value.length;
+var dif=t - i
+ 	input.result.value =Txt2 + "\r" + Txt1 +  i +"\r" +Txt3 +  dif + "\r"  + Txt4 + s;
+
+}
+} 
+
+
+function giveansw(show) {
+ if (anscnt>=2)  {
+ var txt=answ
+ 	}else{
+ var txt=noansw
+ }
+ show.result.value=txt
+ }
+ 
+ function clrbx(input) {   // Clear all text windows.
+ 	input.a.value="";	
+ 	input.result.value=" ";
+ }
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Resonance Structures</TITLE>
+<body>
+<div class="ctr"><H3> Resonance Structures</H3></div>
+<P>The chief resonance contributors (canonical forms) for the five compounds and ions are shown below.  Other structures can be written, but they will be destabilized by reduced bonding and/or charge separation.<br>
+Considering the canonical forms written here, which three of these compounds or ions will exhibit the greatest resonance stabilization?   Enter the numbers corresponding to the compound(s) you select in the answer box. 
+<FORM>
+<P><div class="ctr"><TABLE WIDTH=95% CELLSPACING=8><TR><TD height=75><BR><B><span class="fc-blue">1.</span></B> &nbsp;Formic Acid<BR></TD>
+<TD><BR>HCO<SUB>2</SUB>H<BR></TD><TD ROWSPAN=5><img src="../Images/resnans.gif"></TD>
+<TD ROWSPAN=5 WIDTH=4 BGCOLOR="999999">&nbsp;</TD>
+
+<TD ROWSPAN=5 ><P>Answer Box: <INPUT TYPE="text" NAME="a"  SIZE="7">
+</B></span></P>
+<HR>
+<P><INPUT TYPE="button" VALUE=" Check Answers " onClick="ansbx(this.form)">
+ <INPUT TYPE="button"  VALUE=" Clear " onClick="clrbx(this.form)"><BR>
+<TEXTAREA  WRAP NAME="result"  ROWS="8"  COLS="34"> 
+</TEXTAREA><BR>
+ <INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form)">
+<A HREF="resdisc.htm" target="discussion" ><INPUT TYPE="button"  NAME="wind" VALUE=" Discussion " onClick=
+"window.open('resdisc.htm','discussion','toolbar=no,menubar=no,status=no,scrollbars=yes,width=360,height=400')"></A>
+</TD></TR>
+
+
+
+<TR><TD height=75><BR><B><span class="fc-blue">2.</span></B>&nbsp; Formate Anion<BR></TD><TD><BR>HCO<SUB>2</SUB><SUP>(&#8211;)</SUP><BR></TD></TR>
+<TR><TD height=75><BR><BR><B><span class="fc-blue">3.</span></B>&nbsp;  Nitromethane<BR><BR></TD><TD><BR><BR>CH<SUB>3</SUB>NO<SUB>2</SUB><BR><BR></TD></TR>
+<TR VALIGN=bottom><TD height=75><B><span class="fc-blue">4.</span></B > &nbsp;Methyl Nitrite<BR> &nbsp;</TD><TD>CH<SUB>3</SUB>ON=O<BR> &nbsp;</TD></TR>
+<TR><TD height=75><BR><B><span class="fc-blue">5.</span></B>&nbsp;  Ozone</TD><TD><BR>O<SUB>3</SUB></TD></TR>
+</TABLE></div></P>
+
+</FORM>
+<HR>
+<span class="fs-3">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span><BR>
+</BODY></HTML>
+

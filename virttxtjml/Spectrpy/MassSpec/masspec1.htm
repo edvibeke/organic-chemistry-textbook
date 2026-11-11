@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+
+<Title>Mass Spectrometry</Title>
+
+
+
+<script language=javascript> <!--Hide
+    function show0()   {
+		       document.images.ionsrc.src="../Images/msspctr.gif"
+}
+
+    function show1()   {
+		       document.images.ms1.src="../Images/masspec2.gif"
+}
+      function show2()   {
+		       document.images.ms1.src="../Images/masspec3.gif"
+}
+      function show3()   {
+		       document.images.ms1.src="../Images/masspec4.gif"
+}
+function change1() {
+document.images.ms1.src="../Images/masspec1.gif"
+}
+
+var i=1;
+function chg1() {
+i=i+1
+document.images.ms2.src="../Images/mesoxid"+i+".gif"
+if (i>=2) {
+i=0
+}
+}
+var j=1;
+function chg2() {
+j=j+1
+document.images.ms3.src="../Images/2etmeam"+j+".gif"
+if (j>=2) {
+j=0
+}
+}
+
+var k=1;
+function chg3() {
+k=k+1
+document.images.coke.src="../Images/cocaine"+k+".gif"
+if (k>=2) {
+k=0
+}
+}
+
+function clcabnd(input) {
+var tota =0;
+var totb =0;
+var ca=(input.ax.value * 1.1);	   // Set desired variables
+var cb=(input.ax.value * 0.006);
+var ha=(input.bx.value * 0.011);
+var na=(input.cx.value * 0.365);
+var oa=(input.dx.value * 0.037);
+var ob=(input.dx.value * 0.2);
+var sa=(input.ex.value * 0.78);
+var sb=(input.ex.value * 4.4);
+var sia=(input.fx.value * 5.1);
+var sib=(input.fx.value * 3.3);
+ tota=parseInt((ca + ha + na + oa +  sa + sia)*100)/100;
+ totb=parseInt((cb + ob +  sb + sib)*1000)/1000;
+
+input.result1.value = tota;
+input.result2.value = totb;
+}
+
+function clrtxt1(input) {
+	input.ax.value="";	
+	input.bx.value="";
+	input.cx.value="";
+	input.dx.value="";
+	input.ex.value="";
+	input.ex.value="";
+ input.fx.value="";
+	input.result1.value=" ";
+	input.result2.value=" ";
+
+}
+
+
+function calcmas(input) {
+var tot =0
+var cc=(input.a.value * 12.0000);	   // Set desired variables
+var hh=(input.b.value * 1.00783);
+var nn=(input.c.value * 14.0031);
+var oo=(input.d.value * 15.9949);
+var pp=(input.e.value * 30.9738);
+var ss=(input.f.value * 31.9721);
+var ff=(input.g.value * 18.9984);
+var cl=(input.h.value * 34.9689);
+var br=(input.i.value * 78.9183);
+var ii=(input.j.value * 126.9045);
+ tot =parseInt((cc + hh + nn + oo +  pp +  ss +  ff + cl + br + ii)*10000)/10000;
+input.result.value = tot;
+}
+
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.e.value="";
+	input.f.value="";
+	input.g.value="";
+	input.h.value="";
+  input.i.value="";
+  input.j.value="";
+	input.result.value=" ";
+}
+
+//STOP HIDING-->
+</SCRIPT>
+
+
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<FORM>
+
+<A NAME="ms1"></A>
+<div class="ctr"><H2><span class="fc-maroon">Mass Spectrometry</span></H2></div>
+<p><b><span class="fc-maroon fs-4">&nbsp; &nbsp; &nbsp;   1. The Mass Spectrometer</span></b><br />
+In order to measure the characteristics of individual molecules, a mass spectrometer converts them to ions so that they can be moved about and manipulated by external electric and magnetic fields. The three essential functions of a mass spectrometer, and the associated components, are:<dir>
+<p> <B>1.</B> &nbsp; A small sample is ionized, usually to cations by loss of an electron. &nbsp; <span class="fc-blue"><B>The Ion Source</B></span><BR />
+ <B>2.</B> &nbsp; The ions are sorted and separated according to their mass and charge. &nbsp; <span class="fc-green"><B>The Mass Analyzer</B></span><BR />
+ <B>3.</B> &nbsp; The separated ions are then measured, and the results displayed on a chart. &nbsp; <span class="fc-brown"><B>The Detector</B></span></p></dir>
+<p>Because ions are very reactive and short-lived, their formation and manipulation must be conducted in a vacuum. Atmospheric pressure is around 760 torr (mm of mercury). The pressure under which ions may be handled is roughly 10<SUP>-5</SUP> to 10<SUP>-8</SUP> torr (less than a billionth of an atmosphere). Each of the three tasks listed above may be accomplished in different ways. In one common procedure, ionization is effected by a high energy beam of electrons, and ion separation is achieved by accelerating and focusing the ions in a beam, which is then bent by an external magnetic field. The ions are then detected electronically and the resulting information is stored and analyzed in a computer. A mass spectrometer operating in this fashion is outlined in the following diagram. The heart of the spectrometer is the <B>ion source</B>. Here molecules of the sample (black dots) are bombarded by electrons (light blue lines) issuing from a heated filament. This is called an <B>EI</B> (electron-impact) source. Gases and volatile liquid samples are allowed to leak into the ion source from a reservoir (as shown).  Non-volatile solids and liquids may be introduced directly. Cations formed by the electron bombardment (red dots) are pushed away by a charged repeller plate (anions are attracted to it), and accelerated toward other electrodes, having slits through which the ions pass as a beam. Some of these ions fragment into smaller cations and neutral fragments. A perpendicular magnetic field deflects the ion beam in an arc whose radius is proportional to the mass of each ion.  Lighter ions are deflected more than heavier ions. By varying the strength of the magnetic field, ions of different mass can be focused progressively on a detector fixed at the end of a curved tube (also under a high vacuum).</P>
+<map name="mass0">
+<AREA SHAPE="rect" COORDS="195,145,270,210" href="javascript:show0()">
+</map>
+
+<A NAME="ms1b"></A>
+ <P ALIGN=center><IMG SRC="../Images/msspctr1.gif" name="ionsrc" USEMAP="#mass0" BORDER=0 ></P>
+<P>When a high energy electron collides with a molecule it often ionizes it by knocking away one of the molecular electrons (either bonding or non-bonding). This leaves behind a <B>molecular ion</B> (colored red in the following diagram). Residual energy from the collision may cause the molecular ion to fragment into neutral pieces (colored green) and smaller <B>fragment ions</B> (colored pink and orange). The molecular ion is a radical cation, but the fragment ions may either be radical cations (pink) or carbocations (orange), depending on the nature of the neutral fragment. An animated display of this ionization process will appear if you click on the ion source of the mass spectrometer diagram.</P>
+<P ALIGN=center><IMG SRC="../Images/ionizn1.gif" ></P><BR>
+
+<A NAME="ms2"></A>
+<p><b><span class="fc-maroon fs-4">&nbsp; &nbsp; &nbsp;   2. The Nature of Mass Spectra</span></b><br />
+A mass spectrum will usually be presented as a vertical bar graph, in which each bar represents an ion having a specific mass-to-charge ratio (m/z) and the length of the bar indicates the relative abundance of the ion. The most intense ion is assigned an abundance of 100, and it is referred to as the <B>base peak</B>. Most of the ions formed in a mass spectrometer have a single charge, so the m/z value is equivalent to mass itself. Modern mass spectrometers easily distinguish (resolve) ions differing by only a single atomic mass unit (amu), and thus provide completely accurate values for the molecular mass of a compound. The highest-mass ion in a spectrum is normally considered to be the molecular ion, and lower-mass ions are fragments from the molecular ion, assuming the sample is a single pure compound.<BR>
+The following diagram displays the mass spectra of three simple gaseous compounds, carbon dioxide, propane and cyclopropane. The molecules of these compounds are similar in size, CO<SUB>2</SUB> and C<SUB>3</SUB>H<SUB>8</SUB> both have a nominal mass of 44 amu, and C<SUB>3</SUB>H<SUB>6</SUB> has a mass of 42 amu. The molecular ion  is the strongest ion in the spectra of CO<SUB>2</SUB> and C<SUB>3</SUB>H<SUB>6</SUB>, and it is moderately strong in propane. The unit mass resolution is readily apparent in these spectra (note the separation of ions having m/z=39, 40, 41 and 42 in the cyclopropane spectrum). Even though these compounds are very similar in size, it is a simple matter to identify them from their individual mass spectra. By clicking on each spectrum in turn, a partial fragmentation analysis and peak assignment will be displayed. Even with simple compounds like these, it should be noted that it is rarely possible to explain the origin of all the fragment ions in a spectrum. Also, the structure of most fragment ions is seldom known with certainty. </P>
+<map name="mass1">
+<AREA SHAPE="rect" COORDS="30,1,225,115" href="javascript:show1()">
+<AREA SHAPE="rect" COORDS="260,1,455,115" href="javascript:show2()">
+<AREA SHAPE="rect" COORDS="490,1,685,115" href="javascript:show3()">
+</map>
+ <P ALIGN=center><IMG SRC="../Images/masspec1.gif" name="ms1"  USEMAP="#mass1" BORDER=0 ></P>
+<div class="ctr"><p><INPUT TYPE="button"  NAME="answr1" VALUE="Original Diagram" onClick="change1(this.form)"></p></div>
+<P>Since a molecule of carbon dioxide is composed of only three atoms, its mass spectrum is very simple. The molecular ion is also the base peak, and the only fragment ions are CO (m/z=28) and O (m/z=16). The molecular ion of propane also has m/z=44, but it is not the most abundant ion in the spectrum. Cleavage of a carbon-carbon bond gives methyl and ethyl fragments, one of which is a carbocation and the other a radical. Both distributions are observed, but the larger ethyl cation (m/z=29) is the most abundant, possibly because its size affords greater charge dispersal. A similar bond cleavage in cyclopropane does not give two fragments, so the molecular ion is stronger than in propane, and is in fact responsible for the the base peak. Loss of a hydrogen atom, either before or after ring opening, produces the stable allyl cation (m/z=41). The third strongest ion in the spectrum has m/z=39 (C<SUB>3</SUB>H<SUB>3</SUB>). Its structure is uncertain, but two possibilities are shown in the diagram. The small m/z=39 ion in propane and the absence of a m/z=29 ion in cyclopropane are particularly significant in distinguishing these hydrocarbons.</P>
+<P>Most stable organic compounds have an even number of total electrons, reflecting the fact that electrons occupy atomic and molecular orbitals in pairs. When a single electron is removed from a molecule to give an ion, the total electron count becomes an odd number, and we refer to such ions as <B>radical cations</B>. The molecular ion in a mass spectrum is always a radical cation, but the fragment ions may either be even-electron cations or odd-electron radical cations, depending on the neutral fragment lost. The simplest and most common fragmentations are bond cleavages producing a neutral radical (odd number of electrons) and a cation having an even number of electrons. A less common fragmentation, in which an even-electron neutral fragment is lost, produces an odd-electron radical cation fragment ion. Fragment ions themselves may fragment further. As a rule, odd-electron ions may fragment either to odd or even-electron ions, but even-electron ions fragment only to other even-electron ions. The masses of molecular and fragment ions also reflect the electron count, depending on the number of nitrogen atoms in the species.</p>
+<A NAME="ms2b"></A>
+<TABLE CELLPADDING=6 align="center" BORDER>
+<TR ALIGN=left  BGCOLOR="eeffdd"><TH nowrap><p>Ions with no nitrogen<BR>or an even # N atoms</p></TH><TD nowrap><p>odd-electron ions<BR>even-number mass</p></TD><TD><p>even-electron ions<BR>odd-number mass</p></TD></TR>
+<TR  ALIGN=left  BGCOLOR="ddeeff"><TH><p>Ions having an<BR>odd # N atoms</p></TH><TD><p>odd-electron ions<BR>odd-number mass</p></TD><TD nowrap><p>even-electron ions<BR>even-number mass</p></TD></TR>
+</TABLE>
+<P>This distinction is illustrated nicely by the following two examples. The unsaturated ketone, 4-methyl-3-pentene-2-one, on the left has no nitrogen so the mass of the molecular ion (m/z = 98) is an even number. Most of the fragment ions have odd-numbered masses, and therefore are even-electron cations. Diethylmethylamine, on the other hand, has one nitrogen and its molecular mass (m/z = 87) is an odd number. A majority of the fragment ions have even-numbered masses (ions at m/z = 30, 42, 56 & 58 are not labeled), and are even-electron nitrogen cations. The weak even -electron ions at m/z=15 and 29 are due to methyl and ethyl cations (no nitrogen atoms). The fragmentations leading to the chief fragment ions will be displayed by clicking on the appropriate spectrum. Repeated clicks will cycle the display.</P>
+<div class="ctr"><p><TABLE>
+<TR><TD><A HREF= "javascript:chg1();"><IMG SRC="../Images/mesoxid1.gif" name="ms2" BORDER=0 ></A></TD>
+<TD WIDTH=16> </TD>
+<TD><A HREF= "javascript:chg2();"><IMG SRC="../Images/2etmeam1.gif" name="ms3" BORDER=0></A></TD></TR>
+<TR><TH><p>4-methyl-3-pentene-2-one</p></TH><TD> </TD><TH><p>N,N-diethylmethylamine</p></TH></TR>
+</TABLE></p></div>
+<P>When non-bonded electron pairs are present in a molecule (e.g. on N or O), fragmentation pathways may sometimes be explained by assuming the missing electron is partially localized on that atom. A few such mechanisms are shown above. Bond cleavage generates a radical and a cation, and both fragments often share these roles, albeit unequally.</P><BR>
+
+<A NAME="ms3"></A>
+<p><b><span class="fc-maroon fs-4">&nbsp; &nbsp; &nbsp;   3. Isotopes</span></b><br />
+Since a mass spectrometer separates and detects ions of slightly different masses, it easily distinguishes different isotopes of a given element. This is manifested most dramatically for compounds containing bromine and chlorine, as illustrated by the following examples. Since molecules of bromine have only two atoms, the spectrum on the left will come as a surprise if a single atomic mass of 80 amu is assumed for Br. The five peaks in this spectrum demonstrate clearly that natural bromine consists of a nearly 50:50 mixture of isotopes having atomic masses of 79 and 81 amu respectively. Thus, the bromine molecule may be composed of two <SUP>79</SUP>Br atoms (mass 158 amu), two <SUP>81</SUP>Br atoms (mass 162 amu) or the more probable combination of <SUP>79</SUP>Br-<SUP>81</SUP>Br (mass 160 amu). Fragmentation of Br<SUB>2</SUB> to a bromine cation then gives rise to equal sized ion peaks at 79 and 81 amu.</P>
+<div class="ctr"><p><TABLE>
+<TR><TD><IMG SRC="../Images/br2.gif" </TD>
+<TD WIDTH=12> </TD>
+<TD><IMG SRC="../Images/vnylcl.gif" BORDER=0></A></TD><TD WIDTH=12> </TD>
+<TD><IMG SRC="../Images/ch2cl2.gif" BORDER=0></A></TD></TR>
+<TR><TH><p>bromine</p></TH><TD> </TD><TH><p>vinyl chloride</p></TH><TD> </TD><TH><p>methylene chloride</p></TH></TR>
+</TABLE></p></div>
+<P>The center and right hand spectra show that chlorine is also composed of two isotopes, the more abundant having a mass of 35 amu, and the minor isotope a mass 37 amu. The precise isotopic composition of chlorine and bromine is:<BR>
+ &nbsp;  &nbsp;  &nbsp; &nbsp; <B>Chlorine:</B> &nbsp; 75.77% <SUP>35</SUP>Cl and 24.23% <SUP>37</SUP>Cl<BR>
+ &nbsp; &nbsp;  &nbsp; &nbsp; <B>Bromine:</B> &nbsp; 50.50% <SUP>79</SUP>Br and 49.50% <SUP>81</SUP>Br</P>
+<P>The presence of chlorine or bromine in a molecule or ion is easily detected by noticing the intensity ratios of ions differing by 2 amu. In the case of methylene chloride, the molecular ion consists of three peaks at m/z=84, 86 & 88 amu, and their diminishing intensities may be calculated from the natural abundances given above. Loss of a chlorine atom gives two isotopic fragment ions at m/z=49 & 51amu, clearly incorporating a single chlorine atom.
+Fluorine and iodine, by contrast, are monoisotopic, having masses of 19 amu and 127 amu respectively. It should be noted that the presence of halogen atoms in a molecule or fragment ion does not change the odd-even mass rules given above. </P>
+<P><span class="fc-green">To make use of a calculator that predicts the isotope clusters for different combinations of chlorine, bromine and other elements <A HREF="http://www.colby.edu/chemistry/NMR/IsoClus.html">Click Here</A>. This application was developed at Colby College.</span></P>
+
+<P><TABLE BORDER=9 BGCOLOR="#ffebcf" ALIGN=right ><TR><TH>
+<TABLE CELLSPACING=4 CELLPADDING=4> <TR ALIGN=center><TH COLSPAN=4 nowrap><H3>Isotopic Abundance Calculator</H3></TH></TR>
+<TR ALIGN=center><TH COLSPAN=4 NOWRAP>C<SUB><INPUT TYPE="text" NAME="ax"  SIZE="3"></SUB> H<SUB><INPUT TYPE="text" NAME="bx"  SIZE="3"></SUB> N<SUB><INPUT TYPE="text" NAME="cx"  SIZE="3"></SUB> O<SUB><INPUT TYPE="text" NAME="dx"  SIZE="3"></SUB> S<SUB><INPUT TYPE="text" NAME="ex"  SIZE="3"></SUB>Si<SUB><INPUT TYPE="text" NAME="fx"  SIZE="3"></SUB> </TH></TR>
+<TR ALIGN=center><TH>Molecular Ion<br>100% </TH><TH>M + 1<br> <INPUT TYPE="text" NAME="result1"  size="6"></TH><TH>M + 2<br><INPUT TYPE="text" NAME="result2"  size="6"></TH>
+<TD><INPUT TYPE="button"  VALUE=" Calculate " onClick=" clcabnd(this.form)">&nbsp;<BR><BR><INPUT TYPE="button"  VALUE="Clear Input" onClick="clrtxt1(this.form)"></TD></TR></TABLE>
+</TH></TR></TABLE></p>
+<p>Two other common elements having useful isotope signatures are carbon, <SUP>13</SUP>C is 1.1% natural abundance, and sulfur, <SUP>33</SUP>S and <SUP>34</SUP>S are 0.76% and 4.22% natural abundance respectively. For example, the small m/z=99 amu peak in the spectrum of 4-methyl-3-pentene-2-one (above) is due to the presence of a single <SUP>13</SUP>C atom in the molecular ion. Although less important in this respect, <SUP>15</SUP>N and <SUP>18</SUP>O also make small contributions to higher mass satellites of molecular ions incorporating these elements. </P>
+<P>The calculator on the right may be used to calculate the isotope contributions to ion abundances 1 and 2 amu greater than the molecular ion (M). Simply enter an appropriate subscript number to the right of each symbol, leaving those elements not present blank, and press the "<U>Calculate</U>" button. The numbers displayed in the M+1 and M+2 boxes are relative to M being set at 100%. </P>
+<BR CLEAR ALL>
+
+<A NAME="ms4"></A>
+<p><b><span class="fc-maroon fs-4">&nbsp; &nbsp; &nbsp;   4. Fragmentation Patterns</span></b><br />
+The fragmentation of molecular ions into an assortment of fragment ions is a mixed blessing. The nature of the fragments often provides a clue to the molecular structure, but if the molecular ion has a lifetime of less than a few microseconds it will not survive long enough to be observed. Without a molecular ion peak as a reference, the difficulty of interpreting a mass spectrum increases markedly. Fortunately, most organic compounds give mass spectra that include a molecular ion, and those that do not often respond successfully to the use of milder ionization conditions. Among simple organic compounds, the most stable molecular ions are those from aromatic rings, other conjugated pi-electron systems and cycloalkanes. Alcohols, ethers and highly branched alkanes generally show the greatest tendency toward fragmentation.</P>
+<p><IMG SRC="../Images/dodecane.gif" ALIGN=right HSPACE=7></p>
+<P>The mass spectrum of dodecane on the right illustrates the behavior of an unbranched alkane. Since there are no heteroatoms in this molecule, there are no non-bonding valence shell electrons. Consequently, the radical cation character of the molecular ion (m/z = 170) is delocalized over all the covalent bonds. Fragmentation of C-C bonds occurs because they are usually weaker than C-H bonds, and this produces a mixture of alkyl radicals and alkyl carbocations. The positive charge commonly resides on the smaller fragment, so we see a homologous series of hexyl (m/z = 85), pentyl (m/z = 71), butyl (m/z = 57), propyl (m/z = 43), ethyl (m/z = 29) and methyl (m/z = 15) cations. These are accompanied by a set of corresponding alkenyl carbocations (e.g. m/z = 55, 41 &27) formed by loss of 2 H. All of the significant fragment ions in this spectrum are even-electron ions. In most alkane spectra the propyl and butyl ions are the most abundant.</P>
+<P>The presence of a functional group, particularly one having a heteroatom Y with non-bonding valence electrons (Y = N, O, S, X etc.), can dramatically alter the fragmentation pattern of a compound. This influence is thought to occur because of a "localization" of the radical cation component of the molecular ion on the heteroatom. After all, it is easier to remove (ionize) a non-bonding electron than one  that is part of a covalent bond. By localizing the reactive moiety, certain fragmentation processes will be favored. These are summarized in the following diagram, where the green shaded box at the top displays examples of such "localized" molecular ions. The first two fragmentation paths lead to even-electron ions, and the elimination (path #3) gives an odd-electron ion. Note the use of different <A HREF="  ../../react1.htm#rx4b">curved arrows</A> to show single electron shifts compared with electron pair shifts. </P> 
+ <P ALIGN=center><IMG SRC="../Images/fragmech.gif" ></P>
+<P>The charge distributions shown above are common, but for each cleavage process the charge may sometimes be carried by the other (neutral) species, and both fragment ions are observed. Of the three cleavage reactions described here, the alpha-cleavage is generally favored for nitrogen, oxygen and sulfur compounds. Indeed, in the previously displayed <A HREF="#ms2b">spectra of 4-methyl-3-pentene-2-one and N,N-diethylmethylamine</A> the major fragment ions come from alpha-cleavages. Further examples of functional group influence on fragmentation are provided by a selection of compounds that may be examined by clicking the left button below. Useful tables of common fragment ions and neutral species may be viewed by clicking the right button.</P> 
+
+<A NAME="ms4b"></A>
+<div class="ctr"><P><TABLE><TR><TD><TABLE BGCOLOR="#ffebcf"  BORDER=4><TR><TD><p>&nbsp; <A HREF="mspec.htm#ms1">Assorted Mass Spectra</A> &nbsp;</p></TD></TR></TABLE></TD>
+<TD WIDTH=30> </TD>
+<TD><TABLE BGCOLOR="#ffebcf" BORDER=4><TR><TD><p>&nbsp; <A HREF="mspec.htm#ms2"> View Fragment Tables </A> &nbsp;</p></TD></TR></TABLE></TD></TR></TABLE></P></div>
+<P>The complexity of fragmentation patterns has led to mass spectra being used as "fingerprints" for identifying compounds. Environmental pollutants, pesticide residues on food, and controlled substance identification are but a few examples of this application. Extremely small samples of an unknown substance (a microgram or less) are sufficient for such analysis. The following mass spectrum of cocaine demonstrates how a forensic laboratory might determine the nature of an unknown street drug. Even though extensive fragmentation has occurred, many of the more abundant ions (identified by magenta numbers) can be rationalized by the three mechanisms shown above. Plausible assignments may be seen by clicking on the spectrum, and it should be noted that all are even-electron ions. The m/z = 42 ion might be any or all of the following: C<SUB>3</SUB>H<SUB>6</SUB>, C<SUB>2</SUB>H<SUB>2</SUB>O or C<SUB>2</SUB>H<SUB>4</SUB>N. A precise assignment could be made from a high-resolution m/z value (next section).</P>
+ <P ALIGN=center><A HREF= "javascript:chg3();"><IMG SRC="../Images/cocaine1.gif" name="coke" BORDER=0></A></P><BR>
+<P>Odd-electron fragment ions are often formed by characteristic rearrangements in which stable neutral fragments are lost. Mechanisms for some of these rearrangements have been identified by following the course of isotopically labeled molecular ions. A few examples of these rearrangement mechanisms may be seen by clicking the following button.</P>  
+<div class="ctr"><P><TABLE><TR><TD><TABLE BGCOLOR="#ffebcf" BORDER=4><TR><TD><p>&nbsp; <A HREF="mspec.htm#ms3"> Assorted Rearrangement Fragmentations </A> &nbsp;</p> </TD></TR></TABLE></TD>
+</TR></TABLE></P></div>
+
+<xmp> </xmp>
+<A NAME="ms5"></A>
+<p><b><span class="fc-maroon fs-4">&nbsp; &nbsp; &nbsp;   5. High Resolution Mass Spectrometry</span></b><br />
+In assigning mass values to atoms and molecules, we have assumed integral values for isotopic masses. However, accurate measurements show that this is not strictly true.  Because the strong nuclear forces that bind the components of an atomic nucleus together vary, the actual mass of a given isotope deviates from its nominal integer by a small but characteristic amount (remember E = mc<SUP>2</SUP>). Thus, relative to <SUP>12</SUP>C at 12.0000, the isotopic mass of <SUP>16</SUP>O is 15.9949 amu (not 16) and  <SUP>14</SUP>N is 14.0031 amu (not 14). 
+<TABLE CELLPADDING=7 ALIGN=right BORDER HSPACE=7> <TR><TH bgcolor="#eeeeee"><p>Formula</p></TH><TD>C<SUB>6</SUB>H<SUB>12</SUB></TD><TD>C<SUB>5</SUB>H<SUB>8</SUB>O</TD><TD>C<SUB>4</SUB>H<SUB>8</SUB>N<SUB>2</SUB></TD></TR>
+<TR><TH bgcolor="#eeeeee"><p>Mass</p></TH><TD>84.0939</TD><TD>84.0575</TD><TD>84.0688</TD></TR>
+</TABLE>
+
+By designing mass spectrometers that can determine m/z values accurately to four decimal places, it is possible to distinguish different formulas having the same nominal mass. The table on the right illustrates this important feature, and a double-focusing high-resolution mass spectrometer easily distinguishes ions having these compositions. Mass spectrometry therefore not only provides a specific molecular mass value, but it may also establish the molecular formula of an unknown compound.<BR>
+Tables of precise mass values for any molecule or ion are available in libraries; however, the mass calculator provided below serves the same purpose. Since a given nominal mass may correspond to several molecular formulas, lists of such possibilities are especially useful when evaluating the spectrum of an unknown compound. Composition tables are available for this purpose, and a particularly useful program for calculating all possible combinations of H, C, N & O that give a specific nominal mass has been written by Jef Rozenski. To use this calculator <A HREF="http://medlib.med.utah.edu/masspec/elcomp.htm">Click Here</A>.  
+<A NAME="ms5b"></A>
+<HR>
+<TABLE BORDER=9 BGCOLOR="#ffebcf" ALIGN=right hspace=9><TR><TD>
+<TABLE CELLSPACING=4 CELLPADDING=4><TR ALIGN=center><TH COLSPAN=2><H3>Molecular Mass Calculator</H3></TH></TR>
+<TR ALIGN=center><TH COLSPAN=2 NOWRAP>C<SUB><INPUT TYPE="text" NAME="a"  SIZE="3"></SUB> H<SUB><INPUT TYPE="text" NAME="b"  SIZE="3"></SUB> N<SUB><INPUT TYPE="text" NAME="c"  SIZE="3"></SUB> O<SUB><INPUT TYPE="text" NAME="d"  SIZE="3"></SUB> P<SUB><INPUT TYPE="text" NAME="e"  SIZE="3"></SUB> S<SUB><INPUT TYPE="text" NAME="f"  SIZE="3"></SUB> F<SUB><INPUT TYPE="text" NAME="g"  SIZE="3"></SUB> Cl<SUB><INPUT TYPE="text" NAME="h"  SIZE="3"></SUB> Br<SUB><INPUT TYPE="text" NAME="i"  SIZE="3"></SUB> I<SUB><INPUT TYPE="text" NAME="j"  SIZE="3"></SUB></TH></TR>
+<TR ALIGN=center><TD><INPUT TYPE="text" NAME="result"  size="11"><BR><B>Molecular Mass</B></TD>
+<TD><INPUT TYPE="button"  VALUE=" Calculate " onClick=" calcmas(this.form)">&nbsp;<BR><BR><INPUT TYPE="button"  VALUE="Clear Input" onClick="clrtxt(this.form)"></TD></TR></TABLE>
+</TD></TR></TABLE>
+<P>The mass calculator on the right may be used to calculate the exact mass of a molecule based on its elemental composition. Simply enter an appropriate subscript number to the right of each symbol, leaving those elements not present blank, and press the "<U>Calculate</U>" button.  Only the mass of the most abundant isotope, relative to C (12.0000), is used for these calculations. For compounds of chlorine and bromine, increments of 1.997 and 1.998 respectively must be added for each halogen to arrive at the higher mass isotope values.</P>
+<br clear=all />
+<HR />
+
+</FORM>
+<A  NAME="msprb">
+<FORM NAME="info">
+
+<P><TABLE WIDTH="100%" CELLPADDING="2"><TR><TH BGCOLOR="green" ALIGN=center> <b><span class="fc-white">Practice Problems</span></TD></b></TR>
+<TR><TD><p>The following problems require an understanding of the principles of mass spectrometry. Most of the questions concern the identification of unknown compounds from their mass spectra.</p>
+</TD></TR>
+<TR  ALIGN=center><TD><SCRIPT Language="JavaScript">
+<!--HIDE
+			function jump()  {
+var loc=document.info.jumpMenu.options[document.info.jumpMenu.selectedIndex]
+.text;	
+  if  (loc == "Question I"){
+location="../../Questions/Spectroscopy/molform1.htm";
+}else   if  (loc == "Question 2"){
+location="../../Questions/Spectroscopy/masspec1.htm";
+}else   if  (loc == "Question 3"){
+   location="../../Questions/Spectroscopy/masspec2.htm";
+}else   if  (loc == "Question 4"){
+   location="../../Questions/Spectroscopy/masspec3.htm";
+}else   if  (loc == "Question 5"){
+   location="../../Questions/Spectroscopy/masspec4.htm";
+}else   if  (loc == "Question 6"){
+   location="../../Questions/Spectroscopy/masspec5.htm";
+}else   if  (loc == "Question 7"){
+   location="../../Questions/Spectroscopy/masspec6.htm";
+}else   if  (loc == "Question 8"){
+   location="../../Questions/Spectroscopy/masspec7.htm";
+}
+}
+
+//STOP HIDING-->
+</SCRIPT>
+<INPUT TYPE="hidden" VALUE="choice">
+<SELECT NAME="jumpMenu" onChange="jump()">
+<OPTION SELECTED>Choose a Problem
+<OPTION>Question I
+<OPTION>Question 2
+<OPTION>Question 3
+<OPTION>Question 4
+<OPTION>Question 5
+<OPTION>Question 6
+<OPTION>Question 7
+<OPTION>Question 8
+ </SELECT>
+</TD></TR></TABLE></P><BR>
+
+<P><div class="ctr"><TABLE BGCOLOR="ffebcf" CELLPADDING=7 BORDER=4><TR><TH><A HREF="../../Spectrpy/spectro.htm#contnt"><p>Return to Table of Contents</p></A></TH.</TR></TABLE></P></div>
+<p>This page is the property of The Edvibe Team. &nbsp; 
+Comments, questions and errors should
+be sent to <A HREF="mailto:contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<br />
+These pages are provided to the IOCD to assist in capacity building in chemical education.  05/05/2013</p>
+<P ALIGN=center><IMG SRC="../../Images/pixel.gif" HEIGHT= 200></P>
+
+</FORM>
+
+</BODY>
+</HTML>
+

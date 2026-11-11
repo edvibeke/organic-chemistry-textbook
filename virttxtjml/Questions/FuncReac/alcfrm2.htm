@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css"
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+>
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+var answ="(a) Starting Material=B; Reagent=3\r(b) Starting Material=A; Reagent=8\r"
+ +  "(c) Starting Material=B; Reagent=4\r(d) Starting Material=A; Reagent=9\r(e) Starting Material=A; Reagent=6\r(f) Starting Material=B; Reagent=1\r(g) Starting Material=B; Reagent=2\r(h) Starting Material=A; Reagent=4"
+var noansw="You must try to answer this question twice before viewing the answers."
+var rsp1= "";
+var rsp2= "";
+   
+function chk(input) {
+
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+input.e.value=fix(input.e.value)
+input.f.value=fix(input.f.value)
+input.g.value=fix(input.g.value)
+input.h.value=fix(input.h.value)
+input.i.value=fix(input.i.value)
+input.j.value=fix(input.j.value)
+input.k.value=fix(input.k.value)
+input.l.value=fix(input.l.value)
+input.m.value=fix(input.m.value)
+input.n.value=fix(input.n.value)
+input.o.value=fix(input.o.value)
+input.p.value=fix(input.p.value)
+input.q.value=fix(input.q.value)
+input.r.value=fix(input.r.value)
+input.s.value=fix(input.s.value)
+input.t.value=fix(input.t.value)
+input.u.value=fix(input.u.value)
+input.v.value=fix(input.v.value)
+input.w.value=fix(input.w.value)
+input.x.value=fix(input.x.value)
+input.y.value=fix(input.y.value)
+input.z.value=fix(input.z.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+
+if ( input.a.value == "" && input.b.value == "13"){ 
+		rsp1=rsp1 +" ethers,"
+		} else {
+if ( input.a.value != "" || input.b.value != ""){ 
+		rsp2=rsp2 +" ethers,"
+}
+}
+
+if (input.c.value == "" && input.d.value == "1" && input.e.value == "2") { 
+		rsp1=rsp1 +" alkoxides,"
+		} else {
+if ( input.c.value != ""  || input.d.value != ""  || input.e.value != ""){ 
+		rsp2=rsp2 +" alkoxides,"
+}
+}
+
+if (( input.f.value == "" && input.g.value == "462") || (input.f.value =="12" && input.g.value == "117") || (input.f.value =="21" && input.g.value == "117") || (input.f.value =="12" && input.g.value == "47") || (input.f.value =="21" && input.g.value == "47")) { 
+		rsp1=rsp1 +" alkanes,"
+		} else {
+if ( input.f.value != "" || input.g.value != "") { 
+		rsp2=rsp2 +" alkanes,"
+}
+}
+
+if ( input.h.value == "" && input.i.value == "4") { 
+		rsp1=rsp1 +" alkyl halides,"
+		} else {
+if ( input.h.value != "" || input.i.value != "") { 
+		rsp2=rsp2 +" alkyl halides,"
+}
+}
+
+if ((input.j.value == "" && input.k.value == "5" && input.l.value == "12") || (input.j.value == "" && input.k.value == "5" && input.l.value == "13")) { 
+		rsp1=rsp1 +" alkenes,"
+		} else {
+if ( input.j.value != ""  || input.k.value != ""  || input.l.value != "") { 
+		rsp2=rsp2 +" alkenes,"
+}
+}
+
+if (input.m.value == "1" && input.n.value == "9" && input.o.value == "7") { 
+		rsp1=rsp1 +" carboxylic acids,"
+		} else {
+if ( input.m.value != ""  || input.n.value != ""  || input.o.value != ""){ 
+		rsp2=rsp2 +" carboxylic acids,"
+}
+}
+
+if ((input.p.value == "2" && input.q.value == "9" && input.r.value == "7") || (input.p.value == "2" && input.q.value == "9" && input.r.value==8) || (input.p.value == "2" && input.q.value == "10" && input.r.value == "7") || (input.p.value == "2" && input.q.value == "10" && input.r.value=="8")) { 
+		rsp1=rsp1 +" ketones,"
+		} else {
+if ( input.p.value != ""  || input.q.value != ""  || input.r.value != "") { 
+		rsp2=rsp2 +" ketones,"
+}
+}
+
+if ((input.s.value == "1" && input.t.value == "10" && input.u.value == "7") || (input.s.value == "1" && input.t.value == "10" && input.u.value == "8")) { 
+		rsp1=rsp1 +" aldehydes,"
+		} else {
+if ( input.s.value != ""  || input.t.value != ""  || input.u.value != "") { 
+		rsp2=rsp2 +" aldehydes,"
+}
+}
+
+if ( input.v.value == "" && input.w.value == "11") { 
+		rsp1=rsp1 +" sulfonate esters,"
+		} else {
+if ( input.v.value != "" || input.w.value != "") { 
+		rsp2=rsp2 +" sulfonate esters,"
+}
+}
+
+if ((input.x.value == "" && input.y.value == "14" && input.z.value == "16") || (input.x.value == "" && input.y.value == "14" && input.z.value =="7") || (input.x.value == "" && input.y.value == "15" && input.z.value == "16") || (input.x.value == "" && input.y.value == "15" && input.z.value =="7")) { 
+		rsp1=rsp1 +" carboxylic esters,"
+		} else {
+if ( input.x.value != ""  || input.y.value != ""  || input.z.value != "") { 
+		rsp2=rsp2 +" carboxylic esters,"
+}
+}
+
+if ( rsp1=="") {
+rsp1="none";
+}
+if ( rsp2=="") {
+rsp2="none";
+}
+
+	var txt="Functional classes for which your answers are correct are: " + rsp1 +" \rFunctional classes for which your answers are incorrect are: " + rsp2; 
+rsp1="";
+rsp2="";
+input.result.value = txt;
+}
+
+function clearbx(input) {
+	input.result.value=" ";			// Clear all text windows.
+	input.a.value="";	
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.e.value="";
+	input.f.value="";
+	input.g.value="";
+	input.h.value="";
+	input.i.value="";
+	input.j.value="";
+	input.k.value="";
+	input.l.value="";
+	input.m.value="";
+	input.n.value="";
+	input.o.value="";
+	input.p.value="";
+	input.q.value="";
+	input.r.value="";
+	input.s.value="";
+	input.t.value="";
+	input.u.value="";
+	input.v.value="";
+	input.w.value="";
+	input.x.value="";
+	input.y.value="";
+	input.z.value="";
+}
+// End of hide script comment. -->
+</SCRIPT>
+<A NAME="top"></A>
+<FORM>
+<div class="ctr"><TABLE  WIDTH=95%><TR ALIGN=center><TD>
+<MAP NAME="CHOICE">
+<AREA SHAPE="rect"  COORDS=" 173,1,222,18"  HREF ="#ether" >
+<AREA SHAPE="rect"  COORDS="279,29,340,62"  HREF="#alkox">
+<AREA SHAPE="rect"  COORDS=" 337,123,390,145"  HREF="#alkan" >
+<AREA SHAPE="rect"  COORDS="333,216,385,249"  HREF="#halid" >
+<AREA SHAPE="rect"  COORDS=" 278,304,331,324"  HREF="#alken">
+<AREA SHAPE="rect"  COORDS="164,324,231,352"  HREF="#carbacid">
+<AREA SHAPE="rect"  COORDS="52,292,105,312"  HREF="#keton">
+<AREA SHAPE="rect"  COORDS="0,204,68,225"  HREF="#aldehyd">
+<AREA SHAPE="rect"  COORDS="7,101,70,134"  HREF="#sulfestr">
+<AREA SHAPE="rect"  COORDS="50,31,125,61"  HREF="#carbestr"></MAP>
+
+<P><A HREF="../Images/alcohol.map"><IMG ISMAP USEMAP="#CHOICE" SRC="../Images/alcorx.gif"  ALIGN=center VALIGN=middle BORDER=0></A></P>
+</div></TD></TR>
+<TR><TD><IMG SRC="pixel.gif"  HEIGHT=10 WIDTH=10></TD></TR>
+<TR ALIGN=center><TD>
+<P><INPUT TYPE="button" VALUE="Evaluate My Answers" onClick="location.href='#eval'"> &nbsp; <INPUT TYPE="button"  VALUE=" Clear Answers " onClick="clearbx(this.form)"> &nbsp; <INPUT TYPE="button"  VALUE=" Show Answers " onClick="location.href='#answ'"></P>
+</TD></TR></TABLE>
+
+
+<IMG SRC="pixel.gif" HEIGHT=600 WIDTH=10><BR>
+
+<A NAME="eval"></A>
+<P>&nbsp;</P>
+<TABLE CELLSPACING=10 WIDTH=95%><TR>
+<TD><TEXTAREA WRAP NAME="result" ROWS="9" COLS="58">
+</TEXTAREA></TD></TR>
+<TR><TD><INPUT TYPE="button" VALUE="Return" onClick="location.href='#top'"> &nbsp; 
+<INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clearbx(this.form)"></TD>
+</TR></TABLE>
+
+<IMG SRC="pixel.gif"HEIGHT=600 WIDTH=10><BR>
+
+<A NAME="ether"></A>
+<P>&nbsp;</P>
+<div class="ctr"><TABLE WIDTH=70%><TR VALIGN=middle>
+<TD ALIGN=center><span class="fc-blue"><B>Alcohol</B> &nbsp; <INPUT TYPE="text" NAME="a"  SIZE="3"></TD>
+<TD ALIGN=center><INPUT TYPE="text" NAME="b"  SIZE="6" onChange="chk(this.form)"><BR><IMG SRC="../Images/arrow4.gif"><BR>
+&nbsp;</TD>
+<TD><B>Ether</TD>
+</TR></TABLE>
+<P><span class="fc-red">Do not enter punctuation or spaces.</span><BR><INPUT TYPE="button" VALUE="Return" onClick="location.href='#top'"></P></div>
+
+ <IMG SRC="pixel.gif"HEIGHT=600 WIDTH=10><BR>
+
+<A NAME="alkox"></A>
+<P>&nbsp;</P>
+<div class="ctr"><TABLE WIDTH=70%><TR VALIGN=middle>
+<TD ALIGN=center><span class="fc-blue"><B>Alcohol</B> &nbsp; <INPUT TYPE="text" NAME="c"  SIZE="3"></TD>
+<TD ALIGN=center><INPUT TYPE="text" NAME="d"  SIZE="6"><BR><IMG SRC="../Images/arrows3.gif"><BR>
+<INPUT TYPE="text" NAME="e"  SIZE="6" onChange="chk(this.form)"></TD>
+<TD><B>Alkoxide Salt</TD></TR></TABLE>
+<P><span class="fc-red">Do not enter punctuation or spaces.</span><BR><INPUT TYPE="button" VALUE="Return" onClick="location.href='#top'"></P></div>
+
+<IMG SRC="pixel.gif"HEIGHT=600 WIDTH=10><BR>
+
+<A NAME="alkan"></A>
+<P>&nbsp;</P>
+<div class="ctr"><TABLE WIDTH=70%><TR VALIGN=middle>
+<TD ALIGN=center><span class="fc-blue"><B>Alcohol</B> &nbsp; <INPUT TYPE="text" NAME="f"  SIZE="3"></TD>
+<TD ALIGN=center><INPUT TYPE="text" NAME="g"  SIZE="6" onChange="chk(this.form)"><BR><IMG SRC="../Images/arrow4.gif"><BR>
+&nbsp;</TD>
+<TD><B>Alkane</TD>
+<TD WIDTH=50>&nbsp;</TD></TR></TABLE>
+<P><span class="fc-red">Do not enter punctuation or spaces.</span><BR><INPUT TYPE="button" VALUE="Return" onClick="location.href='#top'"></P></div>
+
+<IMG SRC="pixel.gif"HEIGHT=600 WIDTH=10><BR>
+
+<A NAME="halid"></A>
+<P>&nbsp;</P>
+<div class="ctr"><TABLE WIDTH=70%><TR VALIGN=middle>
+<TD ALIGN=center><span class="fc-blue"><B>Alcohol</B> &nbsp; <INPUT TYPE="text" NAME="h"  SIZE="3"></TD>
+<TD ALIGN=center><INPUT TYPE="text" NAME="i"  SIZE="6" onChange="chk(this.form)"><BR><IMG SRC="../Images/arrow4.gif"><BR>
+&nbsp;</TD>
+<TD><B>Alkyl Halide</TD>
+<TD WIDTH=50>&nbsp;</TD></TR></TABLE>
+<P><span class="fc-red">Do not enter punctuation or spaces.</span><BR><INPUT TYPE="button" VALUE="Return" onClick="location.href='#top'"></P></div>
+
+<IMG SRC="pixel.gif"HEIGHT=600 WIDTH=10><BR>
+
+<A NAME="alken"></A>
+<P>&nbsp;</P>
+<div class="ctr"><TABLE WIDTH=70%><TR VALIGN=middle>
+<TD ALIGN=center><span class="fc-blue"><B>Alcohol</B> &nbsp; <INPUT TYPE="text" NAME="j"  SIZE="3"></TD>
+<TD ALIGN=center><INPUT TYPE="text" NAME="k"  SIZE="6"><BR><IMG SRC="../Images/arrows3.gif"><BR>
+<INPUT TYPE="text" NAME="l"  SIZE="6" onChange="chk(this.form)"></TD>
+<TD><B>Alkene</TD></TR></TABLE>
+<P><span class="fc-red">Do not enter punctuation or spaces.</span><BR><INPUT TYPE="button" VALUE="Return" onClick="location.href='#top'"></P></div>
+
+<IMG SRC="pixel.gif"HEIGHT=600 WIDTH=10>
+<P><span class="fc-red">This is the end of the designated help screen></span></P><BR>
+
+<A NAME="carbacid"></A>
+<P>&nbsp;</P>
+<div class="ctr"><TABLE WIDTH=70%><TR VALIGN=middle>
+<TD ALIGN=center><span class="fc-blue"><B>Alcohol</B> &nbsp; <INPUT TYPE="text" NAME="m"  SIZE="3"></TD>
+<TD ALIGN=center><INPUT TYPE="text" NAME="n"  SIZE="6"><BR><IMG SRC="../Images/arrows3.gif"><BR>
+<INPUT TYPE="text" NAME="o"  SIZE="6" onChange="chk(this.form)"></TD>
+<TD><B>Carboxylic Acid</TD></TR></TABLE>
+<P><span class="fc-red">Do not enter punctuation or spaces.</span><BR><INPUT TYPE="button" VALUE="Return" onClick="location.href='#top'"></P></div>
+
+<IMG SRC="pixel.gif"HEIGHT=600 WIDTH=10><BR>
+
+<A NAME="keton"></A>
+<P>&nbsp;</P>
+<div class="ctr"><TABLE WIDTH=80%><TR VALIGN=middle>
+<TD ALIGN=center><span class="fc-blue"><B>Alcohol</B> &nbsp; <INPUT TYPE="text" NAME="p"  SIZE="3"></TD>
+<TD ALIGN=center><INPUT TYPE="text" NAME="q"  SIZE="6"><BR><IMG SRC="../Images/arrows3.gif"><BR>
+<INPUT TYPE="text" NAME="r"  SIZE="6" onChange="chk(this.form)"></TD>
+<TD><B>Ketone</TD></TR></TABLE>
+<P><span class="fc-red">Do not enter punctuation or spaces.</span><BR><INPUT TYPE="button" VALUE="Return" onClick="location.href='#top'"></P></div>
+
+<IMG SRC="pixel.gif"HEIGHT=600 WIDTH=10><BR>
+
+<A NAME="aldehyd"></A>
+<P>&nbsp;</P>
+<div class="ctr"><TABLE WIDTH=80%><TR VALIGN=middle>
+<TD ALIGN=center><span class="fc-blue"><B>Alcohol</B> &nbsp; <INPUT TYPE="text" NAME="s"  SIZE="3"></TD>
+<TD ALIGN=center><INPUT TYPE="text" NAME="t"  SIZE="6"><BR><IMG SRC="../Images/arrows3.gif"><BR>
+<INPUT TYPE="text" NAME="u"  SIZE="6" onChange="chk(this.form)"></TD>
+<TD><B>Aldehyde</TD></TR></TABLE>
+<P><span class="fc-red">Do not enter punctuation or spaces.</span><BR><INPUT TYPE="button" VALUE="Return" onClick="location.href='#top'"></P></div>
+<IMG SRC="pixel.gif"HEIGHT=600 WIDTH=10><BR>
+
+<A NAME="sulfestr"></A>
+<P>&nbsp;</P>
+<div class="ctr"><TABLE WIDTH=80%><TR VALIGN=middle>
+<TD ALIGN=center><span class="fc-blue"><B>Alcohol</B> &nbsp; <INPUT TYPE="text" NAME="v"  SIZE="3"></TD>
+<TD ALIGN=center><INPUT TYPE="text" NAME="w"  SIZE="6" onChange="chk(this.form)"><BR><IMG SRC="../Images/arrow4.gif"><BR>
+&nbsp;</TD>
+<TD><B>Sulfonate Ester</TD></TR></TABLE>
+<P><span class="fc-red">Do not enter punctuation or spaces.</span><BR><INPUT TYPE="button" VALUE="Return" onClick="location.href='#top'"></P></div>
+
+<IMG SRC="pixel.gif"HEIGHT=600 WIDTH=10><BR>
+
+<A NAME="carbestr"></A>
+<P>&nbsp;</P>
+<div class="ctr"><TABLE WIDTH=80%><TR VALIGN=middle>
+<TD ALIGN=center><span class="fc-blue"><B>Alcohol</B> &nbsp; <INPUT TYPE="text" NAME="x"  SIZE="3"></TD>
+<TD ALIGN=center><INPUT TYPE="text" NAME="y"  SIZE="6"><BR><IMG SRC="../Images/arrows3.gif"><BR>
+<INPUT TYPE="text" NAME="z"  SIZE="6" onChange="chk(this.form)"></TD>
+<TD><B>Carboxylic Ester</TD></TR></TABLE>
+<P><span class="fc-red">Do not enter punctuation or spaces.</span><BR><INPUT TYPE="button" VALUE="Return" onClick="location.href='#top'"></P></div>
+
+<IMG SRC="pixel.gif"HEIGHT=600 WIDTH=10><BR>
+
+<A NAME="answ"></A>
+<P>&nbsp;</P>
+<div class="ctr"><TABLE WIDTH=95%>
+<TR><TD ALIGN=center VALIGN=middle>
+<IMG SRC="../Images/alcorx2.gif"></TD>
+<TD WIDTH=50> &nbsp;</TD></TR>
+<TR><TD><IMG SRC="pixel.gif"  HEIGHT=16 WIDTH=10></TD></TR>
+<TR ALIGN=center><TD><INPUT TYPE="button" VALUE="Return" onClick="parent.window.location.replace('alcindx.htm')" ></TD></TR></TABLE></div>
+
+<IMG SRC="pixel.gif"HEIGHT=600 WIDTH=10><BR>
+
+</FORM>
+</BODY></HTML>
+
+</FORM>
+</BODY>
+</HTML>

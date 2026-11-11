@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Hide script from old browsers
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var anscnt=0
+var i=0;
+var ii=0;
+var iii=0;
+var k=0;
+var Text="";
+var answ="";
+var noansw="You must try to answer this question three times before viewing the answers.";
+var timer=null;
+		function process(form) {
+	if (i!=0){
+		i=0
+}
+	if (ii!=0){
+		 ii=0;
+}
+	if (iii!=0){
+		 iii=0;
+}
+	if (k!=0){
+		 k=0;
+}
+
+		if (form.q1[0].checked) {
+		i=2;
+		ii=4;
+		iii=5;
+ answ="There are 2 monochloro isomers\rThere are 4 dichloro isomers.\rThere are 5 bromochloro isomers.";
+k=1;
+	}
+		if (form.q1[1].checked) {
+		i=2;
+		ii=3;
+		iii=4;
+ answ="There are 2 monochloro isomers\rThere are 3 dichloro isomers.\rThere are 4 bromochloro isomers.";
+k=2;
+	}
+		if (form.q1[2].checked) {
+		i=1;
+		ii=3;
+		iii=3;
+ answ="There is 1 monochloro isomer\rThere are 3 dichloro isomers.\rThere are 3 bromochloro isomers.";
+k=3;
+	}	
+		if (form.q1[3].checked) {
+		i=1;
+		ii=2;
+		iii=2;
+ answ="There is 1 monochloro isomer\rThere are 2 dichloro isomers.\rThere are 2 bromochloro isomers."
+k=4;
+	}
+	
+}
+							
+function chck(input) { 
+anscnt=anscnt+1;
+var a1=(input.aa.value);
+var b1=(input.bb.value);
+var c1=(input.cc.value);
+var answ=answ;
+if ( a1 == i && b1 ==ii && c1==iii) { 
+	 Text="Congratulations!\r You have answered all questions correctly";
+anscnt=3;
+	}else{
+if (( a1 == i && b1 == ii && c1!=iii) || ( a1 == i && b1 != ii && c1==iii) || ( a1 != i && b1 == ii && c1==iii)) { 
+ Text="Two of your answers are correct.";
+}else{
+if (( a1 == i && b1 != ii && c1!=iii) || ( a1 != i && b1 == ii && c1!=iii) || ( a1 != i && b1 != ii && c1==iii)){ 
+Text ="One of your answers is correct.";
+	} else {
+		 Text="You have failed to answer any of the questions correctly.";
+}
+}
+}
+input.result.value = Text;
+}
+
+
+function giveansw(show) {
+if (anscnt>=3)  {
+var Text=answ;
+	}else{
+var Text=noansw;
+}
+show.result.value=Text
+}
+
+function clrtxt(input) {
+	input.aa.value="";	
+	input.bb.value="";
+	input.cc.value="";
+	input.result.value=" ";
+anscnt=0;
+}
+
+
+// End of hide script comment. -->
+</SCRIPT>
+<TITLE>Alkane Reactions</TITLE>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+<body>
+<FORM>
+<div class="ctr"><H3>Alkane Halogenation</H3></div>
+<P> The following hydrocarbons may be chlorinated or brominated by photochemical reaction with the appropriate halogen (chlorine or bromine). Select one of the reactants by clicking the button underneath its formula, and then deduce the number of monochlorinated, dichlorinated and monobromo-monochloro <B>constitutional isomers</B> that could be produced on reaction with one to three equivalents of halogen. You should draw possible structural formulas on a piece of paper before entering your answers.<BR>
+<span class="fc-red">Do not count stereoisomers</span>.  </P>
+<div class="ctr"><TABLE CELLPADDING=5 cellspacing=9></P>
+<TR ALIGN=center ><TH> CH<sub>3</sub>CH<sub>2</sub>CH<sub>3</sub>  (propane)</TH>
+<TH> (CH<sub>3</sub>)<sub>3</sub>CH  (isobutane)</TH>
+<TH>(CH<sub>2</sub>)<sub>4</sub> (cyclobutane)</TH>
+<TH>  (CH<sub>3</sub>)<sub>4</sub>C  (neopentane)</TH></TR>
+
+<TR ALIGN=center>
+<TH><INPUT TYPE=RADIO NAME="q1" VALUE="one" checked></TH>
+<TH><INPUT TYPE=RADIO NAME="q1" VALUE="two"></TH>
+<TH><INPUT TYPE=RADIO NAME="q1" VALUE="three"></TH>
+<TH><INPUT TYPE=RADIO NAME="q1" VALUE="four"></TH>
+</TR>
+</TABLE></div>
+<HR>
+<TABLE  WIDTH=95%> 
+<TR VALIGN=top><TD><span class="fc-blue"><B>A </B></span> Number of monochloro isomers: &nbsp;... <INPUT TYPE="text" NAME="aa"  SIZE="2"><BR><BR>
+ <span class="fc-blue"><B>B </B></span> Number of dichloro isomers: &nbsp;......... <INPUT TYPE="text" NAME="bb"  SIZE="2"><BR><BR> 
+ <span class="fc-blue"><B>C </B></span> Number of bromochloro isomers: &nbsp;... <INPUT TYPE="text" NAME="cc"  SIZE="2"><BR></TD> 
+<TD ROWSPAN=3 WIDTH=40> </TD>
+<TH ROWSPAN=3><TEXTAREA WRAP NAME="result" ROWS="4" COLS="56"></TEXTAREA><BR>
+<P><INPUT TYPE="button" VALUE=" Check Answers" onClick="process(this.form); chck(this.form);"> &nbsp; &nbsp; 
+<INPUT TYPE="button" VALUE=" Clear Answers" onClick="clrtxt(this.form) ">  &nbsp; &nbsp; 
+<INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form);"></P></TH></TR></TABLE><BR>
+
+
+</FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY>
+</HTML>
+

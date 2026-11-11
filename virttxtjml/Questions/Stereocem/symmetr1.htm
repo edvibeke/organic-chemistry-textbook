@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var anscnt=0
+ var answ="(1) E,F,J;   (2) A,B,C,D,G,H,I;  (3) E;\r"
+ var noansw="You must try to answer these questions three times before viewing the answers."
+var j=0;
+var x=0;
+var y=0;
+var z=0;
+
+                        // Set function code
+  function strbx(input) {
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+                        // Set desired answer variables.  xx= ----("Y",0)
+var a1=input.a.value.toUpperCase().indexOf("E",0);
+var a2=input.a.value.toUpperCase().indexOf("F",0);
+var a3=input.a.value.toUpperCase().indexOf("J",0);
+var b1=input.b.value.toUpperCase().indexOf("A",0);
+var b2=input.b.value.toUpperCase().indexOf("B",0);
+var b3=input.b.value.toUpperCase().indexOf("C",0);
+var b4=input.b.value.toUpperCase().indexOf("D",0);		
+var b5=input.b.value.toUpperCase().indexOf("G",0);
+var b6=input.b.value.toUpperCase().indexOf("H",0);
+var b7=input.b.value.toUpperCase().indexOf("I",0);
+var c1=input.c.value.toUpperCase().indexOf("E",0);	
+anscnt=anscnt+1;
+
+	if (j!=0){
+	 j=0
+}
+	if (x!=0){
+	 x=0
+}
+	if (y!=0){
+	y=0
+}
+	if (z!=0){
+	z=0
+}
+
+if ( input.a.value == "") { 
+		j=j+1
+}
+if ( input.b.value == "") { 
+		j=j+1
+}
+if ( input.c.value == "") { 
+		j=j+1
+}
+
+	if  (a1>=0 ) { 
+			x=x+1
+}  
+	if (a2>=0)  { 
+		x=x+1
+}
+	if (a3>=0)  { 
+		x=x+1
+}
+	if (b1>=0)  { 
+		y=y+1
+}
+	if (b2>=0)  { 
+		y=y+1
+}
+	if (b3>=0)  { 
+		y=y+1
+}
+	if (b4>=0)  { 
+		y=y+1
+}
+	if (b5>=0)  { 
+		y=y+1
+}
+	if (b6>=0)  { 
+		y=y+1
+}
+	if (b7>=0)  { 
+		y=y+1
+}
+	if (c1>=0)  { 
+		z=z+1
+}
+
+var al=(input.a.value.length);
+var bl=(input.b.value.length);
+var cl=(input.c.value.length);
+var tot=al+bl+cl;
+var k=(x+y+z);
+var rsp="";
+var rsp2="";
+
+if (al>x) {
+var rsp=rsp + "(1),"								
+}
+if (bl>y) {
+var rsp=rsp + "(2),"
+}
+if (cl>z) {
+var rsp=rsp + "(3),"
+}
+
+if (x<3) {   
+var rsp2=rsp2 + "(1),"								 
+}
+if (y<7) {
+var rsp2=rsp2 + "(2),"
+}
+if (z<1) {
+var rsp2=rsp2 + "(3),"
+}
+
+if (rsp=="") {
+rsp="none";
+}
+if (rsp2=="") {
+rsp2="none";
+}
+
+if (j==3) {
+var txt="You have not provided answers to any questions."; 
+anscnt=0
+}else{
+if (x+y+z==11  && tot==11) {
+var txt="Congratulations!\rYou have answered all questions correctly." ;
+anscnt=3
+}else{
+var txt="Your correct answers total: " + k +" \rQuestions you have answered incompletely are:" + rsp2+ " \rQuestions for which you have given incorrect answers are:" + rsp;
+
+}
+}
+input.result.value = txt;
+}
+
+
+														 // functions for showing answers & clearing text
+ function giveansw(show) {
+ if (anscnt>=3)  {
+ var txt=answ
+ 	}else{
+ var txt=noansw
+
+} 
+ show.result.value=txt
+ }
+ 
+ function clrbx(input) {   // Clear all text windows.
+ 	input.a.value="";	
+ 	input.b.value="";
+ 	input.c.value="";
+ 	input.result.value=" ";
+ }
+// End of hide script comment. -->
+</SCRIPT>
+ <link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Symmetry</TITLE>
+ <body>
+ <div class="ctr"><H3>Identifying Molecular Symmetry and Disymmetry</H3></div>
+
+<P>Examine structures <B>A</B> through <B>J</B>, shown below, with respect to their symmetry or lack of it. Assume that the five-membered rings and the ring in compound G are planar. The wedge-hatched bonds in B, C, D & E designate specific configurations. Also, for the acyclic compounds assume stable anti conformations. Answer each of the following questions by entering letters (<B>A</B> through <B>L</B>), corresponding to your selections, in each answer box. If there is no structure that fits the description enter an <B>X</B> in the answer box.<BR><span class="fc-red">Do not enter superfluous characters, since they will be counted as incorrect answers.</span></P>
+ <FORM>
+<p><TABLE align="center"><TR><TD>
+ <span class="fc-blue"><B>1.</span> &nbsp; Which structures are chiral? </B> ............................... <INPUT TYPE="text" NAME="a" SIZE="12"><BR>
+<span class="fc-blue"><B>2.</span> &nbsp;Which structures have a plane of symmetry? </B> ....... <INPUT TYPE="text" NAME="b" SIZE="12"><BR>
+<span class="fc-blue"><B>3.</span> &nbsp;Which structures have a C<SUB>2</SUB> axis of symmetry? </B> ..... <INPUT TYPE="text" NAME="c" SIZE="12"><BR>
+</TD></TR></TABLE></p>
+<P ALIGN=center><IMG SRC ="../Images/cnfgstr2.gif"></P><br>
+<table align="center"><tr><td> 
+<INPUT TYPE="button" VALUE="Check Answers" onClick="strbx(this.form)"> <br><br>
+ <INPUT TYPE="button"  VALUE=" Clear " onClick="clrbx(this.form)"> </td>
+ <td> <TEXTAREA WRAP NAME="result" ROWS="4" COLS="66"> </TEXTAREA></td>
+ <td> <INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)"><br><br>
+<INPUT TYPE="button"  NAME="answr" VALUE="Help" onClick="window.location = '../../sterism2.htm#isom10'"></td></tr></table></p>
+</FORM><HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+ </BODY>
+ </HTML>

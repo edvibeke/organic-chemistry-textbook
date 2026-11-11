@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+
+function jmehelp() { window.open('../MOLEDITOR/jme_help.html','JME','width=800,height=800,scrollbars=yes');
+}
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+document.form.smiles.value = smiles; 
+}
+function processMolecule1(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (smiles == "CCCN(CCC)CCC"  && input.a.value == "3") {
+var Txt="Correct Structure \rCorrect Class.";
+	}else{
+if (smiles == "CCCN(CCC)CCC" && input.a.value != "3") {
+var Txt="Correct Structure! \rWrong Class.";
+	}else{
+var Txt="Wrong! Try again.";
+}
+}
+	input.result.value = Txt ;
+}
+function processMolecule2(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (smiles == "CCC(C)N" && input.b.value == "1") {
+var Txt="Correct Structure \rCorrect Class.";
+	}else{
+if (smiles == "CCC(C)N" && input.b.value != "1") {
+var Txt="Correct Structure! \rWrong Class.";
+	}else{
+var Txt="Wrong! Try again.";
+}
+}
+	input.result.value = Txt ;
+}
+function processMolecule3(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (smiles == "CC(C)NCc1ccccc1"  && input.c.value == "2") {
+var Txt="Correct Structure \rCorrect Class.";
+	}else{
+if (smiles == "CC(C)NCc1ccccc1" && input.c.value != "2") {
+var Txt="Correct Structure! \rWrong Class.";
+	}else{
+var Txt="Wrong! Try again.";
+}
+}
+	input.result.value = Txt ;
+}
+function processMolecule4(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (smiles == "CCN(CC)c1ccccc1"  && input.d.value == "3") {
+var Txt="Correct Structure \rCorrect Class.";
+	}else{
+if (smiles == "CCN(CC)c1ccccc1" && input.d.value != "3") {
+var Txt="Correct Structure! \rWrong Class.";
+	}else{
+var Txt="Wrong! Try again.";
+}
+}
+	input.result.value = Txt ;
+}
+function processMolecule5(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (smiles == "C[N+]1(C)CCCCC1"  && input.e.value == "4") {
+var Txt="Correct Structure \rCorrect Class.";
+	}else{
+if (smiles == "C[N+]1(C)CCCCC1" && input.e.value != "4") {
+var Txt="Correct Structure! \rWrong Class.";
+	}else{
+var Txt="Wrong! Try again.";
+}
+}
+	input.result.value = Txt ;
+}
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body>
+<TITLE>Amine Nomenclature</TITLE>
+<form method="post" name="form">
+<div class="ctr"><H3>Drawing Structural Formulas of Amines</H3></div>
+<p>For each of the following amines, draw a formula using the drawing window on the left.  In the box following the name indicate the class of the amine (primary, secondary, tertiary or quaternary) to which your structure belongs by entering the corresponding number (<b>1</b> for 1 &#186;, <b>2</b> for 2 &#186; etc.). When you are finished, check your answer by pressing the <U>Check Molecule #</U> button under the name. A help screen is available for the drawing window <input type="button" value="Help" onClick="jmehelp();">.</p>
+
+<table><tr><th valign="top" width=370><applet code="JME.class" name="JME" archive="JME.jar" width=360, height=360>
+You have to enable Java and JavaScript on your machine !
+</applet><FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"> &nbsp; </th>
+<td width=500>
+<P><B>1.</B>&nbsp; <span class="fc-blue"> Draw the Structural Formula for tripropylamine</span>&nbsp;........&nbsp;Class?</B>  <INPUT TYPE="text" NAME="a"  SIZE="2"><br />
+<input type="hidden" value="" name="smiles">
+&nbsp &nbsp <input type="button" value="Check Molecule 1" onClick="submitSmiles(); processMolecule1(this.form);"></p>
+<p><B>2.</B>&nbsp; <span class="fc-blue"> Draw the Structural Formula for 2-aminobutane</span>&nbsp;........&nbsp;Class?</B>  <INPUT TYPE="text" NAME="b"  SIZE="2"><br />
+<input type="hidden" value="" name="smiles2">
+&nbsp &nbsp <input type="button" value="Check Molecule 2" onClick="submitSmiles(); processMolecule2(this.form);"></p>
+<p><B>3.</B>&nbsp; <span class="fc-blue"> Draw the Structural Formula for benzylisopropylamine</span>&nbsp;...&nbsp;Class?</B>  <INPUT TYPE="text" NAME="c"  SIZE="2"><br />
+<input type="hidden" value="" name="smiles3">
+&nbsp &nbsp <input type="button" value="Check Molecule 3" onClick="submitSmiles(); processMolecule3(this.form);"></p>
+<p><B>4.</B>&nbsp; <span class="fc-blue"> Draw the Structural Formula for N,N-diethylaniline</span>&nbsp;......&nbsp;Class?</B>  <INPUT TYPE="text" NAME="d"  SIZE="2"><br />
+<input type="hidden" value="" name="smiles4">
+&nbsp &nbsp <input type="button" value="Check Molecule 4" onClick="submitSmiles(); processMolecule4(this.form);"></p>
+<p><B>5.</B>&nbsp; <span class="fc-blue"> Draw the Structural Formula for N,N-dimethylpiperidinium</span>&nbsp;...&nbsp;Class?</B>  <INPUT TYPE="text" NAME="e"  SIZE="2"><br />
+<input type="hidden" value="" name="smiles3">
+&nbsp &nbsp <input type="button" value="Check Molecule 5" onClick="submitSmiles(); processMolecule5(this.form);"></p>
+</TD></TR>
+<TR><TD ALIGN=CENTER>
+<HR>
+<TEXTAREA  WRAP NAME="result"  ROWS="2"  COLS="30"> 
+ </TEXTAREA><BR> <INPUT TYPE="RESET" VALUE="Clear"> &nbsp; &nbsp; &nbsp; 
+<INPUT TYPE=BUTTON VALUE="Nomenclature Rules" onClick="window.location='../../amine1.htm'">
+
+</TD></TR></TABLE></p>
+<BR CLEAR all>
+
+
+</form>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Hide script from old browsers
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var anscnt=0
+var i=0;
+var ii=0;
+var iii=0;
+var k=0;
+var Text="";
+var answ="";
+var noansw="You must try to answer this question three times before viewing the answers.";
+var timer=null;
+		function process(form) {
+	if (i!=0){
+		i=0
+}
+	if (ii!=0){
+		 ii=0;
+}
+	if (iii!=0){
+		 iii=0;
+}
+	if (k!=0){
+		 k=0;
+}
+
+		if (form.q1[0].checked) {
+		i=10;
+		ii=4;
+		iii=2;
+ answ="There are 4 pairs of enantiomers\rThere are 2 meso compounds.\rThe total number of stereoisomers is 10.\rThis molecule has four chiral centers.";
+k=1;
+	}
+		if (form.q1[1].checked) {
+		i=5;
+		ii=0;
+		iii=5;
+ answ="There are no enantiomeric pairs\rThere are 5 meso compounds.\rThe total number of stereoisomers is 5.\rThis molecule has four chiral centers.";
+k=2;
+	}
+		if (form.q1[2].checked) {
+		i=4;
+		ii=2;
+		iii=0;
+ answ="There are 2 pairs of enantiomers\rThere are no meso compounds.\rThe total number of stereoisomers is 4.\rThis molecule has a chiral center and a chiral axis.";
+k=3;
+	}	
+		if (form.q1[3].checked) {
+		i=2;
+		ii=1;
+		iii=0;
+ answ="There is 1 pair of enantiomers\rThere are no meso compounds.\rThe total number of stereoisomers is 2.\rThis molecule has a chiral axis."
+k=4;
+	}
+		if (form.q1[4].checked) {
+			i=5;
+		ii=2;
+		iii=1;
+ answ="There are 2 pairs of enantiomers\rThere is 1 meso compound.\rThe total number of stereoisomers is 5.\rThis molecule has four chiral centers."
+k=5;
+	}
+		if (form.q1[5].checked) {
+			i=4;
+		ii=1;
+		iii=2;
+ answ="There is 1 pair of enantiomers\rThere are 2 meso compounds.\rThe total number of stereoisomers is 4.\rThis molecule has 2 chiral centers and a pseudoasymmetric center."
+k=6;
+	}
+		if (form.q1[6].checked) {
+			i=4;
+		ii=2;
+		iii=0;
+ answ="There are 2 pairs of enantiomers\rThere is no meso compound.\rThe total number of stereoisomers is 4.\rThis molecule has 2 chiral centers and a stereogenic axis."
+k=7;
+	}
+		if (form.q1[7].checked) {
+			i=4;
+		ii=1;
+		iii=2;
+ answ="There is 1 pair of enantiomers\rThere are 2 meso compounds.\rThe total number of stereoisomers is 4.\rThis molecule has 2 chiral centers and a stereogenic axis."
+k=8;
+	}
+}
+							
+function chck(input) { 
+anscnt=anscnt+1;
+var a1=(input.aa.value);
+var b1=(input.bb.value);
+var c1=(input.cc.value);
+var answ=answ;
+if ( a1 == i && b1 ==ii && c1==iii) { 
+	 Text="Congratulations!\r You have answered all questions correctly";
+anscnt=3;
+	}else{
+if (b1 == ii && c1 != iii) { 
+ Text="You have identified the correct number of enantiomer pairs, but not the meso compounds.";
+}else{
+if (c1 == iii && b1 != ii){ 
+Text ="You have not identified the number of enantiomer pairs, but your answer to the meso compounds is correct.";
+	} else {
+if (a1 != i && b1 == ii && c1==iii){ 
+Text ="You have not totaled the number of stereoisomers correctly.";
+	} else {
+		 Text="You have failed to answer this question correctly.";
+}
+}
+}
+}
+input.result.value = Text;
+}
+
+
+function giveansw(show) {
+if (anscnt>=3)  {
+var Text=answ;
+	}else{
+var Text=noansw;
+}
+show.result.value=Text
+}
+
+function clrtxt(input) {
+	input.aa.value="";	
+	input.bb.value="";
+	input.cc.value="";
+	input.result.value=" ";
+anscnt=0;
+}
+
+
+// End of hide script comment. -->
+</SCRIPT>
+<TITLE>Recognizing Stereoisomers</TITLE>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+<body>
+<FORM>
+<div class="ctr"><H3>Recognizing Stereoisomers</H3></div>
+<P><span class="fc-blue"><B>1.</B></span> The following compounds may exist as two or more stereoisomers.  These may be classified as enantiomer pairs or meso compounds.<br />
+Select a compound by clicking the button beneath its structure, and then enter the number of isomer types in the appropriate answer box.</P>
+<div class="ctr"><TABLE CELLPADDING=5></P>
+<TR ALIGN=center ><TD COLSPAN=4><IMG SRC="../Images/struct1.gif"></TD></TR>
+
+<TR ALIGN=center>
+<TD width=155><INPUT TYPE=RADIO NAME="q1" VALUE="one" checked></TD>
+<TD width=155><INPUT TYPE=RADIO NAME="q1" VALUE="two"></TD>
+<TD width=155><INPUT TYPE=RADIO NAME="q1" VALUE="three"></TD>
+<TD width=155><INPUT TYPE=RADIO NAME="q1" VALUE="four"></TD>
+</TR>
+<tr align=center><td colspan=4><hr /><IMG SRC="../Images/struct2.gif"></td></tr>
+<TR ALIGN=center>
+<TD width=125><INPUT TYPE=RADIO NAME="q1" VALUE="five"></TD>
+<TD width=140><INPUT TYPE=RADIO NAME="q1" VALUE="six"></TD>
+<TD width=140><INPUT TYPE=RADIO NAME="q1" VALUE="seven"></TD>
+<TD width=215><INPUT TYPE=RADIO NAME="q1" VALUE="eight"></TD>
+</TR>
+</TABLE></div>
+<HR>
+<TABLE  WIDTH=95%> 
+<TR VALIGN=top><TD><span class="fc-blue"><B>A </B></span> Total number of stereoisomers: &nbsp;... <INPUT TYPE="text" NAME="aa"  SIZE="2"><BR><BR>
+ <span class="fc-blue"><B>B </B></span> Number of enantiomer pairs: &nbsp;....... <INPUT TYPE="text" NAME="bb"  SIZE="2"><BR><BR> 
+ <span class="fc-blue"><B>C </B></span> Number of meso compounds: &nbsp;..... <INPUT TYPE="text" NAME="cc"  SIZE="2"><BR></TD> 
+<TD ROWSPAN=3 WIDTH=40> </TD>
+<TH ROWSPAN=3><TEXTAREA WRAP NAME="result" ROWS="4" COLS="56"></TEXTAREA><BR>
+<P><INPUT TYPE="button" VALUE=" Check Answers" onClick="process(this.form); chck(this.form);"> &nbsp; &nbsp; 
+<INPUT TYPE="button" VALUE=" Clear Answers" onClick="clrtxt(this.form) ">  &nbsp; &nbsp; 
+<INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form); timer=setTimeout('javascript:chse1()',4000);"></P></TH></TR></TABLE><BR>
+
+</FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY>
+</HTML>
+

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Hide script from old browsers
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+
+var anscnt=0																										// other variables
+var answ="(A) -ol, chain=4; (B) -al, chain=5\r"
+ +  "(C) -one, chain=6; (D) -oic acid, chain=5\r"
+ +  "(E) -oic acid, chain=4; (F) -ene, chain=4\r"
+ +  "(G) -oate, chain=4; (H) -yne, chain=6\r"
+
+var noansw="You must try to answer this question twice before viewing the answers."
+var k=0
+var j=0
+
+// answer checking function
+function chkchg(input) {
+
+anscnt=anscnt+1;
+if ( (input.aa.value=='')||(input.ab.value=='')||(input.ba.value=='')||(input.bb.value=='')
+||(input.ca.value=='')||(input.cb.value=='')||(input.da.value=='')||(input.db.value=='')
+||(input.ea.value=='')||(input.eb.value=='')||(input.fa.value=='')||(input.fb.value=='')
+||(input.ga.value=='')||(input.gb.value=='')||(input.ha.value=='')||(input.hb.value=='')) {
+input.result.value="Enter values in each box.";
+		} else {
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+// answer checking function
+function chkchg(input) {
+input.aa.value=fix(input.aa.value)
+input.ab.value=fix(input.ab.value)
+input.ba.value=fix(input.ba.value)
+input.bb.value=fix(input.bb.value)
+input.ca.value=fix(input.ca.value)
+input.cb.value=fix(input.cb.value)
+input.db.value=fix(input.db.value)
+input.eb.value=fix(input.eb.value)
+input.fa.value=fix(input.fa.value)
+input.fb.value=fix(input.fb.value)
+input.ga.value=fix(input.ga.value)
+input.gb.value=fix(input.gb.value)
+input.ha.value=fix(input.ha.value)
+input.hb.value=fix(input.hb.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+}
+	if ( input.aa.value.toUpperCase() == "OL") { 
+
+		k=k+1
+
+		} else {
+
+		j=j+1
+
+}
+
+	if   ( input.ab.value == "4") {
+
+		k=k+1
+
+		} else {
+
+		j=j+1 
+
+}
+
+	if   ( input.ba.value.toUpperCase() =="AL") {
+
+		k=k+1
+
+		} else {
+
+		j=j+1  
+
+}
+
+	if   ( input.bb.value == "5") {
+
+		k=k+1
+
+		} else {
+
+		j=j+1
+
+}
+
+	if   ( input.ca.value.toUpperCase() == "ONE") {
+
+		k=k+1
+
+		} else {
+
+		j=j+1
+
+}
+
+	if   ( input.cb.value == "6") {
+
+		k=k+1
+
+		} else {
+
+		j=j+1
+
+}
+
+	if   (( input.da.value.toUpperCase() == "OIC ACID") || ( input.da.value.toUpperCase() =="OICACID")) {
+
+		k=k+1
+
+		} else {
+
+		j=j+1
+
+}
+
+	if   ( input.db.value == "5") {
+
+		k=k+1
+
+		} else {
+
+		j=j+1
+
+}
+
+	if   (( input.ea.value.toUpperCase() == "OIC ACID") || ( input.ea.value.toUpperCase() =="OICACID")) {
+
+		k=k+1
+
+		} else {
+
+		j=j+1
+
+}
+
+	if   ( input.eb.value == "4") {
+
+		k=k+1
+
+		} else {
+
+		j=j+1
+
+}
+
+	if   ( input.fa.value.toUpperCase() == "ENE") {
+
+		k=k+1
+
+		} else {
+
+		j=j+1
+
+}
+
+	if   ( input.fb.value == "4") {
+
+		k=k+1
+
+		} else {
+
+		j=j+1
+
+}
+
+	if   ( input.ga.value.toUpperCase() == "OATE") {
+
+		k=k+1
+
+		} else {
+
+		j=j+1
+
+}
+
+	if   ( input.gb.value == "4") {
+
+		k=k+1
+
+		} else {
+
+		j=j+1
+
+}
+
+	if   ( input.ha.value.toUpperCase() == "YNE") {
+
+		k=k+1
+
+		} else {
+
+		j=j+1
+
+}
+
+	if   ( input.hb.value == "6") {
+
+		k=k+1
+
+		} else {
+
+		j=j+1
+
+}
+
+ var tot=k+j
+
+var Text="Of " +tot +" responses: \r Your correct answers = "+ k +" \r Your incorrect answers = "+ j  
+
+		input.result.value = Text;
+
+}
+
+}
+
+// functions for showing answer, changing image & clearing text
+
+function giveansw(show) {
+
+if (anscnt>=2)  {
+
+var txt=answ
+
+	}else{
+
+var txt=noansw
+
+}
+
+show.result.value=txt
+
+}
+
+
+
+function clrtxt(input) {
+
+	input.aa.value="";	
+
+	input.ab.value="";
+
+	input.ba.value="";
+
+	input.bb.value="";
+
+	input.ca.value="";
+
+	input.cb.value="";
+
+	input.da.value="";
+
+	input.db.value="";
+
+	input.ea.value="";
+
+	input.eb.value="";
+
+	input.fa.value="";
+
+	input.fb.value="";
+
+	input.ga.value="";
+
+	input.gb.value="";
+
+	input.ha.value="";
+
+	input.hb.value="";
+
+	input.result.value="";
+
+}
+
+	//STOP HIDING-->
+
+</SCRIPT>
+
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+
+<TITLE>Nomenclature</TITLE>
+
+<body>
+
+<div class="ctr"><H3>IUPAC Nomenclature</H3></div>
+
+<P>Many (but not all) functional groups have a characteristic suffix used in the IUPAC nomenclature system, that identifies that function. For each of the compounds <B>A</B> through <B>H</B> shown below, enter the appropriate <B>IUPAC suffix</B> in the designated answer box. (<span class="fc-red">Do not enter the full name, but include additional words that may follow the suffix.</span>) <BR>In the second answer box enter a number indicating the number of carbon atoms in the longest chain.</p>
+
+<HR>
+ <FORM NAME="responses"> 
+<p><TABLE BORDER=1 WIDTH=95%> 
+<TR><TH WIDTH="17%">Compound</TH><TH WIDTH="15%">IUPAC Suffix</TH><TH WIDTH="15%">Chain Length</TH>
+<TH ROWSPAN=5 WIDTH="5%">&nbsp;</TH>
+<TH WIDTH="17%">Compound</TH><TH WIDTH="15%">IUPAC Suffix</TH><TH WIDTH="15%">Chain Length</TH></TR>
+<TR ALIGN=center><TD ROWSPAN=4><img src="../Images/iupac1.gif"></TD>
+<TD  HEIGHT="57"><INPUT TYPE="text" NAME="aa"  SIZE="9"></TD>
+<TD><INPUT TYPE="text" NAME="ab"  SIZE="2"></TD>
+<TD ROWSPAN=4><img src="../Images/iupac2.gif"></TD>
+<TD  HEIGHT="57"><INPUT TYPE="text" NAME="ea"  SIZE="9"></TD>
+<TD><INPUT TYPE="text" NAME="eb"  SIZE="2"></TD></TR>
+<TR ALIGN=center >
+<TD HEIGHT="57"><INPUT TYPE="text" NAME="ba"  SIZE="9"></TD>
+<TD><INPUT TYPE="text" NAME="bb"  SIZE="2"></TD>
+<TD><INPUT TYPE="text" NAME="fa"  SIZE="9"></TD>
+<TD><INPUT TYPE="text" NAME="fb"  SIZE="2"></TD></TR>
+<TR ALIGN=center>
+<TD HEIGHT="57"><INPUT TYPE="text" NAME="ca"  SIZE="9"></TD>
+<TD><INPUT TYPE="text" NAME="cb"  SIZE="2"></TD>
+<TD><INPUT TYPE="text" NAME="ga"  SIZE="9"></TD>
+<TD><INPUT TYPE="text" NAME="gb"  SIZE="2"></TD></TR>
+<TR ALIGN=center>
+<TD HEIGHT="57"><INPUT TYPE="text" NAME="da"  SIZE="9"></TD>
+<TD><INPUT TYPE="text" NAME="db"  SIZE="2"></TD>
+<TD><INPUT TYPE="text" NAME="ha"  SIZE="9"></TD>
+<TD><INPUT TYPE="text" NAME="hb"  SIZE="2"></TD></TR>
+</TABLE></p>
+<HR>
+
+<INPUT TYPE="button"  VALUE=" Check Answer" onClick=" chkchg(this.form)">&nbsp;&nbsp;<INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clrtxt(this.form)">&nbsp;
+<TEXTAREA  WRAP NAME="result"  ROWS="6"  COLS="42"> 
+  </TEXTAREA>
+&nbsp;<INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form) ">
+ </FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+ <HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

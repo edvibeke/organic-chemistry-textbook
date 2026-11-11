@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+   
+<head>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="../../htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="../../htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<META NAME="author" content="The Edvibe Team">
+<META NAME="ROBOTS">
+<META NAME="DC.DATE" CONTENT="1999">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+var 	i=0;
+var k="";
+var txt="";
+
+		function process(form){
+	if (i!=0){
+		 i=0
+}
+	if (k!=""){
+		 k=""
+}
+		if (form.quest1[0].checked){
+		i=i+1
+}else {
+		i=i
+k="C7, "
+}
+		if (form.quest2[1].checked){
+		i=i+1
+}else {
+		i=i	
+k=k + "C8, "
+	}		
+		if (form.quest3[1].checked){
+		i=i+1
+}else {
+		i=i	
+k=k + "C12, "
+}
+		if (form.quest4[0].checked){
+		i=i+1
+}else {
+		i=i
+k=k + "C13, "
+	}
+		if (form.quest5[0].checked){
+		i=i+1
+}else {
+		i=i
+k=k + "C14, "
+	}
+		if (form.quest6[1].checked){
+		i=i+1
+}else {
+		i=i
+k=k + "C16, "
+	}
+		if (form.quest7[1].checked){
+		i=i+1
+}else {
+		i=i
+k=k + "N19 "
+	}
+
+if (i==7){
+var Text ="Congratulations!\rYou have answered all questions correctly.";
+}else{
+var Text="You have answered " +i +" questions correctly.\r"
++"You failed to respond to or incorrectly answered " +k;
+}
+
+form.result.value=Text;	
+}
+
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+
+<title>Chiral Carbons of Strychnine</title>
+</head>
+<body>
+<form>
+<table align="center"><tr><td nowrap>
+ <div class="ctr"><h3>Naming Stereogenic Centers in Strychnine</h3></div> 
+<p>A structural formula of the the alkaloid strychnine is drawn below. The seven chiral centers are labled  by magenta numbers.<br />A 3-D model of this compound is shown to its right. In this display the molecule can be moved about by using the mouse. <br />The chiral centers of the model may be labeled in the manner of the drawing by clicking the designated button.<br />You should provide a C.I.P. configuration for each chiral center by selecting an <i>R</i> or <i>S</i> notation following its number.<br />The configuration of N19 is locked by the <A HREF="../../amine1.htm#amin1a">bridged rings</a>. Here the non-bonding electron pair is the lowest priority substituent.</p></td></tr></table>
+
+
+
+<table align="center"><tr><th>
+<IMG SRC ="../Images/strycnin.gif"><br />strychnine</th><td>
+<script type="text/javascript">Jmol.getApplet("jmol1",{"width": 300, "height": 300, "color": "#FFFFFF", "use": "HTML5", "j2sPath": "../../htmlJ/jsmol/j2s", "addSelectionOptions": false, "script": " select *; zoom 110; spacefill 66; rotate y 135;  rotate x -30; select carbon; color atoms [140,140,140]; select hydrogen; color atoms cyan; select(atomno=10, atomno=11); connect double; select(atomno=12, atomno=13); connect double; select(atomno=14, atomno=15); connect double; select(atomno=2, atomno=25); connect double; select(atomno=21, atomno=22); connect double; select all; wireframe 30; background white; "});</script></td><td width=50>&nbsp; </td>
+
+<td><p><br /><br /></p><button type="button" class="jctl" data-target="jmol1" data-script=" spacefill 70%">X</button> <span class="fs-4"><sup>&nbsp;Show Spacefill Model</sup><br />
+<button type="button" class="jctl" data-target="jmol1" data-script="spacefill off; wireframe 25;">X</button> <sup>&nbsp;Show Stick Model</sup><br />
+<button type="button" class="jctl" data-target="jmol1" data-script="spacefill 66; wireframe 30;">X</button> <sup>&nbsp;Show Ball&Stick Model</sup><br />
+<button type="button" class="jctl" data-target="jmol1" data-script="select atomno=9; label 7;  select atomno=5; label 8;  select atomno=19; label 12;  select atomno=18; label 13;  select atomno=17; label 14; select atomno=6; label 16;  select atomno=4; label 19;  select *; colour label magenta; set labeloffset 0 0; set fontsize 16; select all; spacefill off; wireframe 20;" data-altscript="select all; label off">X</button> <sup>&nbsp;Labels on/off</sup></span><p><br /><br /></p>
+<A HREF="morphine.htm">Stereogenic Centers in Morphine</a> <br /><A HREF="taxol.htm">Stereogenic Centers in Taxol</a></td>
+</tr></table>
+<hr />
+<table align="center" width=300>
+<caption><span class="fc-blue"><b>Identify the configuration at each center</b></span></caption>
+<tr><th>Carbon #</th><th> R </th><th> S </th><th rowspan=6>
+<INPUT TYPE="button"  VALUE="Check Answer" onClick="process(form)"><br /><br /><INPUT TYPE="reset" VALUE="Clear"></th></tr>
+<tr align=center><td> 7</td><td><INPUT NAME="quest1"  TYPE="radio"></td><td><INPUT NAME="quest1"  TYPE="radio"></td></tr>
+<tr align=center><td> 8</td><td><INPUT NAME="quest2"  TYPE="radio"></td><td><INPUT NAME="quest2"  TYPE="radio"></td></tr>
+<tr align=center><td> 12</td><td><INPUT NAME="quest3"  TYPE="radio"></td><td><INPUT NAME="quest3"  TYPE="radio"></td></tr>
+<tr align=center><td> 13</td><td><INPUT NAME="quest4"  TYPE="radio"></td><td><INPUT NAME="quest4"  TYPE="radio"></td></tr>
+<tr align=center><td> 14</td><td><INPUT NAME="quest5"  TYPE="radio"></td><td><INPUT NAME="quest5"  TYPE="radio"></td></tr>
+<tr align=center><td> 16</td><td><INPUT NAME="quest6"  TYPE="radio"></td><td><INPUT NAME="quest6"  TYPE="radio"></td></tr>
+<tr align=center><td> <span class="fc-blue">19 N</span></td><td><INPUT NAME="quest7"  TYPE="radio"></td><td><INPUT NAME="quest7"  TYPE="radio"></td></tr>
+<tr><th colspan=4><TEXTAREA  WRAP NAME="result"  ROWS="3"  COLS="44">  </TEXTAREA></th></tr></table>
+
+
+
+
+
+</div>
+
+
+
+    
+
+</body></html>
+
+
+
+
+
+

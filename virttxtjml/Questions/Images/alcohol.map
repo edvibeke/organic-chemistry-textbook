@@ -1,0 +1,22 @@
+#$MTIMFH
+#$-:Image Map file created by Map THIS!
+#$-:Map THIS! free image map editor by Todd C. Wilson
+#$-:Please do not edit lines starting with "#$"
+#$VERSION:1.30
+#$TITLE:alcomap
+#$DATE:Sun Oct 18 11:40:09 1998
+#$PATH:C:\HtmlFiles\MAPTHIS\EXAMPLES\
+#$GIF:alcorx.gif
+#$FORMAT:ncsa
+#$EOH
+default alcohol.htm
+rect ether.htm 173,1 222,18
+rect alkoxid.htm 279,29 340,62
+rect alkane.htm 337,123 390,145
+rect halides.htm 333,216 385,249
+rect alkene.htm 278,304 331,324
+rect carbacid.htm 164,324 231,352
+rect ketone.htm 52,292 105,312
+rect aldehyde.htm 0,204 68,225
+rect sulfestr.htm 7,101 70,134
+rect carbestr.htm 50,31 125,61

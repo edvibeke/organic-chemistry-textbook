@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en"><head>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="../../htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="../../htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<title>Configuration</title>
+
+<script language = "JavaScript" type = "text/JavaScript">
+
+	var strScript;
+	var Scriptx;
+ var intro="A response to your selection will appear here.<br>A sequence assignment will be shown above.";
+	var molec="";
+var rgt="<font color=blue><b>Correct!</b></font><br>The chiral center is light green.";
+var wrg="<font color=red><b>Wrong!</b></font><br>The chiral center is light green.";
+var rgta="<font color=blue><b>Correct!</b></font><br>This compound is achiral.";
+var wrga="<font color=red><b>Wrong!</b></font><br>This compound is achiral";
+
+function process(form) {
+	if (form.prb[0].checked) {
+	molec=1;
+}
+	if (form.prb[1].checked) {
+molec=2;
+}
+	if (form.prb[2].checked) {
+molec=3;
+}
+	if (form.prb[3].checked) {
+molec=4;
+}
+	if (form.prb[4].checked) {
+molec=5;
+}
+	if (form.prb[5].checked) {
+	molec=6;
+}
+	if (form.prb[6].checked) {
+	molec=7;
+}
+	if (form.prb[7].checked) {
+	molec=8;
+}
+	if (form.prb[8].checked) {
+	molec=9;
+}
+	if (form.prb[9].checked) {
+	molec=10;
+}
+if (form.prb[10].checked) {
+	molec=11;
+}
+if (form.prb[11].checked) {
+	molec=12;
+}
+
+
+
+	function LoadApplet(){
+	//alert(strScript);
+	document.getElementById("fixapplt").innerHTML= (
+   "<applet " + 
+      "name='jmol' " + 
+      "id='jmol'  " + 
+      "code='JmolApplet' " + 
+      "archive='JmolApplet.jar' " + 
+      "width='300' height='300' " + 
+      "mayscript='true'>" + 
+	  "<param name = 'emulate' value ='chime' /> " +
+      "<param name='progressbar' value='true' /> " + 
+      "<param name='progresscolor' value='#0000FF' /> " +  
+      "<param name='boxmessage' value='Model Loading...' /> " + 
+      "<param name='boxbgcolor' value='#FFFFFF' /> " + 
+      "<param name='boxfgcolor' value='#112233' /> " + 
+      "<param name='bgcolor' value='#FFFFFF' /> " + 
+      "<param name='frank' value='true' /> " + 
+      "<param name='debugscript' value='true' /> " + 
+     "<param name='script' value= '" + strScript +"'/> " + 
+   "</applet>"
+);
+		return;
+}	
+
+document.getElementById("txtarea").innerHTML= (intro);
+
+	MoleculePath = "Structures/M"+molec+".pdb";
+		
+			strScript = 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all; cpk 0.5; select Hydrogen; color atoms cyan; select Chlorine; color atoms mediumseagreen; select Bromine, Chlorine, Fluorine, Sulfur; label %e; color label black; set labeloffset 0 0;  select all; move 100 90 0 0 0 0 0 0 2; echo on;  set echo top center; color echo maroon; echo Problem '+molec+'';
+	LoadApplet();
+	}
+
+
+
+function changeDisp()  {
+	function LoadApplet2(){
+	//alert(Scriptx);
+	document.getElementById("fixapplt").innerHTML= (
+   "<applet " + 
+      "name='jmol' " + 
+      "id='jmol'  " + 
+      "code='JmolApplet' " + 
+      "archive='JmolApplet.jar' " + 
+      "width='300' height='300' " + 
+      "mayscript='true'>" + 
+	  "<param name = 'emulate' value ='chime' /> " +
+      "<param name='progressbar' value='true' /> " + 
+      "<param name='progresscolor' value='#0000FF' /> " +  
+      "<param name='boxmessage' value='Model Loading...' /> " + 
+      "<param name='boxbgcolor' value='#FFFFFF' /> " + 
+      "<param name='boxfgcolor' value='#112233' /> " + 
+      "<param name='bgcolor' value='#FFFFFF' /> " + 
+      "<param name='frank' value='true' /> " + 
+      "<param name='debugscript' value='true' /> " + 
+     "<param name='script' value= '" + Scriptx +"'/> " + 
+   "</applet>"
+);
+		return;
+}	
+
+
+	MoleculePath = "Structures/M"+molec+".pdb";
+
+if (molec==1) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=2; color atoms lawngreen; select atomno=6; label 1; font label 20; color label yellow; select atomno=3; label 2; font label 20; color label yellow; select atomno=1; label 3; font label 20; color label yellow; select atomno=9; label 4; font label 20; color label yellow;  select all;  set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Problem '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==2) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=4; color atoms lawngreen; select atomno=11; label 1; font label 20; color label yellow; select atomno=1; label 2; font label 20; color label yellow; select atomno=5; label 3; font label 20; color label yellow; select atomno=7; label 4; font label 20; color label yellow; select all;  set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Problem '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==3) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=11; color atoms lawngreen; select atomno=2; label 1; font label 20; color label yellow; select atomno=8; label 2; font label 20; color label yellow; select atomno=13; label 3; font label 20; color label yellow; select atomno=12; label 4; font label 20; color label yellow; select all;  set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Problem '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==4) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan;  select (atomno=2, atomno=5, atomno=7, atomno=8, atomno=13, atomno=21, atomno=22, atomno=26);  color atoms black; select all;   move 100 90 0 0 0 0 0 0 2; echo on;  set echo top center; color echo maroon; echo Problem '+molec+'; set echo bottom left; font echo 14; color echo black; echo The Black Chains are Identical';
+}
+if (molec==5) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=15; color atoms lawngreen; select atomno=12; label 1; font label 20; color label yellow; select atomno=14; label 2; font label 20; color label yellow; select atomno=16; label 3; font label 20; color label yellow; select atomno=25; label 4; font label 20; color label yellow; select all; zoom 120; set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Problem '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==6) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=1; color atoms lawngreen; select atomno=9; label 1; font label 20; color label yellow; select atomno=2; label 2; font label 20; color label yellow; select atomno=5; label 3; font label 20; color label yellow; select atomno=10; label 4; font label 20; color label yellow; select all; zoom 120; set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Problem '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==7) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan;  select (atomno=2, atomno=3, atomno=4, atomno=6);  color atoms black; select all;   echo on;  set echo top center; color echo maroon; echo Problem '+molec+'; set echo bottom left; font echo 14; color echo black; echo The Black Segments are Identical';
+}
+if (molec==8) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=2; color atoms lawngreen; select atomno=7; color atoms mediumseagreen; label 1; font label 20; color label yellow; select atomno=3; label 2; font label 20; color label yellow; select atomno=1; label 3; font label 20; color label yellow; select atomno=11; label 4; font label 20; color label yellow; select all; zoom 120; set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Problem '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==9) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=6; color atoms lawngreen; select atomno=18; label 1; font label 20; color label yellow; select atomno=5; label 2; font label 20; color label yellow; select atomno=7; label 3; font label 20; color label yellow; select atomno=12; label 4; font label 20; color label yellow; select all;  set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Problem '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==10) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan;  select atomno=26; color atoms mediumseagreen; select (atomno=5, atomno=3, atomno=12, atomno=15);  color atoms black; select all;   echo on;  set echo top center; color echo maroon; echo Problem '+molec+'; set echo bottom left; font echo 14; color echo black; echo The Black Segments are Identical';
+}
+if (molec==11) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=7; color atoms lawngreen; select atomno=8; label 1; font label 20; color label yellow; select atomno=14; label 2; font label 20; color label yellow; select atomno=6; label 3; font label 20; color label yellow; select atomno=22; label 4; font label 20; color label yellow; select all; zoom 120; set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Problem '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+if (molec==12) {
+Scriptx= 'load ' + MoleculePath + '; spin off; wireframe 0.15; select all;  cpk 0.5; select Hydrogen; color atoms cyan; select atomno=6; color atoms lawngreen; select atomno=5; label 1; font label 20; color label yellow; select atomno=11; label 2; font label 20; color label yellow; select atomno=7; label 3; font label 20; color label yellow; select atomno=10; label 4; font label 20; color label yellow; select all; set labeloffset 0 0; echo on;  set echo top center; color echo maroon; echo Problem '+molec+'; set echo bottom left; font echo 14; color echo maroon; echo CIP Sequence Order = Yellow Numbers';
+}
+
+
+
+	LoadApplet2();
+} 
+
+var k="";
+function radio2(form)  {
+	if (k!=0){
+		 k=0
+}
+ 	if (form.cnfg[0].checked) {
+	k=1;
+}
+	if (form.cnfg[1].checked) {
+k=2;
+}
+	if (form.cnfg[2].checked) {
+k=3;
+}
+}
+
+
+
+
+function chkans(show) {
+if ((molec==1)&&(k==1))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==1) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==2)&&(k==1))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==2) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==3)&&(k==1))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==3) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==4)&&(k==3))  {
+document.getElementById("txtarea").innerHTML= (rgta);
+	}else{
+if (molec==4) {
+document.getElementById("txtarea").innerHTML= (wrga);
+}
+if ((molec==5)&&(k==1))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==5) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==6)&&(k==1))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==6) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==7)&&(k==3))  {
+document.getElementById("txtarea").innerHTML= (rgta);
+	}else{
+if (molec==7) {
+document.getElementById("txtarea").innerHTML= (wrga);
+}
+if ((molec==8)&&(k==2))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==8) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==9)&&(k==2))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==9) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==10)&&(k==3))  {
+document.getElementById("txtarea").innerHTML= (rgta);
+	}else{
+if (molec==10) {
+document.getElementById("txtarea").innerHTML= (wrga);
+}
+if ((molec==11)&&(k==1))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==11) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+if ((molec==12)&&(k==1))  {
+document.getElementById("txtarea").innerHTML= (rgt);
+	}else{
+if (molec==12) {
+document.getElementById("txtarea").innerHTML= (wrg);
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+
+
+-->
+</script>
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- body {background-color: #FFFFFF} p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+</script>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body> 
+<p><div class="ctr"><H3>Determining Configuration</H3></div> </p>
+
+<form>
+  
+<table width="480" border="1" align="center">
+  <tr>
+    <td colspan="2" height="280" width="356" id = "fixapplt" align="center"><h2><span class="fc-maroon">Select a Problem</span></h2><span class="fs-4">Click the <span class="fc-blue">Show Problem</span> Button</span><table align="center" cellpadding="3"><tr><td><p align="left">A three-dimensional molecular structure will be displayed here, and may be moved about with the mouse. Carbon is gray, hydrogen is cyan, oxygen is red, and nitrogen is dark blue. Other atoms are colored differently and are labled.<br>Characterize the configuration of the molecule by selecting one of the three terms listed below. A response to your answer will be presented by clicking the <span class="fc-green"><b>Check Answer</b></span> button.</p></td></tr></table></td>
+<td rowspan="3" width="120" ><p><input name="prb" type="radio" value="1" checked>Problem 1 <br>
+<input name="prb" type="radio" value="2">Problem 2 <br><input name="prb" type="radio" value="3">Problem 3 <br><input name="prb" type="radio" value="4">Problem 4 <br><input name="prb" type="radio" value="5">Problem 5 <br><input name="prb" type="radio" value="6">Problem 6 <br><input name="prb" type="radio" value="7">Problem 7 <br><input name="prb" type="radio" value="8">Problem 8<br><input name="prb" type="radio" value="9">Problem 9<br><input name="prb" type="radio" value="10">Problem 10<br><input name="prb" type="radio" value="11">Problem 11<br><input name="prb" type="radio" value="12">Problem 12</td>
+  </tr>
+<tr>
+    <td width="252" height = "36"  align="center" >
+        <input name="cnfg" type="radio" value="S"><b>S &nbsp; &nbsp; 
+        <input name="cnfg" type="radio" value="R">R &nbsp; &nbsp; 
+		<input name="cnfg" type="radio" value="Achir">Achiral</b></td>
+    <td width="104" height = "36" align="center" bgcolor="blue"><input name="new" type="reset" value="Show Problem" onClick ="process(this.form);reset;"></td>
+  </tr>
+  <tr>
+    <td  width="252" height="36" align="center"  id="txtarea" >
+   A response to your selection will appear here.<br>A sequence assignment will be shown above.
+   </td>
+    <td width="104" height="36" align="center" bgcolor="green" > <input name="report" type="button" id="report" value="Check Answer" onClick ="radio2(this.form);chkans(this.form);reset;changeDisp();"></td>
+  </tr>
+</table>
+<div class="ctr">With some browsers it may be necessary to click a button twice for action.</div>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. <br>Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+
+</form>
+</body>
+</html>

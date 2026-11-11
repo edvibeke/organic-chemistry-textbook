@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<TITLE>Curved Arrows 2</TITLE>
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var Txt="";
+var txt="";
+var smiles = "";
+var j="";
+var i="";
+var x="";
+var anscnt=0;
+var jme = "0 0";
+var noansw="You must try to answer this question twice before viewing the answers.";
+
+	function process(form) {
+if (anscnt!=0) {
+anscnt=0;
+}
+	if (j!=0){
+	 j=0
+}
+	if (txt!=""){
+	 txt="";
+}
+		if (form.q1[0].checked) {
+i= "CCC(=O)CCCC([O-])=C(C)C";  
+j="1";
+x="0";
+jmeans = "12 11 C 4.54 -4.26 C 5.94 -4.26 C 6.64 -5.47 C 8.04 -5.47 C 8.74 -6.68 C 10.14 -6.68 C 10.84 -7.89 C 12.24 -7.89 C 3.84 -3.04 O 6.64 -3.04 O- 10.84 -5.47 C 10.14 -9.11 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 7 2 7 8 1 1 9 1 2 10 2 6 11 1 7 12 1";
+txt="Draw only the chief organic product. Do not draw any small inorganic products.";
+}
+		if (form.q1[1].checked) {
+i="C=C1CC[N+](=C)CC1.[Br-]";
+ j="2";
+x="0";
+jmeans = "8 8 C 6.25 -5.68 C 6.25 -4.28 C 5.04 -3.58 C 3.83 -4.28 C 3.83 -5.68 N+ 5.04 -6.38 C 5.04 -2.18 C 5.04 -7.78 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 2|1 0 Br- 9.80 -5.15";
+txt="Draw all products of this reaction.";
+}
+		if (form.q1[2].checked) {
+i= "[OH+]=C1CCCCCC1.N#N"; 
+ j="3";
+txt="Draw all products of this reaction.";
+jmeans = "8 8 C 6.75 -7.00 C 7.62 -5.90 C 7.31 -4.54 C 6.05 -3.93 C 4.79 -4.54 C 4.48 -5.90 C 5.35 -7.00 O+ 8.40 -3.67 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 7 1 7 1 1 3 8 2|2 1 N 13.38 -5.43 N 14.78 -5.43 1 2 3";
+x="0";
+}
+		if (form.q1[3].checked) {
+i="CCC([O-])=CCC1(C)C(=O)CCCC1=O";    
+ j="4";
+x="0";
+jmeans = "15 15 O 4.98 -4.03 O 7.41 -8.23 C 3.77 -7.53 C 3.77 -6.13 C 4.98 -8.23 C 6.20 -6.13 C 4.98 -5.43 C 6.20 -7.53 C 6.21 -4.73 C 7.47 -5.55 C 8.61 -6.37 C 9.88 -5.79 C 11.02 -6.60 C 12.30 -6.03 O- 9.90 -4.39 1 7 2 2 8 2 3 4 1 3 5 1 4 7 1 5 8 1 6 7 1 6 8 1 6 9 1 6 10 1 10 11 1 11 12 2 12 13 1 13 14 1 12 15 1";
+txt="";
+}
+		if (form.q1[4].checked) {
+i="C[C@@]12C=CCC[C@]1(C)CC(Cl)=CC2";
+ j="5";
+x="0";
+jmeans = "13 14 C 7.71 -5.74 C 7.71 -4.34 C 6.50 -3.64 C 5.28 -4.34 C 5.28 -5.74 C 6.50 -6.44 C 8.92 -6.44 C 10.13 -5.74 C 10.13 -4.34 C 8.92 -3.64 C 7.74 -2.94 C 7.72 -7.14 Cl 11.35 -3.64 1 2 1 2 3 1 3 4 1 4 5 1 5 6 2 6 1 1 7 8 1 8 9 2 9 10 1 2 10 1 1 7 1 2 11 -1 1 12 -1 9 13 1";
+txt="Use the wedge drawing tool to indicate relative configuration where necessary.";
+}
+		if (form.q1[5].checked) {
+i="O=S(=O)(N=NC2=C1CCCCC1([O-])CCC2)c3ccccc3";   
+ j="6";
+x="1";
+jmeans = "22 24 C 7.76 -5.18 C 7.76 -3.78 C 6.55 -3.08 C 5.34 -3.78 C 5.34 -5.18 C 6.55 -5.88 C 8.98 -5.88 C 10.19 -5.18 C 10.19 -3.78 C 8.98 -3.08 O- 7.76 -2.38 N 6.55 -7.28 N 5.34 -7.98 S 5.34 -9.38 C 4.13 -10.08 C 2.91 -9.38 C 1.70 -10.08 C 1.70 -11.48 C 2.91 -12.18 C 4.13 -11.48 O 6.65 -8.88 O 6.39 -10.30 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 2 7 8 1 8 9 1 9 10 1 2 10 1 1 7 1 2 11 1 6 12 1 12 13 2 13 14 1 14 15 1 16 17 1 17 18 2 18 19 1 19 20 2 15 20 1 15 16 2 14 21 2 14 22 2";
+txt="This illustration shows the first step of the Eschenmoser Fragmentation. When you write the correct intermediate formed in this step, a mechanism for the second step will be shown above. You should then draw the products from this step.";
+}
+}
+
+function getPict() { 
+document.images[0].src="../Images/crvarrw"+j+".gif";
+	 document.form.result1.value = txt ;
+}
+function strtPict() { 
+document.images[0].src="../Images/crvarrw1.gif";    
+j="1";
+i="CCC(=O)CCCC([O-])=C(C)C"; 
+jmeans = "12 11 C 4.54 -4.26 C 5.94 -4.26 C 6.64 -5.47 C 8.04 -5.47 C 8.74 -6.68 C 10.14 -6.68 C 10.84 -7.89 C 12.24 -7.89 C 3.84 -3.04 O 6.64 -3.04 O- 10.84 -5.47 C 10.14 -9.11 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 7 2 7 8 1 1 9 1 2 10 2 6 11 1 7 12 1";
+anscnt=0;
+}
+
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+  if (smiles == "") {
+alert("Nothing to process!\r You must draw a structural formula"); return;
+}
+	anscnt=anscnt+1;
+txt="";
+Txt="";
+if  ((smiles == i) && (x=="0")) { 
+var Txt="Correct Answer ";
+	anscnt=2;
+}else{
+if (x=="2") {
+jmeans = "11 11 C 3.42 -7.00 C 4.82 -7.00 C 2.02 -7.00 C 6.22 -7.00 C 1.32 -5.79 C 6.92 -5.79 C 2.11 -4.64 C 6.22 -4.57 C 3.40 -4.08 C 4.91 -4.08 O 5.44 -2.79 1 2 3 1 3 1 2 4 1 3 5 1 4 6 1 5 7 1 6 8 1 7 9 1 8 10 1 9 10 1 10 11 2|9 9 C 11.46 -6.41 C 11.46 -5.01 C 10.25 -4.31 C 9.04 -5.01 C 9.04 -6.41 C 10.25 -7.11 S 10.25 -2.91 O 11.46 -2.21 O- 9.04 -2.21 1 2 1 2 3 2 3 4 1 4 5 2 5 6 1 6 1 2 3 7 1 7 8 2 7 9 1|2 1 N 14.73 -5.71 N 16.13 -5.71 1 2 3";
+}
+if ((j=="6") &&(x=="1") && (smiles==i)){
+var Txt="Your answer for the first step is correct.";
+var txt="The mechanism drawing has been changed to show the second step of the Eschenmoser Fragmentation. Draw all the products of this mechanism, drawing the organic products first.";
+document.images[0].src="../Images/eschmos2.gif"; 
+document.JME.reset(); 
+	anscnt=2;
+x="2";                                   
+}else{
+if (((x=="2")&&(j=="6")) && ((smiles=="O=S([O-])c1ccccc1.O=C1CCCC#CCCCC1.N#N")||(smiles=="O=C1CCCC#CCCCC1.O=S([O-])c1ccccc1.N#N")||(smiles=="O=C1CCCC#CCCCC1.O=S([O-])c1ccccc1.[N2]") ||(smiles=="O=S([O-])c1ccccc1.O=C1CCCC#CCCCC1.[N2]"))) {
+Txt="Correct Answer";  
+	anscnt=2;  
+}else{
+if (((j=="2") && (smiles=="[Br-].C=C1CC[N+](=C)CC1")) || ((j=="3") && (smiles=="N#N.[OH+]=C1CCCCCC1")||(smiles=="[N2].[OH+]=C1CCCCCC1")||(smiles=="[OH+]=C1CCCCCC1.[N2]"))||((j=="5") && (smiles=="C[C@]12C=CCC[C@@]1(C)CC(Cl)=CC2"))) {  
+var Txt="Correct Answer ";
+	anscnt=2;                   
+}else{       
+if (((j=="2") && (smiles.indexOf("C=C1CC[N+](=C)CC1",0)>=0)) || ((j=="3") && (smiles.indexOf("[OH+]=C1CCCCCC1",0)>=0)) || ((x=="2") && (smiles.indexOf("O=C1CCCC#CCCCC1",0)>=0)) || ((x=="2") && (smiles.indexOf("O=S([O-])c1ccccc1",0)>=0))) { 
+var Txt="One or more of the structures you have written is correct, but your answer is incomplete. ";  
+}else{
+if ((j=="1") && (smiles.indexOf("CCC(=O)CCCC(=O)C(C)C",0)>=0)) { 
+var Txt="Wrong!";
+var txt="You have drawn the diketone expected from quenching the enolate product from this mechanism. ";  
+}else{
+if ((j=="3") && (smiles.indexOf("O=C1CCCCCC1",0)>=0)) { 
+var Txt="Wrong!";
+var txt="The product from this mechanism is the conjugate acid of this ketone. ";  
+}else{
+if ((j=="4") && (smiles.indexOf("CCC(=O)CCC1(C)C(=O)CCCC1=O",0)>=0)) { 
+var Txt="Wrong!";
+var txt="You have drawn the triketone expected from quenching the enolate product from this mechanism. ";  
+}else{                            
+if ((j=="6") && (smiles=="O=S(=O)(N=NC2=C1CCCCC1(O)CCC2)c3ccccc3")) { 
+var Txt="Wrong!";
+var txt="You have drawn the protonated alcohol equivalent to the the alkoxide product expected from this mechanism. ";  
+}else{
+if ((x=="2") && (smiles.indexOf("O=S(O)c1ccccc1",0)>=0)) { 
+var Txt="Wrong!";
+var txt="One product from this mechanism is the conjugate base of this sulfinic acid. ";  
+}else{
+var Txt="Wrong!  Try again. ";
+}}
+}}
+}}
+}}
+}
+ document.form.result1.value = Txt+"\r"+txt ;
+}
+if (((smiles.indexOf(".",0)>=0)) && ((j=="1")||(j=="4")||(j=="5"))) {
+txt="Only a single product should be drawn. You have drawn two or more.";     
+	anscnt=2;  
+}
+	 document.form.result1.value = Txt+"\r"+txt;
+}
+
+function showans() { 
+if (anscnt>=2) {
+document.JME.readMolecule(jmeans);
+Txt="The correct answer is shown in the drawing window.";
+}else{
+Txt=noansw; 
+}
+	 document.form.result1.value = Txt ;
+}
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body>
+
+<div class="ctr"><H3>Evaluating Curved Arrow Mechanisms</H3></div>
+<P>Select a problem from the list on the right. When the <B>Show Problem</B> button is pressed a curved arrow mechanism will be shown below. Using the drawing window, draw a structural formula (or formulas) for the compound(s) or ions formed by this mechanism. Additional instructions will be given in the information window. If more than one reaction product must be drawn, use the <b>New</b> button to start a second component. Small ions are drawn by pressing the element symbol on the left, with charges designated by using the <b>+/-</b> button. In the case where a general base formula is used (<b>B:</b>), you do not need to draw this species.<br>
+To evaluate your answer press the <b>Check Answer</b> button. A response will be presented in the information window.<BR>
+<div class="ctr"><span class="fc-maroon">To practice using this drawing program <A 
+HREF="../MOLEDITOR/newprct.htm" 
+>Click Here</A></span></div></P>
+<TABLE WIDTH=90% CELLPADDING=2 BORDER><TR><TH ROWSPAN=7>
+<applet code="JME.class" name="JME" archive="JME.jar" width=336, height=328>
+<param name= "options"  value="multipart">
+You have to enable Java and JavaScript on your machine !
+</applet>
+<FORM METHOD="POST" NAME="form" ONSUBMIT="return false;">
+</TH>
+<TH ROWSPAN=7 ><div class="ctr">
+<P><input type="button" value="Show Problem" onClick="process(form);getPict();"> &nbsp; &nbsp; &nbsp;  <INPUT TYPE="RESET" VALUE="Reset" onClick="document.JME.reset();strtPict()"> &nbsp; &nbsp; &nbsp; <input type="button" value="Check Answer" onClick="submitSmiles();"> &nbsp; &nbsp; &nbsp; <INPUT TYPE="button" VALUE="Show Answer" onClick="showans();"></P>
+<img src="../Images/crvarrw1.gif"></div>
+<P><span class="fc-blue">Information Window</span><BR><TEXTAREA WRAP NAME="result1" ROWS="6" COLS="54"></TEXTAREA></P>
+</TH>
+<TH NOWRAP><B><span class="fc-blue fs-4"> Problem 1</span></B> 
+ <INPUT TYPE=RADIO NAME="q1" VALUE="draw" checked>
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 2</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 3</span></B> 
+  <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 4</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 5</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH  NOWRAP><B><span class="fc-blue fs-4"> Problem 6</span></B>
+ <INPUT TYPE=RADIO NAME="q1" VALUE="draw">
+
+<input type="hidden" value="" name="smiles">
+</TH></TR>
+<TR><TH> </TH></TR>
+</TABLE>
+<BR>
+
+</form>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.
+<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>
+
+
+

@@ -1,0 +1,535 @@
+<!doctype html>
+
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Styles/modern.css">
+<META NAME="author" content="The Edvibe Team">
+<META NAME="subject" content="polymers and plastics">
+<meta name="description" content="macromolecules, polymerization, properties of plastics, biodegradability">
+
+<Title>Polymers</Title>
+
+
+
+<script language=javascript> <!--Hide
+
+function calcmas(input) {
+var a=(input.aa.value)*100;
+var b=(input.bb.value)*100;
+var c=(input.cc.value)*100;
+var d=(input.dd.value)*100;
+var e=(input.ee.value)*100;
+var f=(input.ff.value)*100;
+
+var nt=(a+b+c+d+e+f);
+var tot1 =0
+var ma=(input.a.value * input.aa.value);	   
+var mb=(input.b.value * input.bb.value);
+var mc=(input.c.value * input.cc.value);
+var md=(input.d.value * input.dd.value);
+var me=(input.e.value * input.ee.value);
+var mf=(input.f.value * input.ff.value);
+ tot1 =(ma + mb + mc + md + me + mf);
+input.result1.value = parseInt(tot1);
+
+var tot2 =0
+var wa=(ma/tot1);	   
+var wb=(mb/tot1);
+var wc=(mc/tot1);
+var wd=(md/tot1);
+var we=(me/tot1);
+var wf=(mf/tot1);
+ tot2 =((wa*input.a.value) + (wb*input.b.value) + (wc*input.c.value) + (wd*input.d.value) + (we*input.e.value) + (wf*input.f.value));
+input.result2.value = parseInt(tot2);
+
+if (nt != 100) {
+alert ( "The mole fractions (ni) must add up to 1.00");
+input.result1.value = "";
+input.result2.value = "";
+}
+if ((input.aa.value) > (input.bb.value) || (input.bb.value) > (input.cc.value)  || (input.ff.value) > (input.ee.value) || (input.ee.value) > (input.dd.value)) {
+alert ( "The mole fractions must increase and decrease in the following manner:\rn1 < n2 < n3 & nf < ne < nd");	
+input.result1.value = "";
+input.result2.value = "";
+}
+if (parseInt(input.a.value) >= parseInt(input.b.value) || parseInt(input.b.value) >= parseInt(input.c.value)  || parseInt(input.c.value) >= parseInt(input.d.value) || parseInt(input.d.value) >= parseInt(input.e.value) || parseInt(input.e.value) >= parseInt(input.f.value)) {
+alert ( "The molecular weights of the components should increase in the order 1 < 2 < 3 < 4 < 5 < 6");	
+input.result1.value = "";
+input.result2.value = "";
+}
+if ((input.a.value.indexOf(",",0)>=0) || (input.b.value.indexOf(",",0)>=0)  || (input.c.value.indexOf(",",0)>=0) || (input.d.value.indexOf(",",0)>=0) || (input.e.value.indexOf(",",0)>=0) || (input.f.value.indexOf(",",0)>=0)) {
+alert ( "Do not use commas in writing your mass numbers");	
+input.result1.value = "";
+input.result2.value = "";
+
+}	
+}
+
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.e.value="";
+	input.f.value="";
+	input.aa.value="";
+	input.bb.value="";
+  input.cc.value="";
+  input.dd.value="";
+  input.ee.value="";
+  input.ff.value="";
+	input.result1.value=" ";
+  input.result2.value=" ";
+}
+
+
+var x1='<table align=center cellpadding=6 border=2 BGCOLOR="#f9f9f9"><tr ><td><CENTER><H3>Polymer Molecular Mass Calculator</H3></CENTER><P><BR>The mass calculator below will calculate the number average, <B>M<SUB>n</SUB></B>, and weight average, <B>M<SUB>w</SUB></B>, molecular weights for mixtures of six different mass components. To use this calculator, enter masses between 10,000 and 1,000,000 in each mass text box, <B>Mass<SUB>#</SUB></B>, and a mole fraction in the corresponding <B>n<SUB>#</SUB></B> box. <FONT COLOR="red">The mass numbers should increase from Mass<SUB>1</SUB> to Mass<SUB>6</SUB>, and should not contain either commas or decimals. The mole fractions must be numbers between 0 and 1, and should add up to 1.00. To reflect usual mass distributions, the first and last fractions should be smaller than the second and fifth respectively, and these in turn should respectively be smaller than the third and fourth</FONT>. By pressing the "<U>Calculate</U>" button, the molecular weights will be shown in the appropriate text box.  </P><P><TABLE BORDER=9 BGCOLOR="antiquewhite" ALIGN=center><TR><TD><TABLE CELLSPACING=4 CELLPADDING=4 ><TR ALIGN=center><TH COLSPAN=6><H3>Polymer Mass Calculator</H3></TH></TR><TR ALIGN=center><TH nowrap>Mass<SUB>1</SUB><INPUT TYPE="text" NAME="a"  SIZE="7"> </TH><TH nowrap>Mass<SUB>2</SUB><INPUT TYPE="text" NAME="b"  SIZE="7"></TH><TH nowrap> Mass<SUB>3</SUB><INPUT TYPE="text" NAME="c"  SIZE="7"></TH><TH nowrap> Mass<SUB>4</SUB><INPUT TYPE="text" NAME="d"  SIZE="7"></TH><TH nowrap>Mass<SUB>5</SUB><INPUT TYPE="text" NAME="e"  SIZE="7"></TH><TH nowrap>Mass<SUB>6</SUB><INPUT TYPE="text" NAME="f"  SIZE="7"></TH></TR><TR ALIGN=center><TH> &nbsp; n<SUB>1</SUB><INPUT TYPE="text" NAME="aa"  SIZE="4"></TH><TH> &nbsp; n<SUB>2</SUB><INPUT TYPE="text" NAME="bb"  SIZE="4"></TH><TH> &nbsp; n<SUB>3</SUB><INPUT TYPE="text" NAME="cc"  SIZE="4"></TH><TH> &nbsp; n<SUB>4</SUB><INPUT TYPE="text" NAME="dd"  SIZE="4"></TH><TH> &nbsp; n<SUB>5</SUB><INPUT TYPE="text" NAME="ee"  SIZE="4"></TH><TH> &nbsp; n<SUB>6</SUB><INPUT TYPE="text" NAME="ff"  SIZE="4"> </TH></TR><TR ALIGN=center><TD COLSPAN=3><B>M<SUB>n</SUB> &nbsp; <INPUT TYPE="text" NAME="result1"  size="10"> <P><B>M<SUB>w</SUB> &nbsp; <INPUT TYPE="text" NAME="result2"  size="10"> </P></B></TD><TD COLSPAN=3><INPUT TYPE="button"  VALUE=" Calculate " onClick=" calcmas(this.form)">&nbsp;<BR><BR><INPUT TYPE="button"  VALUE="Clear Input" onClick="clrtxt(this.form)"></TD></TR></TABLE></TD></TABLE><center><INPUT TYPE="button" VALUE=" Close "  onClick="javascript:chngtxt(x2);window.location=&#39;#radical2&#39;"></center></td></tr></table>';
+
+var x2=' &nbsp; ';
+
+function chngtxt(txt)   {
+document.getElementById('para1').innerHTML=txt;
+}
+
+
+
+var i=1;
+function change1() {
+i=i+1
+document.images.rubr.src="Images2/rubber"+i+".gif"
+if (i>=2) {
+i=0
+}
+}
+
+var j=1;
+function change2() {
+j=j+1
+document.images.cryst.src="Images2/polycry"+j+".gif"
+if (j>=2) {
+j=0
+}
+}
+
+var k=1;
+function change3() {
+k=k+1
+document.images.cndpmr.src="Images2/condpol"+k+".gif"
+if (k>=2) {
+k=0
+}
+}
+
+function change4(diag) {
+document.images.therm.src=diag
+}
+
+//STOP HIDING-->
+
+</SCRIPT>
+<link rel="stylesheet" href="Styles/edvibe.css">
+<script src="Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<FORM>
+<A NAME="polmr1"></A>
+
+<div class="ctr"><span class="fc-maroon"><H2>Polymers</H2></span></div>
+<span class="fc-maroon"><H4>1. Introduction</H4></span>
+<P>Prior to the early 1920's, chemists doubted the existence of molecules having molecular weights greater than a few thousand. This limiting view was challenged by <A HREF="http://www.chemistry.msu.edu/Portraits/PortraitsHH_Detail.asp?HH_LName=Staudinger">Hermann Staudinger</a>, a German chemist with experience in studying natural compounds such as rubber and cellulose. In contrast to the prevailing rationalization of these substances as aggregates of small molecules, Staudinger proposed they were made up of <B>macromolecules</B> composed of 10,000 or more atoms. He formulated a <B>polymeric</B> structure for <A HREF="lipids.htm#terp2">rubber</A>, based on a repeating isoprene unit (referred to as a monomer). For his contributions to chemistry, Staudinger received the 1953 Nobel Prize.  The terms <B>polymer</B> and <B>monomer</B> were derived from the Greek roots <U>poly</U> (many), <U>mono</U> (one) and <U>meros</U> (part).</P>
+
+<P>Recognition that polymeric macromolecules make up many important natural materials was followed by the creation of synthetic analogs having a variety of properties. Indeed, applications of these materials as fibers, flexible films, adhesives, resistant paints and tough but light solids have transformed modern society. Some important examples of these substances are discussed in the following sections.</P><br />
+
+<A NAME="polmr2"></A>
+ <span class="fc-maroon"><H4>2. Writing Formulas for Polymeric Macromolecules</H4></span>
+<P>The repeating structural unit of most simple polymers not only reflects the monomer(s) from which the polymers are constructed, but also provides a concise means for drawing structures to represent these macromolecules. For polyethylene, arguably the simplest polymer, this is demonstrated by the following equation. Here ethylene (ethene) is the monomer, and the corresponding linear polymer is called high-density polyethylene (HDPE). HDPE is composed of macromolecules in which n ranges from 10,000 to 100,000 (molecular weight 2*10<SUP>5</SUP> to 3 *10<SUP>6</SUP> ). 
+<P ALIGN=center><IMG SRC="Images2/polyeth.gif"></P>
+<P>If Y and Z represent moles of monomer and polymer respectively, Z is approximately 10<SUP>-5</SUP> Y. This polymer is called polyethylene rather than polymethylene, (-CH<SUB>2</SUB>-)<SUB>n</SUB>, because ethylene is a stable compound (methylene is not), and it also serves as the synthetic precursor of the polymer. The two open bonds remaining at the ends of the long chain of carbons (colored magenta) are normally not specified, because the atoms or groups found there depend on the chemical process used for polymerization. The synthetic methods used to prepare this and other polymers will be described later in this chapter.<SUP>&nbsp;</SUP><BR>
+
+<A NAME="polmr2b"></A>
+Unlike simpler pure compounds, most polymers are not composed of identical molecules. The HDPE molecules, for example, are all long carbon chains, but the lengths may vary by thousands of monomer units. Because of this, polymer molecular weights are usually given as averages. Two experimentally determined values are common: <B>M<SUB>n</SUB></B> , the number average molecular weight, is calculated from the mole fraction distribution of different sized molecules in a sample, and <B>M<SUB>w</SUB></B> , the weight average molecular weight, is calculated from the weight fraction distribution of different sized molecules. These are defined below. Since larger molecules in a sample weigh more than smaller molecules, the weight average M<SUB>w</SUB> is necessarily skewed to higher values, and is always greater than M<SUB>n</SUB>. As the weight dispersion of molecules in a sample narrows,  M<SUB>w</SUB> approaches  M<SUB>n</SUB>, and in the unlikely case that  all the polymer molecules have identical weights (a pure mono-disperse sample), the ratio  M<SUB>w</SUB>&nbsp;/&nbsp;M<SUB>n</SUB> becomes unity.</P>
+
+<P ALIGN=center><IMG SRC="Images2/polmwts.gif"></P>
+
+<p><TABLE WIDTH=97% CELLPADDING=6 BORDER ALIGN=center><TR BGCOLOR="eeffdd"><TH nowrap><p>
+The influence of different mass distributions on M<SUB>n</SUB> and M<SUB>w</SUB> may be examined with the aid of a simple mass calculator. <br>To use this device <A HREF="javascript:chngtxt(x1)">Click Here</A>.</p>
+</TH></TR></TABLE></p>
+<p id="para1"> &nbsp; </p>
+
+<A NAME="polmr3"></A>
+<P>Many polymeric materials having chain-like structures similar to polyethylene are known. Polymers formed by a straightforward linking together of monomer units, with no loss or gain of material, are called <B>addition polymers</B> or <B>chain-growth polymers</B>. A listing of some important addition polymers and their monomer precursors is presented in the following table.</P>
+<TABLE ALIGN=center CELLPADDING=4 BORDER>
+<CAPTION><B><H4>Some Common Addition Polymers</H4></B></CAPTION>
+<TR bgcolor="#ccddff"><TH><p>Name(s)</p></TH><TH><p>Formula</p></TH><TH><p>Monomer</p></TH><TH><p>Properties</p></TH><TH> <p>Uses </p></TH></TR>
+
+<TR><TD><B>Polyethylene</B><BR>low density (LDPE)</TD><TD>&#8211;(CH<SUB>2</SUB>-CH<SUB>2</SUB>)<SUB>n</SUB>&#8211;</TD><TD>ethylene<BR>CH<SUB>2</SUB>=CH<SUB>2</SUB></TD><TD>soft, waxy solid</TD><TD>film wrap, plastic bags</TD></TR>
+<TR><TD><B>Polyethylene</B><BR>high density (HDPE)</TD><TD>&#8211;(CH<SUB>2</SUB>-CH<SUB>2</SUB>)<SUB>n</SUB>&#8211;</TD><TD>ethylene<BR>CH<SUB>2</SUB>=CH<SUB>2</SUB></TD><TD>rigid, translucent solid</TD><TD>electrical insulation<BR>bottles, toys</TD></TR>
+
+<TR><TD><B>Polypropylene</B><BR>(PP) different grades</TD><TD>&#8211;[CH<SUB>2</SUB>-CH(CH<SUB>3</SUB>)]<SUB>n</SUB>&#8211;</TD><TD>propylene<BR>CH<SUB>2</SUB>=CHCH<SUB>3</SUB></TD><TD nowrap><U>atactic</U>: soft, elastic solid<BR><U>isotactic</U>: hard, strong solid</TD><TD>similar to LDPE<BR>carpet, upholstery</TD></TR>
+
+<TR><TD><B>Poly(vinyl chloride)</B><BR>(PVC)</TD><TD>&#8211;(CH<SUB>2</SUB>-CHCl)<SUB>n</SUB>&#8211;</TD><TD>vinyl chloride<BR>CH<SUB>2</SUB>=CHCl</TD><TD>strong rigid solid</TD><TD>pipes, siding, flooring</TD></TR>
+<TR><TD nowrap><B>Poly(vinylidene chloride)</B><BR>(Saran A)</TD><TD>&#8211;(CH<SUB>2</SUB>-CCl<SUB>2</SUB>)<SUB>n</SUB>&#8211;</TD><TD>vinylidene chloride<BR>CH<SUB>2</SUB>=CCl<SUB>2</SUB></TD><TD>dense, high-melting solid</TD><TD>seat covers, films</TD></TR>
+
+<TR><TD><B>Polystyrene</B><BR>(PS)</TD><TD>&#8211;[CH<SUB>2</SUB>-CH(C<SUB>6</SUB>H<SUB>5</SUB>)]<SUB>n</SUB>&#8211;</TD><TD>styrene<BR>CH<SUB>2</SUB>=CHC<SUB>6</SUB>H<SUB>5</SUB></TD><TD nowrap>hard, rigid, clear solid<BR>soluble in organic solvents</TD><TD>toys, cabinets<BR>packaging (foamed)</TD></TR>
+
+<TR><TD><B>Polyacrylonitrile</B><BR>(PAN, Orlon, Acrilan)</TD><TD>&#8211;(CH<SUB>2</SUB>-CHCN)<SUB>n</SUB>&#8211;</TD><TD>acrylonitrile<BR>CH<SUB>2</SUB>=CHCN</TD><TD>high-melting solid<BR>soluble in organic solvents</TD><TD>rugs, blankets<BR>clothing</TD></TR>
+<TR><TD><B>Polytetrafluoroethylene</B><BR>(PTFE, Teflon)</TD><TD>&#8211;(CF<SUB>2</SUB>-CF<SUB>2</SUB>)<SUB>n</SUB>&#8211;</TD><TD>tetrafluoroethylene<BR>CF<SUB>2</SUB>=CF<SUB>2</SUB></TD><TD>resistant, smooth solid</TD><TD>non-stick surfaces<BR>electrical insulation</TD></TR>
+
+<TR><TD><B>Poly(methyl methacrylate)</B><BR>(PMMA, Lucite, Plexiglas)</TD><TD>&#8211;[CH<SUB>2</SUB>-C(CH<SUB>3</SUB>)CO<SUB>2</SUB>CH<SUB>3</SUB>]<SUB>n</SUB>&#8211;</TD><TD>methyl methacrylate<BR>CH<SUB>2</SUB>=C(CH<SUB>3</SUB>)CO<SUB>2</SUB>CH<SUB>3</SUB></TD><TD>hard, transparent solid</TD><TD>lighting covers, signs<BR>skylights</TD></TR>
+
+<TR><TD><B>Poly(vinyl acetate)</B><BR>(PVAc)</TD><TD>&#8211;(CH<SUB>2</SUB>-CHOCOCH<SUB>3</SUB>)<SUB>n</SUB>&#8211;</TD><TD>vinyl acetate<BR>CH<SUB>2</SUB>=CHOCOCH<SUB>3</SUB></TD><TD>soft, sticky solid</TD><TD nowrap>latex paints, adhesives</TD></TR>
+<TR><TD><B>cis-Polyisoprene</B><BR>natural rubber</TD><TD>&#8211;[CH<SUB>2</SUB>-CH=C(CH<SUB>3</SUB>)-CH<SUB>2</SUB>]<SUB>n</SUB>&#8211;</TD><TD>isoprene<BR>CH<SUB>2</SUB>=CH-C(CH<SUB>3</SUB>)=CH<SUB>2</SUB></TD><TD>soft, sticky solid</TD><TD>requires vulcanization<BR>for practical use</TD></TR>
+
+<TR><TD><B>Polychloroprene</B> (cis + trans)<BR>(Neoprene)</TD><TD>&#8211;[CH<SUB>2</SUB>-CH=CCl-CH<SUB>2</SUB>]<SUB>n</SUB>&#8211;</TD><TD>chloroprene<BR>CH<SUB>2</SUB>=CH-CCl=CH<SUB>2</SUB></TD><TD>tough, rubbery solid</TD><TD>synthetic rubber<BR>oil resistant </TD></TR></TABLE>
+
+<br />
+
+<A NAME="polmr4"></A>
+ <span class="fc-maroon"><H4>3. Properties of Macromolecules</H4></span>
+<P>A comparison of the properties of polyethylene (both LDPE & HDPE) with the natural polymers rubber and cellulose is instructive. As noted above, synthetic HDPE macromolecules have masses ranging from 10<SUP>5</SUP> to 10<SUP>6</SUP> amu (LDPE molecules are more than a hundred times smaller). Rubber and cellulose molecules have similar mass ranges, but fewer monomer units because of the monomer's larger size. The physical properties of these three polymeric substances differ from each other, and of course from their monomers. </p><dir>
+<p><B>&#149; </B> HDPE is a rigid translucent solid which softens on heating above 100&#186; C, and can be fashioned into various forms including films. It is not as easily stretched and deformed as is LDPE. HDPE is insoluble in water and most organic solvents, although some swelling may occur on immersion in the latter. HDPE is an excellent electrical insulator. <BR>
+
+<B>&#149; </B> LDPE is a soft translucent solid which deforms badly above 75&#186; C. Films made from LDPE stretch easily and are commonly used for wrapping. LDPE is insoluble in water, but softens and swells on exposure to hydrocarbon solvents. Both LDPE and HDPE become brittle at very low temperatures (below -80&#186; C). Ethylene, the common monomer for these polymers, is a low boiling (-104&#186; C) gas.<BR>
+<B>&#149; </B> Natural (latex) <A HREF="lipids.htm#terp2">rubber</A> is an opaque, soft, easily deformable solid that becomes sticky when heated (above. 60&#186; C), and brittle when cooled below -50&#186; C. It swells to more than double its size in nonpolar organic solvents like toluene, eventually dissolving, but is impermeable to water. The C<SUB>5</SUB>H<SUB>8</SUB> monomer isoprene is a volatile liquid (b.p. 34&#186; C).<BR>
+
+<B>&#149; </B> Pure <A HREF=" carbhyd.htm#carb8">cellulose</A>, in the form of cotton, is a soft flexible fiber, essentially unchanged by variations in temperature ranging from -70 to 80&#186; C. Cotton absorbs water readily, but is unaffected by immersion in toluene or most other organic solvents. Cellulose fibers may be bent and twisted, but do not stretch much before breaking. The monomer of cellulose is the C<SUB>6</SUB>H<SUB>12</SUB>O<SUB>6</SUB> aldohexose D-glucose. Glucose is a water soluble solid melting below 150&#186; C. </P></dir>
+
+ 
+<p><IMG SRC="Images2/polymer.gif" ALIGN=right HSPACE=9></p>
+<P>To account for the differences noted here we need to consider the nature of the aggregate macromolecular structure, or <B>morphology</B>, of each substance. Because polymer molecules are so large, they generally pack together in a non-uniform fashion, with ordered or crystalline-like regions mixed together with disordered or amorphous domains. In some cases the entire solid may be amorphous, composed entirely of coiled and tangled macromolecular chains. Crystallinity occurs when linear polymer chains are structurally oriented in a uniform three-dimensional matrix. In the diagram on the right, crystalline domains are colored blue. <BR>Increased crystallinity is associated with an increase in rigidity, tensile strength and opacity (due to light scattering). Amorphous polymers are usually less rigid, weaker and more easily deformed. They are often transparent. </P>
+
+<A NAME="polmr4b"></A>
+<P><b><span class="fc-maroon">Three factors that influence the degree of crystallinity are:</span></b><br />
+&nbsp; &nbsp; &nbsp; <B>i)</B> &nbsp; Chain length<br />
+
+&nbsp; &nbsp; &nbsp; <B>ii)</B> &nbsp; Chain branching<br />
+&nbsp; &nbsp; &nbsp; <B>iii)</B> &nbsp; Interchain bonding</p>
+<P>The importance of the first two factors is nicely illustrated by the differences between LDPE and HDPE. As noted earlier, HDPE is composed of very long unbranched hydrocarbon chains. These pack together easily in crystalline domains that alternate with amorphous segments, and the resulting material, while relatively strong and stiff, retains a degree of flexibility. In contrast, LDPE is composed of smaller and more highly branched chains which do not easily adopt crystalline structures. This material is therefore softer, weaker, less dense and more easily deformed than HDPE. As a rule, mechanical properties such as ductility, tensile strength, and hardness rise and eventually level off with increasing chain length. </P>
+
+<P>The nature of cellulose supports the above analysis and demonstrates the importance of the third factor (iii). To begin with, cellulose chains easily adopt a stable rod-like conformation. These molecules align themselves side by side into fibers that are <A HREF=" carbhyd.htm#carb8">stabilized by inter-chain hydrogen bonding</A> between the three hydroxyl groups on each monomer unit. Consequently, crystallinity is high and the cellulose molecules do not move or slip relative to each other. The high concentration of hydroxyl groups also accounts for the facile absorption of water that is characteristic of cotton.</P>
+<P>Natural rubber is a completely amorphous polymer. Unfortunately, the potentially useful properties of raw latex rubber are limited by temperature dependence; however, these properties can be modified by chemical change. The cis-double bonds in the hydrocarbon chain provide planar segments that stiffen, but do not straighten the chain. If these rigid segments are completely removed by hydrogenation (H<SUB>2</SUB> & Pt catalyst), the chains lose all constrainment, and the product is a low melting paraffin-like semisolid of little value. If instead, the chains of rubber molecules are slightly cross-linked by sulfur atoms, a process called <B>vulcanization</B> which was discovered by Charles Goodyear in 1839, the desirable elastomeric properties of rubber are substantially improved. At 2 to 3% crosslinking a useful soft rubber, that no longer suffers stickiness and brittleness problems on heating and cooling, is obtained. At 25 to 35% crosslinking a rigid hard rubber product is formed. The following illustration shows a cross-linked section of amorphous rubber. By clicking on the diagram it will change to a display of the corresponding stretched section. The more highly-ordered chains in the stretched conformation are entropically unstable and return to their original coiled state when allowed to relax (click a second time).</P>
+<P ALIGN=center><A HREF="javascript:change1()"><IMG SRC="Images2/rubber1.gif" name="rubr" BORDER=0></A></P>
+
+<xmp> </xmp>
+
+<A NAME="polmr5"></A>
+<P>On heating or cooling most polymers undergo thermal transitions that provide insight into their morphology. These are defined as the <B>melt transition, T<SUB>m</SUB></B> , and the <B>glass transition, T<SUB>g</SUB></B> . </p>
+<TABLE align=center cellpadding=9 border><TR bgcolor="#ffebcf" ><TD nowrap>
+<p><b>T<SUB>m</SUB></b> is the temperature at which crystalline domains lose their structure, or melt. As crystallinity increases, so does  T<SUB>m</SUB>.<br>
+
+<b>T<SUB>g</SUB></b> is the temperature below which amorphous domains lose the structural mobility of the polymer chains and become rigid glasses.</P></TD></TR></TABLE>
+<p>T<SUB>g</SUB></b> often depends on the history of the sample, particularly previous heat treatment, mechanical manipulation and annealing.  It is sometimes interpreted as the temperature above which significant portions of polymer chains are able to slide past each other in response to an applied force. The introduction of relatively large and stiff substituents (such as benzene rings) will interfere with this chain movement, thus increasing T<SUB>g</SUB> (note polystyrene below). The introduction of small molecular compounds called plasticizers into the polymer matrix increases the interchain spacing, allowing chain movement at lower temperatures. with a resulting decrease in T<SUB>g</SUB>. The outgassing of plasticizers used to modify interior plastic components of automobiles produces the "new-car smell" to which we are accustomed.</p>
+<div class="ctr"><P>T<SUB>m</SUB> and T<SUB>g</SUB> values for some common addition polymers are listed below. Note that cellulose has neither a T<SUB>m</SUB> nor a T<SUB>g</SUB>.
+
+<TABLE ALIGN=center CELLPADDING=7 BORDER>
+<TR bgcolor="#ccddff"><TH><p>Polymer</p></TH><TD><p>LDPE</p></TD> <TD><p>HDPE</p></TD><TD><p> PP </p></TD><TD><p> PVC </p></TD><TD><p> PS </p></TD><TD><p> PAN </p></TD><TD><p>PTFE</p></TD><TD><p>PMMA</p></TD><TD><p>Rubber</p></TD></TR>
+
+<TR><TH bgcolor="#ccddff"><p>T<SUB>m</SUB> (&#186;C)</p></TH> <TD>110</TD><TD>130</TD><TD>175 </TD><TD>180 </TD><TD>175 </TD>
+<TD>>200 </TD><TD>330 </TD><TD>180 </TD><TD> 30 </TD></TR>
+
+<TR><TH bgcolor="#ccddff"><p>T<SUB>g</SUB> (&#186;C)</p></TH><TD><sup>_</sup>110</TD><TD><sup>_</sup>100</TD><TD><sup>_</sup>10</TD><TD><sup>&nbsp;</sup>80</TD><TD><sup>&nbsp;</sup>90</TD><TD><sup>&nbsp;</sup>95</TD><TD><sup>_</sup>110</TD><TD><sup>&nbsp;</sup>105</TD><TD><sup>_</sup>70</TD></TR></TABLE></p></div>
+
+<P>Rubber is a member of an important group of polymers called <B>elastomers</B>. Elastomers are amorphous polymers that have the ability to stretch and then return to their original shape at temperatures above T<SUB>g</SUB>. This property is important in applications such as gaskets and O-rings, so the development of synthetic elastomers that can function under harsh or demanding conditions remains a practical goal. At temperatures below T<SUB>g</SUB> elastomers become rigid glassy solids and lose all elasticity. A tragic example of this caused the space shuttle Challenger disaster. The heat and chemical resistant O-rings used to seal sections of the solid booster rockets had an unfortunately high T<SUB>g</SUB> near 0 &#186;C. The unexpectedly low temperatures on the morning of the launch were below this T<SUB>g</SUB>, allowing hot rocket gases to escape the seals. </P>
+<P> <BR> </P>
+
+<A NAME="polmr6"></A>
+ <span class="fc-maroon"><H4>4. Regio and Stereoisomerization in Macromolecules</H4></span>
+<P>Symmetrical monomers such as ethylene and tetrafluoroethylene can join together in only one way. Monosubstituted monomers, on the other hand, may join together in two organized ways, described in the following diagram, or in a third random manner. Most monomers of this kind, including propylene, vinyl chloride, styrene, acrylonitrile and acrylic esters, prefer to join in a head-to-tail fashion, with some randomness occurring from time to time. The reasons for this regioselectivity will be discussed in the synthetic methods section. </P>
+<P ALIGN=center><IMG SRC="Images2/regipoly.gif"></P>
+<P>If the polymer chain is drawn in a zig-zag fashion, as shown above, each of the substituent groups (Z) will necessarily be located above or below the plane defined by the carbon chain. Consequently we can identify three configurational isomers of such polymers. If all the substituents lie on one side of the chain the configuration is called <B>isotactic</B>. If the substituents alternate from one side to another in a regular manner the configuration is termed <B>syndiotactic</B>. Finally, a random arrangement of substituent groups is referred to as <B>atactic</B>. Examples of these configurations are shown here.</P>
+<P ALIGN=center><IMG SRC="Images2/sterpoly.gif"></P>
+
+<P>Many common and useful polymers, such as polystyrene, polyacrylonitrile and poly(vinyl chloride) are atactic as normally prepared. Customized catalysts that effect stereoregular polymerization of polypropylene and some other monomers have been developed, and the improved properties associated with the increased crystallinity of these products has made this an important field of investigation. The following values of T<SUB>g</SUB> have been reported.</P> 
+<p><TABLE ALIGN=center CELLPADDING=4 BORDER>
+<TR bgcolor="#ccddff"><TH><p>Polymer</p></TH><TD><p><B>T<SUB>g</SUB></B> atactic</p></TD><TD nowrap><p><B>T<SUB>g</SUB></B> isotactic</p></TD><TD nowrap><p><B>T<SUB>g</SUB></B> syndiotactic</p></TD></TR>
+
+<TR align=center><TH><p> PP </p></TH><TD>&#8211;20 &#186;C</TD><TD><sup>&nbsp;</sup>0 &#186;C</TD><TD>&#8211;8 &#186;C</TD></TR>
+<TR align=center><TH><p>PMMA</p></TH><TD>100 &#186;C</TD><TD>130 &#186;C</TD><TD>120 &#186;C</TD></TR></TABLE></p>
+
+<P>The properties of a given polymer will vary considerably with its tacticity. Thus, atactic polypropylene is useless as a solid construction material, and is employed mainly as a component of adhesives or as a soft matrix for composite materials.  In contrast, isotactic polypropylene is a high-melting solid (ca. 170 &#186;C) which can be molded or machined into structural components.</p>
+
+<BR></P>
+
+<A NAME="polmr7"></A>
+<div class="ctr"><span class="fc-maroon"><H3>Synthesis of Addition Polymers</H3></span></div>
+<P>All the monomers from which addition polymers are made are alkenes or functionally substituted alkenes. The most common and thermodynamically favored chemical transformations of alkenes are <A HREF="addene1.htm#add1">addition reactions</A>. Many of these addition reactions are known to proceed in a stepwise fashion by way of <A HREF="react1.htm#rx4c">reactive intermediates</A>, and this is the mechanism followed by most polymerizations. A general diagram illustrating this assembly of linear macromolecules, which supports the name <B>chain growth polymers</B>, is presented here. Since a pi-bond in the monomer is converted to a sigma-bond in the polymer, the polymerization reaction is usually exothermic by 8 to 20 kcal/mol. Indeed, cases of explosively uncontrolled polymerizations have been reported.</P> 
+
+<P ALIGN=center><IMG SRC="Images2/addnmech.gif"></P>
+<P>It is useful to distinguish four polymerization procedures fitting this general description.</p><dir>
+<p><B>&#149;&nbsp; Radical Polymerization</B> The initiator is a radical, and the propagating site of reactivity (<span class="fc-red">*</span>) is a carbon radical.<br>
+<B>&#149;&nbsp; Cationic Polymerization</B> The initiator is an acid, and the propagating site of reactivity (<span class="fc-red">*</span>) is a carbocation.<br>
+
+<B>&#149;&nbsp; Anionic Polymerization</B> The initiator is a nucleophile, and the propagating site of reactivity (<span class="fc-red">*</span>) is a carbanion.<br>
+<B>&#149;&nbsp; Coordination Catalytic Polymerization</B> The initiator is a transition metal complex, and the propagating site of reactivity (<span class="fc-red">*</span>) is a terminal catalytic complex.</p></dir><br>
+
+<A NAME="polmr7a"></A>
+ <span class="fc-maroon"><H4>1.&nbsp; Radical Chain-Growth Polymerization</H4></span>
+
+<P>Virtually all of the monomers <A HREF="#polmr3">described above</A> are subject to radical polymerization. Since this can be initiated by traces of oxygen or other minor impurities, pure samples of these compounds are often "stabilized" by small amounts of radical inhibitors to avoid unwanted reaction. When radical polymerization is desired, it must be started by using a <B>radical initiator</B>, such as a peroxide or certain azo compounds. The formulas of some common initiators, and equations showing the formation of radical species from these initiators are presented below.</P>
+<P ALIGN=center><IMG SRC="Images2/radinit.gif"></P>
+<P>By using small amounts of initiators, a wide variety of monomers can be polymerized. One example of this radical polymerization is the conversion of styrene to polystyrene, shown in the following diagram. The first two equations illustrate the <B>initiation</B> process, and the last two equations are examples of <B>chain propagation</B>. Each monomer unit adds to the growing chain in a manner that generates the most <A HREF="addene2.htm#add5">stable radical</A>. Since carbon radicals are <A HREF="funcrx1.htm#radical2">stabilized by substituents</A> of many kinds, the preference for head-to-tail regioselectivity in most addition polymerizations is understandable. Because radicals are tolerant of many functional groups and solvents (including water), radical polymerizations are widely used in the chemical industry.</P>
+
+<P ALIGN=center><IMG SRC="Images2/polstyrd.gif"></P>
+<P><span class="fc-brown">To see an animated model of the radical chain-growth polymerization of vinyl chloride  &nbsp; </span><INPUT TYPE="button"  NAME="wind" VALUE=" Click Here" onClick=
+"window.open('mechism/polvincl.htm','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=560,height=480')"></P>
+
+<A NAME="polmr7b"></A>
+<P>In principle, once started a radical polymerization might be expected to continue unchecked, producing a few extremely long chain polymers. In practice, larger numbers of moderately sized chains are formed, indicating that chain-terminating reactions must be taking place. The most common termination processes are <B>Radical Combination</B> and <B>Disproportionation</B>. These reactions are illustrated by the following equations. The growing polymer chains are colored blue and red, and the hydrogen atom transferred in disproportionation is colored green. Note that in both types of termination two reactive radical sites are removed by simultaneous conversion to stable product(s). Since the concentration of radical species in a polymerization reaction is small relative to other reactants (e.g. monomers, solvents and terminated chains), the rate at which these radical-radical termination reactions occurs is very small, and most growing chains achieve moderate length before termination. </P>
+<P ALIGN=center><IMG SRC="Images2/radterm.gif"></P>
+<P>The relative importance of these terminations varies with the nature of the monomer undergoing polymerization. For acrylonitrile and styrene combination is the major process. However, methyl methacrylate and vinyl acetate are terminated chiefly by disproportionation.</P>
+<P>Another reaction that diverts radical chain-growth polymerizations from producing linear macromolecules is called <B>chain transfer</B>. As the name implies, this reaction moves a carbon radical from one location to another by an intermolecular or intramolecular hydrogen atom transfer (colored green). These possibilities are demonstrated by the following equations</P>   
+
+<P ALIGN=center><IMG SRC="Images2/htransfr.gif"></P>
+<P>Chain transfer reactions are especially prevalent in the high pressure radical polymerization of ethylene, which is the method used to make LDPE (low density polyethylene). The 1&#186;-radical at the end of a growing chain is converted to a more stable 2&#186;-radical by hydrogen atom transfer. Further polymerization at the new radical site generates a side chain radical, and this may in turn lead to creation of other side chains by chain transfer reactions. As a result, the morphology of LDPE is an amorphous network of highly branched macromolecules.</P><BR>
+
+<A NAME="polmr7c"></A>
+<span class="fc-maroon"><H4>2.&nbsp; Cationic Chain-Growth Polymerization</H4></span>
+<P>Polymerization of isobutylene (2-methylpropene) by traces of strong acids is an example of cationic polymerization. The polyisobutylene product is a soft rubbery solid, T<SUB>g</SUB> = <sup>_</sup>70&#186; C, which is used for inner tubes. This process is similar to radical polymerization, as demonstrated by the following equations. Chain growth ceases when the terminal carbocation combines with a nucleophile or loses a proton, giving a terminal alkene (as shown here).
+
+<P ALIGN=center><IMG SRC="Images2/catnpoly.gif"></P>
+<P>Monomers bearing cation stabilizing groups, such as alkyl, phenyl or vinyl can be polymerized by cationic processes. These are normally initiated at low temperature in methylene chloride solution. Strong acids, such as HClO<SUB>4</SUB> , or Lewis acids containing traces of water (as shown above) serve as initiating reagents. At low temperatures, chain transfer reactions are rare in such polymerizations, so the resulting polymers are cleanly linear (unbranched).</P><BR>
+
+<A NAME="polmr7d"></A>
+<span class="fc-maroon"><H4>3.&nbsp; Anionic Chain-Growth Polymerization</H4></span>
+<P>Treatment of a cold THF solution of styrene with 0.001 equivalents of n-butyllithium  causes an immediate polymerization. This is an example of anionic polymerization, the course of which is described by the following equations. Chain growth may be terminated by water or carbon dioxide, and chain transfer seldom occurs. Only monomers having anion stabilizing substituents, such as phenyl, cyano or carbonyl are good substrates for this polymerization technique. Many of the resulting polymers are largely isotactic in configuration, and have high degrees of crystallinity.</P>
+<P ALIGN=center><IMG SRC="Images2/aniopoly.gif"></P>
+<P>Species that have been used to initiate anionic polymerization include alkali metals, alkali amides, alkyl lithiums and various electron sources. A practical application of anionic polymerization occurs in the use of superglue. This material is methyl 2-cyanoacrylate, CH<SUB>2</SUB>=C(CN)CO<SUB>2</SUB>CH<SUB>3</SUB>. When exposed to water, amines or other nucleophiles, a rapid polymerization of this monomer takes place.</P><BR>
+
+<A NAME="polmr7e"></A>
+<span class="fc-maroon"><H4>4.&nbsp; Ziegler-Natta Catalytic Polymerization</H4></span>
+<P>An efficient and stereospecific catalytic polymerization procedure was developed by Karl Ziegler (Germany) and Giulio Natta (Italy) in the 1950's. Their findings permitted, for the first time, the synthesis of unbranched, high molecular weight polyethylene (HDPE), laboratory synthesis of natural rubber from isoprene, and configurational control of polymers from terminal alkenes like propene (e.g. pure isotactic and syndiotactic polymers). In the case of ethylene, rapid polymerization occurred at atmospheric pressure and moderate to low temperature, giving a stronger (more crystalline) product (HDPE) than that from radical polymerization (LDPE). For this important discovery these chemists received the <A HREF="ZiegNatta/polnobel.htm">1963 Nobel Prize in chemistry</a>.</P>
+<P>Ziegler-Natta catalysts are prepared by reacting certain transition metal halides with organometallic reagents such as alkyl aluminum, lithium and zinc reagents. The catalyst formed by reaction of triethylaluminum with titanium tetrachloride has been widely studied, but other metals (e.g. V & Zr) have also proven effective. The following diagram presents one mechanism for this useful reaction. Others have been suggested, with changes to accommodate the heterogeneity or homogeneity of the catalyst. Polymerization of propylene through action of the titanium catalyst gives an isotactic product; whereas, a vanadium based catalyst gives a syndiotactic product.</P>
+<P ALIGN=center><IMG SRC="Images2/z-ncatal.gif"></P><BR>
+
+<A NAME="polmr8"></A>
+<div class="ctr"><span class="fc-maroon"><H3>Copolymers</H3></span></div>
+
+<P>The synthesis of macromolecules composed of more than one monomeric repeating unit has been explored as a means of controlling the properties of the resulting material. In this respect, it is useful to distinguish several ways in which different monomeric units might be incorporated in a polymeric molecule. The following examples refer to a two component system, in which one monomer is designated <B>A</B> and the other <B>B</B>. </P>
+<dir><p><TABLE CELLPADDING=6><TR VALIGN=top ALIGN=left>
+<TH><p><span class="fc-green">Statistical Copolymers</span></p></TH><TD><p>Also called random copolymers. Here the monomeric units are distributed randomly, and sometimes unevenly, in the polymer chain: &nbsp; ~<B>ABBAAABAABBBABAABA</B>~.</p></TD></TR>
+<TR VALIGN=top ALIGN=left><TH NOWRAP><p><span class="fc-green">Alternating Copolymers</span></p></TH><TD> <p>Here the monomeric units are distributed in a regular alternating fashion, with nearly equimolar amounts of each in the chain: &nbsp; ~<B>ABABABABABABABAB</B>~.</p></TD></TR>
+
+<TR VALIGN=top ALIGN=left><TH><p><span class="fc-green">Block Copolymers</span></p></TH> <TD><p>Instead of a mixed distribution of monomeric units, a long sequence or block of one monomer is joined to a block of the second monomer: &nbsp; ~<B>AAAAA-BBBBBBB~AAAAAAA~BBB</B>~.</p></TD></TR>
+<TR VALIGN=top ALIGN=left><TH><p><span class="fc-green">Graft Copolymers</span></p></TH> <TD><p>As the name suggests, side chains of a given monomer are attached to the main chain of the second monomer: &nbsp; ~<B>AAAAAAA(BBBBBBB~)AAAAAAA(BBBB~)AAA</B>~.</p></TD></TR></TABLE></p></dir>
+
+<A NAME="polmr8b"></A>
+<span class="fc-maroon"><H4>1. &nbsp; Addition Copolymerization</H4></span>
+<P>Most direct copolymerizations of equimolar mixtures of different monomers give statistical copolymers, or if one monomer is much more reactive a nearly homopolymer of that monomer. The copolymerization of styrene with methyl methacrylate, for example, proceeds differently depending on the mechanism. Radical polymerization gives a statistical copolymer. However, the product of cationic polymerization is largely polystyrene, and anionic polymerization favors formation of poly(methyl methacrylate). In cases where the relative reactivities are different, the copolymer composition can sometimes be controlled by continuous introduction of a biased mixture of monomers into the reaction. <BR />
+Formation of alternating copolymers is favored when the monomers have different polar substituents (e.g. one electron withdrawing and the other electron donating), and both have similar reactivities toward radicals. For example, styrene and acrylonitrile copolymerize in a largely alternating fashion.</P>
+
+<xmp> </xmp>
+<p><TABLE CELLPADDING=4 ALIGN=center BORDER WIDTH=560>
+<caption><H4>Some Useful Copolymers </H4></caption>
+<TR bgcolor="#ccddff"><TH><p>Monomer A</p></TH><TH><p>Monomer B</p></TH><TH><p>Copolymer</p></TH><TH><p>Uses</p></TH></TR>
+
+<TR><TD>H<SUB>2</SUB>C=CHCl</TD><TD>H<SUB>2</SUB>C=CCl<SUB>2</SUB></TD><TD>Saran</TD><TD>films & fibers</TD></TR>
+<TR><TD>H<SUB>2</SUB>C=CHC<SUB>6</SUB>H<SUB>5</SUB></TD><TD>H<SUB>2</SUB>C=C-CH=CH<SUB>2</SUB></TD><TD>SBR<BR>styrene butadiene rubber</TD><TD>tires</TD></TR>
+
+<TR><TD>H<SUB>2</SUB>C=CHCN</TD><TD>H<SUB>2</SUB>C=C-CH=CH<SUB>2</SUB></TD><TD>Nitrile Rubber</TD><TD>adhesives<BR>hoses</TD></TR>
+<TR><TD>H<SUB>2</SUB>C=C(CH<SUB>3</SUB>)<SUB>2</SUB></TD><TD>H<SUB>2</SUB>C=C-CH=CH<SUB>2</SUB></TD><TD>Butyl Rubber</TD><TD>inner tubes</TD></TR>
+
+<TR><TD>F<SUB>2</SUB>C=CF(CF<SUB>3</SUB>)</TD><TD>H<SUB>2</SUB>C=CHF</TD><TD>Viton</TD><TD>gaskets</TD></TR>
+</TABLE>
+<P>A terpolymer of acrylonitrile, butadiene and styrene, called ABS rubber, is used for high-impact containers, pipes and gaskets.</P><BR>
+<A NAME="polmr8c"></A>
+
+<span class="fc-maroon"><H4>2. &nbsp; Block Copolymerization</H4></span>
+
+<P>Several different techniques for preparing block copolymers have been developed, many of which use condensation reactions (next section). At this point, our discussion will be limited to an application of anionic polymerization. In the anionic polymerization of styrene <A HREF="#polmr7d">described above</A>, a reactive site remains at the end of the chain until it is quenched. The unquenched polymer has been termed a <B>living polymer</B>, and if additional styrene or a different suitable monomer is added a block polymer will form. This is illustrated for methyl methacrylate in the following diagram.</P>
+<P ALIGN=center><IMG SRC="Images2/blocpoly.gif"></P>
+
+<xmp> </xmp>
+<A NAME="polmr9"></A>
+<div class="ctr"><span class="fc-maroon"><H3>Condensation Polymers</H3></span></div>
+<P>A large number of important and useful polymeric materials are not formed by chain-growth processes involving reactive species such as radicals, but proceed instead by conventional functional group transformations of polyfunctional reactants. These polymerizations often (but not always) occur with loss of a small byproduct, such as water, and generally (but not always) combine two different components in an alternating structure. The polyester Dacron and the polyamide Nylon 66, shown here, are two examples of synthetic condensation polymers, also known as <B>step-growth</B> polymers. In contrast to chain-growth polymers, most of which grow by carbon-carbon bond formation, step-growth polymers generally grow by carbon-heteroatom bond formation (C-O & C-N in Dacron & Nylon respectively). Although polymers of this kind might be considered to be alternating copolymers, the repeating monomeric unit is usually defined as a combined moiety.<BR>
+
+Examples of naturally occurring condensation polymers are cellulose, the polypeptide chains of proteins, and poly(&#946;-hydroxybutyric acid), a polyester synthesized in large quantity by certain soil and water bacteria. Formulas for these will be displayed below by clicking on the diagram.<SUP>&nbsp;</SUP></P>
+
+<P ALIGN=center><A HREF="javascript:change3()"><IMG SRC="Images2/condpol1.gif" name="cndpmr" BORDER=0></A></P>
+
+<xmp> </xmp>
+<span class="fc-maroon"><H4>1. &nbsp; Characteristics of Condensation Polymers</H4></span>
+<P>Condensation polymers form more slowly than addition polymers, often requiring heat, and they are generally lower in molecular weight. The terminal functional groups on a chain remain active, so that groups of shorter chains combine into longer chains in the late stages of polymerization. The presence of polar functional groups on the chains often enhances chain-chain attractions, particularly if these involve hydrogen bonding, and thereby crystallinity and tensile strength. The following examples of condensation polymers are illustrative.<BR>
+Note that for commercial synthesis the carboxylic acid components may actually be employed in the form of derivatives such as simple esters. Also, the polymerization reactions for Nylon 6 and Spandex do not proceed by elimination of water or other small molecules. Nevertheless, the polymer clearly forms by a step-growth process.</P></P>
+
+<A NAME="polmr9b"></A>
+<p><TABLE CELLPADDING=4 ALIGN=center BORDER WIDTH=700
+<caption><H4>Some Condensation Polymers </H4></caption>
+<TR bgcolor="#ccddff"><TH><p>Formula</p></TH><TH><p>Type</p></TH><TH><p>Components</p></TH><TH><p> T<SUB>g</SUB> &#186;C </p></TH><TH><p> T<SUB>m</SUB> &#186;C </p></TH></TR>
+
+<TR VALIGN=top align=center><TD>~<span class="fc-green">[</span>CO(CH<SUB>2</SUB>)<SUB>4</SUB>CO-OCH<SUB>2</SUB>CH<SUB>2</SUB>O<span class="fc-green">]<SUB>n</SUB></span>~</TD><TD> <B>polyester</B></TD><TD>HO<SUB>2</SUB>C-(CH<SUB>2</SUB>)<SUB>4</SUB>-CO<SUB>2</SUB>H<BR>HO-CH<SUB>2</SUB>CH<SUB>2</SUB>-OH<SUP>&nbsp;</SUP></TD><TD> < 0</TD><TD> 50</TD></TR>
+
+<TR VALIGN=top align=center><TD><IMG SRC="Images2/p-pet.gif"></TD><TD> <B>polyester</B><BR>Dacron<BR>Mylar</TD><TD>para HO<SUB>2</SUB>C-C<SUB>6</SUB>H<SUB>4</SUB>-CO<SUB>2</SUB>H<BR>HO-CH<SUB>2</SUB>CH<SUB>2</SUB>-OH<SUP>&nbsp;</SUP></TD><TD> 70</TD><TD> 265</TD></TR>
+
+<TR VALIGN=top align=center><TD height=70><IMG SRC="Images2/m-pet.gif"></TD><TD> <B>polyester</B></TD><TD>meta HO<SUB>2</SUB>C-C<SUB>6</SUB>H<SUB>4</SUB>-CO<SUB>2</SUB>H<BR>HO-CH<SUB>2</SUB>CH<SUB>2</SUB>-OH<SUP>&nbsp;</SUP></TD><TD> 50</TD><TD> 240</TD></TR>
+
+<TR VALIGN=top align=center><TD height=70><IMG SRC="Images2/lexan.gif"></TD><TD> <B>polycarbonate</B><BR>Lexan</TD><TD>(HO-C<SUB>6</SUB>H<SUB>4</SUB>-)<SUB>2</SUB>C(CH<SUB>3</SUB>)<SUB>2</SUB><BR> &nbsp; <span class="fc-brown">(Bisphenol A)</span><BR>X<SUB>2</SUB>C=O<BR> &nbsp; <span class="fc-brown">(X = OCH<SUB>3</SUB> or Cl)</span></TD><TD>150</TD><TD> 267 </TD></TR>
+
+<TR VALIGN=top align=center><TD><br>~<span class="fc-green">[</span>CO(CH<SUB>2</SUB>)<SUB>4</SUB>CO-NH(CH<SUB>2</SUB>)<SUB>6</SUB>NH<span class="fc-green">]<SUB>n</SUB></span>~</TD><TD> <B>polyamide</B><BR>Nylon 66</TD><TD>HO<SUB>2</SUB>C-(CH<SUB>2</SUB>)<SUB>4</SUB>-CO<SUB>2</SUB>H<BR>H<SUB>2</SUB>N-(CH<SUB>2</SUB>)<SUB>6</SUB>-NH<SUB>2</SUB><SUP>&nbsp;</SUP></TD><TD> 45</TD><TD> 265 </TD></TR>
+
+<TR VALIGN=top align=center><TD><br>~<span class="fc-green">[</span>CO(CH<SUB>2</SUB>)<SUB>5</SUB>NH<span class="fc-green">]<SUB>n</SUB></span>~</TD><TD> <B>polyamide</B><BR> Nylon 6<BR>Perlon</TD><TD><IMG SRC="Images2/cprlactm.gif"></TD><TD> 53</TD><TD> 223 </TD></TR>
+
+<TR VALIGN=top align=center><TD height=70><IMG SRC="Images2/kevlar.gif"></TD><TD> <B>polyamide</B><BR>Kevlar</TD><TD>para HO<SUB>2</SUB>C-C<SUB>6</SUB>H<SUB>4</SUB>-CO<SUB>2</SUB>H<BR>para H<SUB>2</SUB>N-C<SUB>6</SUB>H<SUB>4</SUB>-NH<SUB>2</SUB><SUP>&nbsp;</SUP></TD><TD> ---</TD><TD> 500</TD></TR>
+
+<TR VALIGN=top align=center><TD height=80><IMG SRC="Images2/nomex.gif"></TD><TD> <B>polyamide</B><BR>Nomex</TD><TD>meta HO<SUB>2</SUB>C-C<SUB>6</SUB>H<SUB>4</SUB>-CO<SUB>2</SUB>H<BR>meta H<SUB>2</SUB>N-C<SUB>6</SUB>H<SUB>4</SUB>-NH<SUB>2</SUB><SUP>&nbsp;</SUP></TD><TD> 273</TD><TD> 390</TD></TR>
+
+<TR VALIGN=top align=center><TD height=100><IMG SRC="Images2/spandex.gif"></TD><TD> <B>polyurethane</B><BR>Spandex</TD><TD >HOCH<SUB>2</SUB>CH<SUB>2</SUB>OH<BR><IMG SRC="Images2/2icynate.gif"></TD><TD> 52</TD><TD> ---</TD></TR>
+</TABLE></p>
+
+<A NAME="polmr9c"></A>
+<P>The difference in T<SUB>g</SUB> and T<SUB>m</SUB> between the first polyester (completely aliphatic) and the two nylon polyamides (5th & 6th entries) shows the effect of intra-chain hydrogen bonding on crystallinity. The replacement of flexible alkylidene links with rigid benzene rings also stiffens the polymer chain, leading to increased crystalline character, as demonstrated for polyesters (entries 1, 2 &3) and polyamides (entries 5, 6, 7 & 8). The high T<SUB>g</SUB> and T<SUB>m</SUB> values for the amorphous polymer Lexan are consistent with its brilliant transparency and glass-like rigidity. Kevlar and Nomex are extremely tough and resistant materials, which find use in bullet-proof vests and fire resistant clothing. </P>
+
+<P ALIGN=center><IMG SRC="Images2/chainhbd.gif"></P>
+
+<P>Many polymers, both addition and condensation, are used as fibers  The chief methods of spinning synthetic polymers into fibers are from melts or viscous solutions. Polyesters, polyamides and polyolefins are usually spun from melts, provided the T<SUB>m</SUB> is not too high. Polyacrylates suffer thermal degradation and are therefore spun from solution in a volatile solvent. <B>Cold-drawing</B> is an important physical treatment that improves the strength and appearance of these polymer fibers. At temperatures above T<SUB>g</SUB>, a thicker than desired fiber can be forcibly stretched to many times its length; and in so doing the polymer chains become untangled, and tend to align in a parallel fashion. This cold-drawing procedure organizes randomly oriented crystalline domains, and also aligns amorphous domains so they become more crystalline. In these cases, the physically oriented morphology is stabilized and retained in the final product. This contrasts with elastomeric polymers, for which the stretched or aligned morphology is unstable relative to the amorphous random coil morphology. <BR>
+<span class="fc-brown">By clicking on the following diagram</span>, a cartoon of these changes will toggle from one extreme to the other. This cold-drawing treatment may also be used to treat polymer films (e.g. Mylar & Saran) as well as fibers.</P>
+<P ALIGN=center><A HREF="javascript:change2()"><IMG SRC="Images2/polycry1.gif" name="cryst" BORDER=0></A></P><BR>
+
+<P>Step-growth polymerization is also used for preparing a class of adhesives and amorphous solids called epoxy resins. Here the covalent bonding occurs by an S<SUB>N</SUB>2 reaction between a nucleophile, usually an amine, and a terminal epoxide. In the following example, the same bisphenol A intermediate used as a monomer for Lexan serves as a difunctional scaffold to which the epoxide rings are attached. Bisphenol A is prepared by the acid-catalyzed condensation of acetone with phenol.</P>
+<P ALIGN=center><IMG SRC="Images2/epoxyres.gif"></P><BR>
+
+<A NAME="polmr10"></A>
+<span class="fc-maroon"><H4>2.Thermosetting vs. Thermoplastic Polymers</H4></span>
+<P>Most of the polymers described above are classified as <B>thermoplastic</B>. This reflects the fact that above T<SUB>g</SUB> they may be shaped or pressed into molds, spun or cast from melts or dissolved in suitable solvents for later fashioning. Because of their high melting point and poor solubility in most solvents, Kevlar and Nomex proved to be a challenge, but this was eventually solved.<BR>
+Another group of polymers, characterized by a high degree of cross-linking, resist deformation and solution once their final morphology is achieved. Such polymers are usually prepared in molds that yield the desired object. Because these polymers, once formed, cannot be reshaped by heating, they are called <B>thermosets</B> .Partial formulas for four of these will be shown below by clicking the appropriate button. The initial display is of Bakelite, one of the first completely synthetic plastics to see commercial use (circa 1910).</P>
+
+<P ALIGN=center><IMG SRC="Images2/bakelite.gif" name="therm"></A></P>
+<TABLE CELLPADDING=5 ALIGN=center><TR ALIGN=center><TD><INPUT TYPE="button"  VALUE="Phenol-Formaldehyde" onClick="change4('Images2/bakelite.gif')"></TD><TD><INPUT TYPE="button"  VALUE="Urea-Formaldehyde" onClick="change4('Images2/ureaform.gif')"></TD><TD><INPUT TYPE="button"  VALUE="Melamine-Formaldehyde" onClick="change4('Images2/melaresn.gif')"></TD><TD><INPUT TYPE="button"  VALUE=" Glyptal Resins " onClick="javascript:change4('Images2/glypresn.gif')"></TD></TR></TABLE><BR>
+<P>A natural resinous polymer called lignin has a cross-linked structure similar to bakelite. Lignin is the amorphous matrix in which the cellulose fibers of wood are oriented. Wood is a natural composite material, nature's equivalent of fiberglass and carbon fiber composites. A partial structure for lignin is shown here</P>
+<P ALIGN=center><IMG SRC="Images2/lignin.gif"></P>
+<hr />
+
+<A NAME="plastic1"></A>
+<div class="ctr"><span class="fc-maroon"><H3>The Age of Plastics</H3></span></div>
+
+<p>Historically, many eras were characterized by the materials that were then important to human society (e.g. stone age, bronze age and iron age).  The 20th century has acquired several labels of this sort, including the <b>nuclear age</b> and the <b>oil age</b>; however, the best name is likely the <b>plastic age</b>.  During this period no technological advancement, other than the delivery of electrical power to every home, has impacted our lives more than the widespread use of synthetic plastics in our clothes, dishes, construction materials, automobiles, packaging, and toys, to name a few. The development of materials that we now call plastics began with rayon in 1891, continuing with Bakelite in 1907, polyethylene in 1933,  Nylon and Teflon in 1938, polypropylene in 1954, Kevlar in 1965, and is continuing.</p>
+
+  <p>The many types of polymers that we lump together as plastics are, in general, inexpensive, light weight, strong, durable and, when desired, flexible.  Plastics may be processed by extrusion, injection-moulding, vacuum-forming, and compression, emerging as fibers, thin sheets or objects of a specific shape.  They may be colored as desired and reinforced by glass or carbon fibers, and some may be expanded into low density foams.  Many modern adhesives involve the formation of a plastic bonding substance.  Plastics have replaced an increasing number of natural substances.  In the manufacture of piano keys and billiard balls plastics have replaced ivory, assisting the survival of the elephant.  It is noteworthy that a synthetic fiber manufacturing facility occupies a much smaller area of ground than would be needed to produce an equal quantity of natural fibers, such as cotton, wool or silk.  With all these advantages it is not surprising that much of what you see around you is plastic.  Indeed, the low cost, light weight, strength and design adaptability of plastics to meet a variety of applications have resulted in strong year after year growth in their production and use, which is likely to continue.  Indeed, many plastics are employed in disposable products meant only for a single use.</p>
+
+<A NAME="plastic2"></A>
+<div class="ctr"><h4>The Law of Unintended Consequences</h4></div>
+<p><IMG SRC="Images2/trash.jpg" align=left  border=1>Successful solutions to technological projects are often achieved by focusing on a limited set of variables that are directly linked to a desired outcome.  However, nature often has a way of rewarding such success  by exposing unexpected problems generated "outside the box" of the defined project.  In the case of plastics, their advantageous durability and relative low cost have resulted in serious environmental pollution as used items and wrappings are casually discarded and replaced in a never ending cycle.  We see this every day on the streets and fields of our neighborhoods, but the problem is far more dire.  Charles Moore, an American oceanographer, in 1997 discovered an enormous stew of trash, estimated at nearly 100 million tons, floating in the Pacific Ocean  between San Francisco and Hawaii.  Named the "Great Pacific Garbage Patch", this stew of trash is composed largely (80%) of bits and pieces of plastic that outweigh the plankton 6 : 1, in a region over twice the size of Texas.  Although some of this flotsam originates from ships at sea, at least 80% comes from land generated trash.  The information provided here, and the illustration on the left, come from an article by Susan Casey in 
+<A HREF="http://www.bestlifeonline.com">BestLife</a><br />
+
+Clock-wise circulation of currents driven by the global wind system and constrained by surrounding continents form a vortex or gyre comparable to a large whirlpool.  Each major ocean basin has a large gyre in the subtropical region, centered around 30&#186; north and south latitude.  The North Atlantic Subtropical Gyre is known as the Sargasso Sea.  The larger North Pacific Subtropical Gyre, referred to as the doldrums, is the convergence zone where plastic and other waste mixes together.  There are similar areas in the South Pacific, the North and South Atlantic, and the Indian Ocean.</p>
+  
+<p >Aside from its disgusting aesthetic presence, the garbage patch is representative of serious environmental and health problems.  No one knows how long it will take for some of these plastics to biodegrade, or return to their component molecules.  Persistent objects such as six-pack rings and discarded nets trap sea animals.  Smaller plastic scraps are mistaken for food by sea birds; and are often found undigested in the gut of dead birds.  Nurdles, lentil-size pellets of plastic, found in abundance where plastics are manufactured and distributed, are dispersed by wind throughout the biosphere.  They're light enough to blow around like dust and to wash into harbors, storm drains, and creeks.  Escaped nurdles and other plastic litter migrate to the ocean gyre largely from land.  At places as remote as Rarotonga, in the Cook Islands they're commonly found mixed with beach sand.  Once in the ocean, nurdles may absorb up to a million times the level of any organic pollutants found in surrounding waters.  Nurdles in the sea are easily mistaken for fish eggs by creatures that would very much like to have such a snack.  Once inside the body of a bigeye tuna or a king salmon, they become part of our food chain. </p>
+
+<A NAME="plastic3"></A>
+<div class="ctr"><h4>Recycling and Disposal</h4></div>
+<p>Most plastics crumble into ever-tinier fragments as they are exposed to sunlight and the elements.  Except for the small amount that's been incinerated&#8211;and it's a very small amount&#8211;every bit of plastic ever made still exists, unless the material's molecular structure is designed to favor biodegradation.  Unfortunately, cleaning up the garbage patch is not a realistic option, and unless we change our disposal and recycling habits, it will undoubtedly get bigger.  One sensible solution would require manufacturers to use natural biodegradable packaging materials whenever possible, and consumers to conscientiously dispose of their plastic waste.  Thus, instead of consigning all plastic trash to a land fill, some of it may provide energy by direct combustion, and some converted for reuse as a substitute for virgin plastics.  The latter is particularly attractive since a majority of plastics are made from petroleum, a diminishing resource with a volatile price. <br />
+The energy potential of plastic waste is relatively significant, ranging from 10.2 to 30.7MJkgÐ1, suggesting application as an energy source and temperature stabilizer in municipal incinerators, thermal power plants and cement kilns.  The use of plastic waste as a fuel source would be an effective means of reducing landfill requirements while recovering energy.  This, however, depends on using appropriate materials.  Inadequate control of combustion, especially for plastics containing chlorine, fluorine and bromine, constitutes a risk of emitting toxic pollutants. </p>
+
+<p>Whether used as fuels or a source of recycled plastic, plastic waste must be separated into different categories.  To this end, an identification coding system was developed by the Society of the Plastics Industry (SPI) in 1988, and is used internationally. This code, shown on the right, is a set of symbols placed on plastics to identify the polymer type, for the purpose of allowing efficient separation of different polymer types for recycling.  The abbreviations of the code are explained in the following table.</p>
+<table align="center"><tr><td><table border cellpaddding=4 width=420 ><tr bgcolor="lightcyan"><th width=100>PETE</th><th width=100>HDPE</th><th width=100>V</th><th width=100>LDPE</th></tr>
+
+<tr align="center"><td> polyethylene<br>terephthalate </td><td> high density<br>polyethylene </td><td> polyvinyl chloride </td><td> low density<br>polyethylene </td></tr>
+<tr bgcolor=white><td colspan=4 height=3> <span class="fs-1">&nbsp; </span></td></tr>
+<tr bgcolor="lightcyan"><th>PP</th><th>PS</th><th colspan=2>OTHER</th></tr>
+
+<tr align="center"><td> polypropylene </td><td> polystyrene </td><td colspan=2> polyesters, acrylics<br> polyamides, teflon  etc.</td></tr></table>
+</td><td width=60> &nbsp; </td><td> <IMG SRC="Images2/plastics-code.jpg" width="138"></td></tr></table>
+<p>Despite use of the recycling symbol in the coding of plastics, there is consumer confusion about which plastics are readily recyclable. In most communities throughout the United States, PETE and HDPE are the only plastics collected in municipal recycling programs. However, some regions are expanding the range of plastics collected as markets become available. (Los Angeles, for example, recycles all clean plastics numbered 1 through 7) In theory, most plastics are recyclable and some types can be used in combination with others.  In many instances, however, there is an incompatibility between different types that necessitates their effective separation. Since the plastics utilized in a given manufacturing sector (e.g. electronics, automotive, etc.) is generally limited to a few types, effective recycling is often best achieved with targeted waste streams.</p>
+<p>The plastic trash from most households, even with some user separation, is a mixture of unidentified pieces.  Recycling of such mixtures is a challenging problem.   A float/sink process has proven useful as a first  step.  When placed in a medium of intermediate density, particles of different densities separate-lower density particles float while those of higher density sink. Various separation media have been used, including water or water solutions of known density  (alcohol, NaCl, CaCl<sub>2</sub> or ZnCl<sub>2</sub>).
+As shown in the following table, the densities of common plastics differ sufficiently to permit them to be discriminated in this fashion.  The cylindroconical cyclone device, shown on the right, provides a continuous feed procedure in which the material to be separated is pumped into the vessel at the same time as the separating media. Some polymers, such as polystyrene and polyurethane, are commonly formed into foamed solids that have a much lower density than the solid material. </p>
+
+<p><table align="center"><tr><td><table width=412><tr><td colspan=2><table border cellpadding5 width=400><caption><b>Densities of Typical Plastics</b></caption><tr bgcolor="lightcyan"><th> PE & PP </th><th> ABS & SAN   <br /> & nylons </th><th> PMM & acrylics <br> & polycarbonates </th><th> PETE & PVC <br/> & Bakelite</th></tr>
+
+<tr align=center><td> 0.90-0.99 </td><td> 1.05-1.09 </td><td> 1.10-1.25 </td><td> 1.3-1.6 </td></tr></table>
+</td></tr><tr><td width=10></td><td> &nbsp; PE = polyethylene & PP = polypropylene<br>
+  &nbsp; ABS = acrylonitrile-butadiene-styrene copolymer<br>
+
+ &nbsp; SAN = acrylonitrile-styrene copolymer<br>
+ &nbsp; PMM =  polymethyl methacrylate<br>
+ &nbsp; PETE =  polyethylene terephthalate<br>
+ &nbsp; PVC = polyvinylchloride (rigid)</td></tr></table>
+</td><td width=60> &nbsp; </td><td> <IMG SRC="Images2/densitysep.gif" align=right></td></tr></table>
+
+</p>
+ 
+<p>One serious problem in recycling is posed by the many additives found in plastic waste.  These include pigments for coloring, solid fibers in composites, stabilizers and plasticizers.  In the case of    PETE (or PET), which is commonly used for bottles, some waste may be mechanically and thermally treated to produce low grade packaging materials and fibers.  To increase the value of recovered PETE it may be depolymerized by superheated methanol into dimethyl terephthalate and ethylene glycol.  These chemicals are then purified and used to make virgin PETE.  Hydrocarbon polymers such as polyethylene and polypropylene may be melted and extruded into pellets for reuse.  However, the presence of dyes or pigments limits the value of this product. </p>
+
+<A NAME="plastic4"></A>
+<div class="ctr"><h4>Biodegradable Polymers</h4></div>
+<p>Plastics derived from natural materials, such as cellulose, starch and hydroxycarboxylic acids are more easily decomposed when exposed to oxygen, water, soil organisms and sunlight than are most petroleum based polymers. The glycoside linkages in polysaccharides and the ester groups in polyesters represent points of attack by the enzymes of microorganisms that facilitate their decomposition.  Such biodegradable materials can be composted, broken down and returned to the earth as useful nutrients.  However, it is important to recognize that proper composting is necessary.  Placing such materials in a landfill results in a slower anaerobic decomposition, which produces methane, a greenhouse gas.</p>
+<p>Derivatives of cellulose, such as <A HREF="carbhyd.htm#carb8b">cellulose acetate</a>, have long served for the manufacture of films and fibers. The most useful acetate material is the diacetate, in which two thirds of the cellulose hydroxyl groups have been esterified.  Acetate fibers loose strength when wet, and acetate clothing must be dry cleaned.  The other major polysaccharide, starch, is less robust than cellulose, but in pelletized form it is now replacing polystyrene as a packing material.<br />
+The two natural polyesters that are finding increasing use as replacements for petroleum based plastics are polylactide (PLA) and polyhydroxyalkanoates (PHA), the latter most commonly as copolymers with polyhydroxybutyrate (PHB).  Structures for the these polymers and their monomer precursors are shown below.
+
+<br /><table cellpadding=4 align=center><tr><th bgcolor = linen><IMG SRC="Images2/pla.gif"></th><th width=100> &nbsp; </th><th bgcolor = linen><IMG SRC="Images2/pha.gif"></th></tr></table></p>
+
+<p>PLA is actually a polymer of lactic acid, but the dimeric lactide is used as the precursor to avoid the water that would be formed in a direct poly-esterification.  Bacterial fermentation is used to produce lactic acid from corn starch or cane sugar. After dimerization to the lactide, ring-opening polymerization of the purified lactide is effected using stannous compounds as catalysts.  PLA can be processed like most thermoplastics into fibers and films. In situations that require a high level of impact strength, the toughness of PLA in its pristine state is often insufficient. Blends of PLA with polymers such as ABS have good form-stability and visual transparency, making them useful for low-end packaging applications. PLA materials are currently used in a number of biomedical applications, such as sutures, stents, dialysis media and drug delivery devices. However, one of the drawbacks of polylactides for biomedical applications is their brittleness.<br />
+ Lactic acid has a chiral center, the (S)(+)-enantiomer being the abundant natural form (L-lactic acid).  Due to the chiral nature of lactic acid, several distinct forms of polylactide exist.  Poly-L-lactide (PLLA) is the product resulting from polymerization of (S,S)-lactide. PLLA has a crystallinity of around 37%, a glass transition temperature between 50-80 &#186;C and a melting temperature between 173-178 &#186;C.   The melting temperature of PLLA can be increased 40-50 &#186;C and its heat deformation temperature can be increased from approximately 60 &#186;C to up to 190 &#186;C by physically blending the polymer with PDLA (poly-D-lactide). PDLA and PLLA form a highly regular stereocomplex with increased crystallinity. </p>
+<p>
+
+<p>PHA (polyhydroxyalkanoates) are synthesized by microorganisms such as <i>Alcaligenes eutrophus</i>, grown in a suitable medium and fed appropriate nutrients so that it multiplies rapidly. Once the population has increased, the nutrient composition is changed, forcing the micro-organism to synthesize PHA. Harvested amounts of PHA from the organism can be as high as 80% of the organism's dry weight. The simplest and most commonly occurring form of PHA is poly (R-3-hydroxybutyrate), PHB or P(3HB)).  Pure PHB, consisting of 1000 to 30000 hydroxy acid units, is relatively brittle and stiff.  Depending upon the microorganism, many of which are genetically engineered for this purpose, and the cultivation conditions, homo- or copolyesters with different hydroxyalkanic acids may be generated. Such copolymers may have improved physical properties compared with  homo P(3HB).  Presently, these PHAs cost about twice as much as petroleum-based plastics.  An engineered switch-grass that grows PHA inside its leaves and stems has also been created, offering the possibility of avoiding some of the costs associated with large scale bacterial fermentation.<br />
+
+  In contrast to P(3HB), the polymer of 4-hydroxybutyrate, P(4HB), is elastic and flexible with a higher tensile strength.  Copolymers of P(3HB) and P(4HB) are synthesized by <i>Comamonas acidovarans</i>.  The molecular weigh remains roughly the same (400,000-700,000 Da), but thermal properties correlate with the ratio of these monomer units.  The mp decreases from 179 to 130 (or lower) with an increase in 4HB, and as 4HB increases from 0% to 100% the Tg decreases from 4 to -46.  4-Hydroxybutyrate (4HB) is produced from 1,4-butanediol by microorganisms such as <i>Aeromonas hydrophila</i>, <i>Escherichia coli </i>, or <i>Pseudomonas putida</i>.  Fermentation broth containing 4HB has then been used for the production of the homopolymer P(4HB), as well as copolymers with P(3HB), [P(3HB-4HB)]. The following table lists some of the properties of these homo-polymers and co-polymers.</p>
+<table align="center" ><tr><th>
+<table cellpadding=5 border width=500>
+<caption><b>Properties of Some Polymers</b></caption>
+<tr bgcolor=lightcyan><th>Polymer</th><th>T<sub>m</sub> &#186;C</th><th>T<sub>g</sub> &#186;C</th><th>%Crystallinity</th><th>Tensile <br>Strength</th></tr>
+
+<tr align="center"><td>P(3HB)</td><td>179</td><td> &nbsp; 4</td><td>70</td><td> 40 MPa</td></tr>
+<tr align="center"><td>P(4HB)</td><td> 53</td><td> -47</td><td> 53</td><td>100</td></tr>
+
+<tr align="center"><td>co-Polymer<br />3HB-20%3HV</td><td> 145</td><td>  &nbsp;-1</td><td> 50</td><td> 32</td></tr>
+<tr align="center"><td>co-Polymer<br />3HB-7%3HD</td><td> 133</td><td>  &nbsp;-8</td><td> > 50</td><td> 17</td></tr>
+
+<tr align="center"><td>isotactic-PP</td><td> 176</td><td>  &nbsp;0</td><td> > 50</td><td> 40</td></tr>
+<tr align="center"><td>LDPE</td><td> 110</td><td>  -100</td><td> < 50</td><td> 10</td></tr></table>
+
+</th></tr>
+<tr><td> &nbsp; &nbsp; 3HV = 3-hydroxyvalerate,  3HD = 3-hydroxydecanoate </td></tr></table>
+<p>It remains an open question whether it's more energy and cost efficient to use biodegradable plastic or to recycle petroleum-based plastic.   There is little doubt, however, that biodegradable materials lead to less environmental pollution when randomly discarded after use, as is often the case.</p>
+
+</FORM>
+<A NAME="polprb"></A>
+<BR><P><TABLE WIDTH="100%" CELLPADDING="2"><TR><TH BGCOLOR="green" ALIGN=center><b><span class="fc-white">Problems</span></TH></b></TR></TABLE></P>
+<FORM NAME="info">
+<P>The following problems focus on concepts and facts associated with the treatment of polymer chemistry in this text. </P>
+<TABLE ALIGN=center>
+
+<TR  ALIGN=center><TD><SCRIPT Language="JavaScript">
+<!--HIDE
+			function jump()  {
+var loc=document.info.jumpMenu.options[document.info.jumpMenu.selectedIndex]
+.text;	
+  if  (loc == "Identifying Monomer Components"){
+location="Questions/Match/polymer3.htm";
+}else   if  (loc == "Chemical Resistance of Polymers"){
+location="Questions/Match/polymer1.htm";
+}else   if  (loc == "Poly(vinyl alcohol) Preparation"){
+   location="Questions/Match/polymer2.htm";
+}else   if  (loc == "Stereoisomerism of Polymers"){
+   location="Questions/Match/polymer4.htm";
+}else   if  (loc == "Drawing a Polymer Structure"){
+   location="Questions/FuncReac/polylact.htm";
+}
+}
+//STOP HIDING-->
+</SCRIPT>
+<INPUT TYPE="hidden" VALUE="choice">
+<SELECT NAME="jumpMenu" onChange="jump()">
+<OPTION SELECTED>Choose a Problem
+<OPTION>Identifying Monomer Components
+<OPTION>Chemical Resistance of Polymers
+<OPTION>Poly(vinyl alcohol) Preparation
+<OPTION>Stereoisomerism of Polymers
+<OPTION>Drawing a Polymer Structure
+ </SELECT>
+</TD></TR></TABLE></TD></TR></TABLE><BR>
+<BR>
+<P><div class="ctr"><TABLE BGCOLOR="#ffebcf" CELLPADDING=7 BORDER=4><TR><TH><A HREF="index.htm"><p>Return to Table of Contents</A></p></TH></TR></TABLE></P></div>
+<p>This page is the property of The Edvibe Team. &nbsp; 
+Comments, questions and errors should
+be sent to <A HREF="mailto:contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<br />
+These pages are provided to the IOCD to assist in capacity building in chemical education.  05/05/2013</p>
+<P ALIGN=center><IMG SRC="Images/pixel.gif" HEIGHT= 300></P>
+</FORM
+</BODY>
+
+</HTML>
+
+

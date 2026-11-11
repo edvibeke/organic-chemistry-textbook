@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+// Script for problem 1  
+var aa="M"; 
+var bb="S";
+var cc="D"; 
+var dd="T";
+var ee="Q"; 
+var ff="M";
+var anscnt=0
+var answ="Problem 1:\rA m;  B s;  C d;  D t;  E q;  F m\r" 
++ "**************************************\r" 
+ + "Problem 2:\rLeft Column no;  yes;  no;  no\rRight Column yes;  no;  no;  yes";
+var noansw="You must try to answer this question twice before viewing the answers.";
+var j=0
+var k=0
+     
+function slct1(input) {
+anscnt=anscnt+1;
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+input.e.value=fix(input.e.value)
+input.f.value=fix(input.f.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+if ( (input.a.value=='')||(input.b.value=='')||(input.c.value=='')||(input.d.value=='')
+||(input.e.value=='')||(input.f.value=='') ) {
+var Text = "Please enter a selection in each box.";
+} else {
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	j=0
+}
+		if (( input.a.value.toUpperCase() == aa)){ 
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.b.value.toUpperCase() == bb) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.c.value.toUpperCase() == cc) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.d.value.toUpperCase() == dd) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.e.value.toUpperCase() == ee) {
+		k=k+1
+		} else {
+		j=j+1
+}
+	if   ( input.f.value.toUpperCase() == ff) {
+		k=k+1
+		} else {
+		j=j+1
+}
+  var tot=k+j
+	var Text="Of " +tot +" responses: your correct answers = " +k +"\rYour incorrect answers = " +j 
+}
+	if   (k==6) {
+input.result.value = "Congratulations!\r" + Text;
+		}else{
+input.result.value =  Text;
+}
+}
+function giveansw(show) {
+if (anscnt>=2)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+function clearbx(input) {
+	input.a.value="";	// Clear all text windows.
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.e.value="";
+	input.f.value="";
+	input.result.value="";
+}
+// End of hide script comment. -->
+</SCRIPT>
+
+
+<TITLE>NMR Spectroscopy Problems</TITLE>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<body>
+<div class="ctr"><H3>Spin-Spin Splitting in <SUP>1</SUP>H NMR</H3></div>
+<P><B>1.</B>What splitting pattern in the <SUP>1</SUP>H
+nmr spectrum would you expect for the hydrogen atom(s) colored red 
+in the compounds shown below?<BR>  <U>Your choices are:</U> &nbsp;<B><span class="fc-blue"> s</span></B> singlet  &nbsp;<B><span class="fc-blue"> d</span></B> doublet  &nbsp;<B><span class="fc-blue"> t</span></B> triplet  &nbsp;<B><span class="fc-blue"> q</span></B> quartet &nbsp;<B><span class="fc-blue"> m</span></B> multiplet.</span></B> Enter the appropriate letter in the answer box to the right of each formula.</B><BR><span class="fc-red"> Do not enter punctuation (eg. commas or semicolons) or spaces.</span></P>
+
+<FORM NAME="select1">
+<div class="ctr"><TABLE CELLSPACING=7 >
+<TR ALIGN=center><TD><span class="fc-blue">A</span></TD>
+<TD><BR><IMG SRC="../Images/cumene.gif"></TD>
+<TD><INPUT TYPE="text" NAME="a" SIZE="2"></TD>
+<TD ROWSPAN=3 BGCOLOR="cccccc">&nbsp;</TD>
+<TD><span class="fc-blue">B</span></TD>
+<TD><BR><IMG SRC="../Images/me2nmeth.gif"></TD>
+<TD><INPUT TYPE="text" NAME="b" SIZE="2"></TD>
+<TD ROWSPAN=3 BGCOLOR="cccccc">&nbsp;</TD>
+<TD><span class="fc-blue">C</span></TD>
+<TD><IMG SRC="../Images/pbrnitbz.gif"></TD>
+<TD><INPUT TYPE="text" NAME="c" SIZE="2"></TD>
+</TR>
+<TR><TD COLSPAN=11><HR SIZE=4></TD></TR>
+<TR ALIGN=center><TD><span class="fc-blue">D</span></TD>
+<TD><BR><IMG SRC="../Images/tbuoet.gif"></TD>
+<TD><INPUT TYPE="text" NAME="d" SIZE="2"></TD>
+<TD><span class="fc-blue">E</span></TD>
+<TD><BR><IMG SRC="../Images/2etoeth1.gif"></TD>
+<TD><INPUT TYPE="text" NAME="e" SIZE="2"></TD>
+<TD><span class="fc-blue">F</span></TD>
+<TD><IMG SRC="../Images/oxetane.gif"></TD>
+<TD><INPUT TYPE="text" NAME="f" SIZE="2"></TD>
+</TR>
+</TABLE></div>
+<P><INPUT TYPE="button" VALUE=" Check Answers for Problem 1 " onClick="slct1(this.form)"> &nbsp; 
+<INPUT TYPE="button"  VALUE=" Clear Answers for Problem 1 " onClick="clearbx(this.form)">
+<HR>
+<div class="ctr"><TEXTAREA WRAP NAME="result" ROWS="6" COLS="48">
+</TEXTAREA>
+<INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form)"></P></div>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+// Script for problem 2  
+var anscnt=0
+var i=0;
+		function process(form) {
+	anscnt=anscnt+1;
+	if (i!=0){
+		 i=0
+}
+		if (form.q2a[1].checked) {
+		i=i+1
+}else {
+		i=i
+}
+		if (form.q2b[0].checked) {
+		i=i+1
+}else {
+		i=i	
+	}		
+		if (form.q2c[0].checked) {
+		i=i+1
+}else {
+		i=i	
+}
+		if (form.q2d[1].checked) {
+		i=i+1
+}else {
+		i=i
+	}
+		if (form.q2e[1].checked) {
+		i=i+1
+}else {
+		i=i
+	}
+		if (form.q2f[1].checked) {
+		i=i+1
+}else {
+		i=i
+	}
+		if (form.q2g[1].checked) {
+		i=i+1
+}else {
+		i=i
+	}
+		if (form.q2h[0].checked) {
+		i=i+1
+}else {
+		i=i
+	}				
+
+	var diff=8-i
+	var Text="You answered " +i +" questions correctly.\r"
++"You failed to respond to or incorrectly answered " +diff +" questions."
+	if   (i==8) {
+form.result.value = "Congratulations!\r" + Text;
+		}else{
+form.result.value=Text;	
+}
+}
+// End of hide script comment. -->
+</SCRIPT>
+<HR>
+<p><B>2.  </B>Which of the following compounds would be
+expected to show spin-spin splitting in their <SUP>1</SUP>H 
+NMR spectra?  (Check the appropriate button).</p>
+<P><INPUT TYPE="button" VALUE=" Check Answers for Problem 2 " onClick= "process(form)"> 
+ &nbsp;  <INPUT TYPE="reset" VALUE=" Clear Answers for Problem 2 ">
+<div class="ctr"><TABLE BORDER=1></P>
+<TR ALIGN=center><TD WIDTH=119><B>Compound</B></TD><TD 
+WIDTH=58><B>Splitting</B>
+</TD><TD WIDTH=58><B>No Splitting</B></TD><TD WIDTH=14>
+</TD><TD WIDTH=122><div class="ctr"><B>Compound</B></div></TD><TD 
+WIDTH=58><div class="ctr"><B>Splitting</B></div>
+</TD><TD WIDTH=58><B>No Splitting</B></TD></TR>
+
+<TR ALIGN=center>
+<TD WIDTH=119>&nbsp;<BR>(CH<SUB>3</SUB>)<SUB>3</SUB>C-O-CH<SUB>3</SUB><BR>&nbsp;</TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2a" VALUE="split"></TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2a" VALUE="nosplit"></TD>
+<TD WIDTH=14></TD>
+<TD WIDTH=122>(CH<SUB>3</SUB>)<SUB>2</SUB>CH-O-CH<SUB>3</SUB></TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2b" VALUE="split"></TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2b" VALUE="nosplit"></TD>
+</TR>
+
+<TR ALIGN=center>
+<TD WIDTH=119>&nbsp;<BR>Br-CH<SUB>2</SUB>CH<SUB>2</SUB>CH<SUB>2</SUB>-Br<BR>&nbsp;</TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2c" VALUE="split"></TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2c" VALUE="nosplit"></TD>
+<TD WIDTH=14></TD>
+<TD WIDTH=122>Br-CH<SUB>2</SUB>CH<SUB>2</SUB>-Br</TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2d" VALUE="split"></TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2d" VALUE="nosplit"></TD>
+</TR>
+
+<TR ALIGN=center>
+<TD WIDTH=119><IMG SRC="../Images/pxylene.gif"></TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2e" VALUE="split"></TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2e" VALUE="nosplit"></TD>
+<TD WIDTH=14></TD>
+<TD WIDTH=122><IMG SRC="../Images/p2brbenz.gif"></TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2f" VALUE="split"></TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2f" VALUE="nosplit"></TD>
+</TR>
+
+<TR ALIGN=center><TD WIDTH=119><IMG SRC="../Images/14cyc6co.gif"></TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2g" VALUE="split"></TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2g" VALUE="nosplit"></TD>
+<TD WIDTH=14></TD>
+<TD WIDTH=122><IMG SRC="../Images/13cyc6co.gif"></TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2h" VALUE="split"></TD>
+<TD WIDTH=58><INPUT TYPE=RADIO NAME="q2h" VALUE="nosplit"></TD>
+</TR>
+</TABLE></div>
+
+</FORM>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY>
+</HTML>
+

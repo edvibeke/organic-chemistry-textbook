@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<TITLE>A Synthesis Problem</TITLE>
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H2 {font-size: 16pt}  sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var Txt="";
+var txt="";
+var smiles = "";
+var j="0";
+var i="0";
+var anscnt=0;
+var sma="";
+var jme = "0 0";
+var jmeprd="0 0";
+var step="1";
+var sumry="";
+
+
+ var start1="17 18 C 8.62 -5.77 C 10.02 -5.77 C 7.92 -4.56 C 7.92 -6.98 C 6.52 -4.56 C 5.82 -3.34 C 4.42 -3.34 C 3.72 -4.56 C 4.42 -5.77 C 5.82 -5.77 C 8.62 -8.19 C 7.92 -9.41 C 8.62 -10.62 C 10.02 -10.62 C 10.72 -9.41 C 10.02 -8.19 Br 10.72 -4.56 1 2 1 1 3 1 1 4 1 3 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 4 11 1 12 13 1 13 14 2 14 15 1 15 16 2 11 16 1 11 12 2 2 17 1";
+
+var prod1="17 18 C 8.62 -5.77 C 10.02 -5.77 C 7.92 -4.56 C 7.92 -6.98 C 6.52 -4.56 C 5.82 -3.34 C 4.42 -3.34 C 3.72 -4.56 C 4.42 -5.77 C 5.82 -5.77 C 8.62 -8.19 C 7.92 -9.41 C 8.62 -10.62 C 10.02 -10.62 C 10.72 -9.41 C 10.02 -8.19 O 10.72 -4.56 1 2 1 1 3 1 1 4 1 3 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 4 11 1 12 13 1 13 14 2 14 15 1 15 16 2 11 16 1 11 12 2 2 17 1";
+
+var start2="17 18 C 8.62 -5.77 C 10.02 -5.77 C 7.92 -4.56 C 7.92 -6.98 C 6.52 -4.56 C 5.82 -3.34 C 4.42 -3.34 C 3.72 -4.56 C 4.42 -5.77 C 5.82 -5.77 C 8.62 -8.19 C 7.92 -9.41 C 8.62 -10.62 C 10.02 -10.62 C 10.72 -9.41 C 10.02 -8.19 Br 10.72 -4.56 1 2 1 1 3 1 1 4 1 3 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 4 11 1 12 13 1 13 14 2 14 15 1 15 16 2 11 16 1 11 12 2 2 17 1";
+
+var prod2="17 18 C 8.62 -5.77 C 7.92 -4.56 C 7.92 -6.98 C 6.52 -4.56 C 5.82 -3.34 C 4.42 -3.34 C 3.72 -4.56 C 4.42 -5.77 C 5.82 -5.77 C 8.62 -8.19 C 7.92 -9.41 C 8.62 -10.62 C 10.02 -10.62 C 10.72 -9.41 C 10.02 -8.19 C 9.53 -4.70 O 9.82 -6.50 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 1 17 1";
+
+var start3="17 18 C 8.62 -5.77 C 10.02 -5.77 C 7.92 -4.56 C 7.92 -6.98 C 6.52 -4.56 C 5.82 -3.34 C 4.42 -3.34 C 3.72 -4.56 C 4.42 -5.77 C 5.82 -5.77 C 8.62 -8.19 C 7.92 -9.41 C 8.62 -10.62 C 10.02 -10.62 C 10.72 -9.41 C 10.02 -8.19 Br 10.72 -4.56 1 2 1 1 3 1 1 4 1 3 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 4 11 1 12 13 1 13 14 2 14 15 1 15 16 2 11 16 1 11 12 2 2 17 1";
+
+var prod3="16 17 C 8.82 -6.87 C 9.49 -5.64 C 7.42 -6.89 C 9.53 -8.07 C 10.93 -8.04 C 11.66 -9.25 C 13.06 -9.22 C 13.74 -7.99 C 13.02 -6.79 C 11.62 -6.82 C 6.70 -5.69 C 7.39 -4.47 C 6.67 -3.27 C 5.27 -3.29 C 4.59 -4.51 C 5.30 -5.71 1 2 1 1 3 2 1 4 1 4 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 3 11 1 12 13 1 13 14 2 14 15 1 15 16 2 11 16 1 11 12 2";
+
+var start4="16 17 C 10.97 -5.54 C 12.37 -5.54 C 10.27 -4.33 C 10.27 -6.75 C 8.87 -4.33 C 8.17 -3.11 C 6.77 -3.11 C 6.07 -4.33 C 6.77 -5.54 C 8.17 -5.54 C 10.97 -7.96 C 10.27 -9.18 C 10.97 -10.39 C 12.37 -10.39 C 13.07 -9.18 C 12.37 -7.96 1 2 2 1 3 1 1 4 1 3 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 4 11 1 12 13 1 13 14 2 14 15 1 15 16 2 11 16 1 11 12 2";
+
+var prod4="19 20 C 11.02 -5.54 C 10.33 -4.33 C 10.33 -6.75 C 8.93 -4.33 C 8.23 -3.11 C 6.83 -3.11 C 6.13 -4.33 C 6.83 -5.54 C 8.23 -5.54 C 11.02 -7.96 C 10.33 -9.18 C 11.02 -10.39 C 12.42 -10.39 C 13.12 -9.18 C 12.42 -7.96 C 11.76 -4.35 C 12.15 -6.38 O 13.16 -4.39 O 11.10 -3.12 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 1 17 1 16 18 1 16 19 2";
+
+var start5="16 17 C 10.97 -5.54 C 12.37 -5.54 C 10.27 -4.33 C 10.27 -6.75 C 8.87 -4.33 C 8.17 -3.11 C 6.77 -3.11 C 6.07 -4.33 C 6.77 -5.54 C 8.17 -5.54 C 10.97 -7.96 C 10.27 -9.18 C 10.97 -10.39 C 12.37 -10.39 C 13.07 -9.18 C 12.37 -7.96 1 2 2 1 3 1 1 4 1 3 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 4 11 1 12 13 1 13 14 2 14 15 1 15 16 2 11 16 1 11 12 2";
+
+var prod5="19 20 C 10.80 -5.54 C 12.20 -5.54 C 10.10 -4.33 C 10.10 -6.75 C 8.70 -4.33 C 8.00 -3.11 C 6.60 -3.11 C 5.90 -4.33 C 6.60 -5.54 C 8.00 -5.54 C 10.80 -7.96 C 10.10 -9.18 C 10.80 -10.39 C 12.20 -10.39 C 12.90 -9.18 C 12.20 -7.96 C 12.90 -4.33 O 14.30 -4.34 O 12.20 -3.12 1 2 1 1 3 1 1 4 1 3 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 4 11 1 12 13 1 13 14 2 14 15 1 15 16 2 11 16 1 11 12 2 2 17 1 17 18 1 17 19 2";
+
+ var start6="17 18 C 8.62 -5.77 C 10.02 -5.77 C 7.92 -4.56 C 7.92 -6.98 C 6.52 -4.56 C 5.82 -3.34 C 4.42 -3.34 C 3.72 -4.56 C 4.42 -5.77 C 5.82 -5.77 C 8.62 -8.19 C 7.92 -9.41 C 8.62 -10.62 C 10.02 -10.62 C 10.72 -9.41 C 10.02 -8.19 O 10.72 -4.56 1 2 1 1 3 1 1 4 1 3 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 4 11 1 12 13 1 13 14 2 14 15 1 15 16 2 11 16 1 11 12 2 2 17 1";
+
+var prod6="18 19 C 9.23 -5.98 C 8.53 -4.77 C 8.53 -7.19 C 7.13 -4.77 C 6.43 -3.55 C 5.03 -3.55 C 4.33 -4.77 C 5.03 -5.98 C 6.43 -5.98 C 9.23 -8.40 C 8.53 -9.62 C 9.23 -10.83 C 10.63 -10.83 C 11.33 -9.62 C 10.63 -8.40 C 10.56 -6.40 Br 10.15 -4.93 O 11.59 -5.45 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 1 17 1 16 18 1";
+
+var prbst="The transformation shown above requires more than one step. It may be carried out by sequential use of the reagents on the right. Select the reagent you wish to use for the first step and press the [Do Reaction] button.\rThe product from the reaction will be displayed in the window above."
+
+
+var plus="|1 0 + 8.12 -5.82|";
+var quest="|1 0 ? 8.57 -6.05|";
+var arrow="|>> 5 4 C:1 13.51 -6.40 O:2|";
+
+	function process(form) {
+	if (j!=0){
+	 j=0
+}
+	if (i!=0){
+	 i=0
+}
+	if (jme!="0 0"){
+	jme="0 0";
+}
+	if (step!="1"){
+	step="1";
+}
+	if (Txt!=""){
+	Txt="";
+}
+
+
+
+		if (form.pr1[0].checked){
+	i="1";
+jme=start1+">1 0 ? 9.41 -6.05>"+prod1;
+}
+		if (form.pr1[1].checked){
+	i="2";
+jme=start2+">1 0 ? 9.41 -6.05>"+prod2
+}
+		if (form.pr1[2].checked){
+	i="3";
+jme=start3+">1 0 ? 9.41 -6.05>"+prod3
+}
+		if (form.pr1[3].checked){
+	i="4";
+jme=start4+">1 0 ? 9.41 -6.05>"+prod4
+}
+		if (form.pr1[4].checked){
+	i="5";
+jme=start5+">1 0 ? 9.41 -6.05>"+prod5
+}
+		if (form.pr1[5].checked){
+	i="6";
+jme=start6+">1 0 ? 9.41 -6.05>"+prod6
+}
+}
+
+	function process2(form) {
+var many="1 0 Various_Products 8.62 -6.50";
+var int11="17 18 C 10.80 -5.54 C 12.20 -5.54 C 10.10 -4.33 C 10.10 -6.75 C 8.70 -4.33 C 8.00 -3.11 C 6.60 -3.11 C 5.90 -4.33 C 6.60 -5.54 C 8.00 -5.54 C 10.80 -7.96 C 10.10 -9.18 C 10.80 -10.39 C 12.20 -10.39 C 12.90 -9.18 C 12.20 -7.96 MgBr 12.90 -4.33 1 2 1 1 3 1 1 4 1 3 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 4 11 1 12 13 1 13 14 2 14 15 1 15 16 2 11 16 1 11 12 2 2 17 1";   /*Grignard1*/
+var int12="17 18 C 10.80 -5.54 C 10.10 -4.33 C 10.10 -6.75 C 8.70 -4.33 C 8.00 -3.11 C 6.60 -3.11 C 5.90 -4.33 C 6.60 -5.54 C 8.00 -5.54 C 10.80 -7.96 C 10.10 -9.18 C 10.80 -10.39 C 12.20 -10.39 C 12.90 -9.18 C 12.20 -7.96 C 11.98 -6.29 MgBr 11.61 -4.40 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 1 17 1";  /*Grignard2 */
+var int13="17 18 C 9.79 -6.04 C 9.09 -4.83 C 9.09 -7.25 C 7.69 -4.83 C 6.99 -3.61 C 5.59 -3.61 C 4.89 -4.83 C 5.59 -6.04 C 6.99 -6.04 C 9.79 -8.46 C 9.09 -9.68 C 9.79 -10.89 C 11.19 -10.89 C 11.89 -9.68 C 11.19 -8.46 C 10.97 -6.79 Br 10.60 -4.90 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 1 17 1";   /*tertbromide*/
+var int14="";   /* */
+var int15="17 19 C 10.79 -5.59 C 10.10 -4.38 C 10.10 -6.80 C 8.70 -4.38 C 8.00 -3.16 C 6.60 -3.16 C 5.90 -4.38 C 6.60 -5.59 C 8.00 -5.59 C 10.79 -8.01 C 10.10 -9.23 C 10.79 -10.44 C 12.19 -10.44 C 12.89 -9.23 C 12.19 -8.01 C 11.97 -6.34 O 12.04 -4.94 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 1 17 1 16 17 1";   /*epoxide1*/
+var int18="18 19 C 9.23 -5.98 C 8.53 -4.77 C 8.53 -7.19 C 7.13 -4.77 C 6.43 -3.55 C 5.03 -3.55 C 4.33 -4.77 C 5.03 -5.98 C 6.43 -5.98 C 9.23 -8.40 C 8.53 -9.62 C 9.23 -10.83 C 10.63 -10.83 C 11.33 -9.62 C 10.63 -8.40 C 10.56 -6.40 Br 10.15 -4.93 O 11.59 -5.45 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 1 17 1 16 18 1";  /*bromohydrin*/
+
+		if (form.reag[0].checked) {
+		j=1
+txt=""
+}
+		if (form.reag[1].checked) {
+		j=2
+txt=""
+}
+		if (form.reag[2].checked) {
+		j=3
+txt=""
+}
+
+		if (form.reag[3].checked) {
+		j=4
+txt=""
+}
+
+		if (form.reag[4].checked) {
+		j=5
+txt=""
+}
+		if (form.reag[5].checked) {
+		j=6
+txt=""
+}
+		if (form.reag[6].checked) {
+		j=7
+txt=""
+}
+		if (form.reag[7].checked) {
+		j=8
+txt=""
+}
+
+		if (((i==1)||(i==2)||(i==3))&&((step==1))&&((j==1)||(j==3)||(j==4)||(j==6))) {
+jmeprd=start1;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again."
+}
+		if (((i==1)||(i==2)||(i==3))&&((j==2))&&((step==1))) {
+jmeprd=start4;
+txt="Because KOH is a strong base and there is chain branching at the adjacent carbon, E2 elimination will predominate over substitution.\rIf you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry="Step 1 KOH";
+}
+		if (((i==1)||(i==2)||(i==3))&&((step==1))&&((j==5)||(j==8))) {
+jmeprd=many;
+txt="No reaction is expected from the initial reagent, but the basic conditions of the second step may cause reaction.\rPress [Reset] and start again."
+}
+		if (((i==1)||(i==2)||(i==3))&&((j==7))&&((step==1))) {
+jmeprd=int11;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry="Step 1 Grignard formation";
+}
+
+		if (((i==1)||(i==2)||(i==3))&&((step==2))&&((jmeprd==start4))&&((j==1)||(j==2)||(j==4)||(j==7))) {
+jmeprd=start4;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==2)||(i==3))&&((jmeprd==start4))&&((j==3))&&((step==2))) {
+jmeprd=int13;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 2 HBr addn.";
+}
+		if ((i==1)&&(jmeprd==start4)&&(j==5)&&(step==2)) {
+jmeprd=prod1;
+sumry=sumry +", Step 2 Hydroboration.";
+txt="Congratulations, you have completed this synthesis.\rThe reaction sequence you used is: \r"+sumry;
+}
+		if (((i==1)||(i==2)||(i==3))&&((jmeprd==start4))&&((j==6))&&((step==2))) {
+jmeprd=int15;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 2 Epoxidation.";
+}
+		if (((i==1)||(i==3))&&((jmeprd==start4))&&((j==8))&&((step==2))) {
+jmeprd=prod2;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 2 Oxymercuration";
+}
+		if (((i==1)||(i==2)||(i==3))&&((step==2))&&((jmeprd==int11))&&((j==2)||(j==3)||(j==4)||(j==5)||(j==6)||(j==8))) {
+jmeprd=many;
+txt="A Grignard reagent may undergo a variety of reactions, including solvent protonation. This reagent will not produce a useful change.\rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==2)||(i==3))&&((jmeprd==int11))&&((j==1))&&((step==2))) {
+jmeprd=prod5;
+txt="This product has one more carbon than the desired compound. It is unlikely to be of use in this synthesis.\rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==2)||(i==3))&&((jmeprd==int11))&&((j==7))&&((step==2))) {
+jmeprd=prod5;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==2)||(i==3))&&((step==3))&&((jmeprd==int13))&&((j==1)||(j==3)||(j==4)||(j==6))) {
+jmeprd=int13;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==2))&&((jmeprd==int13))&&((j==2))&&((step==3))) {
+jmeprd=prod3;
+txt="This olefin is favored in E2 elimination (the Zaitsev rule). It is not a useful intermediate for this conversion.\rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==2)||(i==3))&&((step==3))&&((jmeprd==int13))&&((j==5)||(j==8))) {
+jmeprd=int13;
+txt="No reaction is expected from the initial reagent, but the basic conditions of the second step may cause an unwanted reaction.\rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==2)||(i==3))&&((jmeprd==int13))&&((j==7))&&((step==3))) {
+jmeprd=int12;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 3 Grignard formation";
+}
+		if (((i==1)||(i==3))&&((step==3))&&((jmeprd==prod2))&&((j==1)||(j==2)||(j==5)||(j==6)||(j==7)||(j==8))) {
+jmeprd=prod2;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==3))&&((step==3))&&((jmeprd==prod2))&&((j==3)||(j==4))) {
+jmeprd=int13;
+txt="These reagents should act to form the corresponding 3¡-bromide. There is a shorter route to this product, which you should use.\rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==2)||(i==3))&&((step==3))&&((jmeprd==int15))&&((j==1)||(j==5)||(j==6)||(j==7)||(j==8))) {
+jmeprd=int15;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==2)||(i==3))&&((step==3))&&((jmeprd==int15))&&((j==2))) {
+jmeprd=many;
+txt="Hydroxide and alkoxide nucleophiles will open the epoxide ring by attack at the least substituted carbon. A mixture of diols and their mono-ether derivatives will be formed. This is unlikely to be useful here.\rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==2)||(i==3))&&((step==3))&&((jmeprd==int15))&&((j==3))) {
+jmeprd=int18;
+txt="HBr will open the epoxide ring in the manner shown above. If you are satisfied with this product, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 3 HBr ring opening";
+}
+		if (((i==1)||(i==2)||(i==3))&&((step==3))&&((jmeprd==int15))&&((j==4))) {
+jmeprd=many;
+txt="Phosphorus tribromide is a Lewis acid and may contain traces of other acids. It may yield a mixture of products, depending on conditions.\rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==2)||(i==3))&&((step==4))&&((jmeprd==int12))&&((j==2)||(j==3)||(j==4)||(j==5)||(j==6)||(j==8))) {
+jmeprd=many;
+txt="A Grignard reagent may undergo a variety of reactions, including solvent protonation. This reagent will not produce a useful change.\rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==2)||(i==3))&&((jmeprd==int12))&&((j==7))&&((step==4))) {
+jmeprd=int12;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==2)||(i==3))&&((jmeprd==int12))&&((j==1))&&((step==4))) {
+jmeprd=prod4;
+txt="This product has one more carbon than the desired compound. It is unlikely to be of use in this synthesis.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(step==4)&&(jmeprd==int18)&&(j==7)) {
+jmeprd="17 18 C 6.59 -5.75 C 5.89 -4.54 C 5.89 -6.96 C 4.49 -4.54 C 3.79 -3.32 C 2.39 -3.32 C 1.69 -4.54 C 2.39 -5.75 C 3.79 -5.75 C 6.59 -8.17 C 5.89 -9.39 C 6.59 -10.60 C 7.99 -10.60 C 8.69 -9.39 C 7.99 -8.17 C 7.99 -5.75 O- 8.69 -4.54 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 16 17 1|1 0 MgBr+ 10.92 -4.59";
+sumry=sumry +", Step 4 Grignard formation & protonation";
+txt="This reaction might actually produce the desired product, although a much shorter and better route can be found. In this case the initially formed Grignard reagent is protonated by the hydroxyl group giving the magnesium salt shown above. Hydrolysis would then provide the product.\rThe reaction sequence you used is: \r"+sumry;
+}
+		if (((i==1)||(i==2)||(i==3))&&((step==4))&&((jmeprd==int18))&&((j==1)||(j==5)||(j==6)||(j==8))) {
+jmeprd=int18;
+txt="There is unlikely to be any reaction, although base treatment during work-up may lead to elimination of HBr or epoxide formation.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int18)&&(j==2)&&(step==4)) {
+jmeprd="17 18 C 5.25 -6.09 C 4.55 -4.88 C 4.55 -7.30 C 3.15 -4.88 C 2.45 -3.66 C 1.05 -3.66 C 0.35 -4.88 C 1.05 -6.09 C 2.45 -6.09 C 5.25 -8.51 C 4.55 -9.73 C 5.25 -10.94 C 6.65 -10.94 C 7.35 -9.73 C 6.65 -8.51 C 6.58 -6.51 O 7.61 -5.56 1 2 2 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 16 17 1|17 19 C 14.70 -7.09 C 15.40 -5.88 C 14.70 -4.67 C 13.30 -4.67 C 15.40 -8.30 C 14.70 -9.52 C 15.40 -10.73 C 16.80 -10.73 C 17.50 -9.52 C 16.80 -8.30 C 16.56 -6.66 O 16.65 -5.26 C 12.60 -3.46 C 11.20 -3.46 C 10.50 -4.67 C 11.20 -5.88 C 12.60 -5.88 1 2 1 2 3 1 3 4 1 1 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 2 11 1 2 12 1 11 12 1 13 14 1 14 15 2 15 16 1 16 17 2 4 17 1 4 13 2";
+txt="This strong base treatment may lead to elimination of HBr or epoxide formation, as shown above. Epoxide formation is a step backwards, but the unsaturated alcohol is close to the desired product. There is a much shorter route you should try to find. \rPress [Reset] and start again.";
+}
+		if (((i==1)||(i==2)||(i==3))&&((step==4))&&((jmeprd==int18))&&((j==3)||(j==4))) {
+jmeprd="18 19 C 10.07 -5.31 C 9.37 -4.10 C 9.37 -6.52 C 7.97 -4.10 C 7.27 -2.88 C 5.87 -2.88 C 5.17 -4.10 C 5.87 -5.31 C 7.27 -5.31 C 10.07 -7.73 C 9.37 -8.95 C 10.07 -10.16 C 11.47 -10.16 C 12.17 -8.95 C 11.47 -7.73 C 11.40 -5.73 Br 12.43 -4.78 Br 10.52 -3.98 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 16 17 1 1 18 1";
+txt="The dibromide shown above is the likely product. This does not seem to be a useful intermediate in this synthesis. There is a much shorter route you should try to find. \rPress [Reset] and start again.";
+}
+
+		if (((i==2)||(i==3))&&((jmeprd==start4))&&((j==5))&&((step==2))) {
+jmeprd=prod1;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 2 Hydroboration.";
+}
+		if ((i==2)&&(jmeprd==start4)&&(j==8)&&(step==2)) {
+jmeprd=prod2;
+sumry=sumry +", Step 2 Oxymercuration";
+txt="Congratulations, you have completed this synthesis.\rThe reaction sequence you used is: \r"+sumry;
+}
+
+		if (((i==2))&&((step==3))&&((jmeprd==prod1))&&((j==1)||(j==2)||(j==5)||(j==6)||(j==7)||(j==8))) {
+jmeprd=prod1;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==2)||(i==3))&&((step==3))&&((jmeprd==prod1))&&((j==3))) {
+jmeprd="17 18 C 5.70 -6.04 C 5.00 -4.83 C 5.00 -7.25 C 3.60 -4.83 C 2.90 -3.61 C 1.50 -3.61 C 0.80 -4.83 C 1.50 -6.04 C 2.90 -6.04 C 5.70 -8.46 C 5.00 -9.68 C 5.70 -10.89 C 7.10 -10.89 C 7.80 -9.68 C 7.10 -8.46 C 7.10 -6.04 Br 7.80 -4.83 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 16 17 1|17 18 C 14.98 -6.36 C 15.68 -5.15 C 14.98 -3.94 C 13.58 -3.94 C 15.68 -7.58 C 14.98 -8.79 C 15.68 -10.00 C 17.08 -10.00 C 17.78 -8.79 C 17.08 -7.58 C 16.47 -3.99 Br 16.79 -6.00 C 12.88 -2.73 C 11.48 -2.73 C 10.78 -3.94 C 11.48 -5.15 C 12.88 -5.15 1 2 1 2 3 1 3 4 1 1 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 2 11 1 2 12 1 13 14 1 14 15 2 15 16 1 16 17 2 4 17 1 4 13 2";
+txt="The 1¡-bromide, shown on the left above is your starting compound. However HBr may cause rearrangement to the 3¡-bromide shown on the right. This mixture will not be useful.\rPress [Reset] and start again.";
+}
+		if (((i==2)||(i==3))&&((step==3))&&((jmeprd==prod1))&&((j==4))) {
+jmeprd=start1;
+txt="This is your starting compound.\rPress [Reset] and start again.";
+}
+
+		if ((i==2)&&(step==4)&&(jmeprd==int18)&&(j==7)) {
+jmeprd="17 18 C 6.59 -5.75 C 5.89 -4.54 C 5.89 -6.96 C 4.49 -4.54 C 3.79 -3.32 C 2.39 -3.32 C 1.69 -4.54 C 2.39 -5.75 C 3.79 -5.75 C 6.59 -8.17 C 5.89 -9.39 C 6.59 -10.60 C 7.99 -10.60 C 8.69 -9.39 C 7.99 -8.17 C 7.99 -5.75 O- 8.69 -4.54 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 16 17 1|1 0 MgBr+ 10.92 -4.59";
+txt="In this case the initially formed Grignard reagent is protonated by the hydroxyl group giving the magnesium salt shown above. Hydrolysis would then provide the 1¡-alcohol product. This is an isomer of the desired product.\rPress [Reset] and start again.";
+}
+		if ((i==2)&&(jmeprd==int18)&&(j==2)&&(step==4)) {
+jmeprd="17 18 C 5.25 -6.09 C 4.55 -4.88 C 4.55 -7.30 C 3.15 -4.88 C 2.45 -3.66 C 1.05 -3.66 C 0.35 -4.88 C 1.05 -6.09 C 2.45 -6.09 C 5.25 -8.51 C 4.55 -9.73 C 5.25 -10.94 C 6.65 -10.94 C 7.35 -9.73 C 6.65 -8.51 C 6.58 -6.51 O 7.61 -5.56 1 2 2 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 16 17 1|17 19 C 14.70 -7.09 C 15.40 -5.88 C 14.70 -4.67 C 13.30 -4.67 C 15.40 -8.30 C 14.70 -9.52 C 15.40 -10.73 C 16.80 -10.73 C 17.50 -9.52 C 16.80 -8.30 C 16.56 -6.66 O 16.65 -5.26 C 12.60 -3.46 C 11.20 -3.46 C 10.50 -4.67 C 11.20 -5.88 C 12.60 -5.88 1 2 1 2 3 1 3 4 1 1 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 2 11 1 2 12 1 11 12 1 13 14 1 14 15 2 15 16 1 16 17 2 4 17 1 4 13 2";
+txt="This strong base treatment may lead to elimination of HBr or epoxide formation, as shown above. Epoxide formation is a step backwards, and the unsaturated alcohol is not a useful intermediate. There is a much shorter route you should try to find. \rPress [Reset] and start again.";
+}
+
+		if (((i==3))&&((jmeprd==int13))&&((j==2))&&((step==3))) {
+jmeprd=prod3;
+sumry=sumry +", Step 3 KOH ";
+txt="Congratulations, you have completed this synthesis.\rThe reaction sequence you used is: \r"+sumry;
+}
+
+		if (((i==4)||(i==5))&&((step==1))&&((j==1)||(j==2)||(j==4)||(j==7))) {
+jmeprd=start4;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again."
+}
+		if (((i==4)||(i==5))&&((step==1))&&((j==3))) {
+jmeprd=int13;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +"Step 1 HBr addition.";
+}
+		if (((i==4)||(i==5))&&((step==1))&&((j==5))) {
+jmeprd=prod1;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +"Step 1 Hydroboration.";
+}
+		if (((i==4)||(i==5))&&((step==1))&&((j==6))) {
+jmeprd=int15;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +"Step 1 Epoxidation.";
+}
+		if (((i==4)||(i==5))&&((step==1))&&((j==8))) {
+jmeprd=prod2;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +"Step 1 Oxymercuration.";
+}
+
+		if (((i==4)||(i==5))&&((step==2))&&((jmeprd==int13))&&((j==1)||(j==3)||(j==4)||(j==6))) {
+jmeprd=int13;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==4)||(i==5))&&((jmeprd==int13))&&((j==2))&&((step==2))) {
+jmeprd=prod3;
+txt="This olefin is favored in E2 elimination (the Zaitsev rule). It is not a useful intermediate for this conversion.\rPress [Reset] and start again.";
+}
+		if (((i==4)||(i==5))&&((step==2))&&((jmeprd==int13))&&((j==5)||(j==8))) {
+jmeprd=int13;
+txt="No reaction is expected from the initial reagent, but the basic conditions of the second step may cause unwanted reactions.\rPress [Reset] and start again.";
+}
+		if (((i==4)||(i==5))&&((jmeprd==int13))&&((j==7))&&((step==2))) {
+jmeprd=int12;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 2 Grignard formation";
+}
+
+		if (((i==4)||(i==5))&&((step==2))&&((jmeprd==prod1))&&((j==1)||(j==2)||(j==5)||(j==6)||(j==7)||(j==8))) {
+jmeprd=prod1;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==4)||(i==5))&&((step==2))&&((jmeprd==prod1))&&((j==3))) {
+jmeprd="17 18 C 5.70 -6.04 C 5.00 -4.83 C 5.00 -7.25 C 3.60 -4.83 C 2.90 -3.61 C 1.50 -3.61 C 0.80 -4.83 C 1.50 -6.04 C 2.90 -6.04 C 5.70 -8.46 C 5.00 -9.68 C 5.70 -10.89 C 7.10 -10.89 C 7.80 -9.68 C 7.10 -8.46 C 7.10 -6.04 Br 7.80 -4.83 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 16 17 1|17 18 C 14.98 -6.36 C 15.68 -5.15 C 14.98 -3.94 C 13.58 -3.94 C 15.68 -7.58 C 14.98 -8.79 C 15.68 -10.00 C 17.08 -10.00 C 17.78 -8.79 C 17.08 -7.58 C 16.47 -3.99 Br 16.79 -6.00 C 12.88 -2.73 C 11.48 -2.73 C 10.78 -3.94 C 11.48 -5.15 C 12.88 -5.15 1 2 1 2 3 1 3 4 1 1 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 2 11 1 2 12 1 13 14 1 14 15 2 15 16 1 16 17 2 4 17 1 4 13 2";
+txt="The 1¡-bromide, shown on the left above is the expected product. However HBr may cause rearrangement to the 3¡-bromide shown on the right. This mixture will not be useful.\rPress [Reset] and start again.";
+}
+		if 
+(((i==4)||(i==5))&&((step==2))&&((jmeprd==prod1))&&((j==4))) {
+jmeprd=start1;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 2 1¡-Bromide formation";
+}
+
+		if (((i==4)||(i==5))&&((step==2))&&((jmeprd==int15))&&((j==1)||(j==5)||(j==6)||(j==7)||(j==8))) {
+jmeprd=int15;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==4)||(i==5))&&((step==2))&&((jmeprd==int15))&&((j==2))) {
+jmeprd=many;
+txt="Hydroxide and alkoxide nucleophiles will open the epoxide ring by attack at the least substituted carbon. A mixture of diols and their mono-ether derivatives will be formed. This is unlikely to be useful here.\rPress [Reset] and start again.";
+}
+		if (((i==4)||(i==5))&&((step==2))&&((jmeprd==int15))&&((j==3))) {
+jmeprd=int18;
+txt="HBr will open the epoxide ring in the manner shown above. If you are satisfied with this product, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 2 HBr ring opening";
+}
+		if (((i==4)||(i==5))&&((step==2))&&((jmeprd==int15))&&((j==4))) {
+jmeprd=many;
+txt="Phosphorus tribromide is a Lewis acid and may contain traces of other acids. It may yield a mixture of products, depending on conditions.\rPress [Reset] and start again.";
+}
+
+		if (((i==4)||(i==5))&&((step==2))&&((jmeprd==prod2))&&((j==1)||(j==2)||(j==5)||(j==6)||(j==7)||(j==8))) {
+jmeprd=prod2;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==4)||(i==5))&&((step==2))&&((jmeprd==prod2))&&((j==3)||(j==4))) {
+jmeprd=int13;
+txt="These reagents should act to form the corresponding 3¡-bromide. A shorter route to this product is possible and should be used.\rPress [Reset] and start again.";
+}
+
+		if (((i==4)||(i==5))&&((step==3))&&((jmeprd==int12))&&((j==2)||(j==3)||(j==4)||(j==5)||(j==6)||(j==8))) {
+jmeprd=many;
+txt="A Grignard reagent may undergo a variety of reactions, including solvent protonation. This reagent will not produce a useful change.\rPress [Reset] and start again.";
+}
+		if (((i==4)||(i==5))&&((jmeprd==int12))&&((j==7))&&((step==3))) {
+jmeprd=int12;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==5))&&((jmeprd==int12))&&((j==1))&&((step==3))) {
+jmeprd=prod4;
+txt="This product is an isomer of the desired compound. It is unlikely to be of use in this synthesis.\rPress [Reset] and start again.";
+}
+		if (((i==4))&&((jmeprd==int12))&&((j==1))&&((step==3))) {
+jmeprd=prod4;
+sumry=sumry +", Step 3 Carboxylation with CO2";
+txt="Congratulations, you have completed this synthesis.\rThe reaction sequence you used is: \r"+sumry;
+}
+		if (((i==4)||(i==5))&&((step==3))&&((jmeprd==start1))&&((j==1)||(j==3)||(j==4)||(j==6))) {
+jmeprd=start1;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again."
+}
+		if 
+(((i==4)||(i==5))&&((step==3))&&((jmeprd==start1))&&((j==2))) {
+jmeprd=start4;
+txt="You have reformed the starting compound.\rPress [Reset] and start again.";
+}
+		if 
+(((i==4)||(i==5))&&((step==3))&&((jmeprd==start1))&&((j==5)||(j==8))) {
+jmeprd=many;
+txt="No reaction is expected from the initial reagent, but the basic conditions of the second step may cause reaction.\rPress [Reset] and start again."
+}
+		if (((i==4)||(i==5))&&((jmeprd==start1))&&((j==7))&&((step==3))) {
+jmeprd=int11;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 3 Grignard formation";
+}
+
+		if (((i==4)||(i==5))&&((step==3))&&((jmeprd==int18))&&((j==7))) {
+jmeprd="17 18 C 6.59 -5.75 C 5.89 -4.54 C 5.89 -6.96 C 4.49 -4.54 C 3.79 -3.32 C 2.39 -3.32 C 1.69 -4.54 C 2.39 -5.75 C 3.79 -5.75 C 6.59 -8.17 C 5.89 -9.39 C 6.59 -10.60 C 7.99 -10.60 C 8.69 -9.39 C 7.99 -8.17 C 7.99 -5.75 O- 8.69 -4.54 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 16 17 1|1 0 MgBr+ 10.92 -4.59";
+txt="In this case the initially formed Grignard reagent is protonated by the hydroxyl group giving the magnesium salt shown above. Hydrolysis would then produce the corresponding 1¡-alcohol.\rPress [Reset] and start again.";
+}
+		if (((i==4)||(i==5))&&((step==3))&&((jmeprd==int18))&&((j==1)||(j==5)||(j==6)||(j==8))) {
+jmeprd=int18;
+txt="There is unlikely to be any reaction, although base treatment during work-up may lead to elimination of HBr or epoxide formation.\rPress [Reset] and start again.";
+}
+		if (((i==4)||(i==5))&&((step==3))&&((jmeprd==int18))&&((j==2))) {
+jmeprd="17 18 C 5.25 -6.09 C 4.55 -4.88 C 4.55 -7.30 C 3.15 -4.88 C 2.45 -3.66 C 1.05 -3.66 C 0.35 -4.88 C 1.05 -6.09 C 2.45 -6.09 C 5.25 -8.51 C 4.55 -9.73 C 5.25 -10.94 C 6.65 -10.94 C 7.35 -9.73 C 6.65 -8.51 C 6.58 -6.51 O 7.61 -5.56 1 2 2 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 16 17 1|17 19 C 14.70 -7.09 C 15.40 -5.88 C 14.70 -4.67 C 13.30 -4.67 C 15.40 -8.30 C 14.70 -9.52 C 15.40 -10.73 C 16.80 -10.73 C 17.50 -9.52 C 16.80 -8.30 C 16.56 -6.66 O 16.65 -5.26 C 12.60 -3.46 C 11.20 -3.46 C 10.50 -4.67 C 11.20 -5.88 C 12.60 -5.88 1 2 1 2 3 1 3 4 1 1 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 2 11 1 2 12 1 11 12 1 13 14 1 14 15 2 15 16 1 16 17 2 4 17 1 4 13 2";
+txt="This strong base treatment may lead to elimination of HBr or epoxide formation, as shown above. Neither product seems appropriate for this synthesis \rPress [Reset] and start again.";
+}
+		if (((i==4)||(i==5))&&((step==3))&&((jmeprd==int18))&&((j==3)||(j==4))) {
+jmeprd="18 19 C 10.07 -5.31 C 9.37 -4.10 C 9.37 -6.52 C 7.97 -4.10 C 7.27 -2.88 C 5.87 -2.88 C 5.17 -4.10 C 5.87 -5.31 C 7.27 -5.31 C 10.07 -7.73 C 9.37 -8.95 C 10.07 -10.16 C 11.47 -10.16 C 12.17 -8.95 C 11.47 -7.73 C 11.40 -5.73 Br 12.43 -4.78 Br 10.52 -3.98 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 16 17 1 1 18 1";
+txt="The dibromide shown above is the likely product. This does not seem to be a useful intermediate in this synthesis. \rPress [Reset] and start again.";
+}
+
+		if (((i==4)||(i==5))&&((step==4))&&((jmeprd==int11))&&((j==2)||(j==3)||(j==4)||(j==5)||(j==6)||(j==8))) {
+jmeprd=many;
+txt="A Grignard reagent may undergo a variety of reactions, including solvent protonation. This reagent will not produce a useful change.\rPress [Reset] and start again.";
+}
+		if (((i==4)||(i==5))&&((step==4))&&((jmeprd==int11))&&((j==7))) {
+jmeprd=prod5;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==4))&&((jmeprd==int11))&&((j==1))&&((step==4))) {
+jmeprd=prod5;
+txt="This product is an isomer of the desired compound. It is unlikely to be of use in this synthesis.\rPress [Reset] and start again.";
+}
+		if (((i==5))&&((jmeprd==int11))&&((j==1))&&((step==4))) {
+jmeprd=prod5;
+sumry=sumry +", Step 4 Carboxylation with CO2";
+txt="Congratulations, you have completed this synthesis.\rThe reaction sequence you used is: \r"+sumry;
+}
+
+		if (((i==6))&&((step==1))&&((j==1)||(j==2)||(j==5)||(j==6)||(j==7)||(j==8))) {
+jmeprd=prod1;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==6))&&((step==1))&&((j==3))) {
+jmeprd="17 18 C 5.70 -6.04 C 5.00 -4.83 C 5.00 -7.25 C 3.60 -4.83 C 2.90 -3.61 C 1.50 -3.61 C 0.80 -4.83 C 1.50 -6.04 C 2.90 -6.04 C 5.70 -8.46 C 5.00 -9.68 C 5.70 -10.89 C 7.10 -10.89 C 7.80 -9.68 C 7.10 -8.46 C 7.10 -6.04 Br 7.80 -4.83 1 2 1 1 3 1 2 4 1 5 6 1 6 7 2 7 8 1 8 9 2 4 9 1 4 5 2 3 10 1 11 12 1 12 13 2 13 14 1 14 15 2 10 15 1 10 11 2 1 16 1 16 17 1|17 18 C 14.98 -6.36 C 15.68 -5.15 C 14.98 -3.94 C 13.58 -3.94 C 15.68 -7.58 C 14.98 -8.79 C 15.68 -10.00 C 17.08 -10.00 C 17.78 -8.79 C 17.08 -7.58 C 16.47 -3.99 Br 16.79 -6.00 C 12.88 -2.73 C 11.48 -2.73 C 10.78 -3.94 C 11.48 -5.15 C 12.88 -5.15 1 2 1 2 3 1 3 4 1 1 5 1 6 7 1 7 8 2 8 9 1 9 10 2 5 10 1 5 6 2 2 11 1 2 12 1 13 14 1 14 15 2 15 16 1 16 17 2 4 17 1 4 13 2";
+txt="The 1¡-bromide, shown on the left above may be formed. However HBr may cause rearrangement to the 3¡-bromide shown on the right. This mixture will not be useful.\rPress [Reset] and start again.";
+}
+		if (((i==6))&&((step==1))&&((j==4))) {
+jmeprd=start1;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +"Step 1 1¡-Bromide formation";
+}
+
+		if (((i==6))&&((step==2))&&((jmeprd==start1))&&((j==1)||(j==3)||(j==4)||(j==6))) {
+jmeprd=start1;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again."
+}
+		if 
+(((i==6))&&((step==2))&&((jmeprd==start1))&&((j==2))) {
+jmeprd=start4;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 2 HBr elimination";}
+		if 
+(((i==6))&&((step==2))&&((jmeprd==start1))&&((j==5)||(j==8))) {
+jmeprd=many;
+txt="No reaction is expected from the initial reagent, but the basic conditions of the second step may cause reaction.\rPress [Reset] and start again."
+}
+		if (((i==6))&&((step==2))&&((jmeprd==start1))&&((j==7))) {
+jmeprd=int11;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 2 Grignard formation";
+}
+
+		if (((i==6))&&((step==3))&&((jmeprd==start4))&&((j==1)||(j==2)||(j==4)||(j==7))) {
+jmeprd=start4;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again."
+}
+		if (((i==6))&&((step==3))&&((jmeprd==start4))&&((j==3))) {
+jmeprd=int13;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 3 HBr addition.";
+}
+		if (((i==6))&&((step==3))&&((jmeprd==start4))&&((j==5))) {
+jmeprd=prod1;
+txt="This is the starting alcohol.\rPress [Reset] and start again.";
+}
+		if (((i==6))&&((step==3))&&((jmeprd==start4))&&((j==6))) {
+jmeprd=int15;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 3 Epoxidation.";
+}
+		if (((i==6))&&((step==3))&&((jmeprd==start4))&&((j==8))) {
+jmeprd=prod2;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 3 Oxymercuration.";
+}
+		if (((i==6))&&((step==3))&&((jmeprd==int11))&&((j==2)||(j==3)||(j==4)||(j==5)||(j==6)||(j==8))) {
+jmeprd=many;
+txt="A Grignard reagent may undergo a variety of reactions, including solvent protonation. This reagent will not produce a useful change.\rPress [Reset] and start again.";
+}
+		if (((i==6))&&((jmeprd==int11))&&((j==1))&&((step==3))) {
+jmeprd=prod5;
+txt="This product has one more carbon than the desired compound. It is unlikely to be of use in this synthesis.\rPress [Reset] and start again.";
+}
+		if (((i==6))&&((jmeprd==int11))&&((j==7))&&((step==3))) {
+jmeprd=prod5;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+
+		if (((i==6))&&((step==4))&&((jmeprd==int13))&&((j==1)||(j==3)||(j==4)||(j==6))) {
+jmeprd=int13;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==6))&&((jmeprd==int13))&&((j==2))&&((step==4))) {
+jmeprd=prod3;
+txt="This olefin is favored in E2 elimination (the Zaitsev rule). It is not a useful intermediate for this conversion.\rPress [Reset] and start again.";
+}
+		if (((i==6))&&((step==4))&&((jmeprd==int13))&&((j==5)||(j==8))) {
+jmeprd=int13;
+txt="No reaction is expected from the initial reagent, but the basic conditions of the second step may cause unwanted reactions.\rPress [Reset] and start again.";
+}
+		if (((i==6))&&((jmeprd==int13))&&((j==7))&&((step==4))) {
+jmeprd=int12;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 4 Grignard formation";
+}
+		if (((i==6))&&((step==4))&&((jmeprd==prod2))&&((j==1)||(j==2)||(j==5)||(j==6)||(j==7)||(j==8))) {
+jmeprd=prod2;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==6))&&((step==4))&&((jmeprd==prod2))&&((j==3)||(j==4))) {
+jmeprd=int13;
+txt="These reagents should act to form the corresponding 3¡-bromide. A shorter route to this product is possible and should be used.\rPress [Reset] and start again.";
+}
+
+		if (((i==6))&&((step==4))&&((jmeprd==int15))&&((j==1)||(j==5)||(j==6)||(j==7)||(j==8))) {
+jmeprd=int15;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if (((i==6))&&((step==4))&&((jmeprd==int15))&&((j==2))) {
+jmeprd=many;
+txt="Hydroxide and alkoxide nucleophiles will open the epoxide ring by attack at the least substituted carbon. A mixture of diols and their mono-ether derivatives will be formed. This is unlikely to be useful here.\rPress [Reset] and start again.";
+}
+		if (((i==6))&&((step==4))&&((jmeprd==int15))&&((j==3))) {
+jmeprd=int18;
+sumry=sumry +", Step 4 HBr ring opening";
+txt="Congratulations, you have completed this synthesis.\rThe reaction sequence you used is: \r"+sumry;
+}
+		if (((i==6))&&((step==4))&&((jmeprd==int15))&&((j==4))) {
+jmeprd=many;
+txt="Phosphorus tribromide is a Lewis acid and may contain traces of other acids. It may yield a mixture of products, depending on conditions.\rPress [Reset] and start again.";
+}
+
+
+}
+
+function processJme() {
+  document.JME.readMolecule(document.form.jme_output.value);
+ }
+function clrwind() { 
+	jme="0 0";
+	jmeprd="0 0";
+	Txt="";
+	txt="";
+	sumry="";
+	document.JME.readMolecule(jme);
+	document.form.result1.value="";
+}
+function chkvar() { 
+document.JME.readMolecule(jme);
+txt="";
+if (i=="0") {
+Txt=" ";
+}else{
+Txt=prbst; 
+}
+	 document.form.result1.value = Txt+"\r"+txt;
+}
+function chkans() { 
+  document.JME.readMolecule(jmeprd);
+Txt="";
+step++;
+	 document.form.result1.value = txt;
+if (txt=="") {
+alert("You must press [Reset] before proceeding. \n Also, be sure that your problem is selected and displayed."); 
+}
+}
+function processJmeans() {
+  document.JME.readMolecule(document.form.jmeans_output.value);
+}
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body onLoad="clrwind()">
+
+<div class="ctr"><H2>Devising a Synthesis Reaction Sequence</H2></div>
+<P>Create a problem by selecting a problem number and pressing the <B>Show Problem</B> button. A starting compound and a desired product will be displayed in the drawing window, separated by an arrow and a question mark. Specific commentary will be presented in the information window beneath. <br>A selection of eight reagents and reaction conditions are provided to the right of the formula window. Using these reagents, you are challenged to combine them in two or more steps that will accomplish this conversion. To do so select a reagent for the first step and press the <b>Do Reaction</b> button to have it evaluated. The product from this reaction will be displayed in the formula window, and specific instructions for further steps will be given in the information window. <br>Press the <b>Reset</b> button before trying a new problem.</P>
+<FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"> 
+<TABLE  CELLPADDING=3 ><TR><TH>
+<table cellpadding=4 width=300  border><tr> <th bgcolor="dedede"><H3><span class="fc-maroon"> Problem</span></H3></th>
+<th nowrap><INPUT TYPE=RADIO NAME="pr1" VALUE="select">
+<input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> 1</span></B> </th>
+<th nowrap><INPUT TYPE=RADIO NAME="pr1" VALUE="select">
+<input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> 2</span></B></th>
+<th nowrap><INPUT TYPE=RADIO NAME="pr1" VALUE="select">
+<input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> 3</span></B></th>
+<th nowrap><INPUT TYPE=RADIO NAME="pr1" VALUE="select">
+<input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> 4</span></B></th>
+<th nowrap><INPUT TYPE=RADIO NAME="pr1" VALUE="select">
+<input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> 5</span></B></th>
+<th nowrap><INPUT TYPE=RADIO NAME="pr1" VALUE="select">
+<input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> 6</span></B></th>
+</tr></table></TH><TH rowspan=2 width="30"></TH>
+<TH rowspan=2><table cellpadding=4 width=300  border><tr bgcolor="dedede"> <th ><H3><span class="fc-maroon"> Reagents</span></H3></th></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select">
+<input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue">CO<sub>2</sub> (dry gas), followed by H<sub>3</sub>O<sup>(+)</sup></span></B></td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue">KOH in alcokol, heat</span></B></td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue">HBr (gas) in CH<sub>2</sub>Cl<sub>2</sub></span></B> </td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> PBr<sub>3</sub> in ether & pyridine </span></B></td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> (i) B<sub>2</sub>H<sub>6</sub> in ether, (ii) H<sub>2</sub>O<sub>2</sub> & aq. NaOH</span></B></td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> C<sub>6</sub>H<sub>5</sub>CO<sub>3</sub>H (perbenzoic acid) in CH<sub>2</sub>Cl<sub>2</sub></span></B> </td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> Mg metal turnings in ether </span></B> </td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> (i) Hg(OAc)<sub>2</sub> in THF + water<br> &nbsp; &nbsp; &nbsp;  &nbsp; (ii) NaBH<sub>4</sub> in aq. NaOH </span></B> </td></tr>
+</table></TH></TR>
+<TR><TH><applet code="JME.class" name="JME" archive="JME.jar" width="560" height="340">
+<param name= "options"  value="multipart; hydrogens; autoez">
+You have to enable Java and JavaScript on your machine !
+</applet>
+
+<p>To practice using this drawing program <A 
+HREF="../MOLEDITOR/practice.htm">Click Here</A>.<br></p>
+</TH> </TR></TABLE>
+<TABLE ><TR><TH><P> <TEXTAREA WRAP NAME='result1' ROWS='6' COLS='80'></TEXTAREA> <br><span class="fc-blue">Information Window</span></P> </TH><TH>   </TH><TD nowrap> <p>&nbsp; <input type='button' value='Show Problem' onClick='process(form);chkvar()';> </p>
+<p>&nbsp; <input type='button' value='Do Reaction' onClick='process2(form);chkans();'> </p>
+<p> &nbsp;  <INPUT TYPE='RESET' VALUE='Reset' onClick='clrwind();document.JME.reset()'></p>
+</TD></TR></TABLE>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.
+<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+
+</form>
+</BODY>
+</HTML>

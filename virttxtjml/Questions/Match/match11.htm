@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var i=0
+var j=0
+var t=0
+var Txt1=" Your correct answers number:";
+var Txt3=" Your incorrect answers number:";
+var Txt4=" The expected number of correct answers is:";
+var Txt2="";
+  var anscnt=0
+                         //Answer variables
+ var answ="B, F, G, & I  "
+  var noansw="You must try to answer this questions twice before viewing the answers."
+                         // Basic function code for problem 1
+ 
+function ansbx(input) {
+input.a.value=fix(input.a.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.]/g,"")
+}
+
+var ab=input.a.value.toUpperCase().indexOf("B",0);
+var af=input.a.value.toUpperCase().indexOf("F",0);
+var ag=input.a.value.toUpperCase().indexOf("G",0);
+var ai=input.a.value.toUpperCase().indexOf("I",0);
+
+ anscnt=anscnt+1;
+ if ( (input.a.value=='') ) {
+ input.result.value = "Please enter your choices (up to 6) in the answer box.";
+		 }else{
+	if (i!=0){
+ 	 i=0
+ }
+ 	if (j!=0){
+ 	j=0
+ }
+ 	if (t!=0){
+ 	t=0
+}
+
+  //  Change < & > to fit desired answers
+
+if (input.a.value.length==4 && ab>=0 &&af>=0 && ag>=0 && ai>=0) {
+		var Txt2="Congratulations! You have identified all the correct answers.";
+ 		i=i+4
+ 		} else {
+if (ab>=0 &&af>=0 && ag>=0 && ai>=0) {
+ 	var Txt2="Results";
+ 		i=i+4
+ 		} else {
+	if  (ab>=0 ) { 
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+} 
+	if  (af>=0 ) { 
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+}  
+	if  (ag>=0 ) { 
+ 		i=i+1
+ 		} else {
+ 		j=j+1
+}  
+	if  (ai>=0 ) { 
+ 		i=i+1
+var Txt2="Results";
+ 		} else {
+ 		j=j+1
+var Txt2="Results";
+}  
+}
+}
+
+
+var s=i + j
+t=input.a.value.length;
+var dif=t - i
+ 	input.result.value =Txt2 + "\r" + Txt1 +  i +"\r" +Txt3 +  dif + "\r"  + Txt4 + s;
+
+}
+} 
+function giveansw(show) {
+ if (anscnt>=2)  {
+ var txt=answ
+ 	}else{
+ var txt=noansw
+ }
+ show.result.value=txt
+ }
+
+function clrbx(input) {
+	input.a.value="";	// Clear all text windows.
+	input.result.value=" ";
+}
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Chirality</TITLE>
+<body>
+<div class="ctr"><H3>Chiral Molecular Structures</H3></div>
+<P><span class="fc-blue"><B>Examine the following structural formulas and select those that are chiral.</span></B></P>
+<P>You may enter as many as six choices in the answer box (type in the appropriate letter for each choice). <span class="fc-red">Do not enter superfluous characters, since they will be counted as incorrect answers.</span></P>
+<HR>
+<div class="ctr"><IMG SRC="../Images/chiral1.gif">
+<HR>
+<FORM NAME="eqnbalance">
+<span class="fc-blue"><B>Enter your selections here:</B></span> &nbsp;<INPUT TYPE="text" NAME="a" SIZE="9"><BR><BR>
+<INPUT TYPE="button" VALUE=" Check Answer " onClick="ansbx(this.form)">
+<INPUT TYPE="button"  VALUE=" Clear " onClick="clrbx(this.form)">
+<TEXTAREA WRAP NAME="result" ROWS="5" COLS="44">
+</TEXTAREA>
+ <INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form)"> <INPUT TYPE="button"  NAME="answr" VALUE="Help" onClick="window.location = '../../sterism2.htm#isom10'"></div>
+</FORM><HR> 
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

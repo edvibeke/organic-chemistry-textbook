@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+var answ="A&B: A simple 1,2-shift of a phenyl group accounts for both A & B.\r"
++"C:  A methylene group shifts to the 2°-carbocation in preference to a methyl group.\r"
++"D:  Epoxide ring opening gives a 2°-carbocation. Shift of a ring methylene group leads to an aldehyde.\r"
++"E:  This problem requires two consecutive methylene group shifts.\r"
++"F:  A methylene group shifts to the 3°-carbocation in preference to a methyl group.\r"
++"G:  Solvolysis of the 1°-chloride is assisted by participation of the double bond.";
+var anscnt=0;
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+document.form.smiles.value = smiles; 
+}
+function processMolecule1(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "C(=C(c1ccccc1)c2ccccc2)c3ccccc3") {  
+var Txt="Correct!"; 
+anscnt=anscnt+1;  
+	}else{
+var Txt="Wrong! Try again.";
+anscnt=anscnt+1;
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule2(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "OC(c1ccccc1)C(c2ccccc2)c3ccccc3") { 
+var Txt="Correct!";
+anscnt=anscnt+1;  
+	}else{
+if (smiles == "OCC(c1ccccc1)(c2ccccc2)c3ccccc3") {
+var Txt="This fits the molecular formula, but the 1¡-carbocation intermediate in an SN1 reaction would rearrange rapidly.";
+anscnt=anscnt+1;  
+	}else{
+var Txt="Wrong! Try again.";
+anscnt=anscnt+1; 
+}
+}
+	input.result.value = Txt ;
+}
+
+
+function processMolecule3(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "CC1=C(C)CCCCC1")  {
+var Txt="Correct!";
+anscnt=anscnt+1;
+	}else{
+if (smiles == "CC(C)=C1CCCCC1") {
+var Txt="A good choice, but this compound would show six carbon nmr peaks.";
+anscnt=anscnt+1;  
+	}else{
+var Txt="Wrong! Try again.";
+anscnt=anscnt+1; 
+}
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule4(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "O=CC1CCCC1") {  
+var Txt="Correct!";
+anscnt=anscnt+1;
+	}else{
+if (smiles == "O=C1CCCCC1") {
+var Txt="A plausible choice, but the infrared evidence points to an isomer.";
+anscnt=anscnt+1;  
+	}else{
+var Txt="Wrong! Try again.";
+anscnt=anscnt+1; 
+}
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule5(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "O=C1CCCC12CCCC2")  {  
+var Txt="Correct!";
+anscnt=anscnt+1;
+}else{
+var Txt="Wrong! Try again.";
+anscnt=anscnt+1; 
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule6(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "CC1(C)C2(C)CCC1(C)C(O)C2") {  
+var Txt="Correct!";
+anscnt=anscnt+1;
+	}else{     
+if (smiles == "CC2C1CCC(C)(C1)C2(C)O") {
+var Txt="A plausible choice, but this 3¡-alcohol would not be oxidized by PCC."; 
+anscnt=anscnt+1; 
+	}else{
+var Txt="Wrong! Try again.";
+anscnt=anscnt+1; 
+}
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule7(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "CC(C)(O)C1CC1") {  
+var Txt="Correct!";
+anscnt=anscnt+1;
+	}else{
+if (smiles == "CC1(C)CCC1O") {
+var Txt="A possible product, but the carbon nmr would have too many signals."; 
+anscnt=anscnt+1; 
+	}else{
+var Txt="Wrong! Try again.";
+anscnt=anscnt+1;
+}
+}
+	input.result.value = Txt ;
+}
+
+function answr(show) {
+if (anscnt>=3) {
+window.open('answ1.htm#prb1','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=500,height=520')
+var Txt=answ;
+}else{
+var Txt="You must try to answer this question three times before the answers will be shown.";
+anscnt=anscnt;
+}
+	show.result.value = Txt ;
+}
+
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<TITLE>Rearrangements</TITLE>
+<META NAME="DC.SUBJECT" CONTENT="Practice questions for organic chemistry students>
+<body>
+<form method="post" name="form">
+<A  NAME="start"></A>
+<div class="ctr"><H3>Molecular Rearrangement</H3></div>
+<P>Six reactions in which molecular rearrangement takes place are shown below. Formulas and some other information about the products are provided. Draw a structural formula for each of the designated products. <BR>
+To draw a formula use the <b>Drawing Window</b> on the right below.  Do not draw hydrogen atoms, and do not attempt to indicate stereochemical configurations. When you are finished, check your answer by pressing the appropriate <b>Check Product</b> button.</P>
+
+<TABLE CELLSPACING=2 CELLPADDING=3 ALIGN=center><TR><TD ROWSPAN=2  VALIGN=top><IMG SRC="../Images/problm1.gif"><hr></TD>
+<th><applet code="JME.class" name="JME" archive="JME.jar" width=340, height=340>
+You have to enable Java and JavaScript on your machine !
+</applet><FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"> </th></tr>
+<tr><td bgcolor = palegreen width=424> &nbsp;<input type="hidden" value="" name="smiles"> 
+<input type="button" value="Check Product A" onClick="submitSmiles(); processMolecule1(this.form);">
+ <tt> &nbsp; &nbsp; </tt> <input type="hidden" value="" name="smiles2"> 
+<input type="button" value="Check Product B" onClick="submitSmiles(); processMolecule2(this.form);">
+<tt> &nbsp; &nbsp; </tt><input type="hidden" value="" name="smiles3"> 
+<input type="button" value="Check Product C" onClick="submitSmiles(); processMolecule3(this.form);">
+<br /><br />
+&nbsp;<input type="hidden" value="" name="smiles4"> 
+<input type="button" value="Check Product D" onClick="submitSmiles(); processMolecule4(this.form);">
+<tt> &nbsp; &nbsp; </tt><input type="hidden" value="" name="smiles5"> 
+<input type="button" value="Check Product E" onClick="submitSmiles(); processMolecule5(this.form);">
+<tt> &nbsp; &nbsp; </tt><input type="hidden" value="" name="smiles6"> 
+<input type="button" value="Check Product F" onClick="submitSmiles(); processMolecule6(this.form);">
+<br /><br />
+ &nbsp;<input type="hidden" value="" name="smiles7"> 
+<input type="button" value="Check Product G" onClick="submitSmiles(); processMolecule7(this.form);"> 
+</td></tr>
+
+<tr><td colspan=2>A response to your answer will appear in the evaluation window below. <br /><INPUT TYPE="RESET" VALUE="Clear"> &nbsp;  &nbsp;  &nbsp;  <INPUT TYPE="button" VALUE="Help" onClick="window.location = '../../rearrang.htm#top1'"> &nbsp;  &nbsp;  &nbsp; 
+<INPUT TYPE="button"  VALUE=" View Answers " onClick=
+"answr(this.form)">
+<TEXTAREA WRAP NAME="result" ROWS="5" COLS="110">
+</TEXTAREA></td></tr>
+
+</TABLE>
+ 
+
+</form>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+
+<HR> 
+
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+
+</BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<TITLE>Molecular Editor Practice</TITLE>
+
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var Txt="";
+var smiles = "";
+var jme = "0 0";
+var sma="";
+var jme = "0 0";
+var i="";
+
+function jmehelp() { window.open('jme_help.html','JME','width=800,height=800,scrollbars=yes');
+}
+
+	function process(form) {
+		if (form.pr1[0].checked){
+	i="1";
+sma="CCCCC(C)C";
+}
+		if (form.pr1[1].checked){
+	i="2";
+sma="C[C@@H]1CC[C@@H](C[Mg]Br)CC1"; 
+}
+		if (form.pr1[2].checked){
+	i="3";
+sma="CN1CCC1=O";
+}
+		if (form.pr1[3].checked){
+	i="4";
+sma="O=N(=O)c1ccccc1";
+}
+		if (form.pr1[4].checked){
+	i="5";
+sma="Cc1ccc(S(=O)(=O)Cl)cc1";
+}
+		if (form.pr1[5].checked){
+	i="6";
+sma="C/C=C(Cl)\\CCO";  
+}
+}
+function getSmiles() {
+  var smiles = document.JME.smiles();
+smiles=smiles;
+
+
+ if (smiles == "") {alert("Nothing to process!\rYou must draw a structural formula"); return;
+Txt="";
+}
+if (smiles==sma) {
+var Txt="Correct Answer! \r";
+}else{
+if (((i=="2"))&&((smiles == "C[C@H]1CC[C@H](C[Mg]Br)CC1")||(smiles == "C[C@@H]1CC[C@@H](C[MgBr])CC1")||(smiles == "C[C@H]1CC[C@H](C[MgBr])CC1"))) {   
+var Txt="Correct Answer! \r";        
+}else{  
+if ((i=="6")&&(smiles == "[H]/C(C)=C(Cl)/CCO")) { 
+var Txt="Correct Answer! \r";
+}else{       
+var Txt="Wrong Answer! Try again. \r";
+}
+}
+}
+	document.form.result1.value = Txt ;
+}
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body>
+
+
+<FORM METHOD="POST" NAME="form" ONSUBMIT="return false;">
+
+<div class="ctr"><H3>Practice in Drawing Structural Formulas</H3></div>
+<P>The <B>Molecular Editor</B> is easy to use and has a help section. Structural formulas are created in the drawing window. The menu bar of the drawing window allows you to draw single, double or triple bonds and different sized rings. Hetero atoms, such as N, O, F, Cl, S & Br may be designated by the left-side menu. Do not attempt to draw hydrogens; they are automatically provided for hetero atoms. Hydrogen, metals and other elements not on the menu bar are designated by the <B>X</B> button, which opens a small text window in which the symbol may be entered.  Stereoisomers are distinguished by this program, either by using the wedge drawing tool or by specifying the configuration of double bond substituents.<BR>Practice drawing the structures shown on the left. When you have finished drawing a structure, check it by pressing the <b>Check Answer</b> button..</P>
+<TABLE  CELLPADDING=3 align="center">
+<TR valign="top">
+<TD width=420>
+<p><TABLE>
+<TR ><TD><B><span class="fc-blue">Example 1. </B></span></TD> <TD> CH<SUB>3</SUB>(CH<SUB>2</SUB>)<SUB>3</SUB>CH(CH<SUB>3</SUB>)<SUB>2</SUB> </TD> <TD> <INPUT TYPE=RADIO NAME="pr1" VALUE="select" checked>
+<input type="hidden" value="" name="smiles"></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+<TR ><TD><B><span class="fc-blue">Example 2. </B></span></TD> 
+<TD> <IMG SRC=../Images/4mec6grg.gif> </TD> <TD> <INPUT TYPE=RADIO NAME="pr1" VALUE="select"><input type="hidden" value="" name="smiles"></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+<TR ><TD><B><span class="fc-blue">Example 3. </B></span></TD>
+<TD> <IMG SRC=../Images/blactam.gif> </TD> <TD> <INPUT TYPE=RADIO NAME="pr1" VALUE="select"><input type="hidden" value="" name="smiles"></TD></TR> 
+<TR><TD COLSPAN=3><HR></TD></TR>
+<TR ><TD><B><span class="fc-blue">Example 4. </B></span></TD>
+<TD> <IMG SRC=../Images/nitrbnz2.gif></TD> <TD> <INPUT TYPE=RADIO NAME="pr1" VALUE="select"><input type="hidden" value="" name="smiles"><SUP>*</SUP></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+<TR ><TD><B><span class="fc-blue">Example 5. </B></span></TD>
+<TD> <IMG SRC=../Images/toscl.gif> </TD>  <TD> <INPUT TYPE=RADIO NAME="pr1" VALUE="select"><input type="hidden" value="" name="smiles"></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR>
+<TR ><TD><B><span class="fc-blue">Example 6. </B></span></TD>
+<TD> <IMG SRC=../Images/c4clenol.gif> </TD>  <TD> <INPUT TYPE=RADIO NAME="pr1" VALUE="select"><input type="hidden" value="" name="smiles"></TD></TR>
+<TR><TD COLSPAN=3><HR></TD></TR></TABLE>
+<P>* The editor also accepts a nitro group representation having two N:O double bonds, even though this violates the octet rule.</P>
+</TD>
+<TD width=12></TD>
+<TD width=370><div class="ctr"><b><span class="fs-4">Peter Ertl's Molecular Editor</span></b>
+<p><applet code="JME.class" name="JME" archive="JME.jar" width=340, height=340>
+<param name= "options"  value="multipart; autoez";>
+You have to enable Java and JavaScript on your machine !
+</applet></p>
+<p><input type='button' value='Check Answer' onClick='process(this.form);getSmiles();'> &nbsp;  &nbsp; <INPUT TYPE='RESET' VALUE='Reset' onClick='document.JME.reset();'>  &nbsp;  &nbsp; <input type="button" value="Help" onClick="jmehelp();"> <br><br>
+<TEXTAREA WRAP NAME='result1' ROWS='2' COLS='40'></TEXTAREA> </p>
+</div></TD> </TR></TABLE></p><hr>
+
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.
+<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl </span>
+
+</form>
+</BODY>
+</HTML>

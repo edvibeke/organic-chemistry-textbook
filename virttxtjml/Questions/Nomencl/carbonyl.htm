@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+
+function jmehelp() { window.open('../MOLEDITOR/jme_help.html','JME','width=800,height=800,scrollbars=yes');
+}
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+document.form.smiles.value = smiles; 
+}
+function processMolecule1(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if ((smiles == "CC(C=O)Cc1ccccc1") || (smiles == "[H]C(=O)C(C)Cc1ccccc1")) {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+  // in actual application remove line above and add something like this
+  // document.form.submit();
+}
+function processMolecule2(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (smiles == "CCC(=O)C(C)(C)C") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+function processMolecule3(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (smiles == "O=C1CCC1Cc2ccccc2") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule4(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if (smiles == "CCC2(c1ccccc1)CC(=O)CCC2=O") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule5(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+
+if ((smiles == "CCC(CC(C=O)(CC)CC)C(C)=O") || (smiles == "[H]C(=O)C(CC)(CC)CC(CC)C(C)=O")) {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body>
+<TITLE>Nomenclature</TITLE>
+<form method="post" name="form">
+<div class="ctr"><H3>Drawing Structural Formulas of Aldehydes & Ketones</H3></div>
+<p>For each of the following problems, draw a formula using the drawing windowon the left. When you are finished, check your answer by pressing the <U>Check Molecule #</U> button under the name. A help screen is available for the drawing window <input type="button" value="Help" onClick="jmehelp();">.</p>
+<table><tr><th valign="top" width=370><applet code="JME.class" name="JME" archive="JME.jar" width=360, height=360>
+You have to enable Java and JavaScript on your machine !
+</applet><FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"> &nbsp; </th>
+<td width=500>
+<P><B>1.</B>&nbsp; <span class="fc-blue"> Draw the Structural Formula for 2-methyl-3-phenylpropanal</span> <br />
+<input type="hidden" value="" name="smiles">
+<input type="button" value="Check Molecule 1" onClick="submitSmiles(); processMolecule1(this.form);"><hr></p>
+<p><B>2.</B>&nbsp; <span class="fc-blue"> Draw the Structural Formula for 2,2-dimethyl-3-pentanone</span> <br />
+<input type="hidden" value="" name="smiles2">
+<input type="button" value="Check Molecule 2" onClick="submitSmiles(); processMolecule2(this.form);"> <hr></p>
+<p><B>3.</B>&nbsp; <span class="fc-blue"> Draw the Structural Formula for 2-benzylcyclobutanone</span> <br />
+<input type="hidden" value="" name="smiles3">
+<input type="button" value="Check Molecule 3" onClick="submitSmiles(); processMolecule3(this.form);"><hr></p>
+<p><B>4.</B>&nbsp; <span class="fc-blue"> Draw the Structural Formula for 2-ethyl-2-phenyl-1,4-cyclohexanedione</span> <br />
+<input type="hidden" value="" name="smiles4">
+<input type="button" value="Check Molecule 4" onClick="submitSmiles(); processMolecule4(this.form);"> <hr></p>
+<p><B>5.</B>&nbsp; <span class="fc-blue"> Draw the Structural Formula for 2,2,4-triethyl-5-oxohexanal</span> <br />
+<input type="hidden" value="" name="smiles3">
+<input type="button" value="Check Molecule 5" onClick="submitSmiles(); processMolecule5(this.form);"><hr></P>
+<TEXTAREA  WRAP NAME="result"  ROWS="2"  COLS="30"> 
+ </TEXTAREA><BR> <INPUT TYPE="RESET" VALUE="Clear"> &nbsp; &nbsp; &nbsp; 
+<INPUT TYPE=BUTTON VALUE="Nomenclature Rules" onClick="window.location='../../aldket1.htm'">
+</TD></TR></TABLE></p>
+
+</form>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<BR>
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>

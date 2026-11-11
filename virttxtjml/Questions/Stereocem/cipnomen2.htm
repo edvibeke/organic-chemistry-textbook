@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var img1=new Image();										// variables for image switch
+var img2=new Image();
+		img1.src="../Images/stereo3.gif";
+		img2.src="../Images/stereo4.gif";
+var anscnt=0;																										// other variables
+var answ="(A) badc, R; (B) abcd, S; (C) dacb, R\r"
+ +  "(E) cbda, S; (F)1 cbda, R; 2 badc, S\r"
+ +  "(G) abcd, S; (H)1 dbca, S; 2 dbca, R";
+var noansw="You must try to answer this question twice before viewing the answers."
+var k=0
+var j=0
+// answer checking function
+function chkchg(input) {
+anscnt=anscnt+1;
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+input.e.value=fix(input.e.value)
+input.f.value=fix(input.f.value)
+input.g.value=fix(input.g.value)
+input.h.value=fix(input.h.value)
+input.i.value=fix(input.i.value)
+input.j.value=fix(input.j.value)
+input.k.value=fix(input.k.value)
+input.l.value=fix(input.l.value)
+input.m.value=fix(input.m.value)
+input.n.value=fix(input.n.value)
+input.o.value=fix(input.o.value)
+input.p.value=fix(input.p.value)
+input.q.value=fix(input.q.value)
+input.r.value=fix(input.r.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&\>\<]/g,"")  
+}
+var txt="";
+	if (k!=0){
+	 k=0
+}
+	if (j!=0){
+	 j=0
+}
+
+if (input.a.value.toLowerCase() == "badc") {
+ 		k=k+1
+}
+if (input.b.value.toUpperCase() == "R") {
+ 		j=j+1
+}
+if (input.c.value.toLowerCase() == "abcd") {
+ 		k=k+1
+}
+if (input.d.value.toUpperCase() == "S") {
+ 		j=j+1
+}
+if (input.e.value.toLowerCase() == "dacb") {
+ 		k=k+1
+}
+if (input.f.value.toUpperCase() == "R") {
+ 		j=j+1
+}
+if (input.g.value.toLowerCase() == "cbda") {
+ 		k=k+1
+}
+if (input.h.value.toUpperCase() == "S") {
+ 		j=j+1
+}
+if (input.i.value.toLowerCase() == "cbda") {
+ 		k=k+1
+}
+if (input.j.value.toUpperCase() == "R") {
+ 		j=j+1
+}
+if (input.k.value.toLowerCase() == "badc") {
+ 		k=k+1
+}
+if (input.l.value.toUpperCase() == "S") {
+ 		j=j+1
+}
+if (input.m.value.toLowerCase() == "abcd") {
+ 		k=k+1
+}
+if (input.n.value.toUpperCase() == "S") {
+ 		j=j+1
+}
+if (input.o.value.toLowerCase() == "dbca") {
+ 		k=k+1
+}
+if (input.p.value.toUpperCase() == "S") {
+ 		j=j+1
+}
+if (input.q.value.toLowerCase() == "dbca") {
+ 		k=k+1
+}
+if (input.r.value.toUpperCase() == "R") {
+ 		j=j+1
+}
+
+var wrg= 18-k-j
+
+if ((input.a.value=='')&&(input.b.value=='')&&(input.c.value=='')&&(input.d.value=='')
+&&(input.e.value=='')&&(input.f.value=='')&&(input.g.value=='')&&(input.h.value=='')
+&&(input.i.value=='')&&(input.j.value=='')&&(input.k.value=='')&&(input.l.value=='') &&(input.m.value=='')&&(input.n.value=='')&&(input.o.value=='')&&(input.p.value=='') &&(input.q.value=='')&&(input.r.value=='')) {
+		var Text= "You have failed to provide answers to any of these questions.";
+anscnt=0;
+}else{
+
+if (k == 9 && j == 9) {
+		var Text="Congratulations! You have identified all the correct answers.";
+anscnt=2
+  }else{
+var Text="You have made " +k +" correct selection rule assignments.\rYou have made " +j +" correct configuration assignments.";
+}
+}
+		input.result.value = Text;
+
+}
+// functions for showing answer, changing image & clearing text
+function giveansw(show) {
+if (anscnt>=2)  {
+var txt=answ
+	}else{
+var txt=noansw
+}
+show.result.value=txt
+}
+
+function change() {
+if (anscnt>=2)  {
+document.images[0].src=img2.src;
+}
+}
+
+
+function clrtxt(input) {
+	input.a.value="";	
+	input.b.value="";
+	input.c.value="";
+	input.d.value="";
+	input.e.value="";	
+	input.f.value="";
+	input.g.value="";
+	input.h.value="";
+	input.i.value="";	
+	input.j.value="";
+	input.k.value="";
+	input.l.value="";
+	input.m.value="";	
+	input.n.value="";
+	input.o.value="";
+	input.p.value="";
+	input.q.value="";	
+	input.r.value="";
+	input.result.value="";
+}
+	//STOP HIDING-->
+</SCRIPT>
+<script id="qa-imgfallback">(function(){if(window.__qaImgFallback)return;window.__qaImgFallback=1;var BOX="display:inline-block;min-width:80px;min-height:24px;padding:6px 10px;margin:2px;border:1px dashed #b9c0c8;border-radius:6px;color:#7a828c;font:italic 13px/1.35 system-ui,Segoe UI,Arial,sans-serif;background:#f6f8fa;vertical-align:middle;text-align:center;";function ph(img){var p=img.__qaPh;if(!p){p=document.createElement("span");p.setAttribute("role","img");p.setAttribute("aria-label","Figure unavailable");p.style.cssText=BOX;p.textContent="Figure unavailable";img.__qaPh=p;if(img.parentNode)img.parentNode.insertBefore(p,img.nextSibling);}p.style.display="";img.style.display="none";img.setAttribute("data-qa-broken","1");}function ok(img){if(img.__qaPh)img.__qaPh.style.display="none";if(img.getAttribute("data-qa-broken")){img.style.display="";img.removeAttribute("data-qa-broken");}}function hook(img){if(img.__qaHooked)return;img.__qaHooked=1;img.addEventListener("error",function(){ph(this);},true);img.addEventListener("load",function(){ok(this);},true);if(img.complete&&img.naturalWidth===0&&img.getAttribute("src"))ph(img);}function scan(){var a=document.getElementsByTagName("img");for(var i=0;i<a.length;i++)hook(a[i]);}if(document.readyState!=="loading")scan();else document.addEventListener("DOMContentLoaded",scan);window.addEventListener("load",scan);})();</script><link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Stereochemical Nomenclature</TITLE>
+<body>
+<div class="ctr"><H3>Configuration Nomenclature</H3></div>
+<p>The eight configurations <B>A</B> through <B>H</B> shown in Part 1 are redrawn below, with the four different substituents on each stereogenic carbon atom circled in color.  <B>D</B>, of course, has no stereogenic center. These substituents have been randomly labeled by the letters <B>a</B>, <B>b</B>, <B>c</B> and <B>d</B>.  For each of these stereogenic centers list the substituents according to their <U>decreasing priority order</U> by the Cahn Ingold Prelog sequence rules.  The four letters (a, b, c & d) should be entered in the answer box in the order chosen.  Following the sequence order question, you are asked to determine whether that stereogenic center has an <B>R</B> or <B>S</B> configuration.  </p>
+ <FORM NAME="responses"> 
+<div class="ctr"><img src="../Images/stereo3.gif"></div>
+
+<p>Enter letters corresponding to your selection in each answer box.  <BR><span class="fc-red">Do not enter punctuation (eg. commas or semicolons) or spaces.</span></p>
+<div class="ctr"><p><TABLE><TR><TD>
+<span class="fc-blue"><B>A.  </B></span> Decreasing sequence order of substituents: &nbsp; <INPUT TYPE="text" NAME="a"  SIZE="8"></TD>
+<TD>Configuration (R or S): &nbsp; <INPUT TYPE="text" NAME="b"  SIZE="2"></TD></TR>
+<TR><TD><span class="fc-blue"><B>B.  </B></span> Decreasing sequence order of substituents: &nbsp; <INPUT TYPE="text" NAME="c"  SIZE="8"></TD>
+<TD>Configuration (R or S): &nbsp; <INPUT TYPE="text" NAME="d"  SIZE="2"></TD></TR>
+<TR><TD><span class="fc-blue"><B>C. </B></span> Decreasing sequence order of substituents: &nbsp; <INPUT TYPE="text" NAME="e"  SIZE="8"></TD>
+<TD>Configuration (R or S): &nbsp; <INPUT TYPE="text" NAME="f"  SIZE="2"></TD></TR>
+<TR ><TD><span class="fc-blue"><B>E.  </B></span>Decreasing sequence order of substituents: &nbsp; <INPUT TYPE="text" NAME="g"  SIZE="8"></TD>
+<TD>Configuration (R or S): &nbsp; <INPUT TYPE="text" NAME="h"  SIZE="2"></TD></TR>
+<TR><TD><span class="fc-blue"><B>F.</B></span></B></span><span class="fc-red"><B>C<SUB>1</SUB></B></span> Decreasing sequence order of substituents: &nbsp; <INPUT TYPE="text" NAME="i"  SIZE="8"><BR>&nbsp; &nbsp; <span class="fc-red"><B>C<SUB>2</SUB></B></span> Decreasing sequence order of substituents: &nbsp; <INPUT TYPE="text" NAME="k"  SIZE="8"></TD>
+<TD>Configuration (R or S): &nbsp; <INPUT TYPE="text" NAME="j"  SIZE="2"><BR>Configuration (R or S): &nbsp; <INPUT TYPE="text" NAME="l"  SIZE="2"></TD></TR>
+<TR><TD><span class="fc-blue"><B>G. </B></span>Decreasing sequence order of substituents: &nbsp; <INPUT TYPE="text" NAME="m"  SIZE="8"></TD>
+<TD>Configuration (R or S): &nbsp; <INPUT TYPE="text" NAME="n"  SIZE="2"></TD></TR>
+<TR><TD><span class="fc-blue"><B>H.</B></span><span class="fc-red"><B>C<SUB>1</SUB></B></span> Decreasing sequence order of substituents: &nbsp; <INPUT TYPE="text" NAME="o"  SIZE="8"><BR>&nbsp; &nbsp; <span class="fc-red"><B>C<SUB>2</SUB></B></span> Decreasing sequence order of substituents: &nbsp; <INPUT TYPE="text" NAME="q"  SIZE="8"></TD>
+<TD>Configuration (R or S): &nbsp; <INPUT TYPE="text" NAME="p"  SIZE="2"><BR>Configuration (R or S): &nbsp; <INPUT TYPE="text" NAME="r"  SIZE="2"></TD></TR></TABLE></p>
+<HR>
+<table align="center"><tr><td>
+<INPUT TYPE="button"  VALUE=" Check Answer" onClick=" chkchg(this.form)"><br><br><INPUT TYPE="button"  VALUE=" Clear Answers" onClick="clrtxt(this.form)"></td>
+<td> <TEXTAREA  WRAP NAME="result"  ROWS="5"  COLS="46"> 
+</TEXTAREA></td>
+<td> <INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="change(this.form);giveansw (this.form) "><br><br> <INPUT TYPE="button"  NAME="answr" VALUE="Help" onClick="window.location = '../../sterism3.htm#isom13'"></td></tr></table>
+
+
+ </FORM> <HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+ </BODY>
+ </HTML>

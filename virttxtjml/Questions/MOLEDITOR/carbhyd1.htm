@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="../../htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="../../htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+var Text="";
+var Txt="";
+var txt="";
+var typ="";
+var smiles = "";
+var nam="";
+var f="";
+var z="";
+var h="";
+var j="";
+var jmef = "";
+var jmez = "";
+var jmeh = "";
+var struct1="CC";
+var struct2="CC";
+var struct3="CC";
+var search = document.location.search;
+var path="";
+var rot="";
+
+	function process(form) {
+	
+      if (f != "")  {
+     f="";            }
+     	 if (z != "")  {
+     z="";            }
+     	 if (h != "")  {
+     h="";            }
+
+		if (form.q1[0].checked) {
+jmef = "17 16 H 8.19 -2.60 H 8.00 -8.90 O 10.80 -4.70 H 8.00 -7.50 H 8.00 -6.10 O 10.62 -2.60 O 8.19 -11.00 O 10.80 -8.90 H 8.00 -4.70 O 10.80 -7.50 O 10.80 -6.10 C 9.40 -10.30 C 9.40 -3.30 C 9.40 -8.90 C 9.40 -4.70 C 9.40 -7.50 C 9.40 -6.10 1 13 1 14 2 -1 15 3 -1 16 4 -1 17 5 -1 6 13 2 7 12 1 14 8 -1 15 9 -1 16 10 -1 17 11 -1 12 14 1 13 15 1 14 16 1 15 17 1 16 17 1";
+jmez = "13 12 O 13.66 -7.12 O 5.18 -6.42 O 11.24 -8.52 O 7.60 -5.02 O 10.03 -5.02 O 8.81 -8.52 C 12.45 -6.42 C 6.39 -7.12 C 11.24 -7.12 C 7.60 -6.42 C 10.03 -6.42 C 8.81 -7.12 H 12.45 -5.02 1 7 2 2 8 1 9 3 -2 10 4 -1 11 5 -1 12 6 -2 7 9 1 8 10 1 9 11 1 10 12 1 11 12 1 7 13 1";
+jmeh = "12 12 O 6.59 -4.31 O 12.19 -6.76 O 10.79 -9.19 O 7.98 -9.19 O 6.59 -6.76 C 7.98 -4.34 O 10.08 -5.55 C 10.79 -6.76 C 10.08 -7.97 C 8.68 -7.97 C 7.98 -6.76 C 8.68 -5.55 1 6 1 2 8 1 9 3 -2 10 4 -2 11 5 -2 12 6 -1 7 8 1 7 12 1 8 9 1 9 10 1 10 11 1 11 12 1";
+struct1 = "[H]C(=O)[C@]([H])(O)[C@]([H])(O)[C@]([H])(O)[C@]([H])(O)CO";
+struct2 = "[H]C(=O)[C@H](O)[C@H](O)[C@H](O)[C@H](O)CO"
+struct3 = "OC[C@H]1OC(O)[C@H](O)[C@H](O)[C@@H]1O";
+j="1";
+Txt= "D-(+)Allose \n "
+txt = " (2R,3R,4R,5R)-2,3,4,5,6-pentahydroxyhexanal \n pyranose: (3R,4R,5R,6R)-6-(hydroxymethyl)oxane-2,3,4,5-tetrol "
+rot= "rotate x 50; rotate y 110; rotate z -50;"
+}
+		if (form.q1[1].checked) {
+jmef = "17 16 H 6.29 -1.76 H 6.10 -8.06 H 8.90 -3.86 H 6.10 -6.66 H 6.10 -5.26 O 8.72 -1.76 O 6.29 -10.16 O 8.90 -8.06 O 6.10 -3.86 O 8.90 -6.66 O 8.90 -5.26 C 7.50 -9.46 C 7.50 -2.46 C 7.50 -8.06 C 7.50 -3.86 C 7.50 -6.66 C 7.50 -5.26 1 13 1 14 2 -1 15 3 -1 16 4 -1 17 5 -1 6 13 2 7 12 1 14 8 -1 15 9 -1 16 10 -1 17 11 -1 12 14 1 13 15 1 14 16 1 15 17 1 16 17 1";
+jmez = "13 12 O 13.66 -7.12 O 5.18 -6.42 O 11.24 -8.52 O 7.60 -5.02 O 10.03 -5.02 O 8.81 -8.52 C 12.45 -6.42 C 6.39 -7.12 C 11.24 -7.12 C 7.60 -6.42 C 10.03 -6.42 C 8.81 -7.12 H 12.45 -5.02 1 7 2 2 8 1 9 3 -1 10 4 -1 11 5 -1 12 6 -2 7 9 1 8 10 1 9 11 1 10 12 1 11 12 1 7 13 1";
+jmeh = "12 12 O 6.59 -4.31 O 12.19 -6.76 O 10.79 -9.19 O 7.98 -9.19 O 6.59 -6.76 C 7.98 -4.34 O 10.08 -5.55 C 10.79 -6.76 C 10.08 -7.97 C 8.68 -7.97 C 7.98 -6.76 C 8.68 -5.55 1 6 1 2 8 1 9 3 -1 10 4 -2 11 5 -2 12 6 -1 7 8 1 7 12 1 8 9 1 9 10 1 10 11 1 11 12 1";
+struct1 = "[H]C(=O)[C@@]([H])(O)[C@]([H])(O)[C@]([H])(O)[C@]([H])(O)CO";
+struct2 = "[H]C(=O)[C@@H](O)[C@H](O)[C@H](O)[C@H](O)CO";
+struct3 = "OC[C@H]1OC(O)[C@@H](O)[C@H](O)[C@@H]1O";
+j="2";
+Txt= " D-(+)-Altrose \n "
+txt = " (2S,3R,4R,5R)-2,3,4,5,6-Pentahydroxyhexanal \n pyranose: (3S,4R,5R,6R)-6-(hydroxymethyl)oxane-2,3,4,5-tetrol"
+rot= "rotate x 50; rotate y 110; rotate z -50;"
+}
+		if (form.q1[2].checked) {
+jmef = "17 16 H 8.19 -2.60 H 8.00 -8.90 H 8.00 -4.70 H 10.80 -7.50 H 10.80 -6.10 O 10.62 -2.60 O 8.19 -11.00 O 10.80 -8.90 O 10.80 -4.70 O 8.00 -7.50 O 8.00 -6.10 C 9.40 -10.30 C 9.40 -3.30 C 9.40 -8.90 C 9.40 -4.70 C 9.40 -7.50 C 9.40 -6.10 1 13 1 14 2 -1 15 3 -1 16 4 -1 17 5 -1 6 13 2 7 12 1 14 8 -1 15 9 -1 16 10 -1 17 11 -1 12 14 1 13 15 1 14 16 1 15 17 1 16 17 1";
+jmez = "13 12 H 12.45 -5.02 O 13.66 -7.12 O 5.18 -6.42 O 7.60 -5.02 O 11.24 -8.52 O 8.81 -8.52 O 10.03 -5.02 C 6.39 -7.12 C 12.45 -6.42 C 7.60 -6.42 C 11.24 -7.12 C 8.81 -7.12 C 10.03 -6.42 1 9 1 2 9 2 3 8 1 10 4 -1 11 5 -2 12 6 -1 13 7 -2 8 10 1 9 11 1 10 12 1 11 13 1 12 13 1";
+jmeh = "12 12 O 6.64 -4.36 O 12.23 -6.81 O 10.83 -9.24 O 8.03 -9.24 O 6.64 -6.81 C 8.03 -4.39 O 10.13 -5.60 C 10.83 -6.81 C 10.13 -8.02 C 8.73 -8.02 C 8.03 -6.81 C 8.73 -5.60 1 6 1 2 8 1 9 3 -2 10 4 -1 11 5 -1 12 6 -1 7 8 1 7 12 1 8 9 1 9 10 1 10 11 1 11 12 1";
+struct1 = "[H]C(=O)[C@]([H])(O)[C@@]([H])(O)[C@@]([H])(O)[C@]([H])(O)CO";
+struct2 = "[H]C(=O)[C@H](O)[C@@H](O)[C@@H](O)[C@H](O)CO";
+struct3 = "OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@H]1O";
+j="3";
+Txt= " D-(+)-Galactose\n "
+txt = " (2R,3S,4S,5R)-2,3,4,5,6-pentahydroxyhexanal \n  pyranose:  (3R,4S,5S,6R)-6-(hydroxymethyl)oxane-2,3,4,5-tetrol "
+rot= "rotate x 50; rotate y 110; rotate z -50;"
+}
+		if (form.q1[3].checked) {
+jmef = "17 16 H 8.20 -2.60 H 8.01 -8.90 H 8.01 -4.70 H 8.01 -7.50 H 10.81 -6.10 O 10.62 -2.60 O 8.19 -11.00 O 10.81 -8.90 O 10.81 -4.70 O 10.81 -7.50 O 8.01 -6.10 C 9.41 -10.30 C 9.41 -3.30 C 9.41 -8.90 C 9.41 -4.70 C 9.41 -7.50 C 9.41 -6.10 1 13 1 14 2 -1 15 3 -1 16 4 -1 17 5 -1 6 13 2 7 12 1 14 8 -1 15 9 -1 16 10 -1 17 11 -1 12 14 1 13 15 1 14 16 1 15 17 1 16 17 1";
+jmez = "13 12 O 13.66 -7.12 O 5.18 -6.42 O 11.24 -8.52 O 7.60 -5.02 O 10.03 -5.02 O 8.81 -8.52 C 12.45 -6.42 C 6.39 -7.12 C 11.24 -7.12 C 7.60 -6.42 C 10.03 -6.42 C 8.81 -7.12 H 12.45 -5.02 1 7 2 2 8 1 9 3 -2 10 4 -1 11 5 -2 12 6 -2 7 9 1 8 10 1 9 11 1 10 12 1 11 12 1 7 13 1";
+jmeh = "12 12 O 5.74 -3.80 O 11.34 -6.25 O 9.94 -8.68 O 7.14 -8.68 O 5.74 -6.25 C 7.14 -3.83 O 9.24 -5.04 C 9.94 -6.25 C 9.24 -7.46 C 7.84 -7.46 C 7.14 -6.25 C 7.84 -5.04 1 6 1 2 8 1 9 3 -2 10 4 -1 11 5 -2 12 6 -1 7 8 1 7 12 1 8 9 1 9 10 1 10 11 1 11 12 1";
+struct1 = "[H]C(=O)[C@]([H])(O)[C@@]([H])(O)[C@]([H])(O)[C@]([H])(O)CO";
+struct2 = "[H]C(=O)[C@H](O)[C@@H](O)[C@H](O)[C@H](O)CO";
+struct3 = "OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O";
+j="4";
+Txt= " D-(+)-Glucose  \n "
+txt = " (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal\n pyranose: (3R,4S,5R,6R)-6-(hydroxymethyl)oxane-2,3,4,5-tetrol"
+rot= "rotate x 50; rotate y 110; rotate z -50;"
+}
+		if (form.q1[4].checked) {
+jmef = "17 16 H 8.19 -2.60 H 8.00 -8.90 H 8.00 -4.70 H 10.80 -7.50 H 8.00 -6.10 O 10.62 -2.60 O 8.19 -11.00 O 10.80 -8.90 O 10.80 -4.70 O 8.00 -7.50 O 10.80 -6.10 C 9.40 -10.30 C 9.40 -3.30 C 9.40 -8.90 C 9.40 -4.70 C 9.40 -7.50 C 9.40 -6.10 1 13 1 14 2 -1 15 3 -1 16 4 -1 17 5 -1 6 13 2 7 12 1 14 8 -1 15 9 -1 16 10 -1 17 11 -1 12 14 1 13 15 1 14 16 1 15 17 1 16 17 1";
+jmez = "13 12 H 12.45 -5.02 O 13.66 -7.12 O 5.18 -6.42 O 7.60 -5.02 O 11.24 -8.52 O 8.81 -8.52 O 10.03 -5.02 C 6.39 -7.12 C 12.45 -6.42 C 7.60 -6.42 C 11.24 -7.12 C 8.81 -7.12 C 10.03 -6.42 1 9 1 2 9 2 3 8 1 10 4 -1 11 5 -2 12 6 -1 13 7 -1 8 10 1 9 11 1 10 12 1 11 13 1 12 13 1";
+jmeh = "12 12 O 6.64 -4.36 O 12.23 -6.81 O 10.83 -9.24 O 8.03 -9.24 O 6.64 -6.81 C 8.03 -4.39 O 10.13 -5.60 C 10.83 -6.81 C 10.13 -8.02 C 8.73 -8.02 C 8.03 -6.81 C 8.73 -5.60 1 6 1 2 8 1 9 3 -2 10 4 -2 11 5 -1 12 6 -1 7 8 1 7 12 1 8 9 1 9 10 1 10 11 1 11 12 1";
+struct1 = "[H]C(=O)[C@]([H])(O)[C@]([H])(O)[C@@]([H])(O)[C@]([H])(O)CO";
+struct2 = "[H]C(=O)[C@H](O)[C@H](O)[C@@H](O)[C@H](O)CO";
+struct3 = "OC[C@H]1OC(O)[C@H](O)[C@H](O)[C@H]1O";
+j="5";
+Txt= " D-(-)-Gulose \n "
+txt = " (2R,3R,4S,5R)-2,3,4,5,6-pentahydroxyhexanal \n pyranose: (3R,4R,5S,6R)-6-(hydroxymethyl)oxane-2,3,4,5-tetrol "
+rot= "rotate x 50; rotate y 110; rotate z -50;"
+ }
+		if (form.q1[5].checked) {
+jmef = "17 16 H 8.19 -2.60 H 8.00 -8.90 H 10.80 -4.70 H 10.80 -7.50 H 8.00 -6.10 O 10.62 -2.60 O 8.19 -11.00 O 10.80 -8.90 O 8.00 -4.70 O 8.00 -7.50 O 10.80 -6.10 C 9.40 -10.30 C 9.40 -3.30 C 9.40 -8.90 C 9.40 -4.70 C 9.40 -7.50 C 9.40 -6.10 1 13 1 14 2 -1 15 3 -1 16 4 -1 17 5 -1 6 13 2 7 12 1 14 8 -1 15 9 -1 16 10 -1 17 11 -1 12 14 1 13 15 1 14 16 1 15 17 1 16 17 1";
+jmez = "13 12 H 12.45 -5.02 O 13.66 -7.12 O 5.18 -6.42 O 7.60 -5.02 O 11.24 -8.52 O 8.81 -8.52 O 10.03 -5.02 C 6.39 -7.12 C 12.45 -6.42 C 7.60 -6.42 C 11.24 -7.12 C 8.81 -7.12 C 10.03 -6.42 1 9 1 2 9 2 3 8 1 10 4 -1 11 5 -1 12 6 -1 13 7 -1 8 10 1 9 11 1 10 12 1 11 13 1 12 13 1";
+jmeh = "12 12 O 6.64 -4.36 O 12.23 -6.81 O 10.83 -9.24 O 8.03 -9.24 O 6.64 -6.81 C 8.03 -4.39 O 10.13 -5.60 C 10.83 -6.81 C 10.13 -8.02 C 8.73 -8.02 C 8.03 -6.81 C 8.73 -5.60 1 6 1 2 8 1 9 3 -1 10 4 -2 11 5 -1 12 6 -1 7 8 1 7 12 1 8 9 1 9 10 1 10 11 1 11 12 1";
+struct1 = "[H]C(=O)[C@@]([H])(O)[C@]([H])(O)[C@@]([H])(O)[C@]([H])(O)CO";
+struct2 = "[H]C(=O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)CO";
+struct3 = "OC[C@H]1OC(O)[C@@H](O)[C@H](O)[C@H]1O";
+j="6";
+Txt= " D-(-)-Idose  \n "
+txt = " (2S,3R,4S,5R)-2,3,4,5,6-pentahydroxyhexanal \n pyranose: (3S,4R,5S,6R)-6-(hydroxymethyl)oxane-2,3,4,5-tetrol "
+rot= "rotate x 50; rotate y 110; rotate z -50;"
+}
+		if (form.q1[6].checked) {
+jmef = "17 16 H 8.19 -2.60 H 8.00 -8.90 H 10.80 -4.70 H 8.00 -7.50 H 10.80 -6.10 O 10.62 -2.60 O 8.19 -11.00 O 10.80 -8.90 O 8.00 -4.70 O 10.80 -7.50 O 8.00 -6.10 C 9.40 -10.30 C 9.40 -3.30 C 9.40 -8.90 C 9.40 -4.70 C 9.40 -7.50 C 9.40 -6.10 1 13 1 14 2 -1 15 3 -1 16 4 -1 17 5 -1 6 13 2 7 12 1 14 8 -1 15 9 -1 16 10 -1 17 11 -1 12 14 1 13 15 1 14 16 1 15 17 1 16 17 1";
+jmez = "13 12 H 12.45 -5.02 O 13.66 -7.12 O 5.18 -6.42 O 7.60 -5.02 O 11.24 -8.52 O 8.81 -8.52 O 10.03 -5.02 C 6.39 -7.12 C 12.45 -6.42 C 7.60 -6.42 C 11.24 -7.12 C 8.81 -7.12 C 10.03 -6.42 1 9 1 2 9 2 3 8 1 10 4 -1 11 5 -1 12 6 -2 13 7 -2 8 10 1 9 11 1 10 12 1 11 13 1 12 13 1";
+jmeh = "12 12 O 6.64 -4.36 O 12.23 -6.81 O 10.83 -9.24 O 8.03 -9.24 O 6.64 -6.81 C 8.03 -4.39 O 10.13 -5.60 C 10.83 -6.81 C 10.13 -8.02 C 8.73 -8.02 C 8.03 -6.81 C 8.73 -5.60 1 6 1 2 8 1 9 3 -1 10 4 -1 11 5 -2 12 6 -1 7 8 1 7 12 1 8 9 1 9 10 1 10 11 1 11 12 1";
+struct1 = "[H]C(=O)[C@@]([H])(O)[C@@]([H])(O)[C@]([H])(O)[C@]([H])(O)CO";
+struct2 = "[H]C(=O)[C@@H](O)[C@@H](O)[C@H](O)[C@H](O)CO";
+struct3 = "OC[C@H]1OC(O)[C@@H](O)[C@@H](O)[C@@H]1O";
+j="7";
+Txt= " D-(+)-Mannose  \n"
+txt = " (2S,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal \n  (3S,4S,5S,6R)-6-(hydroxymethyl)oxane-2,3,4,5-tetrol "
+rot= "rotate z 90; rotate x -80; "
+}
+		if (form.q1[7].checked) {
+jmef = "17 16 H 6.29 -1.76 H 6.10 -8.06 H 8.90 -3.86 H 8.90 -6.66 H 8.90 -5.26 O 8.72 -1.76 O 6.29 -10.16 O 8.90 -8.06 O 6.10 -3.86 O 6.10 -6.66 O 6.10 -5.26 C 7.50 -9.46 C 7.50 -2.46 C 7.50 -8.06 C 7.50 -3.86 C 7.50 -6.66 C 7.50 -5.26 1 13 1 14 2 -1 15 3 -1 16 4 -1 17 5 -1 6 13 2 7 12 1 14 8 -1 15 9 -1 16 10 -1 17 11 -1 12 14 1 13 15 1 14 16 1 15 17 1 16 17 1";
+jmez = "13 12 H 12.45 -5.02 O 13.66 -7.12 O 5.18 -6.42 O 7.60 -5.02 O 11.24 -8.52 O 8.81 -8.52 O 10.03 -5.02 C 6.39 -7.12 C 12.45 -6.42 C 7.60 -6.42 C 11.24 -7.12 C 8.81 -7.12 C 10.03 -6.42 1 9 1 2 9 2 3 8 1 10 4 -1 11 5 -1 12 6 -1 13 7 -2 8 10 1 9 11 1 10 12 1 11 13 1 12 13 1";
+jmeh = "12 12 O 6.64 -4.36 O 12.23 -6.81 O 10.83 -9.24 O 8.03 -9.24 O 6.64 -6.81 C 8.03 -4.39 O 10.13 -5.60 C 10.83 -6.81 C 10.13 -8.02 C 8.73 -8.02 C 8.03 -6.81 C 8.73 -5.60 1 6 1 2 8 1 9 3 -1 10 4 -1 11 5 -1 12 6 -1 7 8 1 7 12 1 8 9 1 9 10 1 10 11 1 11 12 1";
+struct1 = "[H]C(=O)[C@@]([H])(O)[C@@]([H])(O)[C@@]([H])(O)[C@]([H])(O)CO";
+struct2 = "[H]C(=O)[C@@H](O)[C@@H](O)[C@@H](O)[C@H](O)CO";
+struct3 = "OC[C@H]1OC(O)[C@@H](O)[C@@H](O)[C@H]1O";
+j="8";
+Txt= " D-(+)-Talose \n " 
+txt = " (2S,3S,4S,5R)-2,3,4,5,6-pentahydroxyhexanal \n   (3S,4S,5S,6R)-6-(Hydroxymethyl)oxane-2,3,4,5-tetrol "
+rot= "rotate z 90; rotate x -80; "
+}
+		if (form.q2[0].checked) {
+f="1";
+z= "";
+h= "";
+typ= "Fischer formula ";
+}
+		if (form.q2[1].checked) {
+f= "";
+z="1";
+h= "";
+typ= "ZigZag formula ";
+}
+
+		if (form.q2[2].checked) {
+f= "";
+z= "";
+h="1";
+typ= "Haworth formula ";
+}
+path = "pyranohexose/pyranose"+j+".pdb"; 
+}
+
+function submitSmiles(input) {
+	
+var smiles1 = document.JME1.smiles();
+var smiles2 = document.JME2.smiles();
+var smiles3 = document.JME3.smiles();
+
+  if (((smiles1==struct1)&&(f==1))||((smiles2==struct2)&&(z==1))||((smiles3==struct3)&&(h==1))) {
+Text=" Your " + typ + "for " + Txt + "is Correct!";
+    }else{
+Text=" Wrong! Try again.";
+ 	} 
+ 	 document.form.result1.value= Text;
+}
+
+ function Choose() {
+if (f==1) {
+ document.JME1.readMolecule(jmef);
+}
+if (z==1) {
+ document.JME2.readMolecule(jmez);
+}
+if (h==1) {
+document.JME3.readMolecule(jmeh);
+}
+Text="Select a different format for your answer."; 
+ document.form.result1.value= Text
+ 
+  }
+
+	
+
+ function showall() {
+ document.JME1.readMolecule(jmef);
+ document.JME2.readMolecule(jmez);
+ document.JME3.readMolecule(jmeh);
+
+var smiles1 = document.JME1.smiles();
+var smiles2 = document.JME2.smiles();
+var smiles3 = document.JME3.smiles();
+ document.form.result1.value= Txt + txt; 
+  }
+
+function moddisp() {
+path = "pyranohexose/pyranose"+j+".pdb"; 
+ var generator=window.open('','structure','height=640,width=700');  generator.document.write('<html><head><title>pyranoses</title><link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head><body><script type="text/javascript" src="../../htmlJ/jsmol/js/JSmol.min.js"><\/script><script type="text/javascript" src="../../htmlJ/jsmol/js/jsmol-init.js"><\/script>');    generator.document.write(' <center><H3>Models of &#946-Aldopyranose Anomers</H3><p><b>Carbon is gray, oxygen is red and hydrogen is cyan.<br />The anomeric site is colored light green. </b></p><TABLE CELLPADDING=6> <TR valign=top><TD height=560 colspan=2> <applet name="jmol" code="JmolApplet" archive="JmolApplet.jar" width="500" height="500" mayscript="true" > <param name="progressbar"   value="true" />  <param name="progresscolor" value="white" />  <param name="boxmessage"    value="" /> <param name="boxbgcolor"  value="white" />  <param name="boxfgcolor"    value="white" />  <param name="script"  value="select hydrogen; color atoms cyan; select atomno=6; color atoms limegreen; select all;  spacefill 90; background white; '+rot+'  echo on;  set echo top center; color echo maroon; echo '+Txt+' ;set echo bottom right; color echo black; echo click here for menu ---> &nbsp; &nbsp; &nbsp; &nbsp;" /> <param name="load" value="'+path+'" /> </applet></TD></TR></TABLE></center>');  generator.document.write('<br /> <center><a href="javascript:self.close()">  Close</a></center>');   generator.document.write('</body></html>');   generator.document.close();    
+} 
+
+function startup() {
+var txt = "";
+var jmef = "17 16 C 6.27 -2.69 C 6.27 -4.09 C 6.27 -5.49 H 4.87 -4.09 H 7.67 -4.09 C 6.27 -6.89 H 4.87 -5.49 H 7.67 -5.49 C 6.27 -8.29 H 4.87 -6.89 H 7.67 -6.89 C 6.27 -9.69 H 4.87 -8.29 H 7.67 -8.29 O 7.48 -1.99 O 5.06 -10.39 H 5.06 -1.99 1 2 1 2 3 1 2 4 -1 2 5 -1 3 6 1 3 7 -1 3 8 -1 6 9 1 6 10 -1 6 11 -1 9 12 1 9 13 -1 9 14 -1 1 15 2 12 16 1 1 17 1";
+var jmez = "13 12 O 13.66 -7.12 O 5.18 -6.42 O 11.24 -8.52 O 7.60 -5.02 O 10.03 -5.02 O 8.81 -8.52 C 12.45 -6.42 C 6.39 -7.12 C 11.24 -7.12 C 7.60 -6.42 C 10.03 -6.42 C 8.81 -7.12 H 12.45 -5.02 1 7 2 2 8 1 9 3 1 10 4 1 11 5 1 12 6 1 7 9 1 8 10 1 9 11 1 10 12 1 11 12 1 7 13 1";
+var jmeh = "12 12 O 6.59 -4.31 O 12.19 -6.76 O 10.79 -9.19 O 7.98 -9.19 O 6.59 -6.76 C 7.98 -4.34 O 10.08 -5.55 C 10.79 -6.76 C 10.08 -7.97 C 8.68 -7.97 C 7.98 -6.76 C 8.68 -5.55 1 6 1 2 8 1 9 3 1 10 4 1 11 5 1 12 6 1 7 8 1 7 12 1 8 9 1 9 10 1 10 11 1 11 12 1";
+document.JME1.readMolecule(jmef);
+ document.JME2.readMolecule(jmez);
+ document.JME3.readMolecule(jmeh);
+
+ }
+
+
+// End of hide script comment. -->
+</script>
+<TITLE> Aldohexoses</TITLE>
+
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+</head>
+<body onLoad="startup()">
+
+
+<FORM  METHOD="SUBMIT" NAME="form" onsubmit="return checkForm()">
+
+<TABLE WIDTH=960 CELLPADDING=4 BORDER><tr><td colspan=8>
+<div class="ctr"><H2>Aldohexose Configurations</H2></div>
+<P>Three configurational representations of aldohexoses are commonly used.  In this exercise the eight D-aldohexoses provide examples. Select one of these from the following list.  You may then display one of the configurations by selecting a format from the choices beneath the windows and pressing the "Choose Format" button. Try to modify one of the two remaining generic drawings by using the drawing tools.  Be sure to change the drawing format to the new representation you have chosen.  Leave the anomeric site in the Haworth display unspecified (as drawn). It is colored green in the Jmol model.<br />  Your answer will be evaluated by clicking the "Check Answer" button.  All three configurational representations may then be viewed by clicking the "Show Configurations" button. </p></td></tr>
+
+<TR><TH>D-(+)-Allose<br /><INPUT TYPE=RADIO NAME="q1" VALUE="aldose" checked><input type="hidden" value="" name="smiles"></TH><TH>D-(+)-Altrose<br /><INPUT TYPE=RADIO NAME="q1" VALUE="aldose"><input type="hidden" value="" name="smiles"></TH><TH>D-(+)-Galactose<br /><INPUT TYPE=RADIO NAME="q1" VALUE="aldose"><input type="hidden" value="" name="smiles"></TH><TH>D-(+)-Glucose<br /><INPUT TYPE=RADIO NAME="q1" VALUE="aldose"><input type="hidden" value="" name="smiles"></TH><TH>D-(-)-Gulose<br /><INPUT TYPE=RADIO NAME="q1" VALUE="aldose"><input type="hidden" value="" name="smiles"></TH><TH>D-(-)-Idose<br /><INPUT TYPE=RADIO NAME="q1" VALUE="aldose"><input type="hidden" value="" name="smiles"></TH><TH>D-(+)-Mannose<br /><INPUT TYPE=RADIO NAME="q1" VALUE="aldose"><input type="hidden" value="" name="smiles"></TH><TH>D-(+)-Talose<br /><INPUT TYPE=RADIO NAME="q1" VALUE="aldose"><input type="hidden" value="" name="smiles"></TH></TR>
+
+<TR><TH COLSPAN=8>
+<table align="center"><tr><th>Fischer Projection<br />
+<applet code="JME.class" name="JME1" archive="JME.jar" width=300 height=330>
+<param name= "options"  value="autoez">
+You have to enable Java and JavaScript on your machine !
+</applet><br />Add four hydroxyl groups</th>
+<th>ZigZag Formula <br />
+<applet code="JME.class"name="JME2" archive="JME.jar" width=300 height=330>
+<param name= "options"  value="autoez">
+You have to enable Java and JavaScript on your machine !
+</applet><br />Use Wedge bonds to show configuration </th>
+<th>Haworth Pyranose Formula<br />
+<applet code="JME.class" name="JME3" archive="JME.jar" width=300 height=330>
+<param name= "options"  value="autoez">
+You have to enable Java and JavaScript on your machine !
+</applet><br />Use Wedge bonds to show configuration </th></tr></table><br />
+<table align="center"><tr><td>Draw the configuration of the selected compound by making appropriate changes in <b>one</b> of the three windows shown above. </td></tr>
+<tr><th><span class="fc-blue">Choose a format:</span> &nbsp; &nbsp; &nbsp; <b>Fischer</b> <INPUT TYPE=RADIO NAME="q2" VALUE="format" checked><input type="hidden">  &nbsp; &nbsp; &nbsp; &nbsp; <b>ZigZag</b> <INPUT TYPE=RADIO NAME="q2" VALUE="format"><input type="hidden">  &nbsp; &nbsp; &nbsp; &nbsp; <b>Haworth</b> <INPUT TYPE=RADIO NAME="q2" VALUE="format"><input type="hidden">
+</th></tr></table>
+
+
+<P><input type="button" value="Choose Format" onClick="process(form);Choose();"> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <input type="button" value="Check Answer" onClick="process(form);submitSmiles();"> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <INPUT TYPE="RESET" VALUE="Clear" onClick="startup();document.JME.reset()"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="button" value="Show Configurations" onClick="process(form);showall()"></P>
+<TEXTAREA WRAP NAME="result1" ROWS="2" COLS="68"></TEXTAREA><P>A model of the &#946;-pyranose anomer for the selected compound may be examined by clicking <A HREF= "javascript:process(form);showall();moddisp()">Here</a>.
+</div></P></TH></TR>
+</TABLE>
+<object name='jmolSmiles1' id='jmolSmiles1' classid='java:JmolSmilesApplet' type='application/x-java-applet' width='10' height='10' > 
+<param name='name' value='jmolSmilesApplet' /> 
+<param name='archive' value='JmolSmilesApplet.jar' /> 
+<param name='mayscript' value='true' /> 
+<param name='codebase' value='.' /> 
+</object>
+
+<BR>
+
+</form>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.
+<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>
+

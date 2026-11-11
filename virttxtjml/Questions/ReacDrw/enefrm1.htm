@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+
+var i="";
+var j="";
+var sma="";
+var smimg="";
+var rgimg="";
+		function process(form){
+	if (i!=0){
+	 i=0
+}
+	if (j!=0){
+	 j=0
+}
+
+		if (form.sm1[0].checked){
+smimg="(CH<SUB>3</SUB>)<SUB>2</SUB>CHCH<SUB>2</SUB>CH=CH<SUB>2</SUB>";
+		i=1
+}
+		if (form.sm1[1].checked){
+smimg="<IMG SRC='../Images/t3hexene.gif'>";
+		i=2
+	}
+		if (form.sm1[2].checked){
+smimg="<IMG SRC='../Images/c3hexene.gif'>";
+		i=3
+}
+		if (form.sm1[3].checked){
+smimg="<IMG SRC='../Images/menecy5.gif'>";
+		i=4
+}
+		if (form.sm1[4].checked){
+smimg="<IMG SRC='../Images/mecy5ene.gif'>";
+		i=5
+	}	
+		if (form.sm1[5].checked){
+smimg="<IMG SRC='../Images/4methene.gif'>";
+		i=6
+}
+		if (form.sm1[6].checked){
+smimg="<IMG SRC='../Images/indene.gif'>";
+		i=7
+	}	
+		if (form.sm1[7].checked){
+smimg="<IMG SRC='../Images/ethency6.gif'>";
+		i=8
+	}									
+		if (form.sm2[0].checked){
+rgimg="HCl"
+		j=1
+}
+		if (form.sm2[1].checked){
+rgimg="Br<SUB>2</SUB>"
+		j=2
+	}
+		if (form.sm2[2].checked){
+rgimg="(i) Hg(OAc)<SUB>2</SUB><BR>(ii) NaBH<SUB>4</SUB>"
+		j=3
+}
+		if (form.sm2[3].checked){
+rgimg="KMnO<SUB>4</SUB>"
+		j=4
+	}
+		if (form.sm2[4].checked){
+rgimg="H<SUB>2</SUB><BR> (Pd or Pt catalyst)"
+		j=5
+}
+		if (form.sm2[5].checked){
+rgimg="HOBr"
+		j=6
+	}
+		if (form.sm2[6].checked){
+rgimg="(i) BH<SUB>3</SUB> in ether<BR>(ii) H<SUB>2</SUB>O<SUB>2</SUB> in NaOH soln."
+		j=7
+}
+		if (form.sm2[7].checked){
+rgimg="HBr <BR>peroxides"
+		j=8
+	}
+		if (form.sm2[8].checked){
+rgimg="C<SUB>6</SUB>H<SUB>5</SUB>CO<SUB>3</SUB>H<BR>in CH<SUB>2</SUB>Cl<SUB>2</SUB>"
+		j=9
+	}
+
+var smimg=smimg;
+var rgimg=rgimg;
+parent.child2.document.clear(); 
+parent.child2.document.write("<TABLE CELLPADDING=4 width=900 align=center><TR>"); 
+parent.child2.document.write("<TD>Draw a formula for the expected product in the <b>Drawing Window</b> on the left below. Do not draw hydrogens. ");
+parent.child2.document.write(" If one <b>diastereomeric</b> product out of two or more possible diastereomers is favored, draw the favored configuration using the wedge tool. ");
+parent.child2.document.write("<br /> <FONT COLOR='red'> If no reaction is expected, draw the starting structure.</FONT><br>  When you are finished, check your answer by pressing the <b>Check Molecule</b> button. ");
+parent.child2.document.write("</TD></TR></TABLE>");
+
+parent.child2.document.write("<TABLE CELLSPACING=9 WIDTH=900 align-center><TR align=center ><TH rowspan=2>")
+parent.child2.document.write("<applet code='JME.class' name='JME' archive='JME.jar' width=360, height=360>");
+parent.child2.document.write("You have to enable Java and JavaScript on your machine !</applet>");
+parent.child2.document.write("<FORM METHOD='POST' NAME='form' ONSUBMIT='return false;'></TH>");
+parent.child2.document.write("<TD width=30> &nbsp; </TD>");
+parent.child2.document.write("<TD nowrap>"+smimg+"</TD>");
+parent.child2.document.write("<TD>+</TD>");
+parent.child2.document.write("<TD nowrap>"+rgimg+"</TD>");
+parent.child2.document.write("<TD><IMG SRC='../Images/arrow1.gif'></TD>");
+parent.child2.document.write("<TD> <IMG SRC='../Images/question.gif'></TD>");
+parent.child2.document.write("<TD width=30> &nbsp; </TD></tr>");
+parent.child2.document.write(" <tr valign=top><TH colspan=7><FONT COLOR='blue'>The window below will display a response to your answers.</FONT><br /><br />");
+parent.child2.document.write("<TEXTAREA WRAP NAME='result' ROWS='6' COLS='56'></TEXTAREA><br /> <br /><INPUT TYPE='RESET' VALUE='Clear' onClick='parent.window.location.reload(true);back();'>");
+parent.child2.document.write("<input type='hidden' value='' name='smiles'>");
+parent.child2.document.write("<tt> &nbsp; &nbsp; &nbsp; </tt> <input type='button' value='Check Molecule' onClick='parent.child1.submitSmiles();parent.child1.processMolecule1(this.form);'></TH>");
+parent.child2.document.write("</TR></TABLE>");
+
+}
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+var text="";
+
+function submitSmiles() {
+  var smiles = parent.child2.document.JME.smiles();
+ parent.child2.document.form.smiles.value = smiles; 
+parent.child2.document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+ 
+  parent.child2.document.form.smiles.value = smiles; 
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+ parent.child2.document.form.smiles.value = smiles; 
+}
+function processMolecule1(input) {
+smiles = parent.child2.document.form.smiles.value;
+  if (smiles == "") {  alert("Nothing to process!"); return;
+}
+if (text!="") {
+text="";
+}
+		if (i==1 && j==1) {
+sma="CC(C)CC(C)Cl";
+}
+		if (i==1 && j==2) {
+sma="CC(C)CC(Br)CBr";
+}
+		if (i==1 && j==3) {
+sma="CC(C)CC(C)O";  
+}
+		if (i==1 && j==4) {
+sma="CC(C)CC(O)CO";
+}
+		if (i==1 && j==5) {
+sma="CCCC(C)C";
+}
+		if (i==1 && j==6) {
+sma="CC(C)CC(O)CBr";
+}
+		if (i==1 && j==7) {
+sma="CC(C)CCCO";
+}
+		if (i==1 && j==8) {
+sma="CC(C)CCCBr";
+}
+		if (i==1 && j==9) {
+sma="CC(C)CC1CO1";
+}
+		if (i==2 && j==1) {
+sma="CCCC(Cl)CC";
+}
+		if (i==2 && j==2) {
+sma="CC[C@@H](Br)[C@@H](Br)CC";
+zz="ANTI";
+}
+		if (i==2 && j==3) {
+sma="CCCC(O)CC";
+}
+		if (i==2 && j==4) {
+sma="CC[C@H](O)[C@@H](O)CC";
+}
+		if (i==2 && j==5) {
+sma="CCCCCC";
+}
+		if (i==2 && j==6) {
+sma="CC[C@@H](O)[C@@H](Br)CC";
+}
+		if (i==2 && j==7) {
+sma="CCCC(O)CC";
+}
+		if (i==2 && j==8) {
+sma="CCCC(Br)CC";
+}
+		if (i==2 && j==9) {
+sma="CC[C@@H]1O[C@H]1CC";
+}
+		if (i==3 && j==1) {
+sma="CCCC(Cl)CC";
+}
+		if (i==3 && j==2) {
+sma="CC[C@H](Br)[C@@H](Br)CC";
+}
+		if (i==3 && j==3) {
+sma="CCCC(O)CC";
+}
+		if (i==3 && j==4) {
+sma="CC[C@H](O)[C@H](O)CC";
+}
+		if (i==3 && j==5) {
+sma="CCCCCC";
+}
+		if (i==3 && j==6) {
+sma="CC[C@H](O)[C@@H](Br)CC";
+}
+		if (i==3 && j==7) {
+sma="CCCC(O)CC";
+}
+		if (i==3 && j==8) {
+sma="CCCC(Br)CC";
+}
+		if (i==3 && j==9) {
+sma="CC[C@H]1O[C@H]1CC";
+}
+		if (i==4 && j==1) {
+sma="CC1(Cl)CCCC1";
+}
+		if (i==4 && j==2) {
+sma="BrCC1(Br)CCCC1";
+}
+		if (i==4 && j==3) {
+sma="CC1(O)CCCC1";
+}
+		if (i==4 && j==4) {
+sma="OCC1(O)CCCC1";
+}
+		if (i==4 && j==5) {
+sma="CC1CCCC1";
+}
+		if (i==4 && j==6) {
+sma="OC1(CBr)CCCC1";
+}
+		if (i==4 && j==7) {
+sma="OCC1CCCC1";
+}
+		if (i==4 && j==8) {
+sma="BrCC1CCCC1";
+}
+		if (i==4 && j==9) {
+sma="C1CCC2(C1)CO2";
+}
+		if (i==5 && j==1) {
+sma="CC1(Cl)CCCC1";
+}
+		if (i==5 && j==2) {
+sma="C[C@@]1(Br)CCC[C@H]1Br";
+}
+		if (i==5 && j==3) {
+sma="CC1(O)CCCC1";
+}
+		if (i==5 && j==4) {
+sma="C[C@@]1(O)CCC[C@@H]1O";
+}
+		if (i==5 && j==5) {
+sma="CC1CCCC1";
+}
+		if (i==5 && j==6) {
+sma="C[C@]1(O)CCC[C@@H]1Br";
+}
+		if (i==5 && j==7) {
+sma="C[C@H]1CCC[C@@H]1O";
+}
+		if (i==5 && j==8) {
+sma="CC1CCCC1Br";
+}
+		if (i==5 && j==9) {
+sma="C[C@@]12CCC[C@@H]1O2";
+}
+		if (i==6 && j==1) {
+sma="CC(C)C(C)(C)Cl";
+}
+		if (i==6 && j==2) {
+sma="CC(C)(Br)C(C)(C)Br";
+}
+		if (i==6 && j==3) {
+sma="CC(C)C(C)(C)O";
+}
+		if (i==6 && j==4) {
+sma="CC(C)(O)C(C)(C)O";
+}
+		if (i==6 && j==5) {
+sma="CC(C)C(C)C";
+}
+		if (i==6 && j==6) {
+sma="CC(C)(O)C(C)(C)Br";
+}
+		if (i==6 && j==7) {
+sma="CC(C)C(C)(C)O";
+}
+		if (i==6 && j==8) {
+sma="CC(C)C(C)(C)Br";
+}
+		if (i==6 && j==9) {
+sma="CC1(C)OC1(C)C";
+}
+		if (i==7 && j==1) {
+sma="ClC2CCc1ccccc12";
+}
+		if (i==7 && j==2) {
+sma="Br[C@@H]2Cc1ccccc1[C@H]2Br";
+}
+		if (i==7 && j==3) {
+sma="OC2CCc1ccccc12";
+}
+		if (i==7 && j==4) {
+sma="O[C@H]2Cc1ccccc1[C@H]2O";
+}
+		if (i==7 && j==5) {
+sma="c2ccc1CCCc1c2";
+}
+		if (i==7 && j==6) {
+sma="O[C@H]2c1ccccc1C[C@@H]2Br";
+}
+		if (i==7 && j==7) {
+sma="OC2Cc1ccccc1C2";
+}
+		if (i==7 && j==8) {
+sma="BrC2Cc1ccccc1C2";
+}
+		if (i==7 && j==9) {
+sma="c1ccc2c(c1)C[C@@H]3O[C@H]23";
+}
+		if (i==8 && j==1) {
+sma="CCC1(Cl)CCCCC1";
+}
+		if (i==8 && j==2) {
+sma="CC(Br)C1(Br)CCCCC1";
+}
+		if (i==8 && j==3) {
+sma="CCC1(O)CCCCC1";
+}
+		if (i==8 && j==4) {
+sma="CC(O)C1(O)CCCCC1";
+}
+		if (i==8 && j==5) {
+sma="CCC1CCCCC1";
+}
+		if (i==8 && j==6) {
+sma="CC(Br)C1(O)CCCCC1";
+}
+		if (i==8 && j==7) {
+sma="CC(O)C1CCCCC1";
+}
+		if (i==8 && j==8) {
+sma="CC(Br)C1CCCCC1";
+}
+		if (i==8 && j==9) {
+sma="CC1OC12CCCCC2";
+}
+		if ((i==2 && j==2 && smiles=="CCC(Br)C(Br)CC") || (i==3 && j==2 && smiles=="CCC(Br)C(Br)CC") || (i==2 && j==4 && smiles=="CCC(O)C(O)CC") || (i==3 && j==4 && smiles=="CCC(O)C(O)CC") || (i==2 && j==6  && smiles=="CCC(O)C(Br)CC") || (i==3 && j==6  && smiles=="CCC(O)C(Br)CC") || (i==2 && j==9  && smiles=="CCC1OC1CC") || (i==3 && j==9  && smiles=="CCC1OC1CC")) {
+text="This example requires designation of product configuration. Use the wedge drawing tool."
+}else{
+text=text
+}
+if ((i==5 && j==9) || (i==7 && j==9)) {
+text="When small rings are fused together, only cis-attachments are observed due to the strain in a trans-fusion. Because of this restriction, wedge bonds are not necessary in their structural formulas."
+}else{
+text=text
+} 
+		if ((i==5 && j==2 && smiles=="CC1(Br)CCCC1Br") || (i==5 && j==4 && smiles=="CC1(O)CCCC1O") || (i==5 && j==6  && smiles=="CC1(O)CCCC1Br") || (i==5 && j==7  && smiles=="CC1CCCC1O")) {
+text="This example requires designation of product configuration. Use the wedge drawing tool."
+}else{
+text=text
+}
+		if (i==5 && j==8) {
+text="Radicals invert rapidly and lose configurational integrity."
+}else{
+text=text
+}
+		if (i==1 &&  j==1) {
+text="Rearrangement is not likely, since the chain branching is not adjacent to the double bond."
+}else{
+text=text
+}
+		if ((i==7 && j==1)||(i==7 && j==3)||(i==7 && j==6)||(i==7 && j==8 )) {
+text="A secondary-benzylic cation or radical is more stable than a secondary-alkyl species of the same kind."
+}else{
+text=text
+}
+		if ((i==1 || i==4 || i==6 || i==8 || j==5) && smiles.indexOf("@",0)>=0) {
+text=text + " This reaction cannot produce a mixture of diastereomers. Do not use the wedge drawing tool."
+}else{
+text=text
+}
+		if (((i==2 && j==1) || (i==2 && j==3) || (i==2 && j==7) || (i==2 && j==8) || (i==3 && j==1) || (i==3 && j==3) || (i==3 && j==7) || (i==3 && j==8) || (i==5 && j==1) || (i==5 && j==3) || (i==5 && j==8) || (i==7 && j==1) || (i==7 && j==3) || (i==7 && j==7) || (i==7 && j==8) || (i==8 && j==1) || (i==8 && j==3) || (i==8 && j==7) || (i==8 && j==8))  && smiles.indexOf("@",0)>=0) {
+text=text + " This reaction cannot produce a mixture of diastereomers. Do not use the wedge drawing tool."
+}else{
+text=text
+}
+		if (i==7 && j==7 && smiles==sma) {
+text="Since a secondary-benzylic cation is more stable than a secondary-alkyl cation, it is logical to anticipate a regioselectivity resulting from electrophile (BH3) attack at the non-benzylic carbon of the double bond. However, in practice very little regioselectivity is observed."
+}else{
+text=text
+}
+
+if (smiles==sma) {
+var Txt="Correct Answer! \r";
+	}else{
+if (i==2 && j==2 && smiles=="CC[C@H](Br)[C@H](Br)CC") {
+var Txt="Correct Answer! \r";
+	}else{
+if (i==2 && j==4 && smiles=="CC[C@@H](O)[C@H](O)CC") {
+var Txt="Correct Answer! \r";
+	}else{
+if (i==2 && j==6 && smiles=="CC[C@H](O)[C@H](Br)CC") {
+var Txt="Correct Answer! \r";
+	}else{
+if (i==2 && j==9 && smiles=="CC[C@H]1O[C@@H]1CC") {
+var Txt="Correct Answer! \r";   
+	}else{
+if (i==3 && j==2 && smiles=="CC[C@@H](Br)[C@H](Br)CC") {
+var Txt="Correct Answer! \r";
+	}else{
+if (i==3 && j==4 && smiles=="CC[C@@H](O)[C@@H](O)CC") {
+var Txt="Correct Answer! \r";
+	}else{
+if (i==3 && j==6 && smiles=="CC[C@@H](O)[C@H](Br)CC") {
+var Txt="Correct Answer! \r";
+	}else{
+if (i==3 && j==9 && smiles=="CC[C@@H]1O[C@@H]1CC") {
+var Txt="Correct Answer! \r";   
+	}else{
+if (i==5 && j==2 && smiles=="C[C@]1(Br)CCC[C@@H]1Br") {
+var Txt="Correct Answer! \r";
+	}else{
+if (i==5 && j==4 && smiles=="C[C@]1(O)CCC[C@H]1O") {
+var Txt="Correct Answer! \r";
+	}else{
+if (i==5 && j==6 && smiles=="C[C@@]1(O)CCC[C@H]1Br") {
+var Txt="Correct Answer! \r";
+	}else{
+if (i==5 && j==7 && smiles=="C[C@@H]1CCC[C@H]1O") {
+var Txt="Correct Answer! \r";
+	}else{
+if ((i==5 && j==9 && smiles=="C[C@]12CCC[C@H]1O2") || (i==5 && j==9 && smiles=="CC12CCCC1O2")) {
+var Txt="Correct Answer! \r";
+	}else{
+if (i==7 && j==2 && smiles=="Br[C@H]2Cc1ccccc1[C@@H]2Br") {
+var Txt="Correct Answer! \r";
+	}else{
+if (i==7 && j==4 && smiles=="O[C@@H]2Cc1ccccc1[C@@H]2O") {
+var Txt="Correct Answer! \r";
+	}else{
+if (i==7 && j==6 && smiles=="O[C@@H]2c1ccccc1C[C@H]2Br") {
+var Txt="Correct Answer! \r";
+	}else{
+if ((i==7 && j==9 && smiles=="c1ccc2c(c1)C[C@H]3O[C@@H]23") || (i==7 && j==9 && smiles=="c1ccc2c(c1)CC3OC23")) {
+var Txt="Correct Answer! \r";
+	}else{
+var Txt="Wrong Answer! Try again. \r";
+}}}}
+}}}}
+}}}}
+}}}}
+}}
+	input.result.value = Txt + text;
+}
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE> Reactions of Alkenes</TITLE>
+ <body>
+<FORM>
+ <div class="ctr"><B><span class="fs-5">Reactions of Alkenes</span></B></div>
+<span class="fs-3"><B>In this problem we shall consider eight alkene <span class="fc-maroon"> reactants:</span></B></span><BR>
+<div class="ctr"><TABLE BORDER=3 width=800><TR><TD>
+<TABLE BORDER CELLPADDING=6 ><TR BGCOLOR="CCFFCC">
+<TH WIDTH=25% nowrap>4-methyl-1-pentene  &nbsp; <INPUT NAME="sm1"  TYPE="radio" checked> &nbsp; </TH>
+<TH WIDTH=25% nowrap>trans-3-hexene &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH WIDTH=25%  nowrap>cis-3-hexene &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH WIDTH=25%  nowrap>methylenecyclopentane &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TD></TR>
+<TR   BGCOLOR="CCFFCC">
+<TH nowrap>1-methylcyclopentene &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH nowrap>2,3-dimethyl-2-butene &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH nowrap>indene  &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH nowrap>ethylidenecyclohexane &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH></TR></TABLE>
+</TD></TR></TABLE></div><br />
+<span class="fs-3"><B>These compounds may be reacted with nine different <span class="fc-maroon">reagents:</span></B></span><BR>
+<div class="ctr"><TABLE BORDER=3  width=800><TR><TD>
+<TABLE BORDER CELLPADDING=8 BGCOLOR="FFCCCC"><TR >
+<TH WIDTH=32%> Hydrogen chloride, HCl &nbsp; <INPUT NAME="sm2" TYPE="radio" checked> &nbsp; </TH>
+<TH WIDTH=32%> Bromine, Br<SUB>2</SUB> &nbsp; <INPUT NAME="sm2" TYPE="radio"> &nbsp; </TH>
+<TH WIDTH=32% nowrap> (i) Hg(OAc)<SUB>2</SUB> + H<SUB>2</SUB>O<BR> <tt>&nbsp; &nbsp; </tt> (ii) NaBH<SUB>4</SUB> <tt> &nbsp; &nbsp; &nbsp; &nbsp; </tt>  
+<INPUT NAME="sm2"  TYPE="radio"></TH></TR>
+<TR VALIGN="top"><TH nowrap> Potassium Permanganate, KMnO<SUB>4</SUB> &nbsp; <INPUT NAME="sm2"  TYPE="radio"> &nbsp; </TH>
+<TH > H<SUB>2</SUB> &nbsp; (Pd or Pt catalyst) &nbsp; 
+<INPUT NAME="sm2" TYPE="radio"> &nbsp; </TH>
+<TH > Hypobromous Acid, HOBr &nbsp;  
+<INPUT NAME="sm2" TYPE="radio"> &nbsp; </TH></TR>
+<TR VALIGN="top">
+<TH nowrap> (i) Diborane, B<SUB>2</SUB>H<SUB>6</SUB> <tt>&nbsp; &nbsp; </tt> <BR><tt>&nbsp; &nbsp; </tt>  (ii) H<SUB>2</SUB>O<SUB>2</SUB> in NaOH soln. &nbsp; 
+<INPUT NAME="sm2"  TYPE="radio"> &nbsp; </TH>
+<TH nowrap> HBr &nbsp; (peroxide initiator) &nbsp; 
+<INPUT NAME="sm2"  TYPE="radio"> &nbsp; </TH>
+<TH > Perbenzoic Acid, C<SUB>6</SUB>H<SUB>5</SUB>CO<SUB>3</SUB>H &nbsp;  
+<INPUT NAME="sm2"  TYPE="radio"> &nbsp; </TH></TR>
+</TABLE></TD></TR></TABLE></div>
+
+<p><table width=960 align="center "><tr valign="bottom"><th>
+<span class="fc-blue">Select one alkene from the first group, <br>and one reagent from the second group.</span> </th><th><table bgcolor="blue" align="center" border><tr><th>  
+<INPUT TYPE="button" VALUE="Show the Problem"  onClick="process(this.form)"></th></tr></table> </th><td align="right">
+To practice using the drawing program  <A HREF="../MOLEDITOR/sterprct.htm" Target="_top"> Click Here</A><br>To review the chemistry of alkenes  <A HREF="../../addene1.htm" Target="_top"> Click Here</A>.  </td></tr></table>
+
+
+ </FORM>
+ </BODY>
+ </HTML>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} u {font-size: 11pt} u {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+														
+var anscnt1=0
+var answ1="D\rVinyl alcohol (B) is the enol tautomer of acetaldehyde. It is not a stable compound. "
+var noansw="You must try to answer this questions twice before viewing the answers."
+														
+function strbx(input) {
+ anscnt1=anscnt1+1;
+input.a.value=fix(input.a.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+if (input.a.value=='') {
+var Txt= "You have not provided an answer.";
+anscnt1=0
+}else{
+	if (input.a.value.toUpperCase().indexOf("D",0)>=0) {
+
+	var Txt="Your answer is correct.";
+anscnt1=2
+} else {
+var Txt="Wrong!" 
+}
+}
+	input.result.value = Txt ;
+}
+
+function giveansw(show) {
+ if (anscnt1>=2)  {
+ var txt=answ1
+ 	}else{
+ var txt=noansw
+ }
+ show.result.value=txt
+ }
+
+function clrbx(input) {
+	input.a.value="";	
+	input.result.value=" ";
+anscnt1=0
+}
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Polymer Problem</TITLE>
+<body>
+<div class="ctr"><H3>Preparation of Poly(vinyl alcohol)</H3></div>
+<P>Poly(vinyl alcohol), ~[CH<SUB>2</SUB>CH(OH)CH<SUB>2</SUB>CH(OH)CH<SUB>2</SUB>CH(OH)]~ is a unique polymer, having a high affinity for water. Which of the following procedures would be <B>most suitable for its preparation</B>?<br>
+<span class="fc-blue"><b>Enter one letter, corresponding to your selection.</b></span></p>
+<dir><P><span class="fc-blue"><B>A</B></span> &nbsp; Radical-chain polymerization of CH<SUB>2</SUB>=CHCH<SUB>2</SUB>OH.<BR>
+<span class="fc-blue"><B>B</B></span> &nbsp; Radical-chain polymerization of CH<SUB>2</SUB>=CHOH.<BR>
+<span class="fc-blue"><B>C</B></span> &nbsp; Radical-chain polymerization of CH<SUB>2</SUB>=CHCO<SUB>2</SUB>CH<SUB>3</SUB>, followed by base-catalyzed hydrolysis.<BR>
+<span class="fc-blue"><B>D</B></span> &nbsp; Radical-chain polymerization of CH<SUB>2</SUB>=CHOCOCH<SUB>3</SUB>, followed by base-catalyzed hydrolysis.
+</dir></P>
+
+<FORM>
+<span class="fc-blue"><B>Enter your selection here:</B></span> &nbsp;<INPUT TYPE="text" NAME="a" SIZE="2"><BR><BR>
+<INPUT TYPE="button" VALUE=" Check Answer " onClick="strbx(this.form)">
+<INPUT TYPE="reset"  VALUE=" Clear " onClick="clrbx(this.form)">
+ <INPUT TYPE="button"  NAME="answr" VALUE=" View Answers " onClick="giveansw (this.form)"><BR><BR>
+
+<TEXTAREA WRAP NAME="result" ROWS="4" COLS="48">
+</TEXTAREA>
+
+</FORM><HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+</BODY></HTML>

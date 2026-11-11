@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+ //  global variables
+var i=0;
+var j=0;
+var k=0;
+var Txt1=" Your correct answers number:";
+var Txt2=" Incorrect or missing answers are given to:";
+var Txt3=" The expected number of correct answers is:";
+var Txt="";
+var txa="";
+
+var anscnt=0
+                         //Answer variables
+ var answ="(1) 5; (2) triplet; (3) 342 (3.8 x 90)\r"
+ +"(4) D;  (5) A;  (6) 2:2:3:2:3"
+
+ var noansw="You must try to answer these questions twice before viewing the answers."
+
+                        // Set function code
+  function strbx(input) {
+anscnt=anscnt+1;
+input.a.value=fix(input.a.value)
+input.b.value=fix(input.b.value)
+input.c.value=fix(input.c.value)
+input.d.value=fix(input.d.value)
+input.e.value=fix(input.e.value)
+input.f.value=fix(input.f.value)
+input.g.value=fix(input.g.value)
+input.h.value=fix(input.h.value)
+input.i.value=fix(input.i.value)
+input.j.value=fix(input.j.value)
+function fix(s){
+return s.replace(/[ ,\-\;\.\&]/g,"")
+}
+if (txa!=""){
+		txa=""
+}
+	if (i!=0){
+ 	 i=0
+ }
+ 	if (j!=0){
+ 	j=0
+ }
+ 	if (k!=0){
+ 	k=0
+ }
+	if (input.a.value == "5") { 
+ 		i=i+1
+ 		} else {
+txa=txa + " problem 1,"
+}  
+	if (input.b.value.toLowerCase()=="t") {
+ 		i=i+1
+ 		} else {
+txa=txa + " problem 2,"
+}
+	if (input.c.value == "342") { 
+ 		i=i+1
+ 		} else {
+txa=txa + " problem 3,"
+}
+	if (input.d.value.toUpperCase()=="D") {
+ 		i=i+1
+ 		} else {
+txa=txa + " problem 4,"
+}
+	if (input.e.value.toUpperCase()=="A") {
+ 		i=i+1
+ 		} else {
+txa=txa + " problem 5,"
+}
+	if (input.f.value == "2") { 
+ 		j=j+1
+ 		} else {
+ 		k=k+1
+}
+	if (input.g.value == "2") { 
+ 		j=j+1
+ 		} else {
+ 		k=k+1
+}
+	if (input.h.value == "3") { 
+ 		j=j+1
+ 		} else {
+ 		k=k+1
+}
+	if (input.i.value == "2") { 
+ 		j=j+1
+ 		} else {
+ 		k=k+1
+}
+	if (input.j.value == "3") { 
+ 		j=j+1
+ 		} else {
+ 		k=k+1
+}                       	    //Reporting code 
+var t=i+j
+var dif=10-t
+
+if  (k<<5) {
+txa=txa + " part or all of problem 6."
+}
+ if ( (input.a.value=='')&&(input.b.value=='')&&(input.c.value=='')&&(input.d.value=='')&&(input.e.value=='')&&(input.f.value=='')&&(input.g.value=='')&&(input.h.value=='')&&(input.i.value=='')&&(input.j.value=='') ) {
+		var Txt = "You have not provided answers to any questions.";
+anscnt=0
+		 }else{
+if (t==10) {
+		var Txt="Congratulations! You have answered all questions correctly."
+anscnt=2;
+		 }else{
+		var Txt="Results:\r" + Txt1 +  t +"\r" +Txt2 +  txa + "\r"   +Txt3  +  "10 (including 5 numbers in problem 6)" + "\r" ;
+}
+}
+ 	input.result.value =Txt
+}
+
+														 // functions for showing answers & clearing text
+ function giveansw(show) {
+ if (anscnt>=2)  {
+ var txt=answ
+ 	}else{
+ var txt=noansw
+
+} 
+ show.result.value=txt
+}
+ 
+ function clrbx(input) {   // Clear all text windows.
+ 	input.a.value="";	
+ 	input.b.value="";
+ 	input.c.value="";
+ 	input.d.value="";
+ 	input.e.value="";
+ 	input.f.value="";
+ 	input.g.value="";
+ 	input.h.value="";
+ 	input.i.value="";
+ 	input.j.value="";
+ 	input.result.value="";
+ }
+// End of hide script comment. -->
+</SCRIPT>
+ <link rel="stylesheet" href="../../../Styles/edvibe.css">
+<script src="../../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE>Analyzing NMR Spectra</TITLE>
+ <body>
+ <div class="ctr"><H3>Interpreting a NMR Spectrum</H3></div>
+<P><B> The following <SUP>1</SUP>Hnmr spectrum of a C<SUB>10</SUB>H<SUB>12</SUB>O<SUB>2</SUB> compound was obtained on a 90 MHz spectrometer.</B><BR>
+<span class="fc-blue">A series of questions are presented below the spectrum. To answer each question enter a number or letter in the designated answer box.</span> <br><span class="fc-red">Do not enter punctuation (eg. commas or semicolons) or spaces.</span></P>
+<div class="ctr"><IMG SRC="nmrspctr.gif"></div>
+<HR>
+ <FORM NAME="match1">
+<p><B><span class="fc-blue">1.</span></b> &nbsp;Ignoring the TMS signal at &#948; = 0, how many discrete groups of proton signals are present in this spectrum? ... <INPUT TYPE="text" NAME="a" SIZE="3"><BR>
+<B><span class="fc-blue">2.</span></b> &nbsp;What is the multiplicity ( <span class="fc-blue">s</span>, <span class="fc-blue">d</span>, <span class="fc-blue">t</span>, <span class="fc-blue">q</span> ) of the highest field signal from this sample? ... <INPUT TYPE="text" NAME="b" SIZE="3"><BR>
+<B><span class="fc-blue">3.</span></b> &nbsp;The sample has a singlet at &#948; = 3.8 ppm. In units of Hertz (Hz) how far is this signal from the TMS signal? ... <INPUT TYPE="text" NAME="c" SIZE="4"><BR>
+<B><span class="fc-blue">4.</span></b> &nbsp;What structural feature is suggested by the singlet at &#948; = 3.8 ppm? ... <INPUT TYPE="text" NAME="d" SIZE="3"><BR>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="fc-blue">A</span> CH<SUB>3</SUB>&#8211;C=O &nbsp; &nbsp; <span class="fc-blue">B</span> &#8211;CH<SUB>2</SUB>&#8211; &nbsp; &nbsp; <span class="fc-blue">C</span> &#8211;O&#8211;H &nbsp; &nbsp; <span class="fc-blue">D</span> &#8211;O&#8211;CH<SUB>3</SUB> &nbsp; &nbsp; <span class="fc-blue">E</span> C&#8211;CH<SUB>3</SUB> &nbsp; &nbsp; <span class="fc-blue">F</span> C=C&#8211;H  <BR>
+<B><span class="fc-blue">5.</span></b> &nbsp;From multiplet line separations (Js), which of the other signals is coupled to the quartet at &#948; = 2.9 ppm?  ... <INPUT TYPE="text" NAME="e" SIZE="3">
+<BR> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="fc-blue">A</span> &#948; = 1.2 ppm &nbsp; &nbsp; <span class="fc-blue">B</span> &#948; = 3.8 ppm &nbsp; &nbsp; <span class="fc-blue">C</span> &#948; = 6.9 ppm &nbsp; &nbsp; <span class="fc-blue">D</span> &#948; = 7.9 ppm<BR><BR>
+<B><span class="fc-blue">6.</span></b> &nbsp;Using the <span class="fc-green">integrator trace</span> and the formula of the sample, assign a whole number ratio to the sample signals as follows: <BR> &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; <span class="fc-blue">7.9 ppm signal</span> <INPUT TYPE="text" NAME="f" SIZE="2">;  &nbsp;  &nbsp; <span class="fc-blue">6.9 ppm signal</span> <INPUT TYPE="text" NAME="g" SIZE="2">;  &nbsp;  &nbsp; <span class="fc-blue">3.8 ppm signal</span> <INPUT TYPE="text" NAME="h" SIZE="2">;  &nbsp;  &nbsp; <span class="fc-blue">2.9 ppm signal</span> <INPUT TYPE="text" NAME="i" SIZE="2">;  &nbsp; &nbsp; <span class="fc-blue">1.2 ppm signal</span> <INPUT TYPE="text" NAME="j" SIZE="2"></p>
+
+ <P><INPUT TYPE="button" VALUE="Check Answers" onClick="strbx(this.form)">&nbsp;
+ <INPUT TYPE="button"  VALUE=" Clear " onClick="clrbx(this.form)">
+ <HR>
+ <TEXTAREA WRAP NAME="result" ROWS="5" COLS="80">
+ </TEXTAREA>
+ <INPUT TYPE="button"  NAME="answr" VALUE="View Answers" onClick="giveansw (this.form)">
+</FORM>
+<TABLE BGCOLOR="FFEEEE" cellpadding=3><TR><TD> 
+<B><span class="fc-blue">7.</span> &nbsp;You should now be able to assign a structure to this C<SUB>10</SUB>H<SUB>12</SUB>O<SUB>2</SUB> compound. To evaluate your assignment <A HREF="nmrprb1b.htm">Click Here</A>.</B></TD></TR></TABLE>
+<HR>
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. <BR>Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.</span>
+ </BODY>
+ </HTML>

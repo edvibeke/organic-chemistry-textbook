@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var anscnt=0;
+var answ="See answer above. The added proton is a light brown H.\r Light blue dashed lines show charge delocalization\r"
+ +  "---------------------------------------------------------\r"
+ +  "B, C, D & E conjugate acids are all stabilized by charge delocalization, represented by dashed blue lines.\r"
+var noansw="You must try to answer this question before viewing the answers.";
+var i="";
+var sma="";
+var Txt="";
+var text="";
+var anscnt="0";
+
+		function process(form){
+	anscnt=anscnt+1;
+
+		if (form.choose[0].checked){
+		i=1
+}
+		if (form.choose[1].checked){
+		i=2
+}
+		if (form.choose[2].checked){
+		i=3
+}
+		if (form.choose[3].checked){
+		i=4
+}
+		if (form.choose[4].checked){
+		i=5
+}
+}
+var smiles = "";
+var jme = "0 0";
+
+function jmehelp() { window.open('../MOLEDITOR/jme_help.html','JME','width=800,height=800,scrollbars=yes');
+}
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+document.form.smiles.value = smiles; 
+}
+function processMolecule(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+		if (i=="") {
+var text="You have not selected an unknown.";
+}else{
+var text="";
+}
+
+if ((smiles.indexOf("C[OH+]c1ccc(N(C)C)cc1",0)>=0) && (i==1)) {
+var text="\rEthers are much weaker bases than amines.";
+}else{
+var text="";
+
+if ((smiles.indexOf("CC[NH2+]C(=O)C(C)C",0)>=0) && (i==2)) {
+var text="\rYou have drawn a conjugate acid of the amide that is not a resonance contributor to the stable conjugate acid"; 
+}else{
+var text="";
+
+if ((smiles.indexOf("[NH+]#CC1CCCC1C(=O)O",0)>=0) && (i==3)) {
+var text="\rNitriles are very weak bases. Draw contributors to a more stable conjugate acid";
+}else{
+var text="";
+
+if ((smiles.indexOf("N#CC1CCCC1C(=O)[OH2+]",0)>=0) && (i==3)) {
+var text="\rYou have drawn a conjugate acid of the carboxyl group that is not a resonance contributor to the stable conjugate acid";
+}else{
+var text="";
+
+ if ((smiles.indexOf("C2CCC(N1CCCC1)[C+]C2",0)>=0) && (i==4)) {
+var text="\rYou have drawn a divalent carbocation. You need to add a hydrogen. Change the X drawing tool to a CH+.\r";
+}else{
+var text="";
+
+if ((smiles.indexOf("C2=C([NH+]1CCCC1)CCCC2",0)>=0) && (i==4)) {
+var text="\rYou have drawn a conjugate acid of the enamine that is not a resonance contributor to the stable conjugate acid"; 
+	}else{
+var text="";
+
+if ((smiles.indexOf("C2CCC1=NCCC[NH+]1CC2",0)>=0) && (i==5)) {
+var text="\rYou have drawn a conjugate acid of the amine that is not a resonance contributor to the stable conjugate acid";
+}else{
+var text="";
+}}
+}}
+}}
+}
+
+
+if (((smiles.length>=26) && (i==1)) || ((smiles.length>=58) && (i==2)) || ((smiles.length>=64) && (i==3)) || ((smiles.length>=46) && (i==4)) || ((smiles.length>=68) && (i==5))) {
+var Txt="You have drawn too many structures, or possibly a large wrong structure!";
+}else{
+if (((smiles=="COc1ccc([NH+](C)C)cc1") && (i==1))|| ((smiles=="[H][N+](C)(C)c1ccc(OC)cc1") && (i==1))){
+var Txt="Correct Answer! \r" ;
+	anscnt=anscnt+1;
+}else{
+if ((smiles.indexOf("CCNC(=[OH+])C(C)C",0)>=0) && (smiles.indexOf("CC[NH+]=C(O)C(C)C",0)>=0)  && (smiles.indexOf("CCN[C+](O)C(C)C",0)>=0)  && (i==2)) {
+var Txt="Correct Answer for all Contributors.\r" 
+	anscnt=anscnt+1;
+}else{
+if (((smiles.indexOf("CCNC(=[OH+])C(C)C",0)>=0) && (smiles.indexOf("CC[NH+]=C(O)C(C)C",0)>=0) && (i==2)) || ((smiles.indexOf("CCNC(=[OH+])C(C)C",0)>=0) &&(smiles.indexOf("CCN[C+](O)C(C)C",0)>=0) && (i==2))  || ((smiles.indexOf("CC[NH+]=C(O)C(C)C",0)>=0) && (smiles.indexOf("CCN[C+](O)C(C)C",0)>=0) && (i==2))) {
+var Txt="You have drawn correct structures for two contributors.\rYou need to draw a third contributing structure." 
+}else{
+ if (((smiles.indexOf("CCNC(=[OH+])C(C)C",0)>=0) && (i==2)) ||  ((smiles.indexOf("CC[NH+]=C(O)C(C)C")>=0) && (i==2)) ||  ((smiles.indexOf("CCN[C+](O)C(C)C")>=0) && (i==2)))  {
+var Txt="You have drawn the correct structure for one contributor.\rYou need to write three structures." 
+}else{
+if (((smiles.indexOf("N#CC1CCCC1C(O)=[OH+].N#CC1CCCC1C(O)=[OH+].N#CC1CCCC1[C+](O)O",0)>=0)  && (i==3)) || ((smiles.indexOf("N#CC1CCCC1C(O)=[OH+].N#CC1CCCC1[C+](O)O.N#CC1CCCC1C(O)=[OH+]",0)>=0) && (i==3)) || ((smiles.indexOf("N#CC1CCCC1[C+](O)O.N#CC1CCCC1C(O)=[OH+].N#CC1CCCC1C(O)=[OH+]",0)>=0)  && (i==3))){
+var Txt="Correct Answer for all Contributors.\r" 
+	anscnt=anscnt+1;
+}else{
+if (((smiles.indexOf("N#CC1CCCC1C(O)=[OH+].N#CC1CCCC1C(O)=[OH+]",0)>=0) && (i==3)) || ((smiles.indexOf("N#CC1CCCC1C(O)=[OH+].N#CC1CCCC1[C+](O)O",0)>=0) && (i==3))  || ((smiles.indexOf("N#CC1CCCC1[C+](O)O.N#CC1CCCC1C(O)=[OH+]",0)>=0) && (i==3))) {
+var Txt="You have drawn correct structures for two contributors.\rYou need to draw a third contributing structure." 
+}else{
+if ((smiles.indexOf("N#CC1CCCC1C(O)=[OH+]",0)>=0) && (i==3) || (smiles.indexOf("N#CC1CCCC1[C+](O)O",0)>=0) && (i==3)) {
+var Txt="You have drawn the correct structure for one contributor.\rYou need to write three structures." 
+}else{                       
+if ((smiles.indexOf("C2CCC(=[N+]1CCCC1)CC2",0)>=0) && (smiles.indexOf("C2CC[C+](N1CCCC1)CC2",0)>=0)  && (i==4)) {
+var Txt="Correct Answer for both Contributors.\r" 
+	anscnt=anscnt+2;
+}else{
+ if (((smiles.indexOf("C2CCC(=[N+]1CCCC1)CC2",0)>=0) && (i==4)) || ((smiles.indexOf("C2CC[C+](N1CCCC1)CC2",0)>=0) && (i==4))) {
+var Txt="You have drawn the correct structure for one contributor.\rYou need to write both structures." 
+}else{
+if ((smiles.indexOf("C2CCC1=[NH+]CCCN1CC2",0)>=0) && (smiles.indexOf("C1CCC2=[N+](CC1)CCCN2",0)>=0)  && (smiles.indexOf("C2CC[C+]1NCCCN1CC2",0)>=0)  &&(i==5)) {
+var Txt="Correct Answer for all Contributors.\r"  
+	anscnt=anscnt+1;
+}else{
+if (((smiles.indexOf("C2CCC1=[NH+]CCCN1CC2",0)>=0) && (smiles.indexOf("C1CCC2=[N+](CC1)CCCN2",0)>=0) && (i==5)) || ((smiles.indexOf("C2CCC1=[NH+]CCCN1CC2",0)>=0) &&(smiles.indexOf("C2CC[C+]1NCCCN1CC2",0)>=0) && (i==5))  || ((smiles.indexOf("C1CCC2=[N+](CC1)CCCN2",0)>=0) && (smiles.indexOf("C2CC[C+]1NCCCN1CC2",0)>=0) && (i==5))) {
+var Txt="You have drawn correct structures for two contributors.\rYou need to draw a third contributing structure." 
+}else{
+ if (((smiles.indexOf("C2CCC1=[NH+]CCCN1CC2",0)>=0) && (i==5)) ||  ((smiles.indexOf("C1CCC2=[N+](CC1)CCCN2")>=0) && (i==5))  ||  ((smiles.indexOf("C2CC[C+]1NCCCN1CC2")>=0) && (i==5))) {
+var Txt="You have drawn the correct structure for one contributor.\rYou need to write three structures." 
+}else{
+var Txt="Wrong Answer! Try again.";
+}}
+}}
+}}
+}}
+}}
+}}
+}
+	input.result.value = Txt + text;
+}
+
+function giveansw(show) {
+if (anscnt>=3)  {
+document.images[0].src="../Images/conjacd2.gif";
+var Text=answ;
+	}else{
+var Text=noansw;
+}
+show.result.value=Text
+}
+
+
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body>
+<form method="post" name="form">
+<div class="ctr"><H3>Conjugate Acids</H3></div>
+<P>The structural formulas of five compounds, <B>A</B> through <B>E</B>, are drawn below. You may select any one of these by clicking the radio button beneath the structure. 
+<div class="ctr"><span class="fc-maroon">Read Instructions Carefully</span></div></P>
+<P>In this problem you are asked to draw structural formulas for <B>the most favored conjugate acid</B> of the selected compound. Most of these conjugate acids are stabilized by charge delocalization, so you should draw formulas for <B>all important contributing structures</B> (also called canonical forms) before submitting your answer. The number of expected canonical contributors is given beneath each compound's selection button. <BR>
+Since the conjugate acids will be cations, you will need to use the <B>[&plusmn;] tool</B> located on the top toolbar in the drawing window. When selected, this tool adds a proton and a positive charge to a designated heteroatom. Be aware that this action toggles between adding and removing a proton, so examine your formula carefully before submission. The same tool is used to designate a carbocation (or a carbanion) site. When drawing OH or NH groups, do not draw the hydrogen as a separate substituent by using the <b>X</b> button.. 
+<BR>To draw a formula use the drawing program opened by the <b>Drawing Window</b> button below.  More than one formula may be drawn by clicking the <b>New</b> button on the toolbar before starting a new structure. When you are finished, check your answer by pressing the <b>Check Structures</b> button. </P>   </P>   
+
+
+
+<P><div class="ctr"><TABLE>
+<TR><TH ROWSPAN=2>Compounds</TH><TD COLSPAN=5><IMG SRC="../Images/conjacd1.gif"></TD></TR>
+<TR ALIGN=center><TD WIDTH=134> <INPUT NAME="choose"  TYPE="radio" checked> </TD><TD WIDTH=132> <INPUT NAME="choose"  TYPE="radio"> </TD><TD WIDTH=132> <INPUT NAME="choose"  TYPE="radio"> </TD><TD WIDTH=134> <INPUT NAME="choose"  TYPE="radio"> </TD><TD WIDTH=136> <INPUT NAME="choose"  TYPE="radio"> </TD></TR>
+<TR VALIGN=top><TH>Contributing<BR>Structures</TH><TH> 1 </TH><TH>3</TH><TH>3</TH><TH>2</TH><TH>3</TH></TR></TABLE></div></P>
+<BR>
+<input type="hidden" value="" name="smiles">
+
+<div class="ctr"><TABLE CELLPADDING=4 ><TR><TD VALIGN=top width=370> <applet code="JME.class" name="JME" archive="JME.jar" width=360, height=360>
+<param name= "options"  value="multipart">
+You have to enable Java and JavaScript on your machine !
+</applet><FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"> &nbsp;  </TD> 
+<TH><TEXTAREA WRAP NAME="result" ROWS="6" COLS="58"></TEXTAREA><BR>&nbsp; <input type="button" value="Check Structures" onClick="process(this.form); submitSmiles(); processMolecule(this.form);"> &nbsp; &nbsp;  &nbsp; <INPUT TYPE="RESET" VALUE="Clear"> &nbsp; &nbsp;  &nbsp; <INPUT TYPE="button"  NAME="ans" VALUE=" Show Answers " onClick="giveansw (this.form)"></TH>
+</TR></TABLE></div>
+
+</form>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>

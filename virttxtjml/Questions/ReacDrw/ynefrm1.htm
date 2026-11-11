@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var i="";
+var j="";
+var sma="";
+var smimg="";
+var rgimg="";
+		function process(form){
+	if (i!=0){
+	 i=0
+}
+	if (j!=0){
+	 j=0
+}
+
+		if (form.sm1[0].checked){
+smimg="H-C&#8801;C-H";
+		i=1
+}
+		if (form.sm1[1].checked){
+smimg="C<SUB>2</SUB>H<SUB>5</SUB>-C&#8801;C-H";
+		i=2
+	}
+		if (form.sm1[2].checked){
+smimg="CH<SUB>3</SUB>-C&#8801;C-CH<SUB>3</SUB>";
+		i=3
+}
+
+		if (form.sm2[0].checked){
+rgimg="H<SUB>2</SUB> + Lindlar catalyst"
+		j=1
+}
+		if (form.sm2[1].checked){
+rgimg="H<SUB>2</SUB> (excess) + Pt catalyst"
+		j=2
+	}
+		if (form.sm2[2].checked){
+rgimg=" H<SUB>3</SUB>O<SUP>(+)</SUP> +  HgSO<SUB>4</SUB>"
+		j=3
+}
+		if (form.sm2[3].checked){
+rgimg=" HCl (1 equivalent)"
+		j=4
+	}
+		if (form.sm2[4].checked){
+rgimg="Na in  NaNH<SUB>3</SUB> (liq.)"
+		j=5
+}
+		if (form.sm2[5].checked){
+rgimg="Br<SUB>2</SUB> (2 equivalents)"
+		j=6
+	}
+		if (form.sm2[6].checked){
+rgimg="(i) (C<SUB>5</SUB>H<SUB>11</SUB>)<SUB>2</SUB>BH in ether<BR>(ii) H<SUB>2</SUB>O<SUB>2</SUB> in NaOH soln."
+		j=7
+}
+		if (form.sm2[7].checked){
+rgimg="HCl (2 equivalents)"
+		j=8
+	}
+		if (form.sm2[8].checked){
+rgimg="(i) NaNH<SUB>2</SUB> (1 equivalent)<BR>(ii) C<SUB>2</SUB>H<SUB>5</SUB>Br"
+		j=9
+	}
+
+var smimg=smimg;
+var rgimg=rgimg;
+parent.child2.document.clear(); 
+parent.child2.document.write("<TABLE CELLPADDING=4 width=900 align=center><TR>"); 
+parent.child2.document.write("<TD>Draw a formula for the expected product in the <b>Drawing Window</b> on the left below. Do not draw hydrogens. ");
+parent.child2.document.write(" If one <b>stereoisomer</b> product out of two or more possible stereoisomers is favored, draw the favored configuration. ");
+parent.child2.document.write("<br /> <FONT COLOR='red'> If no reaction is expected, draw the starting structure.</FONT><br>  When you are finished, check your answer by pressing the <b>Check Molecule</b> button. ");
+parent.child2.document.write("</TD></TR></TABLE>");
+
+parent.child2.document.write("<TABLE CELLSPACING=9 WIDTH=900 align-center><TR align=center ><TH rowspan=2>")
+parent.child2.document.write("<applet code='JME.class' name='JME' archive='JME.jar' width=360, height=360>");
+parent.child2.document.write("<param name= 'options'  value='autoez'>");
+parent.child2.document.write("You have to enable Java and JavaScript on your machine !</applet>");
+parent.child2.document.write("<FORM METHOD='POST' NAME='form' ONSUBMIT='return false;'></TH>");
+parent.child2.document.write("<TD width=30> &nbsp; </TD>");
+parent.child2.document.write("<TD nowrap>"+smimg+"</TD>");
+parent.child2.document.write("<TD>+</TD>");
+parent.child2.document.write("<TD nowrap>"+rgimg+"</TD>");
+parent.child2.document.write("<TD><IMG SRC='../Images/arrow1.gif'></TD>");
+parent.child2.document.write("<TD> <IMG SRC='../Images/question.gif'></TD>");
+parent.child2.document.write("<TD width=30> &nbsp; </TD></tr>");
+parent.child2.document.write(" <tr valign=top><TH colspan=7><FONT COLOR='blue'>The window below will display a response to your answers.</FONT><br /><br />");
+parent.child2.document.write("<TEXTAREA WRAP NAME='result' ROWS='6' COLS='56'></TEXTAREA><br /> <br /><INPUT TYPE='RESET' VALUE='Clear' onClick='parent.window.location.reload(true);back();'>");
+parent.child2.document.write("<input type='hidden' value='' name='smiles'>");
+parent.child2.document.write("<tt> &nbsp; &nbsp; &nbsp; </tt> <input type='button' value='Check Molecule' onClick='parent.child1.submitSmiles();parent.child1.processMolecule1(this.form);'></TH>");
+parent.child2.document.write("</TR></TABLE>");
+
+}
+
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+var text="";
+
+function submitSmiles() {
+  var smiles = parent.child2.document.JME.smiles();
+ parent.child2.document.form.smiles.value = smiles; 
+parent.child2.document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+ 
+  parent.child2.document.form.smiles.value = smiles; 
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+ parent.child2.document.form.smiles.value = smiles; 
+}
+function processMolecule1(input) {
+smiles = parent.child2.document.form.smiles.value;
+  if (smiles == "") {  alert("Nothing to process!"); return;
+}
+if (text!="") {
+text="";
+}
+		if (i==1 && j==1) {
+sma="C=C";
+}
+		if (i==1 && j==2) {
+sma="CC";
+}
+		if (i==1 && j==3) {
+sma="CC=O";
+}
+		if (i==1 && j==4) {
+sma="C=CCl";
+}
+		if (i==1 && j==5) {
+sma="C=C";
+}
+		if (i==1 && j==6) {
+sma="BrC(Br)C(Br)Br";
+}
+		if (i==1 && j==7) {
+sma="CC=O";
+}
+		if (i==1 && j==8) {
+sma="CC(Cl)Cl";
+}
+		if (i==1 && j==9) {
+sma="C#CCC";
+}
+		if (i==2 && j==1) {
+sma="C=CCC";
+}
+		if (i==2 && j==2) {
+sma="CCCC";
+}
+		if (i==2 && j==3) {
+sma="CCC(C)=O";
+}
+		if (i==2 && j==4) {
+sma="C=C(Cl)CC";
+}
+		if (i==2 && j==5) {
+sma="C=CCC";
+}
+		if (i==2 && j==6) {
+sma="CCC(Br)(Br)C(Br)Br";
+}
+		if (i==2 && j==7) {
+sma="CCCC=O";
+}
+		if (i==2 && j==8) {
+sma="CCC(C)(Cl)Cl";
+}
+		if (i==2 && j==9) {
+sma="CCC#CCC";
+}
+		if (i==3 && j==1) {
+sma="C/C=C\\C";   
+}
+		if (i==3 && j==2) {
+sma="CCCC";
+}
+		if (i==3 && j==3) {
+sma="CCC(C)=O";
+}
+		if (i==3 && j==4) {
+sma="C/C=C(C)\\Cl";  
+}
+		if (i==3 && j==5) {
+sma="C/C=C/C";  
+}
+		if (i==3 && j==6) {
+sma="CC(Br)(Br)C(C)(Br)Br";
+}
+		if (i==3 && j==7) {
+sma="CCC(C)=O";
+}
+		if (i==3 && j==8) {
+sma="CCC(C)(Cl)Cl";
+}
+		if (i==3 && j==9) {
+sma="CC#CC";  
+}
+
+if (smiles==sma ) {
+var Txt="Correct Answer! \r";
+	}else{
+var Txt="Wrong Answer! Try again. \r";
+}
+		if ((i==3) && (j==1)&&(smiles=="C/C=C/C")) {
+var text="You have drawn an incorrect configuration of the double bond.";
+}
+		if ((i==3) && (j==4)&&(smiles=="C/C=C(C)/Cl")) {
+var text="You have drawn an incorrect configuration of the double bond.";
+}
+		if ((i==3) && (j==5)&&(smiles=="C/C=C\\C")) {
+var text="You have drawn an incorrect configuration of the double bond.";
+}
+if ((smiles.indexOf("@",0)>=0)) {
+var text="Do not use the wedge drawing tool.";
+}
+
+	input.result.value = Txt + text;
+}
+// End of hide script comment. -->
+</SCRIPT>
+
+ <link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+<TITLE> Reactions of Alkynes</TITLE>
+ <body>
+ <div class="ctr"><b><span class="fs-5">Reactions of Alkynes</span></b></div>
+<FORM>
+<span class="fs-3"><B>In this problem we shall consider three alkyne <span class="fc-maroon"> reactants:</span></B></span><BR>
+<div class="ctr"><TABLE BORDER=3><TR><TD>
+<TABLE BORDER CELLPADDING=7 ><TR  VALIGN=top BGCOLOR="CCFFCC">
+<TH WIDTH=180 nowrap><span class="fs-3">ethyne</span> (acetylene) &nbsp; <INPUT NAME="sm1"  TYPE="radio" checked> &nbsp; </TH>
+<TH WIDTH=180 nowrap><span class="fs-3">1-butyne</span> &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH>
+<TH WIDTH=180 nowrap><span class="fs-3">2-butyne</span> &nbsp; <INPUT NAME="sm1"  TYPE="radio"> &nbsp; </TH></TR>
+</TABLE>
+</TD></TR></TABLE></div><br />
+<span class="fs-3"><B>These compounds may be reacted with nine different <span class="fc-maroon">reagents:</span></B></span><BR>
+<div class="ctr"><TABLE BORDER=3><TR><TD>
+<TABLE BORDER CELLPADDING=8 BGCOLOR="FFCCCC"><TR VALIGN="top">
+<TH WIDTH=220 nowrap> Hydrogen & Lindlar catalyst</TH>
+<TH><INPUT NAME="sm2" TYPE="radio" checked></TH>
+<TH> </TH>
+<TH WIDTH=220 nowrap> Hydrogen & Pt catalyst</TH>
+<TH><INPUT NAME="sm2" TYPE="radio"></TH>
+<TH> </TH>
+<TH WIDTH=220 nowrap> H<SUB>3</SUB>O<SUP>(+)</SUP> & HgSO<SUB>4</SUB></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH></TR>
+<TR VALIGN="top"><TH> Hydrogen Chloride <BR><span class="fs-2">(1 equivalent)</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH> Sodium in liq. Ammonia</TH>
+<TH><INPUT NAME="sm2" TYPE="radio"></TH>
+<TH> </TH>
+<TH nowrap> Bromine<BR><span class="fs-2"> (2 equivalents)</span></TH>
+<TH><INPUT NAME="sm2" TYPE="radio"></TH></TR>
+<TR VALIGN="top">
+<TH nowrap>(i) Disiamylborane, R<SUB>2</SUB>BH<BR>(ii) H<SUB>2</SUB>O<SUB>2</SUB> in NaOH soln.</TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH> Hydrogen Chloride <BR><span class="fs-2">(2 equivalents)</span></TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH>
+<TH> </TH>
+<TH nowrap>(i) Sodium Amide  <span class="fs-2">(1 equivalent)</span><BR>(ii) Ethyl bromide</TH>
+<TH><INPUT NAME="sm2"  TYPE="radio"></TH></TR>
+</TABLE></TD></TR></TABLE></div></p>
+
+<p><TABLE ><TR><TD><span class="fc-blue"><B>Select one alkyne from the first group, and one reagent from the second group.</B></span>
+<br />To review the chemistry of alkynes  <A HREF="../../addyne1.htm" Target="_top"> Click Here</A> </TD><td width=30> &nbsp; </td><TD> <table bgcolor="blue" border><tr><th>  
+<INPUT TYPE="button" VALUE="Show the Problem"  onClick="process(this.form)"></th></tr></table>
+</TD></TR>
+</TABLE></p>
+
+
+ </FORM>
+ </BODY>
+ </HTML>

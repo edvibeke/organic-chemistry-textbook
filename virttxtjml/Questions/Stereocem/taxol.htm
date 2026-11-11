@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+   
+<head>
+<!-- jsmol:loader -->
+<script type="text/javascript" src="../../htmlJ/jsmol/js/JSmol.min.js"></script>
+<script type="text/javascript" src="../../htmlJ/jsmol/js/jsmol-init.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<META NAME="author" content="The Edvibe Team">
+<META NAME="ROBOTS">
+<META NAME="DC.DATE" CONTENT="1999">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+var 	i=0;
+var k="";
+var txt="";
+
+		function process(form){
+	if (i!=0){
+		 i=0
+}
+	if (k!=""){
+		 k=""
+}
+		if (form.quest1[1].checked){
+		i=i+1
+}else {
+		i=i
+k="C1, "
+}
+		if (form.quest2[1].checked){
+		i=i+1
+}else {
+		i=i	
+k=k + "C2, "
+	}		
+		if (form.quest3[0].checked){
+		i=i+1
+}else {
+		i=i	
+k=k + "C3, "
+}
+		if (form.quest4[1].checked){
+		i=i+1
+}else {
+		i=i
+k=k + "C4, "
+	}
+		if (form.quest5[0].checked){
+		i=i+1
+}else {
+		i=i
+k=k + "C5, "
+	}
+		if (form.quest6[1].checked){
+		i=i+1
+}else {
+		i=i
+k=k + "C7, "
+}
+		if (form.quest7[1].checked){
+		i=i+1
+}else {
+		i=i	
+k=k + "C8, "
+	}		
+		if (form.quest8[0].checked){
+		i=i+1
+}else {
+		i=i	
+k=k + "C10, "
+}
+		if (form.quest9[1].checked){
+		i=i+1
+}else {
+		i=i
+k=k + "C13, "
+	}
+		if (form.quest10[0].checked){
+		i=i+1
+}else {
+		i=i
+k=k + "C2',  "
+	}
+		if (form.quest11[1].checked){
+		i=i+1
+}else {
+		i=i
+k=k + "C3', "
+	}
+		if (form.quest12[0].checked){
+		i=i+1
+}else {
+		i=i
+k=k + "C=C "
+	}
+
+if (i==12){
+var Text ="Congratulations!\rYou have answered all questions correctly.";
+}else{
+var Text="You have answered " +i +" questions correctly.\r"
++"You failed to respond to or incorrectly answered " +k;
+}
+
+form.result.value=Text;	
+}
+
+// End of hide script comment. -->
+</SCRIPT>
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</HEAD>
+
+<title>Chiral Carbons of Taxol</title>
+</head>
+<body>
+<form>
+<table align="center"><tr><td nowrap>
+ <div class="ctr"><h3>Naming Stereogenic Centers in Taxol</h3></div> 
+<p>A structural formula of the the antitumor agent taxol is displayed below. The eleven chiral centers are labled in magenta.<br />A 3-D model of this compound is shown to its right. The molecule can be moved by using the mouse and zoomed by the shift key. <br />The chiral centers of the model may be labeled in a similar fashion by clicking the label button button.<br /> You should provide a C.I.P. configuration for each chiral center, and identify the configuration of the 11-double bond. </p></td></tr></table>
+
+
+<table align="center"><tr><th>
+<IMG SRC ="../Images/taxol.gif"><br />taxol</th><td>
+<script type="text/javascript">Jmol.getApplet("jmol1",{"width": 320, "height": 320, "color": "#FFFFFF", "use": "HTML5", "j2sPath": "../../htmlJ/jsmol/j2s", "addSelectionOptions": false, "script": " select *; zoom 120; spacefill 66; rotate y -20; rotate z 30; select carbon; color atoms [140,140,140]; select hydrogen; color atoms cyan; select(atomno=1, atomno=2); connect double; select(atomno=4, atomno=5); connect double; select(atomno=6, atomno=7); connect double; select(atomno=8, atomno=9); connect double; select(atomno=16, atomno=17); connect double; select(atomno=40, atomno=41); connect double; select(atomno=47, atomno=48); connect double; select(atomno=54, atomno=55); connect double; select(atomno=56, atomno=57); connect double; select(atomno=58, atomno=59); connect double; select(atomno=60, atomno=61); connect double; select(atomno=45, atomno=62); connect double; select(atomno=63, atomno=64); connect double; select(atomno=65, atomno=66); connect double; select(atomno=15, atomno=110); connect double; select(atomno=30, atomno=29); connect double; select all; wireframe 30; background white; "});</script></td><td width=50>&nbsp; </td>
+
+<td><p><br /><br /></p><button type="button" class="jctl" data-target="jmol1" data-script=" spacefill 70%">X</button> <span class="fs-4"><sup>&nbsp;Show Spacefill Model</sup><br />
+<button type="button" class="jctl" data-target="jmol1" data-script="spacefill off; wireframe 25;">X</button> <sup>&nbsp;Show Stick Model</sup><br />
+<button type="button" class="jctl" data-target="jmol1" data-script="spacefill 66; wireframe 30;">X</button> <sup>&nbsp;Show Ball&Stick Model</sup><br />
+<button type="button" class="jctl" data-target="jmol1" data-script="select atomno=42; label 2';  select atomno=44; label 3';  select atomno=25; label 2;  select atomno=26; label 3;  select atomno=35; label 4; select atomno=34; label 5;  select atomno=32; label 7;  select atomno=27; label 8;  select atomno=31; label 10;  select atomno=18; label 13; select atomno=20; label 1; select *; colour label magenta; set labeloffset 0 0; set fontsize 16; select all; spacefill off; wireframe 20;" data-altscript="select all; label off">X</button> <sup>&nbsp;Labels on/off</sup></span><p><br /><br /></p>
+<A HREF="morphine.htm">Stereogenic Centers in Morphine</a> <br /><A HREF="strycnin.htm">Stereogenic Centers in Strychnine</a></td>
+</tr></table>
+<hr />
+<table align="center" width=300>
+<caption><span class="fc-blue"><b>Identify the configuration at each center</b></span></caption>
+<tr><th>Carbon #</th><th> R </th><th> S </th><th rowspan=12>
+
+<INPUT TYPE="button"  VALUE="Check Answer" onClick="process(form)"><br /><br /><INPUT TYPE="reset" VALUE="Clear"></th></tr>
+<tr align=center><td> 1</td><td><INPUT NAME="quest1"  TYPE="radio"></td><td><INPUT NAME="quest1"  TYPE="radio"></td></tr>
+<tr align=center><td> 2</td><td><INPUT NAME="quest2"  TYPE="radio"></td><td><INPUT NAME="quest2"  TYPE="radio"></td></tr>
+<tr align=center><td> 3</td><td><INPUT NAME="quest3"  TYPE="radio"></td><td><INPUT NAME="quest3"  TYPE="radio"></td></tr>
+<tr align=center><td> 4</td><td><INPUT NAME="quest4"  TYPE="radio"></td><td><INPUT NAME="quest4"  TYPE="radio"></td></tr>
+<tr align=center><td> 5</td><td><INPUT NAME="quest5"  TYPE="radio"></td><td><INPUT NAME="quest5"  TYPE="radio"></td></tr>
+<tr align=center><td> 7</td><td><INPUT NAME="quest6"  TYPE="radio"></td><td><INPUT NAME="quest6"  TYPE="radio"></td></tr>
+<tr align=center><td> 8</td><td><INPUT NAME="quest7"  TYPE="radio"></td><td><INPUT NAME="quest7"  TYPE="radio"></td></tr>
+<tr align=center><td> 10</td><td><INPUT NAME="quest8"  TYPE="radio"></td><td><INPUT NAME="quest8"  TYPE="radio"></td></tr>
+<tr align=center><td> 13</td><td><INPUT NAME="quest9"  TYPE="radio"></td><td><INPUT NAME="quest9"  TYPE="radio"></td></tr>
+<tr align=center><td> 2'</td><td><INPUT NAME="quest10"  TYPE="radio"></td><td><INPUT NAME="quest10"  TYPE="radio"></td></tr>
+<tr align=center><td> 3'</td><td><INPUT NAME="quest11"  TYPE="radio"></td><td><INPUT NAME="quest11"  TYPE="radio"></td></tr>
+<tr><th>C=C </th><td colspan=3> <b>(E)</b><INPUT NAME="quest12"  TYPE="radio">&nbsp; or &nbsp;  <b>(Z)</b><INPUT NAME="quest12"  TYPE="radio"></td></tr>
+<tr><th colspan=4><TEXTAREA  WRAP NAME="result"  ROWS="3"  COLS="44">  </TEXTAREA></th></tr></table>
+
+
+
+
+
+</div>
+
+
+
+    
+
+</body></html>
+
+
+
+
+
+

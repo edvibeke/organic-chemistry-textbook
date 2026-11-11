@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.4} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var i="";
+var sma="";
+var Txt="";
+var text="";
+var anscnt="0";
+		function process(form){
+	anscnt=anscnt+1;
+
+		if (form.choose[0].checked){
+		i=1
+}
+		if (form.choose[1].checked){
+		i=2
+}
+		if (form.choose[2].checked){
+		i=3
+}
+		if (form.choose[3].checked){
+		i=4
+}
+		if (form.choose[4].checked){
+		i=5
+}
+		if (form.choose[5].checked){
+		i=6
+}
+		if (form.choose[6].checked){
+		i=7
+}
+		if (form.choose[7].checked){
+		i=8
+}
+}
+var smiles = "";
+var jme = "0 0";
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+document.form.smiles.value = smiles; 
+}
+function processMolecule1(input) {
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+		if (i=="") {
+var text="You have not selected an unknown.";
+}else{
+var text="";
+}
+		if (i==1) {
+sma="CCC(C)CCO";
+}
+		if (i==2) {
+sma="CCC(CC)CO";
+}
+		if (i==3) {
+sma="CCC(C)C(C)O";
+}
+		if (i==4) {
+sma="CCC(C)(O)CC";
+}
+		if (i==5) {
+sma="CC=C(C)CC";
+}
+		if (i==6) {
+sma="CCC(C)C(C)=O";
+}
+		if (i==7) {
+sma="CCC(C)CC=O";
+}
+		if (i==8) {
+sma="CCC(C=O)CC";
+}
+if (smiles==sma) {
+var Txt="Correct Answer! \r";
+	}else{
+	if ((smiles=="[H]C(=O)CC(C)CC") && (i==7)) {
+var Txt="Correct Answer! \r";
+	}else{
+if ((smiles=="[H]C(=O)C(CC)CC") && (i==8)) {
+var Txt="Correct Answer! \r";
+	}else{
+var Txt="Wrong Answer! Try again. \r";
+}
+}
+}
+
+	input.result.value = Txt + text;
+}
+
+
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body>
+<TITLE>A Structural Puzzle</TITLE>
+<form method="post" name="form">
+<div class="ctr"><H3>A Second Structural Puzzle</H3></div>
+<P>You have four C<SUB>6</SUB>H<SUB>14</SUB>O constitutional isomers, identified as <B>A</B>, <B>B</B>, <B>C</B> & <B>D</B>. All of these compounds react with sodium metal to liberate hydrogen gas. <B>A</B> & <B>C</B> are chiral, <B>B</B> & <B>D</B> are achiral. Compounds <B>A</B>, <B>B</B>, <B>C</B> & <B>D</B> behave differently on treatment with PCC (pyridinium chlorochromate) in methylene chloride. <B>A</B> gives a C<SUB>6</SUB>H<SUB>12</SUB>O chiral aldehyde <B>M</B>, <B>C</B> gives an isomeric chiral ketone <B>K</B>, <B>B</B> an isomeric achiral aldehyde <B>N</B>, and <B>D</B> fails to react at all.<BR>
+When heated with phosphoric acid <B>D</B> forms a C<SUB>6</SUB>H<SUB>12</SUB> mixture, predominantly compound <B>E</B>, which reacts rapidly with bromine. Ozonolysis of <B>E</B> followed by a zinc dust workup produced a mixture of 2-butanone and acetaldehyde (ethanal). Wolff-Kishner reduction of <B>A, B</B> & <B>C</B> give the same C<SUB>6</SUB>H<SUB>14</SUB> hydrocarbon that is obtained from <B>E</B> by catalytic addition of hydrogen. These transformations are outlined below.</P>   
+<div class="ctr"><TABLE CELLPADDING=9><TR><TD BGCOLOR="ffdddd"><TABLE><TR ALIGN=center><TD nowrap><BR><B>A</B> &nbsp; + &nbsp; PCC</TD><TD width=120>methylene chloride<BR> <IMG SRC="../Images/arrow2.gif"> </TD><TD><BR> <B>M</B></TD></TR>
+<TR ALIGN=center><TD><BR><B>B</B> &nbsp; + &nbsp; PCC</TD><TD>methylene chloride<BR> <IMG SRC="../Images/arrow2.gif"> </TD><TD><BR><B>N</B></TD></TR>
+<TR  ALIGN=center><TD><BR><B>C</B> &nbsp; + &nbsp; PCC</TD><TD>methylene chloride<BR> <IMG SRC="../Images/arrow2.gif"> </TD><TD><BR><B>K</B></TD></TR>
+<TR  ALIGN=center><TD><BR><B>D</B> &nbsp; + &nbsp; PCC</TD><TD>methylene chloride<BR> <IMG SRC="../Images/arrow2.gif"> </TD><TD nowrap><BR> No Change</TD></TR></TABLE>
+</TD>
+<TD><IMG SRC="../Images/pixel.gif" WIDTH=50> </TD>
+<TD BGCOLOR="ddffdd">
+<TABLE><TR ALIGN=center><TD nowrap><BR><B>D</B><br /> &nbsp; + &nbsp; <br />H<SUB>3</SUB>PO<SUB>4</SUB> &nbsp; </TD><TD width=90>heat<BR> <IMG SRC="../Images/arrow2.gif"> </TD><TD align=left><BR>&nbsp; <B>E</B> &nbsp; </TD></TR>
+<TR><TD COLSPAN=3 height=15>&nbsp; </TD></TR>
+<TR  ALIGN=center><TD><BR> &nbsp; <B>E</B> &nbsp;  <BR> &nbsp; </TD><TD align=left> &nbsp; (i) O<SUB>3</SUB> <BR> <IMG SRC="../Images/arrow2.gif"><BR> &nbsp; (ii) Zn (dust)</TD><TD>CH<SUB>3</SUB>COCH<SUB>2</SUB>CH<SUB>3</SUB><BR>+<BR>CH<SUB>3</SUB>CHO</TD></TR></TABLE>
+</TD></TR>
+</TABLE></div>
+
+<P>After thinking about these facts and relationships, you should be able to assign structural formulas to all the unknown compounds designated by a bold letter above. To do so select an unknown from the following list and draw a formula using the drawing window opened by the "<U>Draw Formulas</U>" button. When you are finished, "<U>Submit</U>" your formula and then check it by pressing the "<U>Check Molecule</U>" button. A help screen is available for the drawing window.</P>
+
+<div class="ctr"><TABLE CELLPADDING=3 bo><th valign="top" width=380 rowspan=4><applet code="JME.class" name="JME" archive="JME.jar" width=360, height=360>
+You have to enable Java and JavaScript on your machine !
+</applet><FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"> &nbsp;</th> <TH>Unknown</TH><TD><B> A</B> </TD><TD><B> B </B></TD><TD><B> C </B></TD><TD><B> D </B></TD><TD><B> E </B></TD><TD><B> K </B></TD><TD><B> M </B></TD><TD><B> N </B></TD></TR>
+<TR ALIGN=center><TH> </TH><TD> <INPUT NAME="choose"  TYPE="radio"> </TD><TD> <INPUT NAME="choose"  TYPE="radio"> </TD><TD> <INPUT NAME="choose"  TYPE="radio"> </TD><TD> <INPUT NAME="choose"  TYPE="radio"> </TD><TD> <INPUT NAME="choose"  TYPE="radio"> </TD><TD> <INPUT NAME="choose"  TYPE="radio"> </TD><TD> <INPUT NAME="choose"  TYPE="radio"> </TD><TD> <INPUT NAME="choose"  TYPE="radio"> </TD></TR>
+<tr><td colspan=9> <hr> </td></tr><input type="hidden" value="" name="smiles">
+<TR><TH colspan=12><input type="button" value="Check Structure" onClick="submitSmiles();process(this.form); processMolecule1(this.form);"> <tt> &nbsp; &nbsp; &nbsp; </tt><INPUT TYPE="RESET" VALUE="Clear"><br /><br />
+<TEXTAREA WRAP NAME="result" ROWS="4" COLS="40"></TEXTAREA><br /><br />
+<INPUT TYPE="button"  NAME="wind" VALUE=" Help Window " onClick=
+"window.open('puzzhlp2.htm#hlp21','structure','toolbar=no,menubar=no,status=no,scrollbars=yes,width=700,height=700')"></A></TH></TR>
+</TABLE></div>
+
+</form>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>

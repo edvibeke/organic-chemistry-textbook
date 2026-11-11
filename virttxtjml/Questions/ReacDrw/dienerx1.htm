@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<SCRIPT Language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3} td {font-size: 11pt} td {line-height: 1.3} th {font-size: 11pt} th {line-height: 1.3} H1 {font-size: 20pt} H2 {font-size: 16pt} H3 {font-size: 14pt} H4 {font-size: 11pt} sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var noansw="You must try to answer this question three times before viewing the answers."
+var anscnt=0	
+var smiles = "";
+var jme = "0 0";
+var Txt="";
+function answ1() {
+var str=window.open('answ4.htm#prb1','cbhelp','toolbar=no,menubar=no,status=no,scrollbars=yes,width=440,height=500'); window.location='dienerx1.htm'
+}
+
+function submitSmiles() {
+  var smiles = document.JME.smiles();
+ document.form.smiles.value = smiles; 
+document.form.smiles.value = smiles; 
+}
+
+function fromEditor(smiles,jme) {
+  // this function is called from jme_window
+  // editor fills variable smiles & jme
+
+  if (smiles=="") {
+    alert ("no molecule submitted");
+    return;
+}
+document.form.smiles.value = smiles; 
+}
+
+function processMolecule1a(input) {
+anscnt=anscnt+1;
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "CC=CC(Br)CC") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+function processMolecule1b(input) {
+anscnt=anscnt+1;
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "CCC=CC(C)Br") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule2a(input) {
+anscnt=anscnt+1;
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "BrC1C=CCCC1Br" ) {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+function processMolecule2b(input) {
+anscnt=anscnt+1;
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "BrC1C=CC(Br)CC1" ) {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule3a(input) {
+anscnt=anscnt+1;
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "BrC12CCCC=C1CCCC2") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+function processMolecule3b(input) {
+anscnt=anscnt+1;
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "BrC1CCCC2=C1CCCC2") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+
+function processMolecule4a(input) {
+anscnt=anscnt+1;
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "C=C1CCCC1(Br)CBr") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+function processMolecule4b(input) {
+anscnt=anscnt+1;
+ smiles = document.form.smiles.value;
+  if (smiles == "") {alert("Nothing to process!"); return;
+}
+if (smiles == "BrCC1=C(CBr)CCC1") {
+var Txt="Correct!";
+	}else{
+var Txt="Wrong! Try again.";
+}
+	input.result.value = Txt ;
+}
+function giveansw(show) {
+if (anscnt>=3)  {
+answ1();
+var Txt="";
+	}else{
+var Txt=noansw
+}
+show.result.value=Txt
+}
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<TITLE>Diene Reactions</TITLE>
+<META NAME="DC.SUBJECT" CONTENT="Practice questions for organic
+chemistry students>
+<body>
+<form method="post" name="form">
+<div class="ctr"><H3>Products from Electrophilic Addition Reactions of Dienes</H3></div>
+<p><span class="fc-blue">Draw the major <b>1,2-</b> & <b>1,4-products</b> from each of the diene reactions shown below.  Draw each product (1,2- & 1,4-) separately, and evaluate that answer before continuing.</span><BR>
+To draw a formula use the <b>drawing window</b> opened by the <b>Draw Formulas</b> button. Do not draw hydrogen atoms, and do not try to specify double bond configuration.  When you are finished, <b>Submit</b> your formula and then check it by pressing the <b>Check Product</b> button under each question. <BR>If you wish to practice drawing stereo formulas with this Editor <A 
+HREF="https://edvibe.co.ke/virttxtjml/Questions/MOLEDITOR/sterprct.htm" >Click Here</A>.
+
+<table><tr><th valign="top" width=380><applet code="JME.class" name="JME" archive="JME.jar" width=360, height=360>
+You have to enable Java and JavaScript on your machine !
+</applet><FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"> &nbsp; 
+<hr><br /><TEXTAREA  WRAP NAME="result"  ROWS="3"  COLS="40"></TEXTAREA><br /><br /><INPUT TYPE="RESET" VALUE="Clear"> &nbsp; &nbsp; &nbsp; 
+ <INPUT TYPE="button" VALUE="Help" onClick="window.location = '../../addene2.htm#dien2'"> <BR><BR>
+<INPUT TYPE="button"  NAME="wind" VALUE=" View Answers " onClick="giveansw (this.form) "> </th>
+<td width=400 >
+<p><B>1.</B> <br /> &nbsp; <IMG SRC="Images/dienrx11.gif"></A>
+<input type="hidden" value="" name="smiles"><br /><tt>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </tt><input type="button" value="Check 1,2-Product" onClick="submitSmiles(); processMolecule1a(this.form);"> &nbsp; <input type="button" value="Check 1,4-Product" onClick="submitSmiles(); processMolecule1b(this.form);"><hr></p>
+
+<p><B>2.</B> <br /> &nbsp; <IMG SRC="Images/dienrx12.gif" ></A>
+<input type="hidden" value="" name="smiles2"><br /><tt>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </tt><input type="button" value="Check 1,2-Product" onClick="submitSmiles(); processMolecule2a(this.form);"> &nbsp; <input type="button" value="Check 1,4-Product" onClick="submitSmiles(); processMolecule2b(this.form);"><hr></p>
+
+<p><B>3.</B>  <br /> &nbsp; <IMG SRC="Images/dienrx13.gif"></A>
+<input type="hidden" value="" name="smiles3"><br /><tt>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </tt><input type="button" value="Check 1,2-Product" onClick="submitSmiles(); processMolecule3a(this.form);"> &nbsp; <input type="button" value="Check 1,4-Product" onClick="submitSmiles(); processMolecule3b(this.form);"><hr></p>
+
+<p><B>4. </B>  <br /> &nbsp; <IMG SRC="Images/dienrx14.gif"></A>
+<input type="hidden" value="" name="smiles4"><br /><tt>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </tt><input type="button" value="Check 1,2-Product" onClick="submitSmiles(); processMolecule4a(this.form);"> &nbsp; <input type="button" value="Check 1,4-Product" onClick="submitSmiles(); processMolecule4b(this.form);"></p>
+
+</td></tr></table>
+
+
+
+
+
+
+
+
+</form>
+<NOSCRIPT>
+<H2>This page requires a JavaScript-capable browser.</H2>
+</NOSCRIPT>
+<HR> 
+<span class="fs-2">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+</BODY>
+</HTML>
+
+

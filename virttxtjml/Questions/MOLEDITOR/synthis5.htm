@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../Styles/modern.css">
+<TITLE>A Synthesis Problem</TITLE>
+<script language="JavaScript">
+<!--HIDE
+document.write("<STYLE><!-- p {font-size: 11pt} p {line-height: 1.3} b {font-size: 11pt} b {line-height: 1.3} i  {font-size: 11pt} center {font-size: 11pt}  center {line-height: 1.3}  br {font-size: 11pt} br {line-height: 1.3}  H2 {font-size: 16pt}  sub {font-size: 9pt}sup {font-size: 9pt}form {font-size: 9pt}--> </STYLE>")
+
+var Txt="";
+var txt="";
+var smiles = "";
+var j="";
+var i="1";
+var anscnt=0;
+var sma="";
+var jme = "0 0";
+var jmeprd="0 0";
+var step="1";
+var sumry="";
+
+	function beginprob(){
+	if (j!=0){
+	 j=0
+}
+	if (i!=1){
+	 i=1
+}
+	if (jme!="0 0"){
+	jme="0 0";
+}
+	if (step!="1"){
+	step="1";
+}
+	if (Txt!=""){
+	Txt="";
+}
+
+
+var prbst="The transformation shown above requires more than one step. It may be carried out by sequential use of the reagents on the right. Select the reagent you wish to use for the first step and press the [Do Reaction] button.\rThe product from the reaction will be displayed in the window above."
+
+ var start1="8 8 C 10.06 -6.75 C 10.06 -5.35 C 8.85 -4.65 C 7.64 -5.35 C 7.64 -6.75 C 8.85 -7.45 O 8.85 -3.25 O 8.85 -8.85 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 1";
+
+var prod1="10 10 C 10.06 -6.75 C 10.06 -5.35 C 8.85 -4.65 C 7.64 -5.35 C 7.64 -6.75 C 8.85 -7.45 C 8.85 -3.25 C 8.85 -8.85 C 7.64 -9.55 C 10.06 -9.55 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 1 8 9 1 8 10 2";
+
+var start2="10 10 O 9.11 -7.03 C 9.11 -5.63 C 7.90 -4.93 C 6.68 -5.63 C 6.68 -7.03 C 7.90 -7.73 O 10.32 -4.93 C 7.90 -9.13 C 6.67 -4.23 C 5.41 -6.21 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 2 7 2 6 8 1 4 9 1 4 10 1";
+
+var prod2="11 10 C 4.31 -6.33 C 5.52 -5.63 C 6.74 -6.33 C 7.95 -5.63 C 9.16 -6.33 C 10.37 -5.63 C 11.59 -6.33 C 6.83 -4.79 C 9.05 -4.76 O 12.80 -5.63 O 11.59 -7.73 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 7 1 4 8 1 4 9 1 7 10 2 7 11 1";
+var plus="|1 0 + 8.12 -5.82|";
+var quest="|1 0 ? 8.57 -6.05|";
+var arrow="|>> 5 4 C:1 13.51 -6.40 O:2|";
+jme=start1+">1 0 ? 9.41 -6.05>"+prod1;
+Txt=prbst; 
+
+
+}
+
+	function process2(form) {
+var many="1 0 Various_Products 8.62 -6.50";
+var int11="8 8 C 9.61 -7.03 C 9.61 -5.63 C 8.40 -4.93 C 7.19 -5.63 C 7.19 -7.03 C 8.40 -7.73 O 8.40 -3.53 Br 8.40 -9.13 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 1";   /*ketobromide */
+var int12="12 12 C 9.33 -6.41 C 9.33 -5.01 C 8.12 -4.31 C 6.91 -5.01 C 6.91 -6.41 C 8.12 -7.11 O 8.12 -2.91 O 8.12 -8.51 S 6.91 -9.21 C 6.91 -10.61 O 6.12 -8.05 O 5.70 -9.92 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 1 8 9 1 9 10 1 9 11 2 9 12 2";  /*ketomesylate */
+var int13="11 12 C 10.12 -7.20 C 10.12 -5.80 C 8.90 -5.10 C 7.69 -5.80 C 7.69 -7.20 C 8.90 -7.90 O 8.90 -9.30 O 10.09 -4.35 O 7.69 -4.40 C 8.16 -3.08 C 9.56 -3.08 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 1 3 9 1 9 10 1 10 11 1 11 8 1";   /*hydroxyacetal*/
+var int14="9 9 C 9.11 -6.80 C 9.11 -5.40 C 7.90 -4.70 C 6.68 -5.40 C 6.68 -6.80 C 7.90 -7.50 O 7.90 -3.30 C 7.90 -8.90 N 7.90 -10.30 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 1 8 9 3";   /*ketocyanide*/
+var int15="11 12 C 10.63 -7.76 C 10.63 -6.36 C 9.41 -5.66 C 8.20 -6.36 C 8.20 -7.76 C 9.41 -8.46 Br 9.41 -9.87 O 10.60 -4.91 O 8.20 -4.96 C 8.67 -3.64 C 10.07 -3.64 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 1 3 9 1 9 10 1 10 11 1 11 8 1";   /*bromoacetal*/
+var int16="15 16 C 11.24 -6.41 C 11.24 -5.01 C 10.03 -4.31 C 8.82 -5.01 C 8.82 -6.41 C 10.03 -7.11 O 10.03 -8.51 S 8.82 -9.21 C 8.82 -10.61 O 8.03 -8.05 O 7.61 -9.92 O 8.86 -3.54 O 11.23 -3.59 C 9.42 -2.25 C 10.82 -2.24 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 7 8 1 8 9 1 8 10 2 8 11 2 3 12 1 3 13 1 12 14 1 14 15 1 15 13 1";   /*mesylateacetal*/
+var int17="8 8 C 11.24 -6.42 C 11.24 -5.02 C 10.03 -4.32 C 8.82 -5.02 C 8.82 -6.42 C 10.03 -7.12 Br 10.03 -8.52 C 10.03 -2.91 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 2";   /*bromomethylene*/
+var int18="12 12 C 11.24 -6.47 C 11.24 -5.07 C 10.03 -4.37 C 8.82 -5.07 C 8.82 -6.47 C 10.03 -7.17 O 10.03 -8.57 S 8.82 -9.27 C 8.82 -10.67 O 8.03 -8.11 O 7.61 -9.98 C 10.03 -2.97 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 7 8 1 8 9 1 8 10 2 8 11 2 3 12 2";  /*mesylatemethylene*/
+var int19="12 13 C 10.64 -7.06 C 10.64 -5.66 C 9.43 -4.97 C 8.22 -5.66 C 8.22 -7.06 C 9.43 -7.75 C 9.43 -9.15 N 9.43 -10.54 O 10.67 -4.32 O 8.20 -4.31 C 8.64 -2.98 C 10.03 -2.97 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 7 8 3 3 9 1 3 10 1 10 11 1 11 12 1 9 12 1";  /*acetalnitrile*/
+var int20="9 9 C 10.12 -7.31 C 10.12 -5.91 C 8.90 -5.21 C 7.69 -5.91 C 7.69 -7.31 C 8.90 -8.01 C 8.90 -9.41 N 8.90 -10.81 C 8.90 -3.81 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 7 8 3 3 9 2";  /*methylenenitrile*/
+var int21="11 12 C 10.62 -7.10 C 10.62 -5.70 C 9.41 -5.01 C 8.20 -5.70 C 8.20 -7.10 C 9.41 -7.79 MgBr 9.41 -9.18 O 10.65 -4.37 O 8.18 -4.36 C 8.62 -3.03 C 10.01 -3.02 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 1 3 9 1 9 10 1 10 11 1 8 11 1";  /*grignrdacetal*/
+var int22="8 8 C 10.23 -7.20 C 10.23 -5.80 C 9.02 -5.10 C 7.80 -5.80 C 7.80 -7.20 C 9.02 -7.90 C 9.02 -3.70 MgBr 9.02 -9.30 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 1";  /*grignrdmethylene*/
+var int23="13 14 C 10.60 -7.76 C 10.60 -6.36 C 9.39 -5.67 C 8.18 -6.36 C 8.18 -7.76 C 9.39 -8.45 C 9.39 -9.83 O 10.63 -5.03 O 8.16 -5.02 C 8.60 -3.70 C 9.99 -3.69 O 8.18 -10.53 O 10.61 -10.52 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 1 3 9 1 9 10 1 10 11 1 8 11 1 7 12 2 7 13 1";  /*acetalcarbacd*/
+var int24="10 10 C 10.49 -7.31 C 10.49 -5.91 C 9.28 -5.22 C 8.07 -5.91 C 8.07 -7.31 C 9.28 -8.00 C 9.28 -9.39 O 8.07 -10.09 O 10.50 -10.08 C 9.28 -3.82 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 7 8 2 7 9 1 3 10 2";  /*methylenecarbacd*/
+var int25="13 14 C 10.49 -7.48 C 10.49 -6.08 C 9.28 -5.39 C 8.07 -6.08 C 8.07 -7.48 C 9.28 -8.17 C 9.28 -9.55 O 10.52 -4.75 O 8.05 -4.74 C 8.49 -3.42 C 9.88 -3.41 C 8.07 -10.25 N- 10.50 -10.24 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 1 3 9 1 9 10 1 10 11 1 8 11 1 7 12 1 7 13 2|1 0 MgI+ 12.60 -10.25";  /*acetalimine salt*/
+var int26="10 10 C 7.76 -6.91 C 7.76 -5.51 C 6.54 -4.81 C 5.33 -5.51 C 5.33 -6.91 C 6.54 -7.61 C 6.54 -9.01 C 6.54 -3.41 C 5.33 -9.71 N- 7.75 -9.71 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 2 7 9 1 7 10 2|1 0 MgI+ 10.47 -9.58";  /*methyleneimine salt*/
+var int27="10 10 C 9.66 -7.25 C 9.66 -5.85 C 8.45 -5.16 C 7.24 -5.85 C 7.24 -7.25 C 8.45 -7.94 C 8.45 -9.32 C 7.24 -10.02 O 9.67 -10.01 O 8.45 -3.76 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 7 8 1 7 9 2 3 10 2";  /*diketone*/
+var int28="10 10 C 9.66 -7.25 C 9.66 -5.85 C 8.45 -5.16 C 7.24 -5.85 C 7.24 -7.25 C 8.45 -7.94 C 8.45 -9.32 C 7.24 -10.02 O 9.67 -10.01 C 8.45 -3.76 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 7 8 1 7 9 2 3 10 2";  /*methylene ketone*/
+var int29="12 12 C 10.23 -6.58 C 10.23 -5.18 C 9.02 -4.48 C 7.80 -5.18 C 7.80 -6.58 C 9.02 -7.28 C 9.02 -8.68 C 7.80 -9.38 C 10.23 -9.38 O 9.02 -10.08 C 7.78 -3.82 O 10.23 -3.79 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 7 8 1 7 9 1 7 10 1 3 11 1 3 12 1";  /*diol*/
+var int30="11 11 C 10.23 -6.58 C 10.23 -5.18 C 9.02 -4.48 C 7.80 -5.18 C 7.80 -6.58 C 9.02 -7.28 C 9.02 -8.68 C 7.80 -9.38 C 10.23 -9.38 C 9.02 -3.08 O 9.02 -10.08 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 7 8 1 7 9 1 3 10 2 7 11 1";  /*methylene alcohol*/
+var int31="10 10 N 9.89 -2.70 O 7.73 -8.68 O 6.69 -3.54 C 8.81 -3.59 C 6.52 -6.58 C 8.94 -6.58 C 6.52 -5.18 C 8.94 -5.18 C 7.73 -7.28 C 7.73 -4.48 1 4 3 2 9 1 3 10 1 4 10 1 5 7 1 5 9 1 6 8 1 6 9 1 7 10 1 8 10 1";  /*cyanohydrin*/
+
+
+		if (form.reag[0].checked) {
+		j=1
+txt=""
+}
+		if (form.reag[1].checked) {
+		j=2
+txt=""
+}
+		if (form.reag[2].checked) {
+		j=3
+txt=""
+}
+
+		if (form.reag[3].checked) {
+		j=4
+txt=""
+}
+
+		if (form.reag[4].checked) {
+		j=5
+txt=""
+}
+		if (form.reag[5].checked) {
+		j=6
+txt=""
+}
+		if (form.reag[6].checked) {
+		j=7
+txt=""
+}
+		if (form.reag[7].checked) {
+		j=8
+txt=""
+}
+		if (form.reag[8].checked) {
+		j=9
+txt=""
+}
+		if (form.reag[9].checked) {
+		j=10
+txt=""
+}
+		if (form.reag[10].checked) {
+		j=11
+txt=""
+}
+		if (form.reag[11].checked) {
+		j=12
+txt=""
+}
+
+
+		if ((i==1)&&(j==1)&&(step==1)) {
+jmeprd="8 8 C 10.06 -7.53 C 10.06 -6.13 C 8.85 -5.43 C 7.64 -6.13 C 7.64 -7.53 C 8.85 -8.23 O 8.85 -4.03 O 8.85 -9.63 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 6 8 1";
+txt="This diol is formed as a mixture of stereoisomers. It will be difficult to do selective reactions on these identical functions.\rPress [Reset] and start again."
+}
+		if ((i==1)&&(j==2)&&(step==1)) {
+jmeprd="7 7 C 9.78 -7.64 C 9.78 -6.24 C 8.57 -5.54 C 7.36 -6.24 C 7.36 -7.64 C 8.57 -8.34 O 8.57 -4.14 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1";
+txt="You have removed one of the functional groups you need for this synthesis.\rPress [Reset] and start again."
+}
+		if ((i==1)&&(j==3)&&(step==1)) {
+jmeprd="8 8 C 9.84 -7.08 C 9.84 -5.68 C 8.62 -4.98 C 7.41 -5.68 C 7.41 -7.08 C 8.62 -7.78 O 8.62 -3.58 O 8.62 -9.18 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 2";
+txt="It will be difficult to do selective reactions on the identical carbonyl functions in this product (see above).\rPress [Reset] and start again."
+}
+		if ((i==1)&&(j==4)&&(step==1)) {
+jmeprd="9 9 C 10.61 -7.20 C 10.61 -5.80 C 9.40 -5.10 C 8.19 -5.80 C 8.19 -7.20 C 9.40 -7.90 O- 9.40 -9.30 C 8.27 -4.26 O- 10.50 -4.23 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 1 3 9 1|1 0 2MgI+ 12.82 -6.55";
+txt="The first equivalent of Grignard reagent will react largely with the acidic hydroxyl group. A second equivalent may add to the carbonyl function if the alkoxide salt remains in solution. In this case the final product will be a bis-magnesium alkoxide salt. Hydrolysis would then give a diol product of little use in this synthesis.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(j==5)&&(step==1)) {
+jmeprd=int11;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry="Step 1 HBr ";
+}
+		if ((i==1)&&(j==6)&&(step==1)) {
+jmeprd=int12;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry="Step 1 mesylate formation ";
+}
+
+		if (((i==1))&&((step==1))&&((j==7)||(j==8)||(j==10))) {
+jmeprd="8 8 C 9.95 -7.36 C 9.95 -5.96 C 8.74 -5.26 C 7.52 -5.96 C 7.52 -7.36 C 8.74 -8.06 O 8.74 -3.86 O 8.74 -9.46 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 1";
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again."
+}
+		if ((i==1)&&(j==9)&&(step==1)) {
+jmeprd=int31;
+txt="If you expect cyanohydrin formation (as shown) you will be disappointed. Aqueous HCN is required for this reaction. There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+
+
+		if ((i==1)&&(j==11)&&(step==1)) {
+jmeprd=int13;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry="Step 1 acetal formation";
+}
+		if ((i==1)&&(j==12)&&(step==1)) {
+jmeprd="8 8 C 9.39 -7.36 C 9.39 -5.96 C 8.18 -5.26 C 6.96 -5.96 C 6.96 -7.36 C 8.18 -8.06 C 8.18 -3.86 O 8.18 -9.46 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 1";
+txt="The Wittig reagent does not tolerate a free hydroxyl function due to its acidity. If a reaction could be achieved, the product would be that shown above, but this would require an excess of the ylide reagent.\rPress [Reset] and start again."
+}
+		if ((i==1)&&(jmeprd==int11)&&(j==1)&&(step==2)) {
+jmeprd="8 8 C 10.62 -7.47 C 10.62 -6.08 C 9.40 -5.38 C 8.19 -6.08 C 8.19 -7.47 C 9.40 -8.17 O 9.40 -3.98 ? 9.40 -9.57 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 6 8 1";
+txt="The ketone will be reduced (as shown above), but substitution of the bromide by hydride or alkoxide may also tahe place.\rPress [Reset] and start again."
+}
+		if ((i==1)&&(jmeprd==int11)&&(j==2)&&(step==2)) {
+jmeprd="7 7 C 10.62 -7.47 C 10.62 -6.08 C 9.40 -5.38 C 8.19 -6.08 C 8.19 -7.47 C 9.40 -8.17 ? 9.40 -9.57 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1";
+txt="This will be a complex reaction, since the bromine will be replaced and the carbonyl group reductively removed.\rPress [Reset] and start again."
+}
+		if (((i==1))&&((step==2))&&((jmeprd==int11)||(jmeprd==int12))&&((j==3)||(j==5)||(j==6)||(j==7)||(j==8))) {
+jmeprd=int11;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again."
+}
+		if ((i==1)&&(jmeprd==int11)&&(j==4)&&(step==2)) {
+jmeprd="9 9 C 9.01 -6.81 C 9.01 -5.41 C 7.79 -4.71 C 6.58 -5.41 C 6.58 -6.81 C 7.79 -7.51 ? 7.79 -8.91 C 6.63 -3.93 O- 8.95 -3.93 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 1 3 9 1|1 0 MgI+ 10.92 -3.86";
+txt="The Grignard reagent will add to the carbonyl group, but the bromine may also be substituted by either the alkoxide salt or by metal exchange.\rPress [Reset] and start again."
+}
+		if ((i==1)&&(jmeprd==int11)&&(j==9)&&(step==2)) {
+jmeprd=int14;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 2 cyanide substitution";
+}
+		if ((i==1)&&(jmeprd==int11)&&(j==10)&&(step==2)) {
+jmeprd=many;
+txt="A Grignard reagent will form at the bromide site, but this will immediately react with the carbonyl group in other reactant moleculed. A mixture of dimeric and larger products will result.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int11)&&(j==11)&&(step==2)) {
+jmeprd=int15;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.";
+sumry=sumry+", Step 2 acetal formation";
+}
+		if ((i==1)&&(jmeprd==int11)&&(j==12)&&(step==2)) {
+jmeprd=int17;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 2 Wittig reaction";
+}
+		if ((i==1)&&(jmeprd==int12)&&(j==1)&&(step==2)) {
+jmeprd="8 8 C 10.62 -7.47 C 10.62 -6.08 C 9.40 -5.38 C 8.19 -6.08 C 8.19 -7.47 C 9.40 -8.17 O 9.40 -3.98 ? 9.40 -9.57 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 6 8 1";
+txt="The ketone will be reduced (as shown above), but substitution of the mesylate by hydride or alkoxide may also tahe place.\rPress [Reset] and start again."
+}
+		if ((i==1)&&(jmeprd==int12)&&(j==2)&&(step==2)) {
+jmeprd="7 7 C 10.62 -7.47 C 10.62 -6.08 C 9.40 -5.38 C 8.19 -6.08 C 8.19 -7.47 C 9.40 -8.17 ? 9.40 -9.57 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1";
+txt="This will be a complex reaction, since the mesylate will be replaced and the carbonyl group reductively removed.\rPress [Reset] and start again."
+}
+		if ((i==1)&&(jmeprd==int12)&&(j==4)&&(step==2)) {
+jmeprd="9 9 C 9.01 -6.81 C 9.01 -5.41 C 7.79 -4.71 C 6.58 -5.41 C 6.58 -6.81 C 7.79 -7.51 ? 7.79 -8.91 C 6.63 -3.93 O- 8.95 -3.93 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 1 3 9 1|1 0 MgI+ 10.92 -3.86";
+txt="The Grignard reagent will add to the carbonyl group, but the mesylate may also be substituted by either the alkoxide salt or by metal exchange.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int12)&&(j==9)&&(step==2)) {
+jmeprd=int14;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry +", Step 2 cyanide substitution";
+}
+		if ((i==1)&&(jmeprd==int12)&&(j==10)&&(step==2)) {
+jmeprd="12 12 C 9.33 -6.41 C 9.33 -5.01 C 8.12 -4.31 C 6.91 -5.01 C 6.91 -6.41 C 8.12 -7.11 O 8.12 -2.91 O 8.12 -8.51 S 6.91 -9.21 C 6.91 -10.61 O 6.12 -8.05 O 5.70 -9.92 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 1 8 9 1 9 10 1 9 11 2 9 12 2";
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int12)&&(j==11)&&(step==2)) {
+jmeprd=int16
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.";
+sumry=sumry+", Step 2 acetal formation";
+}
+		if ((i==1)&&(jmeprd==int12)&&(j==12)&&(step==2)) {
+jmeprd=int18;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 2 Wittig reaction";
+}
+		if (((i==1))&&((step==2))&&((jmeprd==int13))&&((j==1)||(j==2)||(j==4)||(j==7)||(j==9)||(j==10)||(j==11)||(j==12))) {
+jmeprd=int13;
+txt="Aside from salt formation of the hydroxyl group, there will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int13)&&(j==3)&&(step==2)) {
+jmeprd="11 12 C 10.63 -7.76 C 10.63 -6.36 C 9.41 -5.66 C 8.20 -6.36 C 8.20 -7.76 C 9.41 -8.46 O 9.41 -9.87 O 10.60 -4.91 O 8.20 -4.96 C 8.67 -3.64 C 10.07 -3.64 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 2 3 8 1 3 9 1 9 10 1 10 11 1 11 8 1";
+txt="Jones' oxidation will convert the alcohol to the ketone shown above. However the aqueous acid in this reagent will probably hydrolyze the acetal, producing the diketone.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int13)&&(j==5)&&(step==2)) {
+jmeprd=int11;
+txt="This reagent will replace the hydroxyl group with a bromine, but will also hydrolyze the acetal. The product (shown above) may be obtained in one step from the starting material.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int13)&&(j==6)&&(step==2)) {
+jmeprd=int16;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 2 mesylate formation";
+}
+		if ((i==1)&&(jmeprd==int13)&&(j==8)&&(step==2)) {
+jmeprd="8 8 C 10.52 -7.65 C 10.52 -6.25 C 9.30 -5.55 C 8.09 -6.25 C 8.09 -7.65 C 9.30 -8.35 O 9.30 -9.76 O 9.29 -4.15 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 2";;
+txt="This hydrolyzes the acetal, taking you back to the starting material.\rPress [Reset] and start again.";
+}
+
+		if (((i==1))&&((step==3))&&((jmeprd==int14))&&((j==3)||(j==5)||(j==6)||(j==7)||(j==9)||(j==10))) {
+jmeprd=int14;
+txt="There will be no reaction of any consequence.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int14)&&(j==1)&&(step==3)) {
+jmeprd="9 9 C 10.62 -6.80 C 10.62 -5.40 C 9.40 -4.70 C 8.19 -5.40 C 8.19 -6.80 C 9.40 -7.50 C 9.40 -8.90 O 9.40 -3.30 N 8.19 -9.60 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 1 7 9 1";
+txt="Lithium aluminum hydride reduces both the carbonyl group and the nitrile. The product (shown above) will not be useful in the desired synthesis.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int14)&&(j==2)&&(step==3)) {
+jmeprd="7 7 C 10.62 -6.80 C 10.62 -5.40 C 9.40 -4.70 C 8.19 -5.40 C 8.19 -6.80 C 9.40 -7.50 ? 9.40 -8.90 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1";
+txt="Wolff-Kishner reduction removes the carbonyl group needed for this synthesis. Reaction of the nitrile is also possible under these strongly basic conditions.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int14)&&(j==4)&&(step==3)) {
+jmeprd="11 11 C 7.87 -6.80 C 7.87 -5.40 C 6.65 -4.70 C 5.44 -5.40 C 5.44 -6.80 C 6.65 -7.50 C 5.55 -3.84 O- 7.79 -3.90 C 6.64 -8.90 C 5.42 -9.59 N- 7.85 -9.61 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 3 8 1 6 9 1 9 10 1 9 11 2|1 0 2MgI+ 10.47 -6.44";
+txt="The Grignard reagent adds to both the carbonyl and nitrile groups. Magnesium salts (shown above) are formed at both sites. Hydrolysis would produce the corresponding keto-alcohol, which is close to the desired product. However, dehydration of the tertiary alcohol would preferentially give a tri-substituted double bond. A better route can be found.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int14)&&(j==8)&&(step==3)) {
+jmeprd="9 9 C 5.07 -6.52 C 5.07 -5.12 C 3.85 -4.42 C 2.64 -5.12 C 2.64 -6.52 C 3.85 -7.22 C 3.85 -8.62 O 3.85 -3.02 N 3.85 -10.02 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 2 7 9 3|10 10 C 11.85 -6.52 C 11.85 -5.12 C 10.64 -4.42 C 9.43 -5.12 C 9.43 -6.52 C 10.64 -7.22 O 10.64 -3.02 C 10.64 -8.62 O 9.43 -9.32 O 11.85 -9.32 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 1 8 9 2 8 10 1";
+txt="The starting compound (above left) should be recovered. On treatment with aqueous acid for a long time the nitrile function is slowly hydrolyzed to a carboxylic acid. This change does not help in this synthesis.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int14)&&(j==11)&&(step==3)) {
+jmeprd=int19;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 3 acetal formation";
+}
+		if ((i==1)&&(jmeprd==int14)&&(j==12)&&(step==3)) {
+jmeprd=int20;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 3 Wittig reaction";
+}
+
+		if (((i==1))&&((step==3))&&((jmeprd==int15))&&((j==1)||(j==4)||(j==6)||(j==7)||(j==11)||(j==12))) {
+jmeprd=int15;
+txt="It is unlikely there will be any reaction of consequence.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int15)&&(j==2)&&(step==3)) {
+jmeprd="10 11 C 6.64 -7.53 C 6.64 -6.13 C 5.43 -5.43 C 4.22 -6.13 C 4.22 -7.53 C 5.43 -8.23 O 4.27 -4.66 O 6.62 -4.69 C 4.75 -3.34 C 6.15 -3.35 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 2 3 7 1 3 8 1 7 9 1 9 10 1 10 8 1|1 0 + 8.79 -6.78|12 13 C 13.08 -7.53 C 13.08 -6.13 C 11.87 -5.43 C 10.66 -6.13 C 10.66 -7.53 C 11.87 -8.23 O 13.08 -4.73 O 10.72 -4.64 C 11.08 -3.29 C 12.48 -3.30 N 11.87 -9.63 N 10.66 -10.33 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 3 8 1 8 9 1 9 10 1 10 7 1 6 11 1 11 12 1";
+txt="Wolff-Kishner reduction will have no effect on the acetal. The strong base may cause an elimination reaction, and hydrazine may react by substitution.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int15)&&(j==3)&&(step==3)) {
+jmeprd=int15;
+txt="Jones' oxidation should not cause any reaction. However, the aqueous acid in this reagent will probably hydrolyze the acetal, producing the ketobromide from which this acetal was prepared.\rPress [Reset] and start again.";
+}
+		if  (((i==1))&&((step==3))&&((jmeprd==int15))&&((j==5)||(j==8)))  {
+jmeprd=int11;
+txt="Strong aqueous acid will hydrolyze the acetal, giving back the ketone from which it was originally prepared. \rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int15)&&(j==9)&&(step==3)) {
+jmeprd=int19;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 3 cyanide substitution";
+}
+		if ((i==1)&&(jmeprd==int15)&&(j==10)&&(step==3)) {
+jmeprd=int21;
+txt="The Grignard reagent drawn above is formed. If you are satisfied with this product, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 3 Grignard reagent formation";
+}
+
+		if ((i==1)&&(jmeprd==int16)&&(j==1)&&(step==3)) {
+jmeprd="10 11 C 9.39 -6.86 C 9.39 -5.46 C 8.18 -4.76 C 6.96 -5.46 C 6.96 -6.86 C 8.18 -7.56 O 6.90 -4.19 O 9.47 -4.22 C 7.55 -2.95 C 8.95 -2.97 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 3 8 1 7 9 1 9 10 1 10 8 1";
+txt="Lithium aluminum hydride will not reduce the acetal. However, it often substitutes sulfonate esters by hydride, as shown above.\rPress [Reset] and start again."
+}
+		if (((i==1))&&((step==3))&&((jmeprd==int16))&&((j==4)||(j==6)||(j==7)||(j==10)||(j==11)||(j==12))) {
+jmeprd=int16;
+txt="It is unlikely there will be any reaction of consequence.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int16)&&(j==2)&&(step==3)) {
+jmeprd="10 11 C 6.64 -7.53 C 6.64 -6.13 C 5.43 -5.43 C 4.22 -6.13 C 4.22 -7.53 C 5.43 -8.23 O 4.27 -4.66 O 6.62 -4.69 C 4.75 -3.34 C 6.15 -3.35 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 2 3 7 1 3 8 1 7 9 1 9 10 1 10 8 1|1 0 + 8.79 -6.78|12 13 C 13.08 -7.53 C 13.08 -6.13 C 11.87 -5.43 C 10.66 -6.13 C 10.66 -7.53 C 11.87 -8.23 O 13.08 -4.73 O 10.72 -4.64 C 11.08 -3.29 C 12.48 -3.30 N 11.87 -9.63 N 10.66 -10.33 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 3 8 1 8 9 1 9 10 1 10 7 1 6 11 1 11 12 1";
+txt="Wolff-Kishner reduction will have no effect on the acetal. The strong base may cause an elimination reaction, and hydrazine may react by substitution.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int16)&&(j==3)&&(step==3)) {
+jmeprd=int16;
+txt="Jones' oxidation should not cause any reaction. However, the aqueous acid in this reagent will probably hydrolyze the acetal, producing the ketomesylate from which this acetal was prepared.\rPress [Reset] and start again.";
+}
+		if  (((i==1))&&((step==3))&&((jmeprd==int16))&&((j==5)||(j==8)))  {
+jmeprd=int12;
+txt="Strong aqueous acid will hydrolyze the acetal, giving back the ketone from which it was originally prepared. \rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int16)&&(j==9)&&(step==3)) {
+jmeprd=int19;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 3 cyanide substitution";
+}
+
+		if (((i==1))&&((step==3))&&((jmeprd==int17))&&((j==1)||(j==3)||(j==4)||(j==6)||(j==7)||(j==11)||(j==12))) {
+jmeprd=int17;
+txt="It is unlikely there will be any reaction of consequence.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int17)&&(j==2)&&(step==3)) {
+jmeprd="7 7 C 5.58 -7.36 C 5.58 -5.96 C 4.37 -5.26 C 3.16 -5.96 C 3.16 -7.36 C 4.37 -8.06 C 4.37 -3.86 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 2 3 7 2|1 0 + 8.12 -6.89|9 9 C 12.47 -7.36 C 12.47 -5.96 C 11.26 -5.26 C 10.04 -5.96 C 10.04 -7.36 C 11.26 -8.06 C 11.26 -3.86 N 11.26 -9.46 N 10.04 -10.16 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 1 8 9 1";
+txt="Wolff-Kishner reduction will have no effect on the double bond. The strong base may cause an elimination reaction, and hydrazine may react by substitution.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int17)&&(j==5)&&(step==3)) {
+jmeprd="9 9 C 6.03 -6.64 C 6.03 -5.24 C 4.82 -4.54 C 3.60 -5.24 C 3.60 -6.64 C 4.82 -7.34 C 3.83 -3.55 Br 5.86 -3.61 Br 4.82 -8.74 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 3 8 1 6 9 1|1 0 + 8.90 -5.99|9 9 C 13.87 -6.75 C 13.87 -5.35 C 12.66 -4.65 C 11.44 -5.35 C 11.44 -6.75 C 12.66 -7.45 Br 12.66 -8.85 C 11.49 -3.87 O 13.82 -3.87 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 1 3 9 1";
+txt="HBr adds to double bonds in a regioselective manner. Solvolysis of the tertiary bromide would give the corresponding alcohol. \rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int17)&&(j==8)&&(step==3)) {
+jmeprd="8 8 C 5.07 -6.52 C 5.07 -5.12 C 3.85 -4.42 C 2.64 -5.12 C 2.64 -6.52 C 3.85 -7.22 Br 3.85 -8.62 C 3.85 -3.02 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 2|8 8 C 10.12 -6.52 C 10.12 -5.12 C 8.90 -4.42 C 7.69 -5.12 C 7.69 -6.52 C 8.90 -7.22 C 8.90 -3.02 Br 8.90 -8.62 1 2 1 2 3 2 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 6 8 1|9 9 C 15.38 -6.64 C 15.38 -5.24 C 14.17 -4.54 C 12.96 -5.24 C 12.96 -6.64 C 14.17 -7.34 C 13.03 -3.72 O 15.33 -3.76 Br 14.17 -8.74 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 3 8 1 6 9 1";
+txt="The starting material (above left) should be recovered. However, strong aqueous acid may isomerize the double bond or catalyze the addition of water. Brief treatment at 0 ¡C should avoid such changes.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int17)&&(j==9)&&(step==3)) {
+jmeprd=int20;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 3 cyanide substitution";
+}
+		if  ((i==1)&&(jmeprd==int17)&&(j==10)&&(step==3))  {
+jmeprd=int22;
+txt="The Grignard reagent drawn above is formed. If you are satisfied with this product, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 3 Grignard reagent formation";
+}
+
+		if (((i==1))&&((step==3))&&((jmeprd==int18))&&((j==10)||(j==3)||(j==4)||(j==6)||(j==7)||(j==11)||(j==12))) {
+jmeprd=int17;
+txt="It is unlikely there will be any reaction of consequence.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int18)&&(j==1)&&(step==3)) {
+jmeprd="7 7 C 9.84 -7.59 C 9.84 -6.19 C 8.62 -5.49 C 7.41 -6.19 C 7.41 -7.59 C 8.62 -8.29 C 8.62 -4.09 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2";
+txt="Lithium aluminum hydride will not react with the double bond. However, it often substitutes sulfonate esters by hydride, as shown above.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int18)&&(j==2)&&(step==3)) {
+jmeprd="7 7 C 5.58 -7.36 C 5.58 -5.96 C 4.37 -5.26 C 3.16 -5.96 C 3.16 -7.36 C 4.37 -8.06 C 4.37 -3.86 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 2 3 7 2|1 0 + 8.12 -6.89|9 9 C 12.47 -7.36 C 12.47 -5.96 C 11.26 -5.26 C 10.04 -5.96 C 10.04 -7.36 C 11.26 -8.06 C 11.26 -3.86 N 11.26 -9.46 N 10.04 -10.16 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 1 8 9 1";
+txt="Wolff-Kishner reduction will have no effect on the double bond. The strong base may cause an elimination reaction, and hydrazine may react by substitution.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int18)&&(j==5)&&(step==3)) {
+jmeprd="13 13 C 6.10 -7.42 C 6.10 -6.02 C 4.89 -5.32 C 3.67 -6.02 C 3.67 -7.42 C 4.89 -8.12 C 3.90 -4.33 Br 5.93 -4.39 O 4.89 -9.52 S 3.67 -10.22 C 3.67 -11.62 O 2.76 -9.16 O 2.48 -10.95 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 3 8 1 6 9 1 9 10 1 10 11 1 10 12 2 10 13 2|1 0 + 9.41 -6.78|13 13 C 15.41 -7.47 C 15.41 -6.07 C 14.20 -5.37 C 12.99 -6.07 C 12.99 -7.47 C 14.20 -8.17 O 14.20 -9.57 C 13.04 -4.59 O 15.36 -4.59 S 12.99 -10.27 C 12.99 -11.67 O 11.87 -9.44 O 11.87 -11.10 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 1 3 9 1 7 10 1 10 11 1 10 12 2 10 13 2";
+txt="HBr adds to double bonds in a regioselective manner. Solvolysis of the tertiary bromide would give the corresponding alcohol. \rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int18)&&(j==8)&&(step==3)) {
+jmeprd="12 12 C 5.02 -6.63 C 5.02 -5.23 C 3.80 -4.53 C 2.59 -5.23 C 2.59 -6.63 C 3.80 -7.33 O 3.80 -8.73 C 3.80 -3.14 S 2.59 -9.43 C 2.59 -10.83 O 1.71 -8.34 O 1.46 -10.26 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 2 7 9 1 9 10 1 9 11 2 9 12 2|12 12 C 10.12 -6.52 C 10.12 -5.12 C 8.90 -4.42 C 7.69 -5.12 C 7.69 -6.52 C 8.90 -7.22 C 8.90 -3.02 O 8.90 -8.62 S 7.69 -9.32 C 7.69 -10.72 O 6.74 -8.29 O 6.59 -10.19 1 2 1 2 3 2 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 6 8 1 8 9 1 9 10 1 9 11 2 9 12 2|13 13 C 15.32 -6.64 C 15.32 -5.24 C 14.11 -4.54 C 12.90 -5.24 C 12.90 -6.64 C 14.11 -7.34 C 12.98 -3.72 O 15.28 -3.76 O 14.11 -8.74 S 12.90 -9.44 C 12.90 -10.84 O 11.94 -8.42 O 11.79 -10.29 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 3 8 1 6 9 1 9 10 1 10 11 1 10 12 2 10 13 2";
+txt="The starting material (above left) should be recovered. However, strong aqueous acid may isomerize the double bond or catalyze the addition of water. Brief treatment at 0 ¡C should avoid such changes.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int18)&&(j==9)&&(step==3)) {
+jmeprd=int20;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 3 cyanide substitution";
+}
+
+		if (((i==1))&&((step==4))&&((jmeprd==int21)||(jmeprd==int22))&&((j==1)||(j==2)||(j==3)||(j==5)||(j==8)||(j==9)||(j==10)||(j==11)||(j==12))) {
+jmeprd=many;
+txt="Grignard reagents react with most of the reagents and reaction conditions shown here. Acidic functional groups or solvents will protonate the Grignard carbon, resulting in loss of that reaction site. Reactions may also take place at other functional groups.\rPress [Reset] and start again.";
+}
+		if (((i==1))&&((step==4))&&((jmeprd==int21)||(jmeprd==int22))&&((j==4))) {
+jmeprd="1 0 No_Reaction 9.41 -6.78";
+txt="There is unlikely to be a reaction between two Grignard reagents.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int21)&&(j==6)&&(step==4)) {
+jmeprd=int16;
+txt="If a reaction takes place it is likely to reform the mesylate made and used earlier.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int22)&&(j==6)&&(step==4)) {
+jmeprd=int18;
+txt="If a reaction takes place it is likely to reform the mesylate made and used earlier.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int21)&&(j==7)&&(step==4)) {
+jmeprd=int23;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 4 carboxylation";
+}
+		if ((i==1)&&(jmeprd==int22)&&(j==7)&&(step==4)) {
+jmeprd=int24;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 4 carboxylation";
+}
+
+		if (((i==1))&&((step==4))&&((jmeprd==int19))&&((j==6)||(j==7)||(j==9)||(j==10)||(j==11)||(j==12))) {
+jmeprd=int19;
+txt="It is unlikely there will be any reaction of consequence.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int19)&&(j==1)&&(step==4)) {
+jmeprd="12 13 C 10.62 -6.99 C 10.62 -5.59 C 9.41 -4.90 C 8.20 -5.59 C 8.20 -6.99 C 9.41 -7.68 C 9.41 -9.07 O 10.65 -4.25 O 8.18 -4.24 C 8.62 -2.92 C 10.01 -2.91 N 8.20 -9.77 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 1 3 9 1 9 10 1 10 11 1 8 11 1 7 12 1";
+txt="The nitrile will be reduced to an amine. This will not advance the synthesis.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int19)&&(j==2)&&(step==4)) {
+jmeprd=int23;
+txt="The strongly basic reaction conditions may convert the nitrile to a carboxylic acid (shown above) or a mixture of esters. This acid can be obtained in higher yield and in one less step by way of a Grignard carboxylation reaction.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int19)&&(j==3)&&(step==4)) {
+jmeprd=int14;
+txt="The acidic conditions of the Jones' reagent will probably hydrolyze the acetal. The resulting keto-nitrile may be made in fewer steps.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int19)&&(j==4)&&(step==4)) {
+jmeprd=int25;
+txt="The Grignard reagent adds to the nitrile to give an imine salt (shown above). If you are satisfied with this product, select 5% sulfuric for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 4 Grignard addition";
+}
+		if(((i==1))&&((step==4))&&((jmeprd==int19))&&((j==5)||(j==8))) {
+jmeprd=int14;
+txt="This strong acid will hydrolyze the acetal, reforming the keto-nitrile made earlier. The nitrile may also undergo slow hydrolysis to the corresponding keto-acid.\rPress [Reset] and start again.";
+}
+
+		if (((i==1))&&((step==4))&&((jmeprd==int20))&&((j==3)||(j==6)||(j==7)||(j==9)||(j==10)||(j==11)||(j==12))) {
+jmeprd=int20;
+txt="It is unlikely there will be any reaction of consequence.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int20)&&(j==1)&&(step==4)) {
+jmeprd="9 9 C 10.62 -6.80 C 10.62 -5.40 C 9.40 -4.70 C 8.19 -5.40 C 8.19 -6.80 C 9.40 -7.50 C 9.40 -8.90 C 9.40 -3.30 N 8.19 -9.60 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 3 8 2 7 9 1";
+txt="The nitrile will be reduced to an amine. This will not advance the synthesis.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int20)&&(j==2)&&(step==4)) {
+jmeprd=int24;
+txt="The strongly basic reaction conditions may convert the nitrile to a carboxylic acid (shown above) or a mixture of esters. This acid can be obtained in higher yield and in one less step by way of a Grignard carboxylation reaction.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int20)&&(j==4)&&(step==4)) {
+jmeprd=int26;
+txt="The Grignard reagent adds to the nitrile to give an imine salt (shown above). If you are satisfied with this product, select 5% sulfuric for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 4 Grignard addition";
+}
+		if  (((i==1))&&((step==4))&&((jmeprd==int20))&&((j==5))) {
+jmeprd="10 10 C 6.30 -6.45 C 6.30 -5.05 C 5.08 -4.35 C 3.87 -5.05 C 3.87 -6.45 C 5.08 -7.15 C 5.08 -8.55 N 5.08 -9.95 C 3.92 -3.56 Br 6.23 -3.55 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 7 8 3 3 9 1 3 10 1|10 10 C 13.14 -6.52 C 13.14 -5.12 C 11.93 -4.42 C 10.72 -5.12 C 10.72 -6.52 C 11.93 -7.22 C 10.72 -3.72 O 13.12 -3.68 C 11.93 -8.62 N 11.93 -10.02 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 3 8 1 6 9 1 9 10 3";
+txt="HBr adds to double bonds in a regioselective manner. Solvolysis of the tertiary bromide would give the corresponding alcohol. Some hydrolysis of the nitrile may also take place. Such changes are not useful in this synthesis.\rPress [Reset] and start again.";
+}
+		if  (((i==1))&&((step==4))&&((jmeprd==int20))&&((j==8))) {
+jmeprd="9 9 C 5.02 -6.63 C 5.02 -5.23 C 3.80 -4.53 C 2.59 -5.23 C 2.59 -6.63 C 3.80 -7.33 C 3.80 -8.73 N 3.80 -10.13 C 3.80 -3.14 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 6 7 1 7 8 3 3 9 2|9 9 C 10.12 -6.52 C 10.12 -5.12 C 8.90 -4.42 C 7.69 -5.12 C 7.69 -6.52 C 8.90 -7.22 C 8.90 -3.02 C 8.90 -8.62 N 8.90 -10.02 1 2 1 2 3 2 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 6 8 1 8 9 3|10 10 C 15.32 -6.64 C 15.32 -5.24 C 14.11 -4.54 C 12.90 -5.24 C 12.90 -6.64 C 14.11 -7.34 C 12.98 -3.72 O 15.28 -3.76 C 14.11 -8.74 N 14.11 -10.14 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 1 3 8 1 6 9 1 9 10 3";
+txt="The starting material (above left) should be recovered. However, strong aqueous acid may isomerize the double bond or catalyze the addition of water. Brief treatment at 0 ¡C should avoid such changes.\rPress [Reset] and start again.";
+}
+
+		if (((i==1))&&((step==5))&&((jmeprd==int23)||(jmeprd==int24))) {
+jmeprd=many;
+txt="You have produced an intermediate that cannnot be carried forward using the reagents on the right. Lithium aluminum hydride reduces carboxylic acids to 1¡-alcohols. Grignard reagents form unreactive magnesium salts, and the Wittig reagent is deactivated by the acidic carboxyl group. Other reagents will not produce useful products.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int25)&&(j==8)&&(step==5)) {
+jmeprd=int27;
+txt="If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 5 hydrolysis";
+}
+		if ((i==1)&&(jmeprd==int26)&&(j==8)&&(step==5)) {
+jmeprd=int28;
+txt="Strong aqueous acid may isomerize the double bond or catalyze the addition of water. However, brief treatment at 0 ¡C should avoid such changes.If you are satisfied with the product shown above, select a reagent for the next step and press the [Do Reaction] button.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 5 hydrolysis";
+}
+
+		if ((jmeprd==int14)&&(step==5)) {
+jmeprd=int14;
+txt="You're on the right track! This is a useful intermediate, but you have prepared it by a needlessly long procedure. Find a better way.\rPress [Reset] and start again.";
+}
+
+		if (((i==1))&&((step==6))&&((jmeprd==int27)||(jmeprd==int28))&&((j==1)||(j==2)||(j==3)||(j==5)||(j==6)||(j==7)||(j==8)||(j==9)||(j==10)||(j==11))) {
+jmeprd=many;
+txt="The reaction you have selected will not produce a useful change in this compound.\rPress [Reset] and start again.";
+}
+		if ((i==1)&&(jmeprd==int27)&&(j==4)&&(step==6)) {
+jmeprd=int29;
+txt="The magnesium salts formed in this reaction yield the diol shown above on hydrolysis. If you are satisfied with this product, select a reagent for the next step.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 6 Grignard addition";
+}
+		if ((i==1)&&(jmeprd==int28)&&(j==4)&&(step==6)) {
+jmeprd=int30;
+txt="The magnesium salt formed in this reaction yields the alcohol shown above on hydrolysis. If you are satisfied with this product, select a reagent for the next step.\rOtherwise press [Reset] and start again.";
+sumry=sumry+", Step 6 Grignard addition";
+}
+		if (((i==1))&&((step==6))&&((j==12))&&((jmeprd==int27)||(jmeprd==int28))) {
+jmeprd="10 10 C 10.06 -6.75 C 10.06 -5.35 C 8.85 -4.65 C 7.64 -5.35 C 7.64 -6.75 C 8.85 -7.45 C 8.85 -3.25 C 8.85 -8.85 C 7.64 -9.55 C 10.06 -9.55 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 1 1 3 7 2 6 8 1 8 9 1 8 10 2";
+sumry=sumry+", Step 6 Wittig reagent";
+txt="Congratulations, you have completed this synthesis.\rThe reaction sequence you used is: \r"+sumry;
+}
+
+		if (((i==1))&&((step==7))&&((jmeprd==int29)||(jmeprd==int30))&&((j==1)||(j==2)||(j==3)||(j==4)||(j==6)||(j==7)||(j==9)||(j==10)||(j==11)||(j==12))) {
+jmeprd=many;
+txt="The reaction you have selected will not produce a useful change in this compound.\rPress [Reset] and start again.";
+}
+		if (((i==1))&&((step==7))&&((j==8))&&((jmeprd==int29)||(jmeprd==int30))) {
+jmeprd="1 0 No_Reaction 9.41 -6.78";
+txt="If you propose to prepare the desired alkene(s) by a dehydration reaction, there are two problems. First, the acid you have selected is too dilute. Second, acid-catalyzed dehydrations of 3¡-alcohols often give mixtures of regioisomeric products having different double bond locations. A much better approach to introducing double bonds in specific locations exists and should be used.\rPress [Reset] and start again.";
+}
+		if (((i==1))&&((step==7))&&((j==5))&&((jmeprd==int29)||(jmeprd==int30))) {
+jmeprd=many;
+txt="If you propose to prepare the desired alkene(s) by a dehydration reaction, there are two problems. First, HBr will add to any double bonds you create. Second, acid-catalyzed dehydrations of 3¡-alcohols often give mixtures of regioisomeric products having different double bond locations. A much better approach to introducing double bonds in specific locations exists and should be used.\rPress [Reset] and start again.";
+}
+}
+function processJme() {
+  document.JME.readMolecule(document.form.jme_output.value);
+ }
+function clrwind() { 
+	jme="0 0";
+	jmeprd="0 0";
+document.JME.readMolecule(jme);
+}
+function chkvar() { 
+document.JME.readMolecule(jme);
+txt="";
+	 document.form.result1.value = Txt+"\r"+txt;
+}
+function chkans() { 
+  document.JME.readMolecule(jmeprd);
+Txt="";
+step++;
+	 document.form.result1.value = txt;
+if (txt=="") {
+alert("You must press [Reset] before proceeding."); 
+}
+}
+function processJmeans() {
+  document.JME.readMolecule(document.form.jmeans_output.value);
+}
+
+
+// End of hide script comment. -->
+</script>
+<!-- jme:loader:start -->
+<script type="text/javascript" src="../../htmlJ/jsmol/jsme/jme-init.js"></script>
+<!-- jme:loader:end -->
+<link rel="stylesheet" href="../../Styles/edvibe.css">
+<script src="../../Styles/edvibe.js" defer></script>
+</head>
+<body onLoad="beginprob();chkvar()">
+<div class="ctr"><H2>Devising a Synthesis Reaction Sequence</H2></div>
+<P>A multistep synthesis problem is shown below. Your challenge is to devise a series of reactions that will produce the desired product, from the designated starting compound. Choose a reagent from the list on the right to begin your synthesis sequence, and then press the <b>Do Reaction</b> button. The product (if any) from this reaction will appear in the window, accompanied by commentary in the information window just below it. You will then be promped to choose a reagent for the second step. In cases where your choice appears to be ineffective or unwise, you will be asked to  press the <b>Reset</b> button and begin again.</P>
+<FORM METHOD="POST" NAME="form" ONSUBMIT="return false;"> 
+<TABLE  CELLPADDING=3 ><TR><TH>
+<applet code="JME.class" name="JME" archive="JME.jar" width="500" height="340">
+<param name= "options"  value="multipart; hydrogens; autoez">
+You have to enable Java and JavaScript on your machine !
+</applet>
+</TH><TH width="30"></TH>
+<TH ><table cellpadding=4 width=300  border><tr bgcolor="dedede"> <th ><H3><span class="fc-maroon"> Reagents</span></H3></th></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select" checked>
+<input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue">(i) LiAlH<sub>4</sub> in ether; (ii) H<sub>3</sub>O<sup>(+)</sup> workup</span></B></td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue">Wolff-Kishner reaction (N<sub>2</sub>H<sub>4</sub>, heat with strong base)</span></B></td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> Jones' reagent (CrO<sub>3</sub> in H<sub>3</sub>O<sup>(+)</sup> + acetone)</span></B> </td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> CH<sub>3</sub>MgI (methylmagnesium iodide in ether or THF) </span></B></td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> conc. HBr (48%) & heat </span></B> </td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> CH<sub>3</sub>SO<sub>2</sub>Cl (methanesulfonyl chloride & pyridine)</span></B></td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> CO<sub>2</sub> (dry carbon dioxide gas), followed by H<sub>3</sub>O<sup>(+)</sup> </span></B> </td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> 5% H<sub>2</sub>SO<sub>4 </sub> </span></B> </td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> NaCN in aqueous acetone</span></B> </td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> Mg metal turnings in ether </span></B> </td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> HOCH<sub>2</sub>CH<sub>2</sub>OH (ethylene glycol), an acid catalyst and heat </span></B> </td></tr>
+<tr><td  nowrap><INPUT TYPE=RADIO NAME="reag" VALUE="select"><input type="hidden" value="" name="smiles"> &nbsp; <B><span class="fc-blue"> Wittig reagent ((C<sub>6</sub>H<sub>5</sub>)<sub>3</sub>P=CH<sub>2</sub>  in ether )</span></B> </td></tr>
+</table></TH></TR>
+<TR><TH>
+</TH> </TR></TABLE>
+<TABLE ><TR><TH><P> <TEXTAREA WRAP NAME='result1' ROWS='6' COLS='86'></TEXTAREA> <br><span class="fc-blue">Information Window</span></P> </TH><TH>   </TH><TD nowrap> <p> &nbsp; <input type='button' value='Do Reaction' onClick='process2(form);chkans();'> </p>
+<p> &nbsp;  <INPUT TYPE='RESET' VALUE='Reset' onClick='clrwind();document.JME.reset();beginprob();chkvar()'></p>
+<p><b>
+</TD></TR></TABLE>
+<HR> 
+<span class="fs-3">This script written by The Edvibe Team, edvibe.co.ke. Please send comments and corrections to <A HREF=MAILTO:"contact@edvibe.co.ke">contact@edvibe.co.ke</A>.
+<BR>
+<a href="http://www.molinspiration.com/jme/">JME Molecular Editor</a> v2002.05 by: by Peter Ertl 
+
+</form>
+</BODY>
+</HTML>
