@@ -1,5 +1,6 @@
 # The Virtual Textbook of Organic Chemistry
 
+[![Live Site](https://img.shields.io/badge/live-edvibeke.github.io-00b894.svg)](https://edvibeke.github.io/organic-chemistry-textbook/)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Static Site](https://img.shields.io/badge/site-static%20HTML%2FCSS%2FJS-blue.svg)](#technology)
 [![No Build Step](https://img.shields.io/badge/build-none%20required-success.svg)](#getting-started)
@@ -10,6 +11,8 @@ animations, spectroscopy tools, and hundreds of self-checking practice problems.
 The whole thing is plain, self-contained **HTML/CSS/JavaScript** and runs in any
 modern browser with no server or build step.
 
+> **Live site:** <https://edvibeke.github.io/organic-chemistry-textbook/>
+>
 > This repository bundles two companion sites:
 > **`virttxtjml/`** — the full interactive textbook, and
 > **`OrgPage/`** — a quick-reference collection of organic chemistry data tables.
